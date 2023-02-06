@@ -1,0 +1,16 @@
+-xc++
+-std=gnu++14
+-funsigned-char
+-fno-stack-protector
+-w
+-ferror-limit=3
+-pthread
+-I.
+-I../swigtemplates
+-I/usr/local/lib/wx/include/osx_cocoa-unicode-3.2
+-I/usr/local/include/wx-3.2
+-D_FILE_OFFSET_BITS=64
+-DWXUSINGDLL
+-D__WXMAC__
+-D__WXOSX__
+-D__WXOSX_COCOA__
