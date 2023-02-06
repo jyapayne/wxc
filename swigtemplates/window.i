@@ -2,6 +2,7 @@
 %include <common.i>
 %{
 #include <wx/vidmode.h>
+#include "wxext/window_ext.h"
 %}
 
 

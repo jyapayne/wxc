@@ -16,7 +16,7 @@
 // headers we have to include here
 // ----------------------------------------------------------------------------
 
-#include "wxext/event_ext.h"       // for the base class
+#include "wx/event.h"       // for the base class
 #include "wx/eventfilter.h" // (and another one)
 #include "wx/build.h"
 #include "wx/cmdargs.h"     // for wxCmdLineArgsArray used by wxApp::argv
@@ -70,7 +70,7 @@ extern WXDLLIMPEXP_DATA_BASE(wxList) wxPendingDelete;
 // wxAppConsoleBase: wxApp for non-GUI applications
 // ----------------------------------------------------------------------------
 
-class WXDLLIMPEXP_BASE wxAppConsoleBase : public wxEvtHandlerExt,
+class WXDLLIMPEXP_BASE wxAppConsoleBase : public wxEvtHandler,
                                           public wxEventFilter
 {
 public:
@@ -546,16 +546,11 @@ protected:
     wxDECLARE_NO_COPY_CLASS(wxAppConsoleBase);
 };
 
-#include "wxext/appconsole_ext.h"
-
 #if defined(__UNIX__) && !defined(__WINDOWS__)
     #include "wx/unix/app.h"
 #else
     // this has to be a class and not a typedef as we forward declare it
-    class wxAppConsole : public wxAppConsoleBaseExt {
-        public:
-          using wxAppConsoleBaseExt::wxAppConsoleBaseExt;
-    };
+    class wxAppConsole : public wxAppConsoleBase { };
 #endif
 
 // ----------------------------------------------------------------------------
@@ -564,11 +559,9 @@ protected:
 
 #if wxUSE_GUI
 
-
 class WXDLLIMPEXP_CORE wxAppBase : public wxAppConsole
 {
 public:
-    using wxAppConsole::wxAppConsole;
     wxAppBase();
     virtual ~wxAppBase();
 
@@ -750,8 +743,6 @@ protected:
 // now include the declaration of the real class
 // ----------------------------------------------------------------------------
 
-#include "wxext/app_ext.h"
-
 #if defined(__WXMSW__)
     #include "wx/msw/app.h"
 #elif defined(__WXMOTIF__)
@@ -766,7 +757,6 @@ protected:
     #include "wx/x11/app.h"
 #elif defined(__WXMAC__)
     #include "wx/osx/app.h"
-    #include "wxext/osx/app_ext.h"
 #elif defined(__WXQT__)
     #include "wx/qt/app.h"
 #endif

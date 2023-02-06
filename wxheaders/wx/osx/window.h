@@ -25,7 +25,7 @@ class WXDLLIMPEXP_FWD_CORE wxNonOwnedWindow;
 #endif
 
 
-class WXDLLIMPEXP_CORE wxWindowMac: public wxWindowBaseExt
+class WXDLLIMPEXP_CORE wxWindowMac: public wxWindowBase
 {
     wxDECLARE_DYNAMIC_CLASS(wxWindowMac);
 

@@ -1,6 +1,7 @@
 #ifndef _WX_WINDOW_H_EXT_
 #define _WX_WINDOW_H_EXT_
 
+#include <wx/window.h>
 
 class wxVisualAttributesExt;
 class wxWindowListNodeExt;

@@ -15,7 +15,7 @@
 // headers
 // ----------------------------------------------------------------------------
 
-#include "wxext/toplevel_ext.h"      // the base class
+#include "wx/toplevel.h"      // the base class
 #include "wx/statusbr.h"
 
 // the default names for various classes
@@ -53,7 +53,7 @@ class WXDLLIMPEXP_FWD_CORE wxToolBar;
 // CreateXXXBar() is called.
 // ----------------------------------------------------------------------------
 
-class WXDLLIMPEXP_CORE wxFrameBase : public wxTopLevelWindowExt
+class WXDLLIMPEXP_CORE wxFrameBase : public wxTopLevelWindow
 {
 public:
     // construction
@@ -181,7 +181,7 @@ public:
 
     virtual bool IsClientAreaChild(const wxWindow *child) const wxOVERRIDE
     {
-        return !IsOneOfBars(child) && wxTopLevelWindowExt::IsClientAreaChild(child);
+        return !IsOneOfBars(child) && wxTopLevelWindow::IsClientAreaChild(child);
     }
 
 protected:
@@ -255,8 +255,6 @@ protected:
     wxDECLARE_NO_COPY_CLASS(wxFrameBase);
 };
 
-#include "wxext/frame_ext.h"
-
 // include the real class declaration
 #if defined(__WXUNIVERSAL__)
     #include "wx/univ/frame.h"
@@ -271,7 +269,6 @@ protected:
         #include "wx/motif/frame.h"
     #elif defined(__WXMAC__)
         #include "wx/osx/frame.h"
-        #include "wxext/osx/frame_ext.h"
     #elif defined(__WXQT__)
         #include "wx/qt/frame.h"
     #endif

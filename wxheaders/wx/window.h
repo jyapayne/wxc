@@ -15,7 +15,7 @@
 // headers which we must include here
 // ----------------------------------------------------------------------------
 
-#include "wxext/event_ext.h"           // the base class
+#include "wx/event.h"           // the base class
 
 #include "wx/list.h"            // defines wxWindowList
 
@@ -172,7 +172,7 @@ extern WXDLLIMPEXP_DATA_BASE(wxList) wxPendingDelete;
 // temporarily switches event handlers).
 // ----------------------------------------------------------------------------
 
-class WXDLLIMPEXP_CORE wxWindowBase : public wxEvtHandlerExt
+class WXDLLIMPEXP_CORE wxWindowBase : public wxEvtHandler
 {
 public:
     // creating the window
@@ -2066,8 +2066,6 @@ inline void wxWindowBase::SetInitialBestSize(const wxSize& size)
 // now include the declaration of wxWindow class
 // ----------------------------------------------------------------------------
 
-#include "wxext/window_ext.h"
-
 // include the declaration of the platform-specific class
 #if defined(__WXMSW__)
     #ifdef __WXUNIVERSAL__
@@ -2127,8 +2125,6 @@ inline void wxWindowBase::SetInitialBestSize(const wxSize& size)
 
     #include "wx/univ/window.h"
 #endif // wxUniv
-
-#include "wxext/window_ext_inc.h"
 
 // ----------------------------------------------------------------------------
 // inline functions which couldn't be declared in the class body because of

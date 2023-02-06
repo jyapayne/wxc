@@ -13,7 +13,7 @@
 
 #include "wx/bitmap.h"
 
-class WXDLLIMPEXP_CORE wxPanel : public wxPanelBaseExt
+class WXDLLIMPEXP_CORE wxPanel : public wxPanelBase
 {
 public:
     wxPanel() { }

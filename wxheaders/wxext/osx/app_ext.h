@@ -1,6 +1,5 @@
 #ifndef _WX_OSX_APP_H_EXT_
 #define _WX_OSX_APP_H_EXT_
-#include <iostream>
 
 class wxAppExt;
 typedef void (*wxAppExtWakeUpIdleFunc)(const wxAppExt* self);
@@ -41,48 +40,10 @@ typedef void (*wxAppBaseExtOnInitCmdLineFunc)(const wxAppBaseExt* self, wxCmdLin
 typedef void (*wxAppBaseExtSetActiveFunc)(const wxAppBaseExt* self, bool isActive, wxWindow* lastFocus);
 typedef wxAppTraits* (*wxAppBaseExtCreateTraitsFunc)(const wxAppBaseExt* self);
 
-typedef bool (*wxAppConsoleBaseExtInitializeFunc)(const wxAppConsoleBaseExt* self, int& argc, wxChar** argv);
-typedef bool (*wxAppConsoleBaseExtCallOnInitFunc)(const wxAppConsoleBaseExt* self);
-typedef bool (*wxAppConsoleBaseExtOnInitFunc)(const wxAppConsoleBaseExt* self);
-typedef int (*wxAppConsoleBaseExtOnRunFunc)(const wxAppConsoleBaseExt* self);
-typedef void (*wxAppConsoleBaseExtOnLaunchedFunc)(const wxAppConsoleBaseExt* self);
-typedef void (*wxAppConsoleBaseExtOnEventLoopEnterFunc)(const wxAppConsoleBaseExt* self, wxEventLoopBase* param0);
-typedef int (*wxAppConsoleBaseExtOnExitFunc)(const wxAppConsoleBaseExt* self);
-typedef void (*wxAppConsoleBaseExtOnEventLoopExitFunc)(const wxAppConsoleBaseExt* self, wxEventLoopBase* param0);
-typedef void (*wxAppConsoleBaseExtCleanUpFunc)(const wxAppConsoleBaseExt* self);
-typedef void (*wxAppConsoleBaseExtOnFatalExceptionFunc)(const wxAppConsoleBaseExt* self);
-typedef void (*wxAppConsoleBaseExtExitFunc)(const wxAppConsoleBaseExt* self);
-typedef void (*wxAppConsoleBaseExtOnInitCmdLineFunc)(const wxAppConsoleBaseExt* self, wxCmdLineParser& parser);
-typedef bool (*wxAppConsoleBaseExtOnCmdLineParsedFunc)(const wxAppConsoleBaseExt* self, wxCmdLineParser& parser);
-typedef bool (*wxAppConsoleBaseExtOnCmdLineHelpFunc)(const wxAppConsoleBaseExt* self, wxCmdLineParser& parser);
-typedef bool (*wxAppConsoleBaseExtOnCmdLineErrorFunc)(const wxAppConsoleBaseExt* self, wxCmdLineParser& parser);
-typedef void (*wxAppConsoleBaseExtSetCLocaleFunc)(const wxAppConsoleBaseExt* self);
-typedef int (*wxAppConsoleBaseExtFilterEventFunc)(const wxAppConsoleBaseExt* self, wxEvent& event);
-typedef void (*wxAppConsoleBaseExtCallEventHandlerFunc)(const wxAppConsoleBaseExt* self, wxEvtHandler* handler, wxEventFunctor& functor, wxEvent& event);
-typedef void (*wxAppConsoleBaseExtHandleEventFunc)(const wxAppConsoleBaseExt* self, wxEvtHandler* handler, wxEventFunction func, wxEvent& event);
-typedef void (*wxAppConsoleBaseExtOnUnhandledExceptionFunc)(const wxAppConsoleBaseExt* self);
-typedef bool (*wxAppConsoleBaseExtOnExceptionInMainLoopFunc)(const wxAppConsoleBaseExt* self);
-typedef bool (*wxAppConsoleBaseExtStoreCurrentExceptionFunc)(const wxAppConsoleBaseExt* self);
-typedef void (*wxAppConsoleBaseExtRethrowStoredExceptionFunc)(const wxAppConsoleBaseExt* self);
-typedef void (*wxAppConsoleBaseExtProcessPendingEventsFunc)(const wxAppConsoleBaseExt* self);
-typedef bool (*wxAppConsoleBaseExtPendingFunc)(const wxAppConsoleBaseExt* self);
-typedef bool (*wxAppConsoleBaseExtDispatchFunc)(const wxAppConsoleBaseExt* self);
-typedef int (*wxAppConsoleBaseExtMainLoopFunc)(const wxAppConsoleBaseExt* self);
-typedef void (*wxAppConsoleBaseExtExitMainLoopFunc)(const wxAppConsoleBaseExt* self);
-typedef void (*wxAppConsoleBaseExtWakeUpIdleFunc)(const wxAppConsoleBaseExt* self);
-typedef bool (*wxAppConsoleBaseExtProcessIdleFunc)(const wxAppConsoleBaseExt* self);
-typedef bool (*wxAppConsoleBaseExtUsesEventLoopFunc)(const wxAppConsoleBaseExt* self);
-typedef void (*wxAppConsoleBaseExtOnAssertFailureFunc)(const wxAppConsoleBaseExt* self, wxChar const* file, int line, wxChar const* func, wxChar const* cond, wxChar const* msg);
-typedef void (*wxAppConsoleBaseExtOnAssertFunc)(const wxAppConsoleBaseExt* self, wxChar const* file, int line, wxChar const* cond, wxChar const* msg);
-typedef bool (*wxAppConsoleBaseExtIsGUIFunc)(const wxAppConsoleBaseExt* self);
-typedef wxAppTraits* (*wxAppConsoleBaseExtCreateTraitsFunc)(const wxAppConsoleBaseExt* self);
-typedef void* (*wxAppConsoleBaseExtWXReservedApp1Func)(const wxAppConsoleBaseExt* self, void* param0);
-typedef void* (*wxAppConsoleBaseExtWXReservedApp2Func)(const wxAppConsoleBaseExt* self, void* param0);
 
 class wxAppExt: public wxApp
 {
 public:
-  using wxApp::wxApp;
   wxAppExt(): wxApp()  {  }
   virtual ~wxAppExt()  {  }
   wxAppExtWakeUpIdleFunc m_wxAppExtWakeUpIdle = NULL;
@@ -289,45 +250,6 @@ public:
     m_wxAppExtOSXOnDidFinishLaunching = a_OSXOnDidFinishLaunching;
     m_wxAppExtOSXOnShouldTerminate = a_OSXOnShouldTerminate;
     m_wxAppExtOSXOnWillTerminate = a_OSXOnWillTerminate;
-  }
-  wxAppExt(wxAppConsoleBaseExtInitializeFunc a_Initialize, wxAppConsoleBaseExtCallOnInitFunc a_CallOnInit, wxAppConsoleBaseExtOnInitFunc a_OnInit, wxAppConsoleBaseExtOnRunFunc a_OnRun, wxAppConsoleBaseExtOnLaunchedFunc a_OnLaunched, wxAppConsoleBaseExtOnEventLoopEnterFunc a_OnEventLoopEnter, wxAppConsoleBaseExtOnExitFunc a_OnExit, wxAppConsoleBaseExtOnEventLoopExitFunc a_OnEventLoopExit, wxAppConsoleBaseExtCleanUpFunc a_CleanUp, wxAppConsoleBaseExtOnFatalExceptionFunc a_OnFatalException, wxAppConsoleBaseExtExitFunc a_Exit, wxAppConsoleBaseExtOnInitCmdLineFunc a_OnInitCmdLine, wxAppConsoleBaseExtOnCmdLineParsedFunc a_OnCmdLineParsed, wxAppConsoleBaseExtOnCmdLineHelpFunc a_OnCmdLineHelp, wxAppConsoleBaseExtOnCmdLineErrorFunc a_OnCmdLineError, wxAppConsoleBaseExtSetCLocaleFunc a_SetCLocale, wxAppConsoleBaseExtFilterEventFunc a_FilterEvent, wxAppConsoleBaseExtCallEventHandlerFunc a_CallEventHandler, wxAppConsoleBaseExtHandleEventFunc a_HandleEvent, wxAppConsoleBaseExtOnUnhandledExceptionFunc a_OnUnhandledException, wxAppConsoleBaseExtOnExceptionInMainLoopFunc a_OnExceptionInMainLoop, wxAppConsoleBaseExtStoreCurrentExceptionFunc a_StoreCurrentException, wxAppConsoleBaseExtRethrowStoredExceptionFunc a_RethrowStoredException, wxAppConsoleBaseExtProcessPendingEventsFunc a_ProcessPendingEvents, wxAppConsoleBaseExtPendingFunc a_Pending, wxAppConsoleBaseExtDispatchFunc a_Dispatch, wxAppConsoleBaseExtMainLoopFunc a_MainLoop, wxAppConsoleBaseExtExitMainLoopFunc a_ExitMainLoop, wxAppConsoleBaseExtWakeUpIdleFunc a_WakeUpIdle, wxAppConsoleBaseExtProcessIdleFunc a_ProcessIdle, wxAppConsoleBaseExtUsesEventLoopFunc a_UsesEventLoop, wxAppConsoleBaseExtOnAssertFailureFunc a_OnAssertFailure, wxAppConsoleBaseExtOnAssertFunc a_OnAssert, wxAppConsoleBaseExtIsGUIFunc a_IsGUI, wxAppConsoleBaseExtCreateTraitsFunc a_CreateTraits, wxAppConsoleBaseExtWXReservedApp1Func a_WXReservedApp1, wxAppConsoleBaseExtWXReservedApp2Func a_WXReservedApp2): wxApp() {
-    m_wxAppConsoleBaseExtInitialize = a_Initialize;
-    m_wxAppConsoleBaseExtCallOnInit = a_CallOnInit;
-    m_wxAppConsoleBaseExtOnInit = a_OnInit;
-    m_wxAppConsoleBaseExtOnRun = a_OnRun;
-    m_wxAppConsoleBaseExtOnLaunched = a_OnLaunched;
-    m_wxAppConsoleBaseExtOnEventLoopEnter = a_OnEventLoopEnter;
-    m_wxAppConsoleBaseExtOnExit = a_OnExit;
-    m_wxAppConsoleBaseExtOnEventLoopExit = a_OnEventLoopExit;
-    m_wxAppConsoleBaseExtCleanUp = a_CleanUp;
-    m_wxAppConsoleBaseExtOnFatalException = a_OnFatalException;
-    m_wxAppConsoleBaseExtExit = a_Exit;
-    m_wxAppConsoleBaseExtOnInitCmdLine = a_OnInitCmdLine;
-    m_wxAppConsoleBaseExtOnCmdLineParsed = a_OnCmdLineParsed;
-    m_wxAppConsoleBaseExtOnCmdLineHelp = a_OnCmdLineHelp;
-    m_wxAppConsoleBaseExtOnCmdLineError = a_OnCmdLineError;
-    m_wxAppConsoleBaseExtSetCLocale = a_SetCLocale;
-    m_wxAppConsoleBaseExtFilterEvent = a_FilterEvent;
-    m_wxAppConsoleBaseExtCallEventHandler = a_CallEventHandler;
-    m_wxAppConsoleBaseExtHandleEvent = a_HandleEvent;
-    m_wxAppConsoleBaseExtOnUnhandledException = a_OnUnhandledException;
-    m_wxAppConsoleBaseExtOnExceptionInMainLoop = a_OnExceptionInMainLoop;
-    m_wxAppConsoleBaseExtStoreCurrentException = a_StoreCurrentException;
-    m_wxAppConsoleBaseExtRethrowStoredException = a_RethrowStoredException;
-    m_wxAppConsoleBaseExtProcessPendingEvents = a_ProcessPendingEvents;
-    m_wxAppConsoleBaseExtPending = a_Pending;
-    m_wxAppConsoleBaseExtDispatch = a_Dispatch;
-    m_wxAppConsoleBaseExtMainLoop = a_MainLoop;
-    m_wxAppConsoleBaseExtExitMainLoop = a_ExitMainLoop;
-    m_wxAppConsoleBaseExtWakeUpIdle = a_WakeUpIdle;
-    m_wxAppConsoleBaseExtProcessIdle = a_ProcessIdle;
-    m_wxAppConsoleBaseExtUsesEventLoop = a_UsesEventLoop;
-    m_wxAppConsoleBaseExtOnAssertFailure = a_OnAssertFailure;
-    m_wxAppConsoleBaseExtOnAssert = a_OnAssert;
-    m_wxAppConsoleBaseExtIsGUI = a_IsGUI;
-    m_wxAppConsoleBaseExtCreateTraits = a_CreateTraits;
-    m_wxAppConsoleBaseExtWXReservedApp1 = a_WXReservedApp1;
-    m_wxAppConsoleBaseExtWXReservedApp2 = a_WXReservedApp2;
   }
 };
 

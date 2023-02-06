@@ -16,9 +16,7 @@
 // headers and forward declarations
 // ----------------------------------------------------------------------------
 
-#include "wx/wx.h"
-#include "wxext/window_ext.h"
-#include "wxext/window_ext_inc.h"
+#include "wx/window.h"
 #include "wx/containr.h"
 
 class WXDLLIMPEXP_FWD_CORE wxControlContainer;
@@ -29,7 +27,7 @@ extern WXDLLIMPEXP_DATA_CORE(const char) wxPanelNameStr[];
 // wxPanel contains other controls and implements TAB traversal between them
 // ----------------------------------------------------------------------------
 
-class WXDLLIMPEXP_CORE wxPanelBase : public wxNavigationEnabled<wxWindowExt>
+class WXDLLIMPEXP_CORE wxPanelBase : public wxNavigationEnabled<wxWindow>
 {
 public:
     wxPanelBase() { }
@@ -62,8 +60,6 @@ private:
     wxDECLARE_NO_COPY_CLASS(wxPanelBase);
 };
 
-#include "wxext/panel_ext.h"
-
 #if defined(__WXUNIVERSAL__)
     #include "wx/univ/panel.h"
 #elif defined(__WXMSW__)
@@ -71,8 +67,6 @@ private:
 #else
     #define wxHAS_GENERIC_PANEL
     #include "wx/generic/panelg.h"
-    #include "wxext/generic/panelg_ext.h"
 #endif
-
 
 #endif // _WX_PANELH_BASE_

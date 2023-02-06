@@ -31,7 +31,7 @@ bool WXDLLIMPEXP_CORE wxYield();
 
 // Represents the application. Derive OnInit and declare
 // a new App object to start application
-class WXDLLIMPEXP_CORE wxApp: public wxAppBaseExt
+class WXDLLIMPEXP_CORE wxApp: public wxAppBase
 {
     wxDECLARE_DYNAMIC_CLASS(wxApp);
 
@@ -64,7 +64,6 @@ protected:
     wxMacAutoreleasePool* m_macPool;
 
 public:
-    using wxAppBaseExt::wxAppBaseExt;
 
     static bool           sm_isEmbedded;
     // Implementation
