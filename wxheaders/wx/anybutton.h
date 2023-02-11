@@ -193,7 +193,48 @@ protected:
 //#elif defined(__WXGTK__)
 //    #include "wx/gtk1/anybutton.h"
 #elif defined(__WXMAC__)
-    #include "wx/osx/anybutton.h"
+//    #include "wx/osx/anybutton.h"
+class WXDLLIMPEXP_CORE wxAnyButton : public wxAnyButtonBase
+{
+public:
+    wxAnyButton() {}
+
+    static wxSize GetDefaultSize();
+
+    virtual void SetLabel(const wxString& label) wxOVERRIDE;
+
+protected:
+    virtual wxSize DoGetBestSize() const wxOVERRIDE;
+
+    void OnEnterWindow( wxMouseEvent& event);
+    void OnLeaveWindow( wxMouseEvent& event);
+
+    virtual wxBitmap DoGetBitmap(State which) const wxOVERRIDE;
+    virtual void DoSetBitmap(const wxBitmapBundle& bitmapBundle, State which) wxOVERRIDE;
+    virtual void DoSetBitmapPosition(wxDirection dir) wxOVERRIDE;
+
+    virtual void DoSetBitmapMargins(int x, int y) wxOVERRIDE
+    {
+        m_marginX = x;
+        m_marginY = y;
+        InvalidateBestSize();
+    }
+
+    virtual bool DoSetLabelMarkup(const wxString& markup) wxOVERRIDE;
+
+
+    // the margins around the bitmap
+    int m_marginX;
+    int m_marginY;
+
+    // the bitmaps for the different state of the buttons, all of them may be
+    // invalid and the button only shows a bitmap at all if State_Normal bitmap
+    // is valid
+    wxBitmapBundle m_bitmaps[State_Max];
+
+    wxDECLARE_NO_COPY_CLASS(wxAnyButton);
+    wxDECLARE_EVENT_TABLE();
+};
 #elif defined(__WXQT__)
     #include "wx/qt/anybutton.h"
 #else

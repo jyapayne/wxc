@@ -1,12 +1,11 @@
 %module app
 %include <common.i>
 %{
-#include <wx/app.h>
-
-#include "wxext/app_ext.h"
+#include <wx/wx.h>
+#include <wx/vidmode.h>
+#include "wxext/app_ext2.h"
 #if defined(__WXMAC__)
 #include <objc/runtime.h>
-#include "wxext/osx/app_ext.h"
 #endif
 
 %}
@@ -43,6 +42,7 @@
 %import "wx/hashmap.h"
 %import "wx/math.h"
 %import "wx/localedefs.h"
+%import "wx/eventfilter.h"
 %import "wx/event.h"
 %import "wx/dataobj.h"
 %import "wx/cursor.h"
@@ -64,11 +64,11 @@
 %import "wx/vidmode.h"
 %import "wx/cmdargs.h"
 %import "wx/string.h"
+%import "wx/nonownedwnd.h"
 %import "wx/toplevel.h"
 %import "wx/frame.h"
-%include "wx/app.h"
 %include "wx/build.h"
-%include "wxext/app_ext.h"
+%include "wx/app.h"
 
 #if defined(__WXMSW__)
     %include "wx/msw/app.h"
@@ -84,10 +84,11 @@
     %include "wx/x11/app.h"
 #elif defined(__WXMAC__)
     %include "wx/osx/app.h"
-    %include "wxext/osx/app_ext.h"
 #elif defined(__WXQT__)
     %include "wx/qt/app.h"
 #endif
+
+%include "wxext/app_ext2.h"
 
 %{
 /* typedef wxWindow* (* InitTopWindow)(); */

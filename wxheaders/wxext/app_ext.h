@@ -1,719 +1,825 @@
 #ifndef _WX_APP_H_EXT_
 #define _WX_APP_H_EXT_
 
-#include <wx/wx.h>
 #include <wx/vidmode.h>
 
-class wxAppConsoleBaseExt;
-typedef bool (*wxAppConsoleBaseExtInitializeFunc)(const wxAppConsoleBaseExt* self, int& argc, wxChar** argv);
-typedef bool (*wxAppConsoleBaseExtCallOnInitFunc)(const wxAppConsoleBaseExt* self);
-typedef bool (*wxAppConsoleBaseExtOnInitFunc)(const wxAppConsoleBaseExt* self);
-typedef int (*wxAppConsoleBaseExtOnRunFunc)(const wxAppConsoleBaseExt* self);
-typedef void (*wxAppConsoleBaseExtOnLaunchedFunc)(const wxAppConsoleBaseExt* self);
-typedef void (*wxAppConsoleBaseExtOnEventLoopEnterFunc)(const wxAppConsoleBaseExt* self, wxEventLoopBase* param0);
-typedef int (*wxAppConsoleBaseExtOnExitFunc)(const wxAppConsoleBaseExt* self);
-typedef void (*wxAppConsoleBaseExtOnEventLoopExitFunc)(const wxAppConsoleBaseExt* self, wxEventLoopBase* param0);
-typedef void (*wxAppConsoleBaseExtCleanUpFunc)(const wxAppConsoleBaseExt* self);
-typedef void (*wxAppConsoleBaseExtOnFatalExceptionFunc)(const wxAppConsoleBaseExt* self);
-typedef void (*wxAppConsoleBaseExtExitFunc)(const wxAppConsoleBaseExt* self);
-typedef void (*wxAppConsoleBaseExtOnInitCmdLineFunc)(const wxAppConsoleBaseExt* self, wxCmdLineParser& parser);
-typedef bool (*wxAppConsoleBaseExtOnCmdLineParsedFunc)(const wxAppConsoleBaseExt* self, wxCmdLineParser& parser);
-typedef bool (*wxAppConsoleBaseExtOnCmdLineHelpFunc)(const wxAppConsoleBaseExt* self, wxCmdLineParser& parser);
-typedef bool (*wxAppConsoleBaseExtOnCmdLineErrorFunc)(const wxAppConsoleBaseExt* self, wxCmdLineParser& parser);
-typedef void (*wxAppConsoleBaseExtSetCLocaleFunc)(const wxAppConsoleBaseExt* self);
-typedef int (*wxAppConsoleBaseExtFilterEventFunc)(const wxAppConsoleBaseExt* self, wxEvent& event);
-typedef void (*wxAppConsoleBaseExtCallEventHandlerFunc)(const wxAppConsoleBaseExt* self, wxEvtHandler* handler, wxEventFunctor& functor, wxEvent& event);
-typedef void (*wxAppConsoleBaseExtHandleEventFunc)(const wxAppConsoleBaseExt* self, wxEvtHandler* handler, wxEventFunction func, wxEvent& event);
-typedef void (*wxAppConsoleBaseExtOnUnhandledExceptionFunc)(const wxAppConsoleBaseExt* self);
-typedef bool (*wxAppConsoleBaseExtOnExceptionInMainLoopFunc)(const wxAppConsoleBaseExt* self);
-typedef bool (*wxAppConsoleBaseExtStoreCurrentExceptionFunc)(const wxAppConsoleBaseExt* self);
-typedef void (*wxAppConsoleBaseExtRethrowStoredExceptionFunc)(const wxAppConsoleBaseExt* self);
-typedef void (*wxAppConsoleBaseExtProcessPendingEventsFunc)(const wxAppConsoleBaseExt* self);
-typedef bool (*wxAppConsoleBaseExtPendingFunc)(const wxAppConsoleBaseExt* self);
-typedef bool (*wxAppConsoleBaseExtDispatchFunc)(const wxAppConsoleBaseExt* self);
-typedef int (*wxAppConsoleBaseExtMainLoopFunc)(const wxAppConsoleBaseExt* self);
-typedef void (*wxAppConsoleBaseExtExitMainLoopFunc)(const wxAppConsoleBaseExt* self);
-typedef void (*wxAppConsoleBaseExtWakeUpIdleFunc)(const wxAppConsoleBaseExt* self);
-typedef bool (*wxAppConsoleBaseExtProcessIdleFunc)(const wxAppConsoleBaseExt* self);
-typedef bool (*wxAppConsoleBaseExtUsesEventLoopFunc)(const wxAppConsoleBaseExt* self);
-typedef void (*wxAppConsoleBaseExtOnAssertFailureFunc)(const wxAppConsoleBaseExt* self, wxChar const* file, int line, wxChar const* func, wxChar const* cond, wxChar const* msg);
-typedef void (*wxAppConsoleBaseExtOnAssertFunc)(const wxAppConsoleBaseExt* self, wxChar const* file, int line, wxChar const* cond, wxChar const* msg);
-typedef bool (*wxAppConsoleBaseExtIsGUIFunc)(const wxAppConsoleBaseExt* self);
-typedef wxAppTraits* (*wxAppConsoleBaseExtCreateTraitsFunc)(const wxAppConsoleBaseExt* self);
-typedef void* (*wxAppConsoleBaseExtWXReservedApp1Func)(const wxAppConsoleBaseExt* self, void* param0);
-typedef void* (*wxAppConsoleBaseExtWXReservedApp2Func)(const wxAppConsoleBaseExt* self, void* param0);
-class wxAppBaseExt;
-typedef bool (*wxAppBaseExtInitializeFunc)(const wxAppBaseExt* self, int& argc, wxChar** argv);
-typedef bool (*wxAppBaseExtOnInitGuiFunc)(const wxAppBaseExt* self);
-typedef int (*wxAppBaseExtOnRunFunc)(const wxAppBaseExt* self);
-typedef int (*wxAppBaseExtOnExitFunc)(const wxAppBaseExt* self);
-typedef void (*wxAppBaseExtCleanUpFunc)(const wxAppBaseExt* self);
-typedef bool (*wxAppBaseExtSafeYieldFunc)(const wxAppBaseExt* self, wxWindow* win, bool onlyIfNeeded);
-typedef bool (*wxAppBaseExtSafeYieldForFunc)(const wxAppBaseExt* self, wxWindow* win, long eventsToProcess);
-typedef bool (*wxAppBaseExtProcessIdleFunc)(const wxAppBaseExt* self);
-typedef bool (*wxAppBaseExtUsesEventLoopFunc)(const wxAppBaseExt* self);
-typedef bool (*wxAppBaseExtIsActiveFunc)(const wxAppBaseExt* self);
-typedef wxWindow* (*wxAppBaseExtGetTopWindowFunc)(const wxAppBaseExt* self);
-typedef wxVideoMode (*wxAppBaseExtGetDisplayModeFunc)(const wxAppBaseExt* self);
-typedef bool (*wxAppBaseExtSetDisplayModeFunc)(const wxAppBaseExt* self, wxVideoMode const& param0);
-typedef void (*wxAppBaseExtSetPrintModeFunc)(const wxAppBaseExt* self, int param0);
-typedef wxLayoutDirection (*wxAppBaseExtGetLayoutDirectionFunc)(const wxAppBaseExt* self);
-typedef bool (*wxAppBaseExtSetNativeThemeFunc)(const wxAppBaseExt* self, wxString const& param0);
-typedef bool (*wxAppBaseExtOnCmdLineParsedFunc)(const wxAppBaseExt* self, wxCmdLineParser& parser);
-typedef void (*wxAppBaseExtOnInitCmdLineFunc)(const wxAppBaseExt* self, wxCmdLineParser& parser);
-typedef void (*wxAppBaseExtSetActiveFunc)(const wxAppBaseExt* self, bool isActive, wxWindow* lastFocus);
-typedef bool (*wxAppBaseExtIsGUIFunc)(const wxAppBaseExt* self);
-typedef wxAppTraits* (*wxAppBaseExtCreateTraitsFunc)(const wxAppBaseExt* self);
-class wxAppInitializerExt;
+class wxAppExt;
+typedef void (*wxAppExtAddPendingEventwxEventCRFunc)(const wxAppExt* self, wxEvent const& event);
+typedef void (*wxAppExtCallEventHandlerwxEvtHandlerPwxEventFunctorRwxEventRFunc)(const wxAppExt* self, wxEvtHandler* handler, wxEventFunctor& functor, wxEvent& event);
+typedef bool (*wxAppExtCallOnInitFunc)(const wxAppExt* self);
+typedef void (*wxAppExtCleanUpFunc)(const wxAppExt* self);
+typedef wxObjectRefData* (*wxAppExtCloneRefDatawxObjectRefDataCPFunc)(const wxAppExt* self, wxObjectRefData const* data);
+typedef wxObjectRefData* (*wxAppExtCreateRefDataFunc)(const wxAppExt* self);
+typedef wxAppTraits* (*wxAppExtCreateTraitsFunc)(const wxAppExt* self);
+typedef bool (*wxAppExtDispatchFunc)(const wxAppExt* self);
+typedef void* (*wxAppExtDoGetClientDataFunc)(const wxAppExt* self);
+typedef wxClientData* (*wxAppExtDoGetClientObjectFunc)(const wxAppExt* self);
+typedef void (*wxAppExtDoSetClientDatavoidPFunc)(const wxAppExt* self, void* data);
+typedef void (*wxAppExtDoSetClientObjectwxClientDataPFunc)(const wxAppExt* self, wxClientData* data);
+typedef void (*wxAppExtExitFunc)(const wxAppExt* self);
+typedef void (*wxAppExtExitMainLoopFunc)(const wxAppExt* self);
+typedef int (*wxAppExtFilterEventwxEventRFunc)(const wxAppExt* self, wxEvent& event);
+typedef wxClassInfo* (*wxAppExtGetClassInfoFunc)(const wxAppExt* self);
+typedef wxVideoMode (*wxAppExtGetDisplayModeFunc)(const wxAppExt* self);
+typedef wxEventHashTable& (*wxAppExtGetEventHashTableFunc)(const wxAppExt* self);
+typedef wxEventTable const* (*wxAppExtGetEventTableFunc)(const wxAppExt* self);
+typedef wxLayoutDirection (*wxAppExtGetLayoutDirectionFunc)(const wxAppExt* self);
+typedef wxWindow* (*wxAppExtGetTopWindowFunc)(const wxAppExt* self);
+typedef void (*wxAppExtHandleEventwxEvtHandlerPwxEventFunctionwxEventRFunc)(const wxAppExt* self, wxEvtHandler* handler, wxEventFunction func, wxEvent& event);
+typedef bool (*wxAppExtInitializeintRwxCharPPFunc)(const wxAppExt* self, int& argc, wxChar** argv);
+typedef bool (*wxAppExtIsActiveFunc)(const wxAppExt* self);
+typedef bool (*wxAppExtIsGUIFunc)(const wxAppExt* self);
+typedef int (*wxAppExtMainLoopFunc)(const wxAppExt* self);
+typedef void (*wxAppExtOnAssertwxCharCPintwxCharCPwxCharCPFunc)(const wxAppExt* self, wxChar const* file, int line, wxChar const* cond, wxChar const* msg);
+typedef void (*wxAppExtOnAssertFailurewxCharCPintwxCharCPwxCharCPwxCharCPFunc)(const wxAppExt* self, wxChar const* file, int line, wxChar const* func, wxChar const* cond, wxChar const* msg);
+typedef bool (*wxAppExtOnCmdLineErrorwxCmdLineParserRFunc)(const wxAppExt* self, wxCmdLineParser& parser);
+typedef bool (*wxAppExtOnCmdLineHelpwxCmdLineParserRFunc)(const wxAppExt* self, wxCmdLineParser& parser);
+typedef bool (*wxAppExtOnCmdLineParsedwxCmdLineParserRFunc)(const wxAppExt* self, wxCmdLineParser& parser);
+typedef bool (*wxAppExtOnDynamicBindwxDynamicEventTableEntryRFunc)(const wxAppExt* self, wxDynamicEventTableEntry& param0);
+typedef void (*wxAppExtOnEventLoopEnterwxEventLoopBasePFunc)(const wxAppExt* self, wxEventLoopBase* param0);
+typedef void (*wxAppExtOnEventLoopExitwxEventLoopBasePFunc)(const wxAppExt* self, wxEventLoopBase* param0);
+typedef bool (*wxAppExtOnExceptionInMainLoopFunc)(const wxAppExt* self);
+typedef int (*wxAppExtOnExitFunc)(const wxAppExt* self);
+typedef void (*wxAppExtOnFatalExceptionFunc)(const wxAppExt* self);
+typedef bool (*wxAppExtOnInitFunc)(const wxAppExt* self);
+typedef void (*wxAppExtOnInitCmdLinewxCmdLineParserRFunc)(const wxAppExt* self, wxCmdLineParser& parser);
+typedef bool (*wxAppExtOnInitGuiFunc)(const wxAppExt* self);
+typedef void (*wxAppExtOnLaunchedFunc)(const wxAppExt* self);
+typedef int (*wxAppExtOnRunFunc)(const wxAppExt* self);
+typedef void (*wxAppExtOnUnhandledExceptionFunc)(const wxAppExt* self);
+typedef bool (*wxAppExtPendingFunc)(const wxAppExt* self);
+typedef bool (*wxAppExtProcessEventwxEventRFunc)(const wxAppExt* self, wxEvent& event);
+typedef bool (*wxAppExtProcessIdleFunc)(const wxAppExt* self);
+typedef void (*wxAppExtProcessPendingEventsFunc)(const wxAppExt* self);
+typedef void (*wxAppExtQueueEventwxEventPFunc)(const wxAppExt* self, wxEvent* event);
+typedef void (*wxAppExtRethrowStoredExceptionFunc)(const wxAppExt* self);
+typedef bool (*wxAppExtSafeYieldwxWindowPboolFunc)(const wxAppExt* self, wxWindow* win, bool onlyIfNeeded);
+typedef bool (*wxAppExtSafeYieldForwxWindowPlongFunc)(const wxAppExt* self, wxWindow* win, long eventsToProcess);
+typedef bool (*wxAppExtSearchEventTablewxEventTableRwxEventRFunc)(const wxAppExt* self, wxEventTable& table, wxEvent& event);
+typedef void (*wxAppExtSetActiveboolwxWindowPFunc)(const wxAppExt* self, bool isActive, wxWindow* lastFocus);
+typedef void (*wxAppExtSetCLocaleFunc)(const wxAppExt* self);
+typedef bool (*wxAppExtSetDisplayModewxVideoModeCRFunc)(const wxAppExt* self, wxVideoMode const& param0);
+typedef bool (*wxAppExtSetNativeThemewxStringCRFunc)(const wxAppExt* self, wxString const& param0);
+typedef void (*wxAppExtSetNextHandlerwxEvtHandlerPFunc)(const wxAppExt* self, wxEvtHandler* handler);
+typedef void (*wxAppExtSetPreviousHandlerwxEvtHandlerPFunc)(const wxAppExt* self, wxEvtHandler* handler);
+typedef void (*wxAppExtSetPrintModeintFunc)(const wxAppExt* self, int param0);
+typedef bool (*wxAppExtStoreCurrentExceptionFunc)(const wxAppExt* self);
+typedef bool (*wxAppExtTryAfterwxEventRFunc)(const wxAppExt* self, wxEvent& event);
+typedef bool (*wxAppExtTryBeforewxEventRFunc)(const wxAppExt* self, wxEvent& event);
+typedef bool (*wxAppExtUsesEventLoopFunc)(const wxAppExt* self);
+typedef void* (*wxAppExtWXReservedApp1voidPFunc)(const wxAppExt* self, void* param0);
+typedef void* (*wxAppExtWXReservedApp2voidPFunc)(const wxAppExt* self, void* param0);
+typedef void* (*wxAppExtWXReservedEvtHandler1voidPFunc)(const wxAppExt* self, void* param0);
+typedef void* (*wxAppExtWXReservedEvtHandler2voidPFunc)(const wxAppExt* self, void* param0);
+typedef void (*wxAppExtWakeUpIdleFunc)(const wxAppExt* self);
 
-class wxAppConsoleBaseExt: public wxAppConsoleBase
+class wxAppExt: public wxApp
 {
 public:
-  wxAppConsoleBaseExt(): wxAppConsoleBase()  {  }
-  virtual ~wxAppConsoleBaseExt() override  {  }
-  wxAppConsoleBaseExtInitializeFunc m_wxAppConsoleBaseExtInitialize = NULL;
-  virtual bool Initialize(int& argc, wxChar** argv) override
+  wxAppExt(): wxApp()  {  }
+  virtual ~wxAppExt() override  {  }
+  wxAppExtAddPendingEventwxEventCRFunc m_wxAppExtAddPendingEventwxEventCR = NULL;
+  virtual void AddPendingEvent(wxEvent const& event) override
   {
-    bool res = wxAppConsoleBase::Initialize(argc, argv);
-    if (*m_wxAppConsoleBaseExtInitialize != NULL){
-      return m_wxAppConsoleBaseExtInitialize(this, argc, argv);
-    }
-    else {
-      return res;
+    wxApp::AddPendingEvent(event);
+    if (*m_wxAppExtAddPendingEventwxEventCR != NULL){
+      return m_wxAppExtAddPendingEventwxEventCR(this, event);
     }
   }
-  wxAppConsoleBaseExtCallOnInitFunc m_wxAppConsoleBaseExtCallOnInit = NULL;
-  virtual bool CallOnInit() override
-  {
-    bool res = wxAppConsoleBase::CallOnInit();
-    if (*m_wxAppConsoleBaseExtCallOnInit != NULL){
-      return m_wxAppConsoleBaseExtCallOnInit(this);
-    }
-    else {
-      return res;
-    }
-  }
-  wxAppConsoleBaseExtOnInitFunc m_wxAppConsoleBaseExtOnInit = NULL;
-  virtual bool OnInit() override
-  {
-    bool res = wxAppConsoleBase::OnInit();
-    if (*m_wxAppConsoleBaseExtOnInit != NULL){
-      return m_wxAppConsoleBaseExtOnInit(this);
-    }
-    else {
-      return res;
-    }
-  }
-  wxAppConsoleBaseExtOnRunFunc m_wxAppConsoleBaseExtOnRun = NULL;
-  virtual int OnRun() override
-  {
-    int res = wxAppConsoleBase::OnRun();
-    if (*m_wxAppConsoleBaseExtOnRun != NULL){
-      return m_wxAppConsoleBaseExtOnRun(this);
-    }
-    else {
-      return res;
-    }
-  }
-  wxAppConsoleBaseExtOnLaunchedFunc m_wxAppConsoleBaseExtOnLaunched = NULL;
-  virtual void OnLaunched() override
-  {
-    wxAppConsoleBase::OnLaunched();
-    if (*m_wxAppConsoleBaseExtOnLaunched != NULL){
-      return m_wxAppConsoleBaseExtOnLaunched(this);
-    }
-  }
-  wxAppConsoleBaseExtOnEventLoopEnterFunc m_wxAppConsoleBaseExtOnEventLoopEnter = NULL;
-  virtual void OnEventLoopEnter(wxEventLoopBase* param0) override
-  {
-    wxAppConsoleBase::OnEventLoopEnter(param0);
-    if (*m_wxAppConsoleBaseExtOnEventLoopEnter != NULL){
-      return m_wxAppConsoleBaseExtOnEventLoopEnter(this, param0);
-    }
-  }
-  wxAppConsoleBaseExtOnExitFunc m_wxAppConsoleBaseExtOnExit = NULL;
-  virtual int OnExit() override
-  {
-    int res = wxAppConsoleBase::OnExit();
-    if (*m_wxAppConsoleBaseExtOnExit != NULL){
-      return m_wxAppConsoleBaseExtOnExit(this);
-    }
-    else {
-      return res;
-    }
-  }
-  wxAppConsoleBaseExtOnEventLoopExitFunc m_wxAppConsoleBaseExtOnEventLoopExit = NULL;
-  virtual void OnEventLoopExit(wxEventLoopBase* param0) override
-  {
-    wxAppConsoleBase::OnEventLoopExit(param0);
-    if (*m_wxAppConsoleBaseExtOnEventLoopExit != NULL){
-      return m_wxAppConsoleBaseExtOnEventLoopExit(this, param0);
-    }
-  }
-  wxAppConsoleBaseExtCleanUpFunc m_wxAppConsoleBaseExtCleanUp = NULL;
-  virtual void CleanUp() override
-  {
-    wxAppConsoleBase::CleanUp();
-    if (*m_wxAppConsoleBaseExtCleanUp != NULL){
-      return m_wxAppConsoleBaseExtCleanUp(this);
-    }
-  }
-  wxAppConsoleBaseExtOnFatalExceptionFunc m_wxAppConsoleBaseExtOnFatalException = NULL;
-  virtual void OnFatalException() override
-  {
-    wxAppConsoleBase::OnFatalException();
-    if (*m_wxAppConsoleBaseExtOnFatalException != NULL){
-      return m_wxAppConsoleBaseExtOnFatalException(this);
-    }
-  }
-  wxAppConsoleBaseExtExitFunc m_wxAppConsoleBaseExtExit = NULL;
-  virtual void Exit() override
-  {
-    wxAppConsoleBase::Exit();
-    if (*m_wxAppConsoleBaseExtExit != NULL){
-      return m_wxAppConsoleBaseExtExit(this);
-    }
-  }
-  wxAppConsoleBaseExtOnInitCmdLineFunc m_wxAppConsoleBaseExtOnInitCmdLine = NULL;
-  virtual void OnInitCmdLine(wxCmdLineParser& parser) override
-  {
-    wxAppConsoleBase::OnInitCmdLine(parser);
-    if (*m_wxAppConsoleBaseExtOnInitCmdLine != NULL){
-      return m_wxAppConsoleBaseExtOnInitCmdLine(this, parser);
-    }
-  }
-  wxAppConsoleBaseExtOnCmdLineParsedFunc m_wxAppConsoleBaseExtOnCmdLineParsed = NULL;
-  virtual bool OnCmdLineParsed(wxCmdLineParser& parser) override
-  {
-    bool res = wxAppConsoleBase::OnCmdLineParsed(parser);
-    if (*m_wxAppConsoleBaseExtOnCmdLineParsed != NULL){
-      return m_wxAppConsoleBaseExtOnCmdLineParsed(this, parser);
-    }
-    else {
-      return res;
-    }
-  }
-  wxAppConsoleBaseExtOnCmdLineHelpFunc m_wxAppConsoleBaseExtOnCmdLineHelp = NULL;
-  virtual bool OnCmdLineHelp(wxCmdLineParser& parser) override
-  {
-    bool res = wxAppConsoleBase::OnCmdLineHelp(parser);
-    if (*m_wxAppConsoleBaseExtOnCmdLineHelp != NULL){
-      return m_wxAppConsoleBaseExtOnCmdLineHelp(this, parser);
-    }
-    else {
-      return res;
-    }
-  }
-  wxAppConsoleBaseExtOnCmdLineErrorFunc m_wxAppConsoleBaseExtOnCmdLineError = NULL;
-  virtual bool OnCmdLineError(wxCmdLineParser& parser) override
-  {
-    bool res = wxAppConsoleBase::OnCmdLineError(parser);
-    if (*m_wxAppConsoleBaseExtOnCmdLineError != NULL){
-      return m_wxAppConsoleBaseExtOnCmdLineError(this, parser);
-    }
-    else {
-      return res;
-    }
-  }
-  wxAppConsoleBaseExtSetCLocaleFunc m_wxAppConsoleBaseExtSetCLocale = NULL;
-  virtual void SetCLocale() override
-  {
-    wxAppConsoleBase::SetCLocale();
-    if (*m_wxAppConsoleBaseExtSetCLocale != NULL){
-      return m_wxAppConsoleBaseExtSetCLocale(this);
-    }
-  }
-  wxAppConsoleBaseExtFilterEventFunc m_wxAppConsoleBaseExtFilterEvent = NULL;
-  virtual int FilterEvent(wxEvent& event) override
-  {
-    int res = wxAppConsoleBase::FilterEvent(event);
-    if (*m_wxAppConsoleBaseExtFilterEvent != NULL){
-      return m_wxAppConsoleBaseExtFilterEvent(this, event);
-    }
-    else {
-      return res;
-    }
-  }
-  wxAppConsoleBaseExtCallEventHandlerFunc m_wxAppConsoleBaseExtCallEventHandler = NULL;
+  wxAppExtCallEventHandlerwxEvtHandlerPwxEventFunctorRwxEventRFunc m_wxAppExtCallEventHandlerwxEvtHandlerPwxEventFunctorRwxEventR = NULL;
   virtual void CallEventHandler(wxEvtHandler* handler, wxEventFunctor& functor, wxEvent& event) const override
   {
-    wxAppConsoleBase::CallEventHandler(handler, functor, event);
-    if (*m_wxAppConsoleBaseExtCallEventHandler != NULL){
-      return m_wxAppConsoleBaseExtCallEventHandler(this, handler, functor, event);
+    wxApp::CallEventHandler(handler, functor, event);
+    if (*m_wxAppExtCallEventHandlerwxEvtHandlerPwxEventFunctorRwxEventR != NULL){
+      return m_wxAppExtCallEventHandlerwxEvtHandlerPwxEventFunctorRwxEventR(this, handler, functor, event);
     }
   }
-  wxAppConsoleBaseExtHandleEventFunc m_wxAppConsoleBaseExtHandleEvent = NULL;
-  virtual void HandleEvent(wxEvtHandler* handler, wxEventFunction func, wxEvent& event) const override
+  wxAppExtCallOnInitFunc m_wxAppExtCallOnInit = NULL;
+  virtual bool CallOnInit() override
   {
-    wxAppConsoleBase::HandleEvent(handler, func, event);
-    if (*m_wxAppConsoleBaseExtHandleEvent != NULL){
-      return m_wxAppConsoleBaseExtHandleEvent(this, handler, func, event);
-    }
-  }
-  wxAppConsoleBaseExtOnUnhandledExceptionFunc m_wxAppConsoleBaseExtOnUnhandledException = NULL;
-  virtual void OnUnhandledException() override
-  {
-    wxAppConsoleBase::OnUnhandledException();
-    if (*m_wxAppConsoleBaseExtOnUnhandledException != NULL){
-      return m_wxAppConsoleBaseExtOnUnhandledException(this);
-    }
-  }
-  wxAppConsoleBaseExtOnExceptionInMainLoopFunc m_wxAppConsoleBaseExtOnExceptionInMainLoop = NULL;
-  virtual bool OnExceptionInMainLoop() override
-  {
-    bool res = wxAppConsoleBase::OnExceptionInMainLoop();
-    if (*m_wxAppConsoleBaseExtOnExceptionInMainLoop != NULL){
-      return m_wxAppConsoleBaseExtOnExceptionInMainLoop(this);
+    bool res = wxApp::CallOnInit();
+    if (*m_wxAppExtCallOnInit != NULL){
+      return m_wxAppExtCallOnInit(this);
     }
     else {
       return res;
     }
   }
-  wxAppConsoleBaseExtStoreCurrentExceptionFunc m_wxAppConsoleBaseExtStoreCurrentException = NULL;
-  virtual bool StoreCurrentException() override
-  {
-    bool res = wxAppConsoleBase::StoreCurrentException();
-    if (*m_wxAppConsoleBaseExtStoreCurrentException != NULL){
-      return m_wxAppConsoleBaseExtStoreCurrentException(this);
-    }
-    else {
-      return res;
-    }
-  }
-  wxAppConsoleBaseExtRethrowStoredExceptionFunc m_wxAppConsoleBaseExtRethrowStoredException = NULL;
-  virtual void RethrowStoredException() override
-  {
-    wxAppConsoleBase::RethrowStoredException();
-    if (*m_wxAppConsoleBaseExtRethrowStoredException != NULL){
-      return m_wxAppConsoleBaseExtRethrowStoredException(this);
-    }
-  }
-  wxAppConsoleBaseExtProcessPendingEventsFunc m_wxAppConsoleBaseExtProcessPendingEvents = NULL;
-  virtual void ProcessPendingEvents() override
-  {
-    wxAppConsoleBase::ProcessPendingEvents();
-    if (*m_wxAppConsoleBaseExtProcessPendingEvents != NULL){
-      return m_wxAppConsoleBaseExtProcessPendingEvents(this);
-    }
-  }
-  wxAppConsoleBaseExtPendingFunc m_wxAppConsoleBaseExtPending = NULL;
-  virtual bool Pending() override
-  {
-    bool res = wxAppConsoleBase::Pending();
-    if (*m_wxAppConsoleBaseExtPending != NULL){
-      return m_wxAppConsoleBaseExtPending(this);
-    }
-    else {
-      return res;
-    }
-  }
-  wxAppConsoleBaseExtDispatchFunc m_wxAppConsoleBaseExtDispatch = NULL;
-  virtual bool Dispatch() override
-  {
-    bool res = wxAppConsoleBase::Dispatch();
-    if (*m_wxAppConsoleBaseExtDispatch != NULL){
-      return m_wxAppConsoleBaseExtDispatch(this);
-    }
-    else {
-      return res;
-    }
-  }
-  wxAppConsoleBaseExtMainLoopFunc m_wxAppConsoleBaseExtMainLoop = NULL;
-  virtual int MainLoop() override
-  {
-    int res = wxAppConsoleBase::MainLoop();
-    if (*m_wxAppConsoleBaseExtMainLoop != NULL){
-      return m_wxAppConsoleBaseExtMainLoop(this);
-    }
-    else {
-      return res;
-    }
-  }
-  wxAppConsoleBaseExtExitMainLoopFunc m_wxAppConsoleBaseExtExitMainLoop = NULL;
-  virtual void ExitMainLoop() override
-  {
-    wxAppConsoleBase::ExitMainLoop();
-    if (*m_wxAppConsoleBaseExtExitMainLoop != NULL){
-      return m_wxAppConsoleBaseExtExitMainLoop(this);
-    }
-  }
-  wxAppConsoleBaseExtWakeUpIdleFunc m_wxAppConsoleBaseExtWakeUpIdle = NULL;
-  virtual void WakeUpIdle() override
-  {
-    wxAppConsoleBase::WakeUpIdle();
-    if (*m_wxAppConsoleBaseExtWakeUpIdle != NULL){
-      return m_wxAppConsoleBaseExtWakeUpIdle(this);
-    }
-  }
-  wxAppConsoleBaseExtProcessIdleFunc m_wxAppConsoleBaseExtProcessIdle = NULL;
-  virtual bool ProcessIdle() override
-  {
-    bool res = wxAppConsoleBase::ProcessIdle();
-    if (*m_wxAppConsoleBaseExtProcessIdle != NULL){
-      return m_wxAppConsoleBaseExtProcessIdle(this);
-    }
-    else {
-      return res;
-    }
-  }
-  wxAppConsoleBaseExtUsesEventLoopFunc m_wxAppConsoleBaseExtUsesEventLoop = NULL;
-  virtual bool UsesEventLoop() const override
-  {
-    bool res = wxAppConsoleBase::UsesEventLoop();
-    if (*m_wxAppConsoleBaseExtUsesEventLoop != NULL){
-      return m_wxAppConsoleBaseExtUsesEventLoop(this);
-    }
-    else {
-      return res;
-    }
-  }
-  wxAppConsoleBaseExtOnAssertFailureFunc m_wxAppConsoleBaseExtOnAssertFailure = NULL;
-  virtual void OnAssertFailure(wxChar const* file, int line, wxChar const* func, wxChar const* cond, wxChar const* msg) override
-  {
-    wxAppConsoleBase::OnAssertFailure(file, line, func, cond, msg);
-    if (*m_wxAppConsoleBaseExtOnAssertFailure != NULL){
-      return m_wxAppConsoleBaseExtOnAssertFailure(this, file, line, func, cond, msg);
-    }
-  }
-  wxAppConsoleBaseExtOnAssertFunc m_wxAppConsoleBaseExtOnAssert = NULL;
-  virtual void OnAssert(wxChar const* file, int line, wxChar const* cond, wxChar const* msg) override
-  {
-    wxAppConsoleBase::OnAssert(file, line, cond, msg);
-    if (*m_wxAppConsoleBaseExtOnAssert != NULL){
-      return m_wxAppConsoleBaseExtOnAssert(this, file, line, cond, msg);
-    }
-  }
-  wxAppConsoleBaseExtIsGUIFunc m_wxAppConsoleBaseExtIsGUI = NULL;
-  virtual bool IsGUI() const override
-  {
-    bool res = wxAppConsoleBase::IsGUI();
-    if (*m_wxAppConsoleBaseExtIsGUI != NULL){
-      return m_wxAppConsoleBaseExtIsGUI(this);
-    }
-    else {
-      return res;
-    }
-  }
-  wxAppConsoleBaseExtCreateTraitsFunc m_wxAppConsoleBaseExtCreateTraits = NULL;
-  virtual wxAppTraits* CreateTraits() override
-  {
-    wxAppTraits* res = wxAppConsoleBase::CreateTraits();
-    if (*m_wxAppConsoleBaseExtCreateTraits != NULL){
-      return m_wxAppConsoleBaseExtCreateTraits(this);
-    }
-    else {
-      return res;
-    }
-  }
-  wxAppConsoleBaseExtWXReservedApp1Func m_wxAppConsoleBaseExtWXReservedApp1 = NULL;
-  virtual void* WXReservedApp1(void* param0) override
-  {
-    void* res = wxAppConsoleBase::WXReservedApp1(param0);
-    if (*m_wxAppConsoleBaseExtWXReservedApp1 != NULL){
-      return m_wxAppConsoleBaseExtWXReservedApp1(this, param0);
-    }
-    else {
-      return res;
-    }
-  }
-  wxAppConsoleBaseExtWXReservedApp2Func m_wxAppConsoleBaseExtWXReservedApp2 = NULL;
-  virtual void* WXReservedApp2(void* param0) override
-  {
-    void* res = wxAppConsoleBase::WXReservedApp2(param0);
-    if (*m_wxAppConsoleBaseExtWXReservedApp2 != NULL){
-      return m_wxAppConsoleBaseExtWXReservedApp2(this, param0);
-    }
-    else {
-      return res;
-    }
-  }
-  wxAppConsoleBaseExt(wxAppConsoleBaseExtInitializeFunc a_Initialize, wxAppConsoleBaseExtCallOnInitFunc a_CallOnInit, wxAppConsoleBaseExtOnInitFunc a_OnInit, wxAppConsoleBaseExtOnRunFunc a_OnRun, wxAppConsoleBaseExtOnLaunchedFunc a_OnLaunched, wxAppConsoleBaseExtOnEventLoopEnterFunc a_OnEventLoopEnter, wxAppConsoleBaseExtOnExitFunc a_OnExit, wxAppConsoleBaseExtOnEventLoopExitFunc a_OnEventLoopExit, wxAppConsoleBaseExtCleanUpFunc a_CleanUp, wxAppConsoleBaseExtOnFatalExceptionFunc a_OnFatalException, wxAppConsoleBaseExtExitFunc a_Exit, wxAppConsoleBaseExtOnInitCmdLineFunc a_OnInitCmdLine, wxAppConsoleBaseExtOnCmdLineParsedFunc a_OnCmdLineParsed, wxAppConsoleBaseExtOnCmdLineHelpFunc a_OnCmdLineHelp, wxAppConsoleBaseExtOnCmdLineErrorFunc a_OnCmdLineError, wxAppConsoleBaseExtSetCLocaleFunc a_SetCLocale, wxAppConsoleBaseExtFilterEventFunc a_FilterEvent, wxAppConsoleBaseExtCallEventHandlerFunc a_CallEventHandler, wxAppConsoleBaseExtHandleEventFunc a_HandleEvent, wxAppConsoleBaseExtOnUnhandledExceptionFunc a_OnUnhandledException, wxAppConsoleBaseExtOnExceptionInMainLoopFunc a_OnExceptionInMainLoop, wxAppConsoleBaseExtStoreCurrentExceptionFunc a_StoreCurrentException, wxAppConsoleBaseExtRethrowStoredExceptionFunc a_RethrowStoredException, wxAppConsoleBaseExtProcessPendingEventsFunc a_ProcessPendingEvents, wxAppConsoleBaseExtPendingFunc a_Pending, wxAppConsoleBaseExtDispatchFunc a_Dispatch, wxAppConsoleBaseExtMainLoopFunc a_MainLoop, wxAppConsoleBaseExtExitMainLoopFunc a_ExitMainLoop, wxAppConsoleBaseExtWakeUpIdleFunc a_WakeUpIdle, wxAppConsoleBaseExtProcessIdleFunc a_ProcessIdle, wxAppConsoleBaseExtUsesEventLoopFunc a_UsesEventLoop, wxAppConsoleBaseExtOnAssertFailureFunc a_OnAssertFailure, wxAppConsoleBaseExtOnAssertFunc a_OnAssert, wxAppConsoleBaseExtIsGUIFunc a_IsGUI, wxAppConsoleBaseExtCreateTraitsFunc a_CreateTraits, wxAppConsoleBaseExtWXReservedApp1Func a_WXReservedApp1, wxAppConsoleBaseExtWXReservedApp2Func a_WXReservedApp2): wxAppConsoleBase() {
-    m_wxAppConsoleBaseExtInitialize = a_Initialize;
-    m_wxAppConsoleBaseExtCallOnInit = a_CallOnInit;
-    m_wxAppConsoleBaseExtOnInit = a_OnInit;
-    m_wxAppConsoleBaseExtOnRun = a_OnRun;
-    m_wxAppConsoleBaseExtOnLaunched = a_OnLaunched;
-    m_wxAppConsoleBaseExtOnEventLoopEnter = a_OnEventLoopEnter;
-    m_wxAppConsoleBaseExtOnExit = a_OnExit;
-    m_wxAppConsoleBaseExtOnEventLoopExit = a_OnEventLoopExit;
-    m_wxAppConsoleBaseExtCleanUp = a_CleanUp;
-    m_wxAppConsoleBaseExtOnFatalException = a_OnFatalException;
-    m_wxAppConsoleBaseExtExit = a_Exit;
-    m_wxAppConsoleBaseExtOnInitCmdLine = a_OnInitCmdLine;
-    m_wxAppConsoleBaseExtOnCmdLineParsed = a_OnCmdLineParsed;
-    m_wxAppConsoleBaseExtOnCmdLineHelp = a_OnCmdLineHelp;
-    m_wxAppConsoleBaseExtOnCmdLineError = a_OnCmdLineError;
-    m_wxAppConsoleBaseExtSetCLocale = a_SetCLocale;
-    m_wxAppConsoleBaseExtFilterEvent = a_FilterEvent;
-    m_wxAppConsoleBaseExtCallEventHandler = a_CallEventHandler;
-    m_wxAppConsoleBaseExtHandleEvent = a_HandleEvent;
-    m_wxAppConsoleBaseExtOnUnhandledException = a_OnUnhandledException;
-    m_wxAppConsoleBaseExtOnExceptionInMainLoop = a_OnExceptionInMainLoop;
-    m_wxAppConsoleBaseExtStoreCurrentException = a_StoreCurrentException;
-    m_wxAppConsoleBaseExtRethrowStoredException = a_RethrowStoredException;
-    m_wxAppConsoleBaseExtProcessPendingEvents = a_ProcessPendingEvents;
-    m_wxAppConsoleBaseExtPending = a_Pending;
-    m_wxAppConsoleBaseExtDispatch = a_Dispatch;
-    m_wxAppConsoleBaseExtMainLoop = a_MainLoop;
-    m_wxAppConsoleBaseExtExitMainLoop = a_ExitMainLoop;
-    m_wxAppConsoleBaseExtWakeUpIdle = a_WakeUpIdle;
-    m_wxAppConsoleBaseExtProcessIdle = a_ProcessIdle;
-    m_wxAppConsoleBaseExtUsesEventLoop = a_UsesEventLoop;
-    m_wxAppConsoleBaseExtOnAssertFailure = a_OnAssertFailure;
-    m_wxAppConsoleBaseExtOnAssert = a_OnAssert;
-    m_wxAppConsoleBaseExtIsGUI = a_IsGUI;
-    m_wxAppConsoleBaseExtCreateTraits = a_CreateTraits;
-    m_wxAppConsoleBaseExtWXReservedApp1 = a_WXReservedApp1;
-    m_wxAppConsoleBaseExtWXReservedApp2 = a_WXReservedApp2;
-  }
-};
-
-class wxAppBaseExt: public wxAppBase
-{
-public:
-  wxAppBaseExt(): wxAppBase()  {  }
-  virtual ~wxAppBaseExt() override  {  }
-  wxAppBaseExtInitializeFunc m_wxAppBaseExtInitialize = NULL;
-  virtual bool Initialize(int& argc, wxChar** argv) override
-  {
-    bool res = wxAppBase::Initialize(argc, argv);
-    if (*m_wxAppBaseExtInitialize != NULL){
-      return m_wxAppBaseExtInitialize(this, argc, argv);
-    }
-    else {
-      return res;
-    }
-  }
-  wxAppBaseExtOnInitGuiFunc m_wxAppBaseExtOnInitGui = NULL;
-  virtual bool OnInitGui() override
-  {
-    bool res = wxAppBase::OnInitGui();
-    if (*m_wxAppBaseExtOnInitGui != NULL){
-      return m_wxAppBaseExtOnInitGui(this);
-    }
-    else {
-      return res;
-    }
-  }
-  wxAppBaseExtOnRunFunc m_wxAppBaseExtOnRun = NULL;
-  virtual int OnRun() override
-  {
-    int res = wxAppBase::OnRun();
-    if (*m_wxAppBaseExtOnRun != NULL){
-      return m_wxAppBaseExtOnRun(this);
-    }
-    else {
-      return res;
-    }
-  }
-  wxAppBaseExtOnExitFunc m_wxAppBaseExtOnExit = NULL;
-  virtual int OnExit() override
-  {
-    int res = wxAppBase::OnExit();
-    if (*m_wxAppBaseExtOnExit != NULL){
-      return m_wxAppBaseExtOnExit(this);
-    }
-    else {
-      return res;
-    }
-  }
-  wxAppBaseExtCleanUpFunc m_wxAppBaseExtCleanUp = NULL;
+  wxAppExtCleanUpFunc m_wxAppExtCleanUp = NULL;
   virtual void CleanUp() override
   {
-    wxAppBase::CleanUp();
-    if (*m_wxAppBaseExtCleanUp != NULL){
-      return m_wxAppBaseExtCleanUp(this);
+    wxApp::CleanUp();
+    if (*m_wxAppExtCleanUp != NULL){
+      return m_wxAppExtCleanUp(this);
     }
   }
-  wxAppBaseExtSafeYieldFunc m_wxAppBaseExtSafeYield = NULL;
-  virtual bool SafeYield(wxWindow* win, bool onlyIfNeeded) override
+  wxAppExtCloneRefDatawxObjectRefDataCPFunc m_wxAppExtCloneRefDatawxObjectRefDataCP = NULL;
+  virtual wxObjectRefData* CloneRefData(wxObjectRefData const* data) const override
   {
-    bool res = wxAppBase::SafeYield(win, onlyIfNeeded);
-    if (*m_wxAppBaseExtSafeYield != NULL){
-      return m_wxAppBaseExtSafeYield(this, win, onlyIfNeeded);
+    wxObjectRefData* res = wxApp::CloneRefData(data);
+    if (*m_wxAppExtCloneRefDatawxObjectRefDataCP != NULL){
+      return m_wxAppExtCloneRefDatawxObjectRefDataCP(this, data);
     }
     else {
       return res;
     }
   }
-  wxAppBaseExtSafeYieldForFunc m_wxAppBaseExtSafeYieldFor = NULL;
-  virtual bool SafeYieldFor(wxWindow* win, long eventsToProcess) override
+  wxAppExtCreateRefDataFunc m_wxAppExtCreateRefData = NULL;
+  virtual wxObjectRefData* CreateRefData() const override
   {
-    bool res = wxAppBase::SafeYieldFor(win, eventsToProcess);
-    if (*m_wxAppBaseExtSafeYieldFor != NULL){
-      return m_wxAppBaseExtSafeYieldFor(this, win, eventsToProcess);
+    wxObjectRefData* res = wxApp::CreateRefData();
+    if (*m_wxAppExtCreateRefData != NULL){
+      return m_wxAppExtCreateRefData(this);
     }
     else {
       return res;
     }
   }
-  wxAppBaseExtProcessIdleFunc m_wxAppBaseExtProcessIdle = NULL;
-  virtual bool ProcessIdle() override
-  {
-    bool res = wxAppBase::ProcessIdle();
-    if (*m_wxAppBaseExtProcessIdle != NULL){
-      return m_wxAppBaseExtProcessIdle(this);
-    }
-    else {
-      return res;
-    }
-  }
-  wxAppBaseExtUsesEventLoopFunc m_wxAppBaseExtUsesEventLoop = NULL;
-  virtual bool UsesEventLoop() const override
-  {
-    bool res = wxAppBase::UsesEventLoop();
-    if (*m_wxAppBaseExtUsesEventLoop != NULL){
-      return m_wxAppBaseExtUsesEventLoop(this);
-    }
-    else {
-      return res;
-    }
-  }
-  wxAppBaseExtIsActiveFunc m_wxAppBaseExtIsActive = NULL;
-  virtual bool IsActive() const override
-  {
-    bool res = wxAppBase::IsActive();
-    if (*m_wxAppBaseExtIsActive != NULL){
-      return m_wxAppBaseExtIsActive(this);
-    }
-    else {
-      return res;
-    }
-  }
-  wxAppBaseExtGetTopWindowFunc m_wxAppBaseExtGetTopWindow = NULL;
-  virtual wxWindow* GetTopWindow() const override
-  {
-    wxWindow* res = wxAppBase::GetTopWindow();
-    if (*m_wxAppBaseExtGetTopWindow != NULL){
-      return m_wxAppBaseExtGetTopWindow(this);
-    }
-    else {
-      return res;
-    }
-  }
-  wxAppBaseExtGetDisplayModeFunc m_wxAppBaseExtGetDisplayMode = NULL;
-  virtual wxVideoMode GetDisplayMode() const override
-  {
-    wxVideoMode res = wxAppBase::GetDisplayMode();
-    if (*m_wxAppBaseExtGetDisplayMode != NULL){
-      return m_wxAppBaseExtGetDisplayMode(this);
-    }
-    else {
-      return res;
-    }
-  }
-  wxAppBaseExtSetDisplayModeFunc m_wxAppBaseExtSetDisplayMode = NULL;
-  virtual bool SetDisplayMode(wxVideoMode const& param0) override
-  {
-    bool res = wxAppBase::SetDisplayMode(param0);
-    if (*m_wxAppBaseExtSetDisplayMode != NULL){
-      return m_wxAppBaseExtSetDisplayMode(this, param0);
-    }
-    else {
-      return res;
-    }
-  }
-  wxAppBaseExtSetPrintModeFunc m_wxAppBaseExtSetPrintMode = NULL;
-  virtual void SetPrintMode(int param0) override
-  {
-    wxAppBase::SetPrintMode(param0);
-    if (*m_wxAppBaseExtSetPrintMode != NULL){
-      return m_wxAppBaseExtSetPrintMode(this, param0);
-    }
-  }
-  wxAppBaseExtGetLayoutDirectionFunc m_wxAppBaseExtGetLayoutDirection = NULL;
-  virtual wxLayoutDirection GetLayoutDirection() const override
-  {
-    wxLayoutDirection res = wxAppBase::GetLayoutDirection();
-    if (*m_wxAppBaseExtGetLayoutDirection != NULL){
-      return m_wxAppBaseExtGetLayoutDirection(this);
-    }
-    else {
-      return res;
-    }
-  }
-  wxAppBaseExtSetNativeThemeFunc m_wxAppBaseExtSetNativeTheme = NULL;
-  virtual bool SetNativeTheme(wxString const& param0) override
-  {
-    bool res = wxAppBase::SetNativeTheme(param0);
-    if (*m_wxAppBaseExtSetNativeTheme != NULL){
-      return m_wxAppBaseExtSetNativeTheme(this, param0);
-    }
-    else {
-      return res;
-    }
-  }
-  wxAppBaseExtOnCmdLineParsedFunc m_wxAppBaseExtOnCmdLineParsed = NULL;
-  virtual bool OnCmdLineParsed(wxCmdLineParser& parser) override
-  {
-    bool res = wxAppBase::OnCmdLineParsed(parser);
-    if (*m_wxAppBaseExtOnCmdLineParsed != NULL){
-      return m_wxAppBaseExtOnCmdLineParsed(this, parser);
-    }
-    else {
-      return res;
-    }
-  }
-  wxAppBaseExtOnInitCmdLineFunc m_wxAppBaseExtOnInitCmdLine = NULL;
-  virtual void OnInitCmdLine(wxCmdLineParser& parser) override
-  {
-    wxAppBase::OnInitCmdLine(parser);
-    if (*m_wxAppBaseExtOnInitCmdLine != NULL){
-      return m_wxAppBaseExtOnInitCmdLine(this, parser);
-    }
-  }
-  wxAppBaseExtSetActiveFunc m_wxAppBaseExtSetActive = NULL;
-  virtual void SetActive(bool isActive, wxWindow* lastFocus) override
-  {
-    wxAppBase::SetActive(isActive, lastFocus);
-    if (*m_wxAppBaseExtSetActive != NULL){
-      return m_wxAppBaseExtSetActive(this, isActive, lastFocus);
-    }
-  }
-  wxAppBaseExtIsGUIFunc m_wxAppBaseExtIsGUI = NULL;
-  virtual bool IsGUI() const override
-  {
-    bool res = wxAppBase::IsGUI();
-    if (*m_wxAppBaseExtIsGUI != NULL){
-      return m_wxAppBaseExtIsGUI(this);
-    }
-    else {
-      return res;
-    }
-  }
-  wxAppBaseExtCreateTraitsFunc m_wxAppBaseExtCreateTraits = NULL;
+  wxAppExtCreateTraitsFunc m_wxAppExtCreateTraits = NULL;
   virtual wxAppTraits* CreateTraits() override
   {
-    wxAppTraits* res = wxAppBase::CreateTraits();
-    if (*m_wxAppBaseExtCreateTraits != NULL){
-      return m_wxAppBaseExtCreateTraits(this);
+    wxAppTraits* res = wxApp::CreateTraits();
+    if (*m_wxAppExtCreateTraits != NULL){
+      return m_wxAppExtCreateTraits(this);
     }
     else {
       return res;
     }
   }
-  wxAppBaseExt(wxAppBaseExtInitializeFunc a_Initialize, wxAppBaseExtOnInitGuiFunc a_OnInitGui, wxAppBaseExtOnRunFunc a_OnRun, wxAppBaseExtOnExitFunc a_OnExit, wxAppBaseExtCleanUpFunc a_CleanUp, wxAppBaseExtSafeYieldFunc a_SafeYield, wxAppBaseExtSafeYieldForFunc a_SafeYieldFor, wxAppBaseExtProcessIdleFunc a_ProcessIdle, wxAppBaseExtUsesEventLoopFunc a_UsesEventLoop, wxAppBaseExtIsActiveFunc a_IsActive, wxAppBaseExtGetTopWindowFunc a_GetTopWindow, wxAppBaseExtGetDisplayModeFunc a_GetDisplayMode, wxAppBaseExtSetDisplayModeFunc a_SetDisplayMode, wxAppBaseExtSetPrintModeFunc a_SetPrintMode, wxAppBaseExtGetLayoutDirectionFunc a_GetLayoutDirection, wxAppBaseExtSetNativeThemeFunc a_SetNativeTheme, wxAppBaseExtOnCmdLineParsedFunc a_OnCmdLineParsed, wxAppBaseExtOnInitCmdLineFunc a_OnInitCmdLine, wxAppBaseExtSetActiveFunc a_SetActive, wxAppBaseExtIsGUIFunc a_IsGUI, wxAppBaseExtCreateTraitsFunc a_CreateTraits): wxAppBase() {
-    m_wxAppBaseExtInitialize = a_Initialize;
-    m_wxAppBaseExtOnInitGui = a_OnInitGui;
-    m_wxAppBaseExtOnRun = a_OnRun;
-    m_wxAppBaseExtOnExit = a_OnExit;
-    m_wxAppBaseExtCleanUp = a_CleanUp;
-    m_wxAppBaseExtSafeYield = a_SafeYield;
-    m_wxAppBaseExtSafeYieldFor = a_SafeYieldFor;
-    m_wxAppBaseExtProcessIdle = a_ProcessIdle;
-    m_wxAppBaseExtUsesEventLoop = a_UsesEventLoop;
-    m_wxAppBaseExtIsActive = a_IsActive;
-    m_wxAppBaseExtGetTopWindow = a_GetTopWindow;
-    m_wxAppBaseExtGetDisplayMode = a_GetDisplayMode;
-    m_wxAppBaseExtSetDisplayMode = a_SetDisplayMode;
-    m_wxAppBaseExtSetPrintMode = a_SetPrintMode;
-    m_wxAppBaseExtGetLayoutDirection = a_GetLayoutDirection;
-    m_wxAppBaseExtSetNativeTheme = a_SetNativeTheme;
-    m_wxAppBaseExtOnCmdLineParsed = a_OnCmdLineParsed;
-    m_wxAppBaseExtOnInitCmdLine = a_OnInitCmdLine;
-    m_wxAppBaseExtSetActive = a_SetActive;
-    m_wxAppBaseExtIsGUI = a_IsGUI;
-    m_wxAppBaseExtCreateTraits = a_CreateTraits;
+  wxAppExtDispatchFunc m_wxAppExtDispatch = NULL;
+  virtual bool Dispatch() override
+  {
+    bool res = wxApp::Dispatch();
+    if (*m_wxAppExtDispatch != NULL){
+      return m_wxAppExtDispatch(this);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtDoGetClientDataFunc m_wxAppExtDoGetClientData = NULL;
+  virtual void* DoGetClientData() const override
+  {
+    void* res = wxApp::DoGetClientData();
+    if (*m_wxAppExtDoGetClientData != NULL){
+      return m_wxAppExtDoGetClientData(this);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtDoGetClientObjectFunc m_wxAppExtDoGetClientObject = NULL;
+  virtual wxClientData* DoGetClientObject() const override
+  {
+    wxClientData* res = wxApp::DoGetClientObject();
+    if (*m_wxAppExtDoGetClientObject != NULL){
+      return m_wxAppExtDoGetClientObject(this);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtDoSetClientDatavoidPFunc m_wxAppExtDoSetClientDatavoidP = NULL;
+  virtual void DoSetClientData(void* data) override
+  {
+    wxApp::DoSetClientData(data);
+    if (*m_wxAppExtDoSetClientDatavoidP != NULL){
+      return m_wxAppExtDoSetClientDatavoidP(this, data);
+    }
+  }
+  wxAppExtDoSetClientObjectwxClientDataPFunc m_wxAppExtDoSetClientObjectwxClientDataP = NULL;
+  virtual void DoSetClientObject(wxClientData* data) override
+  {
+    wxApp::DoSetClientObject(data);
+    if (*m_wxAppExtDoSetClientObjectwxClientDataP != NULL){
+      return m_wxAppExtDoSetClientObjectwxClientDataP(this, data);
+    }
+  }
+  wxAppExtExitFunc m_wxAppExtExit = NULL;
+  virtual void Exit() override
+  {
+    wxApp::Exit();
+    if (*m_wxAppExtExit != NULL){
+      return m_wxAppExtExit(this);
+    }
+  }
+  wxAppExtExitMainLoopFunc m_wxAppExtExitMainLoop = NULL;
+  virtual void ExitMainLoop() override
+  {
+    wxApp::ExitMainLoop();
+    if (*m_wxAppExtExitMainLoop != NULL){
+      return m_wxAppExtExitMainLoop(this);
+    }
+  }
+  wxAppExtFilterEventwxEventRFunc m_wxAppExtFilterEventwxEventR = NULL;
+  virtual int FilterEvent(wxEvent& event) override
+  {
+    int res = wxApp::FilterEvent(event);
+    if (*m_wxAppExtFilterEventwxEventR != NULL){
+      return m_wxAppExtFilterEventwxEventR(this, event);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtGetClassInfoFunc m_wxAppExtGetClassInfo = NULL;
+  virtual wxClassInfo* GetClassInfo() const override
+  {
+    wxClassInfo* res = wxApp::GetClassInfo();
+    if (*m_wxAppExtGetClassInfo != NULL){
+      return m_wxAppExtGetClassInfo(this);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtGetDisplayModeFunc m_wxAppExtGetDisplayMode = NULL;
+  virtual wxVideoMode GetDisplayMode() const override
+  {
+    wxVideoMode res = wxApp::GetDisplayMode();
+    if (*m_wxAppExtGetDisplayMode != NULL){
+      return m_wxAppExtGetDisplayMode(this);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtGetEventHashTableFunc m_wxAppExtGetEventHashTable = NULL;
+  virtual wxEventHashTable& GetEventHashTable() const override
+  {
+    wxEventHashTable& res = wxApp::GetEventHashTable();
+    if (*m_wxAppExtGetEventHashTable != NULL){
+      return m_wxAppExtGetEventHashTable(this);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtGetEventTableFunc m_wxAppExtGetEventTable = NULL;
+  virtual wxEventTable const* GetEventTable() const override
+  {
+    wxEventTable const* res = wxApp::GetEventTable();
+    if (*m_wxAppExtGetEventTable != NULL){
+      return m_wxAppExtGetEventTable(this);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtGetLayoutDirectionFunc m_wxAppExtGetLayoutDirection = NULL;
+  virtual wxLayoutDirection GetLayoutDirection() const override
+  {
+    wxLayoutDirection res = wxApp::GetLayoutDirection();
+    if (*m_wxAppExtGetLayoutDirection != NULL){
+      return m_wxAppExtGetLayoutDirection(this);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtGetTopWindowFunc m_wxAppExtGetTopWindow = NULL;
+  virtual wxWindow* GetTopWindow() const override
+  {
+    wxWindow* res = wxApp::GetTopWindow();
+    if (*m_wxAppExtGetTopWindow != NULL){
+      return m_wxAppExtGetTopWindow(this);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtHandleEventwxEvtHandlerPwxEventFunctionwxEventRFunc m_wxAppExtHandleEventwxEvtHandlerPwxEventFunctionwxEventR = NULL;
+  virtual void HandleEvent(wxEvtHandler* handler, wxEventFunction func, wxEvent& event) const override
+  {
+    wxApp::HandleEvent(handler, func, event);
+    if (*m_wxAppExtHandleEventwxEvtHandlerPwxEventFunctionwxEventR != NULL){
+      return m_wxAppExtHandleEventwxEvtHandlerPwxEventFunctionwxEventR(this, handler, func, event);
+    }
+  }
+  wxAppExtInitializeintRwxCharPPFunc m_wxAppExtInitializeintRwxCharPP = NULL;
+  virtual bool Initialize(int& argc, wxChar** argv) override
+  {
+    bool res = wxApp::Initialize(argc, argv);
+    if (*m_wxAppExtInitializeintRwxCharPP != NULL){
+      return m_wxAppExtInitializeintRwxCharPP(this, argc, argv);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtIsActiveFunc m_wxAppExtIsActive = NULL;
+  virtual bool IsActive() const override
+  {
+    bool res = wxApp::IsActive();
+    if (*m_wxAppExtIsActive != NULL){
+      return m_wxAppExtIsActive(this);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtIsGUIFunc m_wxAppExtIsGUI = NULL;
+  virtual bool IsGUI() const override
+  {
+    bool res = wxApp::IsGUI();
+    if (*m_wxAppExtIsGUI != NULL){
+      return m_wxAppExtIsGUI(this);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtMainLoopFunc m_wxAppExtMainLoop = NULL;
+  virtual int MainLoop() override
+  {
+    int res = wxApp::MainLoop();
+    if (*m_wxAppExtMainLoop != NULL){
+      return m_wxAppExtMainLoop(this);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtOnAssertwxCharCPintwxCharCPwxCharCPFunc m_wxAppExtOnAssertwxCharCPintwxCharCPwxCharCP = NULL;
+  virtual void OnAssert(wxChar const* file, int line, wxChar const* cond, wxChar const* msg) override
+  {
+    wxApp::OnAssert(file, line, cond, msg);
+    if (*m_wxAppExtOnAssertwxCharCPintwxCharCPwxCharCP != NULL){
+      return m_wxAppExtOnAssertwxCharCPintwxCharCPwxCharCP(this, file, line, cond, msg);
+    }
+  }
+  wxAppExtOnAssertFailurewxCharCPintwxCharCPwxCharCPwxCharCPFunc m_wxAppExtOnAssertFailurewxCharCPintwxCharCPwxCharCPwxCharCP = NULL;
+  virtual void OnAssertFailure(wxChar const* file, int line, wxChar const* func, wxChar const* cond, wxChar const* msg) override
+  {
+    wxApp::OnAssertFailure(file, line, func, cond, msg);
+    if (*m_wxAppExtOnAssertFailurewxCharCPintwxCharCPwxCharCPwxCharCP != NULL){
+      return m_wxAppExtOnAssertFailurewxCharCPintwxCharCPwxCharCPwxCharCP(this, file, line, func, cond, msg);
+    }
+  }
+  wxAppExtOnCmdLineErrorwxCmdLineParserRFunc m_wxAppExtOnCmdLineErrorwxCmdLineParserR = NULL;
+  virtual bool OnCmdLineError(wxCmdLineParser& parser) override
+  {
+    bool res = wxApp::OnCmdLineError(parser);
+    if (*m_wxAppExtOnCmdLineErrorwxCmdLineParserR != NULL){
+      return m_wxAppExtOnCmdLineErrorwxCmdLineParserR(this, parser);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtOnCmdLineHelpwxCmdLineParserRFunc m_wxAppExtOnCmdLineHelpwxCmdLineParserR = NULL;
+  virtual bool OnCmdLineHelp(wxCmdLineParser& parser) override
+  {
+    bool res = wxApp::OnCmdLineHelp(parser);
+    if (*m_wxAppExtOnCmdLineHelpwxCmdLineParserR != NULL){
+      return m_wxAppExtOnCmdLineHelpwxCmdLineParserR(this, parser);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtOnCmdLineParsedwxCmdLineParserRFunc m_wxAppExtOnCmdLineParsedwxCmdLineParserR = NULL;
+  virtual bool OnCmdLineParsed(wxCmdLineParser& parser) override
+  {
+    bool res = wxApp::OnCmdLineParsed(parser);
+    if (*m_wxAppExtOnCmdLineParsedwxCmdLineParserR != NULL){
+      return m_wxAppExtOnCmdLineParsedwxCmdLineParserR(this, parser);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtOnDynamicBindwxDynamicEventTableEntryRFunc m_wxAppExtOnDynamicBindwxDynamicEventTableEntryR = NULL;
+  virtual bool OnDynamicBind(wxDynamicEventTableEntry& param0) override
+  {
+    bool res = wxApp::OnDynamicBind(param0);
+    if (*m_wxAppExtOnDynamicBindwxDynamicEventTableEntryR != NULL){
+      return m_wxAppExtOnDynamicBindwxDynamicEventTableEntryR(this, param0);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtOnEventLoopEnterwxEventLoopBasePFunc m_wxAppExtOnEventLoopEnterwxEventLoopBaseP = NULL;
+  virtual void OnEventLoopEnter(wxEventLoopBase* param0) override
+  {
+    wxApp::OnEventLoopEnter(param0);
+    if (*m_wxAppExtOnEventLoopEnterwxEventLoopBaseP != NULL){
+      return m_wxAppExtOnEventLoopEnterwxEventLoopBaseP(this, param0);
+    }
+  }
+  wxAppExtOnEventLoopExitwxEventLoopBasePFunc m_wxAppExtOnEventLoopExitwxEventLoopBaseP = NULL;
+  virtual void OnEventLoopExit(wxEventLoopBase* param0) override
+  {
+    wxApp::OnEventLoopExit(param0);
+    if (*m_wxAppExtOnEventLoopExitwxEventLoopBaseP != NULL){
+      return m_wxAppExtOnEventLoopExitwxEventLoopBaseP(this, param0);
+    }
+  }
+  wxAppExtOnExceptionInMainLoopFunc m_wxAppExtOnExceptionInMainLoop = NULL;
+  virtual bool OnExceptionInMainLoop() override
+  {
+    bool res = wxApp::OnExceptionInMainLoop();
+    if (*m_wxAppExtOnExceptionInMainLoop != NULL){
+      return m_wxAppExtOnExceptionInMainLoop(this);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtOnExitFunc m_wxAppExtOnExit = NULL;
+  virtual int OnExit() override
+  {
+    int res = wxApp::OnExit();
+    if (*m_wxAppExtOnExit != NULL){
+      return m_wxAppExtOnExit(this);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtOnFatalExceptionFunc m_wxAppExtOnFatalException = NULL;
+  virtual void OnFatalException() override
+  {
+    wxApp::OnFatalException();
+    if (*m_wxAppExtOnFatalException != NULL){
+      return m_wxAppExtOnFatalException(this);
+    }
+  }
+  wxAppExtOnInitFunc m_wxAppExtOnInit = NULL;
+  virtual bool OnInit() override
+  {
+    bool res = wxApp::OnInit();
+    if (*m_wxAppExtOnInit != NULL){
+      return m_wxAppExtOnInit(this);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtOnInitCmdLinewxCmdLineParserRFunc m_wxAppExtOnInitCmdLinewxCmdLineParserR = NULL;
+  virtual void OnInitCmdLine(wxCmdLineParser& parser) override
+  {
+    wxApp::OnInitCmdLine(parser);
+    if (*m_wxAppExtOnInitCmdLinewxCmdLineParserR != NULL){
+      return m_wxAppExtOnInitCmdLinewxCmdLineParserR(this, parser);
+    }
+  }
+  wxAppExtOnInitGuiFunc m_wxAppExtOnInitGui = NULL;
+  virtual bool OnInitGui() override
+  {
+    bool res = wxApp::OnInitGui();
+    if (*m_wxAppExtOnInitGui != NULL){
+      return m_wxAppExtOnInitGui(this);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtOnLaunchedFunc m_wxAppExtOnLaunched = NULL;
+  virtual void OnLaunched() override
+  {
+    wxApp::OnLaunched();
+    if (*m_wxAppExtOnLaunched != NULL){
+      return m_wxAppExtOnLaunched(this);
+    }
+  }
+  wxAppExtOnRunFunc m_wxAppExtOnRun = NULL;
+  virtual int OnRun() override
+  {
+    int res = wxApp::OnRun();
+    if (*m_wxAppExtOnRun != NULL){
+      return m_wxAppExtOnRun(this);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtOnUnhandledExceptionFunc m_wxAppExtOnUnhandledException = NULL;
+  virtual void OnUnhandledException() override
+  {
+    wxApp::OnUnhandledException();
+    if (*m_wxAppExtOnUnhandledException != NULL){
+      return m_wxAppExtOnUnhandledException(this);
+    }
+  }
+  wxAppExtPendingFunc m_wxAppExtPending = NULL;
+  virtual bool Pending() override
+  {
+    bool res = wxApp::Pending();
+    if (*m_wxAppExtPending != NULL){
+      return m_wxAppExtPending(this);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtProcessEventwxEventRFunc m_wxAppExtProcessEventwxEventR = NULL;
+  virtual bool ProcessEvent(wxEvent& event) override
+  {
+    bool res = wxApp::ProcessEvent(event);
+    if (*m_wxAppExtProcessEventwxEventR != NULL){
+      return m_wxAppExtProcessEventwxEventR(this, event);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtProcessIdleFunc m_wxAppExtProcessIdle = NULL;
+  virtual bool ProcessIdle() override
+  {
+    bool res = wxApp::ProcessIdle();
+    if (*m_wxAppExtProcessIdle != NULL){
+      return m_wxAppExtProcessIdle(this);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtProcessPendingEventsFunc m_wxAppExtProcessPendingEvents = NULL;
+  virtual void ProcessPendingEvents() override
+  {
+    wxApp::ProcessPendingEvents();
+    if (*m_wxAppExtProcessPendingEvents != NULL){
+      return m_wxAppExtProcessPendingEvents(this);
+    }
+  }
+  wxAppExtQueueEventwxEventPFunc m_wxAppExtQueueEventwxEventP = NULL;
+  virtual void QueueEvent(wxEvent* event) override
+  {
+    wxApp::QueueEvent(event);
+    if (*m_wxAppExtQueueEventwxEventP != NULL){
+      return m_wxAppExtQueueEventwxEventP(this, event);
+    }
+  }
+  wxAppExtRethrowStoredExceptionFunc m_wxAppExtRethrowStoredException = NULL;
+  virtual void RethrowStoredException() override
+  {
+    wxApp::RethrowStoredException();
+    if (*m_wxAppExtRethrowStoredException != NULL){
+      return m_wxAppExtRethrowStoredException(this);
+    }
+  }
+  wxAppExtSafeYieldwxWindowPboolFunc m_wxAppExtSafeYieldwxWindowPbool = NULL;
+  virtual bool SafeYield(wxWindow* win, bool onlyIfNeeded) override
+  {
+    bool res = wxApp::SafeYield(win, onlyIfNeeded);
+    if (*m_wxAppExtSafeYieldwxWindowPbool != NULL){
+      return m_wxAppExtSafeYieldwxWindowPbool(this, win, onlyIfNeeded);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtSafeYieldForwxWindowPlongFunc m_wxAppExtSafeYieldForwxWindowPlong = NULL;
+  virtual bool SafeYieldFor(wxWindow* win, long eventsToProcess) override
+  {
+    bool res = wxApp::SafeYieldFor(win, eventsToProcess);
+    if (*m_wxAppExtSafeYieldForwxWindowPlong != NULL){
+      return m_wxAppExtSafeYieldForwxWindowPlong(this, win, eventsToProcess);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtSearchEventTablewxEventTableRwxEventRFunc m_wxAppExtSearchEventTablewxEventTableRwxEventR = NULL;
+  virtual bool SearchEventTable(wxEventTable& table, wxEvent& event) override
+  {
+    bool res = wxApp::SearchEventTable(table, event);
+    if (*m_wxAppExtSearchEventTablewxEventTableRwxEventR != NULL){
+      return m_wxAppExtSearchEventTablewxEventTableRwxEventR(this, table, event);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtSetActiveboolwxWindowPFunc m_wxAppExtSetActiveboolwxWindowP = NULL;
+  virtual void SetActive(bool isActive, wxWindow* lastFocus) override
+  {
+    wxApp::SetActive(isActive, lastFocus);
+    if (*m_wxAppExtSetActiveboolwxWindowP != NULL){
+      return m_wxAppExtSetActiveboolwxWindowP(this, isActive, lastFocus);
+    }
+  }
+  wxAppExtSetCLocaleFunc m_wxAppExtSetCLocale = NULL;
+  virtual void SetCLocale() override
+  {
+    wxApp::SetCLocale();
+    if (*m_wxAppExtSetCLocale != NULL){
+      return m_wxAppExtSetCLocale(this);
+    }
+  }
+  wxAppExtSetDisplayModewxVideoModeCRFunc m_wxAppExtSetDisplayModewxVideoModeCR = NULL;
+  virtual bool SetDisplayMode(wxVideoMode const& param0) override
+  {
+    bool res = wxApp::SetDisplayMode(param0);
+    if (*m_wxAppExtSetDisplayModewxVideoModeCR != NULL){
+      return m_wxAppExtSetDisplayModewxVideoModeCR(this, param0);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtSetNativeThemewxStringCRFunc m_wxAppExtSetNativeThemewxStringCR = NULL;
+  virtual bool SetNativeTheme(wxString const& param0) override
+  {
+    bool res = wxApp::SetNativeTheme(param0);
+    if (*m_wxAppExtSetNativeThemewxStringCR != NULL){
+      return m_wxAppExtSetNativeThemewxStringCR(this, param0);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtSetNextHandlerwxEvtHandlerPFunc m_wxAppExtSetNextHandlerwxEvtHandlerP = NULL;
+  virtual void SetNextHandler(wxEvtHandler* handler) override
+  {
+    wxApp::SetNextHandler(handler);
+    if (*m_wxAppExtSetNextHandlerwxEvtHandlerP != NULL){
+      return m_wxAppExtSetNextHandlerwxEvtHandlerP(this, handler);
+    }
+  }
+  wxAppExtSetPreviousHandlerwxEvtHandlerPFunc m_wxAppExtSetPreviousHandlerwxEvtHandlerP = NULL;
+  virtual void SetPreviousHandler(wxEvtHandler* handler) override
+  {
+    wxApp::SetPreviousHandler(handler);
+    if (*m_wxAppExtSetPreviousHandlerwxEvtHandlerP != NULL){
+      return m_wxAppExtSetPreviousHandlerwxEvtHandlerP(this, handler);
+    }
+  }
+  wxAppExtSetPrintModeintFunc m_wxAppExtSetPrintModeint = NULL;
+  virtual void SetPrintMode(int param0) override
+  {
+    wxApp::SetPrintMode(param0);
+    if (*m_wxAppExtSetPrintModeint != NULL){
+      return m_wxAppExtSetPrintModeint(this, param0);
+    }
+  }
+  wxAppExtStoreCurrentExceptionFunc m_wxAppExtStoreCurrentException = NULL;
+  virtual bool StoreCurrentException() override
+  {
+    bool res = wxApp::StoreCurrentException();
+    if (*m_wxAppExtStoreCurrentException != NULL){
+      return m_wxAppExtStoreCurrentException(this);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtTryAfterwxEventRFunc m_wxAppExtTryAfterwxEventR = NULL;
+  virtual bool TryAfter(wxEvent& event) override
+  {
+    bool res = wxApp::TryAfter(event);
+    if (*m_wxAppExtTryAfterwxEventR != NULL){
+      return m_wxAppExtTryAfterwxEventR(this, event);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtTryBeforewxEventRFunc m_wxAppExtTryBeforewxEventR = NULL;
+  virtual bool TryBefore(wxEvent& event) override
+  {
+    bool res = wxApp::TryBefore(event);
+    if (*m_wxAppExtTryBeforewxEventR != NULL){
+      return m_wxAppExtTryBeforewxEventR(this, event);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtUsesEventLoopFunc m_wxAppExtUsesEventLoop = NULL;
+  virtual bool UsesEventLoop() const override
+  {
+    bool res = wxApp::UsesEventLoop();
+    if (*m_wxAppExtUsesEventLoop != NULL){
+      return m_wxAppExtUsesEventLoop(this);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtWXReservedApp1voidPFunc m_wxAppExtWXReservedApp1voidP = NULL;
+  virtual void* WXReservedApp1(void* param0) override
+  {
+    void* res = wxApp::WXReservedApp1(param0);
+    if (*m_wxAppExtWXReservedApp1voidP != NULL){
+      return m_wxAppExtWXReservedApp1voidP(this, param0);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtWXReservedApp2voidPFunc m_wxAppExtWXReservedApp2voidP = NULL;
+  virtual void* WXReservedApp2(void* param0) override
+  {
+    void* res = wxApp::WXReservedApp2(param0);
+    if (*m_wxAppExtWXReservedApp2voidP != NULL){
+      return m_wxAppExtWXReservedApp2voidP(this, param0);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtWXReservedEvtHandler1voidPFunc m_wxAppExtWXReservedEvtHandler1voidP = NULL;
+  virtual void* WXReservedEvtHandler1(void* param0) override
+  {
+    void* res = wxApp::WXReservedEvtHandler1(param0);
+    if (*m_wxAppExtWXReservedEvtHandler1voidP != NULL){
+      return m_wxAppExtWXReservedEvtHandler1voidP(this, param0);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtWXReservedEvtHandler2voidPFunc m_wxAppExtWXReservedEvtHandler2voidP = NULL;
+  virtual void* WXReservedEvtHandler2(void* param0) override
+  {
+    void* res = wxApp::WXReservedEvtHandler2(param0);
+    if (*m_wxAppExtWXReservedEvtHandler2voidP != NULL){
+      return m_wxAppExtWXReservedEvtHandler2voidP(this, param0);
+    }
+    else {
+      return res;
+    }
+  }
+  wxAppExtWakeUpIdleFunc m_wxAppExtWakeUpIdle = NULL;
+  virtual void WakeUpIdle() override
+  {
+    wxApp::WakeUpIdle();
+    if (*m_wxAppExtWakeUpIdle != NULL){
+      return m_wxAppExtWakeUpIdle(this);
+    }
+  }
+  wxAppExt(wxAppExtAddPendingEventwxEventCRFunc a_AddPendingEventwxEventCR, wxAppExtCallEventHandlerwxEvtHandlerPwxEventFunctorRwxEventRFunc a_CallEventHandlerwxEvtHandlerPwxEventFunctorRwxEventR, wxAppExtCallOnInitFunc a_CallOnInit, wxAppExtCleanUpFunc a_CleanUp, wxAppExtCloneRefDatawxObjectRefDataCPFunc a_CloneRefDatawxObjectRefDataCP, wxAppExtCreateRefDataFunc a_CreateRefData, wxAppExtCreateTraitsFunc a_CreateTraits, wxAppExtDispatchFunc a_Dispatch, wxAppExtDoGetClientDataFunc a_DoGetClientData, wxAppExtDoGetClientObjectFunc a_DoGetClientObject, wxAppExtDoSetClientDatavoidPFunc a_DoSetClientDatavoidP, wxAppExtDoSetClientObjectwxClientDataPFunc a_DoSetClientObjectwxClientDataP, wxAppExtExitFunc a_Exit, wxAppExtExitMainLoopFunc a_ExitMainLoop, wxAppExtFilterEventwxEventRFunc a_FilterEventwxEventR, wxAppExtGetClassInfoFunc a_GetClassInfo, wxAppExtGetDisplayModeFunc a_GetDisplayMode, wxAppExtGetEventHashTableFunc a_GetEventHashTable, wxAppExtGetEventTableFunc a_GetEventTable, wxAppExtGetLayoutDirectionFunc a_GetLayoutDirection, wxAppExtGetTopWindowFunc a_GetTopWindow, wxAppExtHandleEventwxEvtHandlerPwxEventFunctionwxEventRFunc a_HandleEventwxEvtHandlerPwxEventFunctionwxEventR, wxAppExtInitializeintRwxCharPPFunc a_InitializeintRwxCharPP, wxAppExtIsActiveFunc a_IsActive, wxAppExtIsGUIFunc a_IsGUI, wxAppExtMainLoopFunc a_MainLoop, wxAppExtOnAssertwxCharCPintwxCharCPwxCharCPFunc a_OnAssertwxCharCPintwxCharCPwxCharCP, wxAppExtOnAssertFailurewxCharCPintwxCharCPwxCharCPwxCharCPFunc a_OnAssertFailurewxCharCPintwxCharCPwxCharCPwxCharCP, wxAppExtOnCmdLineErrorwxCmdLineParserRFunc a_OnCmdLineErrorwxCmdLineParserR, wxAppExtOnCmdLineHelpwxCmdLineParserRFunc a_OnCmdLineHelpwxCmdLineParserR, wxAppExtOnCmdLineParsedwxCmdLineParserRFunc a_OnCmdLineParsedwxCmdLineParserR, wxAppExtOnDynamicBindwxDynamicEventTableEntryRFunc a_OnDynamicBindwxDynamicEventTableEntryR, wxAppExtOnEventLoopEnterwxEventLoopBasePFunc a_OnEventLoopEnterwxEventLoopBaseP, wxAppExtOnEventLoopExitwxEventLoopBasePFunc a_OnEventLoopExitwxEventLoopBaseP, wxAppExtOnExceptionInMainLoopFunc a_OnExceptionInMainLoop, wxAppExtOnExitFunc a_OnExit, wxAppExtOnFatalExceptionFunc a_OnFatalException, wxAppExtOnInitFunc a_OnInit, wxAppExtOnInitCmdLinewxCmdLineParserRFunc a_OnInitCmdLinewxCmdLineParserR, wxAppExtOnInitGuiFunc a_OnInitGui, wxAppExtOnLaunchedFunc a_OnLaunched, wxAppExtOnRunFunc a_OnRun, wxAppExtOnUnhandledExceptionFunc a_OnUnhandledException, wxAppExtPendingFunc a_Pending, wxAppExtProcessEventwxEventRFunc a_ProcessEventwxEventR, wxAppExtProcessIdleFunc a_ProcessIdle, wxAppExtProcessPendingEventsFunc a_ProcessPendingEvents, wxAppExtQueueEventwxEventPFunc a_QueueEventwxEventP, wxAppExtRethrowStoredExceptionFunc a_RethrowStoredException, wxAppExtSafeYieldwxWindowPboolFunc a_SafeYieldwxWindowPbool, wxAppExtSafeYieldForwxWindowPlongFunc a_SafeYieldForwxWindowPlong, wxAppExtSearchEventTablewxEventTableRwxEventRFunc a_SearchEventTablewxEventTableRwxEventR, wxAppExtSetActiveboolwxWindowPFunc a_SetActiveboolwxWindowP, wxAppExtSetCLocaleFunc a_SetCLocale, wxAppExtSetDisplayModewxVideoModeCRFunc a_SetDisplayModewxVideoModeCR, wxAppExtSetNativeThemewxStringCRFunc a_SetNativeThemewxStringCR, wxAppExtSetNextHandlerwxEvtHandlerPFunc a_SetNextHandlerwxEvtHandlerP, wxAppExtSetPreviousHandlerwxEvtHandlerPFunc a_SetPreviousHandlerwxEvtHandlerP, wxAppExtSetPrintModeintFunc a_SetPrintModeint, wxAppExtStoreCurrentExceptionFunc a_StoreCurrentException, wxAppExtTryAfterwxEventRFunc a_TryAfterwxEventR, wxAppExtTryBeforewxEventRFunc a_TryBeforewxEventR, wxAppExtUsesEventLoopFunc a_UsesEventLoop, wxAppExtWXReservedApp1voidPFunc a_WXReservedApp1voidP, wxAppExtWXReservedApp2voidPFunc a_WXReservedApp2voidP, wxAppExtWXReservedEvtHandler1voidPFunc a_WXReservedEvtHandler1voidP, wxAppExtWXReservedEvtHandler2voidPFunc a_WXReservedEvtHandler2voidP, wxAppExtWakeUpIdleFunc a_WakeUpIdle): wxApp() {
+    m_wxAppExtAddPendingEventwxEventCR = a_AddPendingEventwxEventCR;
+    m_wxAppExtCallEventHandlerwxEvtHandlerPwxEventFunctorRwxEventR = a_CallEventHandlerwxEvtHandlerPwxEventFunctorRwxEventR;
+    m_wxAppExtCallOnInit = a_CallOnInit;
+    m_wxAppExtCleanUp = a_CleanUp;
+    m_wxAppExtCloneRefDatawxObjectRefDataCP = a_CloneRefDatawxObjectRefDataCP;
+    m_wxAppExtCreateRefData = a_CreateRefData;
+    m_wxAppExtCreateTraits = a_CreateTraits;
+    m_wxAppExtDispatch = a_Dispatch;
+    m_wxAppExtDoGetClientData = a_DoGetClientData;
+    m_wxAppExtDoGetClientObject = a_DoGetClientObject;
+    m_wxAppExtDoSetClientDatavoidP = a_DoSetClientDatavoidP;
+    m_wxAppExtDoSetClientObjectwxClientDataP = a_DoSetClientObjectwxClientDataP;
+    m_wxAppExtExit = a_Exit;
+    m_wxAppExtExitMainLoop = a_ExitMainLoop;
+    m_wxAppExtFilterEventwxEventR = a_FilterEventwxEventR;
+    m_wxAppExtGetClassInfo = a_GetClassInfo;
+    m_wxAppExtGetDisplayMode = a_GetDisplayMode;
+    m_wxAppExtGetEventHashTable = a_GetEventHashTable;
+    m_wxAppExtGetEventTable = a_GetEventTable;
+    m_wxAppExtGetLayoutDirection = a_GetLayoutDirection;
+    m_wxAppExtGetTopWindow = a_GetTopWindow;
+    m_wxAppExtHandleEventwxEvtHandlerPwxEventFunctionwxEventR = a_HandleEventwxEvtHandlerPwxEventFunctionwxEventR;
+    m_wxAppExtInitializeintRwxCharPP = a_InitializeintRwxCharPP;
+    m_wxAppExtIsActive = a_IsActive;
+    m_wxAppExtIsGUI = a_IsGUI;
+    m_wxAppExtMainLoop = a_MainLoop;
+    m_wxAppExtOnAssertwxCharCPintwxCharCPwxCharCP = a_OnAssertwxCharCPintwxCharCPwxCharCP;
+    m_wxAppExtOnAssertFailurewxCharCPintwxCharCPwxCharCPwxCharCP = a_OnAssertFailurewxCharCPintwxCharCPwxCharCPwxCharCP;
+    m_wxAppExtOnCmdLineErrorwxCmdLineParserR = a_OnCmdLineErrorwxCmdLineParserR;
+    m_wxAppExtOnCmdLineHelpwxCmdLineParserR = a_OnCmdLineHelpwxCmdLineParserR;
+    m_wxAppExtOnCmdLineParsedwxCmdLineParserR = a_OnCmdLineParsedwxCmdLineParserR;
+    m_wxAppExtOnDynamicBindwxDynamicEventTableEntryR = a_OnDynamicBindwxDynamicEventTableEntryR;
+    m_wxAppExtOnEventLoopEnterwxEventLoopBaseP = a_OnEventLoopEnterwxEventLoopBaseP;
+    m_wxAppExtOnEventLoopExitwxEventLoopBaseP = a_OnEventLoopExitwxEventLoopBaseP;
+    m_wxAppExtOnExceptionInMainLoop = a_OnExceptionInMainLoop;
+    m_wxAppExtOnExit = a_OnExit;
+    m_wxAppExtOnFatalException = a_OnFatalException;
+    m_wxAppExtOnInit = a_OnInit;
+    m_wxAppExtOnInitCmdLinewxCmdLineParserR = a_OnInitCmdLinewxCmdLineParserR;
+    m_wxAppExtOnInitGui = a_OnInitGui;
+    m_wxAppExtOnLaunched = a_OnLaunched;
+    m_wxAppExtOnRun = a_OnRun;
+    m_wxAppExtOnUnhandledException = a_OnUnhandledException;
+    m_wxAppExtPending = a_Pending;
+    m_wxAppExtProcessEventwxEventR = a_ProcessEventwxEventR;
+    m_wxAppExtProcessIdle = a_ProcessIdle;
+    m_wxAppExtProcessPendingEvents = a_ProcessPendingEvents;
+    m_wxAppExtQueueEventwxEventP = a_QueueEventwxEventP;
+    m_wxAppExtRethrowStoredException = a_RethrowStoredException;
+    m_wxAppExtSafeYieldwxWindowPbool = a_SafeYieldwxWindowPbool;
+    m_wxAppExtSafeYieldForwxWindowPlong = a_SafeYieldForwxWindowPlong;
+    m_wxAppExtSearchEventTablewxEventTableRwxEventR = a_SearchEventTablewxEventTableRwxEventR;
+    m_wxAppExtSetActiveboolwxWindowP = a_SetActiveboolwxWindowP;
+    m_wxAppExtSetCLocale = a_SetCLocale;
+    m_wxAppExtSetDisplayModewxVideoModeCR = a_SetDisplayModewxVideoModeCR;
+    m_wxAppExtSetNativeThemewxStringCR = a_SetNativeThemewxStringCR;
+    m_wxAppExtSetNextHandlerwxEvtHandlerP = a_SetNextHandlerwxEvtHandlerP;
+    m_wxAppExtSetPreviousHandlerwxEvtHandlerP = a_SetPreviousHandlerwxEvtHandlerP;
+    m_wxAppExtSetPrintModeint = a_SetPrintModeint;
+    m_wxAppExtStoreCurrentException = a_StoreCurrentException;
+    m_wxAppExtTryAfterwxEventR = a_TryAfterwxEventR;
+    m_wxAppExtTryBeforewxEventR = a_TryBeforewxEventR;
+    m_wxAppExtUsesEventLoop = a_UsesEventLoop;
+    m_wxAppExtWXReservedApp1voidP = a_WXReservedApp1voidP;
+    m_wxAppExtWXReservedApp2voidP = a_WXReservedApp2voidP;
+    m_wxAppExtWXReservedEvtHandler1voidP = a_WXReservedEvtHandler1voidP;
+    m_wxAppExtWXReservedEvtHandler2voidP = a_WXReservedEvtHandler2voidP;
+    m_wxAppExtWakeUpIdle = a_WakeUpIdle;
   }
 };
 
@@ -722,7 +828,6 @@ class wxAppInitializerExt: public wxAppInitializer
 public:
   wxAppInitializerExt(wxAppInitializerFunction fn): wxAppInitializer(fn)  {  }
 };
-
 
 
 #endif

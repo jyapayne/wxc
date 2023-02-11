@@ -3,7 +3,6 @@
 %{
 #include <wx/vidmode.h>
 #include "wxext/button_ext.h"
-#include "wxext/osx/button_ext.h"
 %}
 
 
@@ -59,7 +58,6 @@
 %import "wx/control.h"
 %import "wx/anybutton.h"
 %include "wx/button.h"
-%include "wxext/button_ext.h"
 
 #if defined(__WXUNIVERSAL__)
     %include "wx/univ/button.h"
@@ -73,7 +71,8 @@
     %include "wx/gtk1/button.h"
 #elif defined(__WXMAC__)
     %include "wx/osx/button.h"
-    %include "wxext/osx/button_ext.h"
 #elif defined(__WXQT__)
     %include "wx/qt/button.h"
 #endif
+
+%include "wxext/button_ext.h"

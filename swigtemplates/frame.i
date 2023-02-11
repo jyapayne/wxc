@@ -2,10 +2,7 @@
 %include <common.i>
 %{
 #include <wx/vidmode.h>
-#include "wxext/frame_ext.h"
-#if defined(__WXMAC__)
-    #include "wxext/osx/frame_ext.h"
-#endif
+#include "wxext/frame_ext2.h"
 %}
 
 %ignore wxWindowList::Nth;
@@ -63,7 +60,6 @@
 %import "wx/string.h"
 %import "wx/toplevel.h"
 %include "wx/frame.h"
-%include "wxext/frame_ext.h"
 
 #if defined(__WXUNIVERSAL__)
     %include "wx/univ/frame.h"
@@ -78,8 +74,9 @@
         %include "wx/motif/frame.h"
     #elif defined(__WXMAC__)
         %include "wx/osx/frame.h"
-        %include "wxext/osx/frame_ext.h"
     #elif defined(__WXQT__)
         %include "wx/qt/frame.h"
     #endif
 #endif
+
+%include "wxext/frame_ext2.h"

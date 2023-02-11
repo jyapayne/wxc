@@ -55,7 +55,6 @@
 %import "wx/toplevel.h"
 %import "wx/frame.h"
 %include "wx/window.h"
-%include "wxext/window_ext.h"
 
 // include the declaration of the platform-specific class
 #if defined(__WXMSW__)
@@ -117,4 +116,4 @@
     %include "wx/univ/window.h"
 #endif // wxUniv
 
-%include "wxext/window_ext_inc.h"
+%include "wxext/window_ext.h"

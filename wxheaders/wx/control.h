@@ -212,7 +212,41 @@ protected:
 #elif defined(__WXGTK__)
     #include "wx/gtk1/control.h"
 #elif defined(__WXMAC__)
-    #include "wx/osx/control.h"
+WXDLLIMPEXP_DATA_CORE(extern const char) wxControlNameStr[];
+
+// General item class
+class WXDLLIMPEXP_CORE wxControl : public wxControlBase
+{
+    wxDECLARE_ABSTRACT_CLASS(wxControl);
+
+public:
+   wxControl();
+   wxControl(wxWindow *parent, wxWindowID winid,
+             const wxPoint& pos = wxDefaultPosition,
+             const wxSize& size = wxDefaultSize, long style = 0,
+             const wxValidator& validator = wxDefaultValidator,
+             const wxString& name = wxASCII_STR(wxControlNameStr))
+    {
+        Create(parent, winid, pos, size, style, validator, name);
+    }
+
+    bool Create(wxWindow *parent, wxWindowID winid,
+            const wxPoint& pos = wxDefaultPosition,
+            const wxSize& size = wxDefaultSize, long style = 0,
+            const wxValidator& validator = wxDefaultValidator,
+            const wxString& name = wxASCII_STR(wxControlNameStr));
+
+   // Simulates an event
+   virtual void Command(wxCommandEvent& event) wxOVERRIDE { ProcessCommand(event); }
+
+   // implementation from now on
+   // --------------------------
+
+   // Calls the callback and appropriate event handlers
+   bool ProcessCommand(wxCommandEvent& event);
+
+   void                 OnKeyDown( wxKeyEvent &event ) ;
+};
 #elif defined(__WXQT__)
     #include "wx/qt/control.h"
 #endif

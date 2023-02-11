@@ -15,7 +15,6 @@
 // ----------------------------------------------------------------------------
 // headers we have to include here
 // ----------------------------------------------------------------------------
-
 #include "wx/event.h"       // for the base class
 #include "wx/eventfilter.h" // (and another one)
 #include "wx/build.h"
@@ -547,7 +546,69 @@ protected:
 };
 
 #if defined(__UNIX__) && !defined(__WINDOWS__)
-    #include "wx/unix/app.h"
+    #include <signal.h>
+
+    class wxFDIODispatcher;
+    class wxFDIOHandler;
+    class wxWakeUpPipe;
+
+    // wxApp subclass implementing event processing for console applications
+    class WXDLLIMPEXP_BASE wxAppConsole : public wxAppConsoleBase
+    {
+    public:
+        wxAppConsole();
+        virtual ~wxAppConsole();
+
+        // override base class initialization
+        virtual bool Initialize(int& argc, wxChar** argv) wxOVERRIDE;
+
+
+        // Unix-specific: Unix signal handling
+        // -----------------------------------
+
+        // type of the function which can be registered as signal handler: notice
+        // that it isn't really a signal handler, i.e. it's not subject to the
+        // usual signal handlers constraints, because it is called later from
+        // CheckSignal() and not when the signal really occurs
+        typedef void (*SignalHandler)(int);
+
+        // Set signal handler for the given signal, SIG_DFL or SIG_IGN can be used
+        // instead of a function pointer
+        //
+        // Return true if handler was installed, false on error
+        bool SetSignalHandler(int signal, SignalHandler handler);
+
+        // Check if any Unix signals arrived since the last call and execute
+        // handlers for them
+        void CheckSignal();
+
+        // Register the signal wake up pipe with the given dispatcher.
+        //
+        // This is used by wxExecute(wxEXEC_NOEVENTS) implementation only.
+        //
+        // The pointer to the handler used for processing events on this descriptor
+        // is returned so that it can be deleted when we no longer needed it.
+        wxFDIOHandler* RegisterSignalWakeUpPipe(wxFDIODispatcher& dispatcher);
+
+    private:
+        // signal handler set up by SetSignalHandler() for all signals we handle,
+        // it just adds the signal to m_signalsCaught -- the real processing is
+        // done later, when CheckSignal() is called
+        static void HandleSignal(int signal);
+
+
+        // signals for which HandleSignal() had been called (reset from
+        // CheckSignal())
+        sigset_t m_signalsCaught;
+
+        // the signal handlers
+        /* WX_DECLARE_HASH_MAP(int, SignalHandler, wxIntegerHash, wxIntegerEqual, SignalHandlerHash); */
+        /* SignalHandlerHash m_signalHandlerHash; */
+
+        // pipe used for wake up signal handling: if a signal arrives while we're
+        // blocking for input, writing to this pipe triggers a call to our CheckSignal()
+        wxWakeUpPipe *m_signalWakeUpPipe;
+    };
 #else
     // this has to be a class and not a typedef as we forward declare it
     class wxAppConsole : public wxAppConsoleBase { };
@@ -756,7 +817,90 @@ protected:
 #elif defined(__WXX11__)
     #include "wx/x11/app.h"
 #elif defined(__WXMAC__)
-    #include "wx/osx/app.h"
+    #ifndef __CPPAST__
+        #include "wx/osx/app.h"
+    #else
+#ifndef _WX_APP_H_
+#define _WX_APP_H_
+
+#include "wx/defs.h"
+#include "wx/object.h"
+#include "wx/gdicmn.h"
+#include "wx/event.h"
+
+class WXDLLIMPEXP_FWD_CORE wxFrame;
+class WXDLLIMPEXP_FWD_CORE wxWindowMac;
+class WXDLLIMPEXP_FWD_CORE wxApp ;
+class WXDLLIMPEXP_FWD_CORE wxKeyEvent;
+class WXDLLIMPEXP_FWD_BASE wxLog;
+class WXDLLIMPEXP_FWD_CORE wxMacAutoreleasePool;
+
+// Force an exit from main loop
+void WXDLLIMPEXP_CORE wxExit();
+
+// Yield to other apps/messages
+bool WXDLLIMPEXP_CORE wxYield();
+
+// Represents the application. Derive OnInit and declare
+// a new App object to start application
+class WXDLLIMPEXP_CORE wxApp: public wxAppBase
+{
+    wxDECLARE_DYNAMIC_CLASS(wxApp);
+
+    wxApp();
+    virtual ~wxApp();
+
+    virtual void WakeUpIdle() wxOVERRIDE;
+
+    virtual void SetPrintMode(int mode) wxOVERRIDE { m_printMode = mode; }
+    virtual int GetPrintMode() const { return m_printMode; }
+
+    // calling OnInit with an auto-release pool ready ...
+    virtual bool CallOnInit() wxOVERRIDE;
+#if wxUSE_GUI
+    // setting up all MacOS Specific Event-Handlers etc
+    virtual bool OnInitGui() wxOVERRIDE;
+#endif // wxUSE_GUI
+
+    virtual int OnRun() wxOVERRIDE;
+
+    virtual bool ProcessIdle() wxOVERRIDE;
+
+    // implementation only
+    void OnIdle(wxIdleEvent& event);
+    void OnEndSession(wxCloseEvent& event);
+    void OnQueryEndSession(wxCloseEvent& event);
+
+protected:
+    int                   m_printMode; // wxPRINT_WINDOWS, wxPRINT_POSTSCRIPT
+
+public:
+
+    static bool           sm_isEmbedded;
+    // Implementation
+    virtual bool Initialize(int& argc, wxChar **argv) wxOVERRIDE;
+    virtual void CleanUp() wxOVERRIDE;
+
+
+public:
+    static wxWindow*      s_captureWindow ;
+    static long           s_lastModifiers ;
+
+    int                   m_nCmdShow;
+
+private:
+    virtual bool        DoInitGui();
+    virtual void        DoCleanUp();
+
+
+    wxDECLARE_EVENT_TABLE();
+};
+
+#endif
+    // _WX_APP_H_
+
+    #endif
+
 #elif defined(__WXQT__)
     #include "wx/qt/app.h"
 #endif

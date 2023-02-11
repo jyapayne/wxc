@@ -2106,7 +2106,33 @@ inline void wxWindowBase::SetInitialBestSize(const wxSize& size)
     #else // !wxUniv
         #define wxWindowMac wxWindow
     #endif // wxUniv
+    #ifndef __CPPAST__
     #include "wx/osx/window.h"
+    #else
+    class wxWindow: public wxWindowBase {
+
+        wxDECLARE_DYNAMIC_CLASS(wxWindow);
+
+        friend class wxDC;
+        friend class wxPaintDC;
+
+    public:
+        wxWindowMac();
+
+        wxWindowMac( wxWindowMac *parent,
+                    wxWindowID id,
+                    const wxPoint& pos = wxDefaultPosition,
+                    const wxSize& size = wxDefaultSize,
+                    long style = 0,
+                    const wxString& name = wxASCII_STR(wxPanelNameStr) );
+
+        virtual ~wxWindowMac();
+    private:
+        wxDECLARE_NO_COPY_CLASS(wxWindow);
+        wxDECLARE_EVENT_TABLE();
+    };
+    #endif
+
 #elif defined(__WXQT__)
     #ifdef __WXUNIVERSAL__
         #define wxWindowNative wxWindowQt

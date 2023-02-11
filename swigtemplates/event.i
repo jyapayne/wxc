@@ -1,4 +1,15 @@
 %module event
+%{
+#include <wx/event.h>
+
+#include "wxext/event_ext.h"
+#include "wxext/eventfilter_ext.h"
+#if defined(__WXMAC__)
+#include <objc/runtime.h>
+#endif
+
+%}
+
 %include <common.i>
 
 %ignore wxObject::ms_classInfo;
@@ -24,6 +35,9 @@
 %import "wx/mousestate.h"
 %import "wx/tracker.h"
 %include "wx/event.h"
+%include "wx/eventfilter.h"
+%include "wxext/event_ext.h"
+%include "wxext/eventfilter_ext.h"
 
 /* For some reason this doesn't work. Figure out why */
 

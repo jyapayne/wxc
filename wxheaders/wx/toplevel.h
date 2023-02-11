@@ -388,8 +388,108 @@ protected:
     #include "wx/dfb/toplevel.h"
     #define wxTopLevelWindowNative wxTopLevelWindowDFB
 #elif defined(__WXMAC__)
-    #include "wx/osx/toplevel.h"
-    #define wxTopLevelWindowNative wxTopLevelWindowMac
+    #ifndef __CPPAST__
+        #include "wx/osx/toplevel.h"
+        #define wxTopLevelWindowNative wxTopLevelWindowMac
+    #else
+#ifndef _WX_MSW_TOPLEVEL_H_
+#define _WX_MSW_TOPLEVEL_H_
+
+// ----------------------------------------------------------------------------
+// wxTopLevelWindowMac
+// ----------------------------------------------------------------------------
+
+class WXDLLIMPEXP_CORE wxTopLevelWindowNative : public wxTopLevelWindowBase
+{
+public:
+    // constructors and such
+    wxTopLevelWindowNative() { Init(); }
+
+    wxTopLevelWindowNative(wxWindow *parent,
+                        wxWindowID id,
+                        const wxString& title,
+                        const wxPoint& pos = wxDefaultPosition,
+                        const wxSize& size = wxDefaultSize,
+                        long style = wxDEFAULT_FRAME_STYLE,
+                        const wxString& name = wxASCII_STR(wxFrameNameStr))
+    {
+        Init();
+
+        (void)Create(parent, id, title, pos, size, style, name);
+    }
+
+    virtual ~wxTopLevelWindowNative();
+
+    bool Create(wxWindow *parent,
+                wxWindowID id,
+                const wxString& title,
+                const wxPoint& pos = wxDefaultPosition,
+                const wxSize& size = wxDefaultSize,
+                long style = wxDEFAULT_FRAME_STYLE,
+                const wxString& name = wxASCII_STR(wxFrameNameStr));
+
+    bool Create(wxWindow *parent, WXWindow nativeWindow);
+
+    virtual bool Destroy() wxOVERRIDE;
+
+    virtual wxPoint GetClientAreaOrigin() const wxOVERRIDE;
+
+    // Attracts the users attention to this window if the application is
+    // inactive (should be called when a background event occurs)
+    virtual void RequestUserAttention(int flags = wxUSER_ATTENTION_INFO) wxOVERRIDE;
+
+    // implement base class pure virtuals
+    virtual void Maximize(bool maximize = true) wxOVERRIDE;
+    virtual bool IsMaximized() const wxOVERRIDE;
+    virtual void Iconize(bool iconize = true) wxOVERRIDE;
+    virtual bool IsIconized() const wxOVERRIDE;
+    virtual void Restore() wxOVERRIDE;
+
+    virtual bool IsActive() wxOVERRIDE;
+
+    virtual void ShowWithoutActivating() wxOVERRIDE;
+    bool EnableFullScreenView(bool enable = true, long style = wxFULLSCREEN_ALL) wxOVERRIDE;
+    virtual bool ShowFullScreen(bool show, long style = wxFULLSCREEN_ALL) wxOVERRIDE;
+    virtual bool IsFullScreen() const wxOVERRIDE;
+
+    virtual wxContentProtection GetContentProtection() const wxOVERRIDE;
+    virtual bool SetContentProtection(wxContentProtection contentProtection) wxOVERRIDE;
+
+    // implementation from now on
+    // --------------------------
+
+    virtual void SetTitle( const wxString& title) wxOVERRIDE;
+    virtual wxString GetTitle() const wxOVERRIDE;
+
+    // EnableCloseButton(false) used to disable the "Close"
+    // button on the title bar
+    virtual bool EnableCloseButton(bool enable = true) wxOVERRIDE;
+    virtual bool EnableMaximizeButton(bool enable = true) wxOVERRIDE;
+    virtual bool EnableMinimizeButton(bool enable = true) wxOVERRIDE;
+
+    virtual void SetLabel(const wxString& label) wxOVERRIDE { SetTitle( label ); }
+    virtual wxString GetLabel() const            wxOVERRIDE { return GetTitle(); }
+
+
+    virtual void SetRepresentedFilename(const wxString& filename) wxOVERRIDE;
+
+protected:
+    // common part of all ctors
+    void Init();
+
+    // is the frame currently iconized?
+    bool m_iconized;
+
+    // should the frame be maximized when it will be shown? set by Maximize()
+    // when it is called while the frame is hidden
+    bool m_maximizeOnShow;
+
+private :
+    wxDECLARE_EVENT_TABLE();
+};
+
+#endif // _WX_MSW_TOPLEVEL_H_
+#endif
 #elif defined(__WXMOTIF__)
     #include "wx/motif/toplevel.h"
     #define wxTopLevelWindowNative wxTopLevelWindowMotif

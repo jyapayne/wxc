@@ -56,8 +56,6 @@ typedef void (*wxFrameBaseExtPositionStatusBarFunc)(const wxFrameBaseExt* self);
 typedef void (*wxFrameBaseExtPositionToolBarFunc)(const wxFrameBaseExt* self);
 typedef void (*wxFrameBaseExtRequestUserAttentionintFunc)(const wxFrameBaseExt* self, int flags);
 typedef void (*wxFrameBaseExtRestoreFunc)(const wxFrameBaseExt* self);
-typedef bool (*wxFrameBaseExtRestoreFieldwxStringCRintPFunc)(const wxFrameBaseExt* self, wxString const& name, int* value);
-typedef bool (*wxFrameBaseExtSaveFieldwxStringCRintFunc)(const wxFrameBaseExt* self, wxString const& name, int value);
 typedef bool (*wxFrameBaseExtSetContentProtectionwxContentProtectionFunc)(const wxFrameBaseExt* self, wxContentProtection contentProtection);
 typedef void (*wxFrameBaseExtSetIconswxIconBundleCRFunc)(const wxFrameBaseExt* self, wxIconBundle const& icons);
 typedef void (*wxFrameBaseExtSetLabelwxStringCRFunc)(const wxFrameBaseExt* self, wxString const& label);
@@ -132,8 +130,6 @@ typedef void (*wxFrameExtPositionStatusBarFunc)(const wxFrameExt* self);
 typedef void (*wxFrameExtPositionToolBarFunc)(const wxFrameExt* self);
 typedef void (*wxFrameExtRequestUserAttentionintFunc)(const wxFrameExt* self, int flags);
 typedef void (*wxFrameExtRestoreFunc)(const wxFrameExt* self);
-typedef bool (*wxFrameExtRestoreFieldwxStringCRintPFunc)(const wxFrameExt* self, wxString const& name, int* value);
-typedef bool (*wxFrameExtSaveFieldwxStringCRintFunc)(const wxFrameExt* self, wxString const& name, int value);
 typedef bool (*wxFrameExtSetContentProtectionwxContentProtectionFunc)(const wxFrameExt* self, wxContentProtection contentProtection);
 typedef void (*wxFrameExtSetIconswxIconBundleCRFunc)(const wxFrameExt* self, wxIconBundle const& icons);
 typedef void (*wxFrameExtSetLabelwxStringCRFunc)(const wxFrameExt* self, wxString const& label);
@@ -193,11 +189,12 @@ public:
   wxFrameBaseExtDestroyFunc m_wxFrameBaseExtDestroy = NULL;
   virtual bool Destroy() override
   {
+    bool res = wxFrameBase::Destroy();
     if (*m_wxFrameBaseExtDestroy != NULL){
       return m_wxFrameBaseExtDestroy(this);
     }
     else {
-      return false;
+      return res;
     }
   }
   wxFrameBaseExtDetachMenuBarFunc m_wxFrameBaseExtDetachMenuBar = NULL;
@@ -267,41 +264,45 @@ public:
   wxFrameBaseExtEnableCloseButtonboolFunc m_wxFrameBaseExtEnableCloseButtonbool = NULL;
   virtual bool EnableCloseButton(bool enable = true) override
   {
+    bool res = wxFrameBase::EnableCloseButton(enable);
     if (*m_wxFrameBaseExtEnableCloseButtonbool != NULL){
       return m_wxFrameBaseExtEnableCloseButtonbool(this, enable);
     }
     else {
-      return false;
+      return res;
     }
   }
   wxFrameBaseExtEnableFullScreenViewboollongFunc m_wxFrameBaseExtEnableFullScreenViewboollong = NULL;
   virtual bool EnableFullScreenView(bool enable = true, long style = wxFULLSCREEN_ALL) override
   {
+    bool res = wxFrameBase::EnableFullScreenView(enable, style);
     if (*m_wxFrameBaseExtEnableFullScreenViewboollong != NULL){
       return m_wxFrameBaseExtEnableFullScreenViewboollong(this, enable, style);
     }
     else {
-      return false;
+      return res;
     }
   }
   wxFrameBaseExtEnableMaximizeButtonboolFunc m_wxFrameBaseExtEnableMaximizeButtonbool = NULL;
   virtual bool EnableMaximizeButton(bool enable = true) override
   {
+    bool res = wxFrameBase::EnableMaximizeButton(enable);
     if (*m_wxFrameBaseExtEnableMaximizeButtonbool != NULL){
       return m_wxFrameBaseExtEnableMaximizeButtonbool(this, enable);
     }
     else {
-      return false;
+      return res;
     }
   }
   wxFrameBaseExtEnableMinimizeButtonboolFunc m_wxFrameBaseExtEnableMinimizeButtonbool = NULL;
   virtual bool EnableMinimizeButton(bool enable = true) override
   {
+    bool res = wxFrameBase::EnableMinimizeButton(enable);
     if (*m_wxFrameBaseExtEnableMinimizeButtonbool != NULL){
       return m_wxFrameBaseExtEnableMinimizeButtonbool(this, enable);
     }
     else {
-      return false;
+      return res;
     }
   }
   wxFrameBaseExtFindItemInMenuBarintFunc m_wxFrameBaseExtFindItemInMenuBarint = NULL;
@@ -340,11 +341,12 @@ public:
   wxFrameBaseExtGetContentProtectionFunc m_wxFrameBaseExtGetContentProtection = NULL;
   virtual wxContentProtection GetContentProtection() const override
   {
+    wxContentProtection res = wxFrameBase::GetContentProtection();
     if (*m_wxFrameBaseExtGetContentProtection != NULL){
       return m_wxFrameBaseExtGetContentProtection(this);
     }
     else {
-      return wxContentProtection();
+      return res;
     }
   }
   wxFrameBaseExtGetEventHashTableFunc m_wxFrameBaseExtGetEventHashTable = NULL;
@@ -413,11 +415,12 @@ public:
   wxFrameBaseExtGetTitleFunc m_wxFrameBaseExtGetTitle = NULL;
   virtual wxString GetTitle() const override
   {
+    wxString res = wxFrameBase::GetTitle();
     if (*m_wxFrameBaseExtGetTitle != NULL){
       return m_wxFrameBaseExtGetTitle(this);
     }
     else {
-      return "";
+      return res;
     }
   }
   wxFrameBaseExtGetToolBarFunc m_wxFrameBaseExtGetToolBar = NULL;
@@ -434,6 +437,7 @@ public:
   wxFrameBaseExtIconizeboolFunc m_wxFrameBaseExtIconizebool = NULL;
   virtual void Iconize(bool iconize = true) override
   {
+    wxFrameBase::Iconize(iconize);
     if (*m_wxFrameBaseExtIconizebool != NULL){
       return m_wxFrameBaseExtIconizebool(this, iconize);
     }
@@ -441,11 +445,12 @@ public:
   wxFrameBaseExtIsActiveFunc m_wxFrameBaseExtIsActive = NULL;
   virtual bool IsActive() override
   {
+    bool res = wxFrameBase::IsActive();
     if (*m_wxFrameBaseExtIsActive != NULL){
       return m_wxFrameBaseExtIsActive(this);
     }
     else {
-      return false;
+      return res;
     }
   }
   wxFrameBaseExtIsAlwaysMaximizedFunc m_wxFrameBaseExtIsAlwaysMaximized = NULL;
@@ -473,31 +478,34 @@ public:
   wxFrameBaseExtIsFullScreenFunc m_wxFrameBaseExtIsFullScreen = NULL;
   virtual bool IsFullScreen() const override
   {
+    bool res = wxFrameBase::IsFullScreen();
     if (*m_wxFrameBaseExtIsFullScreen != NULL){
       return m_wxFrameBaseExtIsFullScreen(this);
     }
     else {
-      return false;
+      return res;
     }
   }
   wxFrameBaseExtIsIconizedFunc m_wxFrameBaseExtIsIconized = NULL;
   virtual bool IsIconized() const override
   {
+    bool res = wxFrameBase::IsIconized();
     if (*m_wxFrameBaseExtIsIconized != NULL){
       return m_wxFrameBaseExtIsIconized(this);
     }
     else {
-      return false;
+      return res;
     }
   }
   wxFrameBaseExtIsMaximizedFunc m_wxFrameBaseExtIsMaximized = NULL;
   virtual bool IsMaximized() const override
   {
+    bool res = wxFrameBase::IsMaximized();
     if (*m_wxFrameBaseExtIsMaximized != NULL){
       return m_wxFrameBaseExtIsMaximized(this);
     }
     else {
-      return false;
+      return res;
     }
   }
   wxFrameBaseExtIsOneOfBarswxWindowCPFunc m_wxFrameBaseExtIsOneOfBarswxWindowCP = NULL;
@@ -558,6 +566,7 @@ public:
   wxFrameBaseExtMaximizeboolFunc m_wxFrameBaseExtMaximizebool = NULL;
   virtual void Maximize(bool maximize = true) override
   {
+    wxFrameBase::Maximize(maximize);
     if (*m_wxFrameBaseExtMaximizebool != NULL){
       return m_wxFrameBaseExtMaximizebool(this, maximize);
     }
@@ -638,6 +647,7 @@ public:
   wxFrameBaseExtRequestUserAttentionintFunc m_wxFrameBaseExtRequestUserAttentionint = NULL;
   virtual void RequestUserAttention(int flags = wxUSER_ATTENTION_INFO) override
   {
+    wxFrameBase::RequestUserAttention(flags);
     if (*m_wxFrameBaseExtRequestUserAttentionint != NULL){
       return m_wxFrameBaseExtRequestUserAttentionint(this, flags);
     }
@@ -645,38 +655,20 @@ public:
   wxFrameBaseExtRestoreFunc m_wxFrameBaseExtRestore = NULL;
   virtual void Restore() override
   {
+    wxFrameBase::Restore();
     if (*m_wxFrameBaseExtRestore != NULL){
       return m_wxFrameBaseExtRestore(this);
-    }
-  }
-  wxFrameBaseExtRestoreFieldwxStringCRintPFunc m_wxFrameBaseExtRestoreFieldwxStringCRintP = NULL;
-  virtual bool RestoreField(wxString const& name, int* value) 
-  {
-    if (*m_wxFrameBaseExtRestoreFieldwxStringCRintP != NULL){
-      return m_wxFrameBaseExtRestoreFieldwxStringCRintP(this, name, value);
-    }
-    else {
-      return false;
-    }
-  }
-  wxFrameBaseExtSaveFieldwxStringCRintFunc m_wxFrameBaseExtSaveFieldwxStringCRint = NULL;
-  virtual bool SaveField(wxString const& name, int value) const 
-  {
-    if (*m_wxFrameBaseExtSaveFieldwxStringCRint != NULL){
-      return m_wxFrameBaseExtSaveFieldwxStringCRint(this, name, value);
-    }
-    else {
-      return false;
     }
   }
   wxFrameBaseExtSetContentProtectionwxContentProtectionFunc m_wxFrameBaseExtSetContentProtectionwxContentProtection = NULL;
   virtual bool SetContentProtection(wxContentProtection contentProtection) override
   {
+    bool res = wxFrameBase::SetContentProtection(contentProtection);
     if (*m_wxFrameBaseExtSetContentProtectionwxContentProtection != NULL){
       return m_wxFrameBaseExtSetContentProtectionwxContentProtection(this, contentProtection);
     }
     else {
-      return false;
+      return res;
     }
   }
   wxFrameBaseExtSetIconswxIconBundleCRFunc m_wxFrameBaseExtSetIconswxIconBundleCR = NULL;
@@ -722,6 +714,7 @@ public:
   wxFrameBaseExtSetRepresentedFilenamewxStringCRFunc m_wxFrameBaseExtSetRepresentedFilenamewxStringCR = NULL;
   virtual void SetRepresentedFilename(wxString const& filename) override
   {
+    wxFrameBase::SetRepresentedFilename(filename);
     if (*m_wxFrameBaseExtSetRepresentedFilenamewxStringCR != NULL){
       return m_wxFrameBaseExtSetRepresentedFilenamewxStringCR(this, filename);
     }
@@ -753,6 +746,7 @@ public:
   wxFrameBaseExtSetTitlewxStringCRFunc m_wxFrameBaseExtSetTitlewxStringCR = NULL;
   virtual void SetTitle(wxString const& title) override
   {
+    wxFrameBase::SetTitle(title);
     if (*m_wxFrameBaseExtSetTitlewxStringCR != NULL){
       return m_wxFrameBaseExtSetTitlewxStringCR(this, title);
     }
@@ -779,16 +773,18 @@ public:
   wxFrameBaseExtShowFullScreenboollongFunc m_wxFrameBaseExtShowFullScreenboollong = NULL;
   virtual bool ShowFullScreen(bool show, long style = wxFULLSCREEN_ALL) override
   {
+    bool res = wxFrameBase::ShowFullScreen(show, style);
     if (*m_wxFrameBaseExtShowFullScreenboollong != NULL){
       return m_wxFrameBaseExtShowFullScreenboollong(this, show, style);
     }
     else {
-      return false;
+      return res;
     }
   }
   wxFrameBaseExtShowWithoutActivatingFunc m_wxFrameBaseExtShowWithoutActivating = NULL;
   virtual void ShowWithoutActivating() override
   {
+    wxFrameBase::ShowWithoutActivating();
     if (*m_wxFrameBaseExtShowWithoutActivating != NULL){
       return m_wxFrameBaseExtShowWithoutActivating(this);
     }
@@ -834,7 +830,7 @@ public:
       return res;
     }
   }
-  wxFrameBaseExt(wxFrameBaseExtAttachMenuBarwxMenuBarPFunc a_AttachMenuBarwxMenuBarP, wxFrameBaseExtCreateStatusBarintlongwxWindowIDwxStringCRFunc a_CreateStatusBarintlongwxWindowIDwxStringCR, wxFrameBaseExtCreateToolBarlongwxWindowIDwxStringCRFunc a_CreateToolBarlongwxWindowIDwxStringCR, wxFrameBaseExtDestroyFunc a_Destroy, wxFrameBaseExtDetachMenuBarFunc a_DetachMenuBar, wxFrameBaseExtDoCentreintFunc a_DoCentreint, wxFrameBaseExtDoClientToScreenintPintPFunc a_DoClientToScreenintPintP, wxFrameBaseExtDoGetScreenPositionintPintPFunc a_DoGetScreenPositionintPintP, wxFrameBaseExtDoGiveHelpwxStringCRboolFunc a_DoGiveHelpwxStringCRbool, wxFrameBaseExtDoMenuUpdateswxMenuPFunc a_DoMenuUpdateswxMenuP, wxFrameBaseExtDoScreenToClientintPintPFunc a_DoScreenToClientintPintP, wxFrameBaseExtDoUpdateWindowUIwxUpdateUIEventRFunc a_DoUpdateWindowUIwxUpdateUIEventR, wxFrameBaseExtEnableCloseButtonboolFunc a_EnableCloseButtonbool, wxFrameBaseExtEnableFullScreenViewboollongFunc a_EnableFullScreenViewboollong, wxFrameBaseExtEnableMaximizeButtonboolFunc a_EnableMaximizeButtonbool, wxFrameBaseExtEnableMinimizeButtonboolFunc a_EnableMinimizeButtonbool, wxFrameBaseExtFindItemInMenuBarintFunc a_FindItemInMenuBarint, wxFrameBaseExtGetClassInfoFunc a_GetClassInfo, wxFrameBaseExtGetClientAreaOriginFunc a_GetClientAreaOrigin, wxFrameBaseExtGetContentProtectionFunc a_GetContentProtection, wxFrameBaseExtGetEventHashTableFunc a_GetEventHashTable, wxFrameBaseExtGetEventTableFunc a_GetEventTable, wxFrameBaseExtGetLabelFunc a_GetLabel, wxFrameBaseExtGetMenuBarFunc a_GetMenuBar, wxFrameBaseExtGetRectForTopLevelChildrenintPintPintPintPFunc a_GetRectForTopLevelChildrenintPintPintPintP, wxFrameBaseExtGetStatusBarFunc a_GetStatusBar, wxFrameBaseExtGetTitleFunc a_GetTitle, wxFrameBaseExtGetToolBarFunc a_GetToolBar, wxFrameBaseExtIconizeboolFunc a_Iconizebool, wxFrameBaseExtIsActiveFunc a_IsActive, wxFrameBaseExtIsAlwaysMaximizedFunc a_IsAlwaysMaximized, wxFrameBaseExtIsClientAreaChildwxWindowCPFunc a_IsClientAreaChildwxWindowCP, wxFrameBaseExtIsFullScreenFunc a_IsFullScreen, wxFrameBaseExtIsIconizedFunc a_IsIconized, wxFrameBaseExtIsMaximizedFunc a_IsMaximized, wxFrameBaseExtIsOneOfBarswxWindowCPFunc a_IsOneOfBarswxWindowCP, wxFrameBaseExtIsTopLevelFunc a_IsTopLevel, wxFrameBaseExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc a_IsTopNavigationDomainwxWindowBaseNNavigationKind, wxFrameBaseExtIsVisibleFunc a_IsVisible, wxFrameBaseExtLayoutFunc a_Layout, wxFrameBaseExtMaximizeboolFunc a_Maximizebool, wxFrameBaseExtOSXIsModifiedFunc a_OSXIsModified, wxFrameBaseExtOSXSetModifiedboolFunc a_OSXSetModifiedbool, wxFrameBaseExtOnCreateStatusBarintlongwxWindowIDwxStringCRFunc a_OnCreateStatusBarintlongwxWindowIDwxStringCR, wxFrameBaseExtOnCreateToolBarlongwxWindowIDwxStringCRFunc a_OnCreateToolBarlongwxWindowIDwxStringCR, wxFrameBaseExtOnInternalIdleFunc a_OnInternalIdle, wxFrameBaseExtPositionMenuBarFunc a_PositionMenuBar, wxFrameBaseExtPositionStatusBarFunc a_PositionStatusBar, wxFrameBaseExtPositionToolBarFunc a_PositionToolBar, wxFrameBaseExtRequestUserAttentionintFunc a_RequestUserAttentionint, wxFrameBaseExtRestoreFunc a_Restore, wxFrameBaseExtRestoreFieldwxStringCRintPFunc a_RestoreFieldwxStringCRintP, wxFrameBaseExtSaveFieldwxStringCRintFunc a_SaveFieldwxStringCRint, wxFrameBaseExtSetContentProtectionwxContentProtectionFunc a_SetContentProtectionwxContentProtection, wxFrameBaseExtSetIconswxIconBundleCRFunc a_SetIconswxIconBundleCR, wxFrameBaseExtSetLabelwxStringCRFunc a_SetLabelwxStringCR, wxFrameBaseExtSetMaxSizewxSizeCRFunc a_SetMaxSizewxSizeCR, wxFrameBaseExtSetMenuBarwxMenuBarPFunc a_SetMenuBarwxMenuBarP, wxFrameBaseExtSetMinSizewxSizeCRFunc a_SetMinSizewxSizeCR, wxFrameBaseExtSetRepresentedFilenamewxStringCRFunc a_SetRepresentedFilenamewxStringCR, wxFrameBaseExtSetStatusBarwxStatusBarPFunc a_SetStatusBarwxStatusBarP, wxFrameBaseExtSetStatusTextwxStringCRintFunc a_SetStatusTextwxStringCRint, wxFrameBaseExtSetStatusWidthsintintCBFunc a_SetStatusWidthsintintCB, wxFrameBaseExtSetTitlewxStringCRFunc a_SetTitlewxStringCR, wxFrameBaseExtSetToolBarwxToolBarPFunc a_SetToolBarwxToolBarP, wxFrameBaseExtShouldPreventAppExitFunc a_ShouldPreventAppExit, wxFrameBaseExtShowFullScreenboollongFunc a_ShowFullScreenboollong, wxFrameBaseExtShowWithoutActivatingFunc a_ShowWithoutActivating, wxFrameBaseExtUpdateWindowUIlongFunc a_UpdateWindowUIlong, wxFrameBaseExtWXReservedTLW1voidPFunc a_WXReservedTLW1voidP, wxFrameBaseExtWXReservedTLW2voidPFunc a_WXReservedTLW2voidP, wxFrameBaseExtWXReservedTLW3voidPFunc a_WXReservedTLW3voidP): wxFrameBase() {
+  wxFrameBaseExt(wxFrameBaseExtAttachMenuBarwxMenuBarPFunc a_AttachMenuBarwxMenuBarP, wxFrameBaseExtCreateStatusBarintlongwxWindowIDwxStringCRFunc a_CreateStatusBarintlongwxWindowIDwxStringCR, wxFrameBaseExtCreateToolBarlongwxWindowIDwxStringCRFunc a_CreateToolBarlongwxWindowIDwxStringCR, wxFrameBaseExtDestroyFunc a_Destroy, wxFrameBaseExtDetachMenuBarFunc a_DetachMenuBar, wxFrameBaseExtDoCentreintFunc a_DoCentreint, wxFrameBaseExtDoClientToScreenintPintPFunc a_DoClientToScreenintPintP, wxFrameBaseExtDoGetScreenPositionintPintPFunc a_DoGetScreenPositionintPintP, wxFrameBaseExtDoGiveHelpwxStringCRboolFunc a_DoGiveHelpwxStringCRbool, wxFrameBaseExtDoMenuUpdateswxMenuPFunc a_DoMenuUpdateswxMenuP, wxFrameBaseExtDoScreenToClientintPintPFunc a_DoScreenToClientintPintP, wxFrameBaseExtDoUpdateWindowUIwxUpdateUIEventRFunc a_DoUpdateWindowUIwxUpdateUIEventR, wxFrameBaseExtEnableCloseButtonboolFunc a_EnableCloseButtonbool, wxFrameBaseExtEnableFullScreenViewboollongFunc a_EnableFullScreenViewboollong, wxFrameBaseExtEnableMaximizeButtonboolFunc a_EnableMaximizeButtonbool, wxFrameBaseExtEnableMinimizeButtonboolFunc a_EnableMinimizeButtonbool, wxFrameBaseExtFindItemInMenuBarintFunc a_FindItemInMenuBarint, wxFrameBaseExtGetClassInfoFunc a_GetClassInfo, wxFrameBaseExtGetClientAreaOriginFunc a_GetClientAreaOrigin, wxFrameBaseExtGetContentProtectionFunc a_GetContentProtection, wxFrameBaseExtGetEventHashTableFunc a_GetEventHashTable, wxFrameBaseExtGetEventTableFunc a_GetEventTable, wxFrameBaseExtGetLabelFunc a_GetLabel, wxFrameBaseExtGetMenuBarFunc a_GetMenuBar, wxFrameBaseExtGetRectForTopLevelChildrenintPintPintPintPFunc a_GetRectForTopLevelChildrenintPintPintPintP, wxFrameBaseExtGetStatusBarFunc a_GetStatusBar, wxFrameBaseExtGetTitleFunc a_GetTitle, wxFrameBaseExtGetToolBarFunc a_GetToolBar, wxFrameBaseExtIconizeboolFunc a_Iconizebool, wxFrameBaseExtIsActiveFunc a_IsActive, wxFrameBaseExtIsAlwaysMaximizedFunc a_IsAlwaysMaximized, wxFrameBaseExtIsClientAreaChildwxWindowCPFunc a_IsClientAreaChildwxWindowCP, wxFrameBaseExtIsFullScreenFunc a_IsFullScreen, wxFrameBaseExtIsIconizedFunc a_IsIconized, wxFrameBaseExtIsMaximizedFunc a_IsMaximized, wxFrameBaseExtIsOneOfBarswxWindowCPFunc a_IsOneOfBarswxWindowCP, wxFrameBaseExtIsTopLevelFunc a_IsTopLevel, wxFrameBaseExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc a_IsTopNavigationDomainwxWindowBaseNNavigationKind, wxFrameBaseExtIsVisibleFunc a_IsVisible, wxFrameBaseExtLayoutFunc a_Layout, wxFrameBaseExtMaximizeboolFunc a_Maximizebool, wxFrameBaseExtOSXIsModifiedFunc a_OSXIsModified, wxFrameBaseExtOSXSetModifiedboolFunc a_OSXSetModifiedbool, wxFrameBaseExtOnCreateStatusBarintlongwxWindowIDwxStringCRFunc a_OnCreateStatusBarintlongwxWindowIDwxStringCR, wxFrameBaseExtOnCreateToolBarlongwxWindowIDwxStringCRFunc a_OnCreateToolBarlongwxWindowIDwxStringCR, wxFrameBaseExtOnInternalIdleFunc a_OnInternalIdle, wxFrameBaseExtPositionMenuBarFunc a_PositionMenuBar, wxFrameBaseExtPositionStatusBarFunc a_PositionStatusBar, wxFrameBaseExtPositionToolBarFunc a_PositionToolBar, wxFrameBaseExtRequestUserAttentionintFunc a_RequestUserAttentionint, wxFrameBaseExtRestoreFunc a_Restore, wxFrameBaseExtSetContentProtectionwxContentProtectionFunc a_SetContentProtectionwxContentProtection, wxFrameBaseExtSetIconswxIconBundleCRFunc a_SetIconswxIconBundleCR, wxFrameBaseExtSetLabelwxStringCRFunc a_SetLabelwxStringCR, wxFrameBaseExtSetMaxSizewxSizeCRFunc a_SetMaxSizewxSizeCR, wxFrameBaseExtSetMenuBarwxMenuBarPFunc a_SetMenuBarwxMenuBarP, wxFrameBaseExtSetMinSizewxSizeCRFunc a_SetMinSizewxSizeCR, wxFrameBaseExtSetRepresentedFilenamewxStringCRFunc a_SetRepresentedFilenamewxStringCR, wxFrameBaseExtSetStatusBarwxStatusBarPFunc a_SetStatusBarwxStatusBarP, wxFrameBaseExtSetStatusTextwxStringCRintFunc a_SetStatusTextwxStringCRint, wxFrameBaseExtSetStatusWidthsintintCBFunc a_SetStatusWidthsintintCB, wxFrameBaseExtSetTitlewxStringCRFunc a_SetTitlewxStringCR, wxFrameBaseExtSetToolBarwxToolBarPFunc a_SetToolBarwxToolBarP, wxFrameBaseExtShouldPreventAppExitFunc a_ShouldPreventAppExit, wxFrameBaseExtShowFullScreenboollongFunc a_ShowFullScreenboollong, wxFrameBaseExtShowWithoutActivatingFunc a_ShowWithoutActivating, wxFrameBaseExtUpdateWindowUIlongFunc a_UpdateWindowUIlong, wxFrameBaseExtWXReservedTLW1voidPFunc a_WXReservedTLW1voidP, wxFrameBaseExtWXReservedTLW2voidPFunc a_WXReservedTLW2voidP, wxFrameBaseExtWXReservedTLW3voidPFunc a_WXReservedTLW3voidP): wxFrameBase() {
     m_wxFrameBaseExtAttachMenuBarwxMenuBarP = a_AttachMenuBarwxMenuBarP;
     m_wxFrameBaseExtCreateStatusBarintlongwxWindowIDwxStringCR = a_CreateStatusBarintlongwxWindowIDwxStringCR;
     m_wxFrameBaseExtCreateToolBarlongwxWindowIDwxStringCR = a_CreateToolBarlongwxWindowIDwxStringCR;
@@ -886,8 +882,6 @@ public:
     m_wxFrameBaseExtPositionToolBar = a_PositionToolBar;
     m_wxFrameBaseExtRequestUserAttentionint = a_RequestUserAttentionint;
     m_wxFrameBaseExtRestore = a_Restore;
-    m_wxFrameBaseExtRestoreFieldwxStringCRintP = a_RestoreFieldwxStringCRintP;
-    m_wxFrameBaseExtSaveFieldwxStringCRint = a_SaveFieldwxStringCRint;
     m_wxFrameBaseExtSetContentProtectionwxContentProtection = a_SetContentProtectionwxContentProtection;
     m_wxFrameBaseExtSetIconswxIconBundleCR = a_SetIconswxIconBundleCR;
     m_wxFrameBaseExtSetLabelwxStringCR = a_SetLabelwxStringCR;
@@ -948,11 +942,12 @@ public:
   wxFrameExtDestroyFunc m_wxFrameExtDestroy = NULL;
   virtual bool Destroy() override
   {
+    bool res = wxFrame::Destroy();
     if (*m_wxFrameExtDestroy != NULL){
       return m_wxFrameExtDestroy(this);
     }
     else {
-      return false;
+      return res;
     }
   }
   wxFrameExtDetachMenuBarFunc m_wxFrameExtDetachMenuBar = NULL;
@@ -1049,41 +1044,45 @@ public:
   wxFrameExtEnableCloseButtonboolFunc m_wxFrameExtEnableCloseButtonbool = NULL;
   virtual bool EnableCloseButton(bool enable = true) override
   {
+    bool res = wxFrame::EnableCloseButton(enable);
     if (*m_wxFrameExtEnableCloseButtonbool != NULL){
       return m_wxFrameExtEnableCloseButtonbool(this, enable);
     }
     else {
-      return false;
+      return res;
     }
   }
   wxFrameExtEnableFullScreenViewboollongFunc m_wxFrameExtEnableFullScreenViewboollong = NULL;
   virtual bool EnableFullScreenView(bool enable = true, long style = wxFULLSCREEN_ALL) override
   {
+    bool res = wxFrame::EnableFullScreenView(enable, style);
     if (*m_wxFrameExtEnableFullScreenViewboollong != NULL){
       return m_wxFrameExtEnableFullScreenViewboollong(this, enable, style);
     }
     else {
-      return false;
+      return res;
     }
   }
   wxFrameExtEnableMaximizeButtonboolFunc m_wxFrameExtEnableMaximizeButtonbool = NULL;
   virtual bool EnableMaximizeButton(bool enable = true) override
   {
+    bool res = wxFrame::EnableMaximizeButton(enable);
     if (*m_wxFrameExtEnableMaximizeButtonbool != NULL){
       return m_wxFrameExtEnableMaximizeButtonbool(this, enable);
     }
     else {
-      return false;
+      return res;
     }
   }
   wxFrameExtEnableMinimizeButtonboolFunc m_wxFrameExtEnableMinimizeButtonbool = NULL;
   virtual bool EnableMinimizeButton(bool enable = true) override
   {
+    bool res = wxFrame::EnableMinimizeButton(enable);
     if (*m_wxFrameExtEnableMinimizeButtonbool != NULL){
       return m_wxFrameExtEnableMinimizeButtonbool(this, enable);
     }
     else {
-      return false;
+      return res;
     }
   }
   wxFrameExtFindItemInMenuBarintFunc m_wxFrameExtFindItemInMenuBarint = NULL;
@@ -1122,11 +1121,12 @@ public:
   wxFrameExtGetContentProtectionFunc m_wxFrameExtGetContentProtection = NULL;
   virtual wxContentProtection GetContentProtection() const override
   {
+    wxContentProtection res = wxFrame::GetContentProtection();
     if (*m_wxFrameExtGetContentProtection != NULL){
       return m_wxFrameExtGetContentProtection(this);
     }
     else {
-      return wxContentProtection();
+      return res;
     }
   }
   wxFrameExtGetEventHashTableFunc m_wxFrameExtGetEventHashTable = NULL;
@@ -1195,11 +1195,12 @@ public:
   wxFrameExtGetTitleFunc m_wxFrameExtGetTitle = NULL;
   virtual wxString GetTitle() const override
   {
+    wxString res = wxFrame::GetTitle();
     if (*m_wxFrameExtGetTitle != NULL){
       return m_wxFrameExtGetTitle(this);
     }
     else {
-      return "";
+      return res;
     }
   }
   wxFrameExtGetToolBarFunc m_wxFrameExtGetToolBar = NULL;
@@ -1216,6 +1217,7 @@ public:
   wxFrameExtIconizeboolFunc m_wxFrameExtIconizebool = NULL;
   virtual void Iconize(bool iconize = true) override
   {
+    wxFrame::Iconize(iconize);
     if (*m_wxFrameExtIconizebool != NULL){
       return m_wxFrameExtIconizebool(this, iconize);
     }
@@ -1223,11 +1225,12 @@ public:
   wxFrameExtIsActiveFunc m_wxFrameExtIsActive = NULL;
   virtual bool IsActive() override
   {
+    bool res = wxFrame::IsActive();
     if (*m_wxFrameExtIsActive != NULL){
       return m_wxFrameExtIsActive(this);
     }
     else {
-      return false;
+      return res;
     }
   }
   wxFrameExtIsAlwaysMaximizedFunc m_wxFrameExtIsAlwaysMaximized = NULL;
@@ -1255,31 +1258,34 @@ public:
   wxFrameExtIsFullScreenFunc m_wxFrameExtIsFullScreen = NULL;
   virtual bool IsFullScreen() const override
   {
+    bool res = wxFrame::IsFullScreen();
     if (*m_wxFrameExtIsFullScreen != NULL){
       return m_wxFrameExtIsFullScreen(this);
     }
     else {
-      return false;
+      return res;
     }
   }
   wxFrameExtIsIconizedFunc m_wxFrameExtIsIconized = NULL;
   virtual bool IsIconized() const override
   {
+    bool res = wxFrame::IsIconized();
     if (*m_wxFrameExtIsIconized != NULL){
       return m_wxFrameExtIsIconized(this);
     }
     else {
-      return false;
+      return res;
     }
   }
   wxFrameExtIsMaximizedFunc m_wxFrameExtIsMaximized = NULL;
   virtual bool IsMaximized() const override
   {
+    bool res = wxFrame::IsMaximized();
     if (*m_wxFrameExtIsMaximized != NULL){
       return m_wxFrameExtIsMaximized(this);
     }
     else {
-      return false;
+      return res;
     }
   }
   wxFrameExtIsOneOfBarswxWindowCPFunc m_wxFrameExtIsOneOfBarswxWindowCP = NULL;
@@ -1340,6 +1346,7 @@ public:
   wxFrameExtMaximizeboolFunc m_wxFrameExtMaximizebool = NULL;
   virtual void Maximize(bool maximize = true) override
   {
+    wxFrame::Maximize(maximize);
     if (*m_wxFrameExtMaximizebool != NULL){
       return m_wxFrameExtMaximizebool(this, maximize);
     }
@@ -1420,6 +1427,7 @@ public:
   wxFrameExtRequestUserAttentionintFunc m_wxFrameExtRequestUserAttentionint = NULL;
   virtual void RequestUserAttention(int flags = wxUSER_ATTENTION_INFO) override
   {
+    wxFrame::RequestUserAttention(flags);
     if (*m_wxFrameExtRequestUserAttentionint != NULL){
       return m_wxFrameExtRequestUserAttentionint(this, flags);
     }
@@ -1427,38 +1435,20 @@ public:
   wxFrameExtRestoreFunc m_wxFrameExtRestore = NULL;
   virtual void Restore() override
   {
+    wxFrame::Restore();
     if (*m_wxFrameExtRestore != NULL){
       return m_wxFrameExtRestore(this);
-    }
-  }
-  wxFrameExtRestoreFieldwxStringCRintPFunc m_wxFrameExtRestoreFieldwxStringCRintP = NULL;
-  virtual bool RestoreField(wxString const& name, int* value) 
-  {
-    if (*m_wxFrameExtRestoreFieldwxStringCRintP != NULL){
-      return m_wxFrameExtRestoreFieldwxStringCRintP(this, name, value);
-    }
-    else {
-      return false;
-    }
-  }
-  wxFrameExtSaveFieldwxStringCRintFunc m_wxFrameExtSaveFieldwxStringCRint = NULL;
-  virtual bool SaveField(wxString const& name, int value) const 
-  {
-    if (*m_wxFrameExtSaveFieldwxStringCRint != NULL){
-      return m_wxFrameExtSaveFieldwxStringCRint(this, name, value);
-    }
-    else {
-      return false;
     }
   }
   wxFrameExtSetContentProtectionwxContentProtectionFunc m_wxFrameExtSetContentProtectionwxContentProtection = NULL;
   virtual bool SetContentProtection(wxContentProtection contentProtection) override
   {
+    bool res = wxFrame::SetContentProtection(contentProtection);
     if (*m_wxFrameExtSetContentProtectionwxContentProtection != NULL){
       return m_wxFrameExtSetContentProtectionwxContentProtection(this, contentProtection);
     }
     else {
-      return false;
+      return res;
     }
   }
   wxFrameExtSetIconswxIconBundleCRFunc m_wxFrameExtSetIconswxIconBundleCR = NULL;
@@ -1504,6 +1494,7 @@ public:
   wxFrameExtSetRepresentedFilenamewxStringCRFunc m_wxFrameExtSetRepresentedFilenamewxStringCR = NULL;
   virtual void SetRepresentedFilename(wxString const& filename) override
   {
+    wxFrame::SetRepresentedFilename(filename);
     if (*m_wxFrameExtSetRepresentedFilenamewxStringCR != NULL){
       return m_wxFrameExtSetRepresentedFilenamewxStringCR(this, filename);
     }
@@ -1535,6 +1526,7 @@ public:
   wxFrameExtSetTitlewxStringCRFunc m_wxFrameExtSetTitlewxStringCR = NULL;
   virtual void SetTitle(wxString const& title) override
   {
+    wxFrame::SetTitle(title);
     if (*m_wxFrameExtSetTitlewxStringCR != NULL){
       return m_wxFrameExtSetTitlewxStringCR(this, title);
     }
@@ -1572,16 +1564,18 @@ public:
   wxFrameExtShowFullScreenboollongFunc m_wxFrameExtShowFullScreenboollong = NULL;
   virtual bool ShowFullScreen(bool show, long style = wxFULLSCREEN_ALL) override
   {
+    bool res = wxFrame::ShowFullScreen(show, style);
     if (*m_wxFrameExtShowFullScreenboollong != NULL){
       return m_wxFrameExtShowFullScreenboollong(this, show, style);
     }
     else {
-      return false;
+      return res;
     }
   }
   wxFrameExtShowWithoutActivatingFunc m_wxFrameExtShowWithoutActivating = NULL;
   virtual void ShowWithoutActivating() override
   {
+    wxFrame::ShowWithoutActivating();
     if (*m_wxFrameExtShowWithoutActivating != NULL){
       return m_wxFrameExtShowWithoutActivating(this);
     }
@@ -1627,7 +1621,7 @@ public:
       return res;
     }
   }
-  wxFrameExt(wxFrameExtAttachMenuBarwxMenuBarPFunc a_AttachMenuBarwxMenuBarP, wxFrameExtCreateStatusBarintlongwxWindowIDwxStringCRFunc a_CreateStatusBarintlongwxWindowIDwxStringCR, wxFrameExtCreateToolBarlongwxWindowIDwxStringCRFunc a_CreateToolBarlongwxWindowIDwxStringCR, wxFrameExtDestroyFunc a_Destroy, wxFrameExtDetachMenuBarFunc a_DetachMenuBar, wxFrameExtDoCentreintFunc a_DoCentreint, wxFrameExtDoClientToScreenintPintPFunc a_DoClientToScreenintPintP, wxFrameExtDoGetClientSizeintPintPFunc a_DoGetClientSizeintPintP, wxFrameExtDoGetScreenPositionintPintPFunc a_DoGetScreenPositionintPintP, wxFrameExtDoGiveHelpwxStringCRboolFunc a_DoGiveHelpwxStringCRbool, wxFrameExtDoMenuUpdateswxMenuPFunc a_DoMenuUpdateswxMenuP, wxFrameExtDoScreenToClientintPintPFunc a_DoScreenToClientintPintP, wxFrameExtDoSetClientSizeintintFunc a_DoSetClientSizeintint, wxFrameExtDoUpdateWindowUIwxUpdateUIEventRFunc a_DoUpdateWindowUIwxUpdateUIEventR, wxFrameExtEnableboolFunc a_Enablebool, wxFrameExtEnableCloseButtonboolFunc a_EnableCloseButtonbool, wxFrameExtEnableFullScreenViewboollongFunc a_EnableFullScreenViewboollong, wxFrameExtEnableMaximizeButtonboolFunc a_EnableMaximizeButtonbool, wxFrameExtEnableMinimizeButtonboolFunc a_EnableMinimizeButtonbool, wxFrameExtFindItemInMenuBarintFunc a_FindItemInMenuBarint, wxFrameExtGetClassInfoFunc a_GetClassInfo, wxFrameExtGetClientAreaOriginFunc a_GetClientAreaOrigin, wxFrameExtGetContentProtectionFunc a_GetContentProtection, wxFrameExtGetEventHashTableFunc a_GetEventHashTable, wxFrameExtGetEventTableFunc a_GetEventTable, wxFrameExtGetLabelFunc a_GetLabel, wxFrameExtGetMenuBarFunc a_GetMenuBar, wxFrameExtGetRectForTopLevelChildrenintPintPintPintPFunc a_GetRectForTopLevelChildrenintPintPintPintP, wxFrameExtGetStatusBarFunc a_GetStatusBar, wxFrameExtGetTitleFunc a_GetTitle, wxFrameExtGetToolBarFunc a_GetToolBar, wxFrameExtIconizeboolFunc a_Iconizebool, wxFrameExtIsActiveFunc a_IsActive, wxFrameExtIsAlwaysMaximizedFunc a_IsAlwaysMaximized, wxFrameExtIsClientAreaChildwxWindowCPFunc a_IsClientAreaChildwxWindowCP, wxFrameExtIsFullScreenFunc a_IsFullScreen, wxFrameExtIsIconizedFunc a_IsIconized, wxFrameExtIsMaximizedFunc a_IsMaximized, wxFrameExtIsOneOfBarswxWindowCPFunc a_IsOneOfBarswxWindowCP, wxFrameExtIsTopLevelFunc a_IsTopLevel, wxFrameExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc a_IsTopNavigationDomainwxWindowBaseNNavigationKind, wxFrameExtIsVisibleFunc a_IsVisible, wxFrameExtLayoutFunc a_Layout, wxFrameExtMaximizeboolFunc a_Maximizebool, wxFrameExtOSXIsModifiedFunc a_OSXIsModified, wxFrameExtOSXSetModifiedboolFunc a_OSXSetModifiedbool, wxFrameExtOnCreateStatusBarintlongwxWindowIDwxStringCRFunc a_OnCreateStatusBarintlongwxWindowIDwxStringCR, wxFrameExtOnCreateToolBarlongwxWindowIDwxStringCRFunc a_OnCreateToolBarlongwxWindowIDwxStringCR, wxFrameExtOnInternalIdleFunc a_OnInternalIdle, wxFrameExtPositionMenuBarFunc a_PositionMenuBar, wxFrameExtPositionStatusBarFunc a_PositionStatusBar, wxFrameExtPositionToolBarFunc a_PositionToolBar, wxFrameExtRequestUserAttentionintFunc a_RequestUserAttentionint, wxFrameExtRestoreFunc a_Restore, wxFrameExtRestoreFieldwxStringCRintPFunc a_RestoreFieldwxStringCRintP, wxFrameExtSaveFieldwxStringCRintFunc a_SaveFieldwxStringCRint, wxFrameExtSetContentProtectionwxContentProtectionFunc a_SetContentProtectionwxContentProtection, wxFrameExtSetIconswxIconBundleCRFunc a_SetIconswxIconBundleCR, wxFrameExtSetLabelwxStringCRFunc a_SetLabelwxStringCR, wxFrameExtSetMaxSizewxSizeCRFunc a_SetMaxSizewxSizeCR, wxFrameExtSetMenuBarwxMenuBarPFunc a_SetMenuBarwxMenuBarP, wxFrameExtSetMinSizewxSizeCRFunc a_SetMinSizewxSizeCR, wxFrameExtSetRepresentedFilenamewxStringCRFunc a_SetRepresentedFilenamewxStringCR, wxFrameExtSetStatusBarwxStatusBarPFunc a_SetStatusBarwxStatusBarP, wxFrameExtSetStatusTextwxStringCRintFunc a_SetStatusTextwxStringCRint, wxFrameExtSetStatusWidthsintintCBFunc a_SetStatusWidthsintintCB, wxFrameExtSetTitlewxStringCRFunc a_SetTitlewxStringCR, wxFrameExtSetToolBarwxToolBarPFunc a_SetToolBarwxToolBarP, wxFrameExtShouldPreventAppExitFunc a_ShouldPreventAppExit, wxFrameExtShowboolFunc a_Showbool, wxFrameExtShowFullScreenboollongFunc a_ShowFullScreenboollong, wxFrameExtShowWithoutActivatingFunc a_ShowWithoutActivating, wxFrameExtUpdateWindowUIlongFunc a_UpdateWindowUIlong, wxFrameExtWXReservedTLW1voidPFunc a_WXReservedTLW1voidP, wxFrameExtWXReservedTLW2voidPFunc a_WXReservedTLW2voidP, wxFrameExtWXReservedTLW3voidPFunc a_WXReservedTLW3voidP): wxFrame() {
+  wxFrameExt(wxFrameExtAttachMenuBarwxMenuBarPFunc a_AttachMenuBarwxMenuBarP, wxFrameExtCreateStatusBarintlongwxWindowIDwxStringCRFunc a_CreateStatusBarintlongwxWindowIDwxStringCR, wxFrameExtCreateToolBarlongwxWindowIDwxStringCRFunc a_CreateToolBarlongwxWindowIDwxStringCR, wxFrameExtDestroyFunc a_Destroy, wxFrameExtDetachMenuBarFunc a_DetachMenuBar, wxFrameExtDoCentreintFunc a_DoCentreint, wxFrameExtDoClientToScreenintPintPFunc a_DoClientToScreenintPintP, wxFrameExtDoGetClientSizeintPintPFunc a_DoGetClientSizeintPintP, wxFrameExtDoGetScreenPositionintPintPFunc a_DoGetScreenPositionintPintP, wxFrameExtDoGiveHelpwxStringCRboolFunc a_DoGiveHelpwxStringCRbool, wxFrameExtDoMenuUpdateswxMenuPFunc a_DoMenuUpdateswxMenuP, wxFrameExtDoScreenToClientintPintPFunc a_DoScreenToClientintPintP, wxFrameExtDoSetClientSizeintintFunc a_DoSetClientSizeintint, wxFrameExtDoUpdateWindowUIwxUpdateUIEventRFunc a_DoUpdateWindowUIwxUpdateUIEventR, wxFrameExtEnableboolFunc a_Enablebool, wxFrameExtEnableCloseButtonboolFunc a_EnableCloseButtonbool, wxFrameExtEnableFullScreenViewboollongFunc a_EnableFullScreenViewboollong, wxFrameExtEnableMaximizeButtonboolFunc a_EnableMaximizeButtonbool, wxFrameExtEnableMinimizeButtonboolFunc a_EnableMinimizeButtonbool, wxFrameExtFindItemInMenuBarintFunc a_FindItemInMenuBarint, wxFrameExtGetClassInfoFunc a_GetClassInfo, wxFrameExtGetClientAreaOriginFunc a_GetClientAreaOrigin, wxFrameExtGetContentProtectionFunc a_GetContentProtection, wxFrameExtGetEventHashTableFunc a_GetEventHashTable, wxFrameExtGetEventTableFunc a_GetEventTable, wxFrameExtGetLabelFunc a_GetLabel, wxFrameExtGetMenuBarFunc a_GetMenuBar, wxFrameExtGetRectForTopLevelChildrenintPintPintPintPFunc a_GetRectForTopLevelChildrenintPintPintPintP, wxFrameExtGetStatusBarFunc a_GetStatusBar, wxFrameExtGetTitleFunc a_GetTitle, wxFrameExtGetToolBarFunc a_GetToolBar, wxFrameExtIconizeboolFunc a_Iconizebool, wxFrameExtIsActiveFunc a_IsActive, wxFrameExtIsAlwaysMaximizedFunc a_IsAlwaysMaximized, wxFrameExtIsClientAreaChildwxWindowCPFunc a_IsClientAreaChildwxWindowCP, wxFrameExtIsFullScreenFunc a_IsFullScreen, wxFrameExtIsIconizedFunc a_IsIconized, wxFrameExtIsMaximizedFunc a_IsMaximized, wxFrameExtIsOneOfBarswxWindowCPFunc a_IsOneOfBarswxWindowCP, wxFrameExtIsTopLevelFunc a_IsTopLevel, wxFrameExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc a_IsTopNavigationDomainwxWindowBaseNNavigationKind, wxFrameExtIsVisibleFunc a_IsVisible, wxFrameExtLayoutFunc a_Layout, wxFrameExtMaximizeboolFunc a_Maximizebool, wxFrameExtOSXIsModifiedFunc a_OSXIsModified, wxFrameExtOSXSetModifiedboolFunc a_OSXSetModifiedbool, wxFrameExtOnCreateStatusBarintlongwxWindowIDwxStringCRFunc a_OnCreateStatusBarintlongwxWindowIDwxStringCR, wxFrameExtOnCreateToolBarlongwxWindowIDwxStringCRFunc a_OnCreateToolBarlongwxWindowIDwxStringCR, wxFrameExtOnInternalIdleFunc a_OnInternalIdle, wxFrameExtPositionMenuBarFunc a_PositionMenuBar, wxFrameExtPositionStatusBarFunc a_PositionStatusBar, wxFrameExtPositionToolBarFunc a_PositionToolBar, wxFrameExtRequestUserAttentionintFunc a_RequestUserAttentionint, wxFrameExtRestoreFunc a_Restore, wxFrameExtSetContentProtectionwxContentProtectionFunc a_SetContentProtectionwxContentProtection, wxFrameExtSetIconswxIconBundleCRFunc a_SetIconswxIconBundleCR, wxFrameExtSetLabelwxStringCRFunc a_SetLabelwxStringCR, wxFrameExtSetMaxSizewxSizeCRFunc a_SetMaxSizewxSizeCR, wxFrameExtSetMenuBarwxMenuBarPFunc a_SetMenuBarwxMenuBarP, wxFrameExtSetMinSizewxSizeCRFunc a_SetMinSizewxSizeCR, wxFrameExtSetRepresentedFilenamewxStringCRFunc a_SetRepresentedFilenamewxStringCR, wxFrameExtSetStatusBarwxStatusBarPFunc a_SetStatusBarwxStatusBarP, wxFrameExtSetStatusTextwxStringCRintFunc a_SetStatusTextwxStringCRint, wxFrameExtSetStatusWidthsintintCBFunc a_SetStatusWidthsintintCB, wxFrameExtSetTitlewxStringCRFunc a_SetTitlewxStringCR, wxFrameExtSetToolBarwxToolBarPFunc a_SetToolBarwxToolBarP, wxFrameExtShouldPreventAppExitFunc a_ShouldPreventAppExit, wxFrameExtShowboolFunc a_Showbool, wxFrameExtShowFullScreenboollongFunc a_ShowFullScreenboollong, wxFrameExtShowWithoutActivatingFunc a_ShowWithoutActivating, wxFrameExtUpdateWindowUIlongFunc a_UpdateWindowUIlong, wxFrameExtWXReservedTLW1voidPFunc a_WXReservedTLW1voidP, wxFrameExtWXReservedTLW2voidPFunc a_WXReservedTLW2voidP, wxFrameExtWXReservedTLW3voidPFunc a_WXReservedTLW3voidP): wxFrame() {
     m_wxFrameExtAttachMenuBarwxMenuBarP = a_AttachMenuBarwxMenuBarP;
     m_wxFrameExtCreateStatusBarintlongwxWindowIDwxStringCR = a_CreateStatusBarintlongwxWindowIDwxStringCR;
     m_wxFrameExtCreateToolBarlongwxWindowIDwxStringCR = a_CreateToolBarlongwxWindowIDwxStringCR;
@@ -1682,8 +1676,6 @@ public:
     m_wxFrameExtPositionToolBar = a_PositionToolBar;
     m_wxFrameExtRequestUserAttentionint = a_RequestUserAttentionint;
     m_wxFrameExtRestore = a_Restore;
-    m_wxFrameExtRestoreFieldwxStringCRintP = a_RestoreFieldwxStringCRintP;
-    m_wxFrameExtSaveFieldwxStringCRint = a_SaveFieldwxStringCRint;
     m_wxFrameExtSetContentProtectionwxContentProtection = a_SetContentProtectionwxContentProtection;
     m_wxFrameExtSetIconswxIconBundleCR = a_SetIconswxIconBundleCR;
     m_wxFrameExtSetLabelwxStringCR = a_SetLabelwxStringCR;

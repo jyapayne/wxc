@@ -3,7 +3,6 @@
 %{
 #include <wx/vidmode.h>
 #include "wxext/panel_ext.h"
-#include "wxext/generic/panelg_ext.h"
 %}
 
 
@@ -58,8 +57,6 @@
 %import "wx/window.h"
 %import "wx/control.h"
 %include "wx/panel.h"
-%include "wxext/panel_ext.h"
-%include "wxext/generic/panelg_ext.h"
 
 #if defined(__WXUNIVERSAL__)
     %include "wx/univ/panel.h"
@@ -69,3 +66,5 @@
     #define wxHAS_GENERIC_PANEL
     %include "wx/generic/panelg.h"
 #endif
+
+%include "wxext/panel_ext.h"
