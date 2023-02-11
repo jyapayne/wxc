@@ -169,8 +169,8 @@ public:
     // sometimes decorations make the client area smaller
     virtual wxPoint GetClientAreaOrigin() const wxOVERRIDE;
 
-    wxWindowMac *FindItem(long id) const;
-    wxWindowMac *FindItemByHWND(WXHWND hWnd, bool controlOnly = false) const;
+    /* wxWindowMac *FindItem(long id) const; */
+    /* wxWindowMac *FindItemByHWND(WXHWND hWnd, bool controlOnly = false) const; */
 
     virtual void        TriggerScrollEvent( wxEventType scrollEvent ) ;
     // this should not be overridden in classes above wxWindowMac

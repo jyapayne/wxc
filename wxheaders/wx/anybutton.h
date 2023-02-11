@@ -193,7 +193,9 @@ protected:
 //#elif defined(__WXGTK__)
 //    #include "wx/gtk1/anybutton.h"
 #elif defined(__WXMAC__)
-//    #include "wx/osx/anybutton.h"
+    #ifndef __CPPAST__
+        #include "wx/osx/anybutton.h"
+    #else
 class WXDLLIMPEXP_CORE wxAnyButton : public wxAnyButtonBase
 {
 public:
@@ -235,6 +237,7 @@ protected:
     wxDECLARE_NO_COPY_CLASS(wxAnyButton);
     wxDECLARE_EVENT_TABLE();
 };
+#endif
 #elif defined(__WXQT__)
     #include "wx/qt/anybutton.h"
 #else

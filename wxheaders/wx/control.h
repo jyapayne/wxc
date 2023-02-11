@@ -212,6 +212,9 @@ protected:
 #elif defined(__WXGTK__)
     #include "wx/gtk1/control.h"
 #elif defined(__WXMAC__)
+    #ifndef __CPPAST__
+        #include "wx/osx/control.h"
+    #else
 WXDLLIMPEXP_DATA_CORE(extern const char) wxControlNameStr[];
 
 // General item class
@@ -247,6 +250,7 @@ public:
 
    void                 OnKeyDown( wxKeyEvent &event ) ;
 };
+#endif
 #elif defined(__WXQT__)
     #include "wx/qt/control.h"
 #endif

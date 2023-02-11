@@ -177,6 +177,9 @@ private:
     #include "wx/msw/panel.h"
 #else
     #define wxHAS_GENERIC_PANEL
+    #ifndef __CPPAST__
+        #include "wx/generic/panelg.h"
+    #else
 #ifndef _WX_GENERIC_PANELG_H_
 #define _WX_GENERIC_PANELG_H_
 
@@ -215,6 +218,7 @@ private:
 };
 
 #endif // _WX_GENERIC_PANELG_H_
+#endif
 #endif
 
 #endif // _WX_PANELH_BASE_

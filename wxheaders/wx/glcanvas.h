@@ -329,6 +329,9 @@ public:
 #elif defined(__WXGTK__)
     #include "wx/gtk1/glcanvas.h"
 #elif defined(__WXMAC__)
+    #ifndef __CPPAST__
+        #include "wx/osx/glcanvas.h"
+    #else
 #ifndef _WX_GLCANVAS_H_
 #define _WX_GLCANVAS_H_
 
@@ -496,6 +499,7 @@ protected:
 };
 
 #endif // _WX_GLCANVAS_H_
+#endif
 #elif defined(__WXQT__)
     #include "wx/qt/glcanvas.h"
 #else

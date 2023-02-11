@@ -58,7 +58,9 @@ protected:
 #elif defined(__WXGTK__)
     #include "wx/gtk1/button.h"
 #elif defined(__WXMAC__)
-    /* #include "wx/osx/button.h" */
+    #ifndef __CPPAST__
+        #include "wx/osx/button.h"
+    #else
 class WXDLLIMPEXP_CORE wxButton : public wxButtonBase
 {
 public:
@@ -91,6 +93,7 @@ public:
 protected:
     wxDECLARE_DYNAMIC_CLASS(wxButton);
 };
+#endif
 
 #elif defined(__WXQT__)
     #include "wx/qt/button.h"

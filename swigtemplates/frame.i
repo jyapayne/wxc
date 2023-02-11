@@ -2,7 +2,7 @@
 %include <common.i>
 %{
 #include <wx/vidmode.h>
-#include "wxext/frame_ext2.h"
+#include "wxext/frame_ext.h"
 %}
 
 %ignore wxWindowList::Nth;
@@ -79,4 +79,4 @@
     #endif
 #endif
 
-%include "wxext/frame_ext2.h"
+%include "wxext/frame_ext.h"

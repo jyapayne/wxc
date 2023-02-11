@@ -3,7 +3,7 @@
 %{
 #include <wx/wx.h>
 #include <wx/vidmode.h>
-#include "wxext/app_ext2.h"
+#include "wxext/app_ext.h"
 #if defined(__WXMAC__)
 #include <objc/runtime.h>
 #endif
@@ -88,7 +88,7 @@
     %include "wx/qt/app.h"
 #endif
 
-%include "wxext/app_ext2.h"
+%include "wxext/app_ext.h"
 
 %{
 /* typedef wxWindow* (* InitTopWindow)(); */

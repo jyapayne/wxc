@@ -57,6 +57,9 @@ protected:
 #if defined(__WINDOWS__)
     #include "wx/msw/sound.h"
 #elif defined(__WXMAC__)
+    #ifndef __CPPAST__
+        #include "wx/osx/sound.h"
+    #else
 #ifndef _WX_SOUND_H_
 #define _WX_SOUND_H_
 
@@ -122,6 +125,7 @@ private:
     wxDECLARE_NO_COPY_CLASS(wxSound);
 };
 
+#endif
 #endif
 #endif
     // _WX_SOUND_H_
