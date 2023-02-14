@@ -1,11 +1,10 @@
-%module button
+%module anybutton
 %include <common.i>
 %{
 #include <wx/vidmode.h>
-#include "wxext/button_ext.h"
+#include "wxext/anybutton_ext.h"
 %}
 
-%import "anybutton.i"
 %import "window.i"
 %import "validate.i"
 
@@ -59,22 +58,24 @@
 %import "wx/frame.h"
 %import "wx/window.h"
 %import "wx/control.h"
-%include "wx/button.h"
+%include "wx/anybutton.h"
 
 #if defined(__WXUNIVERSAL__)
-    %include "wx/univ/button.h"
+    %include "wx/univ/anybutton.h"
 #elif defined(__WXMSW__)
-    %include "wx/msw/button.h"
-#elif defined(__WXMOTIF__)
-    %include "wx/motif/button.h"
+    %include "wx/msw/anybutton.h"
+//#elif defined(__WXMOTIF__)
+//    %include "wx/motif/anybutton.h"
 #elif defined(__WXGTK20__)
-    %include "wx/gtk/button.h"
-#elif defined(__WXGTK__)
-    %include "wx/gtk1/button.h"
+    %include "wx/gtk/anybutton.h"
+//#elif defined(__WXGTK__)
+//    %include "wx/gtk1/anybutton.h"
 #elif defined(__WXMAC__)
-    %include "wx/osx/button.h"
+    %include "wx/osx/anybutton.h"
 #elif defined(__WXQT__)
-    %include "wx/qt/button.h"
+    %include "wx/qt/anybutton.h"
+#else
+    class wxAnyButtonBase: public wxAnyButton{};
 #endif
 
-%include "wxext/button_ext.h"
+%include "wxext/anybutton_ext.h"

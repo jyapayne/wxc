@@ -238,7 +238,96 @@ WXDLLIMPEXP_CORE bool wxFromString(const wxString& str, wxColourBase* col);
 #elif defined(__WXX11__)
     #include "wx/x11/colour.h"
 #elif defined(__WXMAC__)
+    #ifndef __CPPAST__
     #include "wx/osx/colour.h"
+    #else
+#ifndef _WX_COLOUR_H_
+#define _WX_COLOUR_H_
+
+#include "wx/object.h"
+#include "wx/string.h"
+
+#include "wx/osx/core/cfref.h"
+
+struct RGBColor;
+
+// Colour
+class WXDLLIMPEXP_CORE wxColour: public wxColourBase
+{
+public:
+    // constructors
+    // ------------
+    DEFINE_STD_WXCOLOUR_CONSTRUCTORS
+
+    // default copy ctor and dtor are ok
+
+    // accessors
+    virtual ChannelType Red() const wxOVERRIDE;
+    virtual ChannelType Green() const wxOVERRIDE;
+    virtual ChannelType Blue() const wxOVERRIDE;
+    virtual ChannelType Alpha() const wxOVERRIDE;
+
+    virtual bool IsSolid() const wxOVERRIDE;
+
+    // comparison
+    bool operator == (const wxColour& colour) const;
+    bool operator != (const wxColour& colour) const { return !(*this == colour); }
+
+    // CoreGraphics CGColor
+    // --------------------
+
+    // This ctor does take ownership of the color.
+    wxColour( CGColorRef col );
+
+    // don't take ownership of the returned value
+    CGColorRef GetCGColor() const;
+
+    // do take ownership of the returned value
+    CGColorRef CreateCGColor() const { return wxCFRetain(GetCGColor()); }
+
+#if wxOSX_USE_COCOA_OR_CARBON
+    // Quickdraw RGBColor
+    // ------------------
+    wxColour(const RGBColor& col);
+    void GetRGBColor( RGBColor *col ) const;
+#endif
+
+
+protected :
+    virtual void
+    InitRGBA(ChannelType r, ChannelType g, ChannelType b, ChannelType a) wxOVERRIDE;
+
+    virtual wxGDIRefData *CreateGDIRefData() const wxOVERRIDE;
+    virtual wxGDIRefData *CloneGDIRefData(const wxGDIRefData *data) const wxOVERRIDE;
+
+private:
+
+    wxDECLARE_DYNAMIC_CLASS(wxColour);
+};
+
+class wxColourRefData : public wxGDIRefData
+{
+public:
+    wxColourRefData() {}
+    virtual ~wxColourRefData() {}
+
+    virtual double Red() const = 0;
+    virtual double Green() const = 0;
+    virtual double Blue() const = 0;
+    virtual double Alpha() const = 0;
+
+    virtual bool IsSolid() const
+        { return true; }
+
+    virtual CGColorRef GetCGColor() const = 0;
+
+    virtual wxColourRefData* Clone() const = 0;
+
+};
+
+#endif
+  // _WX_COLOUR_H_
+    #endif
 #elif defined(__WXQT__)
     #include "wx/qt/colour.h"
 #endif
@@ -246,3 +335,4 @@ WXDLLIMPEXP_CORE bool wxFromString(const wxString& str, wxColourBase* col);
 #define wxColor wxColour
 
 #endif // _WX_COLOUR_H_BASE_
+

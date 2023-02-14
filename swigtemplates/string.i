@@ -1,6 +1,8 @@
 %module string
 %include <common.i>
 
+%import "object.i"
+
 %import "wx/setup.h"
 #undef HAVE_VISIBILITY
 #undef wxUSE_STD_CONTAINERS

@@ -1,10 +1,11 @@
-%module window
+%module panel
 %include <common.i>
 %{
 #include <wx/vidmode.h>
 #include "wxext/panel_ext.h"
 %}
 
+%import "window.i"
 
 %import "wx/setup.h"
 #undef HAVE_VISIBILITY

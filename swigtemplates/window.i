@@ -5,6 +5,10 @@
 #include "wxext/window_ext.h"
 %}
 
+%import "object.i"
+%import "string.i"
+%import "validate.i"
+%import "colour.i"
 
 %import "wx/setup.h"
 #undef HAVE_VISIBILITY

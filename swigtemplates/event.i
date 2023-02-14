@@ -18,6 +18,8 @@
 %ignore wxEvtHandlerArray::wxEvtHandlerArray(size_t n, Base::const_reference v);
 
 
+%rename(toEventType) operator const wxEventType&;
+
 %import "wx/setup.h"
 #undef HAVE_VISIBILITY
 #undef wxUSE_STD_CONTAINERS
@@ -38,6 +40,50 @@
 %include "wx/eventfilter.h"
 %include "wxext/event_ext.h"
 %include "wxext/eventfilter_ext.h"
+
+%template(wxEventTypeTagwxCommandEvent) wxEventTypeTag<wxCommandEvent>;
+%template(wxEventTypeTagwxScrollEvent) wxEventTypeTag<wxScrollEvent>;
+%template(wxEventTypeTagwxScrollWinEvent) wxEventTypeTag<wxScrollWinEvent>;
+%template(wxEventTypeTagwxSizeEvent) wxEventTypeTag<wxSizeEvent>;
+%template(wxEventTypeTagwxMoveEvent) wxEventTypeTag<wxMoveEvent>;
+%template(wxEventTypeTagwxPaintEvent) wxEventTypeTag<wxPaintEvent>;
+%template(wxEventTypeTagwxNcPaintEvent) wxEventTypeTag<wxNcPaintEvent>;
+%template(wxEventTypeTagwxEraseEvent) wxEventTypeTag<wxEraseEvent>;
+%template(wxEventTypeTagwxMouseEvent) wxEventTypeTag<wxMouseEvent>;
+%template(wxEventTypeTagwxKeyEvent) wxEventTypeTag<wxKeyEvent>;
+%template(wxEventTypeTagwxFocusEvent) wxEventTypeTag<wxFocusEvent>;
+%template(wxEventTypeTagwxChildFocusEvent) wxEventTypeTag<wxChildFocusEvent>;
+%template(wxEventTypeTagwxActivateEvent) wxEventTypeTag<wxActivateEvent>;
+%template(wxEventTypeTagwxMenuEvent) wxEventTypeTag<wxMenuEvent>;
+%template(wxEventTypeTagwxJoystickEvent) wxEventTypeTag<wxJoystickEvent>;
+%template(wxEventTypeTagwxDropFilesEvent) wxEventTypeTag<wxDropFilesEvent>;
+%template(wxEventTypeTagwxInitDialogEvent) wxEventTypeTag<wxInitDialogEvent>;
+%template(wxEventTypeTagwxSysColourChangedEvent) wxEventTypeTag<wxSysColourChangedEvent>;
+%template(wxEventTypeTagwxDisplayChangedEvent) wxEventTypeTag<wxDisplayChangedEvent>;
+%template(wxEventTypeTagwxDPIChangedEvent) wxEventTypeTag<wxDPIChangedEvent>;
+%template(wxEventTypeTagwxUpdateUIEvent) wxEventTypeTag<wxUpdateUIEvent>;
+%template(wxEventTypeTagwxCloseEvent) wxEventTypeTag<wxCloseEvent>;
+%template(wxEventTypeTagwxShowEvent) wxEventTypeTag<wxShowEvent>;
+%template(wxEventTypeTagwxIconizeEvent) wxEventTypeTag<wxIconizeEvent>;
+%template(wxEventTypeTagwxMaximizeEvent) wxEventTypeTag<wxMaximizeEvent>;
+%template(wxEventTypeTagwxNavigationKeyEvent) wxEventTypeTag<wxNavigationKeyEvent>;
+%template(wxEventTypeTagwxPaletteChangedEvent) wxEventTypeTag<wxPaletteChangedEvent>;
+%template(wxEventTypeTagwxQueryNewPaletteEvent) wxEventTypeTag<wxQueryNewPaletteEvent>;
+%template(wxEventTypeTagwxWindowCreateEvent) wxEventTypeTag<wxWindowCreateEvent>;
+%template(wxEventTypeTagwxWindowDestroyEvent) wxEventTypeTag<wxWindowDestroyEvent>;
+%template(wxEventTypeTagwxSetCursorEvent) wxEventTypeTag<wxSetCursorEvent>;
+%template(wxEventTypeTagwxNotifyEvent) wxEventTypeTag<wxNotifyEvent>;
+%template(wxEventTypeTagwxHelpEvent) wxEventTypeTag<wxHelpEvent>;
+%template(wxEventTypeTagwxContextMenuEvent) wxEventTypeTag<wxContextMenuEvent>;
+%template(wxEventTypeTagwxMouseCaptureChangedEvent) wxEventTypeTag<wxMouseCaptureChangedEvent>;
+%template(wxEventTypeTagwxMouseCaptureLostEvent) wxEventTypeTag<wxMouseCaptureLostEvent>;
+%template(wxEventTypeTagwxClipboardTextEvent) wxEventTypeTag<wxClipboardTextEvent>;
+%template(wxEventTypeTagwxPanGestureEvent) wxEventTypeTag<wxPanGestureEvent>;
+%template(wxEventTypeTagwxZoomGestureEvent) wxEventTypeTag<wxZoomGestureEvent>;
+%template(wxEventTypeTagwxRotateGestureEvent) wxEventTypeTag<wxRotateGestureEvent>;
+%template(wxEventTypeTagwxTwoFingerTapEvent) wxEventTypeTag<wxTwoFingerTapEvent>;
+%template(wxEventTypeTagwxLongPressEvent) wxEventTypeTag<wxLongPressEvent>;
+%template(wxEventTypeTagwxPressAndTapEvent) wxEventTypeTag<wxPressAndTapEvent>;
 
 /* For some reason this doesn't work. Figure out why */
 

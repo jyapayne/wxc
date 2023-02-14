@@ -3602,7 +3602,7 @@ public:
     static void ClearAll();
 #endif // wxUSE_MEMORY_TRACING
 
-protected:
+public:
     // Init the hash table with the entries of the static event table.
     void InitHashTable();
     // Helper function of InitHashTable() to insert 1 entry into the hash table.

@@ -11,6 +11,10 @@
 %ignore wxCreateApp;
 %ignore wxTheAppInitializer;
 
+%import "string.i"
+%import "object.i"
+%import "window.i"
+
 %import "wx/setup.h"
 #undef HAVE_VISIBILITY
 #undef wxUSE_STD_CONTAINERS
