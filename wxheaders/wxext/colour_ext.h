@@ -42,7 +42,7 @@ public:
   wxColourBaseExt(): wxColourBase()  {  }
   virtual ~wxColourBaseExt()  {  }
   wxColourBaseExtAlphaFunc m_wxColourBaseExtAlpha = NULL;
-  virtual wxColourBase::ChannelType Alpha() const override
+  virtual ChannelType Alpha() const override
   {
     wxColourBase::ChannelType res = wxColourBase::Alpha();
     if (*m_wxColourBaseExtAlpha != NULL){
@@ -53,7 +53,7 @@ public:
     }
   }
   wxColourBaseExtBlueFunc m_wxColourBaseExtBlue = NULL;
-  virtual wxColourBase::ChannelType Blue() const override
+  virtual ChannelType Blue() const override
   {
     if (*m_wxColourBaseExtBlue != NULL){
       return m_wxColourBaseExtBlue(this);
@@ -107,7 +107,7 @@ public:
     }
   }
   wxColourBaseExtGreenFunc m_wxColourBaseExtGreen = NULL;
-  virtual wxColourBase::ChannelType Green() const override
+  virtual ChannelType Green() const override
   {
     if (*m_wxColourBaseExtGreen != NULL){
       return m_wxColourBaseExtGreen(this);
@@ -135,7 +135,7 @@ public:
     }
   }
   wxColourBaseExtRedFunc m_wxColourBaseExtRed = NULL;
-  virtual wxColourBase::ChannelType Red() const override
+  virtual ChannelType Red() const override
   {
     if (*m_wxColourBaseExtRed != NULL){
       return m_wxColourBaseExtRed(this);
@@ -170,7 +170,7 @@ public:
   wxColourExt(CGColorRef col): wxColour(col)  {  }
   wxColourExt(RGBColor const& col): wxColour(col)  {  }
   wxColourExtAlphaFunc m_wxColourExtAlpha = NULL;
-  virtual wxColourBase::ChannelType Alpha() const override
+  virtual ChannelType Alpha() const override
   {
     wxColourBase::ChannelType res = wxColour::Alpha();
     if (*m_wxColourExtAlpha != NULL){
@@ -181,7 +181,7 @@ public:
     }
   }
   wxColourExtBlueFunc m_wxColourExtBlue = NULL;
-  virtual wxColourBase::ChannelType Blue() const override
+  virtual ChannelType Blue() const override
   {
     if (*m_wxColourExtBlue != NULL){
       return m_wxColourExtBlue(this);
@@ -246,7 +246,7 @@ public:
     }
   }
   wxColourExtGreenFunc m_wxColourExtGreen = NULL;
-  virtual wxColourBase::ChannelType Green() const override
+  virtual ChannelType Green() const override
   {
     if (*m_wxColourExtGreen != NULL){
       return m_wxColourExtGreen(this);
@@ -274,7 +274,7 @@ public:
     }
   }
   wxColourExtRedFunc m_wxColourExtRed = NULL;
-  virtual wxColourBase::ChannelType Red() const override
+  virtual ChannelType Red() const override
   {
     if (*m_wxColourExtRed != NULL){
       return m_wxColourExtRed(this);
@@ -297,6 +297,98 @@ public:
     m_wxColourExtRed = a_Red;
   }
 };
+
+class wxColourRefDataExt: public wxColourRefData
+{
+public:
+  wxColourRefDataExt(): wxColourRefData()  {  }
+  virtual ~wxColourRefDataExt()  {  }
+  wxColourRefDataExtAlphaFunc m_wxColourRefDataExtAlpha = NULL;
+  virtual double Alpha() const override
+  {
+    if (*m_wxColourRefDataExtAlpha != NULL){
+      return m_wxColourRefDataExtAlpha(this);
+    }
+    else {
+      return 0;
+    }
+  }
+  wxColourRefDataExtBlueFunc m_wxColourRefDataExtBlue = NULL;
+  virtual double Blue() const override
+  {
+    if (*m_wxColourRefDataExtBlue != NULL){
+      return m_wxColourRefDataExtBlue(this);
+    }
+    else {
+      return 0;
+    }
+  }
+  wxColourRefDataExtCloneFunc m_wxColourRefDataExtClone = NULL;
+  virtual wxColourRefData* Clone() const override
+  {
+    if (*m_wxColourRefDataExtClone != NULL){
+      return m_wxColourRefDataExtClone(this);
+    }
+    else {
+      return NULL;
+    }
+  }
+  wxColourRefDataExtGetCGColorFunc m_wxColourRefDataExtGetCGColor = NULL;
+  virtual CGColorRef GetCGColor() const override
+  {
+    if (*m_wxColourRefDataExtGetCGColor != NULL){
+      return m_wxColourRefDataExtGetCGColor(this);
+    }
+    else {
+      return NULL;
+    }
+  }
+  wxColourRefDataExtGreenFunc m_wxColourRefDataExtGreen = NULL;
+  virtual double Green() const override
+  {
+    if (*m_wxColourRefDataExtGreen != NULL){
+      return m_wxColourRefDataExtGreen(this);
+    }
+    else {
+      return 0;
+    }
+  }
+  wxColourRefDataExtIsSolidFunc m_wxColourRefDataExtIsSolid = NULL;
+  virtual bool IsSolid() const override
+  {
+    bool res = wxColourRefData::IsSolid();
+    if (*m_wxColourRefDataExtIsSolid != NULL){
+      return m_wxColourRefDataExtIsSolid(this, res);
+    }
+    else {
+      return res;
+    }
+  }
+  wxColourRefDataExtRedFunc m_wxColourRefDataExtRed = NULL;
+  virtual double Red() const override
+  {
+    if (*m_wxColourRefDataExtRed != NULL){
+      return m_wxColourRefDataExtRed(this);
+    }
+    else {
+      return 0;
+    }
+  }
+  wxColourRefDataExt(wxColourRefDataExtAlphaFunc a_Alpha, wxColourRefDataExtBlueFunc a_Blue, wxColourRefDataExtCloneFunc a_Clone, wxColourRefDataExtGetCGColorFunc a_GetCGColor, wxColourRefDataExtGreenFunc a_Green, wxColourRefDataExtIsSolidFunc a_IsSolid, wxColourRefDataExtRedFunc a_Red): wxColourRefData() {
+    m_wxColourRefDataExtAlpha = a_Alpha;
+    m_wxColourRefDataExtBlue = a_Blue;
+    m_wxColourRefDataExtClone = a_Clone;
+    m_wxColourRefDataExtGetCGColor = a_GetCGColor;
+    m_wxColourRefDataExtGreen = a_Green;
+    m_wxColourRefDataExtIsSolid = a_IsSolid;
+    m_wxColourRefDataExtRed = a_Red;
+  }
+#if defined(__WXMAC__)
+    virtual WX_NSColor GetNSColor() const override = 0;
+    virtual WX_NSImage GetNSPatternImage() const override = 0;
+#endif
+};
+
 
 
 #endif
