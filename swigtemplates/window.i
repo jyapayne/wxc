@@ -5,6 +5,8 @@
 #include "wxext/window_ext.h"
 %}
 
+%ignore wxWindowListExt;
+
 %import "object.i"
 %import "string.i"
 %import "validate.i"

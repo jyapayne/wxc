@@ -943,7 +943,7 @@ typedef short int WXTYPE;
 
 /*  Macro to cut down on compiler warnings. */
 #if 1 /*  there should be no more any compilers needing the "#else" version */
-    #define WXUNUSED(identifier) /* identifier */
+    #define WXUNUSED(identifier) identifier
 #else  /*  stupid, broken compiler */
     #define WXUNUSED(identifier) identifier
 #endif
