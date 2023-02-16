@@ -20,12 +20,6 @@ typedef wxObjectRefData* (*wxEventExtCloneRefDatawxObjectRefDataCPFunc)(const wx
 typedef wxObjectRefData* (*wxEventExtCreateRefDataFunc)(const wxEventExt* self, wxObjectRefData* res);
 typedef wxClassInfo* (*wxEventExtGetClassInfoFunc)(const wxEventExt* self, wxClassInfo* res);
 typedef wxEventCategory (*wxEventExtGetEventCategoryFunc)(const wxEventExt* self, wxEventCategory res);
-class wxPropagationDisablerExt;
-class wxPropagateOnceExt;
-class wxEventObjectOriginSetterExt;
-class wxEventProcessInHandlerOnlyExt;
-class wxEventBasicPayloadMixinExt;
-class wxEventAnyPayloadMixinExt;
 class wxIdleEventExt;
 typedef wxEvent* (*wxIdleEventExtCloneFunc)(const wxIdleEventExt* self);
 typedef wxObjectRefData* (*wxIdleEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxIdleEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
@@ -315,16 +309,14 @@ typedef wxObjectRefData* (*wxContextMenuEventExtCloneRefDatawxObjectRefDataCPFun
 typedef wxObjectRefData* (*wxContextMenuEventExtCreateRefDataFunc)(const wxContextMenuEventExt* self, wxObjectRefData* res);
 typedef wxClassInfo* (*wxContextMenuEventExtGetClassInfoFunc)(const wxContextMenuEventExt* self, wxClassInfo* res);
 typedef wxEventCategory (*wxContextMenuEventExtGetEventCategoryFunc)(const wxContextMenuEventExt* self, wxEventCategory res);
-class wxEventTableEntryBaseExt;
-class wxEventTableEntryExt;
-class wxDynamicEventTableEntryExt;
-class wxEventTableExt;
-class wxEventTableEntryPointerArrayExt;
-class wxEventHashTableExt;
 class wxEvtHandlerExt;
 typedef void (*wxEvtHandlerExtAddPendingEventwxEventCRFunc)(const wxEvtHandlerExt* self, wxEvent const& event);
 typedef wxObjectRefData* (*wxEvtHandlerExtCloneRefDatawxObjectRefDataCPFunc)(const wxEvtHandlerExt* self, wxObjectRefData const* data, wxObjectRefData* res);
 typedef wxObjectRefData* (*wxEvtHandlerExtCreateRefDataFunc)(const wxEvtHandlerExt* self, wxObjectRefData* res);
+typedef void* (*wxEvtHandlerExtDoGetClientDataFunc)(const wxEvtHandlerExt* self, void* res);
+typedef wxClientData* (*wxEvtHandlerExtDoGetClientObjectFunc)(const wxEvtHandlerExt* self, wxClientData* res);
+typedef void (*wxEvtHandlerExtDoSetClientDatavoidPFunc)(const wxEvtHandlerExt* self, void* data);
+typedef void (*wxEvtHandlerExtDoSetClientObjectwxClientDataPFunc)(const wxEvtHandlerExt* self, wxClientData* data);
 typedef wxClassInfo* (*wxEvtHandlerExtGetClassInfoFunc)(const wxEvtHandlerExt* self, wxClassInfo* res);
 typedef wxEventHashTable& (*wxEvtHandlerExtGetEventHashTableFunc)(const wxEvtHandlerExt* self, wxEventHashTable& res);
 typedef wxEventTable const* (*wxEvtHandlerExtGetEventTableFunc)(const wxEvtHandlerExt* self, wxEventTable const* res);
@@ -336,7 +328,8 @@ typedef void (*wxEvtHandlerExtSetNextHandlerwxEvtHandlerPFunc)(const wxEvtHandle
 typedef void (*wxEvtHandlerExtSetPreviousHandlerwxEvtHandlerPFunc)(const wxEvtHandlerExt* self, wxEvtHandler* handler);
 typedef bool (*wxEvtHandlerExtTryAfterwxEventRFunc)(const wxEvtHandlerExt* self, wxEvent& event, bool res);
 typedef bool (*wxEvtHandlerExtTryBeforewxEventRFunc)(const wxEvtHandlerExt* self, wxEvent& event, bool res);
-class wxEvtHandlerArrayExt;
+typedef void* (*wxEvtHandlerExtWXReservedEvtHandler1voidPFunc)(const wxEvtHandlerExt* self, void* param0, void* res);
+typedef void* (*wxEvtHandlerExtWXReservedEvtHandler2voidPFunc)(const wxEvtHandlerExt* self, void* param0, void* res);
 class wxEventConnectionRefExt;
 typedef void (*wxEventConnectionRefExtOnObjectDestroyFunc)(const wxEventConnectionRefExt* self);
 typedef wxEventConnectionRef* (*wxEventConnectionRefExtToEventConnectionFunc)(const wxEventConnectionRefExt* self, wxEventConnectionRef* res);
@@ -530,43 +523,6 @@ public:
     m_wxEventExtGetClassInfo = a_GetClassInfo;
     m_wxEventExtGetEventCategory = a_GetEventCategory;
   }
-};
-
-class wxPropagationDisablerExt: public wxPropagationDisabler
-{
-public:
-  wxPropagationDisablerExt(wxEvent& event): wxPropagationDisabler(event)  {  }
-};
-
-class wxPropagateOnceExt: public wxPropagateOnce
-{
-public:
-  wxPropagateOnceExt(wxEvent& event, wxEvtHandler* handler = __null): wxPropagateOnce(event, handler)  {  }
-};
-
-class wxEventObjectOriginSetterExt: public wxEventObjectOriginSetter
-{
-public:
-  wxEventObjectOriginSetterExt(wxEvent& event, wxObject* source, int winid = 0): wxEventObjectOriginSetter(event, source, winid)  {  }
-};
-
-class wxEventProcessInHandlerOnlyExt: public wxEventProcessInHandlerOnly
-{
-public:
-  wxEventProcessInHandlerOnlyExt(wxEvent& event, wxEvtHandler* handler): wxEventProcessInHandlerOnly(event, handler)  {  }
-};
-
-class wxEventBasicPayloadMixinExt: public wxEventBasicPayloadMixin
-{
-public:
-  wxEventBasicPayloadMixinExt(): wxEventBasicPayloadMixin()  {  }
-  wxEventBasicPayloadMixinExt(wxEventBasicPayloadMixin const& param0): wxEventBasicPayloadMixin(param0)  {  }
-};
-
-class wxEventAnyPayloadMixinExt: public wxEventAnyPayloadMixin
-{
-public:
-  wxEventAnyPayloadMixinExt(): wxEventAnyPayloadMixin()  {  }
 };
 
 class wxIdleEventExt: public wxIdleEvent
@@ -3860,25 +3816,6 @@ public:
   }
 };
 
-class wxEventTableEntryBaseExt: public wxEventTableEntryBase
-{
-public:
-  wxEventTableEntryBaseExt(int winid, int idLast, wxEventFunctor* fn, wxObject* data): wxEventTableEntryBase(winid, idLast, fn, data)  {  }
-  wxEventTableEntryBaseExt(wxEventTableEntryBase const& entry): wxEventTableEntryBase(entry)  {  }
-};
-
-class wxEventTableEntryExt: public wxEventTableEntry
-{
-public:
-  wxEventTableEntryExt(int const& evType, int winid, int idLast, wxEventFunctor* fn, wxObject* data): wxEventTableEntry(evType, winid, idLast, fn, data)  {  }
-};
-
-class wxDynamicEventTableEntryExt: public wxDynamicEventTableEntry
-{
-public:
-  wxDynamicEventTableEntryExt(int evType, int winid, int idLast, wxEventFunctor* fn, wxObject* data): wxDynamicEventTableEntry(evType, winid, idLast, fn, data)  {  }
-};
-
 class wxEvtHandlerExt: public wxEvtHandler
 {
 public:
@@ -3912,6 +3849,44 @@ public:
     }
     else {
       return res;
+    }
+  }
+  wxEvtHandlerExtDoGetClientDataFunc m_wxEvtHandlerExtDoGetClientData = NULL;
+  virtual void* DoGetClientData() const override
+  {
+    void* res = wxEvtHandler::DoGetClientData();
+    if (*m_wxEvtHandlerExtDoGetClientData != NULL){
+      return m_wxEvtHandlerExtDoGetClientData(this, res);
+    }
+    else {
+      return res;
+    }
+  }
+  wxEvtHandlerExtDoGetClientObjectFunc m_wxEvtHandlerExtDoGetClientObject = NULL;
+  virtual wxClientData* DoGetClientObject() const override
+  {
+    wxClientData* res = wxEvtHandler::DoGetClientObject();
+    if (*m_wxEvtHandlerExtDoGetClientObject != NULL){
+      return m_wxEvtHandlerExtDoGetClientObject(this, res);
+    }
+    else {
+      return res;
+    }
+  }
+  wxEvtHandlerExtDoSetClientDatavoidPFunc m_wxEvtHandlerExtDoSetClientDatavoidP = NULL;
+  virtual void DoSetClientData(void* data) override
+  {
+    wxEvtHandler::DoSetClientData(data);
+    if (*m_wxEvtHandlerExtDoSetClientDatavoidP != NULL){
+      return m_wxEvtHandlerExtDoSetClientDatavoidP(this, data);
+    }
+  }
+  wxEvtHandlerExtDoSetClientObjectwxClientDataPFunc m_wxEvtHandlerExtDoSetClientObjectwxClientDataP = NULL;
+  virtual void DoSetClientObject(wxClientData* data) override
+  {
+    wxEvtHandler::DoSetClientObject(data);
+    if (*m_wxEvtHandlerExtDoSetClientObjectwxClientDataP != NULL){
+      return m_wxEvtHandlerExtDoSetClientObjectwxClientDataP(this, data);
     }
   }
   wxEvtHandlerExtGetClassInfoFunc m_wxEvtHandlerExtGetClassInfo = NULL;
@@ -4026,10 +4001,36 @@ public:
       return res;
     }
   }
-  wxEvtHandlerExt(wxEvtHandlerExtAddPendingEventwxEventCRFunc a_AddPendingEventwxEventCR, wxEvtHandlerExtCloneRefDatawxObjectRefDataCPFunc a_CloneRefDatawxObjectRefDataCP, wxEvtHandlerExtCreateRefDataFunc a_CreateRefData, wxEvtHandlerExtGetClassInfoFunc a_GetClassInfo, wxEvtHandlerExtGetEventHashTableFunc a_GetEventHashTable, wxEvtHandlerExtGetEventTableFunc a_GetEventTable, wxEvtHandlerExtOnDynamicBindwxDynamicEventTableEntryRFunc a_OnDynamicBindwxDynamicEventTableEntryR, wxEvtHandlerExtProcessEventwxEventRFunc a_ProcessEventwxEventR, wxEvtHandlerExtQueueEventwxEventPFunc a_QueueEventwxEventP, wxEvtHandlerExtSearchEventTablewxEventTableRwxEventRFunc a_SearchEventTablewxEventTableRwxEventR, wxEvtHandlerExtSetNextHandlerwxEvtHandlerPFunc a_SetNextHandlerwxEvtHandlerP, wxEvtHandlerExtSetPreviousHandlerwxEvtHandlerPFunc a_SetPreviousHandlerwxEvtHandlerP, wxEvtHandlerExtTryAfterwxEventRFunc a_TryAfterwxEventR, wxEvtHandlerExtTryBeforewxEventRFunc a_TryBeforewxEventR): wxEvtHandler() {
+  wxEvtHandlerExtWXReservedEvtHandler1voidPFunc m_wxEvtHandlerExtWXReservedEvtHandler1voidP = NULL;
+  virtual void* WXReservedEvtHandler1(void* param0) override
+  {
+    void* res = wxEvtHandler::WXReservedEvtHandler1(param0);
+    if (*m_wxEvtHandlerExtWXReservedEvtHandler1voidP != NULL){
+      return m_wxEvtHandlerExtWXReservedEvtHandler1voidP(this, param0, res);
+    }
+    else {
+      return res;
+    }
+  }
+  wxEvtHandlerExtWXReservedEvtHandler2voidPFunc m_wxEvtHandlerExtWXReservedEvtHandler2voidP = NULL;
+  virtual void* WXReservedEvtHandler2(void* param0) override
+  {
+    void* res = wxEvtHandler::WXReservedEvtHandler2(param0);
+    if (*m_wxEvtHandlerExtWXReservedEvtHandler2voidP != NULL){
+      return m_wxEvtHandlerExtWXReservedEvtHandler2voidP(this, param0, res);
+    }
+    else {
+      return res;
+    }
+  }
+  wxEvtHandlerExt(wxEvtHandlerExtAddPendingEventwxEventCRFunc a_AddPendingEventwxEventCR, wxEvtHandlerExtCloneRefDatawxObjectRefDataCPFunc a_CloneRefDatawxObjectRefDataCP, wxEvtHandlerExtCreateRefDataFunc a_CreateRefData, wxEvtHandlerExtDoGetClientDataFunc a_DoGetClientData, wxEvtHandlerExtDoGetClientObjectFunc a_DoGetClientObject, wxEvtHandlerExtDoSetClientDatavoidPFunc a_DoSetClientDatavoidP, wxEvtHandlerExtDoSetClientObjectwxClientDataPFunc a_DoSetClientObjectwxClientDataP, wxEvtHandlerExtGetClassInfoFunc a_GetClassInfo, wxEvtHandlerExtGetEventHashTableFunc a_GetEventHashTable, wxEvtHandlerExtGetEventTableFunc a_GetEventTable, wxEvtHandlerExtOnDynamicBindwxDynamicEventTableEntryRFunc a_OnDynamicBindwxDynamicEventTableEntryR, wxEvtHandlerExtProcessEventwxEventRFunc a_ProcessEventwxEventR, wxEvtHandlerExtQueueEventwxEventPFunc a_QueueEventwxEventP, wxEvtHandlerExtSearchEventTablewxEventTableRwxEventRFunc a_SearchEventTablewxEventTableRwxEventR, wxEvtHandlerExtSetNextHandlerwxEvtHandlerPFunc a_SetNextHandlerwxEvtHandlerP, wxEvtHandlerExtSetPreviousHandlerwxEvtHandlerPFunc a_SetPreviousHandlerwxEvtHandlerP, wxEvtHandlerExtTryAfterwxEventRFunc a_TryAfterwxEventR, wxEvtHandlerExtTryBeforewxEventRFunc a_TryBeforewxEventR, wxEvtHandlerExtWXReservedEvtHandler1voidPFunc a_WXReservedEvtHandler1voidP, wxEvtHandlerExtWXReservedEvtHandler2voidPFunc a_WXReservedEvtHandler2voidP): wxEvtHandler() {
     m_wxEvtHandlerExtAddPendingEventwxEventCR = a_AddPendingEventwxEventCR;
     m_wxEvtHandlerExtCloneRefDatawxObjectRefDataCP = a_CloneRefDatawxObjectRefDataCP;
     m_wxEvtHandlerExtCreateRefData = a_CreateRefData;
+    m_wxEvtHandlerExtDoGetClientData = a_DoGetClientData;
+    m_wxEvtHandlerExtDoGetClientObject = a_DoGetClientObject;
+    m_wxEvtHandlerExtDoSetClientDatavoidP = a_DoSetClientDatavoidP;
+    m_wxEvtHandlerExtDoSetClientObjectwxClientDataP = a_DoSetClientObjectwxClientDataP;
     m_wxEvtHandlerExtGetClassInfo = a_GetClassInfo;
     m_wxEvtHandlerExtGetEventHashTable = a_GetEventHashTable;
     m_wxEvtHandlerExtGetEventTable = a_GetEventTable;
@@ -4041,9 +4042,10 @@ public:
     m_wxEvtHandlerExtSetPreviousHandlerwxEvtHandlerP = a_SetPreviousHandlerwxEvtHandlerP;
     m_wxEvtHandlerExtTryAfterwxEventR = a_TryAfterwxEventR;
     m_wxEvtHandlerExtTryBeforewxEventR = a_TryBeforewxEventR;
+    m_wxEvtHandlerExtWXReservedEvtHandler1voidP = a_WXReservedEvtHandler1voidP;
+    m_wxEvtHandlerExtWXReservedEvtHandler2voidP = a_WXReservedEvtHandler2voidP;
   }
 };
-
 
 class wxEventConnectionRefExt: public wxEventConnectionRef
 {

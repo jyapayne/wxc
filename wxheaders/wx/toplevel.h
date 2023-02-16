@@ -286,7 +286,7 @@ public:
     // override some base class virtuals
     virtual bool Destroy() wxOVERRIDE;
     virtual bool IsTopLevel() const wxOVERRIDE { return true; }
-    virtual bool IsTopNavigationDomain(NavigationKind kind) const wxOVERRIDE;
+    virtual bool IsTopNavigationDomain(wxWindowBase::NavigationKind kind) const wxOVERRIDE;
     virtual bool IsVisible() const { return IsShown(); }
 
     // override to do TLW-specific layout: we resize our unique child to fill
