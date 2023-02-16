@@ -14,6 +14,8 @@
 %import "object.i"
 %import "string.i"
 
+%ignore wxColourRefDataExt;
+
 %import "wx/setup.h"
 #undef HAVE_VISIBILITY
 #undef wxUSE_STD_CONTAINERS

@@ -5,25 +5,25 @@
 #include <wx/vidmode.h>
 
 class wxEventFilterExt;
-typedef int (*wxEventFilterExtFilterEventwxEventRFunc)(const wxEventFilterExt* self, wxEvent& event);
+typedef int (*wxEventFilterExtFilterEvent__wxEventRFunc)(const wxEventFilterExt* self, wxEvent& event);
 
 class wxEventFilterExt: public wxEventFilter
 {
 public:
   wxEventFilterExt(): wxEventFilter()  {  }
   virtual ~wxEventFilterExt()  {  }
-  wxEventFilterExtFilterEventwxEventRFunc m_wxEventFilterExtFilterEventwxEventR = NULL;
+  wxEventFilterExtFilterEvent__wxEventRFunc m_wxEventFilterExtFilterEvent__wxEventR = NULL;
   virtual int FilterEvent(wxEvent& event) override
   {
-    if (*m_wxEventFilterExtFilterEventwxEventR != NULL){
-      return m_wxEventFilterExtFilterEventwxEventR(this, event);
+    if (*m_wxEventFilterExtFilterEvent__wxEventR != NULL){
+      return m_wxEventFilterExtFilterEvent__wxEventR(this, event);
     }
     else {
       return 0;
     }
   }
-  wxEventFilterExt(wxEventFilterExtFilterEventwxEventRFunc a_FilterEventwxEventR): wxEventFilter() {
-    m_wxEventFilterExtFilterEventwxEventR = a_FilterEventwxEventR;
+  wxEventFilterExt(wxEventFilterExtFilterEvent__wxEventRFunc a_FilterEvent__wxEventR): wxEventFilter() {
+    m_wxEventFilterExtFilterEvent__wxEventR = a_FilterEvent__wxEventR;
   }
 };
 

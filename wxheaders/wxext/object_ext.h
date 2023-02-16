@@ -5,7 +5,7 @@
 #include <wx/vidmode.h>
 
 class wxObjectExt;
-typedef wxObjectRefData* (*wxObjectExtCloneRefDatawxObjectRefDataCPFunc)(const wxObjectExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxObjectExtCloneRefData__wxObjectRefDataCPFunc)(const wxObjectExt* self, wxObjectRefData const* data, wxObjectRefData* res);
 typedef wxObjectRefData* (*wxObjectExtCreateRefDataFunc)(const wxObjectExt* self, wxObjectRefData* res);
 typedef wxClassInfo* (*wxObjectExtGetClassInfoFunc)(const wxObjectExt* self, wxClassInfo* res);
 
@@ -15,12 +15,12 @@ public:
   wxObjectExt(): wxObject()  {  }
   virtual ~wxObjectExt()  {  }
   wxObjectExt(wxObject const& other): wxObject(other)  {  }
-  wxObjectExtCloneRefDatawxObjectRefDataCPFunc m_wxObjectExtCloneRefDatawxObjectRefDataCP = NULL;
+  wxObjectExtCloneRefData__wxObjectRefDataCPFunc m_wxObjectExtCloneRefData__wxObjectRefDataCP = NULL;
   virtual wxObjectRefData* CloneRefData(wxObjectRefData const* data) const override
   {
     wxObjectRefData* res = wxObject::CloneRefData(data);
-    if (*m_wxObjectExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxObjectExtCloneRefDatawxObjectRefDataCP(this, data, res);
+    if (*m_wxObjectExtCloneRefData__wxObjectRefDataCP != NULL){
+      return m_wxObjectExtCloneRefData__wxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -48,8 +48,8 @@ public:
       return res;
     }
   }
-  wxObjectExt(wxObjectExtCloneRefDatawxObjectRefDataCPFunc a_CloneRefDatawxObjectRefDataCP, wxObjectExtCreateRefDataFunc a_CreateRefData, wxObjectExtGetClassInfoFunc a_GetClassInfo): wxObject() {
-    m_wxObjectExtCloneRefDatawxObjectRefDataCP = a_CloneRefDatawxObjectRefDataCP;
+  wxObjectExt(wxObjectExtCloneRefData__wxObjectRefDataCPFunc a_CloneRefData__wxObjectRefDataCP, wxObjectExtCreateRefDataFunc a_CreateRefData, wxObjectExtGetClassInfoFunc a_GetClassInfo): wxObject() {
+    m_wxObjectExtCloneRefData__wxObjectRefDataCP = a_CloneRefData__wxObjectRefDataCP;
     m_wxObjectExtCreateRefData = a_CreateRefData;
     m_wxObjectExtGetClassInfo = a_GetClassInfo;
   }

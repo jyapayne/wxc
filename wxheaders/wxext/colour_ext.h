@@ -7,24 +7,24 @@
 class wxColourBaseExt;
 typedef wxColourBase::ChannelType (*wxColourBaseExtAlphaFunc)(const wxColourBaseExt* self, wxColourBase::ChannelType res);
 typedef wxColourBase::ChannelType (*wxColourBaseExtBlueFunc)(const wxColourBaseExt* self);
-typedef wxGDIRefData* (*wxColourBaseExtCloneGDIRefDatawxGDIRefDataCPFunc)(const wxColourBaseExt* self, wxGDIRefData const* param0, wxGDIRefData* res);
+typedef wxGDIRefData* (*wxColourBaseExtCloneGDIRefData__wxGDIRefDataCPFunc)(const wxColourBaseExt* self, wxGDIRefData const* data, wxGDIRefData* res);
 typedef wxGDIRefData* (*wxColourBaseExtCreateGDIRefDataFunc)(const wxColourBaseExt* self, wxGDIRefData* res);
-typedef bool (*wxColourBaseExtFromStringwxStringCRFunc)(const wxColourBaseExt* self, wxString const& s, bool res);
-typedef wxString (*wxColourBaseExtGetAsStringlongFunc)(const wxColourBaseExt* self, long flags, wxString res);
+typedef bool (*wxColourBaseExtFromString__wxStringCRFunc)(const wxColourBaseExt* self, wxString const& s, bool res);
+typedef wxString (*wxColourBaseExtGetAsString__longFunc)(const wxColourBaseExt* self, long flags, wxString res);
 typedef wxColourBase::ChannelType (*wxColourBaseExtGreenFunc)(const wxColourBaseExt* self);
-typedef void (*wxColourBaseExtInitRGBAwxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypeFunc)(const wxColourBaseExt* self, wxColourBase::ChannelType r, wxColourBase::ChannelType g, wxColourBase::ChannelType b, wxColourBase::ChannelType a);
+typedef void (*wxColourBaseExtInitRGBA__wxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypeFunc)(const wxColourBaseExt* self, wxColourBase::ChannelType r, wxColourBase::ChannelType g, wxColourBase::ChannelType b, wxColourBase::ChannelType a);
 typedef bool (*wxColourBaseExtIsSolidFunc)(const wxColourBaseExt* self, bool res);
 typedef wxColourBase::ChannelType (*wxColourBaseExtRedFunc)(const wxColourBaseExt* self);
 class wxColourExt;
 typedef wxColourBase::ChannelType (*wxColourExtAlphaFunc)(const wxColourExt* self, wxColourBase::ChannelType res);
 typedef wxColourBase::ChannelType (*wxColourExtBlueFunc)(const wxColourExt* self);
-typedef wxGDIRefData* (*wxColourExtCloneGDIRefDatawxGDIRefDataCPFunc)(const wxColourExt* self, wxGDIRefData const* param0, wxGDIRefData* res);
+typedef wxGDIRefData* (*wxColourExtCloneGDIRefData__wxGDIRefDataCPFunc)(const wxColourExt* self, wxGDIRefData const* data, wxGDIRefData* res);
 typedef wxGDIRefData* (*wxColourExtCreateGDIRefDataFunc)(const wxColourExt* self, wxGDIRefData* res);
-typedef bool (*wxColourExtFromStringwxStringCRFunc)(const wxColourExt* self, wxString const& s, bool res);
-typedef wxString (*wxColourExtGetAsStringlongFunc)(const wxColourExt* self, long flags, wxString res);
+typedef bool (*wxColourExtFromString__wxStringCRFunc)(const wxColourExt* self, wxString const& s, bool res);
+typedef wxString (*wxColourExtGetAsString__longFunc)(const wxColourExt* self, long flags, wxString res);
 typedef wxClassInfo* (*wxColourExtGetClassInfoFunc)(const wxColourExt* self, wxClassInfo* res);
 typedef wxColourBase::ChannelType (*wxColourExtGreenFunc)(const wxColourExt* self);
-typedef void (*wxColourExtInitRGBAwxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypeFunc)(const wxColourExt* self, wxColourBase::ChannelType r, wxColourBase::ChannelType g, wxColourBase::ChannelType b, wxColourBase::ChannelType a);
+typedef void (*wxColourExtInitRGBA__wxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypeFunc)(const wxColourExt* self, wxColourBase::ChannelType r, wxColourBase::ChannelType g, wxColourBase::ChannelType b, wxColourBase::ChannelType a);
 typedef bool (*wxColourExtIsSolidFunc)(const wxColourExt* self, bool res);
 typedef wxColourBase::ChannelType (*wxColourExtRedFunc)(const wxColourExt* self);
 class wxColourRefDataExt;
@@ -62,12 +62,12 @@ public:
       return 0;
     }
   }
-  wxColourBaseExtCloneGDIRefDatawxGDIRefDataCPFunc m_wxColourBaseExtCloneGDIRefDatawxGDIRefDataCP = NULL;
-  virtual wxGDIRefData* CloneGDIRefData(wxGDIRefData const* param0) const override
+  wxColourBaseExtCloneGDIRefData__wxGDIRefDataCPFunc m_wxColourBaseExtCloneGDIRefData__wxGDIRefDataCP = NULL;
+  virtual wxGDIRefData* CloneGDIRefData(wxGDIRefData const* data) const override
   {
-    wxGDIRefData* res = wxColourBase::CloneGDIRefData(param0);
-    if (*m_wxColourBaseExtCloneGDIRefDatawxGDIRefDataCP != NULL){
-      return m_wxColourBaseExtCloneGDIRefDatawxGDIRefDataCP(this, param0, res);
+    wxGDIRefData* res = wxColourBase::CloneGDIRefData(data);
+    if (*m_wxColourBaseExtCloneGDIRefData__wxGDIRefDataCP != NULL){
+      return m_wxColourBaseExtCloneGDIRefData__wxGDIRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -84,23 +84,23 @@ public:
       return res;
     }
   }
-  wxColourBaseExtFromStringwxStringCRFunc m_wxColourBaseExtFromStringwxStringCR = NULL;
+  wxColourBaseExtFromString__wxStringCRFunc m_wxColourBaseExtFromString__wxStringCR = NULL;
   virtual bool FromString(wxString const& s) override
   {
     bool res = wxColourBase::FromString(s);
-    if (*m_wxColourBaseExtFromStringwxStringCR != NULL){
-      return m_wxColourBaseExtFromStringwxStringCR(this, s, res);
+    if (*m_wxColourBaseExtFromString__wxStringCR != NULL){
+      return m_wxColourBaseExtFromString__wxStringCR(this, s, res);
     }
     else {
       return res;
     }
   }
-  wxColourBaseExtGetAsStringlongFunc m_wxColourBaseExtGetAsStringlong = NULL;
+  wxColourBaseExtGetAsString__longFunc m_wxColourBaseExtGetAsString__long = NULL;
   virtual wxString GetAsString(long flags = wxC2S_NAME | wxC2S_CSS_SYNTAX) const override
   {
     wxString res = wxColourBase::GetAsString(flags);
-    if (*m_wxColourBaseExtGetAsStringlong != NULL){
-      return m_wxColourBaseExtGetAsStringlong(this, flags, res);
+    if (*m_wxColourBaseExtGetAsString__long != NULL){
+      return m_wxColourBaseExtGetAsString__long(this, flags, res);
     }
     else {
       return res;
@@ -116,11 +116,11 @@ public:
       return 0;
     }
   }
-  wxColourBaseExtInitRGBAwxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypeFunc m_wxColourBaseExtInitRGBAwxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelType = NULL;
+  wxColourBaseExtInitRGBA__wxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypeFunc m_wxColourBaseExtInitRGBA__wxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelType = NULL;
   virtual void InitRGBA(wxColourBase::ChannelType r, wxColourBase::ChannelType g, wxColourBase::ChannelType b, wxColourBase::ChannelType a) override
   {
-    if (*m_wxColourBaseExtInitRGBAwxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelType != NULL){
-      return m_wxColourBaseExtInitRGBAwxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelType(this, r, g, b, a);
+    if (*m_wxColourBaseExtInitRGBA__wxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelType != NULL){
+      return m_wxColourBaseExtInitRGBA__wxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelType(this, r, g, b, a);
     }
   }
   wxColourBaseExtIsSolidFunc m_wxColourBaseExtIsSolid = NULL;
@@ -144,15 +144,15 @@ public:
       return 0;
     }
   }
-  wxColourBaseExt(wxColourBaseExtAlphaFunc a_Alpha, wxColourBaseExtBlueFunc a_Blue, wxColourBaseExtCloneGDIRefDatawxGDIRefDataCPFunc a_CloneGDIRefDatawxGDIRefDataCP, wxColourBaseExtCreateGDIRefDataFunc a_CreateGDIRefData, wxColourBaseExtFromStringwxStringCRFunc a_FromStringwxStringCR, wxColourBaseExtGetAsStringlongFunc a_GetAsStringlong, wxColourBaseExtGreenFunc a_Green, wxColourBaseExtInitRGBAwxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypeFunc a_InitRGBAwxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelType, wxColourBaseExtIsSolidFunc a_IsSolid, wxColourBaseExtRedFunc a_Red): wxColourBase() {
+  wxColourBaseExt(wxColourBaseExtAlphaFunc a_Alpha, wxColourBaseExtBlueFunc a_Blue, wxColourBaseExtCloneGDIRefData__wxGDIRefDataCPFunc a_CloneGDIRefData__wxGDIRefDataCP, wxColourBaseExtCreateGDIRefDataFunc a_CreateGDIRefData, wxColourBaseExtFromString__wxStringCRFunc a_FromString__wxStringCR, wxColourBaseExtGetAsString__longFunc a_GetAsString__long, wxColourBaseExtGreenFunc a_Green, wxColourBaseExtInitRGBA__wxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypeFunc a_InitRGBA__wxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelType, wxColourBaseExtIsSolidFunc a_IsSolid, wxColourBaseExtRedFunc a_Red): wxColourBase() {
     m_wxColourBaseExtAlpha = a_Alpha;
     m_wxColourBaseExtBlue = a_Blue;
-    m_wxColourBaseExtCloneGDIRefDatawxGDIRefDataCP = a_CloneGDIRefDatawxGDIRefDataCP;
+    m_wxColourBaseExtCloneGDIRefData__wxGDIRefDataCP = a_CloneGDIRefData__wxGDIRefDataCP;
     m_wxColourBaseExtCreateGDIRefData = a_CreateGDIRefData;
-    m_wxColourBaseExtFromStringwxStringCR = a_FromStringwxStringCR;
-    m_wxColourBaseExtGetAsStringlong = a_GetAsStringlong;
+    m_wxColourBaseExtFromString__wxStringCR = a_FromString__wxStringCR;
+    m_wxColourBaseExtGetAsString__long = a_GetAsString__long;
     m_wxColourBaseExtGreen = a_Green;
-    m_wxColourBaseExtInitRGBAwxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelType = a_InitRGBAwxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelType;
+    m_wxColourBaseExtInitRGBA__wxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelType = a_InitRGBA__wxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelType;
     m_wxColourBaseExtIsSolid = a_IsSolid;
     m_wxColourBaseExtRed = a_Red;
   }
@@ -190,12 +190,12 @@ public:
       return 0;
     }
   }
-  wxColourExtCloneGDIRefDatawxGDIRefDataCPFunc m_wxColourExtCloneGDIRefDatawxGDIRefDataCP = NULL;
-  virtual wxGDIRefData* CloneGDIRefData(wxGDIRefData const* param0) const override
+  wxColourExtCloneGDIRefData__wxGDIRefDataCPFunc m_wxColourExtCloneGDIRefData__wxGDIRefDataCP = NULL;
+  virtual wxGDIRefData* CloneGDIRefData(wxGDIRefData const* data) const override
   {
-    wxGDIRefData* res = wxColour::CloneGDIRefData(param0);
-    if (*m_wxColourExtCloneGDIRefDatawxGDIRefDataCP != NULL){
-      return m_wxColourExtCloneGDIRefDatawxGDIRefDataCP(this, param0, res);
+    wxGDIRefData* res = wxColour::CloneGDIRefData(data);
+    if (*m_wxColourExtCloneGDIRefData__wxGDIRefDataCP != NULL){
+      return m_wxColourExtCloneGDIRefData__wxGDIRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -212,23 +212,23 @@ public:
       return res;
     }
   }
-  wxColourExtFromStringwxStringCRFunc m_wxColourExtFromStringwxStringCR = NULL;
+  wxColourExtFromString__wxStringCRFunc m_wxColourExtFromString__wxStringCR = NULL;
   virtual bool FromString(wxString const& s) override
   {
     bool res = wxColour::FromString(s);
-    if (*m_wxColourExtFromStringwxStringCR != NULL){
-      return m_wxColourExtFromStringwxStringCR(this, s, res);
+    if (*m_wxColourExtFromString__wxStringCR != NULL){
+      return m_wxColourExtFromString__wxStringCR(this, s, res);
     }
     else {
       return res;
     }
   }
-  wxColourExtGetAsStringlongFunc m_wxColourExtGetAsStringlong = NULL;
+  wxColourExtGetAsString__longFunc m_wxColourExtGetAsString__long = NULL;
   virtual wxString GetAsString(long flags = wxC2S_NAME | wxC2S_CSS_SYNTAX) const override
   {
     wxString res = wxColour::GetAsString(flags);
-    if (*m_wxColourExtGetAsStringlong != NULL){
-      return m_wxColourExtGetAsStringlong(this, flags, res);
+    if (*m_wxColourExtGetAsString__long != NULL){
+      return m_wxColourExtGetAsString__long(this, flags, res);
     }
     else {
       return res;
@@ -255,11 +255,11 @@ public:
       return 0;
     }
   }
-  wxColourExtInitRGBAwxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypeFunc m_wxColourExtInitRGBAwxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelType = NULL;
+  wxColourExtInitRGBA__wxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypeFunc m_wxColourExtInitRGBA__wxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelType = NULL;
   virtual void InitRGBA(wxColourBase::ChannelType r, wxColourBase::ChannelType g, wxColourBase::ChannelType b, wxColourBase::ChannelType a) override
   {
-    if (*m_wxColourExtInitRGBAwxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelType != NULL){
-      return m_wxColourExtInitRGBAwxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelType(this, r, g, b, a);
+    if (*m_wxColourExtInitRGBA__wxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelType != NULL){
+      return m_wxColourExtInitRGBA__wxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelType(this, r, g, b, a);
     }
   }
   wxColourExtIsSolidFunc m_wxColourExtIsSolid = NULL;
@@ -283,16 +283,16 @@ public:
       return 0;
     }
   }
-  wxColourExt(wxColourExtAlphaFunc a_Alpha, wxColourExtBlueFunc a_Blue, wxColourExtCloneGDIRefDatawxGDIRefDataCPFunc a_CloneGDIRefDatawxGDIRefDataCP, wxColourExtCreateGDIRefDataFunc a_CreateGDIRefData, wxColourExtFromStringwxStringCRFunc a_FromStringwxStringCR, wxColourExtGetAsStringlongFunc a_GetAsStringlong, wxColourExtGetClassInfoFunc a_GetClassInfo, wxColourExtGreenFunc a_Green, wxColourExtInitRGBAwxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypeFunc a_InitRGBAwxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelType, wxColourExtIsSolidFunc a_IsSolid, wxColourExtRedFunc a_Red): wxColour() {
+  wxColourExt(wxColourExtAlphaFunc a_Alpha, wxColourExtBlueFunc a_Blue, wxColourExtCloneGDIRefData__wxGDIRefDataCPFunc a_CloneGDIRefData__wxGDIRefDataCP, wxColourExtCreateGDIRefDataFunc a_CreateGDIRefData, wxColourExtFromString__wxStringCRFunc a_FromString__wxStringCR, wxColourExtGetAsString__longFunc a_GetAsString__long, wxColourExtGetClassInfoFunc a_GetClassInfo, wxColourExtGreenFunc a_Green, wxColourExtInitRGBA__wxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypeFunc a_InitRGBA__wxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelType, wxColourExtIsSolidFunc a_IsSolid, wxColourExtRedFunc a_Red): wxColour() {
     m_wxColourExtAlpha = a_Alpha;
     m_wxColourExtBlue = a_Blue;
-    m_wxColourExtCloneGDIRefDatawxGDIRefDataCP = a_CloneGDIRefDatawxGDIRefDataCP;
+    m_wxColourExtCloneGDIRefData__wxGDIRefDataCP = a_CloneGDIRefData__wxGDIRefDataCP;
     m_wxColourExtCreateGDIRefData = a_CreateGDIRefData;
-    m_wxColourExtFromStringwxStringCR = a_FromStringwxStringCR;
-    m_wxColourExtGetAsStringlong = a_GetAsStringlong;
+    m_wxColourExtFromString__wxStringCR = a_FromString__wxStringCR;
+    m_wxColourExtGetAsString__long = a_GetAsString__long;
     m_wxColourExtGetClassInfo = a_GetClassInfo;
     m_wxColourExtGreen = a_Green;
-    m_wxColourExtInitRGBAwxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelType = a_InitRGBAwxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelType;
+    m_wxColourExtInitRGBA__wxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelType = a_InitRGBA__wxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelType;
     m_wxColourExtIsSolid = a_IsSolid;
     m_wxColourExtRed = a_Red;
   }
@@ -383,10 +383,6 @@ public:
     m_wxColourRefDataExtIsSolid = a_IsSolid;
     m_wxColourRefDataExtRed = a_Red;
   }
-#if defined(__WXMAC__)
-    virtual WX_NSColor GetNSColor() const override = 0;
-    virtual WX_NSImage GetNSPatternImage() const override = 0;
-#endif
 };
 
 

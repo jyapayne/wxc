@@ -6,143 +6,143 @@
 
 class wxTopLevelWindowBaseExt;
 typedef bool (*wxTopLevelWindowBaseExtDestroyFunc)(const wxTopLevelWindowBaseExt* self, bool res);
-typedef void (*wxTopLevelWindowBaseExtDoCentreintFunc)(const wxTopLevelWindowBaseExt* self, int dir);
-typedef void (*wxTopLevelWindowBaseExtDoClientToScreenintPintPFunc)(const wxTopLevelWindowBaseExt* self, int* x, int* y);
-typedef void (*wxTopLevelWindowBaseExtDoGetScreenPositionintPintPFunc)(const wxTopLevelWindowBaseExt* self, int* x, int* y);
-typedef void (*wxTopLevelWindowBaseExtDoScreenToClientintPintPFunc)(const wxTopLevelWindowBaseExt* self, int* x, int* y);
-typedef void (*wxTopLevelWindowBaseExtDoUpdateWindowUIwxUpdateUIEventRFunc)(const wxTopLevelWindowBaseExt* self, wxUpdateUIEvent& event);
-typedef bool (*wxTopLevelWindowBaseExtEnableCloseButtonboolFunc)(const wxTopLevelWindowBaseExt* self, bool param0, bool res);
-typedef bool (*wxTopLevelWindowBaseExtEnableFullScreenViewboollongFunc)(const wxTopLevelWindowBaseExt* self, bool param0, long param1, bool res);
-typedef bool (*wxTopLevelWindowBaseExtEnableMaximizeButtonboolFunc)(const wxTopLevelWindowBaseExt* self, bool param0, bool res);
-typedef bool (*wxTopLevelWindowBaseExtEnableMinimizeButtonboolFunc)(const wxTopLevelWindowBaseExt* self, bool param0, bool res);
+typedef void (*wxTopLevelWindowBaseExtDoCentre__intFunc)(const wxTopLevelWindowBaseExt* self, int dir);
+typedef void (*wxTopLevelWindowBaseExtDoClientToScreen__intPintPFunc)(const wxTopLevelWindowBaseExt* self, int* x, int* y);
+typedef void (*wxTopLevelWindowBaseExtDoGetScreenPosition__intPintPFunc)(const wxTopLevelWindowBaseExt* self, int* x, int* y);
+typedef void (*wxTopLevelWindowBaseExtDoScreenToClient__intPintPFunc)(const wxTopLevelWindowBaseExt* self, int* x, int* y);
+typedef void (*wxTopLevelWindowBaseExtDoUpdateWindowUI__wxUpdateUIEventRFunc)(const wxTopLevelWindowBaseExt* self, wxUpdateUIEvent& event);
+typedef bool (*wxTopLevelWindowBaseExtEnableCloseButton__boolFunc)(const wxTopLevelWindowBaseExt* self, bool enable, bool res);
+typedef bool (*wxTopLevelWindowBaseExtEnableFullScreenView__boollongFunc)(const wxTopLevelWindowBaseExt* self, bool enable, long style, bool res);
+typedef bool (*wxTopLevelWindowBaseExtEnableMaximizeButton__boolFunc)(const wxTopLevelWindowBaseExt* self, bool enable, bool res);
+typedef bool (*wxTopLevelWindowBaseExtEnableMinimizeButton__boolFunc)(const wxTopLevelWindowBaseExt* self, bool enable, bool res);
 typedef wxContentProtection (*wxTopLevelWindowBaseExtGetContentProtectionFunc)(const wxTopLevelWindowBaseExt* self, wxContentProtection res);
 typedef wxEventHashTable& (*wxTopLevelWindowBaseExtGetEventHashTableFunc)(const wxTopLevelWindowBaseExt* self, wxEventHashTable& res);
 typedef wxEventTable const* (*wxTopLevelWindowBaseExtGetEventTableFunc)(const wxTopLevelWindowBaseExt* self, wxEventTable const* res);
-typedef void (*wxTopLevelWindowBaseExtGetRectForTopLevelChildrenintPintPintPintPFunc)(const wxTopLevelWindowBaseExt* self, int* x, int* y, int* w, int* h);
+typedef void (*wxTopLevelWindowBaseExtGetRectForTopLevelChildren__intPintPintPintPFunc)(const wxTopLevelWindowBaseExt* self, int* x, int* y, int* w, int* h);
 typedef wxString (*wxTopLevelWindowBaseExtGetTitleFunc)(const wxTopLevelWindowBaseExt* self);
-typedef void (*wxTopLevelWindowBaseExtIconizeboolFunc)(const wxTopLevelWindowBaseExt* self, bool iconize);
+typedef void (*wxTopLevelWindowBaseExtIconize__boolFunc)(const wxTopLevelWindowBaseExt* self, bool iconize);
 typedef bool (*wxTopLevelWindowBaseExtIsActiveFunc)(const wxTopLevelWindowBaseExt* self, bool res);
 typedef bool (*wxTopLevelWindowBaseExtIsAlwaysMaximizedFunc)(const wxTopLevelWindowBaseExt* self, bool res);
 typedef bool (*wxTopLevelWindowBaseExtIsFullScreenFunc)(const wxTopLevelWindowBaseExt* self);
 typedef bool (*wxTopLevelWindowBaseExtIsIconizedFunc)(const wxTopLevelWindowBaseExt* self);
 typedef bool (*wxTopLevelWindowBaseExtIsMaximizedFunc)(const wxTopLevelWindowBaseExt* self);
-typedef bool (*wxTopLevelWindowBaseExtIsOneOfBarswxWindowCPFunc)(const wxTopLevelWindowBaseExt* self, wxWindow const* param0, bool res);
+typedef bool (*wxTopLevelWindowBaseExtIsOneOfBars__wxWindowCPFunc)(const wxTopLevelWindowBaseExt* self, wxWindow const* win, bool res);
 typedef bool (*wxTopLevelWindowBaseExtIsTopLevelFunc)(const wxTopLevelWindowBaseExt* self, bool res);
-typedef bool (*wxTopLevelWindowBaseExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc)(const wxTopLevelWindowBaseExt* self, wxWindowBase::NavigationKind kind, bool res);
+typedef bool (*wxTopLevelWindowBaseExtIsTopNavigationDomain__wxWindowBaseNNavigationKindFunc)(const wxTopLevelWindowBaseExt* self, wxWindowBase::NavigationKind kind, bool res);
 typedef bool (*wxTopLevelWindowBaseExtIsVisibleFunc)(const wxTopLevelWindowBaseExt* self, bool res);
 typedef bool (*wxTopLevelWindowBaseExtLayoutFunc)(const wxTopLevelWindowBaseExt* self, bool res);
-typedef void (*wxTopLevelWindowBaseExtMaximizeboolFunc)(const wxTopLevelWindowBaseExt* self, bool maximize);
+typedef void (*wxTopLevelWindowBaseExtMaximize__boolFunc)(const wxTopLevelWindowBaseExt* self, bool maximize);
 typedef bool (*wxTopLevelWindowBaseExtOSXIsModifiedFunc)(const wxTopLevelWindowBaseExt* self, bool res);
-typedef void (*wxTopLevelWindowBaseExtOSXSetModifiedboolFunc)(const wxTopLevelWindowBaseExt* self, bool modified);
-typedef void (*wxTopLevelWindowBaseExtRequestUserAttentionintFunc)(const wxTopLevelWindowBaseExt* self, int flags);
+typedef void (*wxTopLevelWindowBaseExtOSXSetModified__boolFunc)(const wxTopLevelWindowBaseExt* self, bool modified);
+typedef void (*wxTopLevelWindowBaseExtRequestUserAttention__intFunc)(const wxTopLevelWindowBaseExt* self, int flags);
 typedef void (*wxTopLevelWindowBaseExtRestoreFunc)(const wxTopLevelWindowBaseExt* self);
-typedef bool (*wxTopLevelWindowBaseExtSetContentProtectionwxContentProtectionFunc)(const wxTopLevelWindowBaseExt* self, wxContentProtection param0, bool res);
-typedef void (*wxTopLevelWindowBaseExtSetIconswxIconBundleCRFunc)(const wxTopLevelWindowBaseExt* self, wxIconBundle const& icons);
-typedef void (*wxTopLevelWindowBaseExtSetMaxSizewxSizeCRFunc)(const wxTopLevelWindowBaseExt* self, wxSize const& maxSize);
-typedef void (*wxTopLevelWindowBaseExtSetMinSizewxSizeCRFunc)(const wxTopLevelWindowBaseExt* self, wxSize const& minSize);
-typedef void (*wxTopLevelWindowBaseExtSetRepresentedFilenamewxStringCRFunc)(const wxTopLevelWindowBaseExt* self, wxString const& param0);
-typedef void (*wxTopLevelWindowBaseExtSetTitlewxStringCRFunc)(const wxTopLevelWindowBaseExt* self, wxString const& title);
+typedef bool (*wxTopLevelWindowBaseExtSetContentProtection__wxContentProtectionFunc)(const wxTopLevelWindowBaseExt* self, wxContentProtection contentProtection, bool res);
+typedef void (*wxTopLevelWindowBaseExtSetIcons__wxIconBundleCRFunc)(const wxTopLevelWindowBaseExt* self, wxIconBundle const& icons);
+typedef void (*wxTopLevelWindowBaseExtSetMaxSize__wxSizeCRFunc)(const wxTopLevelWindowBaseExt* self, wxSize const& maxSize);
+typedef void (*wxTopLevelWindowBaseExtSetMinSize__wxSizeCRFunc)(const wxTopLevelWindowBaseExt* self, wxSize const& minSize);
+typedef void (*wxTopLevelWindowBaseExtSetRepresentedFilename__wxStringCRFunc)(const wxTopLevelWindowBaseExt* self, wxString const& filename);
+typedef void (*wxTopLevelWindowBaseExtSetTitle__wxStringCRFunc)(const wxTopLevelWindowBaseExt* self, wxString const& title);
 typedef bool (*wxTopLevelWindowBaseExtShouldPreventAppExitFunc)(const wxTopLevelWindowBaseExt* self, bool res);
-typedef bool (*wxTopLevelWindowBaseExtShowFullScreenboollongFunc)(const wxTopLevelWindowBaseExt* self, bool show, long style);
+typedef bool (*wxTopLevelWindowBaseExtShowFullScreen__boollongFunc)(const wxTopLevelWindowBaseExt* self, bool show, long style);
 typedef void (*wxTopLevelWindowBaseExtShowWithoutActivatingFunc)(const wxTopLevelWindowBaseExt* self);
-typedef void* (*wxTopLevelWindowBaseExtWXReservedTLW1voidPFunc)(const wxTopLevelWindowBaseExt* self, void* param0, void* res);
-typedef void* (*wxTopLevelWindowBaseExtWXReservedTLW2voidPFunc)(const wxTopLevelWindowBaseExt* self, void* param0, void* res);
-typedef void* (*wxTopLevelWindowBaseExtWXReservedTLW3voidPFunc)(const wxTopLevelWindowBaseExt* self, void* param0, void* res);
+typedef void* (*wxTopLevelWindowBaseExtWXReservedTLW1__voidPFunc)(const wxTopLevelWindowBaseExt* self, void* param0, void* res);
+typedef void* (*wxTopLevelWindowBaseExtWXReservedTLW2__voidPFunc)(const wxTopLevelWindowBaseExt* self, void* param0, void* res);
+typedef void* (*wxTopLevelWindowBaseExtWXReservedTLW3__voidPFunc)(const wxTopLevelWindowBaseExt* self, void* param0, void* res);
 class wxTopLevelWindowNativeExt;
 typedef bool (*wxTopLevelWindowNativeExtDestroyFunc)(const wxTopLevelWindowNativeExt* self, bool res);
-typedef void (*wxTopLevelWindowNativeExtDoCentreintFunc)(const wxTopLevelWindowNativeExt* self, int dir);
-typedef void (*wxTopLevelWindowNativeExtDoClientToScreenintPintPFunc)(const wxTopLevelWindowNativeExt* self, int* x, int* y);
-typedef void (*wxTopLevelWindowNativeExtDoGetScreenPositionintPintPFunc)(const wxTopLevelWindowNativeExt* self, int* x, int* y);
-typedef void (*wxTopLevelWindowNativeExtDoScreenToClientintPintPFunc)(const wxTopLevelWindowNativeExt* self, int* x, int* y);
-typedef void (*wxTopLevelWindowNativeExtDoUpdateWindowUIwxUpdateUIEventRFunc)(const wxTopLevelWindowNativeExt* self, wxUpdateUIEvent& event);
-typedef bool (*wxTopLevelWindowNativeExtEnableCloseButtonboolFunc)(const wxTopLevelWindowNativeExt* self, bool param0, bool res);
-typedef bool (*wxTopLevelWindowNativeExtEnableFullScreenViewboollongFunc)(const wxTopLevelWindowNativeExt* self, bool param0, long param1, bool res);
-typedef bool (*wxTopLevelWindowNativeExtEnableMaximizeButtonboolFunc)(const wxTopLevelWindowNativeExt* self, bool param0, bool res);
-typedef bool (*wxTopLevelWindowNativeExtEnableMinimizeButtonboolFunc)(const wxTopLevelWindowNativeExt* self, bool param0, bool res);
+typedef void (*wxTopLevelWindowNativeExtDoCentre__intFunc)(const wxTopLevelWindowNativeExt* self, int dir);
+typedef void (*wxTopLevelWindowNativeExtDoClientToScreen__intPintPFunc)(const wxTopLevelWindowNativeExt* self, int* x, int* y);
+typedef void (*wxTopLevelWindowNativeExtDoGetScreenPosition__intPintPFunc)(const wxTopLevelWindowNativeExt* self, int* x, int* y);
+typedef void (*wxTopLevelWindowNativeExtDoScreenToClient__intPintPFunc)(const wxTopLevelWindowNativeExt* self, int* x, int* y);
+typedef void (*wxTopLevelWindowNativeExtDoUpdateWindowUI__wxUpdateUIEventRFunc)(const wxTopLevelWindowNativeExt* self, wxUpdateUIEvent& event);
+typedef bool (*wxTopLevelWindowNativeExtEnableCloseButton__boolFunc)(const wxTopLevelWindowNativeExt* self, bool enable, bool res);
+typedef bool (*wxTopLevelWindowNativeExtEnableFullScreenView__boollongFunc)(const wxTopLevelWindowNativeExt* self, bool enable, long style, bool res);
+typedef bool (*wxTopLevelWindowNativeExtEnableMaximizeButton__boolFunc)(const wxTopLevelWindowNativeExt* self, bool enable, bool res);
+typedef bool (*wxTopLevelWindowNativeExtEnableMinimizeButton__boolFunc)(const wxTopLevelWindowNativeExt* self, bool enable, bool res);
 typedef wxPoint (*wxTopLevelWindowNativeExtGetClientAreaOriginFunc)(const wxTopLevelWindowNativeExt* self, wxPoint res);
 typedef wxContentProtection (*wxTopLevelWindowNativeExtGetContentProtectionFunc)(const wxTopLevelWindowNativeExt* self, wxContentProtection res);
 typedef wxEventHashTable& (*wxTopLevelWindowNativeExtGetEventHashTableFunc)(const wxTopLevelWindowNativeExt* self, wxEventHashTable& res);
 typedef wxEventTable const* (*wxTopLevelWindowNativeExtGetEventTableFunc)(const wxTopLevelWindowNativeExt* self, wxEventTable const* res);
 typedef wxString (*wxTopLevelWindowNativeExtGetLabelFunc)(const wxTopLevelWindowNativeExt* self, wxString res);
-typedef void (*wxTopLevelWindowNativeExtGetRectForTopLevelChildrenintPintPintPintPFunc)(const wxTopLevelWindowNativeExt* self, int* x, int* y, int* w, int* h);
+typedef void (*wxTopLevelWindowNativeExtGetRectForTopLevelChildren__intPintPintPintPFunc)(const wxTopLevelWindowNativeExt* self, int* x, int* y, int* w, int* h);
 typedef wxString (*wxTopLevelWindowNativeExtGetTitleFunc)(const wxTopLevelWindowNativeExt* self);
-typedef void (*wxTopLevelWindowNativeExtIconizeboolFunc)(const wxTopLevelWindowNativeExt* self, bool iconize);
+typedef void (*wxTopLevelWindowNativeExtIconize__boolFunc)(const wxTopLevelWindowNativeExt* self, bool iconize);
 typedef bool (*wxTopLevelWindowNativeExtIsActiveFunc)(const wxTopLevelWindowNativeExt* self, bool res);
 typedef bool (*wxTopLevelWindowNativeExtIsAlwaysMaximizedFunc)(const wxTopLevelWindowNativeExt* self, bool res);
 typedef bool (*wxTopLevelWindowNativeExtIsFullScreenFunc)(const wxTopLevelWindowNativeExt* self);
 typedef bool (*wxTopLevelWindowNativeExtIsIconizedFunc)(const wxTopLevelWindowNativeExt* self);
 typedef bool (*wxTopLevelWindowNativeExtIsMaximizedFunc)(const wxTopLevelWindowNativeExt* self);
-typedef bool (*wxTopLevelWindowNativeExtIsOneOfBarswxWindowCPFunc)(const wxTopLevelWindowNativeExt* self, wxWindow const* param0, bool res);
+typedef bool (*wxTopLevelWindowNativeExtIsOneOfBars__wxWindowCPFunc)(const wxTopLevelWindowNativeExt* self, wxWindow const* win, bool res);
 typedef bool (*wxTopLevelWindowNativeExtIsTopLevelFunc)(const wxTopLevelWindowNativeExt* self, bool res);
-typedef bool (*wxTopLevelWindowNativeExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc)(const wxTopLevelWindowNativeExt* self, wxWindowBase::NavigationKind kind, bool res);
+typedef bool (*wxTopLevelWindowNativeExtIsTopNavigationDomain__wxWindowBaseNNavigationKindFunc)(const wxTopLevelWindowNativeExt* self, wxWindowBase::NavigationKind kind, bool res);
 typedef bool (*wxTopLevelWindowNativeExtIsVisibleFunc)(const wxTopLevelWindowNativeExt* self, bool res);
 typedef bool (*wxTopLevelWindowNativeExtLayoutFunc)(const wxTopLevelWindowNativeExt* self, bool res);
-typedef void (*wxTopLevelWindowNativeExtMaximizeboolFunc)(const wxTopLevelWindowNativeExt* self, bool maximize);
+typedef void (*wxTopLevelWindowNativeExtMaximize__boolFunc)(const wxTopLevelWindowNativeExt* self, bool maximize);
 typedef bool (*wxTopLevelWindowNativeExtOSXIsModifiedFunc)(const wxTopLevelWindowNativeExt* self, bool res);
-typedef void (*wxTopLevelWindowNativeExtOSXSetModifiedboolFunc)(const wxTopLevelWindowNativeExt* self, bool modified);
-typedef void (*wxTopLevelWindowNativeExtRequestUserAttentionintFunc)(const wxTopLevelWindowNativeExt* self, int flags);
+typedef void (*wxTopLevelWindowNativeExtOSXSetModified__boolFunc)(const wxTopLevelWindowNativeExt* self, bool modified);
+typedef void (*wxTopLevelWindowNativeExtRequestUserAttention__intFunc)(const wxTopLevelWindowNativeExt* self, int flags);
 typedef void (*wxTopLevelWindowNativeExtRestoreFunc)(const wxTopLevelWindowNativeExt* self);
-typedef bool (*wxTopLevelWindowNativeExtSetContentProtectionwxContentProtectionFunc)(const wxTopLevelWindowNativeExt* self, wxContentProtection param0, bool res);
-typedef void (*wxTopLevelWindowNativeExtSetIconswxIconBundleCRFunc)(const wxTopLevelWindowNativeExt* self, wxIconBundle const& icons);
-typedef void (*wxTopLevelWindowNativeExtSetLabelwxStringCRFunc)(const wxTopLevelWindowNativeExt* self, wxString const& label);
-typedef void (*wxTopLevelWindowNativeExtSetMaxSizewxSizeCRFunc)(const wxTopLevelWindowNativeExt* self, wxSize const& maxSize);
-typedef void (*wxTopLevelWindowNativeExtSetMinSizewxSizeCRFunc)(const wxTopLevelWindowNativeExt* self, wxSize const& minSize);
-typedef void (*wxTopLevelWindowNativeExtSetRepresentedFilenamewxStringCRFunc)(const wxTopLevelWindowNativeExt* self, wxString const& param0);
-typedef void (*wxTopLevelWindowNativeExtSetTitlewxStringCRFunc)(const wxTopLevelWindowNativeExt* self, wxString const& title);
+typedef bool (*wxTopLevelWindowNativeExtSetContentProtection__wxContentProtectionFunc)(const wxTopLevelWindowNativeExt* self, wxContentProtection contentProtection, bool res);
+typedef void (*wxTopLevelWindowNativeExtSetIcons__wxIconBundleCRFunc)(const wxTopLevelWindowNativeExt* self, wxIconBundle const& icons);
+typedef void (*wxTopLevelWindowNativeExtSetLabel__wxStringCRFunc)(const wxTopLevelWindowNativeExt* self, wxString const& label);
+typedef void (*wxTopLevelWindowNativeExtSetMaxSize__wxSizeCRFunc)(const wxTopLevelWindowNativeExt* self, wxSize const& maxSize);
+typedef void (*wxTopLevelWindowNativeExtSetMinSize__wxSizeCRFunc)(const wxTopLevelWindowNativeExt* self, wxSize const& minSize);
+typedef void (*wxTopLevelWindowNativeExtSetRepresentedFilename__wxStringCRFunc)(const wxTopLevelWindowNativeExt* self, wxString const& filename);
+typedef void (*wxTopLevelWindowNativeExtSetTitle__wxStringCRFunc)(const wxTopLevelWindowNativeExt* self, wxString const& title);
 typedef bool (*wxTopLevelWindowNativeExtShouldPreventAppExitFunc)(const wxTopLevelWindowNativeExt* self, bool res);
-typedef bool (*wxTopLevelWindowNativeExtShowFullScreenboollongFunc)(const wxTopLevelWindowNativeExt* self, bool show, long style);
+typedef bool (*wxTopLevelWindowNativeExtShowFullScreen__boollongFunc)(const wxTopLevelWindowNativeExt* self, bool show, long style);
 typedef void (*wxTopLevelWindowNativeExtShowWithoutActivatingFunc)(const wxTopLevelWindowNativeExt* self);
-typedef void* (*wxTopLevelWindowNativeExtWXReservedTLW1voidPFunc)(const wxTopLevelWindowNativeExt* self, void* param0, void* res);
-typedef void* (*wxTopLevelWindowNativeExtWXReservedTLW2voidPFunc)(const wxTopLevelWindowNativeExt* self, void* param0, void* res);
-typedef void* (*wxTopLevelWindowNativeExtWXReservedTLW3voidPFunc)(const wxTopLevelWindowNativeExt* self, void* param0, void* res);
+typedef void* (*wxTopLevelWindowNativeExtWXReservedTLW1__voidPFunc)(const wxTopLevelWindowNativeExt* self, void* param0, void* res);
+typedef void* (*wxTopLevelWindowNativeExtWXReservedTLW2__voidPFunc)(const wxTopLevelWindowNativeExt* self, void* param0, void* res);
+typedef void* (*wxTopLevelWindowNativeExtWXReservedTLW3__voidPFunc)(const wxTopLevelWindowNativeExt* self, void* param0, void* res);
 class wxTopLevelWindowExt;
 typedef bool (*wxTopLevelWindowExtDestroyFunc)(const wxTopLevelWindowExt* self, bool res);
-typedef void (*wxTopLevelWindowExtDoCentreintFunc)(const wxTopLevelWindowExt* self, int dir);
-typedef void (*wxTopLevelWindowExtDoClientToScreenintPintPFunc)(const wxTopLevelWindowExt* self, int* x, int* y);
-typedef void (*wxTopLevelWindowExtDoGetScreenPositionintPintPFunc)(const wxTopLevelWindowExt* self, int* x, int* y);
-typedef void (*wxTopLevelWindowExtDoScreenToClientintPintPFunc)(const wxTopLevelWindowExt* self, int* x, int* y);
-typedef void (*wxTopLevelWindowExtDoUpdateWindowUIwxUpdateUIEventRFunc)(const wxTopLevelWindowExt* self, wxUpdateUIEvent& event);
-typedef bool (*wxTopLevelWindowExtEnableCloseButtonboolFunc)(const wxTopLevelWindowExt* self, bool enable, bool res);
-typedef bool (*wxTopLevelWindowExtEnableFullScreenViewboollongFunc)(const wxTopLevelWindowExt* self, bool enable, long style, bool res);
-typedef bool (*wxTopLevelWindowExtEnableMaximizeButtonboolFunc)(const wxTopLevelWindowExt* self, bool enable, bool res);
-typedef bool (*wxTopLevelWindowExtEnableMinimizeButtonboolFunc)(const wxTopLevelWindowExt* self, bool enable, bool res);
+typedef void (*wxTopLevelWindowExtDoCentre__intFunc)(const wxTopLevelWindowExt* self, int dir);
+typedef void (*wxTopLevelWindowExtDoClientToScreen__intPintPFunc)(const wxTopLevelWindowExt* self, int* x, int* y);
+typedef void (*wxTopLevelWindowExtDoGetScreenPosition__intPintPFunc)(const wxTopLevelWindowExt* self, int* x, int* y);
+typedef void (*wxTopLevelWindowExtDoScreenToClient__intPintPFunc)(const wxTopLevelWindowExt* self, int* x, int* y);
+typedef void (*wxTopLevelWindowExtDoUpdateWindowUI__wxUpdateUIEventRFunc)(const wxTopLevelWindowExt* self, wxUpdateUIEvent& event);
+typedef bool (*wxTopLevelWindowExtEnableCloseButton__boolFunc)(const wxTopLevelWindowExt* self, bool enable, bool res);
+typedef bool (*wxTopLevelWindowExtEnableFullScreenView__boollongFunc)(const wxTopLevelWindowExt* self, bool enable, long style, bool res);
+typedef bool (*wxTopLevelWindowExtEnableMaximizeButton__boolFunc)(const wxTopLevelWindowExt* self, bool enable, bool res);
+typedef bool (*wxTopLevelWindowExtEnableMinimizeButton__boolFunc)(const wxTopLevelWindowExt* self, bool enable, bool res);
 typedef wxClassInfo* (*wxTopLevelWindowExtGetClassInfoFunc)(const wxTopLevelWindowExt* self, wxClassInfo* res);
 typedef wxPoint (*wxTopLevelWindowExtGetClientAreaOriginFunc)(const wxTopLevelWindowExt* self, wxPoint res);
 typedef wxContentProtection (*wxTopLevelWindowExtGetContentProtectionFunc)(const wxTopLevelWindowExt* self, wxContentProtection res);
 typedef wxEventHashTable& (*wxTopLevelWindowExtGetEventHashTableFunc)(const wxTopLevelWindowExt* self, wxEventHashTable& res);
 typedef wxEventTable const* (*wxTopLevelWindowExtGetEventTableFunc)(const wxTopLevelWindowExt* self, wxEventTable const* res);
 typedef wxString (*wxTopLevelWindowExtGetLabelFunc)(const wxTopLevelWindowExt* self, wxString res);
-typedef void (*wxTopLevelWindowExtGetRectForTopLevelChildrenintPintPintPintPFunc)(const wxTopLevelWindowExt* self, int* x, int* y, int* w, int* h);
+typedef void (*wxTopLevelWindowExtGetRectForTopLevelChildren__intPintPintPintPFunc)(const wxTopLevelWindowExt* self, int* x, int* y, int* w, int* h);
 typedef wxString (*wxTopLevelWindowExtGetTitleFunc)(const wxTopLevelWindowExt* self, wxString res);
-typedef void (*wxTopLevelWindowExtIconizeboolFunc)(const wxTopLevelWindowExt* self, bool iconize);
+typedef void (*wxTopLevelWindowExtIconize__boolFunc)(const wxTopLevelWindowExt* self, bool iconize);
 typedef bool (*wxTopLevelWindowExtIsActiveFunc)(const wxTopLevelWindowExt* self, bool res);
 typedef bool (*wxTopLevelWindowExtIsAlwaysMaximizedFunc)(const wxTopLevelWindowExt* self, bool res);
 typedef bool (*wxTopLevelWindowExtIsFullScreenFunc)(const wxTopLevelWindowExt* self, bool res);
 typedef bool (*wxTopLevelWindowExtIsIconizedFunc)(const wxTopLevelWindowExt* self, bool res);
 typedef bool (*wxTopLevelWindowExtIsMaximizedFunc)(const wxTopLevelWindowExt* self, bool res);
-typedef bool (*wxTopLevelWindowExtIsOneOfBarswxWindowCPFunc)(const wxTopLevelWindowExt* self, wxWindow const* param0, bool res);
+typedef bool (*wxTopLevelWindowExtIsOneOfBars__wxWindowCPFunc)(const wxTopLevelWindowExt* self, wxWindow const* win, bool res);
 typedef bool (*wxTopLevelWindowExtIsTopLevelFunc)(const wxTopLevelWindowExt* self, bool res);
-typedef bool (*wxTopLevelWindowExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc)(const wxTopLevelWindowExt* self, wxWindowBase::NavigationKind kind, bool res);
+typedef bool (*wxTopLevelWindowExtIsTopNavigationDomain__wxWindowBaseNNavigationKindFunc)(const wxTopLevelWindowExt* self, wxWindowBase::NavigationKind kind, bool res);
 typedef bool (*wxTopLevelWindowExtIsVisibleFunc)(const wxTopLevelWindowExt* self, bool res);
 typedef bool (*wxTopLevelWindowExtLayoutFunc)(const wxTopLevelWindowExt* self, bool res);
-typedef void (*wxTopLevelWindowExtMaximizeboolFunc)(const wxTopLevelWindowExt* self, bool maximize);
+typedef void (*wxTopLevelWindowExtMaximize__boolFunc)(const wxTopLevelWindowExt* self, bool maximize);
 typedef bool (*wxTopLevelWindowExtOSXIsModifiedFunc)(const wxTopLevelWindowExt* self, bool res);
-typedef void (*wxTopLevelWindowExtOSXSetModifiedboolFunc)(const wxTopLevelWindowExt* self, bool modified);
-typedef void (*wxTopLevelWindowExtRequestUserAttentionintFunc)(const wxTopLevelWindowExt* self, int flags);
+typedef void (*wxTopLevelWindowExtOSXSetModified__boolFunc)(const wxTopLevelWindowExt* self, bool modified);
+typedef void (*wxTopLevelWindowExtRequestUserAttention__intFunc)(const wxTopLevelWindowExt* self, int flags);
 typedef void (*wxTopLevelWindowExtRestoreFunc)(const wxTopLevelWindowExt* self);
-typedef bool (*wxTopLevelWindowExtSetContentProtectionwxContentProtectionFunc)(const wxTopLevelWindowExt* self, wxContentProtection contentProtection, bool res);
-typedef void (*wxTopLevelWindowExtSetIconswxIconBundleCRFunc)(const wxTopLevelWindowExt* self, wxIconBundle const& icons);
-typedef void (*wxTopLevelWindowExtSetLabelwxStringCRFunc)(const wxTopLevelWindowExt* self, wxString const& label);
-typedef void (*wxTopLevelWindowExtSetMaxSizewxSizeCRFunc)(const wxTopLevelWindowExt* self, wxSize const& maxSize);
-typedef void (*wxTopLevelWindowExtSetMinSizewxSizeCRFunc)(const wxTopLevelWindowExt* self, wxSize const& minSize);
-typedef void (*wxTopLevelWindowExtSetRepresentedFilenamewxStringCRFunc)(const wxTopLevelWindowExt* self, wxString const& filename);
-typedef void (*wxTopLevelWindowExtSetTitlewxStringCRFunc)(const wxTopLevelWindowExt* self, wxString const& title);
+typedef bool (*wxTopLevelWindowExtSetContentProtection__wxContentProtectionFunc)(const wxTopLevelWindowExt* self, wxContentProtection contentProtection, bool res);
+typedef void (*wxTopLevelWindowExtSetIcons__wxIconBundleCRFunc)(const wxTopLevelWindowExt* self, wxIconBundle const& icons);
+typedef void (*wxTopLevelWindowExtSetLabel__wxStringCRFunc)(const wxTopLevelWindowExt* self, wxString const& label);
+typedef void (*wxTopLevelWindowExtSetMaxSize__wxSizeCRFunc)(const wxTopLevelWindowExt* self, wxSize const& maxSize);
+typedef void (*wxTopLevelWindowExtSetMinSize__wxSizeCRFunc)(const wxTopLevelWindowExt* self, wxSize const& minSize);
+typedef void (*wxTopLevelWindowExtSetRepresentedFilename__wxStringCRFunc)(const wxTopLevelWindowExt* self, wxString const& filename);
+typedef void (*wxTopLevelWindowExtSetTitle__wxStringCRFunc)(const wxTopLevelWindowExt* self, wxString const& title);
 typedef bool (*wxTopLevelWindowExtShouldPreventAppExitFunc)(const wxTopLevelWindowExt* self, bool res);
-typedef bool (*wxTopLevelWindowExtShowFullScreenboollongFunc)(const wxTopLevelWindowExt* self, bool show, long style, bool res);
+typedef bool (*wxTopLevelWindowExtShowFullScreen__boollongFunc)(const wxTopLevelWindowExt* self, bool show, long style, bool res);
 typedef void (*wxTopLevelWindowExtShowWithoutActivatingFunc)(const wxTopLevelWindowExt* self);
-typedef void* (*wxTopLevelWindowExtWXReservedTLW1voidPFunc)(const wxTopLevelWindowExt* self, void* param0, void* res);
-typedef void* (*wxTopLevelWindowExtWXReservedTLW2voidPFunc)(const wxTopLevelWindowExt* self, void* param0, void* res);
-typedef void* (*wxTopLevelWindowExtWXReservedTLW3voidPFunc)(const wxTopLevelWindowExt* self, void* param0, void* res);
+typedef void* (*wxTopLevelWindowExtWXReservedTLW1__voidPFunc)(const wxTopLevelWindowExt* self, void* param0, void* res);
+typedef void* (*wxTopLevelWindowExtWXReservedTLW2__voidPFunc)(const wxTopLevelWindowExt* self, void* param0, void* res);
+typedef void* (*wxTopLevelWindowExtWXReservedTLW3__voidPFunc)(const wxTopLevelWindowExt* self, void* param0, void* res);
 
 class wxTopLevelWindowBaseExt: public wxTopLevelWindowBase
 {
@@ -160,85 +160,85 @@ public:
       return res;
     }
   }
-  wxTopLevelWindowBaseExtDoCentreintFunc m_wxTopLevelWindowBaseExtDoCentreint = NULL;
+  wxTopLevelWindowBaseExtDoCentre__intFunc m_wxTopLevelWindowBaseExtDoCentre__int = NULL;
   virtual void DoCentre(int dir) override
   {
     wxTopLevelWindowBase::DoCentre(dir);
-    if (*m_wxTopLevelWindowBaseExtDoCentreint != NULL){
-      return m_wxTopLevelWindowBaseExtDoCentreint(this, dir);
+    if (*m_wxTopLevelWindowBaseExtDoCentre__int != NULL){
+      return m_wxTopLevelWindowBaseExtDoCentre__int(this, dir);
     }
   }
-  wxTopLevelWindowBaseExtDoClientToScreenintPintPFunc m_wxTopLevelWindowBaseExtDoClientToScreenintPintP = NULL;
+  wxTopLevelWindowBaseExtDoClientToScreen__intPintPFunc m_wxTopLevelWindowBaseExtDoClientToScreen__intPintP = NULL;
   virtual void DoClientToScreen(int* x, int* y) const override
   {
     wxTopLevelWindowBase::DoClientToScreen(x, y);
-    if (*m_wxTopLevelWindowBaseExtDoClientToScreenintPintP != NULL){
-      return m_wxTopLevelWindowBaseExtDoClientToScreenintPintP(this, x, y);
+    if (*m_wxTopLevelWindowBaseExtDoClientToScreen__intPintP != NULL){
+      return m_wxTopLevelWindowBaseExtDoClientToScreen__intPintP(this, x, y);
     }
   }
-  wxTopLevelWindowBaseExtDoGetScreenPositionintPintPFunc m_wxTopLevelWindowBaseExtDoGetScreenPositionintPintP = NULL;
+  wxTopLevelWindowBaseExtDoGetScreenPosition__intPintPFunc m_wxTopLevelWindowBaseExtDoGetScreenPosition__intPintP = NULL;
   virtual void DoGetScreenPosition(int* x, int* y) const override
   {
     wxTopLevelWindowBase::DoGetScreenPosition(x, y);
-    if (*m_wxTopLevelWindowBaseExtDoGetScreenPositionintPintP != NULL){
-      return m_wxTopLevelWindowBaseExtDoGetScreenPositionintPintP(this, x, y);
+    if (*m_wxTopLevelWindowBaseExtDoGetScreenPosition__intPintP != NULL){
+      return m_wxTopLevelWindowBaseExtDoGetScreenPosition__intPintP(this, x, y);
     }
   }
-  wxTopLevelWindowBaseExtDoScreenToClientintPintPFunc m_wxTopLevelWindowBaseExtDoScreenToClientintPintP = NULL;
+  wxTopLevelWindowBaseExtDoScreenToClient__intPintPFunc m_wxTopLevelWindowBaseExtDoScreenToClient__intPintP = NULL;
   virtual void DoScreenToClient(int* x, int* y) const override
   {
     wxTopLevelWindowBase::DoScreenToClient(x, y);
-    if (*m_wxTopLevelWindowBaseExtDoScreenToClientintPintP != NULL){
-      return m_wxTopLevelWindowBaseExtDoScreenToClientintPintP(this, x, y);
+    if (*m_wxTopLevelWindowBaseExtDoScreenToClient__intPintP != NULL){
+      return m_wxTopLevelWindowBaseExtDoScreenToClient__intPintP(this, x, y);
     }
   }
-  wxTopLevelWindowBaseExtDoUpdateWindowUIwxUpdateUIEventRFunc m_wxTopLevelWindowBaseExtDoUpdateWindowUIwxUpdateUIEventR = NULL;
+  wxTopLevelWindowBaseExtDoUpdateWindowUI__wxUpdateUIEventRFunc m_wxTopLevelWindowBaseExtDoUpdateWindowUI__wxUpdateUIEventR = NULL;
   virtual void DoUpdateWindowUI(wxUpdateUIEvent& event) override
   {
     wxTopLevelWindowBase::DoUpdateWindowUI(event);
-    if (*m_wxTopLevelWindowBaseExtDoUpdateWindowUIwxUpdateUIEventR != NULL){
-      return m_wxTopLevelWindowBaseExtDoUpdateWindowUIwxUpdateUIEventR(this, event);
+    if (*m_wxTopLevelWindowBaseExtDoUpdateWindowUI__wxUpdateUIEventR != NULL){
+      return m_wxTopLevelWindowBaseExtDoUpdateWindowUI__wxUpdateUIEventR(this, event);
     }
   }
-  wxTopLevelWindowBaseExtEnableCloseButtonboolFunc m_wxTopLevelWindowBaseExtEnableCloseButtonbool = NULL;
-  virtual bool EnableCloseButton(bool param0 = true) override
+  wxTopLevelWindowBaseExtEnableCloseButton__boolFunc m_wxTopLevelWindowBaseExtEnableCloseButton__bool = NULL;
+  virtual bool EnableCloseButton(bool enable = true) override
   {
-    bool res = wxTopLevelWindowBase::EnableCloseButton(param0);
-    if (*m_wxTopLevelWindowBaseExtEnableCloseButtonbool != NULL){
-      return m_wxTopLevelWindowBaseExtEnableCloseButtonbool(this, param0, res);
+    bool res = wxTopLevelWindowBase::EnableCloseButton(enable);
+    if (*m_wxTopLevelWindowBaseExtEnableCloseButton__bool != NULL){
+      return m_wxTopLevelWindowBaseExtEnableCloseButton__bool(this, enable, res);
     }
     else {
       return res;
     }
   }
-  wxTopLevelWindowBaseExtEnableFullScreenViewboollongFunc m_wxTopLevelWindowBaseExtEnableFullScreenViewboollong = NULL;
-  virtual bool EnableFullScreenView(bool param0 = true, long param1 = wxFULLSCREEN_ALL) override
+  wxTopLevelWindowBaseExtEnableFullScreenView__boollongFunc m_wxTopLevelWindowBaseExtEnableFullScreenView__boollong = NULL;
+  virtual bool EnableFullScreenView(bool enable = true, long style = wxFULLSCREEN_ALL) override
   {
-    bool res = wxTopLevelWindowBase::EnableFullScreenView(param0, param1);
-    if (*m_wxTopLevelWindowBaseExtEnableFullScreenViewboollong != NULL){
-      return m_wxTopLevelWindowBaseExtEnableFullScreenViewboollong(this, param0, param1, res);
+    bool res = wxTopLevelWindowBase::EnableFullScreenView(enable, style);
+    if (*m_wxTopLevelWindowBaseExtEnableFullScreenView__boollong != NULL){
+      return m_wxTopLevelWindowBaseExtEnableFullScreenView__boollong(this, enable, style, res);
     }
     else {
       return res;
     }
   }
-  wxTopLevelWindowBaseExtEnableMaximizeButtonboolFunc m_wxTopLevelWindowBaseExtEnableMaximizeButtonbool = NULL;
-  virtual bool EnableMaximizeButton(bool param0 = true) override
+  wxTopLevelWindowBaseExtEnableMaximizeButton__boolFunc m_wxTopLevelWindowBaseExtEnableMaximizeButton__bool = NULL;
+  virtual bool EnableMaximizeButton(bool enable = true) override
   {
-    bool res = wxTopLevelWindowBase::EnableMaximizeButton(param0);
-    if (*m_wxTopLevelWindowBaseExtEnableMaximizeButtonbool != NULL){
-      return m_wxTopLevelWindowBaseExtEnableMaximizeButtonbool(this, param0, res);
+    bool res = wxTopLevelWindowBase::EnableMaximizeButton(enable);
+    if (*m_wxTopLevelWindowBaseExtEnableMaximizeButton__bool != NULL){
+      return m_wxTopLevelWindowBaseExtEnableMaximizeButton__bool(this, enable, res);
     }
     else {
       return res;
     }
   }
-  wxTopLevelWindowBaseExtEnableMinimizeButtonboolFunc m_wxTopLevelWindowBaseExtEnableMinimizeButtonbool = NULL;
-  virtual bool EnableMinimizeButton(bool param0 = true) override
+  wxTopLevelWindowBaseExtEnableMinimizeButton__boolFunc m_wxTopLevelWindowBaseExtEnableMinimizeButton__bool = NULL;
+  virtual bool EnableMinimizeButton(bool enable = true) override
   {
-    bool res = wxTopLevelWindowBase::EnableMinimizeButton(param0);
-    if (*m_wxTopLevelWindowBaseExtEnableMinimizeButtonbool != NULL){
-      return m_wxTopLevelWindowBaseExtEnableMinimizeButtonbool(this, param0, res);
+    bool res = wxTopLevelWindowBase::EnableMinimizeButton(enable);
+    if (*m_wxTopLevelWindowBaseExtEnableMinimizeButton__bool != NULL){
+      return m_wxTopLevelWindowBaseExtEnableMinimizeButton__bool(this, enable, res);
     }
     else {
       return res;
@@ -277,12 +277,12 @@ public:
       return res;
     }
   }
-  wxTopLevelWindowBaseExtGetRectForTopLevelChildrenintPintPintPintPFunc m_wxTopLevelWindowBaseExtGetRectForTopLevelChildrenintPintPintPintP = NULL;
+  wxTopLevelWindowBaseExtGetRectForTopLevelChildren__intPintPintPintPFunc m_wxTopLevelWindowBaseExtGetRectForTopLevelChildren__intPintPintPintP = NULL;
   virtual void GetRectForTopLevelChildren(int* x, int* y, int* w, int* h) override
   {
     wxTopLevelWindowBase::GetRectForTopLevelChildren(x, y, w, h);
-    if (*m_wxTopLevelWindowBaseExtGetRectForTopLevelChildrenintPintPintPintP != NULL){
-      return m_wxTopLevelWindowBaseExtGetRectForTopLevelChildrenintPintPintPintP(this, x, y, w, h);
+    if (*m_wxTopLevelWindowBaseExtGetRectForTopLevelChildren__intPintPintPintP != NULL){
+      return m_wxTopLevelWindowBaseExtGetRectForTopLevelChildren__intPintPintPintP(this, x, y, w, h);
     }
   }
   wxTopLevelWindowBaseExtGetTitleFunc m_wxTopLevelWindowBaseExtGetTitle = NULL;
@@ -295,11 +295,11 @@ public:
       return "";
     }
   }
-  wxTopLevelWindowBaseExtIconizeboolFunc m_wxTopLevelWindowBaseExtIconizebool = NULL;
+  wxTopLevelWindowBaseExtIconize__boolFunc m_wxTopLevelWindowBaseExtIconize__bool = NULL;
   virtual void Iconize(bool iconize = true) override
   {
-    if (*m_wxTopLevelWindowBaseExtIconizebool != NULL){
-      return m_wxTopLevelWindowBaseExtIconizebool(this, iconize);
+    if (*m_wxTopLevelWindowBaseExtIconize__bool != NULL){
+      return m_wxTopLevelWindowBaseExtIconize__bool(this, iconize);
     }
   }
   wxTopLevelWindowBaseExtIsActiveFunc m_wxTopLevelWindowBaseExtIsActive = NULL;
@@ -354,12 +354,12 @@ public:
       return false;
     }
   }
-  wxTopLevelWindowBaseExtIsOneOfBarswxWindowCPFunc m_wxTopLevelWindowBaseExtIsOneOfBarswxWindowCP = NULL;
-  virtual bool IsOneOfBars(wxWindow const* param0) const override
+  wxTopLevelWindowBaseExtIsOneOfBars__wxWindowCPFunc m_wxTopLevelWindowBaseExtIsOneOfBars__wxWindowCP = NULL;
+  virtual bool IsOneOfBars(wxWindow const* win) const override
   {
-    bool res = wxTopLevelWindowBase::IsOneOfBars(param0);
-    if (*m_wxTopLevelWindowBaseExtIsOneOfBarswxWindowCP != NULL){
-      return m_wxTopLevelWindowBaseExtIsOneOfBarswxWindowCP(this, param0, res);
+    bool res = wxTopLevelWindowBase::IsOneOfBars(win);
+    if (*m_wxTopLevelWindowBaseExtIsOneOfBars__wxWindowCP != NULL){
+      return m_wxTopLevelWindowBaseExtIsOneOfBars__wxWindowCP(this, win, res);
     }
     else {
       return res;
@@ -376,12 +376,12 @@ public:
       return res;
     }
   }
-  wxTopLevelWindowBaseExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc m_wxTopLevelWindowBaseExtIsTopNavigationDomainwxWindowBaseNNavigationKind = NULL;
+  wxTopLevelWindowBaseExtIsTopNavigationDomain__wxWindowBaseNNavigationKindFunc m_wxTopLevelWindowBaseExtIsTopNavigationDomain__wxWindowBaseNNavigationKind = NULL;
   virtual bool IsTopNavigationDomain(wxWindowBase::NavigationKind kind) const override
   {
     bool res = wxTopLevelWindowBase::IsTopNavigationDomain(kind);
-    if (*m_wxTopLevelWindowBaseExtIsTopNavigationDomainwxWindowBaseNNavigationKind != NULL){
-      return m_wxTopLevelWindowBaseExtIsTopNavigationDomainwxWindowBaseNNavigationKind(this, kind, res);
+    if (*m_wxTopLevelWindowBaseExtIsTopNavigationDomain__wxWindowBaseNNavigationKind != NULL){
+      return m_wxTopLevelWindowBaseExtIsTopNavigationDomain__wxWindowBaseNNavigationKind(this, kind, res);
     }
     else {
       return res;
@@ -409,11 +409,11 @@ public:
       return res;
     }
   }
-  wxTopLevelWindowBaseExtMaximizeboolFunc m_wxTopLevelWindowBaseExtMaximizebool = NULL;
+  wxTopLevelWindowBaseExtMaximize__boolFunc m_wxTopLevelWindowBaseExtMaximize__bool = NULL;
   virtual void Maximize(bool maximize = true) override
   {
-    if (*m_wxTopLevelWindowBaseExtMaximizebool != NULL){
-      return m_wxTopLevelWindowBaseExtMaximizebool(this, maximize);
+    if (*m_wxTopLevelWindowBaseExtMaximize__bool != NULL){
+      return m_wxTopLevelWindowBaseExtMaximize__bool(this, maximize);
     }
   }
   wxTopLevelWindowBaseExtOSXIsModifiedFunc m_wxTopLevelWindowBaseExtOSXIsModified = NULL;
@@ -427,20 +427,20 @@ public:
       return res;
     }
   }
-  wxTopLevelWindowBaseExtOSXSetModifiedboolFunc m_wxTopLevelWindowBaseExtOSXSetModifiedbool = NULL;
+  wxTopLevelWindowBaseExtOSXSetModified__boolFunc m_wxTopLevelWindowBaseExtOSXSetModified__bool = NULL;
   virtual void OSXSetModified(bool modified) override
   {
     wxTopLevelWindowBase::OSXSetModified(modified);
-    if (*m_wxTopLevelWindowBaseExtOSXSetModifiedbool != NULL){
-      return m_wxTopLevelWindowBaseExtOSXSetModifiedbool(this, modified);
+    if (*m_wxTopLevelWindowBaseExtOSXSetModified__bool != NULL){
+      return m_wxTopLevelWindowBaseExtOSXSetModified__bool(this, modified);
     }
   }
-  wxTopLevelWindowBaseExtRequestUserAttentionintFunc m_wxTopLevelWindowBaseExtRequestUserAttentionint = NULL;
+  wxTopLevelWindowBaseExtRequestUserAttention__intFunc m_wxTopLevelWindowBaseExtRequestUserAttention__int = NULL;
   virtual void RequestUserAttention(int flags = wxUSER_ATTENTION_INFO) override
   {
     wxTopLevelWindowBase::RequestUserAttention(flags);
-    if (*m_wxTopLevelWindowBaseExtRequestUserAttentionint != NULL){
-      return m_wxTopLevelWindowBaseExtRequestUserAttentionint(this, flags);
+    if (*m_wxTopLevelWindowBaseExtRequestUserAttention__int != NULL){
+      return m_wxTopLevelWindowBaseExtRequestUserAttention__int(this, flags);
     }
   }
   wxTopLevelWindowBaseExtRestoreFunc m_wxTopLevelWindowBaseExtRestore = NULL;
@@ -450,54 +450,54 @@ public:
       return m_wxTopLevelWindowBaseExtRestore(this);
     }
   }
-  wxTopLevelWindowBaseExtSetContentProtectionwxContentProtectionFunc m_wxTopLevelWindowBaseExtSetContentProtectionwxContentProtection = NULL;
-  virtual bool SetContentProtection(wxContentProtection param0) override
+  wxTopLevelWindowBaseExtSetContentProtection__wxContentProtectionFunc m_wxTopLevelWindowBaseExtSetContentProtection__wxContentProtection = NULL;
+  virtual bool SetContentProtection(wxContentProtection contentProtection) override
   {
-    bool res = wxTopLevelWindowBase::SetContentProtection(param0);
-    if (*m_wxTopLevelWindowBaseExtSetContentProtectionwxContentProtection != NULL){
-      return m_wxTopLevelWindowBaseExtSetContentProtectionwxContentProtection(this, param0, res);
+    bool res = wxTopLevelWindowBase::SetContentProtection(contentProtection);
+    if (*m_wxTopLevelWindowBaseExtSetContentProtection__wxContentProtection != NULL){
+      return m_wxTopLevelWindowBaseExtSetContentProtection__wxContentProtection(this, contentProtection, res);
     }
     else {
       return res;
     }
   }
-  wxTopLevelWindowBaseExtSetIconswxIconBundleCRFunc m_wxTopLevelWindowBaseExtSetIconswxIconBundleCR = NULL;
+  wxTopLevelWindowBaseExtSetIcons__wxIconBundleCRFunc m_wxTopLevelWindowBaseExtSetIcons__wxIconBundleCR = NULL;
   virtual void SetIcons(wxIconBundle const& icons) override
   {
     wxTopLevelWindowBase::SetIcons(icons);
-    if (*m_wxTopLevelWindowBaseExtSetIconswxIconBundleCR != NULL){
-      return m_wxTopLevelWindowBaseExtSetIconswxIconBundleCR(this, icons);
+    if (*m_wxTopLevelWindowBaseExtSetIcons__wxIconBundleCR != NULL){
+      return m_wxTopLevelWindowBaseExtSetIcons__wxIconBundleCR(this, icons);
     }
   }
-  wxTopLevelWindowBaseExtSetMaxSizewxSizeCRFunc m_wxTopLevelWindowBaseExtSetMaxSizewxSizeCR = NULL;
+  wxTopLevelWindowBaseExtSetMaxSize__wxSizeCRFunc m_wxTopLevelWindowBaseExtSetMaxSize__wxSizeCR = NULL;
   virtual void SetMaxSize(wxSize const& maxSize) override
   {
     wxTopLevelWindowBase::SetMaxSize(maxSize);
-    if (*m_wxTopLevelWindowBaseExtSetMaxSizewxSizeCR != NULL){
-      return m_wxTopLevelWindowBaseExtSetMaxSizewxSizeCR(this, maxSize);
+    if (*m_wxTopLevelWindowBaseExtSetMaxSize__wxSizeCR != NULL){
+      return m_wxTopLevelWindowBaseExtSetMaxSize__wxSizeCR(this, maxSize);
     }
   }
-  wxTopLevelWindowBaseExtSetMinSizewxSizeCRFunc m_wxTopLevelWindowBaseExtSetMinSizewxSizeCR = NULL;
+  wxTopLevelWindowBaseExtSetMinSize__wxSizeCRFunc m_wxTopLevelWindowBaseExtSetMinSize__wxSizeCR = NULL;
   virtual void SetMinSize(wxSize const& minSize) override
   {
     wxTopLevelWindowBase::SetMinSize(minSize);
-    if (*m_wxTopLevelWindowBaseExtSetMinSizewxSizeCR != NULL){
-      return m_wxTopLevelWindowBaseExtSetMinSizewxSizeCR(this, minSize);
+    if (*m_wxTopLevelWindowBaseExtSetMinSize__wxSizeCR != NULL){
+      return m_wxTopLevelWindowBaseExtSetMinSize__wxSizeCR(this, minSize);
     }
   }
-  wxTopLevelWindowBaseExtSetRepresentedFilenamewxStringCRFunc m_wxTopLevelWindowBaseExtSetRepresentedFilenamewxStringCR = NULL;
-  virtual void SetRepresentedFilename(wxString const& param0) override
+  wxTopLevelWindowBaseExtSetRepresentedFilename__wxStringCRFunc m_wxTopLevelWindowBaseExtSetRepresentedFilename__wxStringCR = NULL;
+  virtual void SetRepresentedFilename(wxString const& filename) override
   {
-    wxTopLevelWindowBase::SetRepresentedFilename(param0);
-    if (*m_wxTopLevelWindowBaseExtSetRepresentedFilenamewxStringCR != NULL){
-      return m_wxTopLevelWindowBaseExtSetRepresentedFilenamewxStringCR(this, param0);
+    wxTopLevelWindowBase::SetRepresentedFilename(filename);
+    if (*m_wxTopLevelWindowBaseExtSetRepresentedFilename__wxStringCR != NULL){
+      return m_wxTopLevelWindowBaseExtSetRepresentedFilename__wxStringCR(this, filename);
     }
   }
-  wxTopLevelWindowBaseExtSetTitlewxStringCRFunc m_wxTopLevelWindowBaseExtSetTitlewxStringCR = NULL;
+  wxTopLevelWindowBaseExtSetTitle__wxStringCRFunc m_wxTopLevelWindowBaseExtSetTitle__wxStringCR = NULL;
   virtual void SetTitle(wxString const& title) override
   {
-    if (*m_wxTopLevelWindowBaseExtSetTitlewxStringCR != NULL){
-      return m_wxTopLevelWindowBaseExtSetTitlewxStringCR(this, title);
+    if (*m_wxTopLevelWindowBaseExtSetTitle__wxStringCR != NULL){
+      return m_wxTopLevelWindowBaseExtSetTitle__wxStringCR(this, title);
     }
   }
   wxTopLevelWindowBaseExtShouldPreventAppExitFunc m_wxTopLevelWindowBaseExtShouldPreventAppExit = NULL;
@@ -511,11 +511,11 @@ public:
       return res;
     }
   }
-  wxTopLevelWindowBaseExtShowFullScreenboollongFunc m_wxTopLevelWindowBaseExtShowFullScreenboollong = NULL;
+  wxTopLevelWindowBaseExtShowFullScreen__boollongFunc m_wxTopLevelWindowBaseExtShowFullScreen__boollong = NULL;
   virtual bool ShowFullScreen(bool show, long style = wxFULLSCREEN_ALL) override
   {
-    if (*m_wxTopLevelWindowBaseExtShowFullScreenboollong != NULL){
-      return m_wxTopLevelWindowBaseExtShowFullScreenboollong(this, show, style);
+    if (*m_wxTopLevelWindowBaseExtShowFullScreen__boollong != NULL){
+      return m_wxTopLevelWindowBaseExtShowFullScreen__boollong(this, show, style);
     }
     else {
       return false;
@@ -529,83 +529,83 @@ public:
       return m_wxTopLevelWindowBaseExtShowWithoutActivating(this);
     }
   }
-  wxTopLevelWindowBaseExtWXReservedTLW1voidPFunc m_wxTopLevelWindowBaseExtWXReservedTLW1voidP = NULL;
+  wxTopLevelWindowBaseExtWXReservedTLW1__voidPFunc m_wxTopLevelWindowBaseExtWXReservedTLW1__voidP = NULL;
   virtual void* WXReservedTLW1(void* param0) override
   {
     void* res = wxTopLevelWindowBase::WXReservedTLW1(param0);
-    if (*m_wxTopLevelWindowBaseExtWXReservedTLW1voidP != NULL){
-      return m_wxTopLevelWindowBaseExtWXReservedTLW1voidP(this, param0, res);
+    if (*m_wxTopLevelWindowBaseExtWXReservedTLW1__voidP != NULL){
+      return m_wxTopLevelWindowBaseExtWXReservedTLW1__voidP(this, param0, res);
     }
     else {
       return res;
     }
   }
-  wxTopLevelWindowBaseExtWXReservedTLW2voidPFunc m_wxTopLevelWindowBaseExtWXReservedTLW2voidP = NULL;
+  wxTopLevelWindowBaseExtWXReservedTLW2__voidPFunc m_wxTopLevelWindowBaseExtWXReservedTLW2__voidP = NULL;
   virtual void* WXReservedTLW2(void* param0) override
   {
     void* res = wxTopLevelWindowBase::WXReservedTLW2(param0);
-    if (*m_wxTopLevelWindowBaseExtWXReservedTLW2voidP != NULL){
-      return m_wxTopLevelWindowBaseExtWXReservedTLW2voidP(this, param0, res);
+    if (*m_wxTopLevelWindowBaseExtWXReservedTLW2__voidP != NULL){
+      return m_wxTopLevelWindowBaseExtWXReservedTLW2__voidP(this, param0, res);
     }
     else {
       return res;
     }
   }
-  wxTopLevelWindowBaseExtWXReservedTLW3voidPFunc m_wxTopLevelWindowBaseExtWXReservedTLW3voidP = NULL;
+  wxTopLevelWindowBaseExtWXReservedTLW3__voidPFunc m_wxTopLevelWindowBaseExtWXReservedTLW3__voidP = NULL;
   virtual void* WXReservedTLW3(void* param0) override
   {
     void* res = wxTopLevelWindowBase::WXReservedTLW3(param0);
-    if (*m_wxTopLevelWindowBaseExtWXReservedTLW3voidP != NULL){
-      return m_wxTopLevelWindowBaseExtWXReservedTLW3voidP(this, param0, res);
+    if (*m_wxTopLevelWindowBaseExtWXReservedTLW3__voidP != NULL){
+      return m_wxTopLevelWindowBaseExtWXReservedTLW3__voidP(this, param0, res);
     }
     else {
       return res;
     }
   }
-  wxTopLevelWindowBaseExt(wxTopLevelWindowBaseExtDestroyFunc a_Destroy, wxTopLevelWindowBaseExtDoCentreintFunc a_DoCentreint, wxTopLevelWindowBaseExtDoClientToScreenintPintPFunc a_DoClientToScreenintPintP, wxTopLevelWindowBaseExtDoGetScreenPositionintPintPFunc a_DoGetScreenPositionintPintP, wxTopLevelWindowBaseExtDoScreenToClientintPintPFunc a_DoScreenToClientintPintP, wxTopLevelWindowBaseExtDoUpdateWindowUIwxUpdateUIEventRFunc a_DoUpdateWindowUIwxUpdateUIEventR, wxTopLevelWindowBaseExtEnableCloseButtonboolFunc a_EnableCloseButtonbool, wxTopLevelWindowBaseExtEnableFullScreenViewboollongFunc a_EnableFullScreenViewboollong, wxTopLevelWindowBaseExtEnableMaximizeButtonboolFunc a_EnableMaximizeButtonbool, wxTopLevelWindowBaseExtEnableMinimizeButtonboolFunc a_EnableMinimizeButtonbool, wxTopLevelWindowBaseExtGetContentProtectionFunc a_GetContentProtection, wxTopLevelWindowBaseExtGetEventHashTableFunc a_GetEventHashTable, wxTopLevelWindowBaseExtGetEventTableFunc a_GetEventTable, wxTopLevelWindowBaseExtGetRectForTopLevelChildrenintPintPintPintPFunc a_GetRectForTopLevelChildrenintPintPintPintP, wxTopLevelWindowBaseExtGetTitleFunc a_GetTitle, wxTopLevelWindowBaseExtIconizeboolFunc a_Iconizebool, wxTopLevelWindowBaseExtIsActiveFunc a_IsActive, wxTopLevelWindowBaseExtIsAlwaysMaximizedFunc a_IsAlwaysMaximized, wxTopLevelWindowBaseExtIsFullScreenFunc a_IsFullScreen, wxTopLevelWindowBaseExtIsIconizedFunc a_IsIconized, wxTopLevelWindowBaseExtIsMaximizedFunc a_IsMaximized, wxTopLevelWindowBaseExtIsOneOfBarswxWindowCPFunc a_IsOneOfBarswxWindowCP, wxTopLevelWindowBaseExtIsTopLevelFunc a_IsTopLevel, wxTopLevelWindowBaseExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc a_IsTopNavigationDomainwxWindowBaseNNavigationKind, wxTopLevelWindowBaseExtIsVisibleFunc a_IsVisible, wxTopLevelWindowBaseExtLayoutFunc a_Layout, wxTopLevelWindowBaseExtMaximizeboolFunc a_Maximizebool, wxTopLevelWindowBaseExtOSXIsModifiedFunc a_OSXIsModified, wxTopLevelWindowBaseExtOSXSetModifiedboolFunc a_OSXSetModifiedbool, wxTopLevelWindowBaseExtRequestUserAttentionintFunc a_RequestUserAttentionint, wxTopLevelWindowBaseExtRestoreFunc a_Restore, wxTopLevelWindowBaseExtSetContentProtectionwxContentProtectionFunc a_SetContentProtectionwxContentProtection, wxTopLevelWindowBaseExtSetIconswxIconBundleCRFunc a_SetIconswxIconBundleCR, wxTopLevelWindowBaseExtSetMaxSizewxSizeCRFunc a_SetMaxSizewxSizeCR, wxTopLevelWindowBaseExtSetMinSizewxSizeCRFunc a_SetMinSizewxSizeCR, wxTopLevelWindowBaseExtSetRepresentedFilenamewxStringCRFunc a_SetRepresentedFilenamewxStringCR, wxTopLevelWindowBaseExtSetTitlewxStringCRFunc a_SetTitlewxStringCR, wxTopLevelWindowBaseExtShouldPreventAppExitFunc a_ShouldPreventAppExit, wxTopLevelWindowBaseExtShowFullScreenboollongFunc a_ShowFullScreenboollong, wxTopLevelWindowBaseExtShowWithoutActivatingFunc a_ShowWithoutActivating, wxTopLevelWindowBaseExtWXReservedTLW1voidPFunc a_WXReservedTLW1voidP, wxTopLevelWindowBaseExtWXReservedTLW2voidPFunc a_WXReservedTLW2voidP, wxTopLevelWindowBaseExtWXReservedTLW3voidPFunc a_WXReservedTLW3voidP): wxTopLevelWindowBase() {
+  wxTopLevelWindowBaseExt(wxTopLevelWindowBaseExtDestroyFunc a_Destroy, wxTopLevelWindowBaseExtDoCentre__intFunc a_DoCentre__int, wxTopLevelWindowBaseExtDoClientToScreen__intPintPFunc a_DoClientToScreen__intPintP, wxTopLevelWindowBaseExtDoGetScreenPosition__intPintPFunc a_DoGetScreenPosition__intPintP, wxTopLevelWindowBaseExtDoScreenToClient__intPintPFunc a_DoScreenToClient__intPintP, wxTopLevelWindowBaseExtDoUpdateWindowUI__wxUpdateUIEventRFunc a_DoUpdateWindowUI__wxUpdateUIEventR, wxTopLevelWindowBaseExtEnableCloseButton__boolFunc a_EnableCloseButton__bool, wxTopLevelWindowBaseExtEnableFullScreenView__boollongFunc a_EnableFullScreenView__boollong, wxTopLevelWindowBaseExtEnableMaximizeButton__boolFunc a_EnableMaximizeButton__bool, wxTopLevelWindowBaseExtEnableMinimizeButton__boolFunc a_EnableMinimizeButton__bool, wxTopLevelWindowBaseExtGetContentProtectionFunc a_GetContentProtection, wxTopLevelWindowBaseExtGetEventHashTableFunc a_GetEventHashTable, wxTopLevelWindowBaseExtGetEventTableFunc a_GetEventTable, wxTopLevelWindowBaseExtGetRectForTopLevelChildren__intPintPintPintPFunc a_GetRectForTopLevelChildren__intPintPintPintP, wxTopLevelWindowBaseExtGetTitleFunc a_GetTitle, wxTopLevelWindowBaseExtIconize__boolFunc a_Iconize__bool, wxTopLevelWindowBaseExtIsActiveFunc a_IsActive, wxTopLevelWindowBaseExtIsAlwaysMaximizedFunc a_IsAlwaysMaximized, wxTopLevelWindowBaseExtIsFullScreenFunc a_IsFullScreen, wxTopLevelWindowBaseExtIsIconizedFunc a_IsIconized, wxTopLevelWindowBaseExtIsMaximizedFunc a_IsMaximized, wxTopLevelWindowBaseExtIsOneOfBars__wxWindowCPFunc a_IsOneOfBars__wxWindowCP, wxTopLevelWindowBaseExtIsTopLevelFunc a_IsTopLevel, wxTopLevelWindowBaseExtIsTopNavigationDomain__wxWindowBaseNNavigationKindFunc a_IsTopNavigationDomain__wxWindowBaseNNavigationKind, wxTopLevelWindowBaseExtIsVisibleFunc a_IsVisible, wxTopLevelWindowBaseExtLayoutFunc a_Layout, wxTopLevelWindowBaseExtMaximize__boolFunc a_Maximize__bool, wxTopLevelWindowBaseExtOSXIsModifiedFunc a_OSXIsModified, wxTopLevelWindowBaseExtOSXSetModified__boolFunc a_OSXSetModified__bool, wxTopLevelWindowBaseExtRequestUserAttention__intFunc a_RequestUserAttention__int, wxTopLevelWindowBaseExtRestoreFunc a_Restore, wxTopLevelWindowBaseExtSetContentProtection__wxContentProtectionFunc a_SetContentProtection__wxContentProtection, wxTopLevelWindowBaseExtSetIcons__wxIconBundleCRFunc a_SetIcons__wxIconBundleCR, wxTopLevelWindowBaseExtSetMaxSize__wxSizeCRFunc a_SetMaxSize__wxSizeCR, wxTopLevelWindowBaseExtSetMinSize__wxSizeCRFunc a_SetMinSize__wxSizeCR, wxTopLevelWindowBaseExtSetRepresentedFilename__wxStringCRFunc a_SetRepresentedFilename__wxStringCR, wxTopLevelWindowBaseExtSetTitle__wxStringCRFunc a_SetTitle__wxStringCR, wxTopLevelWindowBaseExtShouldPreventAppExitFunc a_ShouldPreventAppExit, wxTopLevelWindowBaseExtShowFullScreen__boollongFunc a_ShowFullScreen__boollong, wxTopLevelWindowBaseExtShowWithoutActivatingFunc a_ShowWithoutActivating, wxTopLevelWindowBaseExtWXReservedTLW1__voidPFunc a_WXReservedTLW1__voidP, wxTopLevelWindowBaseExtWXReservedTLW2__voidPFunc a_WXReservedTLW2__voidP, wxTopLevelWindowBaseExtWXReservedTLW3__voidPFunc a_WXReservedTLW3__voidP): wxTopLevelWindowBase() {
     m_wxTopLevelWindowBaseExtDestroy = a_Destroy;
-    m_wxTopLevelWindowBaseExtDoCentreint = a_DoCentreint;
-    m_wxTopLevelWindowBaseExtDoClientToScreenintPintP = a_DoClientToScreenintPintP;
-    m_wxTopLevelWindowBaseExtDoGetScreenPositionintPintP = a_DoGetScreenPositionintPintP;
-    m_wxTopLevelWindowBaseExtDoScreenToClientintPintP = a_DoScreenToClientintPintP;
-    m_wxTopLevelWindowBaseExtDoUpdateWindowUIwxUpdateUIEventR = a_DoUpdateWindowUIwxUpdateUIEventR;
-    m_wxTopLevelWindowBaseExtEnableCloseButtonbool = a_EnableCloseButtonbool;
-    m_wxTopLevelWindowBaseExtEnableFullScreenViewboollong = a_EnableFullScreenViewboollong;
-    m_wxTopLevelWindowBaseExtEnableMaximizeButtonbool = a_EnableMaximizeButtonbool;
-    m_wxTopLevelWindowBaseExtEnableMinimizeButtonbool = a_EnableMinimizeButtonbool;
+    m_wxTopLevelWindowBaseExtDoCentre__int = a_DoCentre__int;
+    m_wxTopLevelWindowBaseExtDoClientToScreen__intPintP = a_DoClientToScreen__intPintP;
+    m_wxTopLevelWindowBaseExtDoGetScreenPosition__intPintP = a_DoGetScreenPosition__intPintP;
+    m_wxTopLevelWindowBaseExtDoScreenToClient__intPintP = a_DoScreenToClient__intPintP;
+    m_wxTopLevelWindowBaseExtDoUpdateWindowUI__wxUpdateUIEventR = a_DoUpdateWindowUI__wxUpdateUIEventR;
+    m_wxTopLevelWindowBaseExtEnableCloseButton__bool = a_EnableCloseButton__bool;
+    m_wxTopLevelWindowBaseExtEnableFullScreenView__boollong = a_EnableFullScreenView__boollong;
+    m_wxTopLevelWindowBaseExtEnableMaximizeButton__bool = a_EnableMaximizeButton__bool;
+    m_wxTopLevelWindowBaseExtEnableMinimizeButton__bool = a_EnableMinimizeButton__bool;
     m_wxTopLevelWindowBaseExtGetContentProtection = a_GetContentProtection;
     m_wxTopLevelWindowBaseExtGetEventHashTable = a_GetEventHashTable;
     m_wxTopLevelWindowBaseExtGetEventTable = a_GetEventTable;
-    m_wxTopLevelWindowBaseExtGetRectForTopLevelChildrenintPintPintPintP = a_GetRectForTopLevelChildrenintPintPintPintP;
+    m_wxTopLevelWindowBaseExtGetRectForTopLevelChildren__intPintPintPintP = a_GetRectForTopLevelChildren__intPintPintPintP;
     m_wxTopLevelWindowBaseExtGetTitle = a_GetTitle;
-    m_wxTopLevelWindowBaseExtIconizebool = a_Iconizebool;
+    m_wxTopLevelWindowBaseExtIconize__bool = a_Iconize__bool;
     m_wxTopLevelWindowBaseExtIsActive = a_IsActive;
     m_wxTopLevelWindowBaseExtIsAlwaysMaximized = a_IsAlwaysMaximized;
     m_wxTopLevelWindowBaseExtIsFullScreen = a_IsFullScreen;
     m_wxTopLevelWindowBaseExtIsIconized = a_IsIconized;
     m_wxTopLevelWindowBaseExtIsMaximized = a_IsMaximized;
-    m_wxTopLevelWindowBaseExtIsOneOfBarswxWindowCP = a_IsOneOfBarswxWindowCP;
+    m_wxTopLevelWindowBaseExtIsOneOfBars__wxWindowCP = a_IsOneOfBars__wxWindowCP;
     m_wxTopLevelWindowBaseExtIsTopLevel = a_IsTopLevel;
-    m_wxTopLevelWindowBaseExtIsTopNavigationDomainwxWindowBaseNNavigationKind = a_IsTopNavigationDomainwxWindowBaseNNavigationKind;
+    m_wxTopLevelWindowBaseExtIsTopNavigationDomain__wxWindowBaseNNavigationKind = a_IsTopNavigationDomain__wxWindowBaseNNavigationKind;
     m_wxTopLevelWindowBaseExtIsVisible = a_IsVisible;
     m_wxTopLevelWindowBaseExtLayout = a_Layout;
-    m_wxTopLevelWindowBaseExtMaximizebool = a_Maximizebool;
+    m_wxTopLevelWindowBaseExtMaximize__bool = a_Maximize__bool;
     m_wxTopLevelWindowBaseExtOSXIsModified = a_OSXIsModified;
-    m_wxTopLevelWindowBaseExtOSXSetModifiedbool = a_OSXSetModifiedbool;
-    m_wxTopLevelWindowBaseExtRequestUserAttentionint = a_RequestUserAttentionint;
+    m_wxTopLevelWindowBaseExtOSXSetModified__bool = a_OSXSetModified__bool;
+    m_wxTopLevelWindowBaseExtRequestUserAttention__int = a_RequestUserAttention__int;
     m_wxTopLevelWindowBaseExtRestore = a_Restore;
-    m_wxTopLevelWindowBaseExtSetContentProtectionwxContentProtection = a_SetContentProtectionwxContentProtection;
-    m_wxTopLevelWindowBaseExtSetIconswxIconBundleCR = a_SetIconswxIconBundleCR;
-    m_wxTopLevelWindowBaseExtSetMaxSizewxSizeCR = a_SetMaxSizewxSizeCR;
-    m_wxTopLevelWindowBaseExtSetMinSizewxSizeCR = a_SetMinSizewxSizeCR;
-    m_wxTopLevelWindowBaseExtSetRepresentedFilenamewxStringCR = a_SetRepresentedFilenamewxStringCR;
-    m_wxTopLevelWindowBaseExtSetTitlewxStringCR = a_SetTitlewxStringCR;
+    m_wxTopLevelWindowBaseExtSetContentProtection__wxContentProtection = a_SetContentProtection__wxContentProtection;
+    m_wxTopLevelWindowBaseExtSetIcons__wxIconBundleCR = a_SetIcons__wxIconBundleCR;
+    m_wxTopLevelWindowBaseExtSetMaxSize__wxSizeCR = a_SetMaxSize__wxSizeCR;
+    m_wxTopLevelWindowBaseExtSetMinSize__wxSizeCR = a_SetMinSize__wxSizeCR;
+    m_wxTopLevelWindowBaseExtSetRepresentedFilename__wxStringCR = a_SetRepresentedFilename__wxStringCR;
+    m_wxTopLevelWindowBaseExtSetTitle__wxStringCR = a_SetTitle__wxStringCR;
     m_wxTopLevelWindowBaseExtShouldPreventAppExit = a_ShouldPreventAppExit;
-    m_wxTopLevelWindowBaseExtShowFullScreenboollong = a_ShowFullScreenboollong;
+    m_wxTopLevelWindowBaseExtShowFullScreen__boollong = a_ShowFullScreen__boollong;
     m_wxTopLevelWindowBaseExtShowWithoutActivating = a_ShowWithoutActivating;
-    m_wxTopLevelWindowBaseExtWXReservedTLW1voidP = a_WXReservedTLW1voidP;
-    m_wxTopLevelWindowBaseExtWXReservedTLW2voidP = a_WXReservedTLW2voidP;
-    m_wxTopLevelWindowBaseExtWXReservedTLW3voidP = a_WXReservedTLW3voidP;
+    m_wxTopLevelWindowBaseExtWXReservedTLW1__voidP = a_WXReservedTLW1__voidP;
+    m_wxTopLevelWindowBaseExtWXReservedTLW2__voidP = a_WXReservedTLW2__voidP;
+    m_wxTopLevelWindowBaseExtWXReservedTLW3__voidP = a_WXReservedTLW3__voidP;
   }
 };
 
@@ -626,85 +626,85 @@ public:
       return res;
     }
   }
-  wxTopLevelWindowNativeExtDoCentreintFunc m_wxTopLevelWindowNativeExtDoCentreint = NULL;
+  wxTopLevelWindowNativeExtDoCentre__intFunc m_wxTopLevelWindowNativeExtDoCentre__int = NULL;
   virtual void DoCentre(int dir) override
   {
     wxTopLevelWindowNative::DoCentre(dir);
-    if (*m_wxTopLevelWindowNativeExtDoCentreint != NULL){
-      return m_wxTopLevelWindowNativeExtDoCentreint(this, dir);
+    if (*m_wxTopLevelWindowNativeExtDoCentre__int != NULL){
+      return m_wxTopLevelWindowNativeExtDoCentre__int(this, dir);
     }
   }
-  wxTopLevelWindowNativeExtDoClientToScreenintPintPFunc m_wxTopLevelWindowNativeExtDoClientToScreenintPintP = NULL;
+  wxTopLevelWindowNativeExtDoClientToScreen__intPintPFunc m_wxTopLevelWindowNativeExtDoClientToScreen__intPintP = NULL;
   virtual void DoClientToScreen(int* x, int* y) const override
   {
     wxTopLevelWindowNative::DoClientToScreen(x, y);
-    if (*m_wxTopLevelWindowNativeExtDoClientToScreenintPintP != NULL){
-      return m_wxTopLevelWindowNativeExtDoClientToScreenintPintP(this, x, y);
+    if (*m_wxTopLevelWindowNativeExtDoClientToScreen__intPintP != NULL){
+      return m_wxTopLevelWindowNativeExtDoClientToScreen__intPintP(this, x, y);
     }
   }
-  wxTopLevelWindowNativeExtDoGetScreenPositionintPintPFunc m_wxTopLevelWindowNativeExtDoGetScreenPositionintPintP = NULL;
+  wxTopLevelWindowNativeExtDoGetScreenPosition__intPintPFunc m_wxTopLevelWindowNativeExtDoGetScreenPosition__intPintP = NULL;
   virtual void DoGetScreenPosition(int* x, int* y) const override
   {
     wxTopLevelWindowNative::DoGetScreenPosition(x, y);
-    if (*m_wxTopLevelWindowNativeExtDoGetScreenPositionintPintP != NULL){
-      return m_wxTopLevelWindowNativeExtDoGetScreenPositionintPintP(this, x, y);
+    if (*m_wxTopLevelWindowNativeExtDoGetScreenPosition__intPintP != NULL){
+      return m_wxTopLevelWindowNativeExtDoGetScreenPosition__intPintP(this, x, y);
     }
   }
-  wxTopLevelWindowNativeExtDoScreenToClientintPintPFunc m_wxTopLevelWindowNativeExtDoScreenToClientintPintP = NULL;
+  wxTopLevelWindowNativeExtDoScreenToClient__intPintPFunc m_wxTopLevelWindowNativeExtDoScreenToClient__intPintP = NULL;
   virtual void DoScreenToClient(int* x, int* y) const override
   {
     wxTopLevelWindowNative::DoScreenToClient(x, y);
-    if (*m_wxTopLevelWindowNativeExtDoScreenToClientintPintP != NULL){
-      return m_wxTopLevelWindowNativeExtDoScreenToClientintPintP(this, x, y);
+    if (*m_wxTopLevelWindowNativeExtDoScreenToClient__intPintP != NULL){
+      return m_wxTopLevelWindowNativeExtDoScreenToClient__intPintP(this, x, y);
     }
   }
-  wxTopLevelWindowNativeExtDoUpdateWindowUIwxUpdateUIEventRFunc m_wxTopLevelWindowNativeExtDoUpdateWindowUIwxUpdateUIEventR = NULL;
+  wxTopLevelWindowNativeExtDoUpdateWindowUI__wxUpdateUIEventRFunc m_wxTopLevelWindowNativeExtDoUpdateWindowUI__wxUpdateUIEventR = NULL;
   virtual void DoUpdateWindowUI(wxUpdateUIEvent& event) override
   {
     wxTopLevelWindowNative::DoUpdateWindowUI(event);
-    if (*m_wxTopLevelWindowNativeExtDoUpdateWindowUIwxUpdateUIEventR != NULL){
-      return m_wxTopLevelWindowNativeExtDoUpdateWindowUIwxUpdateUIEventR(this, event);
+    if (*m_wxTopLevelWindowNativeExtDoUpdateWindowUI__wxUpdateUIEventR != NULL){
+      return m_wxTopLevelWindowNativeExtDoUpdateWindowUI__wxUpdateUIEventR(this, event);
     }
   }
-  wxTopLevelWindowNativeExtEnableCloseButtonboolFunc m_wxTopLevelWindowNativeExtEnableCloseButtonbool = NULL;
-  virtual bool EnableCloseButton(bool param0 = true) override
+  wxTopLevelWindowNativeExtEnableCloseButton__boolFunc m_wxTopLevelWindowNativeExtEnableCloseButton__bool = NULL;
+  virtual bool EnableCloseButton(bool enable = true) override
   {
-    bool res = wxTopLevelWindowNative::EnableCloseButton(param0);
-    if (*m_wxTopLevelWindowNativeExtEnableCloseButtonbool != NULL){
-      return m_wxTopLevelWindowNativeExtEnableCloseButtonbool(this, param0, res);
+    bool res = wxTopLevelWindowNative::EnableCloseButton(enable);
+    if (*m_wxTopLevelWindowNativeExtEnableCloseButton__bool != NULL){
+      return m_wxTopLevelWindowNativeExtEnableCloseButton__bool(this, enable, res);
     }
     else {
       return res;
     }
   }
-  wxTopLevelWindowNativeExtEnableFullScreenViewboollongFunc m_wxTopLevelWindowNativeExtEnableFullScreenViewboollong = NULL;
-  virtual bool EnableFullScreenView(bool param0 = true, long param1 = wxFULLSCREEN_ALL) override
+  wxTopLevelWindowNativeExtEnableFullScreenView__boollongFunc m_wxTopLevelWindowNativeExtEnableFullScreenView__boollong = NULL;
+  virtual bool EnableFullScreenView(bool enable = true, long style = wxFULLSCREEN_ALL) override
   {
-    bool res = wxTopLevelWindowNative::EnableFullScreenView(param0, param1);
-    if (*m_wxTopLevelWindowNativeExtEnableFullScreenViewboollong != NULL){
-      return m_wxTopLevelWindowNativeExtEnableFullScreenViewboollong(this, param0, param1, res);
+    bool res = wxTopLevelWindowNative::EnableFullScreenView(enable, style);
+    if (*m_wxTopLevelWindowNativeExtEnableFullScreenView__boollong != NULL){
+      return m_wxTopLevelWindowNativeExtEnableFullScreenView__boollong(this, enable, style, res);
     }
     else {
       return res;
     }
   }
-  wxTopLevelWindowNativeExtEnableMaximizeButtonboolFunc m_wxTopLevelWindowNativeExtEnableMaximizeButtonbool = NULL;
-  virtual bool EnableMaximizeButton(bool param0 = true) override
+  wxTopLevelWindowNativeExtEnableMaximizeButton__boolFunc m_wxTopLevelWindowNativeExtEnableMaximizeButton__bool = NULL;
+  virtual bool EnableMaximizeButton(bool enable = true) override
   {
-    bool res = wxTopLevelWindowNative::EnableMaximizeButton(param0);
-    if (*m_wxTopLevelWindowNativeExtEnableMaximizeButtonbool != NULL){
-      return m_wxTopLevelWindowNativeExtEnableMaximizeButtonbool(this, param0, res);
+    bool res = wxTopLevelWindowNative::EnableMaximizeButton(enable);
+    if (*m_wxTopLevelWindowNativeExtEnableMaximizeButton__bool != NULL){
+      return m_wxTopLevelWindowNativeExtEnableMaximizeButton__bool(this, enable, res);
     }
     else {
       return res;
     }
   }
-  wxTopLevelWindowNativeExtEnableMinimizeButtonboolFunc m_wxTopLevelWindowNativeExtEnableMinimizeButtonbool = NULL;
-  virtual bool EnableMinimizeButton(bool param0 = true) override
+  wxTopLevelWindowNativeExtEnableMinimizeButton__boolFunc m_wxTopLevelWindowNativeExtEnableMinimizeButton__bool = NULL;
+  virtual bool EnableMinimizeButton(bool enable = true) override
   {
-    bool res = wxTopLevelWindowNative::EnableMinimizeButton(param0);
-    if (*m_wxTopLevelWindowNativeExtEnableMinimizeButtonbool != NULL){
-      return m_wxTopLevelWindowNativeExtEnableMinimizeButtonbool(this, param0, res);
+    bool res = wxTopLevelWindowNative::EnableMinimizeButton(enable);
+    if (*m_wxTopLevelWindowNativeExtEnableMinimizeButton__bool != NULL){
+      return m_wxTopLevelWindowNativeExtEnableMinimizeButton__bool(this, enable, res);
     }
     else {
       return res;
@@ -765,12 +765,12 @@ public:
       return res;
     }
   }
-  wxTopLevelWindowNativeExtGetRectForTopLevelChildrenintPintPintPintPFunc m_wxTopLevelWindowNativeExtGetRectForTopLevelChildrenintPintPintPintP = NULL;
+  wxTopLevelWindowNativeExtGetRectForTopLevelChildren__intPintPintPintPFunc m_wxTopLevelWindowNativeExtGetRectForTopLevelChildren__intPintPintPintP = NULL;
   virtual void GetRectForTopLevelChildren(int* x, int* y, int* w, int* h) override
   {
     wxTopLevelWindowNative::GetRectForTopLevelChildren(x, y, w, h);
-    if (*m_wxTopLevelWindowNativeExtGetRectForTopLevelChildrenintPintPintPintP != NULL){
-      return m_wxTopLevelWindowNativeExtGetRectForTopLevelChildrenintPintPintPintP(this, x, y, w, h);
+    if (*m_wxTopLevelWindowNativeExtGetRectForTopLevelChildren__intPintPintPintP != NULL){
+      return m_wxTopLevelWindowNativeExtGetRectForTopLevelChildren__intPintPintPintP(this, x, y, w, h);
     }
   }
   wxTopLevelWindowNativeExtGetTitleFunc m_wxTopLevelWindowNativeExtGetTitle = NULL;
@@ -783,11 +783,11 @@ public:
       return "";
     }
   }
-  wxTopLevelWindowNativeExtIconizeboolFunc m_wxTopLevelWindowNativeExtIconizebool = NULL;
+  wxTopLevelWindowNativeExtIconize__boolFunc m_wxTopLevelWindowNativeExtIconize__bool = NULL;
   virtual void Iconize(bool iconize = true) override
   {
-    if (*m_wxTopLevelWindowNativeExtIconizebool != NULL){
-      return m_wxTopLevelWindowNativeExtIconizebool(this, iconize);
+    if (*m_wxTopLevelWindowNativeExtIconize__bool != NULL){
+      return m_wxTopLevelWindowNativeExtIconize__bool(this, iconize);
     }
   }
   wxTopLevelWindowNativeExtIsActiveFunc m_wxTopLevelWindowNativeExtIsActive = NULL;
@@ -842,12 +842,12 @@ public:
       return false;
     }
   }
-  wxTopLevelWindowNativeExtIsOneOfBarswxWindowCPFunc m_wxTopLevelWindowNativeExtIsOneOfBarswxWindowCP = NULL;
-  virtual bool IsOneOfBars(wxWindow const* param0) const override
+  wxTopLevelWindowNativeExtIsOneOfBars__wxWindowCPFunc m_wxTopLevelWindowNativeExtIsOneOfBars__wxWindowCP = NULL;
+  virtual bool IsOneOfBars(wxWindow const* win) const override
   {
-    bool res = wxTopLevelWindowNative::IsOneOfBars(param0);
-    if (*m_wxTopLevelWindowNativeExtIsOneOfBarswxWindowCP != NULL){
-      return m_wxTopLevelWindowNativeExtIsOneOfBarswxWindowCP(this, param0, res);
+    bool res = wxTopLevelWindowNative::IsOneOfBars(win);
+    if (*m_wxTopLevelWindowNativeExtIsOneOfBars__wxWindowCP != NULL){
+      return m_wxTopLevelWindowNativeExtIsOneOfBars__wxWindowCP(this, win, res);
     }
     else {
       return res;
@@ -864,12 +864,12 @@ public:
       return res;
     }
   }
-  wxTopLevelWindowNativeExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc m_wxTopLevelWindowNativeExtIsTopNavigationDomainwxWindowBaseNNavigationKind = NULL;
+  wxTopLevelWindowNativeExtIsTopNavigationDomain__wxWindowBaseNNavigationKindFunc m_wxTopLevelWindowNativeExtIsTopNavigationDomain__wxWindowBaseNNavigationKind = NULL;
   virtual bool IsTopNavigationDomain(wxWindowBase::NavigationKind kind) const override
   {
     bool res = wxTopLevelWindowNative::IsTopNavigationDomain(kind);
-    if (*m_wxTopLevelWindowNativeExtIsTopNavigationDomainwxWindowBaseNNavigationKind != NULL){
-      return m_wxTopLevelWindowNativeExtIsTopNavigationDomainwxWindowBaseNNavigationKind(this, kind, res);
+    if (*m_wxTopLevelWindowNativeExtIsTopNavigationDomain__wxWindowBaseNNavigationKind != NULL){
+      return m_wxTopLevelWindowNativeExtIsTopNavigationDomain__wxWindowBaseNNavigationKind(this, kind, res);
     }
     else {
       return res;
@@ -897,11 +897,11 @@ public:
       return res;
     }
   }
-  wxTopLevelWindowNativeExtMaximizeboolFunc m_wxTopLevelWindowNativeExtMaximizebool = NULL;
+  wxTopLevelWindowNativeExtMaximize__boolFunc m_wxTopLevelWindowNativeExtMaximize__bool = NULL;
   virtual void Maximize(bool maximize = true) override
   {
-    if (*m_wxTopLevelWindowNativeExtMaximizebool != NULL){
-      return m_wxTopLevelWindowNativeExtMaximizebool(this, maximize);
+    if (*m_wxTopLevelWindowNativeExtMaximize__bool != NULL){
+      return m_wxTopLevelWindowNativeExtMaximize__bool(this, maximize);
     }
   }
   wxTopLevelWindowNativeExtOSXIsModifiedFunc m_wxTopLevelWindowNativeExtOSXIsModified = NULL;
@@ -915,20 +915,20 @@ public:
       return res;
     }
   }
-  wxTopLevelWindowNativeExtOSXSetModifiedboolFunc m_wxTopLevelWindowNativeExtOSXSetModifiedbool = NULL;
+  wxTopLevelWindowNativeExtOSXSetModified__boolFunc m_wxTopLevelWindowNativeExtOSXSetModified__bool = NULL;
   virtual void OSXSetModified(bool modified) override
   {
     wxTopLevelWindowNative::OSXSetModified(modified);
-    if (*m_wxTopLevelWindowNativeExtOSXSetModifiedbool != NULL){
-      return m_wxTopLevelWindowNativeExtOSXSetModifiedbool(this, modified);
+    if (*m_wxTopLevelWindowNativeExtOSXSetModified__bool != NULL){
+      return m_wxTopLevelWindowNativeExtOSXSetModified__bool(this, modified);
     }
   }
-  wxTopLevelWindowNativeExtRequestUserAttentionintFunc m_wxTopLevelWindowNativeExtRequestUserAttentionint = NULL;
+  wxTopLevelWindowNativeExtRequestUserAttention__intFunc m_wxTopLevelWindowNativeExtRequestUserAttention__int = NULL;
   virtual void RequestUserAttention(int flags = wxUSER_ATTENTION_INFO) override
   {
     wxTopLevelWindowNative::RequestUserAttention(flags);
-    if (*m_wxTopLevelWindowNativeExtRequestUserAttentionint != NULL){
-      return m_wxTopLevelWindowNativeExtRequestUserAttentionint(this, flags);
+    if (*m_wxTopLevelWindowNativeExtRequestUserAttention__int != NULL){
+      return m_wxTopLevelWindowNativeExtRequestUserAttention__int(this, flags);
     }
   }
   wxTopLevelWindowNativeExtRestoreFunc m_wxTopLevelWindowNativeExtRestore = NULL;
@@ -938,62 +938,62 @@ public:
       return m_wxTopLevelWindowNativeExtRestore(this);
     }
   }
-  wxTopLevelWindowNativeExtSetContentProtectionwxContentProtectionFunc m_wxTopLevelWindowNativeExtSetContentProtectionwxContentProtection = NULL;
-  virtual bool SetContentProtection(wxContentProtection param0) override
+  wxTopLevelWindowNativeExtSetContentProtection__wxContentProtectionFunc m_wxTopLevelWindowNativeExtSetContentProtection__wxContentProtection = NULL;
+  virtual bool SetContentProtection(wxContentProtection contentProtection) override
   {
-    bool res = wxTopLevelWindowNative::SetContentProtection(param0);
-    if (*m_wxTopLevelWindowNativeExtSetContentProtectionwxContentProtection != NULL){
-      return m_wxTopLevelWindowNativeExtSetContentProtectionwxContentProtection(this, param0, res);
+    bool res = wxTopLevelWindowNative::SetContentProtection(contentProtection);
+    if (*m_wxTopLevelWindowNativeExtSetContentProtection__wxContentProtection != NULL){
+      return m_wxTopLevelWindowNativeExtSetContentProtection__wxContentProtection(this, contentProtection, res);
     }
     else {
       return res;
     }
   }
-  wxTopLevelWindowNativeExtSetIconswxIconBundleCRFunc m_wxTopLevelWindowNativeExtSetIconswxIconBundleCR = NULL;
+  wxTopLevelWindowNativeExtSetIcons__wxIconBundleCRFunc m_wxTopLevelWindowNativeExtSetIcons__wxIconBundleCR = NULL;
   virtual void SetIcons(wxIconBundle const& icons) override
   {
     wxTopLevelWindowNative::SetIcons(icons);
-    if (*m_wxTopLevelWindowNativeExtSetIconswxIconBundleCR != NULL){
-      return m_wxTopLevelWindowNativeExtSetIconswxIconBundleCR(this, icons);
+    if (*m_wxTopLevelWindowNativeExtSetIcons__wxIconBundleCR != NULL){
+      return m_wxTopLevelWindowNativeExtSetIcons__wxIconBundleCR(this, icons);
     }
   }
-  wxTopLevelWindowNativeExtSetLabelwxStringCRFunc m_wxTopLevelWindowNativeExtSetLabelwxStringCR = NULL;
+  wxTopLevelWindowNativeExtSetLabel__wxStringCRFunc m_wxTopLevelWindowNativeExtSetLabel__wxStringCR = NULL;
   virtual void SetLabel(wxString const& label) override
   {
     wxTopLevelWindowNative::SetLabel(label);
-    if (*m_wxTopLevelWindowNativeExtSetLabelwxStringCR != NULL){
-      return m_wxTopLevelWindowNativeExtSetLabelwxStringCR(this, label);
+    if (*m_wxTopLevelWindowNativeExtSetLabel__wxStringCR != NULL){
+      return m_wxTopLevelWindowNativeExtSetLabel__wxStringCR(this, label);
     }
   }
-  wxTopLevelWindowNativeExtSetMaxSizewxSizeCRFunc m_wxTopLevelWindowNativeExtSetMaxSizewxSizeCR = NULL;
+  wxTopLevelWindowNativeExtSetMaxSize__wxSizeCRFunc m_wxTopLevelWindowNativeExtSetMaxSize__wxSizeCR = NULL;
   virtual void SetMaxSize(wxSize const& maxSize) override
   {
     wxTopLevelWindowNative::SetMaxSize(maxSize);
-    if (*m_wxTopLevelWindowNativeExtSetMaxSizewxSizeCR != NULL){
-      return m_wxTopLevelWindowNativeExtSetMaxSizewxSizeCR(this, maxSize);
+    if (*m_wxTopLevelWindowNativeExtSetMaxSize__wxSizeCR != NULL){
+      return m_wxTopLevelWindowNativeExtSetMaxSize__wxSizeCR(this, maxSize);
     }
   }
-  wxTopLevelWindowNativeExtSetMinSizewxSizeCRFunc m_wxTopLevelWindowNativeExtSetMinSizewxSizeCR = NULL;
+  wxTopLevelWindowNativeExtSetMinSize__wxSizeCRFunc m_wxTopLevelWindowNativeExtSetMinSize__wxSizeCR = NULL;
   virtual void SetMinSize(wxSize const& minSize) override
   {
     wxTopLevelWindowNative::SetMinSize(minSize);
-    if (*m_wxTopLevelWindowNativeExtSetMinSizewxSizeCR != NULL){
-      return m_wxTopLevelWindowNativeExtSetMinSizewxSizeCR(this, minSize);
+    if (*m_wxTopLevelWindowNativeExtSetMinSize__wxSizeCR != NULL){
+      return m_wxTopLevelWindowNativeExtSetMinSize__wxSizeCR(this, minSize);
     }
   }
-  wxTopLevelWindowNativeExtSetRepresentedFilenamewxStringCRFunc m_wxTopLevelWindowNativeExtSetRepresentedFilenamewxStringCR = NULL;
-  virtual void SetRepresentedFilename(wxString const& param0) override
+  wxTopLevelWindowNativeExtSetRepresentedFilename__wxStringCRFunc m_wxTopLevelWindowNativeExtSetRepresentedFilename__wxStringCR = NULL;
+  virtual void SetRepresentedFilename(wxString const& filename) override
   {
-    wxTopLevelWindowNative::SetRepresentedFilename(param0);
-    if (*m_wxTopLevelWindowNativeExtSetRepresentedFilenamewxStringCR != NULL){
-      return m_wxTopLevelWindowNativeExtSetRepresentedFilenamewxStringCR(this, param0);
+    wxTopLevelWindowNative::SetRepresentedFilename(filename);
+    if (*m_wxTopLevelWindowNativeExtSetRepresentedFilename__wxStringCR != NULL){
+      return m_wxTopLevelWindowNativeExtSetRepresentedFilename__wxStringCR(this, filename);
     }
   }
-  wxTopLevelWindowNativeExtSetTitlewxStringCRFunc m_wxTopLevelWindowNativeExtSetTitlewxStringCR = NULL;
+  wxTopLevelWindowNativeExtSetTitle__wxStringCRFunc m_wxTopLevelWindowNativeExtSetTitle__wxStringCR = NULL;
   virtual void SetTitle(wxString const& title) override
   {
-    if (*m_wxTopLevelWindowNativeExtSetTitlewxStringCR != NULL){
-      return m_wxTopLevelWindowNativeExtSetTitlewxStringCR(this, title);
+    if (*m_wxTopLevelWindowNativeExtSetTitle__wxStringCR != NULL){
+      return m_wxTopLevelWindowNativeExtSetTitle__wxStringCR(this, title);
     }
   }
   wxTopLevelWindowNativeExtShouldPreventAppExitFunc m_wxTopLevelWindowNativeExtShouldPreventAppExit = NULL;
@@ -1007,11 +1007,11 @@ public:
       return res;
     }
   }
-  wxTopLevelWindowNativeExtShowFullScreenboollongFunc m_wxTopLevelWindowNativeExtShowFullScreenboollong = NULL;
+  wxTopLevelWindowNativeExtShowFullScreen__boollongFunc m_wxTopLevelWindowNativeExtShowFullScreen__boollong = NULL;
   virtual bool ShowFullScreen(bool show, long style = wxFULLSCREEN_ALL) override
   {
-    if (*m_wxTopLevelWindowNativeExtShowFullScreenboollong != NULL){
-      return m_wxTopLevelWindowNativeExtShowFullScreenboollong(this, show, style);
+    if (*m_wxTopLevelWindowNativeExtShowFullScreen__boollong != NULL){
+      return m_wxTopLevelWindowNativeExtShowFullScreen__boollong(this, show, style);
     }
     else {
       return false;
@@ -1025,86 +1025,86 @@ public:
       return m_wxTopLevelWindowNativeExtShowWithoutActivating(this);
     }
   }
-  wxTopLevelWindowNativeExtWXReservedTLW1voidPFunc m_wxTopLevelWindowNativeExtWXReservedTLW1voidP = NULL;
+  wxTopLevelWindowNativeExtWXReservedTLW1__voidPFunc m_wxTopLevelWindowNativeExtWXReservedTLW1__voidP = NULL;
   virtual void* WXReservedTLW1(void* param0) override
   {
     void* res = wxTopLevelWindowNative::WXReservedTLW1(param0);
-    if (*m_wxTopLevelWindowNativeExtWXReservedTLW1voidP != NULL){
-      return m_wxTopLevelWindowNativeExtWXReservedTLW1voidP(this, param0, res);
+    if (*m_wxTopLevelWindowNativeExtWXReservedTLW1__voidP != NULL){
+      return m_wxTopLevelWindowNativeExtWXReservedTLW1__voidP(this, param0, res);
     }
     else {
       return res;
     }
   }
-  wxTopLevelWindowNativeExtWXReservedTLW2voidPFunc m_wxTopLevelWindowNativeExtWXReservedTLW2voidP = NULL;
+  wxTopLevelWindowNativeExtWXReservedTLW2__voidPFunc m_wxTopLevelWindowNativeExtWXReservedTLW2__voidP = NULL;
   virtual void* WXReservedTLW2(void* param0) override
   {
     void* res = wxTopLevelWindowNative::WXReservedTLW2(param0);
-    if (*m_wxTopLevelWindowNativeExtWXReservedTLW2voidP != NULL){
-      return m_wxTopLevelWindowNativeExtWXReservedTLW2voidP(this, param0, res);
+    if (*m_wxTopLevelWindowNativeExtWXReservedTLW2__voidP != NULL){
+      return m_wxTopLevelWindowNativeExtWXReservedTLW2__voidP(this, param0, res);
     }
     else {
       return res;
     }
   }
-  wxTopLevelWindowNativeExtWXReservedTLW3voidPFunc m_wxTopLevelWindowNativeExtWXReservedTLW3voidP = NULL;
+  wxTopLevelWindowNativeExtWXReservedTLW3__voidPFunc m_wxTopLevelWindowNativeExtWXReservedTLW3__voidP = NULL;
   virtual void* WXReservedTLW3(void* param0) override
   {
     void* res = wxTopLevelWindowNative::WXReservedTLW3(param0);
-    if (*m_wxTopLevelWindowNativeExtWXReservedTLW3voidP != NULL){
-      return m_wxTopLevelWindowNativeExtWXReservedTLW3voidP(this, param0, res);
+    if (*m_wxTopLevelWindowNativeExtWXReservedTLW3__voidP != NULL){
+      return m_wxTopLevelWindowNativeExtWXReservedTLW3__voidP(this, param0, res);
     }
     else {
       return res;
     }
   }
-  wxTopLevelWindowNativeExt(wxTopLevelWindowNativeExtDestroyFunc a_Destroy, wxTopLevelWindowNativeExtDoCentreintFunc a_DoCentreint, wxTopLevelWindowNativeExtDoClientToScreenintPintPFunc a_DoClientToScreenintPintP, wxTopLevelWindowNativeExtDoGetScreenPositionintPintPFunc a_DoGetScreenPositionintPintP, wxTopLevelWindowNativeExtDoScreenToClientintPintPFunc a_DoScreenToClientintPintP, wxTopLevelWindowNativeExtDoUpdateWindowUIwxUpdateUIEventRFunc a_DoUpdateWindowUIwxUpdateUIEventR, wxTopLevelWindowNativeExtEnableCloseButtonboolFunc a_EnableCloseButtonbool, wxTopLevelWindowNativeExtEnableFullScreenViewboollongFunc a_EnableFullScreenViewboollong, wxTopLevelWindowNativeExtEnableMaximizeButtonboolFunc a_EnableMaximizeButtonbool, wxTopLevelWindowNativeExtEnableMinimizeButtonboolFunc a_EnableMinimizeButtonbool, wxTopLevelWindowNativeExtGetClientAreaOriginFunc a_GetClientAreaOrigin, wxTopLevelWindowNativeExtGetContentProtectionFunc a_GetContentProtection, wxTopLevelWindowNativeExtGetEventHashTableFunc a_GetEventHashTable, wxTopLevelWindowNativeExtGetEventTableFunc a_GetEventTable, wxTopLevelWindowNativeExtGetLabelFunc a_GetLabel, wxTopLevelWindowNativeExtGetRectForTopLevelChildrenintPintPintPintPFunc a_GetRectForTopLevelChildrenintPintPintPintP, wxTopLevelWindowNativeExtGetTitleFunc a_GetTitle, wxTopLevelWindowNativeExtIconizeboolFunc a_Iconizebool, wxTopLevelWindowNativeExtIsActiveFunc a_IsActive, wxTopLevelWindowNativeExtIsAlwaysMaximizedFunc a_IsAlwaysMaximized, wxTopLevelWindowNativeExtIsFullScreenFunc a_IsFullScreen, wxTopLevelWindowNativeExtIsIconizedFunc a_IsIconized, wxTopLevelWindowNativeExtIsMaximizedFunc a_IsMaximized, wxTopLevelWindowNativeExtIsOneOfBarswxWindowCPFunc a_IsOneOfBarswxWindowCP, wxTopLevelWindowNativeExtIsTopLevelFunc a_IsTopLevel, wxTopLevelWindowNativeExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc a_IsTopNavigationDomainwxWindowBaseNNavigationKind, wxTopLevelWindowNativeExtIsVisibleFunc a_IsVisible, wxTopLevelWindowNativeExtLayoutFunc a_Layout, wxTopLevelWindowNativeExtMaximizeboolFunc a_Maximizebool, wxTopLevelWindowNativeExtOSXIsModifiedFunc a_OSXIsModified, wxTopLevelWindowNativeExtOSXSetModifiedboolFunc a_OSXSetModifiedbool, wxTopLevelWindowNativeExtRequestUserAttentionintFunc a_RequestUserAttentionint, wxTopLevelWindowNativeExtRestoreFunc a_Restore, wxTopLevelWindowNativeExtSetContentProtectionwxContentProtectionFunc a_SetContentProtectionwxContentProtection, wxTopLevelWindowNativeExtSetIconswxIconBundleCRFunc a_SetIconswxIconBundleCR, wxTopLevelWindowNativeExtSetLabelwxStringCRFunc a_SetLabelwxStringCR, wxTopLevelWindowNativeExtSetMaxSizewxSizeCRFunc a_SetMaxSizewxSizeCR, wxTopLevelWindowNativeExtSetMinSizewxSizeCRFunc a_SetMinSizewxSizeCR, wxTopLevelWindowNativeExtSetRepresentedFilenamewxStringCRFunc a_SetRepresentedFilenamewxStringCR, wxTopLevelWindowNativeExtSetTitlewxStringCRFunc a_SetTitlewxStringCR, wxTopLevelWindowNativeExtShouldPreventAppExitFunc a_ShouldPreventAppExit, wxTopLevelWindowNativeExtShowFullScreenboollongFunc a_ShowFullScreenboollong, wxTopLevelWindowNativeExtShowWithoutActivatingFunc a_ShowWithoutActivating, wxTopLevelWindowNativeExtWXReservedTLW1voidPFunc a_WXReservedTLW1voidP, wxTopLevelWindowNativeExtWXReservedTLW2voidPFunc a_WXReservedTLW2voidP, wxTopLevelWindowNativeExtWXReservedTLW3voidPFunc a_WXReservedTLW3voidP): wxTopLevelWindowNative() {
+  wxTopLevelWindowNativeExt(wxTopLevelWindowNativeExtDestroyFunc a_Destroy, wxTopLevelWindowNativeExtDoCentre__intFunc a_DoCentre__int, wxTopLevelWindowNativeExtDoClientToScreen__intPintPFunc a_DoClientToScreen__intPintP, wxTopLevelWindowNativeExtDoGetScreenPosition__intPintPFunc a_DoGetScreenPosition__intPintP, wxTopLevelWindowNativeExtDoScreenToClient__intPintPFunc a_DoScreenToClient__intPintP, wxTopLevelWindowNativeExtDoUpdateWindowUI__wxUpdateUIEventRFunc a_DoUpdateWindowUI__wxUpdateUIEventR, wxTopLevelWindowNativeExtEnableCloseButton__boolFunc a_EnableCloseButton__bool, wxTopLevelWindowNativeExtEnableFullScreenView__boollongFunc a_EnableFullScreenView__boollong, wxTopLevelWindowNativeExtEnableMaximizeButton__boolFunc a_EnableMaximizeButton__bool, wxTopLevelWindowNativeExtEnableMinimizeButton__boolFunc a_EnableMinimizeButton__bool, wxTopLevelWindowNativeExtGetClientAreaOriginFunc a_GetClientAreaOrigin, wxTopLevelWindowNativeExtGetContentProtectionFunc a_GetContentProtection, wxTopLevelWindowNativeExtGetEventHashTableFunc a_GetEventHashTable, wxTopLevelWindowNativeExtGetEventTableFunc a_GetEventTable, wxTopLevelWindowNativeExtGetLabelFunc a_GetLabel, wxTopLevelWindowNativeExtGetRectForTopLevelChildren__intPintPintPintPFunc a_GetRectForTopLevelChildren__intPintPintPintP, wxTopLevelWindowNativeExtGetTitleFunc a_GetTitle, wxTopLevelWindowNativeExtIconize__boolFunc a_Iconize__bool, wxTopLevelWindowNativeExtIsActiveFunc a_IsActive, wxTopLevelWindowNativeExtIsAlwaysMaximizedFunc a_IsAlwaysMaximized, wxTopLevelWindowNativeExtIsFullScreenFunc a_IsFullScreen, wxTopLevelWindowNativeExtIsIconizedFunc a_IsIconized, wxTopLevelWindowNativeExtIsMaximizedFunc a_IsMaximized, wxTopLevelWindowNativeExtIsOneOfBars__wxWindowCPFunc a_IsOneOfBars__wxWindowCP, wxTopLevelWindowNativeExtIsTopLevelFunc a_IsTopLevel, wxTopLevelWindowNativeExtIsTopNavigationDomain__wxWindowBaseNNavigationKindFunc a_IsTopNavigationDomain__wxWindowBaseNNavigationKind, wxTopLevelWindowNativeExtIsVisibleFunc a_IsVisible, wxTopLevelWindowNativeExtLayoutFunc a_Layout, wxTopLevelWindowNativeExtMaximize__boolFunc a_Maximize__bool, wxTopLevelWindowNativeExtOSXIsModifiedFunc a_OSXIsModified, wxTopLevelWindowNativeExtOSXSetModified__boolFunc a_OSXSetModified__bool, wxTopLevelWindowNativeExtRequestUserAttention__intFunc a_RequestUserAttention__int, wxTopLevelWindowNativeExtRestoreFunc a_Restore, wxTopLevelWindowNativeExtSetContentProtection__wxContentProtectionFunc a_SetContentProtection__wxContentProtection, wxTopLevelWindowNativeExtSetIcons__wxIconBundleCRFunc a_SetIcons__wxIconBundleCR, wxTopLevelWindowNativeExtSetLabel__wxStringCRFunc a_SetLabel__wxStringCR, wxTopLevelWindowNativeExtSetMaxSize__wxSizeCRFunc a_SetMaxSize__wxSizeCR, wxTopLevelWindowNativeExtSetMinSize__wxSizeCRFunc a_SetMinSize__wxSizeCR, wxTopLevelWindowNativeExtSetRepresentedFilename__wxStringCRFunc a_SetRepresentedFilename__wxStringCR, wxTopLevelWindowNativeExtSetTitle__wxStringCRFunc a_SetTitle__wxStringCR, wxTopLevelWindowNativeExtShouldPreventAppExitFunc a_ShouldPreventAppExit, wxTopLevelWindowNativeExtShowFullScreen__boollongFunc a_ShowFullScreen__boollong, wxTopLevelWindowNativeExtShowWithoutActivatingFunc a_ShowWithoutActivating, wxTopLevelWindowNativeExtWXReservedTLW1__voidPFunc a_WXReservedTLW1__voidP, wxTopLevelWindowNativeExtWXReservedTLW2__voidPFunc a_WXReservedTLW2__voidP, wxTopLevelWindowNativeExtWXReservedTLW3__voidPFunc a_WXReservedTLW3__voidP): wxTopLevelWindowNative() {
     m_wxTopLevelWindowNativeExtDestroy = a_Destroy;
-    m_wxTopLevelWindowNativeExtDoCentreint = a_DoCentreint;
-    m_wxTopLevelWindowNativeExtDoClientToScreenintPintP = a_DoClientToScreenintPintP;
-    m_wxTopLevelWindowNativeExtDoGetScreenPositionintPintP = a_DoGetScreenPositionintPintP;
-    m_wxTopLevelWindowNativeExtDoScreenToClientintPintP = a_DoScreenToClientintPintP;
-    m_wxTopLevelWindowNativeExtDoUpdateWindowUIwxUpdateUIEventR = a_DoUpdateWindowUIwxUpdateUIEventR;
-    m_wxTopLevelWindowNativeExtEnableCloseButtonbool = a_EnableCloseButtonbool;
-    m_wxTopLevelWindowNativeExtEnableFullScreenViewboollong = a_EnableFullScreenViewboollong;
-    m_wxTopLevelWindowNativeExtEnableMaximizeButtonbool = a_EnableMaximizeButtonbool;
-    m_wxTopLevelWindowNativeExtEnableMinimizeButtonbool = a_EnableMinimizeButtonbool;
+    m_wxTopLevelWindowNativeExtDoCentre__int = a_DoCentre__int;
+    m_wxTopLevelWindowNativeExtDoClientToScreen__intPintP = a_DoClientToScreen__intPintP;
+    m_wxTopLevelWindowNativeExtDoGetScreenPosition__intPintP = a_DoGetScreenPosition__intPintP;
+    m_wxTopLevelWindowNativeExtDoScreenToClient__intPintP = a_DoScreenToClient__intPintP;
+    m_wxTopLevelWindowNativeExtDoUpdateWindowUI__wxUpdateUIEventR = a_DoUpdateWindowUI__wxUpdateUIEventR;
+    m_wxTopLevelWindowNativeExtEnableCloseButton__bool = a_EnableCloseButton__bool;
+    m_wxTopLevelWindowNativeExtEnableFullScreenView__boollong = a_EnableFullScreenView__boollong;
+    m_wxTopLevelWindowNativeExtEnableMaximizeButton__bool = a_EnableMaximizeButton__bool;
+    m_wxTopLevelWindowNativeExtEnableMinimizeButton__bool = a_EnableMinimizeButton__bool;
     m_wxTopLevelWindowNativeExtGetClientAreaOrigin = a_GetClientAreaOrigin;
     m_wxTopLevelWindowNativeExtGetContentProtection = a_GetContentProtection;
     m_wxTopLevelWindowNativeExtGetEventHashTable = a_GetEventHashTable;
     m_wxTopLevelWindowNativeExtGetEventTable = a_GetEventTable;
     m_wxTopLevelWindowNativeExtGetLabel = a_GetLabel;
-    m_wxTopLevelWindowNativeExtGetRectForTopLevelChildrenintPintPintPintP = a_GetRectForTopLevelChildrenintPintPintPintP;
+    m_wxTopLevelWindowNativeExtGetRectForTopLevelChildren__intPintPintPintP = a_GetRectForTopLevelChildren__intPintPintPintP;
     m_wxTopLevelWindowNativeExtGetTitle = a_GetTitle;
-    m_wxTopLevelWindowNativeExtIconizebool = a_Iconizebool;
+    m_wxTopLevelWindowNativeExtIconize__bool = a_Iconize__bool;
     m_wxTopLevelWindowNativeExtIsActive = a_IsActive;
     m_wxTopLevelWindowNativeExtIsAlwaysMaximized = a_IsAlwaysMaximized;
     m_wxTopLevelWindowNativeExtIsFullScreen = a_IsFullScreen;
     m_wxTopLevelWindowNativeExtIsIconized = a_IsIconized;
     m_wxTopLevelWindowNativeExtIsMaximized = a_IsMaximized;
-    m_wxTopLevelWindowNativeExtIsOneOfBarswxWindowCP = a_IsOneOfBarswxWindowCP;
+    m_wxTopLevelWindowNativeExtIsOneOfBars__wxWindowCP = a_IsOneOfBars__wxWindowCP;
     m_wxTopLevelWindowNativeExtIsTopLevel = a_IsTopLevel;
-    m_wxTopLevelWindowNativeExtIsTopNavigationDomainwxWindowBaseNNavigationKind = a_IsTopNavigationDomainwxWindowBaseNNavigationKind;
+    m_wxTopLevelWindowNativeExtIsTopNavigationDomain__wxWindowBaseNNavigationKind = a_IsTopNavigationDomain__wxWindowBaseNNavigationKind;
     m_wxTopLevelWindowNativeExtIsVisible = a_IsVisible;
     m_wxTopLevelWindowNativeExtLayout = a_Layout;
-    m_wxTopLevelWindowNativeExtMaximizebool = a_Maximizebool;
+    m_wxTopLevelWindowNativeExtMaximize__bool = a_Maximize__bool;
     m_wxTopLevelWindowNativeExtOSXIsModified = a_OSXIsModified;
-    m_wxTopLevelWindowNativeExtOSXSetModifiedbool = a_OSXSetModifiedbool;
-    m_wxTopLevelWindowNativeExtRequestUserAttentionint = a_RequestUserAttentionint;
+    m_wxTopLevelWindowNativeExtOSXSetModified__bool = a_OSXSetModified__bool;
+    m_wxTopLevelWindowNativeExtRequestUserAttention__int = a_RequestUserAttention__int;
     m_wxTopLevelWindowNativeExtRestore = a_Restore;
-    m_wxTopLevelWindowNativeExtSetContentProtectionwxContentProtection = a_SetContentProtectionwxContentProtection;
-    m_wxTopLevelWindowNativeExtSetIconswxIconBundleCR = a_SetIconswxIconBundleCR;
-    m_wxTopLevelWindowNativeExtSetLabelwxStringCR = a_SetLabelwxStringCR;
-    m_wxTopLevelWindowNativeExtSetMaxSizewxSizeCR = a_SetMaxSizewxSizeCR;
-    m_wxTopLevelWindowNativeExtSetMinSizewxSizeCR = a_SetMinSizewxSizeCR;
-    m_wxTopLevelWindowNativeExtSetRepresentedFilenamewxStringCR = a_SetRepresentedFilenamewxStringCR;
-    m_wxTopLevelWindowNativeExtSetTitlewxStringCR = a_SetTitlewxStringCR;
+    m_wxTopLevelWindowNativeExtSetContentProtection__wxContentProtection = a_SetContentProtection__wxContentProtection;
+    m_wxTopLevelWindowNativeExtSetIcons__wxIconBundleCR = a_SetIcons__wxIconBundleCR;
+    m_wxTopLevelWindowNativeExtSetLabel__wxStringCR = a_SetLabel__wxStringCR;
+    m_wxTopLevelWindowNativeExtSetMaxSize__wxSizeCR = a_SetMaxSize__wxSizeCR;
+    m_wxTopLevelWindowNativeExtSetMinSize__wxSizeCR = a_SetMinSize__wxSizeCR;
+    m_wxTopLevelWindowNativeExtSetRepresentedFilename__wxStringCR = a_SetRepresentedFilename__wxStringCR;
+    m_wxTopLevelWindowNativeExtSetTitle__wxStringCR = a_SetTitle__wxStringCR;
     m_wxTopLevelWindowNativeExtShouldPreventAppExit = a_ShouldPreventAppExit;
-    m_wxTopLevelWindowNativeExtShowFullScreenboollong = a_ShowFullScreenboollong;
+    m_wxTopLevelWindowNativeExtShowFullScreen__boollong = a_ShowFullScreen__boollong;
     m_wxTopLevelWindowNativeExtShowWithoutActivating = a_ShowWithoutActivating;
-    m_wxTopLevelWindowNativeExtWXReservedTLW1voidP = a_WXReservedTLW1voidP;
-    m_wxTopLevelWindowNativeExtWXReservedTLW2voidP = a_WXReservedTLW2voidP;
-    m_wxTopLevelWindowNativeExtWXReservedTLW3voidP = a_WXReservedTLW3voidP;
+    m_wxTopLevelWindowNativeExtWXReservedTLW1__voidP = a_WXReservedTLW1__voidP;
+    m_wxTopLevelWindowNativeExtWXReservedTLW2__voidP = a_WXReservedTLW2__voidP;
+    m_wxTopLevelWindowNativeExtWXReservedTLW3__voidP = a_WXReservedTLW3__voidP;
   }
 };
 
@@ -1124,85 +1124,85 @@ public:
       return res;
     }
   }
-  wxTopLevelWindowExtDoCentreintFunc m_wxTopLevelWindowExtDoCentreint = NULL;
+  wxTopLevelWindowExtDoCentre__intFunc m_wxTopLevelWindowExtDoCentre__int = NULL;
   virtual void DoCentre(int dir) override
   {
     wxTopLevelWindow::DoCentre(dir);
-    if (*m_wxTopLevelWindowExtDoCentreint != NULL){
-      return m_wxTopLevelWindowExtDoCentreint(this, dir);
+    if (*m_wxTopLevelWindowExtDoCentre__int != NULL){
+      return m_wxTopLevelWindowExtDoCentre__int(this, dir);
     }
   }
-  wxTopLevelWindowExtDoClientToScreenintPintPFunc m_wxTopLevelWindowExtDoClientToScreenintPintP = NULL;
+  wxTopLevelWindowExtDoClientToScreen__intPintPFunc m_wxTopLevelWindowExtDoClientToScreen__intPintP = NULL;
   virtual void DoClientToScreen(int* x, int* y) const override
   {
     wxTopLevelWindow::DoClientToScreen(x, y);
-    if (*m_wxTopLevelWindowExtDoClientToScreenintPintP != NULL){
-      return m_wxTopLevelWindowExtDoClientToScreenintPintP(this, x, y);
+    if (*m_wxTopLevelWindowExtDoClientToScreen__intPintP != NULL){
+      return m_wxTopLevelWindowExtDoClientToScreen__intPintP(this, x, y);
     }
   }
-  wxTopLevelWindowExtDoGetScreenPositionintPintPFunc m_wxTopLevelWindowExtDoGetScreenPositionintPintP = NULL;
+  wxTopLevelWindowExtDoGetScreenPosition__intPintPFunc m_wxTopLevelWindowExtDoGetScreenPosition__intPintP = NULL;
   virtual void DoGetScreenPosition(int* x, int* y) const override
   {
     wxTopLevelWindow::DoGetScreenPosition(x, y);
-    if (*m_wxTopLevelWindowExtDoGetScreenPositionintPintP != NULL){
-      return m_wxTopLevelWindowExtDoGetScreenPositionintPintP(this, x, y);
+    if (*m_wxTopLevelWindowExtDoGetScreenPosition__intPintP != NULL){
+      return m_wxTopLevelWindowExtDoGetScreenPosition__intPintP(this, x, y);
     }
   }
-  wxTopLevelWindowExtDoScreenToClientintPintPFunc m_wxTopLevelWindowExtDoScreenToClientintPintP = NULL;
+  wxTopLevelWindowExtDoScreenToClient__intPintPFunc m_wxTopLevelWindowExtDoScreenToClient__intPintP = NULL;
   virtual void DoScreenToClient(int* x, int* y) const override
   {
     wxTopLevelWindow::DoScreenToClient(x, y);
-    if (*m_wxTopLevelWindowExtDoScreenToClientintPintP != NULL){
-      return m_wxTopLevelWindowExtDoScreenToClientintPintP(this, x, y);
+    if (*m_wxTopLevelWindowExtDoScreenToClient__intPintP != NULL){
+      return m_wxTopLevelWindowExtDoScreenToClient__intPintP(this, x, y);
     }
   }
-  wxTopLevelWindowExtDoUpdateWindowUIwxUpdateUIEventRFunc m_wxTopLevelWindowExtDoUpdateWindowUIwxUpdateUIEventR = NULL;
+  wxTopLevelWindowExtDoUpdateWindowUI__wxUpdateUIEventRFunc m_wxTopLevelWindowExtDoUpdateWindowUI__wxUpdateUIEventR = NULL;
   virtual void DoUpdateWindowUI(wxUpdateUIEvent& event) override
   {
     wxTopLevelWindow::DoUpdateWindowUI(event);
-    if (*m_wxTopLevelWindowExtDoUpdateWindowUIwxUpdateUIEventR != NULL){
-      return m_wxTopLevelWindowExtDoUpdateWindowUIwxUpdateUIEventR(this, event);
+    if (*m_wxTopLevelWindowExtDoUpdateWindowUI__wxUpdateUIEventR != NULL){
+      return m_wxTopLevelWindowExtDoUpdateWindowUI__wxUpdateUIEventR(this, event);
     }
   }
-  wxTopLevelWindowExtEnableCloseButtonboolFunc m_wxTopLevelWindowExtEnableCloseButtonbool = NULL;
+  wxTopLevelWindowExtEnableCloseButton__boolFunc m_wxTopLevelWindowExtEnableCloseButton__bool = NULL;
   virtual bool EnableCloseButton(bool enable = true) override
   {
     bool res = wxTopLevelWindow::EnableCloseButton(enable);
-    if (*m_wxTopLevelWindowExtEnableCloseButtonbool != NULL){
-      return m_wxTopLevelWindowExtEnableCloseButtonbool(this, enable, res);
+    if (*m_wxTopLevelWindowExtEnableCloseButton__bool != NULL){
+      return m_wxTopLevelWindowExtEnableCloseButton__bool(this, enable, res);
     }
     else {
       return res;
     }
   }
-  wxTopLevelWindowExtEnableFullScreenViewboollongFunc m_wxTopLevelWindowExtEnableFullScreenViewboollong = NULL;
+  wxTopLevelWindowExtEnableFullScreenView__boollongFunc m_wxTopLevelWindowExtEnableFullScreenView__boollong = NULL;
   virtual bool EnableFullScreenView(bool enable = true, long style = wxFULLSCREEN_ALL) override
   {
     bool res = wxTopLevelWindow::EnableFullScreenView(enable, style);
-    if (*m_wxTopLevelWindowExtEnableFullScreenViewboollong != NULL){
-      return m_wxTopLevelWindowExtEnableFullScreenViewboollong(this, enable, style, res);
+    if (*m_wxTopLevelWindowExtEnableFullScreenView__boollong != NULL){
+      return m_wxTopLevelWindowExtEnableFullScreenView__boollong(this, enable, style, res);
     }
     else {
       return res;
     }
   }
-  wxTopLevelWindowExtEnableMaximizeButtonboolFunc m_wxTopLevelWindowExtEnableMaximizeButtonbool = NULL;
+  wxTopLevelWindowExtEnableMaximizeButton__boolFunc m_wxTopLevelWindowExtEnableMaximizeButton__bool = NULL;
   virtual bool EnableMaximizeButton(bool enable = true) override
   {
     bool res = wxTopLevelWindow::EnableMaximizeButton(enable);
-    if (*m_wxTopLevelWindowExtEnableMaximizeButtonbool != NULL){
-      return m_wxTopLevelWindowExtEnableMaximizeButtonbool(this, enable, res);
+    if (*m_wxTopLevelWindowExtEnableMaximizeButton__bool != NULL){
+      return m_wxTopLevelWindowExtEnableMaximizeButton__bool(this, enable, res);
     }
     else {
       return res;
     }
   }
-  wxTopLevelWindowExtEnableMinimizeButtonboolFunc m_wxTopLevelWindowExtEnableMinimizeButtonbool = NULL;
+  wxTopLevelWindowExtEnableMinimizeButton__boolFunc m_wxTopLevelWindowExtEnableMinimizeButton__bool = NULL;
   virtual bool EnableMinimizeButton(bool enable = true) override
   {
     bool res = wxTopLevelWindow::EnableMinimizeButton(enable);
-    if (*m_wxTopLevelWindowExtEnableMinimizeButtonbool != NULL){
-      return m_wxTopLevelWindowExtEnableMinimizeButtonbool(this, enable, res);
+    if (*m_wxTopLevelWindowExtEnableMinimizeButton__bool != NULL){
+      return m_wxTopLevelWindowExtEnableMinimizeButton__bool(this, enable, res);
     }
     else {
       return res;
@@ -1274,12 +1274,12 @@ public:
       return res;
     }
   }
-  wxTopLevelWindowExtGetRectForTopLevelChildrenintPintPintPintPFunc m_wxTopLevelWindowExtGetRectForTopLevelChildrenintPintPintPintP = NULL;
+  wxTopLevelWindowExtGetRectForTopLevelChildren__intPintPintPintPFunc m_wxTopLevelWindowExtGetRectForTopLevelChildren__intPintPintPintP = NULL;
   virtual void GetRectForTopLevelChildren(int* x, int* y, int* w, int* h) override
   {
     wxTopLevelWindow::GetRectForTopLevelChildren(x, y, w, h);
-    if (*m_wxTopLevelWindowExtGetRectForTopLevelChildrenintPintPintPintP != NULL){
-      return m_wxTopLevelWindowExtGetRectForTopLevelChildrenintPintPintPintP(this, x, y, w, h);
+    if (*m_wxTopLevelWindowExtGetRectForTopLevelChildren__intPintPintPintP != NULL){
+      return m_wxTopLevelWindowExtGetRectForTopLevelChildren__intPintPintPintP(this, x, y, w, h);
     }
   }
   wxTopLevelWindowExtGetTitleFunc m_wxTopLevelWindowExtGetTitle = NULL;
@@ -1293,12 +1293,12 @@ public:
       return res;
     }
   }
-  wxTopLevelWindowExtIconizeboolFunc m_wxTopLevelWindowExtIconizebool = NULL;
+  wxTopLevelWindowExtIconize__boolFunc m_wxTopLevelWindowExtIconize__bool = NULL;
   virtual void Iconize(bool iconize = true) override
   {
     wxTopLevelWindow::Iconize(iconize);
-    if (*m_wxTopLevelWindowExtIconizebool != NULL){
-      return m_wxTopLevelWindowExtIconizebool(this, iconize);
+    if (*m_wxTopLevelWindowExtIconize__bool != NULL){
+      return m_wxTopLevelWindowExtIconize__bool(this, iconize);
     }
   }
   wxTopLevelWindowExtIsActiveFunc m_wxTopLevelWindowExtIsActive = NULL;
@@ -1356,12 +1356,12 @@ public:
       return res;
     }
   }
-  wxTopLevelWindowExtIsOneOfBarswxWindowCPFunc m_wxTopLevelWindowExtIsOneOfBarswxWindowCP = NULL;
-  virtual bool IsOneOfBars(wxWindow const* param0) const override
+  wxTopLevelWindowExtIsOneOfBars__wxWindowCPFunc m_wxTopLevelWindowExtIsOneOfBars__wxWindowCP = NULL;
+  virtual bool IsOneOfBars(wxWindow const* win) const override
   {
-    bool res = wxTopLevelWindow::IsOneOfBars(param0);
-    if (*m_wxTopLevelWindowExtIsOneOfBarswxWindowCP != NULL){
-      return m_wxTopLevelWindowExtIsOneOfBarswxWindowCP(this, param0, res);
+    bool res = wxTopLevelWindow::IsOneOfBars(win);
+    if (*m_wxTopLevelWindowExtIsOneOfBars__wxWindowCP != NULL){
+      return m_wxTopLevelWindowExtIsOneOfBars__wxWindowCP(this, win, res);
     }
     else {
       return res;
@@ -1378,12 +1378,12 @@ public:
       return res;
     }
   }
-  wxTopLevelWindowExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc m_wxTopLevelWindowExtIsTopNavigationDomainwxWindowBaseNNavigationKind = NULL;
+  wxTopLevelWindowExtIsTopNavigationDomain__wxWindowBaseNNavigationKindFunc m_wxTopLevelWindowExtIsTopNavigationDomain__wxWindowBaseNNavigationKind = NULL;
   virtual bool IsTopNavigationDomain(wxWindowBase::NavigationKind kind) const override
   {
     bool res = wxTopLevelWindow::IsTopNavigationDomain(kind);
-    if (*m_wxTopLevelWindowExtIsTopNavigationDomainwxWindowBaseNNavigationKind != NULL){
-      return m_wxTopLevelWindowExtIsTopNavigationDomainwxWindowBaseNNavigationKind(this, kind, res);
+    if (*m_wxTopLevelWindowExtIsTopNavigationDomain__wxWindowBaseNNavigationKind != NULL){
+      return m_wxTopLevelWindowExtIsTopNavigationDomain__wxWindowBaseNNavigationKind(this, kind, res);
     }
     else {
       return res;
@@ -1411,12 +1411,12 @@ public:
       return res;
     }
   }
-  wxTopLevelWindowExtMaximizeboolFunc m_wxTopLevelWindowExtMaximizebool = NULL;
+  wxTopLevelWindowExtMaximize__boolFunc m_wxTopLevelWindowExtMaximize__bool = NULL;
   virtual void Maximize(bool maximize = true) override
   {
     wxTopLevelWindow::Maximize(maximize);
-    if (*m_wxTopLevelWindowExtMaximizebool != NULL){
-      return m_wxTopLevelWindowExtMaximizebool(this, maximize);
+    if (*m_wxTopLevelWindowExtMaximize__bool != NULL){
+      return m_wxTopLevelWindowExtMaximize__bool(this, maximize);
     }
   }
   wxTopLevelWindowExtOSXIsModifiedFunc m_wxTopLevelWindowExtOSXIsModified = NULL;
@@ -1430,20 +1430,20 @@ public:
       return res;
     }
   }
-  wxTopLevelWindowExtOSXSetModifiedboolFunc m_wxTopLevelWindowExtOSXSetModifiedbool = NULL;
+  wxTopLevelWindowExtOSXSetModified__boolFunc m_wxTopLevelWindowExtOSXSetModified__bool = NULL;
   virtual void OSXSetModified(bool modified) override
   {
     wxTopLevelWindow::OSXSetModified(modified);
-    if (*m_wxTopLevelWindowExtOSXSetModifiedbool != NULL){
-      return m_wxTopLevelWindowExtOSXSetModifiedbool(this, modified);
+    if (*m_wxTopLevelWindowExtOSXSetModified__bool != NULL){
+      return m_wxTopLevelWindowExtOSXSetModified__bool(this, modified);
     }
   }
-  wxTopLevelWindowExtRequestUserAttentionintFunc m_wxTopLevelWindowExtRequestUserAttentionint = NULL;
+  wxTopLevelWindowExtRequestUserAttention__intFunc m_wxTopLevelWindowExtRequestUserAttention__int = NULL;
   virtual void RequestUserAttention(int flags = wxUSER_ATTENTION_INFO) override
   {
     wxTopLevelWindow::RequestUserAttention(flags);
-    if (*m_wxTopLevelWindowExtRequestUserAttentionint != NULL){
-      return m_wxTopLevelWindowExtRequestUserAttentionint(this, flags);
+    if (*m_wxTopLevelWindowExtRequestUserAttention__int != NULL){
+      return m_wxTopLevelWindowExtRequestUserAttention__int(this, flags);
     }
   }
   wxTopLevelWindowExtRestoreFunc m_wxTopLevelWindowExtRestore = NULL;
@@ -1454,63 +1454,63 @@ public:
       return m_wxTopLevelWindowExtRestore(this);
     }
   }
-  wxTopLevelWindowExtSetContentProtectionwxContentProtectionFunc m_wxTopLevelWindowExtSetContentProtectionwxContentProtection = NULL;
+  wxTopLevelWindowExtSetContentProtection__wxContentProtectionFunc m_wxTopLevelWindowExtSetContentProtection__wxContentProtection = NULL;
   virtual bool SetContentProtection(wxContentProtection contentProtection) override
   {
     bool res = wxTopLevelWindow::SetContentProtection(contentProtection);
-    if (*m_wxTopLevelWindowExtSetContentProtectionwxContentProtection != NULL){
-      return m_wxTopLevelWindowExtSetContentProtectionwxContentProtection(this, contentProtection, res);
+    if (*m_wxTopLevelWindowExtSetContentProtection__wxContentProtection != NULL){
+      return m_wxTopLevelWindowExtSetContentProtection__wxContentProtection(this, contentProtection, res);
     }
     else {
       return res;
     }
   }
-  wxTopLevelWindowExtSetIconswxIconBundleCRFunc m_wxTopLevelWindowExtSetIconswxIconBundleCR = NULL;
+  wxTopLevelWindowExtSetIcons__wxIconBundleCRFunc m_wxTopLevelWindowExtSetIcons__wxIconBundleCR = NULL;
   virtual void SetIcons(wxIconBundle const& icons) override
   {
     wxTopLevelWindow::SetIcons(icons);
-    if (*m_wxTopLevelWindowExtSetIconswxIconBundleCR != NULL){
-      return m_wxTopLevelWindowExtSetIconswxIconBundleCR(this, icons);
+    if (*m_wxTopLevelWindowExtSetIcons__wxIconBundleCR != NULL){
+      return m_wxTopLevelWindowExtSetIcons__wxIconBundleCR(this, icons);
     }
   }
-  wxTopLevelWindowExtSetLabelwxStringCRFunc m_wxTopLevelWindowExtSetLabelwxStringCR = NULL;
+  wxTopLevelWindowExtSetLabel__wxStringCRFunc m_wxTopLevelWindowExtSetLabel__wxStringCR = NULL;
   virtual void SetLabel(wxString const& label) override
   {
     wxTopLevelWindow::SetLabel(label);
-    if (*m_wxTopLevelWindowExtSetLabelwxStringCR != NULL){
-      return m_wxTopLevelWindowExtSetLabelwxStringCR(this, label);
+    if (*m_wxTopLevelWindowExtSetLabel__wxStringCR != NULL){
+      return m_wxTopLevelWindowExtSetLabel__wxStringCR(this, label);
     }
   }
-  wxTopLevelWindowExtSetMaxSizewxSizeCRFunc m_wxTopLevelWindowExtSetMaxSizewxSizeCR = NULL;
+  wxTopLevelWindowExtSetMaxSize__wxSizeCRFunc m_wxTopLevelWindowExtSetMaxSize__wxSizeCR = NULL;
   virtual void SetMaxSize(wxSize const& maxSize) override
   {
     wxTopLevelWindow::SetMaxSize(maxSize);
-    if (*m_wxTopLevelWindowExtSetMaxSizewxSizeCR != NULL){
-      return m_wxTopLevelWindowExtSetMaxSizewxSizeCR(this, maxSize);
+    if (*m_wxTopLevelWindowExtSetMaxSize__wxSizeCR != NULL){
+      return m_wxTopLevelWindowExtSetMaxSize__wxSizeCR(this, maxSize);
     }
   }
-  wxTopLevelWindowExtSetMinSizewxSizeCRFunc m_wxTopLevelWindowExtSetMinSizewxSizeCR = NULL;
+  wxTopLevelWindowExtSetMinSize__wxSizeCRFunc m_wxTopLevelWindowExtSetMinSize__wxSizeCR = NULL;
   virtual void SetMinSize(wxSize const& minSize) override
   {
     wxTopLevelWindow::SetMinSize(minSize);
-    if (*m_wxTopLevelWindowExtSetMinSizewxSizeCR != NULL){
-      return m_wxTopLevelWindowExtSetMinSizewxSizeCR(this, minSize);
+    if (*m_wxTopLevelWindowExtSetMinSize__wxSizeCR != NULL){
+      return m_wxTopLevelWindowExtSetMinSize__wxSizeCR(this, minSize);
     }
   }
-  wxTopLevelWindowExtSetRepresentedFilenamewxStringCRFunc m_wxTopLevelWindowExtSetRepresentedFilenamewxStringCR = NULL;
+  wxTopLevelWindowExtSetRepresentedFilename__wxStringCRFunc m_wxTopLevelWindowExtSetRepresentedFilename__wxStringCR = NULL;
   virtual void SetRepresentedFilename(wxString const& filename) override
   {
     wxTopLevelWindow::SetRepresentedFilename(filename);
-    if (*m_wxTopLevelWindowExtSetRepresentedFilenamewxStringCR != NULL){
-      return m_wxTopLevelWindowExtSetRepresentedFilenamewxStringCR(this, filename);
+    if (*m_wxTopLevelWindowExtSetRepresentedFilename__wxStringCR != NULL){
+      return m_wxTopLevelWindowExtSetRepresentedFilename__wxStringCR(this, filename);
     }
   }
-  wxTopLevelWindowExtSetTitlewxStringCRFunc m_wxTopLevelWindowExtSetTitlewxStringCR = NULL;
+  wxTopLevelWindowExtSetTitle__wxStringCRFunc m_wxTopLevelWindowExtSetTitle__wxStringCR = NULL;
   virtual void SetTitle(wxString const& title) override
   {
     wxTopLevelWindow::SetTitle(title);
-    if (*m_wxTopLevelWindowExtSetTitlewxStringCR != NULL){
-      return m_wxTopLevelWindowExtSetTitlewxStringCR(this, title);
+    if (*m_wxTopLevelWindowExtSetTitle__wxStringCR != NULL){
+      return m_wxTopLevelWindowExtSetTitle__wxStringCR(this, title);
     }
   }
   wxTopLevelWindowExtShouldPreventAppExitFunc m_wxTopLevelWindowExtShouldPreventAppExit = NULL;
@@ -1524,12 +1524,12 @@ public:
       return res;
     }
   }
-  wxTopLevelWindowExtShowFullScreenboollongFunc m_wxTopLevelWindowExtShowFullScreenboollong = NULL;
+  wxTopLevelWindowExtShowFullScreen__boollongFunc m_wxTopLevelWindowExtShowFullScreen__boollong = NULL;
   virtual bool ShowFullScreen(bool show, long style = wxFULLSCREEN_ALL) override
   {
     bool res = wxTopLevelWindow::ShowFullScreen(show, style);
-    if (*m_wxTopLevelWindowExtShowFullScreenboollong != NULL){
-      return m_wxTopLevelWindowExtShowFullScreenboollong(this, show, style, res);
+    if (*m_wxTopLevelWindowExtShowFullScreen__boollong != NULL){
+      return m_wxTopLevelWindowExtShowFullScreen__boollong(this, show, style, res);
     }
     else {
       return res;
@@ -1543,87 +1543,87 @@ public:
       return m_wxTopLevelWindowExtShowWithoutActivating(this);
     }
   }
-  wxTopLevelWindowExtWXReservedTLW1voidPFunc m_wxTopLevelWindowExtWXReservedTLW1voidP = NULL;
+  wxTopLevelWindowExtWXReservedTLW1__voidPFunc m_wxTopLevelWindowExtWXReservedTLW1__voidP = NULL;
   virtual void* WXReservedTLW1(void* param0) override
   {
     void* res = wxTopLevelWindow::WXReservedTLW1(param0);
-    if (*m_wxTopLevelWindowExtWXReservedTLW1voidP != NULL){
-      return m_wxTopLevelWindowExtWXReservedTLW1voidP(this, param0, res);
+    if (*m_wxTopLevelWindowExtWXReservedTLW1__voidP != NULL){
+      return m_wxTopLevelWindowExtWXReservedTLW1__voidP(this, param0, res);
     }
     else {
       return res;
     }
   }
-  wxTopLevelWindowExtWXReservedTLW2voidPFunc m_wxTopLevelWindowExtWXReservedTLW2voidP = NULL;
+  wxTopLevelWindowExtWXReservedTLW2__voidPFunc m_wxTopLevelWindowExtWXReservedTLW2__voidP = NULL;
   virtual void* WXReservedTLW2(void* param0) override
   {
     void* res = wxTopLevelWindow::WXReservedTLW2(param0);
-    if (*m_wxTopLevelWindowExtWXReservedTLW2voidP != NULL){
-      return m_wxTopLevelWindowExtWXReservedTLW2voidP(this, param0, res);
+    if (*m_wxTopLevelWindowExtWXReservedTLW2__voidP != NULL){
+      return m_wxTopLevelWindowExtWXReservedTLW2__voidP(this, param0, res);
     }
     else {
       return res;
     }
   }
-  wxTopLevelWindowExtWXReservedTLW3voidPFunc m_wxTopLevelWindowExtWXReservedTLW3voidP = NULL;
+  wxTopLevelWindowExtWXReservedTLW3__voidPFunc m_wxTopLevelWindowExtWXReservedTLW3__voidP = NULL;
   virtual void* WXReservedTLW3(void* param0) override
   {
     void* res = wxTopLevelWindow::WXReservedTLW3(param0);
-    if (*m_wxTopLevelWindowExtWXReservedTLW3voidP != NULL){
-      return m_wxTopLevelWindowExtWXReservedTLW3voidP(this, param0, res);
+    if (*m_wxTopLevelWindowExtWXReservedTLW3__voidP != NULL){
+      return m_wxTopLevelWindowExtWXReservedTLW3__voidP(this, param0, res);
     }
     else {
       return res;
     }
   }
-  wxTopLevelWindowExt(wxTopLevelWindowExtDestroyFunc a_Destroy, wxTopLevelWindowExtDoCentreintFunc a_DoCentreint, wxTopLevelWindowExtDoClientToScreenintPintPFunc a_DoClientToScreenintPintP, wxTopLevelWindowExtDoGetScreenPositionintPintPFunc a_DoGetScreenPositionintPintP, wxTopLevelWindowExtDoScreenToClientintPintPFunc a_DoScreenToClientintPintP, wxTopLevelWindowExtDoUpdateWindowUIwxUpdateUIEventRFunc a_DoUpdateWindowUIwxUpdateUIEventR, wxTopLevelWindowExtEnableCloseButtonboolFunc a_EnableCloseButtonbool, wxTopLevelWindowExtEnableFullScreenViewboollongFunc a_EnableFullScreenViewboollong, wxTopLevelWindowExtEnableMaximizeButtonboolFunc a_EnableMaximizeButtonbool, wxTopLevelWindowExtEnableMinimizeButtonboolFunc a_EnableMinimizeButtonbool, wxTopLevelWindowExtGetClassInfoFunc a_GetClassInfo, wxTopLevelWindowExtGetClientAreaOriginFunc a_GetClientAreaOrigin, wxTopLevelWindowExtGetContentProtectionFunc a_GetContentProtection, wxTopLevelWindowExtGetEventHashTableFunc a_GetEventHashTable, wxTopLevelWindowExtGetEventTableFunc a_GetEventTable, wxTopLevelWindowExtGetLabelFunc a_GetLabel, wxTopLevelWindowExtGetRectForTopLevelChildrenintPintPintPintPFunc a_GetRectForTopLevelChildrenintPintPintPintP, wxTopLevelWindowExtGetTitleFunc a_GetTitle, wxTopLevelWindowExtIconizeboolFunc a_Iconizebool, wxTopLevelWindowExtIsActiveFunc a_IsActive, wxTopLevelWindowExtIsAlwaysMaximizedFunc a_IsAlwaysMaximized, wxTopLevelWindowExtIsFullScreenFunc a_IsFullScreen, wxTopLevelWindowExtIsIconizedFunc a_IsIconized, wxTopLevelWindowExtIsMaximizedFunc a_IsMaximized, wxTopLevelWindowExtIsOneOfBarswxWindowCPFunc a_IsOneOfBarswxWindowCP, wxTopLevelWindowExtIsTopLevelFunc a_IsTopLevel, wxTopLevelWindowExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc a_IsTopNavigationDomainwxWindowBaseNNavigationKind, wxTopLevelWindowExtIsVisibleFunc a_IsVisible, wxTopLevelWindowExtLayoutFunc a_Layout, wxTopLevelWindowExtMaximizeboolFunc a_Maximizebool, wxTopLevelWindowExtOSXIsModifiedFunc a_OSXIsModified, wxTopLevelWindowExtOSXSetModifiedboolFunc a_OSXSetModifiedbool, wxTopLevelWindowExtRequestUserAttentionintFunc a_RequestUserAttentionint, wxTopLevelWindowExtRestoreFunc a_Restore, wxTopLevelWindowExtSetContentProtectionwxContentProtectionFunc a_SetContentProtectionwxContentProtection, wxTopLevelWindowExtSetIconswxIconBundleCRFunc a_SetIconswxIconBundleCR, wxTopLevelWindowExtSetLabelwxStringCRFunc a_SetLabelwxStringCR, wxTopLevelWindowExtSetMaxSizewxSizeCRFunc a_SetMaxSizewxSizeCR, wxTopLevelWindowExtSetMinSizewxSizeCRFunc a_SetMinSizewxSizeCR, wxTopLevelWindowExtSetRepresentedFilenamewxStringCRFunc a_SetRepresentedFilenamewxStringCR, wxTopLevelWindowExtSetTitlewxStringCRFunc a_SetTitlewxStringCR, wxTopLevelWindowExtShouldPreventAppExitFunc a_ShouldPreventAppExit, wxTopLevelWindowExtShowFullScreenboollongFunc a_ShowFullScreenboollong, wxTopLevelWindowExtShowWithoutActivatingFunc a_ShowWithoutActivating, wxTopLevelWindowExtWXReservedTLW1voidPFunc a_WXReservedTLW1voidP, wxTopLevelWindowExtWXReservedTLW2voidPFunc a_WXReservedTLW2voidP, wxTopLevelWindowExtWXReservedTLW3voidPFunc a_WXReservedTLW3voidP): wxTopLevelWindow() {
+  wxTopLevelWindowExt(wxTopLevelWindowExtDestroyFunc a_Destroy, wxTopLevelWindowExtDoCentre__intFunc a_DoCentre__int, wxTopLevelWindowExtDoClientToScreen__intPintPFunc a_DoClientToScreen__intPintP, wxTopLevelWindowExtDoGetScreenPosition__intPintPFunc a_DoGetScreenPosition__intPintP, wxTopLevelWindowExtDoScreenToClient__intPintPFunc a_DoScreenToClient__intPintP, wxTopLevelWindowExtDoUpdateWindowUI__wxUpdateUIEventRFunc a_DoUpdateWindowUI__wxUpdateUIEventR, wxTopLevelWindowExtEnableCloseButton__boolFunc a_EnableCloseButton__bool, wxTopLevelWindowExtEnableFullScreenView__boollongFunc a_EnableFullScreenView__boollong, wxTopLevelWindowExtEnableMaximizeButton__boolFunc a_EnableMaximizeButton__bool, wxTopLevelWindowExtEnableMinimizeButton__boolFunc a_EnableMinimizeButton__bool, wxTopLevelWindowExtGetClassInfoFunc a_GetClassInfo, wxTopLevelWindowExtGetClientAreaOriginFunc a_GetClientAreaOrigin, wxTopLevelWindowExtGetContentProtectionFunc a_GetContentProtection, wxTopLevelWindowExtGetEventHashTableFunc a_GetEventHashTable, wxTopLevelWindowExtGetEventTableFunc a_GetEventTable, wxTopLevelWindowExtGetLabelFunc a_GetLabel, wxTopLevelWindowExtGetRectForTopLevelChildren__intPintPintPintPFunc a_GetRectForTopLevelChildren__intPintPintPintP, wxTopLevelWindowExtGetTitleFunc a_GetTitle, wxTopLevelWindowExtIconize__boolFunc a_Iconize__bool, wxTopLevelWindowExtIsActiveFunc a_IsActive, wxTopLevelWindowExtIsAlwaysMaximizedFunc a_IsAlwaysMaximized, wxTopLevelWindowExtIsFullScreenFunc a_IsFullScreen, wxTopLevelWindowExtIsIconizedFunc a_IsIconized, wxTopLevelWindowExtIsMaximizedFunc a_IsMaximized, wxTopLevelWindowExtIsOneOfBars__wxWindowCPFunc a_IsOneOfBars__wxWindowCP, wxTopLevelWindowExtIsTopLevelFunc a_IsTopLevel, wxTopLevelWindowExtIsTopNavigationDomain__wxWindowBaseNNavigationKindFunc a_IsTopNavigationDomain__wxWindowBaseNNavigationKind, wxTopLevelWindowExtIsVisibleFunc a_IsVisible, wxTopLevelWindowExtLayoutFunc a_Layout, wxTopLevelWindowExtMaximize__boolFunc a_Maximize__bool, wxTopLevelWindowExtOSXIsModifiedFunc a_OSXIsModified, wxTopLevelWindowExtOSXSetModified__boolFunc a_OSXSetModified__bool, wxTopLevelWindowExtRequestUserAttention__intFunc a_RequestUserAttention__int, wxTopLevelWindowExtRestoreFunc a_Restore, wxTopLevelWindowExtSetContentProtection__wxContentProtectionFunc a_SetContentProtection__wxContentProtection, wxTopLevelWindowExtSetIcons__wxIconBundleCRFunc a_SetIcons__wxIconBundleCR, wxTopLevelWindowExtSetLabel__wxStringCRFunc a_SetLabel__wxStringCR, wxTopLevelWindowExtSetMaxSize__wxSizeCRFunc a_SetMaxSize__wxSizeCR, wxTopLevelWindowExtSetMinSize__wxSizeCRFunc a_SetMinSize__wxSizeCR, wxTopLevelWindowExtSetRepresentedFilename__wxStringCRFunc a_SetRepresentedFilename__wxStringCR, wxTopLevelWindowExtSetTitle__wxStringCRFunc a_SetTitle__wxStringCR, wxTopLevelWindowExtShouldPreventAppExitFunc a_ShouldPreventAppExit, wxTopLevelWindowExtShowFullScreen__boollongFunc a_ShowFullScreen__boollong, wxTopLevelWindowExtShowWithoutActivatingFunc a_ShowWithoutActivating, wxTopLevelWindowExtWXReservedTLW1__voidPFunc a_WXReservedTLW1__voidP, wxTopLevelWindowExtWXReservedTLW2__voidPFunc a_WXReservedTLW2__voidP, wxTopLevelWindowExtWXReservedTLW3__voidPFunc a_WXReservedTLW3__voidP): wxTopLevelWindow() {
     m_wxTopLevelWindowExtDestroy = a_Destroy;
-    m_wxTopLevelWindowExtDoCentreint = a_DoCentreint;
-    m_wxTopLevelWindowExtDoClientToScreenintPintP = a_DoClientToScreenintPintP;
-    m_wxTopLevelWindowExtDoGetScreenPositionintPintP = a_DoGetScreenPositionintPintP;
-    m_wxTopLevelWindowExtDoScreenToClientintPintP = a_DoScreenToClientintPintP;
-    m_wxTopLevelWindowExtDoUpdateWindowUIwxUpdateUIEventR = a_DoUpdateWindowUIwxUpdateUIEventR;
-    m_wxTopLevelWindowExtEnableCloseButtonbool = a_EnableCloseButtonbool;
-    m_wxTopLevelWindowExtEnableFullScreenViewboollong = a_EnableFullScreenViewboollong;
-    m_wxTopLevelWindowExtEnableMaximizeButtonbool = a_EnableMaximizeButtonbool;
-    m_wxTopLevelWindowExtEnableMinimizeButtonbool = a_EnableMinimizeButtonbool;
+    m_wxTopLevelWindowExtDoCentre__int = a_DoCentre__int;
+    m_wxTopLevelWindowExtDoClientToScreen__intPintP = a_DoClientToScreen__intPintP;
+    m_wxTopLevelWindowExtDoGetScreenPosition__intPintP = a_DoGetScreenPosition__intPintP;
+    m_wxTopLevelWindowExtDoScreenToClient__intPintP = a_DoScreenToClient__intPintP;
+    m_wxTopLevelWindowExtDoUpdateWindowUI__wxUpdateUIEventR = a_DoUpdateWindowUI__wxUpdateUIEventR;
+    m_wxTopLevelWindowExtEnableCloseButton__bool = a_EnableCloseButton__bool;
+    m_wxTopLevelWindowExtEnableFullScreenView__boollong = a_EnableFullScreenView__boollong;
+    m_wxTopLevelWindowExtEnableMaximizeButton__bool = a_EnableMaximizeButton__bool;
+    m_wxTopLevelWindowExtEnableMinimizeButton__bool = a_EnableMinimizeButton__bool;
     m_wxTopLevelWindowExtGetClassInfo = a_GetClassInfo;
     m_wxTopLevelWindowExtGetClientAreaOrigin = a_GetClientAreaOrigin;
     m_wxTopLevelWindowExtGetContentProtection = a_GetContentProtection;
     m_wxTopLevelWindowExtGetEventHashTable = a_GetEventHashTable;
     m_wxTopLevelWindowExtGetEventTable = a_GetEventTable;
     m_wxTopLevelWindowExtGetLabel = a_GetLabel;
-    m_wxTopLevelWindowExtGetRectForTopLevelChildrenintPintPintPintP = a_GetRectForTopLevelChildrenintPintPintPintP;
+    m_wxTopLevelWindowExtGetRectForTopLevelChildren__intPintPintPintP = a_GetRectForTopLevelChildren__intPintPintPintP;
     m_wxTopLevelWindowExtGetTitle = a_GetTitle;
-    m_wxTopLevelWindowExtIconizebool = a_Iconizebool;
+    m_wxTopLevelWindowExtIconize__bool = a_Iconize__bool;
     m_wxTopLevelWindowExtIsActive = a_IsActive;
     m_wxTopLevelWindowExtIsAlwaysMaximized = a_IsAlwaysMaximized;
     m_wxTopLevelWindowExtIsFullScreen = a_IsFullScreen;
     m_wxTopLevelWindowExtIsIconized = a_IsIconized;
     m_wxTopLevelWindowExtIsMaximized = a_IsMaximized;
-    m_wxTopLevelWindowExtIsOneOfBarswxWindowCP = a_IsOneOfBarswxWindowCP;
+    m_wxTopLevelWindowExtIsOneOfBars__wxWindowCP = a_IsOneOfBars__wxWindowCP;
     m_wxTopLevelWindowExtIsTopLevel = a_IsTopLevel;
-    m_wxTopLevelWindowExtIsTopNavigationDomainwxWindowBaseNNavigationKind = a_IsTopNavigationDomainwxWindowBaseNNavigationKind;
+    m_wxTopLevelWindowExtIsTopNavigationDomain__wxWindowBaseNNavigationKind = a_IsTopNavigationDomain__wxWindowBaseNNavigationKind;
     m_wxTopLevelWindowExtIsVisible = a_IsVisible;
     m_wxTopLevelWindowExtLayout = a_Layout;
-    m_wxTopLevelWindowExtMaximizebool = a_Maximizebool;
+    m_wxTopLevelWindowExtMaximize__bool = a_Maximize__bool;
     m_wxTopLevelWindowExtOSXIsModified = a_OSXIsModified;
-    m_wxTopLevelWindowExtOSXSetModifiedbool = a_OSXSetModifiedbool;
-    m_wxTopLevelWindowExtRequestUserAttentionint = a_RequestUserAttentionint;
+    m_wxTopLevelWindowExtOSXSetModified__bool = a_OSXSetModified__bool;
+    m_wxTopLevelWindowExtRequestUserAttention__int = a_RequestUserAttention__int;
     m_wxTopLevelWindowExtRestore = a_Restore;
-    m_wxTopLevelWindowExtSetContentProtectionwxContentProtection = a_SetContentProtectionwxContentProtection;
-    m_wxTopLevelWindowExtSetIconswxIconBundleCR = a_SetIconswxIconBundleCR;
-    m_wxTopLevelWindowExtSetLabelwxStringCR = a_SetLabelwxStringCR;
-    m_wxTopLevelWindowExtSetMaxSizewxSizeCR = a_SetMaxSizewxSizeCR;
-    m_wxTopLevelWindowExtSetMinSizewxSizeCR = a_SetMinSizewxSizeCR;
-    m_wxTopLevelWindowExtSetRepresentedFilenamewxStringCR = a_SetRepresentedFilenamewxStringCR;
-    m_wxTopLevelWindowExtSetTitlewxStringCR = a_SetTitlewxStringCR;
+    m_wxTopLevelWindowExtSetContentProtection__wxContentProtection = a_SetContentProtection__wxContentProtection;
+    m_wxTopLevelWindowExtSetIcons__wxIconBundleCR = a_SetIcons__wxIconBundleCR;
+    m_wxTopLevelWindowExtSetLabel__wxStringCR = a_SetLabel__wxStringCR;
+    m_wxTopLevelWindowExtSetMaxSize__wxSizeCR = a_SetMaxSize__wxSizeCR;
+    m_wxTopLevelWindowExtSetMinSize__wxSizeCR = a_SetMinSize__wxSizeCR;
+    m_wxTopLevelWindowExtSetRepresentedFilename__wxStringCR = a_SetRepresentedFilename__wxStringCR;
+    m_wxTopLevelWindowExtSetTitle__wxStringCR = a_SetTitle__wxStringCR;
     m_wxTopLevelWindowExtShouldPreventAppExit = a_ShouldPreventAppExit;
-    m_wxTopLevelWindowExtShowFullScreenboollong = a_ShowFullScreenboollong;
+    m_wxTopLevelWindowExtShowFullScreen__boollong = a_ShowFullScreen__boollong;
     m_wxTopLevelWindowExtShowWithoutActivating = a_ShowWithoutActivating;
-    m_wxTopLevelWindowExtWXReservedTLW1voidP = a_WXReservedTLW1voidP;
-    m_wxTopLevelWindowExtWXReservedTLW2voidP = a_WXReservedTLW2voidP;
-    m_wxTopLevelWindowExtWXReservedTLW3voidP = a_WXReservedTLW3voidP;
+    m_wxTopLevelWindowExtWXReservedTLW1__voidP = a_WXReservedTLW1__voidP;
+    m_wxTopLevelWindowExtWXReservedTLW2__voidP = a_WXReservedTLW2__voidP;
+    m_wxTopLevelWindowExtWXReservedTLW3__voidP = a_WXReservedTLW3__voidP;
   }
 };
 
