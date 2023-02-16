@@ -5,57 +5,58 @@
 #include <wx/vidmode.h>
 
 class wxButtonBaseExt;
-typedef bool (*wxButtonBaseExtAcceptsFocusFunc)(const wxButtonBaseExt* self);
-typedef bool (*wxButtonBaseExtAcceptsFocusFromKeyboardFunc)(const wxButtonBaseExt* self);
-typedef bool (*wxButtonBaseExtAcceptsFocusRecursivelyFunc)(const wxButtonBaseExt* self);
+typedef bool (*wxButtonBaseExtAcceptsFocusFunc)(const wxButtonBaseExt* self, bool res);
+typedef bool (*wxButtonBaseExtAcceptsFocusFromKeyboardFunc)(const wxButtonBaseExt* self, bool res);
+typedef bool (*wxButtonBaseExtAcceptsFocusRecursivelyFunc)(const wxButtonBaseExt* self, bool res);
 typedef void (*wxButtonBaseExtAddChildwxWindowBasePFunc)(const wxButtonBaseExt* self, wxWindowBase* child);
 typedef void (*wxButtonBaseExtAddPendingEventwxEventCRFunc)(const wxButtonBaseExt* self, wxEvent const& event);
-typedef wxCoord (*wxButtonBaseExtAdjustForLayoutDirectionwxCoordwxCoordwxCoordFunc)(const wxButtonBaseExt* self, wxCoord x, wxCoord width, wxCoord widthTotal);
+typedef wxCoord (*wxButtonBaseExtAdjustForLayoutDirectionwxCoordwxCoordwxCoordFunc)(const wxButtonBaseExt* self, wxCoord x, wxCoord width, wxCoord widthTotal, wxCoord res);
 typedef void (*wxButtonBaseExtAdjustForParentClientOriginintRintRintFunc)(const wxButtonBaseExt* self, int& x, int& y, int sizeFlags);
-typedef void (*wxButtonBaseExtAlwaysShowScrollbarsboolboolFunc)(const wxButtonBaseExt* self, bool param0, bool param1);
+typedef void (*wxButtonBaseExtAlwaysShowScrollbarsboolboolFunc)(const wxButtonBaseExt* self, bool horz, bool vert);
 typedef void (*wxButtonBaseExtAssociateHandleWXWidgetFunc)(const wxButtonBaseExt* self, WXWidget param0);
-typedef bool (*wxButtonBaseExtBeginRepositioningChildrenFunc)(const wxButtonBaseExt* self);
-typedef bool (*wxButtonBaseExtCanApplyThemeBorderFunc)(const wxButtonBaseExt* self);
-typedef bool (*wxButtonBaseExtCanBeFocusedFunc)(const wxButtonBaseExt* self);
-typedef bool (*wxButtonBaseExtCanBeOutsideClientAreaFunc)(const wxButtonBaseExt* self);
-typedef bool (*wxButtonBaseExtCanScrollintFunc)(const wxButtonBaseExt* self, int orient);
-typedef bool (*wxButtonBaseExtCanSetTransparentFunc)(const wxButtonBaseExt* self);
+typedef bool (*wxButtonBaseExtBeginRepositioningChildrenFunc)(const wxButtonBaseExt* self, bool res);
+typedef bool (*wxButtonBaseExtCanApplyThemeBorderFunc)(const wxButtonBaseExt* self, bool res);
+typedef bool (*wxButtonBaseExtCanBeFocusedFunc)(const wxButtonBaseExt* self, bool res);
+typedef bool (*wxButtonBaseExtCanBeOutsideClientAreaFunc)(const wxButtonBaseExt* self, bool res);
+typedef bool (*wxButtonBaseExtCanScrollintFunc)(const wxButtonBaseExt* self, int orient, bool res);
+typedef bool (*wxButtonBaseExtCanSetTransparentFunc)(const wxButtonBaseExt* self, bool res);
 typedef void (*wxButtonBaseExtClearBackgroundFunc)(const wxButtonBaseExt* self);
-typedef wxSize (*wxButtonBaseExtClientToWindowSizewxSizeCRFunc)(const wxButtonBaseExt* self, wxSize const& size);
-typedef wxObjectRefData* (*wxButtonBaseExtCloneRefDatawxObjectRefDataCPFunc)(const wxButtonBaseExt* self, wxObjectRefData const* data);
+typedef wxSize (*wxButtonBaseExtClientToWindowSizewxSizeCRFunc)(const wxButtonBaseExt* self, wxSize const& size, wxSize res);
+typedef wxObjectRefData* (*wxButtonBaseExtCloneRefDatawxObjectRefDataCPFunc)(const wxButtonBaseExt* self, wxObjectRefData const* data, wxObjectRefData* res);
 typedef void (*wxButtonBaseExtCommandwxCommandEventRFunc)(const wxButtonBaseExt* self, wxCommandEvent& event);
-typedef wxObjectRefData* (*wxButtonBaseExtCreateRefDataFunc)(const wxButtonBaseExt* self);
-typedef bool (*wxButtonBaseExtDestroyFunc)(const wxButtonBaseExt* self);
+typedef wxObjectRefData* (*wxButtonBaseExtCreateRefDataFunc)(const wxButtonBaseExt* self, wxObjectRefData* res);
+typedef bool (*wxButtonBaseExtDestroyFunc)(const wxButtonBaseExt* self, bool res);
 typedef void (*wxButtonBaseExtDissociateHandleFunc)(const wxButtonBaseExt* self);
 typedef void (*wxButtonBaseExtDoCaptureMouseFunc)(const wxButtonBaseExt* self);
 typedef void (*wxButtonBaseExtDoCentreintFunc)(const wxButtonBaseExt* self, int dir);
 typedef void (*wxButtonBaseExtDoClientToScreenintPintPFunc)(const wxButtonBaseExt* self, int* x, int* y);
-typedef void (*wxButtonBaseExtDoEnableboolFunc)(const wxButtonBaseExt* self, bool param0);
+typedef void (*wxButtonBaseExtDoEnableboolFunc)(const wxButtonBaseExt* self, bool enable);
 typedef void (*wxButtonBaseExtDoFreezeFunc)(const wxButtonBaseExt* self);
-typedef bool (*wxButtonBaseExtDoGetAuthNeededFunc)(const wxButtonBaseExt* self);
-typedef int (*wxButtonBaseExtDoGetBestClientHeightintFunc)(const wxButtonBaseExt* self, int param0);
-typedef wxSize (*wxButtonBaseExtDoGetBestClientSizeFunc)(const wxButtonBaseExt* self);
-typedef int (*wxButtonBaseExtDoGetBestClientWidthintFunc)(const wxButtonBaseExt* self, int param0);
-typedef wxSize (*wxButtonBaseExtDoGetBestSizeFunc)(const wxButtonBaseExt* self);
-typedef wxBitmap (*wxButtonBaseExtDoGetBitmapwxAnyButtonBaseNStateFunc)(const wxButtonBaseExt* self, wxAnyButtonBase::State which);
-typedef wxSize (*wxButtonBaseExtDoGetBitmapMarginsFunc)(const wxButtonBaseExt* self);
-typedef void* (*wxButtonBaseExtDoGetClientDataFunc)(const wxButtonBaseExt* self);
-typedef wxClientData* (*wxButtonBaseExtDoGetClientObjectFunc)(const wxButtonBaseExt* self);
+typedef bool (*wxButtonBaseExtDoGetAuthNeededFunc)(const wxButtonBaseExt* self, bool res);
+typedef int (*wxButtonBaseExtDoGetBestClientHeightintFunc)(const wxButtonBaseExt* self, int param0, int res);
+typedef wxSize (*wxButtonBaseExtDoGetBestClientSizeFunc)(const wxButtonBaseExt* self, wxSize res);
+typedef int (*wxButtonBaseExtDoGetBestClientWidthintFunc)(const wxButtonBaseExt* self, int param0, int res);
+typedef wxSize (*wxButtonBaseExtDoGetBestSizeFunc)(const wxButtonBaseExt* self, wxSize res);
+typedef wxBitmap (*wxButtonBaseExtDoGetBitmapwxAnyButtonBaseNStateFunc)(const wxButtonBaseExt* self, wxAnyButtonBase::State which, wxBitmap res);
+typedef wxSize (*wxButtonBaseExtDoGetBitmapMarginsFunc)(const wxButtonBaseExt* self, wxSize res);
+typedef void* (*wxButtonBaseExtDoGetClientDataFunc)(const wxButtonBaseExt* self, void* res);
+typedef wxClientData* (*wxButtonBaseExtDoGetClientObjectFunc)(const wxButtonBaseExt* self, wxClientData* res);
 typedef void (*wxButtonBaseExtDoGetClientSizeintPintPFunc)(const wxButtonBaseExt* self, int* width, int* height);
 typedef void (*wxButtonBaseExtDoGetPositionintPintPFunc)(const wxButtonBaseExt* self, int* x, int* y);
 typedef void (*wxButtonBaseExtDoGetScreenPositionintPintPFunc)(const wxButtonBaseExt* self, int* x, int* y);
 typedef void (*wxButtonBaseExtDoGetSizeintPintPFunc)(const wxButtonBaseExt* self, int* width, int* height);
-typedef wxSize (*wxButtonBaseExtDoGetSizeFromTextSizeintintFunc)(const wxButtonBaseExt* self, int xlen, int ylen);
-typedef void (*wxButtonBaseExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCPFunc)(const wxButtonBaseExt* self, wxString const& string, int* x, int* y, int* descent, int* externalLeading, wxFont const* font);
-typedef wxSize (*wxButtonBaseExtDoGetVirtualSizeFunc)(const wxButtonBaseExt* self);
-typedef wxHitTest (*wxButtonBaseExtDoHitTestwxCoordwxCoordFunc)(const wxButtonBaseExt* self, wxCoord x, wxCoord y);
-typedef bool (*wxButtonBaseExtDoIsExposedintintintintFunc)(const wxButtonBaseExt* self, int x, int y, int w, int h);
-typedef bool (*wxButtonBaseExtDoIsExposedintintFunc)(const wxButtonBaseExt* self, int x, int y);
-typedef void (*wxButtonBaseExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrderFunc)(const wxButtonBaseExt* self, wxWindow* win, int move);
+typedef wxSize (*wxButtonBaseExtDoGetSizeFromClientSizewxSizeCRFunc)(const wxButtonBaseExt* self, wxSize const& size, wxSize res);
+typedef wxSize (*wxButtonBaseExtDoGetSizeFromTextSizeintintFunc)(const wxButtonBaseExt* self, int xlen, int ylen, wxSize res);
+typedef void (*wxButtonBaseExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCPFunc)(const wxButtonBaseExt* self, wxString const& string, int* x, int* y, int* descent, int* externalLeading, wxFont const* theFont);
+typedef wxSize (*wxButtonBaseExtDoGetVirtualSizeFunc)(const wxButtonBaseExt* self, wxSize res);
+typedef wxHitTest (*wxButtonBaseExtDoHitTestwxCoordwxCoordFunc)(const wxButtonBaseExt* self, wxCoord x, wxCoord y, wxHitTest res);
+typedef bool (*wxButtonBaseExtDoIsExposedintintintintFunc)(const wxButtonBaseExt* self, int x, int y, int w, int h, bool res);
+typedef bool (*wxButtonBaseExtDoIsExposedintintFunc)(const wxButtonBaseExt* self, int x, int y, bool res);
+typedef void (*wxButtonBaseExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrderFunc)(const wxButtonBaseExt* self, wxWindow* win, wxWindowBase::WindowOrder move);
 typedef void (*wxButtonBaseExtDoMoveWindowintintintintFunc)(const wxButtonBaseExt* self, int x, int y, int width, int height);
-typedef bool (*wxButtonBaseExtDoNavigateInintFunc)(const wxButtonBaseExt* self, int flags);
-typedef bool (*wxButtonBaseExtDoPhaseintFunc)(const wxButtonBaseExt* self, int phase);
-typedef bool (*wxButtonBaseExtDoPopupMenuwxMenuPintintFunc)(const wxButtonBaseExt* self, wxMenu* menu, int x, int y);
+typedef bool (*wxButtonBaseExtDoNavigateInintFunc)(const wxButtonBaseExt* self, int flags, bool res);
+typedef bool (*wxButtonBaseExtDoPhaseintFunc)(const wxButtonBaseExt* self, int phase, bool res);
+typedef bool (*wxButtonBaseExtDoPopupMenuwxMenuPintintFunc)(const wxButtonBaseExt* self, wxMenu* menu, int x, int y, bool res);
 typedef void (*wxButtonBaseExtDoReleaseMouseFunc)(const wxButtonBaseExt* self);
 typedef void (*wxButtonBaseExtDoScreenToClientintPintPFunc)(const wxButtonBaseExt* self, int* x, int* y);
 typedef void (*wxButtonBaseExtDoSetAuthNeededboolFunc)(const wxButtonBaseExt* self, bool param0);
@@ -66,7 +67,7 @@ typedef void (*wxButtonBaseExtDoSetBitmapPositionwxDirectionFunc)(const wxButton
 typedef void (*wxButtonBaseExtDoSetClientDatavoidPFunc)(const wxButtonBaseExt* self, void* data);
 typedef void (*wxButtonBaseExtDoSetClientObjectwxClientDataPFunc)(const wxButtonBaseExt* self, wxClientData* data);
 typedef void (*wxButtonBaseExtDoSetClientSizeintintFunc)(const wxButtonBaseExt* self, int width, int height);
-typedef bool (*wxButtonBaseExtDoSetLabelMarkupwxStringCRFunc)(const wxButtonBaseExt* self, wxString const& markup);
+typedef bool (*wxButtonBaseExtDoSetLabelMarkupwxStringCRFunc)(const wxButtonBaseExt* self, wxString const& markup, bool res);
 typedef void (*wxButtonBaseExtDoSetSizeintintintintintFunc)(const wxButtonBaseExt* self, int x, int y, int width, int height, int sizeFlags);
 typedef void (*wxButtonBaseExtDoSetSizeHintsintintintintintintFunc)(const wxButtonBaseExt* self, int minW, int minH, int maxW, int maxH, int incW, int incH);
 typedef void (*wxButtonBaseExtDoSetToolTipwxToolTipPFunc)(const wxButtonBaseExt* self, wxToolTip* tip);
@@ -76,102 +77,103 @@ typedef void (*wxButtonBaseExtDoSetWindowVariantwxWindowVariantFunc)(const wxBut
 typedef void (*wxButtonBaseExtDoThawFunc)(const wxButtonBaseExt* self);
 typedef void (*wxButtonBaseExtDoUpdateWindowUIwxUpdateUIEventRFunc)(const wxButtonBaseExt* self, wxUpdateUIEvent& event);
 typedef void (*wxButtonBaseExtDragAcceptFilesboolFunc)(const wxButtonBaseExt* self, bool accept);
-typedef bool (*wxButtonBaseExtEnableboolFunc)(const wxButtonBaseExt* self, bool enable);
-typedef bool (*wxButtonBaseExtEnableTouchEventsintFunc)(const wxButtonBaseExt* self, int param0);
-typedef void (*wxButtonBaseExtEnableVisibleFocusboolFunc)(const wxButtonBaseExt* self, bool param0);
+typedef bool (*wxButtonBaseExtEnableboolFunc)(const wxButtonBaseExt* self, bool enable, bool res);
+typedef bool (*wxButtonBaseExtEnableTouchEventsintFunc)(const wxButtonBaseExt* self, int eventsMask, bool res);
+typedef void (*wxButtonBaseExtEnableVisibleFocusboolFunc)(const wxButtonBaseExt* self, bool enabled);
 typedef void (*wxButtonBaseExtEndRepositioningChildrenFunc)(const wxButtonBaseExt* self);
 typedef void (*wxButtonBaseExtFitFunc)(const wxButtonBaseExt* self);
 typedef void (*wxButtonBaseExtFitInsideFunc)(const wxButtonBaseExt* self);
-typedef wxSize (*wxButtonBaseExtGetBestVirtualSizeFunc)(const wxButtonBaseExt* self);
-typedef int (*wxButtonBaseExtGetCharHeightFunc)(const wxButtonBaseExt* self);
-typedef int (*wxButtonBaseExtGetCharWidthFunc)(const wxButtonBaseExt* self);
-typedef wxClassInfo* (*wxButtonBaseExtGetClassInfoFunc)(const wxButtonBaseExt* self);
-typedef wxPoint (*wxButtonBaseExtGetClientAreaOriginFunc)(const wxButtonBaseExt* self);
+typedef wxSize (*wxButtonBaseExtGetBestVirtualSizeFunc)(const wxButtonBaseExt* self, wxSize res);
+typedef int (*wxButtonBaseExtGetCharHeightFunc)(const wxButtonBaseExt* self, int res);
+typedef int (*wxButtonBaseExtGetCharWidthFunc)(const wxButtonBaseExt* self, int res);
+typedef wxClassInfo* (*wxButtonBaseExtGetClassInfoFunc)(const wxButtonBaseExt* self, wxClassInfo* res);
+typedef wxPoint (*wxButtonBaseExtGetClientAreaOriginFunc)(const wxButtonBaseExt* self, wxPoint res);
 typedef void (*wxButtonBaseExtGetClientSizeConstraintintPintPFunc)(const wxButtonBaseExt* self, int* w, int* h);
-typedef double (*wxButtonBaseExtGetContentScaleFactorFunc)(const wxButtonBaseExt* self);
-typedef wxSize (*wxButtonBaseExtGetDPIFunc)(const wxButtonBaseExt* self);
-typedef double (*wxButtonBaseExtGetDPIScaleFactorFunc)(const wxButtonBaseExt* self);
-typedef wxVisualAttributes (*wxButtonBaseExtGetDefaultAttributesFunc)(const wxButtonBaseExt* self);
-typedef wxBorder (*wxButtonBaseExtGetDefaultBorderFunc)(const wxButtonBaseExt* self);
-typedef wxBorder (*wxButtonBaseExtGetDefaultBorderForControlFunc)(const wxButtonBaseExt* self);
-typedef wxDropTarget* (*wxButtonBaseExtGetDropTargetFunc)(const wxButtonBaseExt* self);
-typedef wxSize (*wxButtonBaseExtGetEffectiveMinSizeFunc)(const wxButtonBaseExt* self);
-typedef wxEventHashTable& (*wxButtonBaseExtGetEventHashTableFunc)(const wxButtonBaseExt* self);
-typedef wxEventTable const* (*wxButtonBaseExtGetEventTableFunc)(const wxButtonBaseExt* self);
-typedef WXWidget (*wxButtonBaseExtGetHandleFunc)(const wxButtonBaseExt* self);
-typedef wxString (*wxButtonBaseExtGetHelpTextAtPointwxPointCRwxHelpEventNOriginFunc)(const wxButtonBaseExt* self, wxPoint const& pt, wxHelpEvent::Origin origin);
-typedef wxString (*wxButtonBaseExtGetLabelFunc)(const wxButtonBaseExt* self);
-typedef wxString (*wxButtonBaseExtGetLabelTextFunc)(const wxButtonBaseExt* self);
-typedef wxLayoutDirection (*wxButtonBaseExtGetLayoutDirectionFunc)(const wxButtonBaseExt* self);
-typedef wxWindow* (*wxButtonBaseExtGetMainWindowOfCompositeControlFunc)(const wxButtonBaseExt* self);
-typedef wxSize (*wxButtonBaseExtGetMaxClientSizeFunc)(const wxButtonBaseExt* self);
-typedef wxSize (*wxButtonBaseExtGetMaxSizeFunc)(const wxButtonBaseExt* self);
-typedef wxSize (*wxButtonBaseExtGetMinClientSizeFunc)(const wxButtonBaseExt* self);
-typedef wxSize (*wxButtonBaseExtGetMinSizeFunc)(const wxButtonBaseExt* self);
-typedef wxString (*wxButtonBaseExtGetNameFunc)(const wxButtonBaseExt* self);
-typedef wxAnyButtonBase::State (*wxButtonBaseExtGetNormalStateFunc)(const wxButtonBaseExt* self);
+typedef double (*wxButtonBaseExtGetContentScaleFactorFunc)(const wxButtonBaseExt* self, double res);
+typedef wxSize (*wxButtonBaseExtGetDPIFunc)(const wxButtonBaseExt* self, wxSize res);
+typedef double (*wxButtonBaseExtGetDPIScaleFactorFunc)(const wxButtonBaseExt* self, double res);
+typedef wxVisualAttributes (*wxButtonBaseExtGetDefaultAttributesFunc)(const wxButtonBaseExt* self, wxVisualAttributes res);
+typedef wxBorder (*wxButtonBaseExtGetDefaultBorderFunc)(const wxButtonBaseExt* self, wxBorder res);
+typedef wxBorder (*wxButtonBaseExtGetDefaultBorderForControlFunc)(const wxButtonBaseExt* self, wxBorder res);
+typedef wxDropTarget* (*wxButtonBaseExtGetDropTargetFunc)(const wxButtonBaseExt* self, wxDropTarget* res);
+typedef wxSize (*wxButtonBaseExtGetEffectiveMinSizeFunc)(const wxButtonBaseExt* self, wxSize res);
+typedef wxEventHashTable& (*wxButtonBaseExtGetEventHashTableFunc)(const wxButtonBaseExt* self, wxEventHashTable& res);
+typedef wxEventTable const* (*wxButtonBaseExtGetEventTableFunc)(const wxButtonBaseExt* self, wxEventTable const* res);
+typedef WXWidget (*wxButtonBaseExtGetHandleFunc)(const wxButtonBaseExt* self, WXWidget res);
+typedef wxString (*wxButtonBaseExtGetHelpTextAtPointwxPointCRwxHelpEventNOriginFunc)(const wxButtonBaseExt* self, wxPoint const& pt, wxHelpEvent::Origin origin, wxString res);
+typedef wxString (*wxButtonBaseExtGetLabelFunc)(const wxButtonBaseExt* self, wxString res);
+typedef wxString (*wxButtonBaseExtGetLabelTextFunc)(const wxButtonBaseExt* self, wxString res);
+typedef wxLayoutDirection (*wxButtonBaseExtGetLayoutDirectionFunc)(const wxButtonBaseExt* self, wxLayoutDirection res);
+typedef wxWindow* (*wxButtonBaseExtGetMainWindowOfCompositeControlFunc)(const wxButtonBaseExt* self, wxWindow* res);
+typedef wxSize (*wxButtonBaseExtGetMaxClientSizeFunc)(const wxButtonBaseExt* self, wxSize res);
+typedef wxSize (*wxButtonBaseExtGetMaxSizeFunc)(const wxButtonBaseExt* self, wxSize res);
+typedef wxSize (*wxButtonBaseExtGetMinClientSizeFunc)(const wxButtonBaseExt* self, wxSize res);
+typedef wxSize (*wxButtonBaseExtGetMinSizeFunc)(const wxButtonBaseExt* self, wxSize res);
+typedef wxString (*wxButtonBaseExtGetNameFunc)(const wxButtonBaseExt* self, wxString res);
+typedef wxAnyButtonBase::State (*wxButtonBaseExtGetNormalStateFunc)(const wxButtonBaseExt* self, wxAnyButtonBase::State res);
 typedef void (*wxButtonBaseExtGetPositionConstraintintPintPFunc)(const wxButtonBaseExt* self, int* x, int* y);
-typedef int (*wxButtonBaseExtGetScrollPosintFunc)(const wxButtonBaseExt* self, int orient);
-typedef int (*wxButtonBaseExtGetScrollRangeintFunc)(const wxButtonBaseExt* self, int orient);
-typedef int (*wxButtonBaseExtGetScrollThumbintFunc)(const wxButtonBaseExt* self, int orient);
+typedef int (*wxButtonBaseExtGetScrollPosintFunc)(const wxButtonBaseExt* self, int orient, int res);
+typedef int (*wxButtonBaseExtGetScrollRangeintFunc)(const wxButtonBaseExt* self, int orient, int res);
+typedef int (*wxButtonBaseExtGetScrollThumbintFunc)(const wxButtonBaseExt* self, int orient, int res);
 typedef void (*wxButtonBaseExtGetSizeConstraintintPintPFunc)(const wxButtonBaseExt* self, int* w, int* h);
-typedef bool (*wxButtonBaseExtGetThemeEnabledFunc)(const wxButtonBaseExt* self);
-typedef wxValidator* (*wxButtonBaseExtGetValidatorFunc)(const wxButtonBaseExt* self);
-typedef wxSize (*wxButtonBaseExtGetWindowBorderSizeFunc)(const wxButtonBaseExt* self);
-typedef long (*wxButtonBaseExtGetWindowStyleFlagFunc)(const wxButtonBaseExt* self);
-typedef bool (*wxButtonBaseExtHasCaptureFunc)(const wxButtonBaseExt* self);
-typedef bool (*wxButtonBaseExtHasFocusFunc)(const wxButtonBaseExt* self);
-typedef bool (*wxButtonBaseExtHasMultiplePagesFunc)(const wxButtonBaseExt* self);
-typedef bool (*wxButtonBaseExtHasTransparentBackgroundFunc)(const wxButtonBaseExt* self);
-typedef bool (*wxButtonBaseExtHideWithEffectwxShowEffectunsignedintFunc)(const wxButtonBaseExt* self, wxShowEffect param0, unsigned int param1);
-typedef bool (*wxButtonBaseExtInformFirstDirectionintintintFunc)(const wxButtonBaseExt* self, int direction, int size, int availableOtherDir);
+typedef bool (*wxButtonBaseExtGetThemeEnabledFunc)(const wxButtonBaseExt* self, bool res);
+typedef wxByte (*wxButtonBaseExtGetTransparentFunc)(const wxButtonBaseExt* self, wxByte res);
+typedef wxValidator* (*wxButtonBaseExtGetValidatorFunc)(const wxButtonBaseExt* self, wxValidator* res);
+typedef wxSize (*wxButtonBaseExtGetWindowBorderSizeFunc)(const wxButtonBaseExt* self, wxSize res);
+typedef long (*wxButtonBaseExtGetWindowStyleFlagFunc)(const wxButtonBaseExt* self, long res);
+typedef bool (*wxButtonBaseExtHasCaptureFunc)(const wxButtonBaseExt* self, bool res);
+typedef bool (*wxButtonBaseExtHasFocusFunc)(const wxButtonBaseExt* self, bool res);
+typedef bool (*wxButtonBaseExtHasMultiplePagesFunc)(const wxButtonBaseExt* self, bool res);
+typedef bool (*wxButtonBaseExtHasTransparentBackgroundFunc)(const wxButtonBaseExt* self, bool res);
+typedef bool (*wxButtonBaseExtHideWithEffectwxShowEffectunsignedintFunc)(const wxButtonBaseExt* self, wxShowEffect effect, unsigned int timeout, bool res);
+typedef bool (*wxButtonBaseExtInformFirstDirectionintintintFunc)(const wxButtonBaseExt* self, int direction, int size, int availableOtherDir, bool res);
 typedef void (*wxButtonBaseExtInheritAttributesFunc)(const wxButtonBaseExt* self);
 typedef void (*wxButtonBaseExtInitDialogFunc)(const wxButtonBaseExt* self);
-typedef bool (*wxButtonBaseExtIsClientAreaChildwxWindowCPFunc)(const wxButtonBaseExt* self, wxWindow const* param0);
-typedef bool (*wxButtonBaseExtIsDoubleBufferedFunc)(const wxButtonBaseExt* self);
-typedef bool (*wxButtonBaseExtIsRetainedFunc)(const wxButtonBaseExt* self);
-typedef bool (*wxButtonBaseExtIsScrollbarAlwaysShownintFunc)(const wxButtonBaseExt* self, int param0);
-typedef bool (*wxButtonBaseExtIsShownFunc)(const wxButtonBaseExt* self);
-typedef bool (*wxButtonBaseExtIsShownOnScreenFunc)(const wxButtonBaseExt* self);
-typedef bool (*wxButtonBaseExtIsThisEnabledFunc)(const wxButtonBaseExt* self);
-typedef bool (*wxButtonBaseExtIsTopLevelFunc)(const wxButtonBaseExt* self);
-typedef bool (*wxButtonBaseExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc)(const wxButtonBaseExt* self, wxWindowBase::NavigationKind param0);
-typedef bool (*wxButtonBaseExtIsTransparentBackgroundSupportedwxStringPFunc)(const wxButtonBaseExt* self, wxString* reason);
-typedef bool (*wxButtonBaseExtLayoutFunc)(const wxButtonBaseExt* self);
-typedef bool (*wxButtonBaseExtLayoutPhase1intPFunc)(const wxButtonBaseExt* self, int* noChanges);
-typedef bool (*wxButtonBaseExtLayoutPhase2intPFunc)(const wxButtonBaseExt* self, int* noChanges);
+typedef bool (*wxButtonBaseExtIsClientAreaChildwxWindowCPFunc)(const wxButtonBaseExt* self, wxWindow const* param0, bool res);
+typedef bool (*wxButtonBaseExtIsDoubleBufferedFunc)(const wxButtonBaseExt* self, bool res);
+typedef bool (*wxButtonBaseExtIsRetainedFunc)(const wxButtonBaseExt* self, bool res);
+typedef bool (*wxButtonBaseExtIsScrollbarAlwaysShownintFunc)(const wxButtonBaseExt* self, int orient, bool res);
+typedef bool (*wxButtonBaseExtIsShownFunc)(const wxButtonBaseExt* self, bool res);
+typedef bool (*wxButtonBaseExtIsShownOnScreenFunc)(const wxButtonBaseExt* self, bool res);
+typedef bool (*wxButtonBaseExtIsThisEnabledFunc)(const wxButtonBaseExt* self, bool res);
+typedef bool (*wxButtonBaseExtIsTopLevelFunc)(const wxButtonBaseExt* self, bool res);
+typedef bool (*wxButtonBaseExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc)(const wxButtonBaseExt* self, wxWindowBase::NavigationKind param0, bool res);
+typedef bool (*wxButtonBaseExtIsTransparentBackgroundSupportedwxStringPFunc)(const wxButtonBaseExt* self, wxString* reason, bool res);
+typedef bool (*wxButtonBaseExtLayoutFunc)(const wxButtonBaseExt* self, bool res);
+typedef bool (*wxButtonBaseExtLayoutPhase1intPFunc)(const wxButtonBaseExt* self, int* noChanges, bool res);
+typedef bool (*wxButtonBaseExtLayoutPhase2intPFunc)(const wxButtonBaseExt* self, int* noChanges, bool res);
 typedef void (*wxButtonBaseExtLowerFunc)(const wxButtonBaseExt* self);
 typedef void (*wxButtonBaseExtMoveConstraintintintFunc)(const wxButtonBaseExt* self, int x, int y);
-typedef bool (*wxButtonBaseExtOnDynamicBindwxDynamicEventTableEntryRFunc)(const wxButtonBaseExt* self, wxDynamicEventTableEntry& param0);
+typedef bool (*wxButtonBaseExtOnDynamicBindwxDynamicEventTableEntryRFunc)(const wxButtonBaseExt* self, wxDynamicEventTableEntry& param0, bool res);
 typedef void (*wxButtonBaseExtOnInternalIdleFunc)(const wxButtonBaseExt* self);
 typedef void (*wxButtonBaseExtPrepareDCwxDCRFunc)(const wxButtonBaseExt* self, wxDC& param0);
-typedef bool (*wxButtonBaseExtProcessEventwxEventRFunc)(const wxButtonBaseExt* self, wxEvent& event);
+typedef bool (*wxButtonBaseExtProcessEventwxEventRFunc)(const wxButtonBaseExt* self, wxEvent& event, bool res);
 typedef void (*wxButtonBaseExtQueueEventwxEventPFunc)(const wxButtonBaseExt* self, wxEvent* event);
 typedef void (*wxButtonBaseExtRaiseFunc)(const wxButtonBaseExt* self);
 typedef void (*wxButtonBaseExtRefreshboolwxRectCPFunc)(const wxButtonBaseExt* self, bool eraseBackground, wxRect const* rect);
-typedef bool (*wxButtonBaseExtRegisterHotKeyintintintFunc)(const wxButtonBaseExt* self, int hotkeyId, int modifiers, int keycode);
+typedef bool (*wxButtonBaseExtRegisterHotKeyintintintFunc)(const wxButtonBaseExt* self, int hotkeyId, int modifiers, int keycode, bool res);
 typedef void (*wxButtonBaseExtRemoveChildwxWindowBasePFunc)(const wxButtonBaseExt* self, wxWindowBase* child);
-typedef bool (*wxButtonBaseExtReparentwxWindowBasePFunc)(const wxButtonBaseExt* self, wxWindowBase* newParent);
-typedef bool (*wxButtonBaseExtScrollLinesintFunc)(const wxButtonBaseExt* self, int param0);
-typedef bool (*wxButtonBaseExtScrollPagesintFunc)(const wxButtonBaseExt* self, int param0);
+typedef bool (*wxButtonBaseExtReparentwxWindowBasePFunc)(const wxButtonBaseExt* self, wxWindowBase* newParent, bool res);
+typedef bool (*wxButtonBaseExtScrollLinesintFunc)(const wxButtonBaseExt* self, int param0, bool res);
+typedef bool (*wxButtonBaseExtScrollPagesintFunc)(const wxButtonBaseExt* self, int param0, bool res);
 typedef void (*wxButtonBaseExtScrollWindowintintwxRectCPFunc)(const wxButtonBaseExt* self, int dx, int dy, wxRect const* rect);
-typedef bool (*wxButtonBaseExtSearchEventTablewxEventTableRwxEventRFunc)(const wxButtonBaseExt* self, wxEventTable& table, wxEvent& event);
-typedef bool (*wxButtonBaseExtSendIdleEventswxIdleEventRFunc)(const wxButtonBaseExt* self, wxIdleEvent& event);
+typedef bool (*wxButtonBaseExtSearchEventTablewxEventTableRwxEventRFunc)(const wxButtonBaseExt* self, wxEventTable& table, wxEvent& event, bool res);
+typedef bool (*wxButtonBaseExtSendIdleEventswxIdleEventRFunc)(const wxButtonBaseExt* self, wxIdleEvent& event, bool res);
 typedef void (*wxButtonBaseExtSendSizeEventintFunc)(const wxButtonBaseExt* self, int flags);
 typedef void (*wxButtonBaseExtSetAcceleratorTablewxAcceleratorTableCRFunc)(const wxButtonBaseExt* self, wxAcceleratorTable const& accel);
-typedef bool (*wxButtonBaseExtSetBackgroundColourwxColourCRFunc)(const wxButtonBaseExt* self, wxColour const& colour);
-typedef bool (*wxButtonBaseExtSetBackgroundStylewxBackgroundStyleFunc)(const wxButtonBaseExt* self, wxBackgroundStyle style);
+typedef bool (*wxButtonBaseExtSetBackgroundColourwxColourCRFunc)(const wxButtonBaseExt* self, wxColour const& colour, bool res);
+typedef bool (*wxButtonBaseExtSetBackgroundStylewxBackgroundStyleFunc)(const wxButtonBaseExt* self, wxBackgroundStyle style, bool res);
 typedef void (*wxButtonBaseExtSetCanFocusboolFunc)(const wxButtonBaseExt* self, bool param0);
 typedef void (*wxButtonBaseExtSetConstraintSizesboolFunc)(const wxButtonBaseExt* self, bool recurse);
-typedef bool (*wxButtonBaseExtSetCursorwxCursorCRFunc)(const wxButtonBaseExt* self, wxCursor const& cursor);
-typedef wxWindow* (*wxButtonBaseExtSetDefaultFunc)(const wxButtonBaseExt* self);
+typedef bool (*wxButtonBaseExtSetCursorwxCursorCRFunc)(const wxButtonBaseExt* self, wxCursor const& cursor, bool res);
+typedef wxWindow* (*wxButtonBaseExtSetDefaultFunc)(const wxButtonBaseExt* self, wxWindow* res);
 typedef void (*wxButtonBaseExtSetDoubleBufferedboolFunc)(const wxButtonBaseExt* self, bool param0);
 typedef void (*wxButtonBaseExtSetDropTargetwxDropTargetPFunc)(const wxButtonBaseExt* self, wxDropTarget* dropTarget);
 typedef void (*wxButtonBaseExtSetExtraStylelongFunc)(const wxButtonBaseExt* self, long exStyle);
 typedef void (*wxButtonBaseExtSetFocusFunc)(const wxButtonBaseExt* self);
 typedef void (*wxButtonBaseExtSetFocusFromKbdFunc)(const wxButtonBaseExt* self);
-typedef bool (*wxButtonBaseExtSetFontwxFontCRFunc)(const wxButtonBaseExt* self, wxFont const& font);
-typedef bool (*wxButtonBaseExtSetForegroundColourwxColourCRFunc)(const wxButtonBaseExt* self, wxColour const& colour);
+typedef bool (*wxButtonBaseExtSetFontwxFontCRFunc)(const wxButtonBaseExt* self, wxFont const& font, bool res);
+typedef bool (*wxButtonBaseExtSetForegroundColourwxColourCRFunc)(const wxButtonBaseExt* self, wxColour const& colour, bool res);
 typedef void (*wxButtonBaseExtSetIdwxWindowIDFunc)(const wxButtonBaseExt* self, wxWindowID winid);
 typedef void (*wxButtonBaseExtSetLabelwxStringCRFunc)(const wxButtonBaseExt* self, wxString const& label);
 typedef void (*wxButtonBaseExtSetLabelTextwxStringCRFunc)(const wxButtonBaseExt* self, wxString const& text);
@@ -184,86 +186,88 @@ typedef void (*wxButtonBaseExtSetNamewxStringCRFunc)(const wxButtonBaseExt* self
 typedef void (*wxButtonBaseExtSetNextHandlerwxEvtHandlerPFunc)(const wxButtonBaseExt* self, wxEvtHandler* handler);
 typedef void (*wxButtonBaseExtSetPreviousHandlerwxEvtHandlerPFunc)(const wxButtonBaseExt* self, wxEvtHandler* handler);
 typedef void (*wxButtonBaseExtSetScrollPosintintboolFunc)(const wxButtonBaseExt* self, int orient, int pos, bool refresh);
-typedef void (*wxButtonBaseExtSetScrollbarintintintintboolFunc)(const wxButtonBaseExt* self, int orient, int pos, int thumbvisible, int range, bool refresh);
+typedef void (*wxButtonBaseExtSetScrollbarintintintintboolFunc)(const wxButtonBaseExt* self, int orient, int pos, int thumbVisible, int range, bool refresh);
 typedef void (*wxButtonBaseExtSetSizeConstraintintintintintFunc)(const wxButtonBaseExt* self, int x, int y, int w, int h);
 typedef void (*wxButtonBaseExtSetSizeHintsintintintintintintFunc)(const wxButtonBaseExt* self, int minW, int minH, int maxW, int maxH, int incW, int incH);
 typedef void (*wxButtonBaseExtSetThemeEnabledboolFunc)(const wxButtonBaseExt* self, bool enableTheme);
-typedef bool (*wxButtonBaseExtSetTransparentwxByteFunc)(const wxButtonBaseExt* self, wxByte param0);
+typedef bool (*wxButtonBaseExtSetTransparentwxByteFunc)(const wxButtonBaseExt* self, wxByte alpha, bool res);
 typedef void (*wxButtonBaseExtSetValidatorwxValidatorCRFunc)(const wxButtonBaseExt* self, wxValidator const& validator);
 typedef void (*wxButtonBaseExtSetWindowStyleFlaglongFunc)(const wxButtonBaseExt* self, long style);
-typedef bool (*wxButtonBaseExtShouldInheritColoursFunc)(const wxButtonBaseExt* self);
-typedef bool (*wxButtonBaseExtShowboolFunc)(const wxButtonBaseExt* self, bool show);
-typedef bool (*wxButtonBaseExtShowWithEffectwxShowEffectunsignedintFunc)(const wxButtonBaseExt* self, wxShowEffect param0, unsigned int param1);
-typedef bool (*wxButtonBaseExtTransferDataFromWindowFunc)(const wxButtonBaseExt* self);
-typedef bool (*wxButtonBaseExtTransferDataToWindowFunc)(const wxButtonBaseExt* self);
-typedef bool (*wxButtonBaseExtTryAfterwxEventRFunc)(const wxButtonBaseExt* self, wxEvent& event);
-typedef bool (*wxButtonBaseExtTryBeforewxEventRFunc)(const wxButtonBaseExt* self, wxEvent& event);
-typedef bool (*wxButtonBaseExtUnregisterHotKeyintFunc)(const wxButtonBaseExt* self, int hotkeyId);
+typedef bool (*wxButtonBaseExtShouldInheritColoursFunc)(const wxButtonBaseExt* self, bool res);
+typedef bool (*wxButtonBaseExtShowboolFunc)(const wxButtonBaseExt* self, bool show, bool res);
+typedef bool (*wxButtonBaseExtShowWithEffectwxShowEffectunsignedintFunc)(const wxButtonBaseExt* self, wxShowEffect effect, unsigned int timeout, bool res);
+typedef bool (*wxButtonBaseExtTransferDataFromWindowFunc)(const wxButtonBaseExt* self, bool res);
+typedef bool (*wxButtonBaseExtTransferDataToWindowFunc)(const wxButtonBaseExt* self, bool res);
+typedef void (*wxButtonBaseExtTriggerScrollEventwxEventTypeFunc)(const wxButtonBaseExt* self, wxEventType scrollEvent);
+typedef bool (*wxButtonBaseExtTryAfterwxEventRFunc)(const wxButtonBaseExt* self, wxEvent& event, bool res);
+typedef bool (*wxButtonBaseExtTryBeforewxEventRFunc)(const wxButtonBaseExt* self, wxEvent& event, bool res);
+typedef bool (*wxButtonBaseExtUnregisterHotKeyintFunc)(const wxButtonBaseExt* self, int hotkeyId, bool res);
 typedef void (*wxButtonBaseExtUpdateFunc)(const wxButtonBaseExt* self);
 typedef void (*wxButtonBaseExtUpdateWindowUIlongFunc)(const wxButtonBaseExt* self, long flags);
-typedef bool (*wxButtonBaseExtValidateFunc)(const wxButtonBaseExt* self);
+typedef bool (*wxButtonBaseExtValidateFunc)(const wxButtonBaseExt* self, bool res);
 typedef void (*wxButtonBaseExtWXAdjustFontToOwnPPIwxFontRFunc)(const wxButtonBaseExt* self, wxFont& param0);
-typedef wxTextEntry const* (*wxButtonBaseExtWXGetTextEntryFunc)(const wxButtonBaseExt* self);
-typedef void* (*wxButtonBaseExtWXReservedEvtHandler1voidPFunc)(const wxButtonBaseExt* self, void* param0);
-typedef void* (*wxButtonBaseExtWXReservedEvtHandler2voidPFunc)(const wxButtonBaseExt* self, void* param0);
-typedef void* (*wxButtonBaseExtWXReservedWindow1voidPFunc)(const wxButtonBaseExt* self, void* param0);
-typedef void* (*wxButtonBaseExtWXReservedWindow2voidPFunc)(const wxButtonBaseExt* self, void* param0);
-typedef void* (*wxButtonBaseExtWXReservedWindow3voidPFunc)(const wxButtonBaseExt* self, void* param0);
+typedef wxTextEntry const* (*wxButtonBaseExtWXGetTextEntryFunc)(const wxButtonBaseExt* self, wxTextEntry const* res);
+typedef void* (*wxButtonBaseExtWXReservedEvtHandler1voidPFunc)(const wxButtonBaseExt* self, void* param0, void* res);
+typedef void* (*wxButtonBaseExtWXReservedEvtHandler2voidPFunc)(const wxButtonBaseExt* self, void* param0, void* res);
+typedef void* (*wxButtonBaseExtWXReservedWindow1voidPFunc)(const wxButtonBaseExt* self, void* param0, void* res);
+typedef void* (*wxButtonBaseExtWXReservedWindow2voidPFunc)(const wxButtonBaseExt* self, void* param0, void* res);
+typedef void* (*wxButtonBaseExtWXReservedWindow3voidPFunc)(const wxButtonBaseExt* self, void* param0, void* res);
 typedef void (*wxButtonBaseExtWXSetInitialFittingClientSizeintwxSizerPFunc)(const wxButtonBaseExt* self, int flags, wxSizer* sizer);
 typedef void (*wxButtonBaseExtWarpPointerintintFunc)(const wxButtonBaseExt* self, int x, int y);
-typedef wxSize (*wxButtonBaseExtWindowToClientSizewxSizeCRFunc)(const wxButtonBaseExt* self, wxSize const& size);
+typedef wxSize (*wxButtonBaseExtWindowToClientSizewxSizeCRFunc)(const wxButtonBaseExt* self, wxSize const& size, wxSize res);
 class wxButtonExt;
-typedef bool (*wxButtonExtAcceptsFocusFunc)(const wxButtonExt* self);
-typedef bool (*wxButtonExtAcceptsFocusFromKeyboardFunc)(const wxButtonExt* self);
-typedef bool (*wxButtonExtAcceptsFocusRecursivelyFunc)(const wxButtonExt* self);
+typedef bool (*wxButtonExtAcceptsFocusFunc)(const wxButtonExt* self, bool res);
+typedef bool (*wxButtonExtAcceptsFocusFromKeyboardFunc)(const wxButtonExt* self, bool res);
+typedef bool (*wxButtonExtAcceptsFocusRecursivelyFunc)(const wxButtonExt* self, bool res);
 typedef void (*wxButtonExtAddChildwxWindowBasePFunc)(const wxButtonExt* self, wxWindowBase* child);
 typedef void (*wxButtonExtAddPendingEventwxEventCRFunc)(const wxButtonExt* self, wxEvent const& event);
-typedef wxCoord (*wxButtonExtAdjustForLayoutDirectionwxCoordwxCoordwxCoordFunc)(const wxButtonExt* self, wxCoord x, wxCoord width, wxCoord widthTotal);
+typedef wxCoord (*wxButtonExtAdjustForLayoutDirectionwxCoordwxCoordwxCoordFunc)(const wxButtonExt* self, wxCoord x, wxCoord width, wxCoord widthTotal, wxCoord res);
 typedef void (*wxButtonExtAdjustForParentClientOriginintRintRintFunc)(const wxButtonExt* self, int& x, int& y, int sizeFlags);
-typedef void (*wxButtonExtAlwaysShowScrollbarsboolboolFunc)(const wxButtonExt* self, bool param0, bool param1);
+typedef void (*wxButtonExtAlwaysShowScrollbarsboolboolFunc)(const wxButtonExt* self, bool horz, bool vert);
 typedef void (*wxButtonExtAssociateHandleWXWidgetFunc)(const wxButtonExt* self, WXWidget param0);
-typedef bool (*wxButtonExtBeginRepositioningChildrenFunc)(const wxButtonExt* self);
-typedef bool (*wxButtonExtCanApplyThemeBorderFunc)(const wxButtonExt* self);
-typedef bool (*wxButtonExtCanBeFocusedFunc)(const wxButtonExt* self);
-typedef bool (*wxButtonExtCanBeOutsideClientAreaFunc)(const wxButtonExt* self);
-typedef bool (*wxButtonExtCanScrollintFunc)(const wxButtonExt* self, int orient);
-typedef bool (*wxButtonExtCanSetTransparentFunc)(const wxButtonExt* self);
+typedef bool (*wxButtonExtBeginRepositioningChildrenFunc)(const wxButtonExt* self, bool res);
+typedef bool (*wxButtonExtCanApplyThemeBorderFunc)(const wxButtonExt* self, bool res);
+typedef bool (*wxButtonExtCanBeFocusedFunc)(const wxButtonExt* self, bool res);
+typedef bool (*wxButtonExtCanBeOutsideClientAreaFunc)(const wxButtonExt* self, bool res);
+typedef bool (*wxButtonExtCanScrollintFunc)(const wxButtonExt* self, int orient, bool res);
+typedef bool (*wxButtonExtCanSetTransparentFunc)(const wxButtonExt* self, bool res);
 typedef void (*wxButtonExtClearBackgroundFunc)(const wxButtonExt* self);
-typedef wxSize (*wxButtonExtClientToWindowSizewxSizeCRFunc)(const wxButtonExt* self, wxSize const& size);
-typedef wxObjectRefData* (*wxButtonExtCloneRefDatawxObjectRefDataCPFunc)(const wxButtonExt* self, wxObjectRefData const* data);
+typedef wxSize (*wxButtonExtClientToWindowSizewxSizeCRFunc)(const wxButtonExt* self, wxSize const& size, wxSize res);
+typedef wxObjectRefData* (*wxButtonExtCloneRefDatawxObjectRefDataCPFunc)(const wxButtonExt* self, wxObjectRefData const* data, wxObjectRefData* res);
 typedef void (*wxButtonExtCommandwxCommandEventRFunc)(const wxButtonExt* self, wxCommandEvent& event);
-typedef wxObjectRefData* (*wxButtonExtCreateRefDataFunc)(const wxButtonExt* self);
-typedef bool (*wxButtonExtDestroyFunc)(const wxButtonExt* self);
+typedef wxObjectRefData* (*wxButtonExtCreateRefDataFunc)(const wxButtonExt* self, wxObjectRefData* res);
+typedef bool (*wxButtonExtDestroyFunc)(const wxButtonExt* self, bool res);
 typedef void (*wxButtonExtDissociateHandleFunc)(const wxButtonExt* self);
 typedef void (*wxButtonExtDoCaptureMouseFunc)(const wxButtonExt* self);
 typedef void (*wxButtonExtDoCentreintFunc)(const wxButtonExt* self, int dir);
 typedef void (*wxButtonExtDoClientToScreenintPintPFunc)(const wxButtonExt* self, int* x, int* y);
-typedef void (*wxButtonExtDoEnableboolFunc)(const wxButtonExt* self, bool param0);
+typedef void (*wxButtonExtDoEnableboolFunc)(const wxButtonExt* self, bool enable);
 typedef void (*wxButtonExtDoFreezeFunc)(const wxButtonExt* self);
-typedef bool (*wxButtonExtDoGetAuthNeededFunc)(const wxButtonExt* self);
-typedef int (*wxButtonExtDoGetBestClientHeightintFunc)(const wxButtonExt* self, int param0);
-typedef wxSize (*wxButtonExtDoGetBestClientSizeFunc)(const wxButtonExt* self);
-typedef int (*wxButtonExtDoGetBestClientWidthintFunc)(const wxButtonExt* self, int param0);
-typedef wxSize (*wxButtonExtDoGetBestSizeFunc)(const wxButtonExt* self);
-typedef wxBitmap (*wxButtonExtDoGetBitmapwxAnyButtonBaseNStateFunc)(const wxButtonExt* self, wxAnyButtonBase::State which);
-typedef wxSize (*wxButtonExtDoGetBitmapMarginsFunc)(const wxButtonExt* self);
-typedef void* (*wxButtonExtDoGetClientDataFunc)(const wxButtonExt* self);
-typedef wxClientData* (*wxButtonExtDoGetClientObjectFunc)(const wxButtonExt* self);
+typedef bool (*wxButtonExtDoGetAuthNeededFunc)(const wxButtonExt* self, bool res);
+typedef int (*wxButtonExtDoGetBestClientHeightintFunc)(const wxButtonExt* self, int param0, int res);
+typedef wxSize (*wxButtonExtDoGetBestClientSizeFunc)(const wxButtonExt* self, wxSize res);
+typedef int (*wxButtonExtDoGetBestClientWidthintFunc)(const wxButtonExt* self, int param0, int res);
+typedef wxSize (*wxButtonExtDoGetBestSizeFunc)(const wxButtonExt* self, wxSize res);
+typedef wxBitmap (*wxButtonExtDoGetBitmapwxAnyButtonBaseNStateFunc)(const wxButtonExt* self, wxAnyButtonBase::State which, wxBitmap res);
+typedef wxSize (*wxButtonExtDoGetBitmapMarginsFunc)(const wxButtonExt* self, wxSize res);
+typedef void* (*wxButtonExtDoGetClientDataFunc)(const wxButtonExt* self, void* res);
+typedef wxClientData* (*wxButtonExtDoGetClientObjectFunc)(const wxButtonExt* self, wxClientData* res);
 typedef void (*wxButtonExtDoGetClientSizeintPintPFunc)(const wxButtonExt* self, int* width, int* height);
 typedef void (*wxButtonExtDoGetPositionintPintPFunc)(const wxButtonExt* self, int* x, int* y);
 typedef void (*wxButtonExtDoGetScreenPositionintPintPFunc)(const wxButtonExt* self, int* x, int* y);
 typedef void (*wxButtonExtDoGetSizeintPintPFunc)(const wxButtonExt* self, int* width, int* height);
-typedef wxSize (*wxButtonExtDoGetSizeFromTextSizeintintFunc)(const wxButtonExt* self, int xlen, int ylen);
-typedef void (*wxButtonExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCPFunc)(const wxButtonExt* self, wxString const& string, int* x, int* y, int* descent, int* externalLeading, wxFont const* font);
-typedef wxSize (*wxButtonExtDoGetVirtualSizeFunc)(const wxButtonExt* self);
-typedef wxHitTest (*wxButtonExtDoHitTestwxCoordwxCoordFunc)(const wxButtonExt* self, wxCoord x, wxCoord y);
-typedef bool (*wxButtonExtDoIsExposedintintintintFunc)(const wxButtonExt* self, int x, int y, int w, int h);
-typedef bool (*wxButtonExtDoIsExposedintintFunc)(const wxButtonExt* self, int x, int y);
-typedef void (*wxButtonExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrderFunc)(const wxButtonExt* self, wxWindow* win, int move);
+typedef wxSize (*wxButtonExtDoGetSizeFromClientSizewxSizeCRFunc)(const wxButtonExt* self, wxSize const& size, wxSize res);
+typedef wxSize (*wxButtonExtDoGetSizeFromTextSizeintintFunc)(const wxButtonExt* self, int xlen, int ylen, wxSize res);
+typedef void (*wxButtonExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCPFunc)(const wxButtonExt* self, wxString const& string, int* x, int* y, int* descent, int* externalLeading, wxFont const* theFont);
+typedef wxSize (*wxButtonExtDoGetVirtualSizeFunc)(const wxButtonExt* self, wxSize res);
+typedef wxHitTest (*wxButtonExtDoHitTestwxCoordwxCoordFunc)(const wxButtonExt* self, wxCoord x, wxCoord y, wxHitTest res);
+typedef bool (*wxButtonExtDoIsExposedintintintintFunc)(const wxButtonExt* self, int x, int y, int w, int h, bool res);
+typedef bool (*wxButtonExtDoIsExposedintintFunc)(const wxButtonExt* self, int x, int y, bool res);
+typedef void (*wxButtonExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrderFunc)(const wxButtonExt* self, wxWindow* win, wxWindowBase::WindowOrder move);
 typedef void (*wxButtonExtDoMoveWindowintintintintFunc)(const wxButtonExt* self, int x, int y, int width, int height);
-typedef bool (*wxButtonExtDoNavigateInintFunc)(const wxButtonExt* self, int flags);
-typedef bool (*wxButtonExtDoPhaseintFunc)(const wxButtonExt* self, int phase);
-typedef bool (*wxButtonExtDoPopupMenuwxMenuPintintFunc)(const wxButtonExt* self, wxMenu* menu, int x, int y);
+typedef bool (*wxButtonExtDoNavigateInintFunc)(const wxButtonExt* self, int flags, bool res);
+typedef bool (*wxButtonExtDoPhaseintFunc)(const wxButtonExt* self, int phase, bool res);
+typedef bool (*wxButtonExtDoPopupMenuwxMenuPintintFunc)(const wxButtonExt* self, wxMenu* menu, int x, int y, bool res);
 typedef void (*wxButtonExtDoReleaseMouseFunc)(const wxButtonExt* self);
 typedef void (*wxButtonExtDoScreenToClientintPintPFunc)(const wxButtonExt* self, int* x, int* y);
 typedef void (*wxButtonExtDoSetAuthNeededboolFunc)(const wxButtonExt* self, bool param0);
@@ -274,7 +278,7 @@ typedef void (*wxButtonExtDoSetBitmapPositionwxDirectionFunc)(const wxButtonExt*
 typedef void (*wxButtonExtDoSetClientDatavoidPFunc)(const wxButtonExt* self, void* data);
 typedef void (*wxButtonExtDoSetClientObjectwxClientDataPFunc)(const wxButtonExt* self, wxClientData* data);
 typedef void (*wxButtonExtDoSetClientSizeintintFunc)(const wxButtonExt* self, int width, int height);
-typedef bool (*wxButtonExtDoSetLabelMarkupwxStringCRFunc)(const wxButtonExt* self, wxString const& markup);
+typedef bool (*wxButtonExtDoSetLabelMarkupwxStringCRFunc)(const wxButtonExt* self, wxString const& markup, bool res);
 typedef void (*wxButtonExtDoSetSizeintintintintintFunc)(const wxButtonExt* self, int x, int y, int width, int height, int sizeFlags);
 typedef void (*wxButtonExtDoSetSizeHintsintintintintintintFunc)(const wxButtonExt* self, int minW, int minH, int maxW, int maxH, int incW, int incH);
 typedef void (*wxButtonExtDoSetToolTipwxToolTipPFunc)(const wxButtonExt* self, wxToolTip* tip);
@@ -284,102 +288,103 @@ typedef void (*wxButtonExtDoSetWindowVariantwxWindowVariantFunc)(const wxButtonE
 typedef void (*wxButtonExtDoThawFunc)(const wxButtonExt* self);
 typedef void (*wxButtonExtDoUpdateWindowUIwxUpdateUIEventRFunc)(const wxButtonExt* self, wxUpdateUIEvent& event);
 typedef void (*wxButtonExtDragAcceptFilesboolFunc)(const wxButtonExt* self, bool accept);
-typedef bool (*wxButtonExtEnableboolFunc)(const wxButtonExt* self, bool enable);
-typedef bool (*wxButtonExtEnableTouchEventsintFunc)(const wxButtonExt* self, int param0);
-typedef void (*wxButtonExtEnableVisibleFocusboolFunc)(const wxButtonExt* self, bool param0);
+typedef bool (*wxButtonExtEnableboolFunc)(const wxButtonExt* self, bool enable, bool res);
+typedef bool (*wxButtonExtEnableTouchEventsintFunc)(const wxButtonExt* self, int eventsMask, bool res);
+typedef void (*wxButtonExtEnableVisibleFocusboolFunc)(const wxButtonExt* self, bool enabled);
 typedef void (*wxButtonExtEndRepositioningChildrenFunc)(const wxButtonExt* self);
 typedef void (*wxButtonExtFitFunc)(const wxButtonExt* self);
 typedef void (*wxButtonExtFitInsideFunc)(const wxButtonExt* self);
-typedef wxSize (*wxButtonExtGetBestVirtualSizeFunc)(const wxButtonExt* self);
-typedef int (*wxButtonExtGetCharHeightFunc)(const wxButtonExt* self);
-typedef int (*wxButtonExtGetCharWidthFunc)(const wxButtonExt* self);
-typedef wxClassInfo* (*wxButtonExtGetClassInfoFunc)(const wxButtonExt* self);
-typedef wxPoint (*wxButtonExtGetClientAreaOriginFunc)(const wxButtonExt* self);
+typedef wxSize (*wxButtonExtGetBestVirtualSizeFunc)(const wxButtonExt* self, wxSize res);
+typedef int (*wxButtonExtGetCharHeightFunc)(const wxButtonExt* self, int res);
+typedef int (*wxButtonExtGetCharWidthFunc)(const wxButtonExt* self, int res);
+typedef wxClassInfo* (*wxButtonExtGetClassInfoFunc)(const wxButtonExt* self, wxClassInfo* res);
+typedef wxPoint (*wxButtonExtGetClientAreaOriginFunc)(const wxButtonExt* self, wxPoint res);
 typedef void (*wxButtonExtGetClientSizeConstraintintPintPFunc)(const wxButtonExt* self, int* w, int* h);
-typedef double (*wxButtonExtGetContentScaleFactorFunc)(const wxButtonExt* self);
-typedef wxSize (*wxButtonExtGetDPIFunc)(const wxButtonExt* self);
-typedef double (*wxButtonExtGetDPIScaleFactorFunc)(const wxButtonExt* self);
-typedef wxVisualAttributes (*wxButtonExtGetDefaultAttributesFunc)(const wxButtonExt* self);
-typedef wxBorder (*wxButtonExtGetDefaultBorderFunc)(const wxButtonExt* self);
-typedef wxBorder (*wxButtonExtGetDefaultBorderForControlFunc)(const wxButtonExt* self);
-typedef wxDropTarget* (*wxButtonExtGetDropTargetFunc)(const wxButtonExt* self);
-typedef wxSize (*wxButtonExtGetEffectiveMinSizeFunc)(const wxButtonExt* self);
-typedef wxEventHashTable& (*wxButtonExtGetEventHashTableFunc)(const wxButtonExt* self);
-typedef wxEventTable const* (*wxButtonExtGetEventTableFunc)(const wxButtonExt* self);
-typedef WXWidget (*wxButtonExtGetHandleFunc)(const wxButtonExt* self);
-typedef wxString (*wxButtonExtGetHelpTextAtPointwxPointCRwxHelpEventNOriginFunc)(const wxButtonExt* self, wxPoint const& pt, wxHelpEvent::Origin origin);
-typedef wxString (*wxButtonExtGetLabelFunc)(const wxButtonExt* self);
-typedef wxString (*wxButtonExtGetLabelTextFunc)(const wxButtonExt* self);
-typedef wxLayoutDirection (*wxButtonExtGetLayoutDirectionFunc)(const wxButtonExt* self);
-typedef wxWindow* (*wxButtonExtGetMainWindowOfCompositeControlFunc)(const wxButtonExt* self);
-typedef wxSize (*wxButtonExtGetMaxClientSizeFunc)(const wxButtonExt* self);
-typedef wxSize (*wxButtonExtGetMaxSizeFunc)(const wxButtonExt* self);
-typedef wxSize (*wxButtonExtGetMinClientSizeFunc)(const wxButtonExt* self);
-typedef wxSize (*wxButtonExtGetMinSizeFunc)(const wxButtonExt* self);
-typedef wxString (*wxButtonExtGetNameFunc)(const wxButtonExt* self);
-typedef wxAnyButtonBase::State (*wxButtonExtGetNormalStateFunc)(const wxButtonExt* self);
+typedef double (*wxButtonExtGetContentScaleFactorFunc)(const wxButtonExt* self, double res);
+typedef wxSize (*wxButtonExtGetDPIFunc)(const wxButtonExt* self, wxSize res);
+typedef double (*wxButtonExtGetDPIScaleFactorFunc)(const wxButtonExt* self, double res);
+typedef wxVisualAttributes (*wxButtonExtGetDefaultAttributesFunc)(const wxButtonExt* self, wxVisualAttributes res);
+typedef wxBorder (*wxButtonExtGetDefaultBorderFunc)(const wxButtonExt* self, wxBorder res);
+typedef wxBorder (*wxButtonExtGetDefaultBorderForControlFunc)(const wxButtonExt* self, wxBorder res);
+typedef wxDropTarget* (*wxButtonExtGetDropTargetFunc)(const wxButtonExt* self, wxDropTarget* res);
+typedef wxSize (*wxButtonExtGetEffectiveMinSizeFunc)(const wxButtonExt* self, wxSize res);
+typedef wxEventHashTable& (*wxButtonExtGetEventHashTableFunc)(const wxButtonExt* self, wxEventHashTable& res);
+typedef wxEventTable const* (*wxButtonExtGetEventTableFunc)(const wxButtonExt* self, wxEventTable const* res);
+typedef WXWidget (*wxButtonExtGetHandleFunc)(const wxButtonExt* self, WXWidget res);
+typedef wxString (*wxButtonExtGetHelpTextAtPointwxPointCRwxHelpEventNOriginFunc)(const wxButtonExt* self, wxPoint const& pt, wxHelpEvent::Origin origin, wxString res);
+typedef wxString (*wxButtonExtGetLabelFunc)(const wxButtonExt* self, wxString res);
+typedef wxString (*wxButtonExtGetLabelTextFunc)(const wxButtonExt* self, wxString res);
+typedef wxLayoutDirection (*wxButtonExtGetLayoutDirectionFunc)(const wxButtonExt* self, wxLayoutDirection res);
+typedef wxWindow* (*wxButtonExtGetMainWindowOfCompositeControlFunc)(const wxButtonExt* self, wxWindow* res);
+typedef wxSize (*wxButtonExtGetMaxClientSizeFunc)(const wxButtonExt* self, wxSize res);
+typedef wxSize (*wxButtonExtGetMaxSizeFunc)(const wxButtonExt* self, wxSize res);
+typedef wxSize (*wxButtonExtGetMinClientSizeFunc)(const wxButtonExt* self, wxSize res);
+typedef wxSize (*wxButtonExtGetMinSizeFunc)(const wxButtonExt* self, wxSize res);
+typedef wxString (*wxButtonExtGetNameFunc)(const wxButtonExt* self, wxString res);
+typedef wxAnyButtonBase::State (*wxButtonExtGetNormalStateFunc)(const wxButtonExt* self, wxAnyButtonBase::State res);
 typedef void (*wxButtonExtGetPositionConstraintintPintPFunc)(const wxButtonExt* self, int* x, int* y);
-typedef int (*wxButtonExtGetScrollPosintFunc)(const wxButtonExt* self, int orient);
-typedef int (*wxButtonExtGetScrollRangeintFunc)(const wxButtonExt* self, int orient);
-typedef int (*wxButtonExtGetScrollThumbintFunc)(const wxButtonExt* self, int orient);
+typedef int (*wxButtonExtGetScrollPosintFunc)(const wxButtonExt* self, int orient, int res);
+typedef int (*wxButtonExtGetScrollRangeintFunc)(const wxButtonExt* self, int orient, int res);
+typedef int (*wxButtonExtGetScrollThumbintFunc)(const wxButtonExt* self, int orient, int res);
 typedef void (*wxButtonExtGetSizeConstraintintPintPFunc)(const wxButtonExt* self, int* w, int* h);
-typedef bool (*wxButtonExtGetThemeEnabledFunc)(const wxButtonExt* self);
-typedef wxValidator* (*wxButtonExtGetValidatorFunc)(const wxButtonExt* self);
-typedef wxSize (*wxButtonExtGetWindowBorderSizeFunc)(const wxButtonExt* self);
-typedef long (*wxButtonExtGetWindowStyleFlagFunc)(const wxButtonExt* self);
-typedef bool (*wxButtonExtHasCaptureFunc)(const wxButtonExt* self);
-typedef bool (*wxButtonExtHasFocusFunc)(const wxButtonExt* self);
-typedef bool (*wxButtonExtHasMultiplePagesFunc)(const wxButtonExt* self);
-typedef bool (*wxButtonExtHasTransparentBackgroundFunc)(const wxButtonExt* self);
-typedef bool (*wxButtonExtHideWithEffectwxShowEffectunsignedintFunc)(const wxButtonExt* self, wxShowEffect param0, unsigned int param1);
-typedef bool (*wxButtonExtInformFirstDirectionintintintFunc)(const wxButtonExt* self, int direction, int size, int availableOtherDir);
+typedef bool (*wxButtonExtGetThemeEnabledFunc)(const wxButtonExt* self, bool res);
+typedef wxByte (*wxButtonExtGetTransparentFunc)(const wxButtonExt* self, wxByte res);
+typedef wxValidator* (*wxButtonExtGetValidatorFunc)(const wxButtonExt* self, wxValidator* res);
+typedef wxSize (*wxButtonExtGetWindowBorderSizeFunc)(const wxButtonExt* self, wxSize res);
+typedef long (*wxButtonExtGetWindowStyleFlagFunc)(const wxButtonExt* self, long res);
+typedef bool (*wxButtonExtHasCaptureFunc)(const wxButtonExt* self, bool res);
+typedef bool (*wxButtonExtHasFocusFunc)(const wxButtonExt* self, bool res);
+typedef bool (*wxButtonExtHasMultiplePagesFunc)(const wxButtonExt* self, bool res);
+typedef bool (*wxButtonExtHasTransparentBackgroundFunc)(const wxButtonExt* self, bool res);
+typedef bool (*wxButtonExtHideWithEffectwxShowEffectunsignedintFunc)(const wxButtonExt* self, wxShowEffect effect, unsigned int timeout, bool res);
+typedef bool (*wxButtonExtInformFirstDirectionintintintFunc)(const wxButtonExt* self, int direction, int size, int availableOtherDir, bool res);
 typedef void (*wxButtonExtInheritAttributesFunc)(const wxButtonExt* self);
 typedef void (*wxButtonExtInitDialogFunc)(const wxButtonExt* self);
-typedef bool (*wxButtonExtIsClientAreaChildwxWindowCPFunc)(const wxButtonExt* self, wxWindow const* param0);
-typedef bool (*wxButtonExtIsDoubleBufferedFunc)(const wxButtonExt* self);
-typedef bool (*wxButtonExtIsRetainedFunc)(const wxButtonExt* self);
-typedef bool (*wxButtonExtIsScrollbarAlwaysShownintFunc)(const wxButtonExt* self, int param0);
-typedef bool (*wxButtonExtIsShownFunc)(const wxButtonExt* self);
-typedef bool (*wxButtonExtIsShownOnScreenFunc)(const wxButtonExt* self);
-typedef bool (*wxButtonExtIsThisEnabledFunc)(const wxButtonExt* self);
-typedef bool (*wxButtonExtIsTopLevelFunc)(const wxButtonExt* self);
-typedef bool (*wxButtonExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc)(const wxButtonExt* self, wxWindowBase::NavigationKind param0);
-typedef bool (*wxButtonExtIsTransparentBackgroundSupportedwxStringPFunc)(const wxButtonExt* self, wxString* reason);
-typedef bool (*wxButtonExtLayoutFunc)(const wxButtonExt* self);
-typedef bool (*wxButtonExtLayoutPhase1intPFunc)(const wxButtonExt* self, int* noChanges);
-typedef bool (*wxButtonExtLayoutPhase2intPFunc)(const wxButtonExt* self, int* noChanges);
+typedef bool (*wxButtonExtIsClientAreaChildwxWindowCPFunc)(const wxButtonExt* self, wxWindow const* param0, bool res);
+typedef bool (*wxButtonExtIsDoubleBufferedFunc)(const wxButtonExt* self, bool res);
+typedef bool (*wxButtonExtIsRetainedFunc)(const wxButtonExt* self, bool res);
+typedef bool (*wxButtonExtIsScrollbarAlwaysShownintFunc)(const wxButtonExt* self, int orient, bool res);
+typedef bool (*wxButtonExtIsShownFunc)(const wxButtonExt* self, bool res);
+typedef bool (*wxButtonExtIsShownOnScreenFunc)(const wxButtonExt* self, bool res);
+typedef bool (*wxButtonExtIsThisEnabledFunc)(const wxButtonExt* self, bool res);
+typedef bool (*wxButtonExtIsTopLevelFunc)(const wxButtonExt* self, bool res);
+typedef bool (*wxButtonExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc)(const wxButtonExt* self, wxWindowBase::NavigationKind param0, bool res);
+typedef bool (*wxButtonExtIsTransparentBackgroundSupportedwxStringPFunc)(const wxButtonExt* self, wxString* reason, bool res);
+typedef bool (*wxButtonExtLayoutFunc)(const wxButtonExt* self, bool res);
+typedef bool (*wxButtonExtLayoutPhase1intPFunc)(const wxButtonExt* self, int* noChanges, bool res);
+typedef bool (*wxButtonExtLayoutPhase2intPFunc)(const wxButtonExt* self, int* noChanges, bool res);
 typedef void (*wxButtonExtLowerFunc)(const wxButtonExt* self);
 typedef void (*wxButtonExtMoveConstraintintintFunc)(const wxButtonExt* self, int x, int y);
-typedef bool (*wxButtonExtOnDynamicBindwxDynamicEventTableEntryRFunc)(const wxButtonExt* self, wxDynamicEventTableEntry& param0);
+typedef bool (*wxButtonExtOnDynamicBindwxDynamicEventTableEntryRFunc)(const wxButtonExt* self, wxDynamicEventTableEntry& param0, bool res);
 typedef void (*wxButtonExtOnInternalIdleFunc)(const wxButtonExt* self);
 typedef void (*wxButtonExtPrepareDCwxDCRFunc)(const wxButtonExt* self, wxDC& param0);
-typedef bool (*wxButtonExtProcessEventwxEventRFunc)(const wxButtonExt* self, wxEvent& event);
+typedef bool (*wxButtonExtProcessEventwxEventRFunc)(const wxButtonExt* self, wxEvent& event, bool res);
 typedef void (*wxButtonExtQueueEventwxEventPFunc)(const wxButtonExt* self, wxEvent* event);
 typedef void (*wxButtonExtRaiseFunc)(const wxButtonExt* self);
 typedef void (*wxButtonExtRefreshboolwxRectCPFunc)(const wxButtonExt* self, bool eraseBackground, wxRect const* rect);
-typedef bool (*wxButtonExtRegisterHotKeyintintintFunc)(const wxButtonExt* self, int hotkeyId, int modifiers, int keycode);
+typedef bool (*wxButtonExtRegisterHotKeyintintintFunc)(const wxButtonExt* self, int hotkeyId, int modifiers, int keycode, bool res);
 typedef void (*wxButtonExtRemoveChildwxWindowBasePFunc)(const wxButtonExt* self, wxWindowBase* child);
-typedef bool (*wxButtonExtReparentwxWindowBasePFunc)(const wxButtonExt* self, wxWindowBase* newParent);
-typedef bool (*wxButtonExtScrollLinesintFunc)(const wxButtonExt* self, int param0);
-typedef bool (*wxButtonExtScrollPagesintFunc)(const wxButtonExt* self, int param0);
+typedef bool (*wxButtonExtReparentwxWindowBasePFunc)(const wxButtonExt* self, wxWindowBase* newParent, bool res);
+typedef bool (*wxButtonExtScrollLinesintFunc)(const wxButtonExt* self, int param0, bool res);
+typedef bool (*wxButtonExtScrollPagesintFunc)(const wxButtonExt* self, int param0, bool res);
 typedef void (*wxButtonExtScrollWindowintintwxRectCPFunc)(const wxButtonExt* self, int dx, int dy, wxRect const* rect);
-typedef bool (*wxButtonExtSearchEventTablewxEventTableRwxEventRFunc)(const wxButtonExt* self, wxEventTable& table, wxEvent& event);
-typedef bool (*wxButtonExtSendIdleEventswxIdleEventRFunc)(const wxButtonExt* self, wxIdleEvent& event);
+typedef bool (*wxButtonExtSearchEventTablewxEventTableRwxEventRFunc)(const wxButtonExt* self, wxEventTable& table, wxEvent& event, bool res);
+typedef bool (*wxButtonExtSendIdleEventswxIdleEventRFunc)(const wxButtonExt* self, wxIdleEvent& event, bool res);
 typedef void (*wxButtonExtSendSizeEventintFunc)(const wxButtonExt* self, int flags);
 typedef void (*wxButtonExtSetAcceleratorTablewxAcceleratorTableCRFunc)(const wxButtonExt* self, wxAcceleratorTable const& accel);
-typedef bool (*wxButtonExtSetBackgroundColourwxColourCRFunc)(const wxButtonExt* self, wxColour const& colour);
-typedef bool (*wxButtonExtSetBackgroundStylewxBackgroundStyleFunc)(const wxButtonExt* self, wxBackgroundStyle style);
+typedef bool (*wxButtonExtSetBackgroundColourwxColourCRFunc)(const wxButtonExt* self, wxColour const& colour, bool res);
+typedef bool (*wxButtonExtSetBackgroundStylewxBackgroundStyleFunc)(const wxButtonExt* self, wxBackgroundStyle style, bool res);
 typedef void (*wxButtonExtSetCanFocusboolFunc)(const wxButtonExt* self, bool param0);
 typedef void (*wxButtonExtSetConstraintSizesboolFunc)(const wxButtonExt* self, bool recurse);
-typedef bool (*wxButtonExtSetCursorwxCursorCRFunc)(const wxButtonExt* self, wxCursor const& cursor);
-typedef wxWindow* (*wxButtonExtSetDefaultFunc)(const wxButtonExt* self);
+typedef bool (*wxButtonExtSetCursorwxCursorCRFunc)(const wxButtonExt* self, wxCursor const& cursor, bool res);
+typedef wxWindow* (*wxButtonExtSetDefaultFunc)(const wxButtonExt* self, wxWindow* res);
 typedef void (*wxButtonExtSetDoubleBufferedboolFunc)(const wxButtonExt* self, bool param0);
 typedef void (*wxButtonExtSetDropTargetwxDropTargetPFunc)(const wxButtonExt* self, wxDropTarget* dropTarget);
 typedef void (*wxButtonExtSetExtraStylelongFunc)(const wxButtonExt* self, long exStyle);
 typedef void (*wxButtonExtSetFocusFunc)(const wxButtonExt* self);
 typedef void (*wxButtonExtSetFocusFromKbdFunc)(const wxButtonExt* self);
-typedef bool (*wxButtonExtSetFontwxFontCRFunc)(const wxButtonExt* self, wxFont const& font);
-typedef bool (*wxButtonExtSetForegroundColourwxColourCRFunc)(const wxButtonExt* self, wxColour const& colour);
+typedef bool (*wxButtonExtSetFontwxFontCRFunc)(const wxButtonExt* self, wxFont const& font, bool res);
+typedef bool (*wxButtonExtSetForegroundColourwxColourCRFunc)(const wxButtonExt* self, wxColour const& colour, bool res);
 typedef void (*wxButtonExtSetIdwxWindowIDFunc)(const wxButtonExt* self, wxWindowID winid);
 typedef void (*wxButtonExtSetLabelwxStringCRFunc)(const wxButtonExt* self, wxString const& label);
 typedef void (*wxButtonExtSetLabelTextwxStringCRFunc)(const wxButtonExt* self, wxString const& text);
@@ -392,34 +397,35 @@ typedef void (*wxButtonExtSetNamewxStringCRFunc)(const wxButtonExt* self, wxStri
 typedef void (*wxButtonExtSetNextHandlerwxEvtHandlerPFunc)(const wxButtonExt* self, wxEvtHandler* handler);
 typedef void (*wxButtonExtSetPreviousHandlerwxEvtHandlerPFunc)(const wxButtonExt* self, wxEvtHandler* handler);
 typedef void (*wxButtonExtSetScrollPosintintboolFunc)(const wxButtonExt* self, int orient, int pos, bool refresh);
-typedef void (*wxButtonExtSetScrollbarintintintintboolFunc)(const wxButtonExt* self, int orient, int pos, int thumbvisible, int range, bool refresh);
+typedef void (*wxButtonExtSetScrollbarintintintintboolFunc)(const wxButtonExt* self, int orient, int pos, int thumbVisible, int range, bool refresh);
 typedef void (*wxButtonExtSetSizeConstraintintintintintFunc)(const wxButtonExt* self, int x, int y, int w, int h);
 typedef void (*wxButtonExtSetSizeHintsintintintintintintFunc)(const wxButtonExt* self, int minW, int minH, int maxW, int maxH, int incW, int incH);
 typedef void (*wxButtonExtSetThemeEnabledboolFunc)(const wxButtonExt* self, bool enableTheme);
-typedef bool (*wxButtonExtSetTransparentwxByteFunc)(const wxButtonExt* self, wxByte param0);
+typedef bool (*wxButtonExtSetTransparentwxByteFunc)(const wxButtonExt* self, wxByte alpha, bool res);
 typedef void (*wxButtonExtSetValidatorwxValidatorCRFunc)(const wxButtonExt* self, wxValidator const& validator);
 typedef void (*wxButtonExtSetWindowStyleFlaglongFunc)(const wxButtonExt* self, long style);
-typedef bool (*wxButtonExtShouldInheritColoursFunc)(const wxButtonExt* self);
-typedef bool (*wxButtonExtShowboolFunc)(const wxButtonExt* self, bool show);
-typedef bool (*wxButtonExtShowWithEffectwxShowEffectunsignedintFunc)(const wxButtonExt* self, wxShowEffect param0, unsigned int param1);
-typedef bool (*wxButtonExtTransferDataFromWindowFunc)(const wxButtonExt* self);
-typedef bool (*wxButtonExtTransferDataToWindowFunc)(const wxButtonExt* self);
-typedef bool (*wxButtonExtTryAfterwxEventRFunc)(const wxButtonExt* self, wxEvent& event);
-typedef bool (*wxButtonExtTryBeforewxEventRFunc)(const wxButtonExt* self, wxEvent& event);
-typedef bool (*wxButtonExtUnregisterHotKeyintFunc)(const wxButtonExt* self, int hotkeyId);
+typedef bool (*wxButtonExtShouldInheritColoursFunc)(const wxButtonExt* self, bool res);
+typedef bool (*wxButtonExtShowboolFunc)(const wxButtonExt* self, bool show, bool res);
+typedef bool (*wxButtonExtShowWithEffectwxShowEffectunsignedintFunc)(const wxButtonExt* self, wxShowEffect effect, unsigned int timeout, bool res);
+typedef bool (*wxButtonExtTransferDataFromWindowFunc)(const wxButtonExt* self, bool res);
+typedef bool (*wxButtonExtTransferDataToWindowFunc)(const wxButtonExt* self, bool res);
+typedef void (*wxButtonExtTriggerScrollEventwxEventTypeFunc)(const wxButtonExt* self, wxEventType scrollEvent);
+typedef bool (*wxButtonExtTryAfterwxEventRFunc)(const wxButtonExt* self, wxEvent& event, bool res);
+typedef bool (*wxButtonExtTryBeforewxEventRFunc)(const wxButtonExt* self, wxEvent& event, bool res);
+typedef bool (*wxButtonExtUnregisterHotKeyintFunc)(const wxButtonExt* self, int hotkeyId, bool res);
 typedef void (*wxButtonExtUpdateFunc)(const wxButtonExt* self);
 typedef void (*wxButtonExtUpdateWindowUIlongFunc)(const wxButtonExt* self, long flags);
-typedef bool (*wxButtonExtValidateFunc)(const wxButtonExt* self);
+typedef bool (*wxButtonExtValidateFunc)(const wxButtonExt* self, bool res);
 typedef void (*wxButtonExtWXAdjustFontToOwnPPIwxFontRFunc)(const wxButtonExt* self, wxFont& param0);
-typedef wxTextEntry const* (*wxButtonExtWXGetTextEntryFunc)(const wxButtonExt* self);
-typedef void* (*wxButtonExtWXReservedEvtHandler1voidPFunc)(const wxButtonExt* self, void* param0);
-typedef void* (*wxButtonExtWXReservedEvtHandler2voidPFunc)(const wxButtonExt* self, void* param0);
-typedef void* (*wxButtonExtWXReservedWindow1voidPFunc)(const wxButtonExt* self, void* param0);
-typedef void* (*wxButtonExtWXReservedWindow2voidPFunc)(const wxButtonExt* self, void* param0);
-typedef void* (*wxButtonExtWXReservedWindow3voidPFunc)(const wxButtonExt* self, void* param0);
+typedef wxTextEntry const* (*wxButtonExtWXGetTextEntryFunc)(const wxButtonExt* self, wxTextEntry const* res);
+typedef void* (*wxButtonExtWXReservedEvtHandler1voidPFunc)(const wxButtonExt* self, void* param0, void* res);
+typedef void* (*wxButtonExtWXReservedEvtHandler2voidPFunc)(const wxButtonExt* self, void* param0, void* res);
+typedef void* (*wxButtonExtWXReservedWindow1voidPFunc)(const wxButtonExt* self, void* param0, void* res);
+typedef void* (*wxButtonExtWXReservedWindow2voidPFunc)(const wxButtonExt* self, void* param0, void* res);
+typedef void* (*wxButtonExtWXReservedWindow3voidPFunc)(const wxButtonExt* self, void* param0, void* res);
 typedef void (*wxButtonExtWXSetInitialFittingClientSizeintwxSizerPFunc)(const wxButtonExt* self, int flags, wxSizer* sizer);
 typedef void (*wxButtonExtWarpPointerintintFunc)(const wxButtonExt* self, int x, int y);
-typedef wxSize (*wxButtonExtWindowToClientSizewxSizeCRFunc)(const wxButtonExt* self, wxSize const& size);
+typedef wxSize (*wxButtonExtWindowToClientSizewxSizeCRFunc)(const wxButtonExt* self, wxSize const& size, wxSize res);
 
 class wxButtonBaseExt: public wxButtonBase
 {
@@ -430,7 +436,7 @@ public:
   {
     bool res = wxButtonBase::AcceptsFocus();
     if (*m_wxButtonBaseExtAcceptsFocus != NULL){
-      return m_wxButtonBaseExtAcceptsFocus(this);
+      return m_wxButtonBaseExtAcceptsFocus(this, res);
     }
     else {
       return res;
@@ -441,7 +447,7 @@ public:
   {
     bool res = wxButtonBase::AcceptsFocusFromKeyboard();
     if (*m_wxButtonBaseExtAcceptsFocusFromKeyboard != NULL){
-      return m_wxButtonBaseExtAcceptsFocusFromKeyboard(this);
+      return m_wxButtonBaseExtAcceptsFocusFromKeyboard(this, res);
     }
     else {
       return res;
@@ -452,7 +458,7 @@ public:
   {
     bool res = wxButtonBase::AcceptsFocusRecursively();
     if (*m_wxButtonBaseExtAcceptsFocusRecursively != NULL){
-      return m_wxButtonBaseExtAcceptsFocusRecursively(this);
+      return m_wxButtonBaseExtAcceptsFocusRecursively(this, res);
     }
     else {
       return res;
@@ -479,7 +485,7 @@ public:
   {
     wxCoord res = wxButtonBase::AdjustForLayoutDirection(x, width, widthTotal);
     if (*m_wxButtonBaseExtAdjustForLayoutDirectionwxCoordwxCoordwxCoord != NULL){
-      return m_wxButtonBaseExtAdjustForLayoutDirectionwxCoordwxCoordwxCoord(this, x, width, widthTotal);
+      return m_wxButtonBaseExtAdjustForLayoutDirectionwxCoordwxCoordwxCoord(this, x, width, widthTotal, res);
     }
     else {
       return res;
@@ -494,11 +500,11 @@ public:
     }
   }
   wxButtonBaseExtAlwaysShowScrollbarsboolboolFunc m_wxButtonBaseExtAlwaysShowScrollbarsboolbool = NULL;
-  virtual void AlwaysShowScrollbars(bool param0 = true, bool param1 = true) override
+  virtual void AlwaysShowScrollbars(bool horz = true, bool vert = true) override
   {
-    wxButtonBase::AlwaysShowScrollbars(param0, param1);
+    wxButtonBase::AlwaysShowScrollbars(horz, vert);
     if (*m_wxButtonBaseExtAlwaysShowScrollbarsboolbool != NULL){
-      return m_wxButtonBaseExtAlwaysShowScrollbarsboolbool(this, param0, param1);
+      return m_wxButtonBaseExtAlwaysShowScrollbarsboolbool(this, horz, vert);
     }
   }
   wxButtonBaseExtAssociateHandleWXWidgetFunc m_wxButtonBaseExtAssociateHandleWXWidget = NULL;
@@ -514,7 +520,7 @@ public:
   {
     bool res = wxButtonBase::BeginRepositioningChildren();
     if (*m_wxButtonBaseExtBeginRepositioningChildren != NULL){
-      return m_wxButtonBaseExtBeginRepositioningChildren(this);
+      return m_wxButtonBaseExtBeginRepositioningChildren(this, res);
     }
     else {
       return res;
@@ -525,7 +531,7 @@ public:
   {
     bool res = wxButtonBase::CanApplyThemeBorder();
     if (*m_wxButtonBaseExtCanApplyThemeBorder != NULL){
-      return m_wxButtonBaseExtCanApplyThemeBorder(this);
+      return m_wxButtonBaseExtCanApplyThemeBorder(this, res);
     }
     else {
       return res;
@@ -536,7 +542,7 @@ public:
   {
     bool res = wxButtonBase::CanBeFocused();
     if (*m_wxButtonBaseExtCanBeFocused != NULL){
-      return m_wxButtonBaseExtCanBeFocused(this);
+      return m_wxButtonBaseExtCanBeFocused(this, res);
     }
     else {
       return res;
@@ -547,7 +553,7 @@ public:
   {
     bool res = wxButtonBase::CanBeOutsideClientArea();
     if (*m_wxButtonBaseExtCanBeOutsideClientArea != NULL){
-      return m_wxButtonBaseExtCanBeOutsideClientArea(this);
+      return m_wxButtonBaseExtCanBeOutsideClientArea(this, res);
     }
     else {
       return res;
@@ -558,7 +564,7 @@ public:
   {
     bool res = wxButtonBase::CanScroll(orient);
     if (*m_wxButtonBaseExtCanScrollint != NULL){
-      return m_wxButtonBaseExtCanScrollint(this, orient);
+      return m_wxButtonBaseExtCanScrollint(this, orient, res);
     }
     else {
       return res;
@@ -569,7 +575,7 @@ public:
   {
     bool res = wxButtonBase::CanSetTransparent();
     if (*m_wxButtonBaseExtCanSetTransparent != NULL){
-      return m_wxButtonBaseExtCanSetTransparent(this);
+      return m_wxButtonBaseExtCanSetTransparent(this, res);
     }
     else {
       return res;
@@ -588,7 +594,7 @@ public:
   {
     wxSize res = wxButtonBase::ClientToWindowSize(size);
     if (*m_wxButtonBaseExtClientToWindowSizewxSizeCR != NULL){
-      return m_wxButtonBaseExtClientToWindowSizewxSizeCR(this, size);
+      return m_wxButtonBaseExtClientToWindowSizewxSizeCR(this, size, res);
     }
     else {
       return res;
@@ -599,7 +605,7 @@ public:
   {
     wxObjectRefData* res = wxButtonBase::CloneRefData(data);
     if (*m_wxButtonBaseExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxButtonBaseExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxButtonBaseExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -618,7 +624,7 @@ public:
   {
     wxObjectRefData* res = wxButtonBase::CreateRefData();
     if (*m_wxButtonBaseExtCreateRefData != NULL){
-      return m_wxButtonBaseExtCreateRefData(this);
+      return m_wxButtonBaseExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -629,7 +635,7 @@ public:
   {
     bool res = wxButtonBase::Destroy();
     if (*m_wxButtonBaseExtDestroy != NULL){
-      return m_wxButtonBaseExtDestroy(this);
+      return m_wxButtonBaseExtDestroy(this, res);
     }
     else {
       return res;
@@ -668,11 +674,11 @@ public:
     }
   }
   wxButtonBaseExtDoEnableboolFunc m_wxButtonBaseExtDoEnablebool = NULL;
-  virtual void DoEnable(bool param0) override
+  virtual void DoEnable(bool enable) override
   {
-    wxButtonBase::DoEnable(param0);
+    wxButtonBase::DoEnable(enable);
     if (*m_wxButtonBaseExtDoEnablebool != NULL){
-      return m_wxButtonBaseExtDoEnablebool(this, param0);
+      return m_wxButtonBaseExtDoEnablebool(this, enable);
     }
   }
   wxButtonBaseExtDoFreezeFunc m_wxButtonBaseExtDoFreeze = NULL;
@@ -688,7 +694,7 @@ public:
   {
     bool res = wxButtonBase::DoGetAuthNeeded();
     if (*m_wxButtonBaseExtDoGetAuthNeeded != NULL){
-      return m_wxButtonBaseExtDoGetAuthNeeded(this);
+      return m_wxButtonBaseExtDoGetAuthNeeded(this, res);
     }
     else {
       return res;
@@ -699,7 +705,7 @@ public:
   {
     int res = wxButtonBase::DoGetBestClientHeight(param0);
     if (*m_wxButtonBaseExtDoGetBestClientHeightint != NULL){
-      return m_wxButtonBaseExtDoGetBestClientHeightint(this, param0);
+      return m_wxButtonBaseExtDoGetBestClientHeightint(this, param0, res);
     }
     else {
       return res;
@@ -710,7 +716,7 @@ public:
   {
     wxSize res = wxButtonBase::DoGetBestClientSize();
     if (*m_wxButtonBaseExtDoGetBestClientSize != NULL){
-      return m_wxButtonBaseExtDoGetBestClientSize(this);
+      return m_wxButtonBaseExtDoGetBestClientSize(this, res);
     }
     else {
       return res;
@@ -721,7 +727,7 @@ public:
   {
     int res = wxButtonBase::DoGetBestClientWidth(param0);
     if (*m_wxButtonBaseExtDoGetBestClientWidthint != NULL){
-      return m_wxButtonBaseExtDoGetBestClientWidthint(this, param0);
+      return m_wxButtonBaseExtDoGetBestClientWidthint(this, param0, res);
     }
     else {
       return res;
@@ -732,7 +738,7 @@ public:
   {
     wxSize res = wxButtonBase::DoGetBestSize();
     if (*m_wxButtonBaseExtDoGetBestSize != NULL){
-      return m_wxButtonBaseExtDoGetBestSize(this);
+      return m_wxButtonBaseExtDoGetBestSize(this, res);
     }
     else {
       return res;
@@ -743,7 +749,7 @@ public:
   {
     wxBitmap res = wxButtonBase::DoGetBitmap(which);
     if (*m_wxButtonBaseExtDoGetBitmapwxAnyButtonBaseNState != NULL){
-      return m_wxButtonBaseExtDoGetBitmapwxAnyButtonBaseNState(this, which);
+      return m_wxButtonBaseExtDoGetBitmapwxAnyButtonBaseNState(this, which, res);
     }
     else {
       return res;
@@ -754,7 +760,7 @@ public:
   {
     wxSize res = wxButtonBase::DoGetBitmapMargins();
     if (*m_wxButtonBaseExtDoGetBitmapMargins != NULL){
-      return m_wxButtonBaseExtDoGetBitmapMargins(this);
+      return m_wxButtonBaseExtDoGetBitmapMargins(this, res);
     }
     else {
       return res;
@@ -765,7 +771,7 @@ public:
   {
     void* res = wxButtonBase::DoGetClientData();
     if (*m_wxButtonBaseExtDoGetClientData != NULL){
-      return m_wxButtonBaseExtDoGetClientData(this);
+      return m_wxButtonBaseExtDoGetClientData(this, res);
     }
     else {
       return res;
@@ -776,7 +782,7 @@ public:
   {
     wxClientData* res = wxButtonBase::DoGetClientObject();
     if (*m_wxButtonBaseExtDoGetClientObject != NULL){
-      return m_wxButtonBaseExtDoGetClientObject(this);
+      return m_wxButtonBaseExtDoGetClientObject(this, res);
     }
     else {
       return res;
@@ -814,23 +820,34 @@ public:
       return m_wxButtonBaseExtDoGetSizeintPintP(this, width, height);
     }
   }
+  wxButtonBaseExtDoGetSizeFromClientSizewxSizeCRFunc m_wxButtonBaseExtDoGetSizeFromClientSizewxSizeCR = NULL;
+  virtual wxSize DoGetSizeFromClientSize(wxSize const& size) const override
+  {
+    wxSize res = wxButtonBase::DoGetSizeFromClientSize(size);
+    if (*m_wxButtonBaseExtDoGetSizeFromClientSizewxSizeCR != NULL){
+      return m_wxButtonBaseExtDoGetSizeFromClientSizewxSizeCR(this, size, res);
+    }
+    else {
+      return res;
+    }
+  }
   wxButtonBaseExtDoGetSizeFromTextSizeintintFunc m_wxButtonBaseExtDoGetSizeFromTextSizeintint = NULL;
   virtual wxSize DoGetSizeFromTextSize(int xlen, int ylen = -1) const override
   {
     wxSize res = wxButtonBase::DoGetSizeFromTextSize(xlen, ylen);
     if (*m_wxButtonBaseExtDoGetSizeFromTextSizeintint != NULL){
-      return m_wxButtonBaseExtDoGetSizeFromTextSizeintint(this, xlen, ylen);
+      return m_wxButtonBaseExtDoGetSizeFromTextSizeintint(this, xlen, ylen, res);
     }
     else {
       return res;
     }
   }
   wxButtonBaseExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCPFunc m_wxButtonBaseExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCP = NULL;
-  virtual void DoGetTextExtent(wxString const& string, int* x, int* y, int* descent = __null, int* externalLeading = __null, wxFont const* font = __null) const override
+  virtual void DoGetTextExtent(wxString const& string, int* x, int* y, int* descent = __null, int* externalLeading = __null, wxFont const* theFont = __null) const override
   {
-    wxButtonBase::DoGetTextExtent(string, x, y, descent, externalLeading, font);
+    wxButtonBase::DoGetTextExtent(string, x, y, descent, externalLeading, theFont);
     if (*m_wxButtonBaseExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCP != NULL){
-      return m_wxButtonBaseExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCP(this, string, x, y, descent, externalLeading, font);
+      return m_wxButtonBaseExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCP(this, string, x, y, descent, externalLeading, theFont);
     }
   }
   wxButtonBaseExtDoGetVirtualSizeFunc m_wxButtonBaseExtDoGetVirtualSize = NULL;
@@ -838,7 +855,7 @@ public:
   {
     wxSize res = wxButtonBase::DoGetVirtualSize();
     if (*m_wxButtonBaseExtDoGetVirtualSize != NULL){
-      return m_wxButtonBaseExtDoGetVirtualSize(this);
+      return m_wxButtonBaseExtDoGetVirtualSize(this, res);
     }
     else {
       return res;
@@ -849,7 +866,7 @@ public:
   {
     wxHitTest res = wxButtonBase::DoHitTest(x, y);
     if (*m_wxButtonBaseExtDoHitTestwxCoordwxCoord != NULL){
-      return m_wxButtonBaseExtDoHitTestwxCoordwxCoord(this, x, y);
+      return m_wxButtonBaseExtDoHitTestwxCoordwxCoord(this, x, y, res);
     }
     else {
       return res;
@@ -860,7 +877,7 @@ public:
   {
     bool res = wxButtonBase::DoIsExposed(x, y, w, h);
     if (*m_wxButtonBaseExtDoIsExposedintintintint != NULL){
-      return m_wxButtonBaseExtDoIsExposedintintintint(this, x, y, w, h);
+      return m_wxButtonBaseExtDoIsExposedintintintint(this, x, y, w, h, res);
     }
     else {
       return res;
@@ -871,10 +888,18 @@ public:
   {
     bool res = wxButtonBase::DoIsExposed(x, y);
     if (*m_wxButtonBaseExtDoIsExposedintint != NULL){
-      return m_wxButtonBaseExtDoIsExposedintint(this, x, y);
+      return m_wxButtonBaseExtDoIsExposedintint(this, x, y, res);
     }
     else {
       return res;
+    }
+  }
+  wxButtonBaseExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrderFunc m_wxButtonBaseExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrder = NULL;
+  virtual void DoMoveInTabOrder(wxWindow* win, wxWindowBase::WindowOrder move) override
+  {
+    wxButtonBase::DoMoveInTabOrder(win, move);
+    if (*m_wxButtonBaseExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrder != NULL){
+      return m_wxButtonBaseExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrder(this, win, move);
     }
   }
   wxButtonBaseExtDoMoveWindowintintintintFunc m_wxButtonBaseExtDoMoveWindowintintintint = NULL;
@@ -890,7 +915,7 @@ public:
   {
     bool res = wxButtonBase::DoNavigateIn(flags);
     if (*m_wxButtonBaseExtDoNavigateInint != NULL){
-      return m_wxButtonBaseExtDoNavigateInint(this, flags);
+      return m_wxButtonBaseExtDoNavigateInint(this, flags, res);
     }
     else {
       return res;
@@ -901,7 +926,7 @@ public:
   {
     bool res = wxButtonBase::DoPhase(phase);
     if (*m_wxButtonBaseExtDoPhaseint != NULL){
-      return m_wxButtonBaseExtDoPhaseint(this, phase);
+      return m_wxButtonBaseExtDoPhaseint(this, phase, res);
     }
     else {
       return res;
@@ -912,7 +937,7 @@ public:
   {
     bool res = wxButtonBase::DoPopupMenu(menu, x, y);
     if (*m_wxButtonBaseExtDoPopupMenuwxMenuPintint != NULL){
-      return m_wxButtonBaseExtDoPopupMenuwxMenuPintint(this, menu, x, y);
+      return m_wxButtonBaseExtDoPopupMenuwxMenuPintint(this, menu, x, y, res);
     }
     else {
       return res;
@@ -995,7 +1020,7 @@ public:
   {
     bool res = wxButtonBase::DoSetLabelMarkup(markup);
     if (*m_wxButtonBaseExtDoSetLabelMarkupwxStringCR != NULL){
-      return m_wxButtonBaseExtDoSetLabelMarkupwxStringCR(this, markup);
+      return m_wxButtonBaseExtDoSetLabelMarkupwxStringCR(this, markup, res);
     }
     else {
       return res;
@@ -1078,29 +1103,29 @@ public:
   {
     bool res = wxButtonBase::Enable(enable);
     if (*m_wxButtonBaseExtEnablebool != NULL){
-      return m_wxButtonBaseExtEnablebool(this, enable);
+      return m_wxButtonBaseExtEnablebool(this, enable, res);
     }
     else {
       return res;
     }
   }
   wxButtonBaseExtEnableTouchEventsintFunc m_wxButtonBaseExtEnableTouchEventsint = NULL;
-  virtual bool EnableTouchEvents(int param0) override
+  virtual bool EnableTouchEvents(int eventsMask) override
   {
-    bool res = wxButtonBase::EnableTouchEvents(param0);
+    bool res = wxButtonBase::EnableTouchEvents(eventsMask);
     if (*m_wxButtonBaseExtEnableTouchEventsint != NULL){
-      return m_wxButtonBaseExtEnableTouchEventsint(this, param0);
+      return m_wxButtonBaseExtEnableTouchEventsint(this, eventsMask, res);
     }
     else {
       return res;
     }
   }
   wxButtonBaseExtEnableVisibleFocusboolFunc m_wxButtonBaseExtEnableVisibleFocusbool = NULL;
-  virtual void EnableVisibleFocus(bool param0) override
+  virtual void EnableVisibleFocus(bool enabled) override
   {
-    wxButtonBase::EnableVisibleFocus(param0);
+    wxButtonBase::EnableVisibleFocus(enabled);
     if (*m_wxButtonBaseExtEnableVisibleFocusbool != NULL){
-      return m_wxButtonBaseExtEnableVisibleFocusbool(this, param0);
+      return m_wxButtonBaseExtEnableVisibleFocusbool(this, enabled);
     }
   }
   wxButtonBaseExtEndRepositioningChildrenFunc m_wxButtonBaseExtEndRepositioningChildren = NULL;
@@ -1132,7 +1157,7 @@ public:
   {
     wxSize res = wxButtonBase::GetBestVirtualSize();
     if (*m_wxButtonBaseExtGetBestVirtualSize != NULL){
-      return m_wxButtonBaseExtGetBestVirtualSize(this);
+      return m_wxButtonBaseExtGetBestVirtualSize(this, res);
     }
     else {
       return res;
@@ -1143,7 +1168,7 @@ public:
   {
     int res = wxButtonBase::GetCharHeight();
     if (*m_wxButtonBaseExtGetCharHeight != NULL){
-      return m_wxButtonBaseExtGetCharHeight(this);
+      return m_wxButtonBaseExtGetCharHeight(this, res);
     }
     else {
       return res;
@@ -1154,7 +1179,7 @@ public:
   {
     int res = wxButtonBase::GetCharWidth();
     if (*m_wxButtonBaseExtGetCharWidth != NULL){
-      return m_wxButtonBaseExtGetCharWidth(this);
+      return m_wxButtonBaseExtGetCharWidth(this, res);
     }
     else {
       return res;
@@ -1165,7 +1190,7 @@ public:
   {
     wxClassInfo* res = wxButtonBase::GetClassInfo();
     if (*m_wxButtonBaseExtGetClassInfo != NULL){
-      return m_wxButtonBaseExtGetClassInfo(this);
+      return m_wxButtonBaseExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -1176,7 +1201,7 @@ public:
   {
     wxPoint res = wxButtonBase::GetClientAreaOrigin();
     if (*m_wxButtonBaseExtGetClientAreaOrigin != NULL){
-      return m_wxButtonBaseExtGetClientAreaOrigin(this);
+      return m_wxButtonBaseExtGetClientAreaOrigin(this, res);
     }
     else {
       return res;
@@ -1195,7 +1220,7 @@ public:
   {
     double res = wxButtonBase::GetContentScaleFactor();
     if (*m_wxButtonBaseExtGetContentScaleFactor != NULL){
-      return m_wxButtonBaseExtGetContentScaleFactor(this);
+      return m_wxButtonBaseExtGetContentScaleFactor(this, res);
     }
     else {
       return res;
@@ -1206,7 +1231,7 @@ public:
   {
     wxSize res = wxButtonBase::GetDPI();
     if (*m_wxButtonBaseExtGetDPI != NULL){
-      return m_wxButtonBaseExtGetDPI(this);
+      return m_wxButtonBaseExtGetDPI(this, res);
     }
     else {
       return res;
@@ -1217,7 +1242,7 @@ public:
   {
     double res = wxButtonBase::GetDPIScaleFactor();
     if (*m_wxButtonBaseExtGetDPIScaleFactor != NULL){
-      return m_wxButtonBaseExtGetDPIScaleFactor(this);
+      return m_wxButtonBaseExtGetDPIScaleFactor(this, res);
     }
     else {
       return res;
@@ -1228,7 +1253,7 @@ public:
   {
     wxVisualAttributes res = wxButtonBase::GetDefaultAttributes();
     if (*m_wxButtonBaseExtGetDefaultAttributes != NULL){
-      return m_wxButtonBaseExtGetDefaultAttributes(this);
+      return m_wxButtonBaseExtGetDefaultAttributes(this, res);
     }
     else {
       return res;
@@ -1239,7 +1264,7 @@ public:
   {
     wxBorder res = wxButtonBase::GetDefaultBorder();
     if (*m_wxButtonBaseExtGetDefaultBorder != NULL){
-      return m_wxButtonBaseExtGetDefaultBorder(this);
+      return m_wxButtonBaseExtGetDefaultBorder(this, res);
     }
     else {
       return res;
@@ -1250,7 +1275,7 @@ public:
   {
     wxBorder res = wxButtonBase::GetDefaultBorderForControl();
     if (*m_wxButtonBaseExtGetDefaultBorderForControl != NULL){
-      return m_wxButtonBaseExtGetDefaultBorderForControl(this);
+      return m_wxButtonBaseExtGetDefaultBorderForControl(this, res);
     }
     else {
       return res;
@@ -1261,7 +1286,7 @@ public:
   {
     wxDropTarget* res = wxButtonBase::GetDropTarget();
     if (*m_wxButtonBaseExtGetDropTarget != NULL){
-      return m_wxButtonBaseExtGetDropTarget(this);
+      return m_wxButtonBaseExtGetDropTarget(this, res);
     }
     else {
       return res;
@@ -1272,7 +1297,7 @@ public:
   {
     wxSize res = wxButtonBase::GetEffectiveMinSize();
     if (*m_wxButtonBaseExtGetEffectiveMinSize != NULL){
-      return m_wxButtonBaseExtGetEffectiveMinSize(this);
+      return m_wxButtonBaseExtGetEffectiveMinSize(this, res);
     }
     else {
       return res;
@@ -1283,7 +1308,7 @@ public:
   {
     wxEventHashTable& res = wxButtonBase::GetEventHashTable();
     if (*m_wxButtonBaseExtGetEventHashTable != NULL){
-      return m_wxButtonBaseExtGetEventHashTable(this);
+      return m_wxButtonBaseExtGetEventHashTable(this, res);
     }
     else {
       return res;
@@ -1294,7 +1319,7 @@ public:
   {
     wxEventTable const* res = wxButtonBase::GetEventTable();
     if (*m_wxButtonBaseExtGetEventTable != NULL){
-      return m_wxButtonBaseExtGetEventTable(this);
+      return m_wxButtonBaseExtGetEventTable(this, res);
     }
     else {
       return res;
@@ -1305,7 +1330,7 @@ public:
   {
     WXWidget res = wxButtonBase::GetHandle();
     if (*m_wxButtonBaseExtGetHandle != NULL){
-      return m_wxButtonBaseExtGetHandle(this);
+      return m_wxButtonBaseExtGetHandle(this, res);
     }
     else {
       return res;
@@ -1316,7 +1341,7 @@ public:
   {
     wxString res = wxButtonBase::GetHelpTextAtPoint(pt, origin);
     if (*m_wxButtonBaseExtGetHelpTextAtPointwxPointCRwxHelpEventNOrigin != NULL){
-      return m_wxButtonBaseExtGetHelpTextAtPointwxPointCRwxHelpEventNOrigin(this, pt, origin);
+      return m_wxButtonBaseExtGetHelpTextAtPointwxPointCRwxHelpEventNOrigin(this, pt, origin, res);
     }
     else {
       return res;
@@ -1327,7 +1352,7 @@ public:
   {
     wxString res = wxButtonBase::GetLabel();
     if (*m_wxButtonBaseExtGetLabel != NULL){
-      return m_wxButtonBaseExtGetLabel(this);
+      return m_wxButtonBaseExtGetLabel(this, res);
     }
     else {
       return res;
@@ -1338,7 +1363,7 @@ public:
   {
     wxString res = wxButtonBase::GetLabelText();
     if (*m_wxButtonBaseExtGetLabelText != NULL){
-      return m_wxButtonBaseExtGetLabelText(this);
+      return m_wxButtonBaseExtGetLabelText(this, res);
     }
     else {
       return res;
@@ -1349,7 +1374,7 @@ public:
   {
     wxLayoutDirection res = wxButtonBase::GetLayoutDirection();
     if (*m_wxButtonBaseExtGetLayoutDirection != NULL){
-      return m_wxButtonBaseExtGetLayoutDirection(this);
+      return m_wxButtonBaseExtGetLayoutDirection(this, res);
     }
     else {
       return res;
@@ -1360,7 +1385,7 @@ public:
   {
     wxWindow* res = wxButtonBase::GetMainWindowOfCompositeControl();
     if (*m_wxButtonBaseExtGetMainWindowOfCompositeControl != NULL){
-      return m_wxButtonBaseExtGetMainWindowOfCompositeControl(this);
+      return m_wxButtonBaseExtGetMainWindowOfCompositeControl(this, res);
     }
     else {
       return res;
@@ -1371,7 +1396,7 @@ public:
   {
     wxSize res = wxButtonBase::GetMaxClientSize();
     if (*m_wxButtonBaseExtGetMaxClientSize != NULL){
-      return m_wxButtonBaseExtGetMaxClientSize(this);
+      return m_wxButtonBaseExtGetMaxClientSize(this, res);
     }
     else {
       return res;
@@ -1382,7 +1407,7 @@ public:
   {
     wxSize res = wxButtonBase::GetMaxSize();
     if (*m_wxButtonBaseExtGetMaxSize != NULL){
-      return m_wxButtonBaseExtGetMaxSize(this);
+      return m_wxButtonBaseExtGetMaxSize(this, res);
     }
     else {
       return res;
@@ -1393,7 +1418,7 @@ public:
   {
     wxSize res = wxButtonBase::GetMinClientSize();
     if (*m_wxButtonBaseExtGetMinClientSize != NULL){
-      return m_wxButtonBaseExtGetMinClientSize(this);
+      return m_wxButtonBaseExtGetMinClientSize(this, res);
     }
     else {
       return res;
@@ -1404,7 +1429,7 @@ public:
   {
     wxSize res = wxButtonBase::GetMinSize();
     if (*m_wxButtonBaseExtGetMinSize != NULL){
-      return m_wxButtonBaseExtGetMinSize(this);
+      return m_wxButtonBaseExtGetMinSize(this, res);
     }
     else {
       return res;
@@ -1415,7 +1440,7 @@ public:
   {
     wxString res = wxButtonBase::GetName();
     if (*m_wxButtonBaseExtGetName != NULL){
-      return m_wxButtonBaseExtGetName(this);
+      return m_wxButtonBaseExtGetName(this, res);
     }
     else {
       return res;
@@ -1426,7 +1451,7 @@ public:
   {
     wxAnyButtonBase::State res = wxButtonBase::GetNormalState();
     if (*m_wxButtonBaseExtGetNormalState != NULL){
-      return m_wxButtonBaseExtGetNormalState(this);
+      return m_wxButtonBaseExtGetNormalState(this, res);
     }
     else {
       return res;
@@ -1445,7 +1470,7 @@ public:
   {
     int res = wxButtonBase::GetScrollPos(orient);
     if (*m_wxButtonBaseExtGetScrollPosint != NULL){
-      return m_wxButtonBaseExtGetScrollPosint(this, orient);
+      return m_wxButtonBaseExtGetScrollPosint(this, orient, res);
     }
     else {
       return res;
@@ -1456,7 +1481,7 @@ public:
   {
     int res = wxButtonBase::GetScrollRange(orient);
     if (*m_wxButtonBaseExtGetScrollRangeint != NULL){
-      return m_wxButtonBaseExtGetScrollRangeint(this, orient);
+      return m_wxButtonBaseExtGetScrollRangeint(this, orient, res);
     }
     else {
       return res;
@@ -1467,7 +1492,7 @@ public:
   {
     int res = wxButtonBase::GetScrollThumb(orient);
     if (*m_wxButtonBaseExtGetScrollThumbint != NULL){
-      return m_wxButtonBaseExtGetScrollThumbint(this, orient);
+      return m_wxButtonBaseExtGetScrollThumbint(this, orient, res);
     }
     else {
       return res;
@@ -1486,7 +1511,18 @@ public:
   {
     bool res = wxButtonBase::GetThemeEnabled();
     if (*m_wxButtonBaseExtGetThemeEnabled != NULL){
-      return m_wxButtonBaseExtGetThemeEnabled(this);
+      return m_wxButtonBaseExtGetThemeEnabled(this, res);
+    }
+    else {
+      return res;
+    }
+  }
+  wxButtonBaseExtGetTransparentFunc m_wxButtonBaseExtGetTransparent = NULL;
+  virtual wxByte GetTransparent() const override
+  {
+    wxByte res = wxButtonBase::GetTransparent();
+    if (*m_wxButtonBaseExtGetTransparent != NULL){
+      return m_wxButtonBaseExtGetTransparent(this, res);
     }
     else {
       return res;
@@ -1497,7 +1533,7 @@ public:
   {
     wxValidator* res = wxButtonBase::GetValidator();
     if (*m_wxButtonBaseExtGetValidator != NULL){
-      return m_wxButtonBaseExtGetValidator(this);
+      return m_wxButtonBaseExtGetValidator(this, res);
     }
     else {
       return res;
@@ -1508,7 +1544,7 @@ public:
   {
     wxSize res = wxButtonBase::GetWindowBorderSize();
     if (*m_wxButtonBaseExtGetWindowBorderSize != NULL){
-      return m_wxButtonBaseExtGetWindowBorderSize(this);
+      return m_wxButtonBaseExtGetWindowBorderSize(this, res);
     }
     else {
       return res;
@@ -1519,7 +1555,7 @@ public:
   {
     long res = wxButtonBase::GetWindowStyleFlag();
     if (*m_wxButtonBaseExtGetWindowStyleFlag != NULL){
-      return m_wxButtonBaseExtGetWindowStyleFlag(this);
+      return m_wxButtonBaseExtGetWindowStyleFlag(this, res);
     }
     else {
       return res;
@@ -1530,7 +1566,7 @@ public:
   {
     bool res = wxButtonBase::HasCapture();
     if (*m_wxButtonBaseExtHasCapture != NULL){
-      return m_wxButtonBaseExtHasCapture(this);
+      return m_wxButtonBaseExtHasCapture(this, res);
     }
     else {
       return res;
@@ -1541,7 +1577,7 @@ public:
   {
     bool res = wxButtonBase::HasFocus();
     if (*m_wxButtonBaseExtHasFocus != NULL){
-      return m_wxButtonBaseExtHasFocus(this);
+      return m_wxButtonBaseExtHasFocus(this, res);
     }
     else {
       return res;
@@ -1552,7 +1588,7 @@ public:
   {
     bool res = wxButtonBase::HasMultiplePages();
     if (*m_wxButtonBaseExtHasMultiplePages != NULL){
-      return m_wxButtonBaseExtHasMultiplePages(this);
+      return m_wxButtonBaseExtHasMultiplePages(this, res);
     }
     else {
       return res;
@@ -1563,18 +1599,18 @@ public:
   {
     bool res = wxButtonBase::HasTransparentBackground();
     if (*m_wxButtonBaseExtHasTransparentBackground != NULL){
-      return m_wxButtonBaseExtHasTransparentBackground(this);
+      return m_wxButtonBaseExtHasTransparentBackground(this, res);
     }
     else {
       return res;
     }
   }
   wxButtonBaseExtHideWithEffectwxShowEffectunsignedintFunc m_wxButtonBaseExtHideWithEffectwxShowEffectunsignedint = NULL;
-  virtual bool HideWithEffect(wxShowEffect param0, unsigned int param1 = 0) override
+  virtual bool HideWithEffect(wxShowEffect effect, unsigned int timeout = 0) override
   {
-    bool res = wxButtonBase::HideWithEffect(param0, param1);
+    bool res = wxButtonBase::HideWithEffect(effect, timeout);
     if (*m_wxButtonBaseExtHideWithEffectwxShowEffectunsignedint != NULL){
-      return m_wxButtonBaseExtHideWithEffectwxShowEffectunsignedint(this, param0, param1);
+      return m_wxButtonBaseExtHideWithEffectwxShowEffectunsignedint(this, effect, timeout, res);
     }
     else {
       return res;
@@ -1585,7 +1621,7 @@ public:
   {
     bool res = wxButtonBase::InformFirstDirection(direction, size, availableOtherDir);
     if (*m_wxButtonBaseExtInformFirstDirectionintintint != NULL){
-      return m_wxButtonBaseExtInformFirstDirectionintintint(this, direction, size, availableOtherDir);
+      return m_wxButtonBaseExtInformFirstDirectionintintint(this, direction, size, availableOtherDir, res);
     }
     else {
       return res;
@@ -1612,7 +1648,7 @@ public:
   {
     bool res = wxButtonBase::IsClientAreaChild(param0);
     if (*m_wxButtonBaseExtIsClientAreaChildwxWindowCP != NULL){
-      return m_wxButtonBaseExtIsClientAreaChildwxWindowCP(this, param0);
+      return m_wxButtonBaseExtIsClientAreaChildwxWindowCP(this, param0, res);
     }
     else {
       return res;
@@ -1623,7 +1659,7 @@ public:
   {
     bool res = wxButtonBase::IsDoubleBuffered();
     if (*m_wxButtonBaseExtIsDoubleBuffered != NULL){
-      return m_wxButtonBaseExtIsDoubleBuffered(this);
+      return m_wxButtonBaseExtIsDoubleBuffered(this, res);
     }
     else {
       return res;
@@ -1634,18 +1670,18 @@ public:
   {
     bool res = wxButtonBase::IsRetained();
     if (*m_wxButtonBaseExtIsRetained != NULL){
-      return m_wxButtonBaseExtIsRetained(this);
+      return m_wxButtonBaseExtIsRetained(this, res);
     }
     else {
       return res;
     }
   }
   wxButtonBaseExtIsScrollbarAlwaysShownintFunc m_wxButtonBaseExtIsScrollbarAlwaysShownint = NULL;
-  virtual bool IsScrollbarAlwaysShown(int param0) const override
+  virtual bool IsScrollbarAlwaysShown(int orient) const override
   {
-    bool res = wxButtonBase::IsScrollbarAlwaysShown(param0);
+    bool res = wxButtonBase::IsScrollbarAlwaysShown(orient);
     if (*m_wxButtonBaseExtIsScrollbarAlwaysShownint != NULL){
-      return m_wxButtonBaseExtIsScrollbarAlwaysShownint(this, param0);
+      return m_wxButtonBaseExtIsScrollbarAlwaysShownint(this, orient, res);
     }
     else {
       return res;
@@ -1656,7 +1692,7 @@ public:
   {
     bool res = wxButtonBase::IsShown();
     if (*m_wxButtonBaseExtIsShown != NULL){
-      return m_wxButtonBaseExtIsShown(this);
+      return m_wxButtonBaseExtIsShown(this, res);
     }
     else {
       return res;
@@ -1667,7 +1703,7 @@ public:
   {
     bool res = wxButtonBase::IsShownOnScreen();
     if (*m_wxButtonBaseExtIsShownOnScreen != NULL){
-      return m_wxButtonBaseExtIsShownOnScreen(this);
+      return m_wxButtonBaseExtIsShownOnScreen(this, res);
     }
     else {
       return res;
@@ -1678,7 +1714,7 @@ public:
   {
     bool res = wxButtonBase::IsThisEnabled();
     if (*m_wxButtonBaseExtIsThisEnabled != NULL){
-      return m_wxButtonBaseExtIsThisEnabled(this);
+      return m_wxButtonBaseExtIsThisEnabled(this, res);
     }
     else {
       return res;
@@ -1689,7 +1725,7 @@ public:
   {
     bool res = wxButtonBase::IsTopLevel();
     if (*m_wxButtonBaseExtIsTopLevel != NULL){
-      return m_wxButtonBaseExtIsTopLevel(this);
+      return m_wxButtonBaseExtIsTopLevel(this, res);
     }
     else {
       return res;
@@ -1700,7 +1736,7 @@ public:
   {
     bool res = wxButtonBase::IsTopNavigationDomain(param0);
     if (*m_wxButtonBaseExtIsTopNavigationDomainwxWindowBaseNNavigationKind != NULL){
-      return m_wxButtonBaseExtIsTopNavigationDomainwxWindowBaseNNavigationKind(this, param0);
+      return m_wxButtonBaseExtIsTopNavigationDomainwxWindowBaseNNavigationKind(this, param0, res);
     }
     else {
       return res;
@@ -1711,7 +1747,7 @@ public:
   {
     bool res = wxButtonBase::IsTransparentBackgroundSupported(reason);
     if (*m_wxButtonBaseExtIsTransparentBackgroundSupportedwxStringP != NULL){
-      return m_wxButtonBaseExtIsTransparentBackgroundSupportedwxStringP(this, reason);
+      return m_wxButtonBaseExtIsTransparentBackgroundSupportedwxStringP(this, reason, res);
     }
     else {
       return res;
@@ -1722,7 +1758,7 @@ public:
   {
     bool res = wxButtonBase::Layout();
     if (*m_wxButtonBaseExtLayout != NULL){
-      return m_wxButtonBaseExtLayout(this);
+      return m_wxButtonBaseExtLayout(this, res);
     }
     else {
       return res;
@@ -1733,7 +1769,7 @@ public:
   {
     bool res = wxButtonBase::LayoutPhase1(noChanges);
     if (*m_wxButtonBaseExtLayoutPhase1intP != NULL){
-      return m_wxButtonBaseExtLayoutPhase1intP(this, noChanges);
+      return m_wxButtonBaseExtLayoutPhase1intP(this, noChanges, res);
     }
     else {
       return res;
@@ -1744,7 +1780,7 @@ public:
   {
     bool res = wxButtonBase::LayoutPhase2(noChanges);
     if (*m_wxButtonBaseExtLayoutPhase2intP != NULL){
-      return m_wxButtonBaseExtLayoutPhase2intP(this, noChanges);
+      return m_wxButtonBaseExtLayoutPhase2intP(this, noChanges, res);
     }
     else {
       return res;
@@ -1771,7 +1807,7 @@ public:
   {
     bool res = wxButtonBase::OnDynamicBind(param0);
     if (*m_wxButtonBaseExtOnDynamicBindwxDynamicEventTableEntryR != NULL){
-      return m_wxButtonBaseExtOnDynamicBindwxDynamicEventTableEntryR(this, param0);
+      return m_wxButtonBaseExtOnDynamicBindwxDynamicEventTableEntryR(this, param0, res);
     }
     else {
       return res;
@@ -1798,7 +1834,7 @@ public:
   {
     bool res = wxButtonBase::ProcessEvent(event);
     if (*m_wxButtonBaseExtProcessEventwxEventR != NULL){
-      return m_wxButtonBaseExtProcessEventwxEventR(this, event);
+      return m_wxButtonBaseExtProcessEventwxEventR(this, event, res);
     }
     else {
       return res;
@@ -1821,7 +1857,7 @@ public:
     }
   }
   wxButtonBaseExtRefreshboolwxRectCPFunc m_wxButtonBaseExtRefreshboolwxRectCP = NULL;
-  virtual void Refresh(bool eraseBackground = true, wxRect const* rect = (const wxRect*)__null) override
+  virtual void Refresh(bool eraseBackground = true, wxRect const* rect = __null) override
   {
     wxButtonBase::Refresh(eraseBackground, rect);
     if (*m_wxButtonBaseExtRefreshboolwxRectCP != NULL){
@@ -1833,7 +1869,7 @@ public:
   {
     bool res = wxButtonBase::RegisterHotKey(hotkeyId, modifiers, keycode);
     if (*m_wxButtonBaseExtRegisterHotKeyintintint != NULL){
-      return m_wxButtonBaseExtRegisterHotKeyintintint(this, hotkeyId, modifiers, keycode);
+      return m_wxButtonBaseExtRegisterHotKeyintintint(this, hotkeyId, modifiers, keycode, res);
     }
     else {
       return res;
@@ -1852,7 +1888,7 @@ public:
   {
     bool res = wxButtonBase::Reparent(newParent);
     if (*m_wxButtonBaseExtReparentwxWindowBaseP != NULL){
-      return m_wxButtonBaseExtReparentwxWindowBaseP(this, newParent);
+      return m_wxButtonBaseExtReparentwxWindowBaseP(this, newParent, res);
     }
     else {
       return res;
@@ -1863,7 +1899,7 @@ public:
   {
     bool res = wxButtonBase::ScrollLines(param0);
     if (*m_wxButtonBaseExtScrollLinesint != NULL){
-      return m_wxButtonBaseExtScrollLinesint(this, param0);
+      return m_wxButtonBaseExtScrollLinesint(this, param0, res);
     }
     else {
       return res;
@@ -1874,7 +1910,7 @@ public:
   {
     bool res = wxButtonBase::ScrollPages(param0);
     if (*m_wxButtonBaseExtScrollPagesint != NULL){
-      return m_wxButtonBaseExtScrollPagesint(this, param0);
+      return m_wxButtonBaseExtScrollPagesint(this, param0, res);
     }
     else {
       return res;
@@ -1893,7 +1929,7 @@ public:
   {
     bool res = wxButtonBase::SearchEventTable(table, event);
     if (*m_wxButtonBaseExtSearchEventTablewxEventTableRwxEventR != NULL){
-      return m_wxButtonBaseExtSearchEventTablewxEventTableRwxEventR(this, table, event);
+      return m_wxButtonBaseExtSearchEventTablewxEventTableRwxEventR(this, table, event, res);
     }
     else {
       return res;
@@ -1904,7 +1940,7 @@ public:
   {
     bool res = wxButtonBase::SendIdleEvents(event);
     if (*m_wxButtonBaseExtSendIdleEventswxIdleEventR != NULL){
-      return m_wxButtonBaseExtSendIdleEventswxIdleEventR(this, event);
+      return m_wxButtonBaseExtSendIdleEventswxIdleEventR(this, event, res);
     }
     else {
       return res;
@@ -1931,7 +1967,7 @@ public:
   {
     bool res = wxButtonBase::SetBackgroundColour(colour);
     if (*m_wxButtonBaseExtSetBackgroundColourwxColourCR != NULL){
-      return m_wxButtonBaseExtSetBackgroundColourwxColourCR(this, colour);
+      return m_wxButtonBaseExtSetBackgroundColourwxColourCR(this, colour, res);
     }
     else {
       return res;
@@ -1942,7 +1978,7 @@ public:
   {
     bool res = wxButtonBase::SetBackgroundStyle(style);
     if (*m_wxButtonBaseExtSetBackgroundStylewxBackgroundStyle != NULL){
-      return m_wxButtonBaseExtSetBackgroundStylewxBackgroundStyle(this, style);
+      return m_wxButtonBaseExtSetBackgroundStylewxBackgroundStyle(this, style, res);
     }
     else {
       return res;
@@ -1969,7 +2005,7 @@ public:
   {
     bool res = wxButtonBase::SetCursor(cursor);
     if (*m_wxButtonBaseExtSetCursorwxCursorCR != NULL){
-      return m_wxButtonBaseExtSetCursorwxCursorCR(this, cursor);
+      return m_wxButtonBaseExtSetCursorwxCursorCR(this, cursor, res);
     }
     else {
       return res;
@@ -1980,7 +2016,7 @@ public:
   {
     wxWindow* res = wxButtonBase::SetDefault();
     if (*m_wxButtonBaseExtSetDefault != NULL){
-      return m_wxButtonBaseExtSetDefault(this);
+      return m_wxButtonBaseExtSetDefault(this, res);
     }
     else {
       return res;
@@ -2031,7 +2067,7 @@ public:
   {
     bool res = wxButtonBase::SetFont(font);
     if (*m_wxButtonBaseExtSetFontwxFontCR != NULL){
-      return m_wxButtonBaseExtSetFontwxFontCR(this, font);
+      return m_wxButtonBaseExtSetFontwxFontCR(this, font, res);
     }
     else {
       return res;
@@ -2042,7 +2078,7 @@ public:
   {
     bool res = wxButtonBase::SetForegroundColour(colour);
     if (*m_wxButtonBaseExtSetForegroundColourwxColourCR != NULL){
-      return m_wxButtonBaseExtSetForegroundColourwxColourCR(this, colour);
+      return m_wxButtonBaseExtSetForegroundColourwxColourCR(this, colour, res);
     }
     else {
       return res;
@@ -2145,11 +2181,11 @@ public:
     }
   }
   wxButtonBaseExtSetScrollbarintintintintboolFunc m_wxButtonBaseExtSetScrollbarintintintintbool = NULL;
-  virtual void SetScrollbar(int orient, int pos, int thumbvisible, int range, bool refresh = true) override
+  virtual void SetScrollbar(int orient, int pos, int thumbVisible, int range, bool refresh = true) override
   {
-    wxButtonBase::SetScrollbar(orient, pos, thumbvisible, range, refresh);
+    wxButtonBase::SetScrollbar(orient, pos, thumbVisible, range, refresh);
     if (*m_wxButtonBaseExtSetScrollbarintintintintbool != NULL){
-      return m_wxButtonBaseExtSetScrollbarintintintintbool(this, orient, pos, thumbvisible, range, refresh);
+      return m_wxButtonBaseExtSetScrollbarintintintintbool(this, orient, pos, thumbVisible, range, refresh);
     }
   }
   wxButtonBaseExtSetSizeConstraintintintintintFunc m_wxButtonBaseExtSetSizeConstraintintintintint = NULL;
@@ -2177,11 +2213,11 @@ public:
     }
   }
   wxButtonBaseExtSetTransparentwxByteFunc m_wxButtonBaseExtSetTransparentwxByte = NULL;
-  virtual bool SetTransparent(wxByte param0) override
+  virtual bool SetTransparent(wxByte alpha) override
   {
-    bool res = wxButtonBase::SetTransparent(param0);
+    bool res = wxButtonBase::SetTransparent(alpha);
     if (*m_wxButtonBaseExtSetTransparentwxByte != NULL){
-      return m_wxButtonBaseExtSetTransparentwxByte(this, param0);
+      return m_wxButtonBaseExtSetTransparentwxByte(this, alpha, res);
     }
     else {
       return res;
@@ -2208,7 +2244,7 @@ public:
   {
     bool res = wxButtonBase::ShouldInheritColours();
     if (*m_wxButtonBaseExtShouldInheritColours != NULL){
-      return m_wxButtonBaseExtShouldInheritColours(this);
+      return m_wxButtonBaseExtShouldInheritColours(this, res);
     }
     else {
       return res;
@@ -2219,18 +2255,18 @@ public:
   {
     bool res = wxButtonBase::Show(show);
     if (*m_wxButtonBaseExtShowbool != NULL){
-      return m_wxButtonBaseExtShowbool(this, show);
+      return m_wxButtonBaseExtShowbool(this, show, res);
     }
     else {
       return res;
     }
   }
   wxButtonBaseExtShowWithEffectwxShowEffectunsignedintFunc m_wxButtonBaseExtShowWithEffectwxShowEffectunsignedint = NULL;
-  virtual bool ShowWithEffect(wxShowEffect param0, unsigned int param1 = 0) override
+  virtual bool ShowWithEffect(wxShowEffect effect, unsigned int timeout = 0) override
   {
-    bool res = wxButtonBase::ShowWithEffect(param0, param1);
+    bool res = wxButtonBase::ShowWithEffect(effect, timeout);
     if (*m_wxButtonBaseExtShowWithEffectwxShowEffectunsignedint != NULL){
-      return m_wxButtonBaseExtShowWithEffectwxShowEffectunsignedint(this, param0, param1);
+      return m_wxButtonBaseExtShowWithEffectwxShowEffectunsignedint(this, effect, timeout, res);
     }
     else {
       return res;
@@ -2241,7 +2277,7 @@ public:
   {
     bool res = wxButtonBase::TransferDataFromWindow();
     if (*m_wxButtonBaseExtTransferDataFromWindow != NULL){
-      return m_wxButtonBaseExtTransferDataFromWindow(this);
+      return m_wxButtonBaseExtTransferDataFromWindow(this, res);
     }
     else {
       return res;
@@ -2252,10 +2288,18 @@ public:
   {
     bool res = wxButtonBase::TransferDataToWindow();
     if (*m_wxButtonBaseExtTransferDataToWindow != NULL){
-      return m_wxButtonBaseExtTransferDataToWindow(this);
+      return m_wxButtonBaseExtTransferDataToWindow(this, res);
     }
     else {
       return res;
+    }
+  }
+  wxButtonBaseExtTriggerScrollEventwxEventTypeFunc m_wxButtonBaseExtTriggerScrollEventwxEventType = NULL;
+  virtual void TriggerScrollEvent(wxEventType scrollEvent) override
+  {
+    wxButtonBase::TriggerScrollEvent(scrollEvent);
+    if (*m_wxButtonBaseExtTriggerScrollEventwxEventType != NULL){
+      return m_wxButtonBaseExtTriggerScrollEventwxEventType(this, scrollEvent);
     }
   }
   wxButtonBaseExtTryAfterwxEventRFunc m_wxButtonBaseExtTryAfterwxEventR = NULL;
@@ -2263,7 +2307,7 @@ public:
   {
     bool res = wxButtonBase::TryAfter(event);
     if (*m_wxButtonBaseExtTryAfterwxEventR != NULL){
-      return m_wxButtonBaseExtTryAfterwxEventR(this, event);
+      return m_wxButtonBaseExtTryAfterwxEventR(this, event, res);
     }
     else {
       return res;
@@ -2274,7 +2318,7 @@ public:
   {
     bool res = wxButtonBase::TryBefore(event);
     if (*m_wxButtonBaseExtTryBeforewxEventR != NULL){
-      return m_wxButtonBaseExtTryBeforewxEventR(this, event);
+      return m_wxButtonBaseExtTryBeforewxEventR(this, event, res);
     }
     else {
       return res;
@@ -2285,7 +2329,7 @@ public:
   {
     bool res = wxButtonBase::UnregisterHotKey(hotkeyId);
     if (*m_wxButtonBaseExtUnregisterHotKeyint != NULL){
-      return m_wxButtonBaseExtUnregisterHotKeyint(this, hotkeyId);
+      return m_wxButtonBaseExtUnregisterHotKeyint(this, hotkeyId, res);
     }
     else {
       return res;
@@ -2312,7 +2356,7 @@ public:
   {
     bool res = wxButtonBase::Validate();
     if (*m_wxButtonBaseExtValidate != NULL){
-      return m_wxButtonBaseExtValidate(this);
+      return m_wxButtonBaseExtValidate(this, res);
     }
     else {
       return res;
@@ -2331,7 +2375,7 @@ public:
   {
     wxTextEntry const* res = wxButtonBase::WXGetTextEntry();
     if (*m_wxButtonBaseExtWXGetTextEntry != NULL){
-      return m_wxButtonBaseExtWXGetTextEntry(this);
+      return m_wxButtonBaseExtWXGetTextEntry(this, res);
     }
     else {
       return res;
@@ -2342,7 +2386,7 @@ public:
   {
     void* res = wxButtonBase::WXReservedEvtHandler1(param0);
     if (*m_wxButtonBaseExtWXReservedEvtHandler1voidP != NULL){
-      return m_wxButtonBaseExtWXReservedEvtHandler1voidP(this, param0);
+      return m_wxButtonBaseExtWXReservedEvtHandler1voidP(this, param0, res);
     }
     else {
       return res;
@@ -2353,7 +2397,7 @@ public:
   {
     void* res = wxButtonBase::WXReservedEvtHandler2(param0);
     if (*m_wxButtonBaseExtWXReservedEvtHandler2voidP != NULL){
-      return m_wxButtonBaseExtWXReservedEvtHandler2voidP(this, param0);
+      return m_wxButtonBaseExtWXReservedEvtHandler2voidP(this, param0, res);
     }
     else {
       return res;
@@ -2364,7 +2408,7 @@ public:
   {
     void* res = wxButtonBase::WXReservedWindow1(param0);
     if (*m_wxButtonBaseExtWXReservedWindow1voidP != NULL){
-      return m_wxButtonBaseExtWXReservedWindow1voidP(this, param0);
+      return m_wxButtonBaseExtWXReservedWindow1voidP(this, param0, res);
     }
     else {
       return res;
@@ -2375,7 +2419,7 @@ public:
   {
     void* res = wxButtonBase::WXReservedWindow2(param0);
     if (*m_wxButtonBaseExtWXReservedWindow2voidP != NULL){
-      return m_wxButtonBaseExtWXReservedWindow2voidP(this, param0);
+      return m_wxButtonBaseExtWXReservedWindow2voidP(this, param0, res);
     }
     else {
       return res;
@@ -2386,7 +2430,7 @@ public:
   {
     void* res = wxButtonBase::WXReservedWindow3(param0);
     if (*m_wxButtonBaseExtWXReservedWindow3voidP != NULL){
-      return m_wxButtonBaseExtWXReservedWindow3voidP(this, param0);
+      return m_wxButtonBaseExtWXReservedWindow3voidP(this, param0, res);
     }
     else {
       return res;
@@ -2413,13 +2457,13 @@ public:
   {
     wxSize res = wxButtonBase::WindowToClientSize(size);
     if (*m_wxButtonBaseExtWindowToClientSizewxSizeCR != NULL){
-      return m_wxButtonBaseExtWindowToClientSizewxSizeCR(this, size);
+      return m_wxButtonBaseExtWindowToClientSizewxSizeCR(this, size, res);
     }
     else {
       return res;
     }
   }
-  wxButtonBaseExt(wxButtonBaseExtAcceptsFocusFunc a_AcceptsFocus, wxButtonBaseExtAcceptsFocusFromKeyboardFunc a_AcceptsFocusFromKeyboard, wxButtonBaseExtAcceptsFocusRecursivelyFunc a_AcceptsFocusRecursively, wxButtonBaseExtAddChildwxWindowBasePFunc a_AddChildwxWindowBaseP, wxButtonBaseExtAddPendingEventwxEventCRFunc a_AddPendingEventwxEventCR, wxButtonBaseExtAdjustForLayoutDirectionwxCoordwxCoordwxCoordFunc a_AdjustForLayoutDirectionwxCoordwxCoordwxCoord, wxButtonBaseExtAdjustForParentClientOriginintRintRintFunc a_AdjustForParentClientOriginintRintRint, wxButtonBaseExtAlwaysShowScrollbarsboolboolFunc a_AlwaysShowScrollbarsboolbool, wxButtonBaseExtAssociateHandleWXWidgetFunc a_AssociateHandleWXWidget, wxButtonBaseExtBeginRepositioningChildrenFunc a_BeginRepositioningChildren, wxButtonBaseExtCanApplyThemeBorderFunc a_CanApplyThemeBorder, wxButtonBaseExtCanBeFocusedFunc a_CanBeFocused, wxButtonBaseExtCanBeOutsideClientAreaFunc a_CanBeOutsideClientArea, wxButtonBaseExtCanScrollintFunc a_CanScrollint, wxButtonBaseExtCanSetTransparentFunc a_CanSetTransparent, wxButtonBaseExtClearBackgroundFunc a_ClearBackground, wxButtonBaseExtClientToWindowSizewxSizeCRFunc a_ClientToWindowSizewxSizeCR, wxButtonBaseExtCloneRefDatawxObjectRefDataCPFunc a_CloneRefDatawxObjectRefDataCP, wxButtonBaseExtCommandwxCommandEventRFunc a_CommandwxCommandEventR, wxButtonBaseExtCreateRefDataFunc a_CreateRefData, wxButtonBaseExtDestroyFunc a_Destroy, wxButtonBaseExtDissociateHandleFunc a_DissociateHandle, wxButtonBaseExtDoCaptureMouseFunc a_DoCaptureMouse, wxButtonBaseExtDoCentreintFunc a_DoCentreint, wxButtonBaseExtDoClientToScreenintPintPFunc a_DoClientToScreenintPintP, wxButtonBaseExtDoEnableboolFunc a_DoEnablebool, wxButtonBaseExtDoFreezeFunc a_DoFreeze, wxButtonBaseExtDoGetAuthNeededFunc a_DoGetAuthNeeded, wxButtonBaseExtDoGetBestClientHeightintFunc a_DoGetBestClientHeightint, wxButtonBaseExtDoGetBestClientSizeFunc a_DoGetBestClientSize, wxButtonBaseExtDoGetBestClientWidthintFunc a_DoGetBestClientWidthint, wxButtonBaseExtDoGetBestSizeFunc a_DoGetBestSize, wxButtonBaseExtDoGetBitmapwxAnyButtonBaseNStateFunc a_DoGetBitmapwxAnyButtonBaseNState, wxButtonBaseExtDoGetBitmapMarginsFunc a_DoGetBitmapMargins, wxButtonBaseExtDoGetClientDataFunc a_DoGetClientData, wxButtonBaseExtDoGetClientObjectFunc a_DoGetClientObject, wxButtonBaseExtDoGetClientSizeintPintPFunc a_DoGetClientSizeintPintP, wxButtonBaseExtDoGetPositionintPintPFunc a_DoGetPositionintPintP, wxButtonBaseExtDoGetScreenPositionintPintPFunc a_DoGetScreenPositionintPintP, wxButtonBaseExtDoGetSizeintPintPFunc a_DoGetSizeintPintP, wxButtonBaseExtDoGetSizeFromTextSizeintintFunc a_DoGetSizeFromTextSizeintint, wxButtonBaseExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCPFunc a_DoGetTextExtentwxStringCRintPintPintPintPwxFontCP, wxButtonBaseExtDoGetVirtualSizeFunc a_DoGetVirtualSize, wxButtonBaseExtDoHitTestwxCoordwxCoordFunc a_DoHitTestwxCoordwxCoord, wxButtonBaseExtDoIsExposedintintintintFunc a_DoIsExposedintintintint, wxButtonBaseExtDoIsExposedintintFunc a_DoIsExposedintint, wxButtonBaseExtDoMoveWindowintintintintFunc a_DoMoveWindowintintintint, wxButtonBaseExtDoNavigateInintFunc a_DoNavigateInint, wxButtonBaseExtDoPhaseintFunc a_DoPhaseint, wxButtonBaseExtDoPopupMenuwxMenuPintintFunc a_DoPopupMenuwxMenuPintint, wxButtonBaseExtDoReleaseMouseFunc a_DoReleaseMouse, wxButtonBaseExtDoScreenToClientintPintPFunc a_DoScreenToClientintPintP, wxButtonBaseExtDoSetAuthNeededboolFunc a_DoSetAuthNeededbool, wxButtonBaseExtDoSetBitmapwxBitmapBundleCRwxAnyButtonBaseNStateFunc a_DoSetBitmapwxBitmapBundleCRwxAnyButtonBaseNState, wxButtonBaseExtDoSetBitmapMarginsintintFunc a_DoSetBitmapMarginsintint, wxButtonBaseExtDoSetBitmapPositionwxDirectionFunc a_DoSetBitmapPositionwxDirection, wxButtonBaseExtDoSetClientDatavoidPFunc a_DoSetClientDatavoidP, wxButtonBaseExtDoSetClientObjectwxClientDataPFunc a_DoSetClientObjectwxClientDataP, wxButtonBaseExtDoSetClientSizeintintFunc a_DoSetClientSizeintint, wxButtonBaseExtDoSetLabelMarkupwxStringCRFunc a_DoSetLabelMarkupwxStringCR, wxButtonBaseExtDoSetSizeintintintintintFunc a_DoSetSizeintintintintint, wxButtonBaseExtDoSetSizeHintsintintintintintintFunc a_DoSetSizeHintsintintintintintint, wxButtonBaseExtDoSetToolTipwxToolTipPFunc a_DoSetToolTipwxToolTipP, wxButtonBaseExtDoSetToolTipTextwxStringCRFunc a_DoSetToolTipTextwxStringCR, wxButtonBaseExtDoSetVirtualSizeintintFunc a_DoSetVirtualSizeintint, wxButtonBaseExtDoSetWindowVariantwxWindowVariantFunc a_DoSetWindowVariantwxWindowVariant, wxButtonBaseExtDoThawFunc a_DoThaw, wxButtonBaseExtDoUpdateWindowUIwxUpdateUIEventRFunc a_DoUpdateWindowUIwxUpdateUIEventR, wxButtonBaseExtDragAcceptFilesboolFunc a_DragAcceptFilesbool, wxButtonBaseExtEnableboolFunc a_Enablebool, wxButtonBaseExtEnableTouchEventsintFunc a_EnableTouchEventsint, wxButtonBaseExtEnableVisibleFocusboolFunc a_EnableVisibleFocusbool, wxButtonBaseExtEndRepositioningChildrenFunc a_EndRepositioningChildren, wxButtonBaseExtFitFunc a_Fit, wxButtonBaseExtFitInsideFunc a_FitInside, wxButtonBaseExtGetBestVirtualSizeFunc a_GetBestVirtualSize, wxButtonBaseExtGetCharHeightFunc a_GetCharHeight, wxButtonBaseExtGetCharWidthFunc a_GetCharWidth, wxButtonBaseExtGetClassInfoFunc a_GetClassInfo, wxButtonBaseExtGetClientAreaOriginFunc a_GetClientAreaOrigin, wxButtonBaseExtGetClientSizeConstraintintPintPFunc a_GetClientSizeConstraintintPintP, wxButtonBaseExtGetContentScaleFactorFunc a_GetContentScaleFactor, wxButtonBaseExtGetDPIFunc a_GetDPI, wxButtonBaseExtGetDPIScaleFactorFunc a_GetDPIScaleFactor, wxButtonBaseExtGetDefaultAttributesFunc a_GetDefaultAttributes, wxButtonBaseExtGetDefaultBorderFunc a_GetDefaultBorder, wxButtonBaseExtGetDefaultBorderForControlFunc a_GetDefaultBorderForControl, wxButtonBaseExtGetDropTargetFunc a_GetDropTarget, wxButtonBaseExtGetEffectiveMinSizeFunc a_GetEffectiveMinSize, wxButtonBaseExtGetEventHashTableFunc a_GetEventHashTable, wxButtonBaseExtGetEventTableFunc a_GetEventTable, wxButtonBaseExtGetHandleFunc a_GetHandle, wxButtonBaseExtGetHelpTextAtPointwxPointCRwxHelpEventNOriginFunc a_GetHelpTextAtPointwxPointCRwxHelpEventNOrigin, wxButtonBaseExtGetLabelFunc a_GetLabel, wxButtonBaseExtGetLabelTextFunc a_GetLabelText, wxButtonBaseExtGetLayoutDirectionFunc a_GetLayoutDirection, wxButtonBaseExtGetMainWindowOfCompositeControlFunc a_GetMainWindowOfCompositeControl, wxButtonBaseExtGetMaxClientSizeFunc a_GetMaxClientSize, wxButtonBaseExtGetMaxSizeFunc a_GetMaxSize, wxButtonBaseExtGetMinClientSizeFunc a_GetMinClientSize, wxButtonBaseExtGetMinSizeFunc a_GetMinSize, wxButtonBaseExtGetNameFunc a_GetName, wxButtonBaseExtGetNormalStateFunc a_GetNormalState, wxButtonBaseExtGetPositionConstraintintPintPFunc a_GetPositionConstraintintPintP, wxButtonBaseExtGetScrollPosintFunc a_GetScrollPosint, wxButtonBaseExtGetScrollRangeintFunc a_GetScrollRangeint, wxButtonBaseExtGetScrollThumbintFunc a_GetScrollThumbint, wxButtonBaseExtGetSizeConstraintintPintPFunc a_GetSizeConstraintintPintP, wxButtonBaseExtGetThemeEnabledFunc a_GetThemeEnabled, wxButtonBaseExtGetValidatorFunc a_GetValidator, wxButtonBaseExtGetWindowBorderSizeFunc a_GetWindowBorderSize, wxButtonBaseExtGetWindowStyleFlagFunc a_GetWindowStyleFlag, wxButtonBaseExtHasCaptureFunc a_HasCapture, wxButtonBaseExtHasFocusFunc a_HasFocus, wxButtonBaseExtHasMultiplePagesFunc a_HasMultiplePages, wxButtonBaseExtHasTransparentBackgroundFunc a_HasTransparentBackground, wxButtonBaseExtHideWithEffectwxShowEffectunsignedintFunc a_HideWithEffectwxShowEffectunsignedint, wxButtonBaseExtInformFirstDirectionintintintFunc a_InformFirstDirectionintintint, wxButtonBaseExtInheritAttributesFunc a_InheritAttributes, wxButtonBaseExtInitDialogFunc a_InitDialog, wxButtonBaseExtIsClientAreaChildwxWindowCPFunc a_IsClientAreaChildwxWindowCP, wxButtonBaseExtIsDoubleBufferedFunc a_IsDoubleBuffered, wxButtonBaseExtIsRetainedFunc a_IsRetained, wxButtonBaseExtIsScrollbarAlwaysShownintFunc a_IsScrollbarAlwaysShownint, wxButtonBaseExtIsShownFunc a_IsShown, wxButtonBaseExtIsShownOnScreenFunc a_IsShownOnScreen, wxButtonBaseExtIsThisEnabledFunc a_IsThisEnabled, wxButtonBaseExtIsTopLevelFunc a_IsTopLevel, wxButtonBaseExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc a_IsTopNavigationDomainwxWindowBaseNNavigationKind, wxButtonBaseExtIsTransparentBackgroundSupportedwxStringPFunc a_IsTransparentBackgroundSupportedwxStringP, wxButtonBaseExtLayoutFunc a_Layout, wxButtonBaseExtLayoutPhase1intPFunc a_LayoutPhase1intP, wxButtonBaseExtLayoutPhase2intPFunc a_LayoutPhase2intP, wxButtonBaseExtLowerFunc a_Lower, wxButtonBaseExtMoveConstraintintintFunc a_MoveConstraintintint, wxButtonBaseExtOnDynamicBindwxDynamicEventTableEntryRFunc a_OnDynamicBindwxDynamicEventTableEntryR, wxButtonBaseExtOnInternalIdleFunc a_OnInternalIdle, wxButtonBaseExtPrepareDCwxDCRFunc a_PrepareDCwxDCR, wxButtonBaseExtProcessEventwxEventRFunc a_ProcessEventwxEventR, wxButtonBaseExtQueueEventwxEventPFunc a_QueueEventwxEventP, wxButtonBaseExtRaiseFunc a_Raise, wxButtonBaseExtRefreshboolwxRectCPFunc a_RefreshboolwxRectCP, wxButtonBaseExtRegisterHotKeyintintintFunc a_RegisterHotKeyintintint, wxButtonBaseExtRemoveChildwxWindowBasePFunc a_RemoveChildwxWindowBaseP, wxButtonBaseExtReparentwxWindowBasePFunc a_ReparentwxWindowBaseP, wxButtonBaseExtScrollLinesintFunc a_ScrollLinesint, wxButtonBaseExtScrollPagesintFunc a_ScrollPagesint, wxButtonBaseExtScrollWindowintintwxRectCPFunc a_ScrollWindowintintwxRectCP, wxButtonBaseExtSearchEventTablewxEventTableRwxEventRFunc a_SearchEventTablewxEventTableRwxEventR, wxButtonBaseExtSendIdleEventswxIdleEventRFunc a_SendIdleEventswxIdleEventR, wxButtonBaseExtSendSizeEventintFunc a_SendSizeEventint, wxButtonBaseExtSetAcceleratorTablewxAcceleratorTableCRFunc a_SetAcceleratorTablewxAcceleratorTableCR, wxButtonBaseExtSetBackgroundColourwxColourCRFunc a_SetBackgroundColourwxColourCR, wxButtonBaseExtSetBackgroundStylewxBackgroundStyleFunc a_SetBackgroundStylewxBackgroundStyle, wxButtonBaseExtSetCanFocusboolFunc a_SetCanFocusbool, wxButtonBaseExtSetConstraintSizesboolFunc a_SetConstraintSizesbool, wxButtonBaseExtSetCursorwxCursorCRFunc a_SetCursorwxCursorCR, wxButtonBaseExtSetDefaultFunc a_SetDefault, wxButtonBaseExtSetDoubleBufferedboolFunc a_SetDoubleBufferedbool, wxButtonBaseExtSetDropTargetwxDropTargetPFunc a_SetDropTargetwxDropTargetP, wxButtonBaseExtSetExtraStylelongFunc a_SetExtraStylelong, wxButtonBaseExtSetFocusFunc a_SetFocus, wxButtonBaseExtSetFocusFromKbdFunc a_SetFocusFromKbd, wxButtonBaseExtSetFontwxFontCRFunc a_SetFontwxFontCR, wxButtonBaseExtSetForegroundColourwxColourCRFunc a_SetForegroundColourwxColourCR, wxButtonBaseExtSetIdwxWindowIDFunc a_SetIdwxWindowID, wxButtonBaseExtSetLabelwxStringCRFunc a_SetLabelwxStringCR, wxButtonBaseExtSetLabelTextwxStringCRFunc a_SetLabelTextwxStringCR, wxButtonBaseExtSetLayoutDirectionwxLayoutDirectionFunc a_SetLayoutDirectionwxLayoutDirection, wxButtonBaseExtSetMaxClientSizewxSizeCRFunc a_SetMaxClientSizewxSizeCR, wxButtonBaseExtSetMaxSizewxSizeCRFunc a_SetMaxSizewxSizeCR, wxButtonBaseExtSetMinClientSizewxSizeCRFunc a_SetMinClientSizewxSizeCR, wxButtonBaseExtSetMinSizewxSizeCRFunc a_SetMinSizewxSizeCR, wxButtonBaseExtSetNamewxStringCRFunc a_SetNamewxStringCR, wxButtonBaseExtSetNextHandlerwxEvtHandlerPFunc a_SetNextHandlerwxEvtHandlerP, wxButtonBaseExtSetPreviousHandlerwxEvtHandlerPFunc a_SetPreviousHandlerwxEvtHandlerP, wxButtonBaseExtSetScrollPosintintboolFunc a_SetScrollPosintintbool, wxButtonBaseExtSetScrollbarintintintintboolFunc a_SetScrollbarintintintintbool, wxButtonBaseExtSetSizeConstraintintintintintFunc a_SetSizeConstraintintintintint, wxButtonBaseExtSetSizeHintsintintintintintintFunc a_SetSizeHintsintintintintintint, wxButtonBaseExtSetThemeEnabledboolFunc a_SetThemeEnabledbool, wxButtonBaseExtSetTransparentwxByteFunc a_SetTransparentwxByte, wxButtonBaseExtSetValidatorwxValidatorCRFunc a_SetValidatorwxValidatorCR, wxButtonBaseExtSetWindowStyleFlaglongFunc a_SetWindowStyleFlaglong, wxButtonBaseExtShouldInheritColoursFunc a_ShouldInheritColours, wxButtonBaseExtShowboolFunc a_Showbool, wxButtonBaseExtShowWithEffectwxShowEffectunsignedintFunc a_ShowWithEffectwxShowEffectunsignedint, wxButtonBaseExtTransferDataFromWindowFunc a_TransferDataFromWindow, wxButtonBaseExtTransferDataToWindowFunc a_TransferDataToWindow, wxButtonBaseExtTryAfterwxEventRFunc a_TryAfterwxEventR, wxButtonBaseExtTryBeforewxEventRFunc a_TryBeforewxEventR, wxButtonBaseExtUnregisterHotKeyintFunc a_UnregisterHotKeyint, wxButtonBaseExtUpdateFunc a_Update, wxButtonBaseExtUpdateWindowUIlongFunc a_UpdateWindowUIlong, wxButtonBaseExtValidateFunc a_Validate, wxButtonBaseExtWXAdjustFontToOwnPPIwxFontRFunc a_WXAdjustFontToOwnPPIwxFontR, wxButtonBaseExtWXGetTextEntryFunc a_WXGetTextEntry, wxButtonBaseExtWXReservedEvtHandler1voidPFunc a_WXReservedEvtHandler1voidP, wxButtonBaseExtWXReservedEvtHandler2voidPFunc a_WXReservedEvtHandler2voidP, wxButtonBaseExtWXReservedWindow1voidPFunc a_WXReservedWindow1voidP, wxButtonBaseExtWXReservedWindow2voidPFunc a_WXReservedWindow2voidP, wxButtonBaseExtWXReservedWindow3voidPFunc a_WXReservedWindow3voidP, wxButtonBaseExtWXSetInitialFittingClientSizeintwxSizerPFunc a_WXSetInitialFittingClientSizeintwxSizerP, wxButtonBaseExtWarpPointerintintFunc a_WarpPointerintint, wxButtonBaseExtWindowToClientSizewxSizeCRFunc a_WindowToClientSizewxSizeCR): wxButtonBase() {
+  wxButtonBaseExt(wxButtonBaseExtAcceptsFocusFunc a_AcceptsFocus, wxButtonBaseExtAcceptsFocusFromKeyboardFunc a_AcceptsFocusFromKeyboard, wxButtonBaseExtAcceptsFocusRecursivelyFunc a_AcceptsFocusRecursively, wxButtonBaseExtAddChildwxWindowBasePFunc a_AddChildwxWindowBaseP, wxButtonBaseExtAddPendingEventwxEventCRFunc a_AddPendingEventwxEventCR, wxButtonBaseExtAdjustForLayoutDirectionwxCoordwxCoordwxCoordFunc a_AdjustForLayoutDirectionwxCoordwxCoordwxCoord, wxButtonBaseExtAdjustForParentClientOriginintRintRintFunc a_AdjustForParentClientOriginintRintRint, wxButtonBaseExtAlwaysShowScrollbarsboolboolFunc a_AlwaysShowScrollbarsboolbool, wxButtonBaseExtAssociateHandleWXWidgetFunc a_AssociateHandleWXWidget, wxButtonBaseExtBeginRepositioningChildrenFunc a_BeginRepositioningChildren, wxButtonBaseExtCanApplyThemeBorderFunc a_CanApplyThemeBorder, wxButtonBaseExtCanBeFocusedFunc a_CanBeFocused, wxButtonBaseExtCanBeOutsideClientAreaFunc a_CanBeOutsideClientArea, wxButtonBaseExtCanScrollintFunc a_CanScrollint, wxButtonBaseExtCanSetTransparentFunc a_CanSetTransparent, wxButtonBaseExtClearBackgroundFunc a_ClearBackground, wxButtonBaseExtClientToWindowSizewxSizeCRFunc a_ClientToWindowSizewxSizeCR, wxButtonBaseExtCloneRefDatawxObjectRefDataCPFunc a_CloneRefDatawxObjectRefDataCP, wxButtonBaseExtCommandwxCommandEventRFunc a_CommandwxCommandEventR, wxButtonBaseExtCreateRefDataFunc a_CreateRefData, wxButtonBaseExtDestroyFunc a_Destroy, wxButtonBaseExtDissociateHandleFunc a_DissociateHandle, wxButtonBaseExtDoCaptureMouseFunc a_DoCaptureMouse, wxButtonBaseExtDoCentreintFunc a_DoCentreint, wxButtonBaseExtDoClientToScreenintPintPFunc a_DoClientToScreenintPintP, wxButtonBaseExtDoEnableboolFunc a_DoEnablebool, wxButtonBaseExtDoFreezeFunc a_DoFreeze, wxButtonBaseExtDoGetAuthNeededFunc a_DoGetAuthNeeded, wxButtonBaseExtDoGetBestClientHeightintFunc a_DoGetBestClientHeightint, wxButtonBaseExtDoGetBestClientSizeFunc a_DoGetBestClientSize, wxButtonBaseExtDoGetBestClientWidthintFunc a_DoGetBestClientWidthint, wxButtonBaseExtDoGetBestSizeFunc a_DoGetBestSize, wxButtonBaseExtDoGetBitmapwxAnyButtonBaseNStateFunc a_DoGetBitmapwxAnyButtonBaseNState, wxButtonBaseExtDoGetBitmapMarginsFunc a_DoGetBitmapMargins, wxButtonBaseExtDoGetClientDataFunc a_DoGetClientData, wxButtonBaseExtDoGetClientObjectFunc a_DoGetClientObject, wxButtonBaseExtDoGetClientSizeintPintPFunc a_DoGetClientSizeintPintP, wxButtonBaseExtDoGetPositionintPintPFunc a_DoGetPositionintPintP, wxButtonBaseExtDoGetScreenPositionintPintPFunc a_DoGetScreenPositionintPintP, wxButtonBaseExtDoGetSizeintPintPFunc a_DoGetSizeintPintP, wxButtonBaseExtDoGetSizeFromClientSizewxSizeCRFunc a_DoGetSizeFromClientSizewxSizeCR, wxButtonBaseExtDoGetSizeFromTextSizeintintFunc a_DoGetSizeFromTextSizeintint, wxButtonBaseExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCPFunc a_DoGetTextExtentwxStringCRintPintPintPintPwxFontCP, wxButtonBaseExtDoGetVirtualSizeFunc a_DoGetVirtualSize, wxButtonBaseExtDoHitTestwxCoordwxCoordFunc a_DoHitTestwxCoordwxCoord, wxButtonBaseExtDoIsExposedintintintintFunc a_DoIsExposedintintintint, wxButtonBaseExtDoIsExposedintintFunc a_DoIsExposedintint, wxButtonBaseExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrderFunc a_DoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrder, wxButtonBaseExtDoMoveWindowintintintintFunc a_DoMoveWindowintintintint, wxButtonBaseExtDoNavigateInintFunc a_DoNavigateInint, wxButtonBaseExtDoPhaseintFunc a_DoPhaseint, wxButtonBaseExtDoPopupMenuwxMenuPintintFunc a_DoPopupMenuwxMenuPintint, wxButtonBaseExtDoReleaseMouseFunc a_DoReleaseMouse, wxButtonBaseExtDoScreenToClientintPintPFunc a_DoScreenToClientintPintP, wxButtonBaseExtDoSetAuthNeededboolFunc a_DoSetAuthNeededbool, wxButtonBaseExtDoSetBitmapwxBitmapBundleCRwxAnyButtonBaseNStateFunc a_DoSetBitmapwxBitmapBundleCRwxAnyButtonBaseNState, wxButtonBaseExtDoSetBitmapMarginsintintFunc a_DoSetBitmapMarginsintint, wxButtonBaseExtDoSetBitmapMarginswxCoordwxCoordFunc a_DoSetBitmapMarginswxCoordwxCoord, wxButtonBaseExtDoSetBitmapPositionwxDirectionFunc a_DoSetBitmapPositionwxDirection, wxButtonBaseExtDoSetClientDatavoidPFunc a_DoSetClientDatavoidP, wxButtonBaseExtDoSetClientObjectwxClientDataPFunc a_DoSetClientObjectwxClientDataP, wxButtonBaseExtDoSetClientSizeintintFunc a_DoSetClientSizeintint, wxButtonBaseExtDoSetLabelMarkupwxStringCRFunc a_DoSetLabelMarkupwxStringCR, wxButtonBaseExtDoSetSizeintintintintintFunc a_DoSetSizeintintintintint, wxButtonBaseExtDoSetSizeHintsintintintintintintFunc a_DoSetSizeHintsintintintintintint, wxButtonBaseExtDoSetToolTipwxToolTipPFunc a_DoSetToolTipwxToolTipP, wxButtonBaseExtDoSetToolTipTextwxStringCRFunc a_DoSetToolTipTextwxStringCR, wxButtonBaseExtDoSetVirtualSizeintintFunc a_DoSetVirtualSizeintint, wxButtonBaseExtDoSetWindowVariantwxWindowVariantFunc a_DoSetWindowVariantwxWindowVariant, wxButtonBaseExtDoThawFunc a_DoThaw, wxButtonBaseExtDoUpdateWindowUIwxUpdateUIEventRFunc a_DoUpdateWindowUIwxUpdateUIEventR, wxButtonBaseExtDragAcceptFilesboolFunc a_DragAcceptFilesbool, wxButtonBaseExtEnableboolFunc a_Enablebool, wxButtonBaseExtEnableTouchEventsintFunc a_EnableTouchEventsint, wxButtonBaseExtEnableVisibleFocusboolFunc a_EnableVisibleFocusbool, wxButtonBaseExtEndRepositioningChildrenFunc a_EndRepositioningChildren, wxButtonBaseExtFitFunc a_Fit, wxButtonBaseExtFitInsideFunc a_FitInside, wxButtonBaseExtGetBestVirtualSizeFunc a_GetBestVirtualSize, wxButtonBaseExtGetCharHeightFunc a_GetCharHeight, wxButtonBaseExtGetCharWidthFunc a_GetCharWidth, wxButtonBaseExtGetClassInfoFunc a_GetClassInfo, wxButtonBaseExtGetClientAreaOriginFunc a_GetClientAreaOrigin, wxButtonBaseExtGetClientSizeConstraintintPintPFunc a_GetClientSizeConstraintintPintP, wxButtonBaseExtGetContentScaleFactorFunc a_GetContentScaleFactor, wxButtonBaseExtGetDPIFunc a_GetDPI, wxButtonBaseExtGetDPIScaleFactorFunc a_GetDPIScaleFactor, wxButtonBaseExtGetDefaultAttributesFunc a_GetDefaultAttributes, wxButtonBaseExtGetDefaultBorderFunc a_GetDefaultBorder, wxButtonBaseExtGetDefaultBorderForControlFunc a_GetDefaultBorderForControl, wxButtonBaseExtGetDropTargetFunc a_GetDropTarget, wxButtonBaseExtGetEffectiveMinSizeFunc a_GetEffectiveMinSize, wxButtonBaseExtGetEventHashTableFunc a_GetEventHashTable, wxButtonBaseExtGetEventTableFunc a_GetEventTable, wxButtonBaseExtGetHandleFunc a_GetHandle, wxButtonBaseExtGetHelpTextAtPointwxPointCRwxHelpEventNOriginFunc a_GetHelpTextAtPointwxPointCRwxHelpEventNOrigin, wxButtonBaseExtGetLabelFunc a_GetLabel, wxButtonBaseExtGetLabelTextFunc a_GetLabelText, wxButtonBaseExtGetLayoutDirectionFunc a_GetLayoutDirection, wxButtonBaseExtGetMainWindowOfCompositeControlFunc a_GetMainWindowOfCompositeControl, wxButtonBaseExtGetMaxClientSizeFunc a_GetMaxClientSize, wxButtonBaseExtGetMaxSizeFunc a_GetMaxSize, wxButtonBaseExtGetMinClientSizeFunc a_GetMinClientSize, wxButtonBaseExtGetMinSizeFunc a_GetMinSize, wxButtonBaseExtGetNameFunc a_GetName, wxButtonBaseExtGetNormalStateFunc a_GetNormalState, wxButtonBaseExtGetPositionConstraintintPintPFunc a_GetPositionConstraintintPintP, wxButtonBaseExtGetScrollPosintFunc a_GetScrollPosint, wxButtonBaseExtGetScrollRangeintFunc a_GetScrollRangeint, wxButtonBaseExtGetScrollThumbintFunc a_GetScrollThumbint, wxButtonBaseExtGetSizeConstraintintPintPFunc a_GetSizeConstraintintPintP, wxButtonBaseExtGetThemeEnabledFunc a_GetThemeEnabled, wxButtonBaseExtGetTransparentFunc a_GetTransparent, wxButtonBaseExtGetValidatorFunc a_GetValidator, wxButtonBaseExtGetWindowBorderSizeFunc a_GetWindowBorderSize, wxButtonBaseExtGetWindowStyleFlagFunc a_GetWindowStyleFlag, wxButtonBaseExtHasCaptureFunc a_HasCapture, wxButtonBaseExtHasFocusFunc a_HasFocus, wxButtonBaseExtHasMultiplePagesFunc a_HasMultiplePages, wxButtonBaseExtHasTransparentBackgroundFunc a_HasTransparentBackground, wxButtonBaseExtHideWithEffectwxShowEffectunsignedintFunc a_HideWithEffectwxShowEffectunsignedint, wxButtonBaseExtInformFirstDirectionintintintFunc a_InformFirstDirectionintintint, wxButtonBaseExtInheritAttributesFunc a_InheritAttributes, wxButtonBaseExtInitDialogFunc a_InitDialog, wxButtonBaseExtIsClientAreaChildwxWindowCPFunc a_IsClientAreaChildwxWindowCP, wxButtonBaseExtIsDoubleBufferedFunc a_IsDoubleBuffered, wxButtonBaseExtIsRetainedFunc a_IsRetained, wxButtonBaseExtIsScrollbarAlwaysShownintFunc a_IsScrollbarAlwaysShownint, wxButtonBaseExtIsShownFunc a_IsShown, wxButtonBaseExtIsShownOnScreenFunc a_IsShownOnScreen, wxButtonBaseExtIsThisEnabledFunc a_IsThisEnabled, wxButtonBaseExtIsTopLevelFunc a_IsTopLevel, wxButtonBaseExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc a_IsTopNavigationDomainwxWindowBaseNNavigationKind, wxButtonBaseExtIsTransparentBackgroundSupportedwxStringPFunc a_IsTransparentBackgroundSupportedwxStringP, wxButtonBaseExtLayoutFunc a_Layout, wxButtonBaseExtLayoutPhase1intPFunc a_LayoutPhase1intP, wxButtonBaseExtLayoutPhase2intPFunc a_LayoutPhase2intP, wxButtonBaseExtLowerFunc a_Lower, wxButtonBaseExtMoveConstraintintintFunc a_MoveConstraintintint, wxButtonBaseExtOnDynamicBindwxDynamicEventTableEntryRFunc a_OnDynamicBindwxDynamicEventTableEntryR, wxButtonBaseExtOnInternalIdleFunc a_OnInternalIdle, wxButtonBaseExtPrepareDCwxDCRFunc a_PrepareDCwxDCR, wxButtonBaseExtProcessEventwxEventRFunc a_ProcessEventwxEventR, wxButtonBaseExtQueueEventwxEventPFunc a_QueueEventwxEventP, wxButtonBaseExtRaiseFunc a_Raise, wxButtonBaseExtRefreshboolwxRectCPFunc a_RefreshboolwxRectCP, wxButtonBaseExtRegisterHotKeyintintintFunc a_RegisterHotKeyintintint, wxButtonBaseExtRemoveChildwxWindowBasePFunc a_RemoveChildwxWindowBaseP, wxButtonBaseExtReparentwxWindowBasePFunc a_ReparentwxWindowBaseP, wxButtonBaseExtScrollLinesintFunc a_ScrollLinesint, wxButtonBaseExtScrollPagesintFunc a_ScrollPagesint, wxButtonBaseExtScrollWindowintintwxRectCPFunc a_ScrollWindowintintwxRectCP, wxButtonBaseExtSearchEventTablewxEventTableRwxEventRFunc a_SearchEventTablewxEventTableRwxEventR, wxButtonBaseExtSendIdleEventswxIdleEventRFunc a_SendIdleEventswxIdleEventR, wxButtonBaseExtSendSizeEventintFunc a_SendSizeEventint, wxButtonBaseExtSetAcceleratorTablewxAcceleratorTableCRFunc a_SetAcceleratorTablewxAcceleratorTableCR, wxButtonBaseExtSetBackgroundColourwxColourCRFunc a_SetBackgroundColourwxColourCR, wxButtonBaseExtSetBackgroundStylewxBackgroundStyleFunc a_SetBackgroundStylewxBackgroundStyle, wxButtonBaseExtSetCanFocusboolFunc a_SetCanFocusbool, wxButtonBaseExtSetConstraintSizesboolFunc a_SetConstraintSizesbool, wxButtonBaseExtSetCursorwxCursorCRFunc a_SetCursorwxCursorCR, wxButtonBaseExtSetDefaultFunc a_SetDefault, wxButtonBaseExtSetDoubleBufferedboolFunc a_SetDoubleBufferedbool, wxButtonBaseExtSetDropTargetwxDropTargetPFunc a_SetDropTargetwxDropTargetP, wxButtonBaseExtSetExtraStylelongFunc a_SetExtraStylelong, wxButtonBaseExtSetFocusFunc a_SetFocus, wxButtonBaseExtSetFocusFromKbdFunc a_SetFocusFromKbd, wxButtonBaseExtSetFontwxFontCRFunc a_SetFontwxFontCR, wxButtonBaseExtSetForegroundColourwxColourCRFunc a_SetForegroundColourwxColourCR, wxButtonBaseExtSetIdwxWindowIDFunc a_SetIdwxWindowID, wxButtonBaseExtSetLabelwxStringCRFunc a_SetLabelwxStringCR, wxButtonBaseExtSetLabelTextwxStringCRFunc a_SetLabelTextwxStringCR, wxButtonBaseExtSetLayoutDirectionwxLayoutDirectionFunc a_SetLayoutDirectionwxLayoutDirection, wxButtonBaseExtSetMaxClientSizewxSizeCRFunc a_SetMaxClientSizewxSizeCR, wxButtonBaseExtSetMaxSizewxSizeCRFunc a_SetMaxSizewxSizeCR, wxButtonBaseExtSetMinClientSizewxSizeCRFunc a_SetMinClientSizewxSizeCR, wxButtonBaseExtSetMinSizewxSizeCRFunc a_SetMinSizewxSizeCR, wxButtonBaseExtSetNamewxStringCRFunc a_SetNamewxStringCR, wxButtonBaseExtSetNextHandlerwxEvtHandlerPFunc a_SetNextHandlerwxEvtHandlerP, wxButtonBaseExtSetPreviousHandlerwxEvtHandlerPFunc a_SetPreviousHandlerwxEvtHandlerP, wxButtonBaseExtSetScrollPosintintboolFunc a_SetScrollPosintintbool, wxButtonBaseExtSetScrollbarintintintintboolFunc a_SetScrollbarintintintintbool, wxButtonBaseExtSetSizeConstraintintintintintFunc a_SetSizeConstraintintintintint, wxButtonBaseExtSetSizeHintsintintintintintintFunc a_SetSizeHintsintintintintintint, wxButtonBaseExtSetThemeEnabledboolFunc a_SetThemeEnabledbool, wxButtonBaseExtSetTransparentwxByteFunc a_SetTransparentwxByte, wxButtonBaseExtSetValidatorwxValidatorCRFunc a_SetValidatorwxValidatorCR, wxButtonBaseExtSetWindowStyleFlaglongFunc a_SetWindowStyleFlaglong, wxButtonBaseExtShouldInheritColoursFunc a_ShouldInheritColours, wxButtonBaseExtShowboolFunc a_Showbool, wxButtonBaseExtShowWithEffectwxShowEffectunsignedintFunc a_ShowWithEffectwxShowEffectunsignedint, wxButtonBaseExtTransferDataFromWindowFunc a_TransferDataFromWindow, wxButtonBaseExtTransferDataToWindowFunc a_TransferDataToWindow, wxButtonBaseExtTriggerScrollEventwxEventTypeFunc a_TriggerScrollEventwxEventType, wxButtonBaseExtTryAfterwxEventRFunc a_TryAfterwxEventR, wxButtonBaseExtTryBeforewxEventRFunc a_TryBeforewxEventR, wxButtonBaseExtUnregisterHotKeyintFunc a_UnregisterHotKeyint, wxButtonBaseExtUpdateFunc a_Update, wxButtonBaseExtUpdateWindowUIlongFunc a_UpdateWindowUIlong, wxButtonBaseExtValidateFunc a_Validate, wxButtonBaseExtWXAdjustFontToOwnPPIwxFontRFunc a_WXAdjustFontToOwnPPIwxFontR, wxButtonBaseExtWXGetTextEntryFunc a_WXGetTextEntry, wxButtonBaseExtWXReservedEvtHandler1voidPFunc a_WXReservedEvtHandler1voidP, wxButtonBaseExtWXReservedEvtHandler2voidPFunc a_WXReservedEvtHandler2voidP, wxButtonBaseExtWXReservedWindow1voidPFunc a_WXReservedWindow1voidP, wxButtonBaseExtWXReservedWindow2voidPFunc a_WXReservedWindow2voidP, wxButtonBaseExtWXReservedWindow3voidPFunc a_WXReservedWindow3voidP, wxButtonBaseExtWXSetInitialFittingClientSizeintwxSizerPFunc a_WXSetInitialFittingClientSizeintwxSizerP, wxButtonBaseExtWarpPointerintintFunc a_WarpPointerintint, wxButtonBaseExtWindowToClientSizewxSizeCRFunc a_WindowToClientSizewxSizeCR): wxButtonBase() {
     m_wxButtonBaseExtAcceptsFocus = a_AcceptsFocus;
     m_wxButtonBaseExtAcceptsFocusFromKeyboard = a_AcceptsFocusFromKeyboard;
     m_wxButtonBaseExtAcceptsFocusRecursively = a_AcceptsFocusRecursively;
@@ -2460,12 +2504,14 @@ public:
     m_wxButtonBaseExtDoGetPositionintPintP = a_DoGetPositionintPintP;
     m_wxButtonBaseExtDoGetScreenPositionintPintP = a_DoGetScreenPositionintPintP;
     m_wxButtonBaseExtDoGetSizeintPintP = a_DoGetSizeintPintP;
+    m_wxButtonBaseExtDoGetSizeFromClientSizewxSizeCR = a_DoGetSizeFromClientSizewxSizeCR;
     m_wxButtonBaseExtDoGetSizeFromTextSizeintint = a_DoGetSizeFromTextSizeintint;
     m_wxButtonBaseExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCP = a_DoGetTextExtentwxStringCRintPintPintPintPwxFontCP;
     m_wxButtonBaseExtDoGetVirtualSize = a_DoGetVirtualSize;
     m_wxButtonBaseExtDoHitTestwxCoordwxCoord = a_DoHitTestwxCoordwxCoord;
     m_wxButtonBaseExtDoIsExposedintintintint = a_DoIsExposedintintintint;
     m_wxButtonBaseExtDoIsExposedintint = a_DoIsExposedintint;
+    m_wxButtonBaseExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrder = a_DoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrder;
     m_wxButtonBaseExtDoMoveWindowintintintint = a_DoMoveWindowintintintint;
     m_wxButtonBaseExtDoNavigateInint = a_DoNavigateInint;
     m_wxButtonBaseExtDoPhaseint = a_DoPhaseint;
@@ -2529,6 +2575,7 @@ public:
     m_wxButtonBaseExtGetScrollThumbint = a_GetScrollThumbint;
     m_wxButtonBaseExtGetSizeConstraintintPintP = a_GetSizeConstraintintPintP;
     m_wxButtonBaseExtGetThemeEnabled = a_GetThemeEnabled;
+    m_wxButtonBaseExtGetTransparent = a_GetTransparent;
     m_wxButtonBaseExtGetValidator = a_GetValidator;
     m_wxButtonBaseExtGetWindowBorderSize = a_GetWindowBorderSize;
     m_wxButtonBaseExtGetWindowStyleFlag = a_GetWindowStyleFlag;
@@ -2609,6 +2656,7 @@ public:
     m_wxButtonBaseExtShowWithEffectwxShowEffectunsignedint = a_ShowWithEffectwxShowEffectunsignedint;
     m_wxButtonBaseExtTransferDataFromWindow = a_TransferDataFromWindow;
     m_wxButtonBaseExtTransferDataToWindow = a_TransferDataToWindow;
+    m_wxButtonBaseExtTriggerScrollEventwxEventType = a_TriggerScrollEventwxEventType;
     m_wxButtonBaseExtTryAfterwxEventR = a_TryAfterwxEventR;
     m_wxButtonBaseExtTryBeforewxEventR = a_TryBeforewxEventR;
     m_wxButtonBaseExtUnregisterHotKeyint = a_UnregisterHotKeyint;
@@ -2638,7 +2686,7 @@ public:
   {
     bool res = wxButton::AcceptsFocus();
     if (*m_wxButtonExtAcceptsFocus != NULL){
-      return m_wxButtonExtAcceptsFocus(this);
+      return m_wxButtonExtAcceptsFocus(this, res);
     }
     else {
       return res;
@@ -2649,7 +2697,7 @@ public:
   {
     bool res = wxButton::AcceptsFocusFromKeyboard();
     if (*m_wxButtonExtAcceptsFocusFromKeyboard != NULL){
-      return m_wxButtonExtAcceptsFocusFromKeyboard(this);
+      return m_wxButtonExtAcceptsFocusFromKeyboard(this, res);
     }
     else {
       return res;
@@ -2660,7 +2708,7 @@ public:
   {
     bool res = wxButton::AcceptsFocusRecursively();
     if (*m_wxButtonExtAcceptsFocusRecursively != NULL){
-      return m_wxButtonExtAcceptsFocusRecursively(this);
+      return m_wxButtonExtAcceptsFocusRecursively(this, res);
     }
     else {
       return res;
@@ -2687,7 +2735,7 @@ public:
   {
     wxCoord res = wxButton::AdjustForLayoutDirection(x, width, widthTotal);
     if (*m_wxButtonExtAdjustForLayoutDirectionwxCoordwxCoordwxCoord != NULL){
-      return m_wxButtonExtAdjustForLayoutDirectionwxCoordwxCoordwxCoord(this, x, width, widthTotal);
+      return m_wxButtonExtAdjustForLayoutDirectionwxCoordwxCoordwxCoord(this, x, width, widthTotal, res);
     }
     else {
       return res;
@@ -2702,11 +2750,11 @@ public:
     }
   }
   wxButtonExtAlwaysShowScrollbarsboolboolFunc m_wxButtonExtAlwaysShowScrollbarsboolbool = NULL;
-  virtual void AlwaysShowScrollbars(bool param0 = true, bool param1 = true) override
+  virtual void AlwaysShowScrollbars(bool horz = true, bool vert = true) override
   {
-    wxButton::AlwaysShowScrollbars(param0, param1);
+    wxButton::AlwaysShowScrollbars(horz, vert);
     if (*m_wxButtonExtAlwaysShowScrollbarsboolbool != NULL){
-      return m_wxButtonExtAlwaysShowScrollbarsboolbool(this, param0, param1);
+      return m_wxButtonExtAlwaysShowScrollbarsboolbool(this, horz, vert);
     }
   }
   wxButtonExtAssociateHandleWXWidgetFunc m_wxButtonExtAssociateHandleWXWidget = NULL;
@@ -2722,7 +2770,7 @@ public:
   {
     bool res = wxButton::BeginRepositioningChildren();
     if (*m_wxButtonExtBeginRepositioningChildren != NULL){
-      return m_wxButtonExtBeginRepositioningChildren(this);
+      return m_wxButtonExtBeginRepositioningChildren(this, res);
     }
     else {
       return res;
@@ -2733,7 +2781,7 @@ public:
   {
     bool res = wxButton::CanApplyThemeBorder();
     if (*m_wxButtonExtCanApplyThemeBorder != NULL){
-      return m_wxButtonExtCanApplyThemeBorder(this);
+      return m_wxButtonExtCanApplyThemeBorder(this, res);
     }
     else {
       return res;
@@ -2744,7 +2792,7 @@ public:
   {
     bool res = wxButton::CanBeFocused();
     if (*m_wxButtonExtCanBeFocused != NULL){
-      return m_wxButtonExtCanBeFocused(this);
+      return m_wxButtonExtCanBeFocused(this, res);
     }
     else {
       return res;
@@ -2755,7 +2803,7 @@ public:
   {
     bool res = wxButton::CanBeOutsideClientArea();
     if (*m_wxButtonExtCanBeOutsideClientArea != NULL){
-      return m_wxButtonExtCanBeOutsideClientArea(this);
+      return m_wxButtonExtCanBeOutsideClientArea(this, res);
     }
     else {
       return res;
@@ -2766,7 +2814,7 @@ public:
   {
     bool res = wxButton::CanScroll(orient);
     if (*m_wxButtonExtCanScrollint != NULL){
-      return m_wxButtonExtCanScrollint(this, orient);
+      return m_wxButtonExtCanScrollint(this, orient, res);
     }
     else {
       return res;
@@ -2777,7 +2825,7 @@ public:
   {
     bool res = wxButton::CanSetTransparent();
     if (*m_wxButtonExtCanSetTransparent != NULL){
-      return m_wxButtonExtCanSetTransparent(this);
+      return m_wxButtonExtCanSetTransparent(this, res);
     }
     else {
       return res;
@@ -2796,7 +2844,7 @@ public:
   {
     wxSize res = wxButton::ClientToWindowSize(size);
     if (*m_wxButtonExtClientToWindowSizewxSizeCR != NULL){
-      return m_wxButtonExtClientToWindowSizewxSizeCR(this, size);
+      return m_wxButtonExtClientToWindowSizewxSizeCR(this, size, res);
     }
     else {
       return res;
@@ -2807,7 +2855,7 @@ public:
   {
     wxObjectRefData* res = wxButton::CloneRefData(data);
     if (*m_wxButtonExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxButtonExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxButtonExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -2826,7 +2874,7 @@ public:
   {
     wxObjectRefData* res = wxButton::CreateRefData();
     if (*m_wxButtonExtCreateRefData != NULL){
-      return m_wxButtonExtCreateRefData(this);
+      return m_wxButtonExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -2837,7 +2885,7 @@ public:
   {
     bool res = wxButton::Destroy();
     if (*m_wxButtonExtDestroy != NULL){
-      return m_wxButtonExtDestroy(this);
+      return m_wxButtonExtDestroy(this, res);
     }
     else {
       return res;
@@ -2876,11 +2924,11 @@ public:
     }
   }
   wxButtonExtDoEnableboolFunc m_wxButtonExtDoEnablebool = NULL;
-  virtual void DoEnable(bool param0) override
+  virtual void DoEnable(bool enable) override
   {
-    wxButton::DoEnable(param0);
+    wxButton::DoEnable(enable);
     if (*m_wxButtonExtDoEnablebool != NULL){
-      return m_wxButtonExtDoEnablebool(this, param0);
+      return m_wxButtonExtDoEnablebool(this, enable);
     }
   }
   wxButtonExtDoFreezeFunc m_wxButtonExtDoFreeze = NULL;
@@ -2896,7 +2944,7 @@ public:
   {
     bool res = wxButton::DoGetAuthNeeded();
     if (*m_wxButtonExtDoGetAuthNeeded != NULL){
-      return m_wxButtonExtDoGetAuthNeeded(this);
+      return m_wxButtonExtDoGetAuthNeeded(this, res);
     }
     else {
       return res;
@@ -2907,7 +2955,7 @@ public:
   {
     int res = wxButton::DoGetBestClientHeight(param0);
     if (*m_wxButtonExtDoGetBestClientHeightint != NULL){
-      return m_wxButtonExtDoGetBestClientHeightint(this, param0);
+      return m_wxButtonExtDoGetBestClientHeightint(this, param0, res);
     }
     else {
       return res;
@@ -2918,7 +2966,7 @@ public:
   {
     wxSize res = wxButton::DoGetBestClientSize();
     if (*m_wxButtonExtDoGetBestClientSize != NULL){
-      return m_wxButtonExtDoGetBestClientSize(this);
+      return m_wxButtonExtDoGetBestClientSize(this, res);
     }
     else {
       return res;
@@ -2929,7 +2977,7 @@ public:
   {
     int res = wxButton::DoGetBestClientWidth(param0);
     if (*m_wxButtonExtDoGetBestClientWidthint != NULL){
-      return m_wxButtonExtDoGetBestClientWidthint(this, param0);
+      return m_wxButtonExtDoGetBestClientWidthint(this, param0, res);
     }
     else {
       return res;
@@ -2940,7 +2988,7 @@ public:
   {
     wxSize res = wxButton::DoGetBestSize();
     if (*m_wxButtonExtDoGetBestSize != NULL){
-      return m_wxButtonExtDoGetBestSize(this);
+      return m_wxButtonExtDoGetBestSize(this, res);
     }
     else {
       return res;
@@ -2951,7 +2999,7 @@ public:
   {
     wxBitmap res = wxButton::DoGetBitmap(which);
     if (*m_wxButtonExtDoGetBitmapwxAnyButtonBaseNState != NULL){
-      return m_wxButtonExtDoGetBitmapwxAnyButtonBaseNState(this, which);
+      return m_wxButtonExtDoGetBitmapwxAnyButtonBaseNState(this, which, res);
     }
     else {
       return res;
@@ -2962,7 +3010,7 @@ public:
   {
     wxSize res = wxButton::DoGetBitmapMargins();
     if (*m_wxButtonExtDoGetBitmapMargins != NULL){
-      return m_wxButtonExtDoGetBitmapMargins(this);
+      return m_wxButtonExtDoGetBitmapMargins(this, res);
     }
     else {
       return res;
@@ -2973,7 +3021,7 @@ public:
   {
     void* res = wxButton::DoGetClientData();
     if (*m_wxButtonExtDoGetClientData != NULL){
-      return m_wxButtonExtDoGetClientData(this);
+      return m_wxButtonExtDoGetClientData(this, res);
     }
     else {
       return res;
@@ -2984,7 +3032,7 @@ public:
   {
     wxClientData* res = wxButton::DoGetClientObject();
     if (*m_wxButtonExtDoGetClientObject != NULL){
-      return m_wxButtonExtDoGetClientObject(this);
+      return m_wxButtonExtDoGetClientObject(this, res);
     }
     else {
       return res;
@@ -3022,23 +3070,34 @@ public:
       return m_wxButtonExtDoGetSizeintPintP(this, width, height);
     }
   }
+  wxButtonExtDoGetSizeFromClientSizewxSizeCRFunc m_wxButtonExtDoGetSizeFromClientSizewxSizeCR = NULL;
+  virtual wxSize DoGetSizeFromClientSize(wxSize const& size) const override
+  {
+    wxSize res = wxButton::DoGetSizeFromClientSize(size);
+    if (*m_wxButtonExtDoGetSizeFromClientSizewxSizeCR != NULL){
+      return m_wxButtonExtDoGetSizeFromClientSizewxSizeCR(this, size, res);
+    }
+    else {
+      return res;
+    }
+  }
   wxButtonExtDoGetSizeFromTextSizeintintFunc m_wxButtonExtDoGetSizeFromTextSizeintint = NULL;
   virtual wxSize DoGetSizeFromTextSize(int xlen, int ylen = -1) const override
   {
     wxSize res = wxButton::DoGetSizeFromTextSize(xlen, ylen);
     if (*m_wxButtonExtDoGetSizeFromTextSizeintint != NULL){
-      return m_wxButtonExtDoGetSizeFromTextSizeintint(this, xlen, ylen);
+      return m_wxButtonExtDoGetSizeFromTextSizeintint(this, xlen, ylen, res);
     }
     else {
       return res;
     }
   }
   wxButtonExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCPFunc m_wxButtonExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCP = NULL;
-  virtual void DoGetTextExtent(wxString const& string, int* x, int* y, int* descent = __null, int* externalLeading = __null, wxFont const* font = __null) const override
+  virtual void DoGetTextExtent(wxString const& string, int* x, int* y, int* descent = __null, int* externalLeading = __null, wxFont const* theFont = __null) const override
   {
-    wxButton::DoGetTextExtent(string, x, y, descent, externalLeading, font);
+    wxButton::DoGetTextExtent(string, x, y, descent, externalLeading, theFont);
     if (*m_wxButtonExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCP != NULL){
-      return m_wxButtonExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCP(this, string, x, y, descent, externalLeading, font);
+      return m_wxButtonExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCP(this, string, x, y, descent, externalLeading, theFont);
     }
   }
   wxButtonExtDoGetVirtualSizeFunc m_wxButtonExtDoGetVirtualSize = NULL;
@@ -3046,7 +3105,7 @@ public:
   {
     wxSize res = wxButton::DoGetVirtualSize();
     if (*m_wxButtonExtDoGetVirtualSize != NULL){
-      return m_wxButtonExtDoGetVirtualSize(this);
+      return m_wxButtonExtDoGetVirtualSize(this, res);
     }
     else {
       return res;
@@ -3057,7 +3116,7 @@ public:
   {
     wxHitTest res = wxButton::DoHitTest(x, y);
     if (*m_wxButtonExtDoHitTestwxCoordwxCoord != NULL){
-      return m_wxButtonExtDoHitTestwxCoordwxCoord(this, x, y);
+      return m_wxButtonExtDoHitTestwxCoordwxCoord(this, x, y, res);
     }
     else {
       return res;
@@ -3068,7 +3127,7 @@ public:
   {
     bool res = wxButton::DoIsExposed(x, y, w, h);
     if (*m_wxButtonExtDoIsExposedintintintint != NULL){
-      return m_wxButtonExtDoIsExposedintintintint(this, x, y, w, h);
+      return m_wxButtonExtDoIsExposedintintintint(this, x, y, w, h, res);
     }
     else {
       return res;
@@ -3079,10 +3138,18 @@ public:
   {
     bool res = wxButton::DoIsExposed(x, y);
     if (*m_wxButtonExtDoIsExposedintint != NULL){
-      return m_wxButtonExtDoIsExposedintint(this, x, y);
+      return m_wxButtonExtDoIsExposedintint(this, x, y, res);
     }
     else {
       return res;
+    }
+  }
+  wxButtonExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrderFunc m_wxButtonExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrder = NULL;
+  virtual void DoMoveInTabOrder(wxWindow* win, wxWindowBase::WindowOrder move) override
+  {
+    wxButton::DoMoveInTabOrder(win, move);
+    if (*m_wxButtonExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrder != NULL){
+      return m_wxButtonExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrder(this, win, move);
     }
   }
   wxButtonExtDoMoveWindowintintintintFunc m_wxButtonExtDoMoveWindowintintintint = NULL;
@@ -3098,7 +3165,7 @@ public:
   {
     bool res = wxButton::DoNavigateIn(flags);
     if (*m_wxButtonExtDoNavigateInint != NULL){
-      return m_wxButtonExtDoNavigateInint(this, flags);
+      return m_wxButtonExtDoNavigateInint(this, flags, res);
     }
     else {
       return res;
@@ -3109,7 +3176,7 @@ public:
   {
     bool res = wxButton::DoPhase(phase);
     if (*m_wxButtonExtDoPhaseint != NULL){
-      return m_wxButtonExtDoPhaseint(this, phase);
+      return m_wxButtonExtDoPhaseint(this, phase, res);
     }
     else {
       return res;
@@ -3120,7 +3187,7 @@ public:
   {
     bool res = wxButton::DoPopupMenu(menu, x, y);
     if (*m_wxButtonExtDoPopupMenuwxMenuPintint != NULL){
-      return m_wxButtonExtDoPopupMenuwxMenuPintint(this, menu, x, y);
+      return m_wxButtonExtDoPopupMenuwxMenuPintint(this, menu, x, y, res);
     }
     else {
       return res;
@@ -3203,7 +3270,7 @@ public:
   {
     bool res = wxButton::DoSetLabelMarkup(markup);
     if (*m_wxButtonExtDoSetLabelMarkupwxStringCR != NULL){
-      return m_wxButtonExtDoSetLabelMarkupwxStringCR(this, markup);
+      return m_wxButtonExtDoSetLabelMarkupwxStringCR(this, markup, res);
     }
     else {
       return res;
@@ -3286,29 +3353,29 @@ public:
   {
     bool res = wxButton::Enable(enable);
     if (*m_wxButtonExtEnablebool != NULL){
-      return m_wxButtonExtEnablebool(this, enable);
+      return m_wxButtonExtEnablebool(this, enable, res);
     }
     else {
       return res;
     }
   }
   wxButtonExtEnableTouchEventsintFunc m_wxButtonExtEnableTouchEventsint = NULL;
-  virtual bool EnableTouchEvents(int param0) override
+  virtual bool EnableTouchEvents(int eventsMask) override
   {
-    bool res = wxButton::EnableTouchEvents(param0);
+    bool res = wxButton::EnableTouchEvents(eventsMask);
     if (*m_wxButtonExtEnableTouchEventsint != NULL){
-      return m_wxButtonExtEnableTouchEventsint(this, param0);
+      return m_wxButtonExtEnableTouchEventsint(this, eventsMask, res);
     }
     else {
       return res;
     }
   }
   wxButtonExtEnableVisibleFocusboolFunc m_wxButtonExtEnableVisibleFocusbool = NULL;
-  virtual void EnableVisibleFocus(bool param0) override
+  virtual void EnableVisibleFocus(bool enabled) override
   {
-    wxButton::EnableVisibleFocus(param0);
+    wxButton::EnableVisibleFocus(enabled);
     if (*m_wxButtonExtEnableVisibleFocusbool != NULL){
-      return m_wxButtonExtEnableVisibleFocusbool(this, param0);
+      return m_wxButtonExtEnableVisibleFocusbool(this, enabled);
     }
   }
   wxButtonExtEndRepositioningChildrenFunc m_wxButtonExtEndRepositioningChildren = NULL;
@@ -3340,7 +3407,7 @@ public:
   {
     wxSize res = wxButton::GetBestVirtualSize();
     if (*m_wxButtonExtGetBestVirtualSize != NULL){
-      return m_wxButtonExtGetBestVirtualSize(this);
+      return m_wxButtonExtGetBestVirtualSize(this, res);
     }
     else {
       return res;
@@ -3351,7 +3418,7 @@ public:
   {
     int res = wxButton::GetCharHeight();
     if (*m_wxButtonExtGetCharHeight != NULL){
-      return m_wxButtonExtGetCharHeight(this);
+      return m_wxButtonExtGetCharHeight(this, res);
     }
     else {
       return res;
@@ -3362,7 +3429,7 @@ public:
   {
     int res = wxButton::GetCharWidth();
     if (*m_wxButtonExtGetCharWidth != NULL){
-      return m_wxButtonExtGetCharWidth(this);
+      return m_wxButtonExtGetCharWidth(this, res);
     }
     else {
       return res;
@@ -3373,7 +3440,7 @@ public:
   {
     wxClassInfo* res = wxButton::GetClassInfo();
     if (*m_wxButtonExtGetClassInfo != NULL){
-      return m_wxButtonExtGetClassInfo(this);
+      return m_wxButtonExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -3384,7 +3451,7 @@ public:
   {
     wxPoint res = wxButton::GetClientAreaOrigin();
     if (*m_wxButtonExtGetClientAreaOrigin != NULL){
-      return m_wxButtonExtGetClientAreaOrigin(this);
+      return m_wxButtonExtGetClientAreaOrigin(this, res);
     }
     else {
       return res;
@@ -3403,7 +3470,7 @@ public:
   {
     double res = wxButton::GetContentScaleFactor();
     if (*m_wxButtonExtGetContentScaleFactor != NULL){
-      return m_wxButtonExtGetContentScaleFactor(this);
+      return m_wxButtonExtGetContentScaleFactor(this, res);
     }
     else {
       return res;
@@ -3414,7 +3481,7 @@ public:
   {
     wxSize res = wxButton::GetDPI();
     if (*m_wxButtonExtGetDPI != NULL){
-      return m_wxButtonExtGetDPI(this);
+      return m_wxButtonExtGetDPI(this, res);
     }
     else {
       return res;
@@ -3425,7 +3492,7 @@ public:
   {
     double res = wxButton::GetDPIScaleFactor();
     if (*m_wxButtonExtGetDPIScaleFactor != NULL){
-      return m_wxButtonExtGetDPIScaleFactor(this);
+      return m_wxButtonExtGetDPIScaleFactor(this, res);
     }
     else {
       return res;
@@ -3436,7 +3503,7 @@ public:
   {
     wxVisualAttributes res = wxButton::GetDefaultAttributes();
     if (*m_wxButtonExtGetDefaultAttributes != NULL){
-      return m_wxButtonExtGetDefaultAttributes(this);
+      return m_wxButtonExtGetDefaultAttributes(this, res);
     }
     else {
       return res;
@@ -3447,7 +3514,7 @@ public:
   {
     wxBorder res = wxButton::GetDefaultBorder();
     if (*m_wxButtonExtGetDefaultBorder != NULL){
-      return m_wxButtonExtGetDefaultBorder(this);
+      return m_wxButtonExtGetDefaultBorder(this, res);
     }
     else {
       return res;
@@ -3458,7 +3525,7 @@ public:
   {
     wxBorder res = wxButton::GetDefaultBorderForControl();
     if (*m_wxButtonExtGetDefaultBorderForControl != NULL){
-      return m_wxButtonExtGetDefaultBorderForControl(this);
+      return m_wxButtonExtGetDefaultBorderForControl(this, res);
     }
     else {
       return res;
@@ -3469,7 +3536,7 @@ public:
   {
     wxDropTarget* res = wxButton::GetDropTarget();
     if (*m_wxButtonExtGetDropTarget != NULL){
-      return m_wxButtonExtGetDropTarget(this);
+      return m_wxButtonExtGetDropTarget(this, res);
     }
     else {
       return res;
@@ -3480,7 +3547,7 @@ public:
   {
     wxSize res = wxButton::GetEffectiveMinSize();
     if (*m_wxButtonExtGetEffectiveMinSize != NULL){
-      return m_wxButtonExtGetEffectiveMinSize(this);
+      return m_wxButtonExtGetEffectiveMinSize(this, res);
     }
     else {
       return res;
@@ -3491,7 +3558,7 @@ public:
   {
     wxEventHashTable& res = wxButton::GetEventHashTable();
     if (*m_wxButtonExtGetEventHashTable != NULL){
-      return m_wxButtonExtGetEventHashTable(this);
+      return m_wxButtonExtGetEventHashTable(this, res);
     }
     else {
       return res;
@@ -3502,7 +3569,7 @@ public:
   {
     wxEventTable const* res = wxButton::GetEventTable();
     if (*m_wxButtonExtGetEventTable != NULL){
-      return m_wxButtonExtGetEventTable(this);
+      return m_wxButtonExtGetEventTable(this, res);
     }
     else {
       return res;
@@ -3513,7 +3580,7 @@ public:
   {
     WXWidget res = wxButton::GetHandle();
     if (*m_wxButtonExtGetHandle != NULL){
-      return m_wxButtonExtGetHandle(this);
+      return m_wxButtonExtGetHandle(this, res);
     }
     else {
       return res;
@@ -3524,7 +3591,7 @@ public:
   {
     wxString res = wxButton::GetHelpTextAtPoint(pt, origin);
     if (*m_wxButtonExtGetHelpTextAtPointwxPointCRwxHelpEventNOrigin != NULL){
-      return m_wxButtonExtGetHelpTextAtPointwxPointCRwxHelpEventNOrigin(this, pt, origin);
+      return m_wxButtonExtGetHelpTextAtPointwxPointCRwxHelpEventNOrigin(this, pt, origin, res);
     }
     else {
       return res;
@@ -3535,7 +3602,7 @@ public:
   {
     wxString res = wxButton::GetLabel();
     if (*m_wxButtonExtGetLabel != NULL){
-      return m_wxButtonExtGetLabel(this);
+      return m_wxButtonExtGetLabel(this, res);
     }
     else {
       return res;
@@ -3546,7 +3613,7 @@ public:
   {
     wxString res = wxButton::GetLabelText();
     if (*m_wxButtonExtGetLabelText != NULL){
-      return m_wxButtonExtGetLabelText(this);
+      return m_wxButtonExtGetLabelText(this, res);
     }
     else {
       return res;
@@ -3557,7 +3624,7 @@ public:
   {
     wxLayoutDirection res = wxButton::GetLayoutDirection();
     if (*m_wxButtonExtGetLayoutDirection != NULL){
-      return m_wxButtonExtGetLayoutDirection(this);
+      return m_wxButtonExtGetLayoutDirection(this, res);
     }
     else {
       return res;
@@ -3568,7 +3635,7 @@ public:
   {
     wxWindow* res = wxButton::GetMainWindowOfCompositeControl();
     if (*m_wxButtonExtGetMainWindowOfCompositeControl != NULL){
-      return m_wxButtonExtGetMainWindowOfCompositeControl(this);
+      return m_wxButtonExtGetMainWindowOfCompositeControl(this, res);
     }
     else {
       return res;
@@ -3579,7 +3646,7 @@ public:
   {
     wxSize res = wxButton::GetMaxClientSize();
     if (*m_wxButtonExtGetMaxClientSize != NULL){
-      return m_wxButtonExtGetMaxClientSize(this);
+      return m_wxButtonExtGetMaxClientSize(this, res);
     }
     else {
       return res;
@@ -3590,7 +3657,7 @@ public:
   {
     wxSize res = wxButton::GetMaxSize();
     if (*m_wxButtonExtGetMaxSize != NULL){
-      return m_wxButtonExtGetMaxSize(this);
+      return m_wxButtonExtGetMaxSize(this, res);
     }
     else {
       return res;
@@ -3601,7 +3668,7 @@ public:
   {
     wxSize res = wxButton::GetMinClientSize();
     if (*m_wxButtonExtGetMinClientSize != NULL){
-      return m_wxButtonExtGetMinClientSize(this);
+      return m_wxButtonExtGetMinClientSize(this, res);
     }
     else {
       return res;
@@ -3612,7 +3679,7 @@ public:
   {
     wxSize res = wxButton::GetMinSize();
     if (*m_wxButtonExtGetMinSize != NULL){
-      return m_wxButtonExtGetMinSize(this);
+      return m_wxButtonExtGetMinSize(this, res);
     }
     else {
       return res;
@@ -3623,7 +3690,7 @@ public:
   {
     wxString res = wxButton::GetName();
     if (*m_wxButtonExtGetName != NULL){
-      return m_wxButtonExtGetName(this);
+      return m_wxButtonExtGetName(this, res);
     }
     else {
       return res;
@@ -3634,7 +3701,7 @@ public:
   {
     wxAnyButtonBase::State res = wxButton::GetNormalState();
     if (*m_wxButtonExtGetNormalState != NULL){
-      return m_wxButtonExtGetNormalState(this);
+      return m_wxButtonExtGetNormalState(this, res);
     }
     else {
       return res;
@@ -3653,7 +3720,7 @@ public:
   {
     int res = wxButton::GetScrollPos(orient);
     if (*m_wxButtonExtGetScrollPosint != NULL){
-      return m_wxButtonExtGetScrollPosint(this, orient);
+      return m_wxButtonExtGetScrollPosint(this, orient, res);
     }
     else {
       return res;
@@ -3664,7 +3731,7 @@ public:
   {
     int res = wxButton::GetScrollRange(orient);
     if (*m_wxButtonExtGetScrollRangeint != NULL){
-      return m_wxButtonExtGetScrollRangeint(this, orient);
+      return m_wxButtonExtGetScrollRangeint(this, orient, res);
     }
     else {
       return res;
@@ -3675,7 +3742,7 @@ public:
   {
     int res = wxButton::GetScrollThumb(orient);
     if (*m_wxButtonExtGetScrollThumbint != NULL){
-      return m_wxButtonExtGetScrollThumbint(this, orient);
+      return m_wxButtonExtGetScrollThumbint(this, orient, res);
     }
     else {
       return res;
@@ -3694,7 +3761,18 @@ public:
   {
     bool res = wxButton::GetThemeEnabled();
     if (*m_wxButtonExtGetThemeEnabled != NULL){
-      return m_wxButtonExtGetThemeEnabled(this);
+      return m_wxButtonExtGetThemeEnabled(this, res);
+    }
+    else {
+      return res;
+    }
+  }
+  wxButtonExtGetTransparentFunc m_wxButtonExtGetTransparent = NULL;
+  virtual wxByte GetTransparent() const override
+  {
+    wxByte res = wxButton::GetTransparent();
+    if (*m_wxButtonExtGetTransparent != NULL){
+      return m_wxButtonExtGetTransparent(this, res);
     }
     else {
       return res;
@@ -3705,7 +3783,7 @@ public:
   {
     wxValidator* res = wxButton::GetValidator();
     if (*m_wxButtonExtGetValidator != NULL){
-      return m_wxButtonExtGetValidator(this);
+      return m_wxButtonExtGetValidator(this, res);
     }
     else {
       return res;
@@ -3716,7 +3794,7 @@ public:
   {
     wxSize res = wxButton::GetWindowBorderSize();
     if (*m_wxButtonExtGetWindowBorderSize != NULL){
-      return m_wxButtonExtGetWindowBorderSize(this);
+      return m_wxButtonExtGetWindowBorderSize(this, res);
     }
     else {
       return res;
@@ -3727,7 +3805,7 @@ public:
   {
     long res = wxButton::GetWindowStyleFlag();
     if (*m_wxButtonExtGetWindowStyleFlag != NULL){
-      return m_wxButtonExtGetWindowStyleFlag(this);
+      return m_wxButtonExtGetWindowStyleFlag(this, res);
     }
     else {
       return res;
@@ -3738,7 +3816,7 @@ public:
   {
     bool res = wxButton::HasCapture();
     if (*m_wxButtonExtHasCapture != NULL){
-      return m_wxButtonExtHasCapture(this);
+      return m_wxButtonExtHasCapture(this, res);
     }
     else {
       return res;
@@ -3749,7 +3827,7 @@ public:
   {
     bool res = wxButton::HasFocus();
     if (*m_wxButtonExtHasFocus != NULL){
-      return m_wxButtonExtHasFocus(this);
+      return m_wxButtonExtHasFocus(this, res);
     }
     else {
       return res;
@@ -3760,7 +3838,7 @@ public:
   {
     bool res = wxButton::HasMultiplePages();
     if (*m_wxButtonExtHasMultiplePages != NULL){
-      return m_wxButtonExtHasMultiplePages(this);
+      return m_wxButtonExtHasMultiplePages(this, res);
     }
     else {
       return res;
@@ -3771,18 +3849,18 @@ public:
   {
     bool res = wxButton::HasTransparentBackground();
     if (*m_wxButtonExtHasTransparentBackground != NULL){
-      return m_wxButtonExtHasTransparentBackground(this);
+      return m_wxButtonExtHasTransparentBackground(this, res);
     }
     else {
       return res;
     }
   }
   wxButtonExtHideWithEffectwxShowEffectunsignedintFunc m_wxButtonExtHideWithEffectwxShowEffectunsignedint = NULL;
-  virtual bool HideWithEffect(wxShowEffect param0, unsigned int param1 = 0) override
+  virtual bool HideWithEffect(wxShowEffect effect, unsigned int timeout = 0) override
   {
-    bool res = wxButton::HideWithEffect(param0, param1);
+    bool res = wxButton::HideWithEffect(effect, timeout);
     if (*m_wxButtonExtHideWithEffectwxShowEffectunsignedint != NULL){
-      return m_wxButtonExtHideWithEffectwxShowEffectunsignedint(this, param0, param1);
+      return m_wxButtonExtHideWithEffectwxShowEffectunsignedint(this, effect, timeout, res);
     }
     else {
       return res;
@@ -3793,7 +3871,7 @@ public:
   {
     bool res = wxButton::InformFirstDirection(direction, size, availableOtherDir);
     if (*m_wxButtonExtInformFirstDirectionintintint != NULL){
-      return m_wxButtonExtInformFirstDirectionintintint(this, direction, size, availableOtherDir);
+      return m_wxButtonExtInformFirstDirectionintintint(this, direction, size, availableOtherDir, res);
     }
     else {
       return res;
@@ -3820,7 +3898,7 @@ public:
   {
     bool res = wxButton::IsClientAreaChild(param0);
     if (*m_wxButtonExtIsClientAreaChildwxWindowCP != NULL){
-      return m_wxButtonExtIsClientAreaChildwxWindowCP(this, param0);
+      return m_wxButtonExtIsClientAreaChildwxWindowCP(this, param0, res);
     }
     else {
       return res;
@@ -3831,7 +3909,7 @@ public:
   {
     bool res = wxButton::IsDoubleBuffered();
     if (*m_wxButtonExtIsDoubleBuffered != NULL){
-      return m_wxButtonExtIsDoubleBuffered(this);
+      return m_wxButtonExtIsDoubleBuffered(this, res);
     }
     else {
       return res;
@@ -3842,18 +3920,18 @@ public:
   {
     bool res = wxButton::IsRetained();
     if (*m_wxButtonExtIsRetained != NULL){
-      return m_wxButtonExtIsRetained(this);
+      return m_wxButtonExtIsRetained(this, res);
     }
     else {
       return res;
     }
   }
   wxButtonExtIsScrollbarAlwaysShownintFunc m_wxButtonExtIsScrollbarAlwaysShownint = NULL;
-  virtual bool IsScrollbarAlwaysShown(int param0) const override
+  virtual bool IsScrollbarAlwaysShown(int orient) const override
   {
-    bool res = wxButton::IsScrollbarAlwaysShown(param0);
+    bool res = wxButton::IsScrollbarAlwaysShown(orient);
     if (*m_wxButtonExtIsScrollbarAlwaysShownint != NULL){
-      return m_wxButtonExtIsScrollbarAlwaysShownint(this, param0);
+      return m_wxButtonExtIsScrollbarAlwaysShownint(this, orient, res);
     }
     else {
       return res;
@@ -3864,7 +3942,7 @@ public:
   {
     bool res = wxButton::IsShown();
     if (*m_wxButtonExtIsShown != NULL){
-      return m_wxButtonExtIsShown(this);
+      return m_wxButtonExtIsShown(this, res);
     }
     else {
       return res;
@@ -3875,7 +3953,7 @@ public:
   {
     bool res = wxButton::IsShownOnScreen();
     if (*m_wxButtonExtIsShownOnScreen != NULL){
-      return m_wxButtonExtIsShownOnScreen(this);
+      return m_wxButtonExtIsShownOnScreen(this, res);
     }
     else {
       return res;
@@ -3886,7 +3964,7 @@ public:
   {
     bool res = wxButton::IsThisEnabled();
     if (*m_wxButtonExtIsThisEnabled != NULL){
-      return m_wxButtonExtIsThisEnabled(this);
+      return m_wxButtonExtIsThisEnabled(this, res);
     }
     else {
       return res;
@@ -3897,7 +3975,7 @@ public:
   {
     bool res = wxButton::IsTopLevel();
     if (*m_wxButtonExtIsTopLevel != NULL){
-      return m_wxButtonExtIsTopLevel(this);
+      return m_wxButtonExtIsTopLevel(this, res);
     }
     else {
       return res;
@@ -3908,7 +3986,7 @@ public:
   {
     bool res = wxButton::IsTopNavigationDomain(param0);
     if (*m_wxButtonExtIsTopNavigationDomainwxWindowBaseNNavigationKind != NULL){
-      return m_wxButtonExtIsTopNavigationDomainwxWindowBaseNNavigationKind(this, param0);
+      return m_wxButtonExtIsTopNavigationDomainwxWindowBaseNNavigationKind(this, param0, res);
     }
     else {
       return res;
@@ -3919,7 +3997,7 @@ public:
   {
     bool res = wxButton::IsTransparentBackgroundSupported(reason);
     if (*m_wxButtonExtIsTransparentBackgroundSupportedwxStringP != NULL){
-      return m_wxButtonExtIsTransparentBackgroundSupportedwxStringP(this, reason);
+      return m_wxButtonExtIsTransparentBackgroundSupportedwxStringP(this, reason, res);
     }
     else {
       return res;
@@ -3930,7 +4008,7 @@ public:
   {
     bool res = wxButton::Layout();
     if (*m_wxButtonExtLayout != NULL){
-      return m_wxButtonExtLayout(this);
+      return m_wxButtonExtLayout(this, res);
     }
     else {
       return res;
@@ -3941,7 +4019,7 @@ public:
   {
     bool res = wxButton::LayoutPhase1(noChanges);
     if (*m_wxButtonExtLayoutPhase1intP != NULL){
-      return m_wxButtonExtLayoutPhase1intP(this, noChanges);
+      return m_wxButtonExtLayoutPhase1intP(this, noChanges, res);
     }
     else {
       return res;
@@ -3952,7 +4030,7 @@ public:
   {
     bool res = wxButton::LayoutPhase2(noChanges);
     if (*m_wxButtonExtLayoutPhase2intP != NULL){
-      return m_wxButtonExtLayoutPhase2intP(this, noChanges);
+      return m_wxButtonExtLayoutPhase2intP(this, noChanges, res);
     }
     else {
       return res;
@@ -3979,7 +4057,7 @@ public:
   {
     bool res = wxButton::OnDynamicBind(param0);
     if (*m_wxButtonExtOnDynamicBindwxDynamicEventTableEntryR != NULL){
-      return m_wxButtonExtOnDynamicBindwxDynamicEventTableEntryR(this, param0);
+      return m_wxButtonExtOnDynamicBindwxDynamicEventTableEntryR(this, param0, res);
     }
     else {
       return res;
@@ -4006,7 +4084,7 @@ public:
   {
     bool res = wxButton::ProcessEvent(event);
     if (*m_wxButtonExtProcessEventwxEventR != NULL){
-      return m_wxButtonExtProcessEventwxEventR(this, event);
+      return m_wxButtonExtProcessEventwxEventR(this, event, res);
     }
     else {
       return res;
@@ -4029,7 +4107,7 @@ public:
     }
   }
   wxButtonExtRefreshboolwxRectCPFunc m_wxButtonExtRefreshboolwxRectCP = NULL;
-  virtual void Refresh(bool eraseBackground = true, wxRect const* rect = (const wxRect*)__null) override
+  virtual void Refresh(bool eraseBackground = true, wxRect const* rect = __null) override
   {
     wxButton::Refresh(eraseBackground, rect);
     if (*m_wxButtonExtRefreshboolwxRectCP != NULL){
@@ -4041,7 +4119,7 @@ public:
   {
     bool res = wxButton::RegisterHotKey(hotkeyId, modifiers, keycode);
     if (*m_wxButtonExtRegisterHotKeyintintint != NULL){
-      return m_wxButtonExtRegisterHotKeyintintint(this, hotkeyId, modifiers, keycode);
+      return m_wxButtonExtRegisterHotKeyintintint(this, hotkeyId, modifiers, keycode, res);
     }
     else {
       return res;
@@ -4060,7 +4138,7 @@ public:
   {
     bool res = wxButton::Reparent(newParent);
     if (*m_wxButtonExtReparentwxWindowBaseP != NULL){
-      return m_wxButtonExtReparentwxWindowBaseP(this, newParent);
+      return m_wxButtonExtReparentwxWindowBaseP(this, newParent, res);
     }
     else {
       return res;
@@ -4071,7 +4149,7 @@ public:
   {
     bool res = wxButton::ScrollLines(param0);
     if (*m_wxButtonExtScrollLinesint != NULL){
-      return m_wxButtonExtScrollLinesint(this, param0);
+      return m_wxButtonExtScrollLinesint(this, param0, res);
     }
     else {
       return res;
@@ -4082,7 +4160,7 @@ public:
   {
     bool res = wxButton::ScrollPages(param0);
     if (*m_wxButtonExtScrollPagesint != NULL){
-      return m_wxButtonExtScrollPagesint(this, param0);
+      return m_wxButtonExtScrollPagesint(this, param0, res);
     }
     else {
       return res;
@@ -4101,7 +4179,7 @@ public:
   {
     bool res = wxButton::SearchEventTable(table, event);
     if (*m_wxButtonExtSearchEventTablewxEventTableRwxEventR != NULL){
-      return m_wxButtonExtSearchEventTablewxEventTableRwxEventR(this, table, event);
+      return m_wxButtonExtSearchEventTablewxEventTableRwxEventR(this, table, event, res);
     }
     else {
       return res;
@@ -4112,7 +4190,7 @@ public:
   {
     bool res = wxButton::SendIdleEvents(event);
     if (*m_wxButtonExtSendIdleEventswxIdleEventR != NULL){
-      return m_wxButtonExtSendIdleEventswxIdleEventR(this, event);
+      return m_wxButtonExtSendIdleEventswxIdleEventR(this, event, res);
     }
     else {
       return res;
@@ -4139,7 +4217,7 @@ public:
   {
     bool res = wxButton::SetBackgroundColour(colour);
     if (*m_wxButtonExtSetBackgroundColourwxColourCR != NULL){
-      return m_wxButtonExtSetBackgroundColourwxColourCR(this, colour);
+      return m_wxButtonExtSetBackgroundColourwxColourCR(this, colour, res);
     }
     else {
       return res;
@@ -4150,7 +4228,7 @@ public:
   {
     bool res = wxButton::SetBackgroundStyle(style);
     if (*m_wxButtonExtSetBackgroundStylewxBackgroundStyle != NULL){
-      return m_wxButtonExtSetBackgroundStylewxBackgroundStyle(this, style);
+      return m_wxButtonExtSetBackgroundStylewxBackgroundStyle(this, style, res);
     }
     else {
       return res;
@@ -4177,7 +4255,7 @@ public:
   {
     bool res = wxButton::SetCursor(cursor);
     if (*m_wxButtonExtSetCursorwxCursorCR != NULL){
-      return m_wxButtonExtSetCursorwxCursorCR(this, cursor);
+      return m_wxButtonExtSetCursorwxCursorCR(this, cursor, res);
     }
     else {
       return res;
@@ -4188,7 +4266,7 @@ public:
   {
     wxWindow* res = wxButton::SetDefault();
     if (*m_wxButtonExtSetDefault != NULL){
-      return m_wxButtonExtSetDefault(this);
+      return m_wxButtonExtSetDefault(this, res);
     }
     else {
       return res;
@@ -4239,7 +4317,7 @@ public:
   {
     bool res = wxButton::SetFont(font);
     if (*m_wxButtonExtSetFontwxFontCR != NULL){
-      return m_wxButtonExtSetFontwxFontCR(this, font);
+      return m_wxButtonExtSetFontwxFontCR(this, font, res);
     }
     else {
       return res;
@@ -4250,7 +4328,7 @@ public:
   {
     bool res = wxButton::SetForegroundColour(colour);
     if (*m_wxButtonExtSetForegroundColourwxColourCR != NULL){
-      return m_wxButtonExtSetForegroundColourwxColourCR(this, colour);
+      return m_wxButtonExtSetForegroundColourwxColourCR(this, colour, res);
     }
     else {
       return res;
@@ -4353,11 +4431,11 @@ public:
     }
   }
   wxButtonExtSetScrollbarintintintintboolFunc m_wxButtonExtSetScrollbarintintintintbool = NULL;
-  virtual void SetScrollbar(int orient, int pos, int thumbvisible, int range, bool refresh = true) override
+  virtual void SetScrollbar(int orient, int pos, int thumbVisible, int range, bool refresh = true) override
   {
-    wxButton::SetScrollbar(orient, pos, thumbvisible, range, refresh);
+    wxButton::SetScrollbar(orient, pos, thumbVisible, range, refresh);
     if (*m_wxButtonExtSetScrollbarintintintintbool != NULL){
-      return m_wxButtonExtSetScrollbarintintintintbool(this, orient, pos, thumbvisible, range, refresh);
+      return m_wxButtonExtSetScrollbarintintintintbool(this, orient, pos, thumbVisible, range, refresh);
     }
   }
   wxButtonExtSetSizeConstraintintintintintFunc m_wxButtonExtSetSizeConstraintintintintint = NULL;
@@ -4385,11 +4463,11 @@ public:
     }
   }
   wxButtonExtSetTransparentwxByteFunc m_wxButtonExtSetTransparentwxByte = NULL;
-  virtual bool SetTransparent(wxByte param0) override
+  virtual bool SetTransparent(wxByte alpha) override
   {
-    bool res = wxButton::SetTransparent(param0);
+    bool res = wxButton::SetTransparent(alpha);
     if (*m_wxButtonExtSetTransparentwxByte != NULL){
-      return m_wxButtonExtSetTransparentwxByte(this, param0);
+      return m_wxButtonExtSetTransparentwxByte(this, alpha, res);
     }
     else {
       return res;
@@ -4416,7 +4494,7 @@ public:
   {
     bool res = wxButton::ShouldInheritColours();
     if (*m_wxButtonExtShouldInheritColours != NULL){
-      return m_wxButtonExtShouldInheritColours(this);
+      return m_wxButtonExtShouldInheritColours(this, res);
     }
     else {
       return res;
@@ -4427,18 +4505,18 @@ public:
   {
     bool res = wxButton::Show(show);
     if (*m_wxButtonExtShowbool != NULL){
-      return m_wxButtonExtShowbool(this, show);
+      return m_wxButtonExtShowbool(this, show, res);
     }
     else {
       return res;
     }
   }
   wxButtonExtShowWithEffectwxShowEffectunsignedintFunc m_wxButtonExtShowWithEffectwxShowEffectunsignedint = NULL;
-  virtual bool ShowWithEffect(wxShowEffect param0, unsigned int param1 = 0) override
+  virtual bool ShowWithEffect(wxShowEffect effect, unsigned int timeout = 0) override
   {
-    bool res = wxButton::ShowWithEffect(param0, param1);
+    bool res = wxButton::ShowWithEffect(effect, timeout);
     if (*m_wxButtonExtShowWithEffectwxShowEffectunsignedint != NULL){
-      return m_wxButtonExtShowWithEffectwxShowEffectunsignedint(this, param0, param1);
+      return m_wxButtonExtShowWithEffectwxShowEffectunsignedint(this, effect, timeout, res);
     }
     else {
       return res;
@@ -4449,7 +4527,7 @@ public:
   {
     bool res = wxButton::TransferDataFromWindow();
     if (*m_wxButtonExtTransferDataFromWindow != NULL){
-      return m_wxButtonExtTransferDataFromWindow(this);
+      return m_wxButtonExtTransferDataFromWindow(this, res);
     }
     else {
       return res;
@@ -4460,10 +4538,18 @@ public:
   {
     bool res = wxButton::TransferDataToWindow();
     if (*m_wxButtonExtTransferDataToWindow != NULL){
-      return m_wxButtonExtTransferDataToWindow(this);
+      return m_wxButtonExtTransferDataToWindow(this, res);
     }
     else {
       return res;
+    }
+  }
+  wxButtonExtTriggerScrollEventwxEventTypeFunc m_wxButtonExtTriggerScrollEventwxEventType = NULL;
+  virtual void TriggerScrollEvent(wxEventType scrollEvent) override
+  {
+    wxButton::TriggerScrollEvent(scrollEvent);
+    if (*m_wxButtonExtTriggerScrollEventwxEventType != NULL){
+      return m_wxButtonExtTriggerScrollEventwxEventType(this, scrollEvent);
     }
   }
   wxButtonExtTryAfterwxEventRFunc m_wxButtonExtTryAfterwxEventR = NULL;
@@ -4471,7 +4557,7 @@ public:
   {
     bool res = wxButton::TryAfter(event);
     if (*m_wxButtonExtTryAfterwxEventR != NULL){
-      return m_wxButtonExtTryAfterwxEventR(this, event);
+      return m_wxButtonExtTryAfterwxEventR(this, event, res);
     }
     else {
       return res;
@@ -4482,7 +4568,7 @@ public:
   {
     bool res = wxButton::TryBefore(event);
     if (*m_wxButtonExtTryBeforewxEventR != NULL){
-      return m_wxButtonExtTryBeforewxEventR(this, event);
+      return m_wxButtonExtTryBeforewxEventR(this, event, res);
     }
     else {
       return res;
@@ -4493,7 +4579,7 @@ public:
   {
     bool res = wxButton::UnregisterHotKey(hotkeyId);
     if (*m_wxButtonExtUnregisterHotKeyint != NULL){
-      return m_wxButtonExtUnregisterHotKeyint(this, hotkeyId);
+      return m_wxButtonExtUnregisterHotKeyint(this, hotkeyId, res);
     }
     else {
       return res;
@@ -4520,7 +4606,7 @@ public:
   {
     bool res = wxButton::Validate();
     if (*m_wxButtonExtValidate != NULL){
-      return m_wxButtonExtValidate(this);
+      return m_wxButtonExtValidate(this, res);
     }
     else {
       return res;
@@ -4539,7 +4625,7 @@ public:
   {
     wxTextEntry const* res = wxButton::WXGetTextEntry();
     if (*m_wxButtonExtWXGetTextEntry != NULL){
-      return m_wxButtonExtWXGetTextEntry(this);
+      return m_wxButtonExtWXGetTextEntry(this, res);
     }
     else {
       return res;
@@ -4550,7 +4636,7 @@ public:
   {
     void* res = wxButton::WXReservedEvtHandler1(param0);
     if (*m_wxButtonExtWXReservedEvtHandler1voidP != NULL){
-      return m_wxButtonExtWXReservedEvtHandler1voidP(this, param0);
+      return m_wxButtonExtWXReservedEvtHandler1voidP(this, param0, res);
     }
     else {
       return res;
@@ -4561,7 +4647,7 @@ public:
   {
     void* res = wxButton::WXReservedEvtHandler2(param0);
     if (*m_wxButtonExtWXReservedEvtHandler2voidP != NULL){
-      return m_wxButtonExtWXReservedEvtHandler2voidP(this, param0);
+      return m_wxButtonExtWXReservedEvtHandler2voidP(this, param0, res);
     }
     else {
       return res;
@@ -4572,7 +4658,7 @@ public:
   {
     void* res = wxButton::WXReservedWindow1(param0);
     if (*m_wxButtonExtWXReservedWindow1voidP != NULL){
-      return m_wxButtonExtWXReservedWindow1voidP(this, param0);
+      return m_wxButtonExtWXReservedWindow1voidP(this, param0, res);
     }
     else {
       return res;
@@ -4583,7 +4669,7 @@ public:
   {
     void* res = wxButton::WXReservedWindow2(param0);
     if (*m_wxButtonExtWXReservedWindow2voidP != NULL){
-      return m_wxButtonExtWXReservedWindow2voidP(this, param0);
+      return m_wxButtonExtWXReservedWindow2voidP(this, param0, res);
     }
     else {
       return res;
@@ -4594,7 +4680,7 @@ public:
   {
     void* res = wxButton::WXReservedWindow3(param0);
     if (*m_wxButtonExtWXReservedWindow3voidP != NULL){
-      return m_wxButtonExtWXReservedWindow3voidP(this, param0);
+      return m_wxButtonExtWXReservedWindow3voidP(this, param0, res);
     }
     else {
       return res;
@@ -4621,13 +4707,13 @@ public:
   {
     wxSize res = wxButton::WindowToClientSize(size);
     if (*m_wxButtonExtWindowToClientSizewxSizeCR != NULL){
-      return m_wxButtonExtWindowToClientSizewxSizeCR(this, size);
+      return m_wxButtonExtWindowToClientSizewxSizeCR(this, size, res);
     }
     else {
       return res;
     }
   }
-  wxButtonExt(wxButtonExtAcceptsFocusFunc a_AcceptsFocus, wxButtonExtAcceptsFocusFromKeyboardFunc a_AcceptsFocusFromKeyboard, wxButtonExtAcceptsFocusRecursivelyFunc a_AcceptsFocusRecursively, wxButtonExtAddChildwxWindowBasePFunc a_AddChildwxWindowBaseP, wxButtonExtAddPendingEventwxEventCRFunc a_AddPendingEventwxEventCR, wxButtonExtAdjustForLayoutDirectionwxCoordwxCoordwxCoordFunc a_AdjustForLayoutDirectionwxCoordwxCoordwxCoord, wxButtonExtAdjustForParentClientOriginintRintRintFunc a_AdjustForParentClientOriginintRintRint, wxButtonExtAlwaysShowScrollbarsboolboolFunc a_AlwaysShowScrollbarsboolbool, wxButtonExtAssociateHandleWXWidgetFunc a_AssociateHandleWXWidget, wxButtonExtBeginRepositioningChildrenFunc a_BeginRepositioningChildren, wxButtonExtCanApplyThemeBorderFunc a_CanApplyThemeBorder, wxButtonExtCanBeFocusedFunc a_CanBeFocused, wxButtonExtCanBeOutsideClientAreaFunc a_CanBeOutsideClientArea, wxButtonExtCanScrollintFunc a_CanScrollint, wxButtonExtCanSetTransparentFunc a_CanSetTransparent, wxButtonExtClearBackgroundFunc a_ClearBackground, wxButtonExtClientToWindowSizewxSizeCRFunc a_ClientToWindowSizewxSizeCR, wxButtonExtCloneRefDatawxObjectRefDataCPFunc a_CloneRefDatawxObjectRefDataCP, wxButtonExtCommandwxCommandEventRFunc a_CommandwxCommandEventR, wxButtonExtCreateRefDataFunc a_CreateRefData, wxButtonExtDestroyFunc a_Destroy, wxButtonExtDissociateHandleFunc a_DissociateHandle, wxButtonExtDoCaptureMouseFunc a_DoCaptureMouse, wxButtonExtDoCentreintFunc a_DoCentreint, wxButtonExtDoClientToScreenintPintPFunc a_DoClientToScreenintPintP, wxButtonExtDoEnableboolFunc a_DoEnablebool, wxButtonExtDoFreezeFunc a_DoFreeze, wxButtonExtDoGetAuthNeededFunc a_DoGetAuthNeeded, wxButtonExtDoGetBestClientHeightintFunc a_DoGetBestClientHeightint, wxButtonExtDoGetBestClientSizeFunc a_DoGetBestClientSize, wxButtonExtDoGetBestClientWidthintFunc a_DoGetBestClientWidthint, wxButtonExtDoGetBestSizeFunc a_DoGetBestSize, wxButtonExtDoGetBitmapwxAnyButtonBaseNStateFunc a_DoGetBitmapwxAnyButtonBaseNState, wxButtonExtDoGetBitmapMarginsFunc a_DoGetBitmapMargins, wxButtonExtDoGetClientDataFunc a_DoGetClientData, wxButtonExtDoGetClientObjectFunc a_DoGetClientObject, wxButtonExtDoGetClientSizeintPintPFunc a_DoGetClientSizeintPintP, wxButtonExtDoGetPositionintPintPFunc a_DoGetPositionintPintP, wxButtonExtDoGetScreenPositionintPintPFunc a_DoGetScreenPositionintPintP, wxButtonExtDoGetSizeintPintPFunc a_DoGetSizeintPintP, wxButtonExtDoGetSizeFromTextSizeintintFunc a_DoGetSizeFromTextSizeintint, wxButtonExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCPFunc a_DoGetTextExtentwxStringCRintPintPintPintPwxFontCP, wxButtonExtDoGetVirtualSizeFunc a_DoGetVirtualSize, wxButtonExtDoHitTestwxCoordwxCoordFunc a_DoHitTestwxCoordwxCoord, wxButtonExtDoIsExposedintintintintFunc a_DoIsExposedintintintint, wxButtonExtDoIsExposedintintFunc a_DoIsExposedintint, wxButtonExtDoMoveWindowintintintintFunc a_DoMoveWindowintintintint, wxButtonExtDoNavigateInintFunc a_DoNavigateInint, wxButtonExtDoPhaseintFunc a_DoPhaseint, wxButtonExtDoPopupMenuwxMenuPintintFunc a_DoPopupMenuwxMenuPintint, wxButtonExtDoReleaseMouseFunc a_DoReleaseMouse, wxButtonExtDoScreenToClientintPintPFunc a_DoScreenToClientintPintP, wxButtonExtDoSetAuthNeededboolFunc a_DoSetAuthNeededbool, wxButtonExtDoSetBitmapwxBitmapBundleCRwxAnyButtonBaseNStateFunc a_DoSetBitmapwxBitmapBundleCRwxAnyButtonBaseNState, wxButtonExtDoSetBitmapMarginsintintFunc a_DoSetBitmapMarginsintint, wxButtonExtDoSetBitmapPositionwxDirectionFunc a_DoSetBitmapPositionwxDirection, wxButtonExtDoSetClientDatavoidPFunc a_DoSetClientDatavoidP, wxButtonExtDoSetClientObjectwxClientDataPFunc a_DoSetClientObjectwxClientDataP, wxButtonExtDoSetClientSizeintintFunc a_DoSetClientSizeintint, wxButtonExtDoSetLabelMarkupwxStringCRFunc a_DoSetLabelMarkupwxStringCR, wxButtonExtDoSetSizeintintintintintFunc a_DoSetSizeintintintintint, wxButtonExtDoSetSizeHintsintintintintintintFunc a_DoSetSizeHintsintintintintintint, wxButtonExtDoSetToolTipwxToolTipPFunc a_DoSetToolTipwxToolTipP, wxButtonExtDoSetToolTipTextwxStringCRFunc a_DoSetToolTipTextwxStringCR, wxButtonExtDoSetVirtualSizeintintFunc a_DoSetVirtualSizeintint, wxButtonExtDoSetWindowVariantwxWindowVariantFunc a_DoSetWindowVariantwxWindowVariant, wxButtonExtDoThawFunc a_DoThaw, wxButtonExtDoUpdateWindowUIwxUpdateUIEventRFunc a_DoUpdateWindowUIwxUpdateUIEventR, wxButtonExtDragAcceptFilesboolFunc a_DragAcceptFilesbool, wxButtonExtEnableboolFunc a_Enablebool, wxButtonExtEnableTouchEventsintFunc a_EnableTouchEventsint, wxButtonExtEnableVisibleFocusboolFunc a_EnableVisibleFocusbool, wxButtonExtEndRepositioningChildrenFunc a_EndRepositioningChildren, wxButtonExtFitFunc a_Fit, wxButtonExtFitInsideFunc a_FitInside, wxButtonExtGetBestVirtualSizeFunc a_GetBestVirtualSize, wxButtonExtGetCharHeightFunc a_GetCharHeight, wxButtonExtGetCharWidthFunc a_GetCharWidth, wxButtonExtGetClassInfoFunc a_GetClassInfo, wxButtonExtGetClientAreaOriginFunc a_GetClientAreaOrigin, wxButtonExtGetClientSizeConstraintintPintPFunc a_GetClientSizeConstraintintPintP, wxButtonExtGetContentScaleFactorFunc a_GetContentScaleFactor, wxButtonExtGetDPIFunc a_GetDPI, wxButtonExtGetDPIScaleFactorFunc a_GetDPIScaleFactor, wxButtonExtGetDefaultAttributesFunc a_GetDefaultAttributes, wxButtonExtGetDefaultBorderFunc a_GetDefaultBorder, wxButtonExtGetDefaultBorderForControlFunc a_GetDefaultBorderForControl, wxButtonExtGetDropTargetFunc a_GetDropTarget, wxButtonExtGetEffectiveMinSizeFunc a_GetEffectiveMinSize, wxButtonExtGetEventHashTableFunc a_GetEventHashTable, wxButtonExtGetEventTableFunc a_GetEventTable, wxButtonExtGetHandleFunc a_GetHandle, wxButtonExtGetHelpTextAtPointwxPointCRwxHelpEventNOriginFunc a_GetHelpTextAtPointwxPointCRwxHelpEventNOrigin, wxButtonExtGetLabelFunc a_GetLabel, wxButtonExtGetLabelTextFunc a_GetLabelText, wxButtonExtGetLayoutDirectionFunc a_GetLayoutDirection, wxButtonExtGetMainWindowOfCompositeControlFunc a_GetMainWindowOfCompositeControl, wxButtonExtGetMaxClientSizeFunc a_GetMaxClientSize, wxButtonExtGetMaxSizeFunc a_GetMaxSize, wxButtonExtGetMinClientSizeFunc a_GetMinClientSize, wxButtonExtGetMinSizeFunc a_GetMinSize, wxButtonExtGetNameFunc a_GetName, wxButtonExtGetNormalStateFunc a_GetNormalState, wxButtonExtGetPositionConstraintintPintPFunc a_GetPositionConstraintintPintP, wxButtonExtGetScrollPosintFunc a_GetScrollPosint, wxButtonExtGetScrollRangeintFunc a_GetScrollRangeint, wxButtonExtGetScrollThumbintFunc a_GetScrollThumbint, wxButtonExtGetSizeConstraintintPintPFunc a_GetSizeConstraintintPintP, wxButtonExtGetThemeEnabledFunc a_GetThemeEnabled, wxButtonExtGetValidatorFunc a_GetValidator, wxButtonExtGetWindowBorderSizeFunc a_GetWindowBorderSize, wxButtonExtGetWindowStyleFlagFunc a_GetWindowStyleFlag, wxButtonExtHasCaptureFunc a_HasCapture, wxButtonExtHasFocusFunc a_HasFocus, wxButtonExtHasMultiplePagesFunc a_HasMultiplePages, wxButtonExtHasTransparentBackgroundFunc a_HasTransparentBackground, wxButtonExtHideWithEffectwxShowEffectunsignedintFunc a_HideWithEffectwxShowEffectunsignedint, wxButtonExtInformFirstDirectionintintintFunc a_InformFirstDirectionintintint, wxButtonExtInheritAttributesFunc a_InheritAttributes, wxButtonExtInitDialogFunc a_InitDialog, wxButtonExtIsClientAreaChildwxWindowCPFunc a_IsClientAreaChildwxWindowCP, wxButtonExtIsDoubleBufferedFunc a_IsDoubleBuffered, wxButtonExtIsRetainedFunc a_IsRetained, wxButtonExtIsScrollbarAlwaysShownintFunc a_IsScrollbarAlwaysShownint, wxButtonExtIsShownFunc a_IsShown, wxButtonExtIsShownOnScreenFunc a_IsShownOnScreen, wxButtonExtIsThisEnabledFunc a_IsThisEnabled, wxButtonExtIsTopLevelFunc a_IsTopLevel, wxButtonExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc a_IsTopNavigationDomainwxWindowBaseNNavigationKind, wxButtonExtIsTransparentBackgroundSupportedwxStringPFunc a_IsTransparentBackgroundSupportedwxStringP, wxButtonExtLayoutFunc a_Layout, wxButtonExtLayoutPhase1intPFunc a_LayoutPhase1intP, wxButtonExtLayoutPhase2intPFunc a_LayoutPhase2intP, wxButtonExtLowerFunc a_Lower, wxButtonExtMoveConstraintintintFunc a_MoveConstraintintint, wxButtonExtOnDynamicBindwxDynamicEventTableEntryRFunc a_OnDynamicBindwxDynamicEventTableEntryR, wxButtonExtOnInternalIdleFunc a_OnInternalIdle, wxButtonExtPrepareDCwxDCRFunc a_PrepareDCwxDCR, wxButtonExtProcessEventwxEventRFunc a_ProcessEventwxEventR, wxButtonExtQueueEventwxEventPFunc a_QueueEventwxEventP, wxButtonExtRaiseFunc a_Raise, wxButtonExtRefreshboolwxRectCPFunc a_RefreshboolwxRectCP, wxButtonExtRegisterHotKeyintintintFunc a_RegisterHotKeyintintint, wxButtonExtRemoveChildwxWindowBasePFunc a_RemoveChildwxWindowBaseP, wxButtonExtReparentwxWindowBasePFunc a_ReparentwxWindowBaseP, wxButtonExtScrollLinesintFunc a_ScrollLinesint, wxButtonExtScrollPagesintFunc a_ScrollPagesint, wxButtonExtScrollWindowintintwxRectCPFunc a_ScrollWindowintintwxRectCP, wxButtonExtSearchEventTablewxEventTableRwxEventRFunc a_SearchEventTablewxEventTableRwxEventR, wxButtonExtSendIdleEventswxIdleEventRFunc a_SendIdleEventswxIdleEventR, wxButtonExtSendSizeEventintFunc a_SendSizeEventint, wxButtonExtSetAcceleratorTablewxAcceleratorTableCRFunc a_SetAcceleratorTablewxAcceleratorTableCR, wxButtonExtSetBackgroundColourwxColourCRFunc a_SetBackgroundColourwxColourCR, wxButtonExtSetBackgroundStylewxBackgroundStyleFunc a_SetBackgroundStylewxBackgroundStyle, wxButtonExtSetCanFocusboolFunc a_SetCanFocusbool, wxButtonExtSetConstraintSizesboolFunc a_SetConstraintSizesbool, wxButtonExtSetCursorwxCursorCRFunc a_SetCursorwxCursorCR, wxButtonExtSetDefaultFunc a_SetDefault, wxButtonExtSetDoubleBufferedboolFunc a_SetDoubleBufferedbool, wxButtonExtSetDropTargetwxDropTargetPFunc a_SetDropTargetwxDropTargetP, wxButtonExtSetExtraStylelongFunc a_SetExtraStylelong, wxButtonExtSetFocusFunc a_SetFocus, wxButtonExtSetFocusFromKbdFunc a_SetFocusFromKbd, wxButtonExtSetFontwxFontCRFunc a_SetFontwxFontCR, wxButtonExtSetForegroundColourwxColourCRFunc a_SetForegroundColourwxColourCR, wxButtonExtSetIdwxWindowIDFunc a_SetIdwxWindowID, wxButtonExtSetLabelwxStringCRFunc a_SetLabelwxStringCR, wxButtonExtSetLabelTextwxStringCRFunc a_SetLabelTextwxStringCR, wxButtonExtSetLayoutDirectionwxLayoutDirectionFunc a_SetLayoutDirectionwxLayoutDirection, wxButtonExtSetMaxClientSizewxSizeCRFunc a_SetMaxClientSizewxSizeCR, wxButtonExtSetMaxSizewxSizeCRFunc a_SetMaxSizewxSizeCR, wxButtonExtSetMinClientSizewxSizeCRFunc a_SetMinClientSizewxSizeCR, wxButtonExtSetMinSizewxSizeCRFunc a_SetMinSizewxSizeCR, wxButtonExtSetNamewxStringCRFunc a_SetNamewxStringCR, wxButtonExtSetNextHandlerwxEvtHandlerPFunc a_SetNextHandlerwxEvtHandlerP, wxButtonExtSetPreviousHandlerwxEvtHandlerPFunc a_SetPreviousHandlerwxEvtHandlerP, wxButtonExtSetScrollPosintintboolFunc a_SetScrollPosintintbool, wxButtonExtSetScrollbarintintintintboolFunc a_SetScrollbarintintintintbool, wxButtonExtSetSizeConstraintintintintintFunc a_SetSizeConstraintintintintint, wxButtonExtSetSizeHintsintintintintintintFunc a_SetSizeHintsintintintintintint, wxButtonExtSetThemeEnabledboolFunc a_SetThemeEnabledbool, wxButtonExtSetTransparentwxByteFunc a_SetTransparentwxByte, wxButtonExtSetValidatorwxValidatorCRFunc a_SetValidatorwxValidatorCR, wxButtonExtSetWindowStyleFlaglongFunc a_SetWindowStyleFlaglong, wxButtonExtShouldInheritColoursFunc a_ShouldInheritColours, wxButtonExtShowboolFunc a_Showbool, wxButtonExtShowWithEffectwxShowEffectunsignedintFunc a_ShowWithEffectwxShowEffectunsignedint, wxButtonExtTransferDataFromWindowFunc a_TransferDataFromWindow, wxButtonExtTransferDataToWindowFunc a_TransferDataToWindow, wxButtonExtTryAfterwxEventRFunc a_TryAfterwxEventR, wxButtonExtTryBeforewxEventRFunc a_TryBeforewxEventR, wxButtonExtUnregisterHotKeyintFunc a_UnregisterHotKeyint, wxButtonExtUpdateFunc a_Update, wxButtonExtUpdateWindowUIlongFunc a_UpdateWindowUIlong, wxButtonExtValidateFunc a_Validate, wxButtonExtWXAdjustFontToOwnPPIwxFontRFunc a_WXAdjustFontToOwnPPIwxFontR, wxButtonExtWXGetTextEntryFunc a_WXGetTextEntry, wxButtonExtWXReservedEvtHandler1voidPFunc a_WXReservedEvtHandler1voidP, wxButtonExtWXReservedEvtHandler2voidPFunc a_WXReservedEvtHandler2voidP, wxButtonExtWXReservedWindow1voidPFunc a_WXReservedWindow1voidP, wxButtonExtWXReservedWindow2voidPFunc a_WXReservedWindow2voidP, wxButtonExtWXReservedWindow3voidPFunc a_WXReservedWindow3voidP, wxButtonExtWXSetInitialFittingClientSizeintwxSizerPFunc a_WXSetInitialFittingClientSizeintwxSizerP, wxButtonExtWarpPointerintintFunc a_WarpPointerintint, wxButtonExtWindowToClientSizewxSizeCRFunc a_WindowToClientSizewxSizeCR): wxButton() {
+  wxButtonExt(wxButtonExtAcceptsFocusFunc a_AcceptsFocus, wxButtonExtAcceptsFocusFromKeyboardFunc a_AcceptsFocusFromKeyboard, wxButtonExtAcceptsFocusRecursivelyFunc a_AcceptsFocusRecursively, wxButtonExtAddChildwxWindowBasePFunc a_AddChildwxWindowBaseP, wxButtonExtAddPendingEventwxEventCRFunc a_AddPendingEventwxEventCR, wxButtonExtAdjustForLayoutDirectionwxCoordwxCoordwxCoordFunc a_AdjustForLayoutDirectionwxCoordwxCoordwxCoord, wxButtonExtAdjustForParentClientOriginintRintRintFunc a_AdjustForParentClientOriginintRintRint, wxButtonExtAlwaysShowScrollbarsboolboolFunc a_AlwaysShowScrollbarsboolbool, wxButtonExtAssociateHandleWXWidgetFunc a_AssociateHandleWXWidget, wxButtonExtBeginRepositioningChildrenFunc a_BeginRepositioningChildren, wxButtonExtCanApplyThemeBorderFunc a_CanApplyThemeBorder, wxButtonExtCanBeFocusedFunc a_CanBeFocused, wxButtonExtCanBeOutsideClientAreaFunc a_CanBeOutsideClientArea, wxButtonExtCanScrollintFunc a_CanScrollint, wxButtonExtCanSetTransparentFunc a_CanSetTransparent, wxButtonExtClearBackgroundFunc a_ClearBackground, wxButtonExtClientToWindowSizewxSizeCRFunc a_ClientToWindowSizewxSizeCR, wxButtonExtCloneRefDatawxObjectRefDataCPFunc a_CloneRefDatawxObjectRefDataCP, wxButtonExtCommandwxCommandEventRFunc a_CommandwxCommandEventR, wxButtonExtCreateRefDataFunc a_CreateRefData, wxButtonExtDestroyFunc a_Destroy, wxButtonExtDissociateHandleFunc a_DissociateHandle, wxButtonExtDoCaptureMouseFunc a_DoCaptureMouse, wxButtonExtDoCentreintFunc a_DoCentreint, wxButtonExtDoClientToScreenintPintPFunc a_DoClientToScreenintPintP, wxButtonExtDoEnableboolFunc a_DoEnablebool, wxButtonExtDoFreezeFunc a_DoFreeze, wxButtonExtDoGetAuthNeededFunc a_DoGetAuthNeeded, wxButtonExtDoGetBestClientHeightintFunc a_DoGetBestClientHeightint, wxButtonExtDoGetBestClientSizeFunc a_DoGetBestClientSize, wxButtonExtDoGetBestClientWidthintFunc a_DoGetBestClientWidthint, wxButtonExtDoGetBestSizeFunc a_DoGetBestSize, wxButtonExtDoGetBitmapwxAnyButtonBaseNStateFunc a_DoGetBitmapwxAnyButtonBaseNState, wxButtonExtDoGetBitmapMarginsFunc a_DoGetBitmapMargins, wxButtonExtDoGetClientDataFunc a_DoGetClientData, wxButtonExtDoGetClientObjectFunc a_DoGetClientObject, wxButtonExtDoGetClientSizeintPintPFunc a_DoGetClientSizeintPintP, wxButtonExtDoGetPositionintPintPFunc a_DoGetPositionintPintP, wxButtonExtDoGetScreenPositionintPintPFunc a_DoGetScreenPositionintPintP, wxButtonExtDoGetSizeintPintPFunc a_DoGetSizeintPintP, wxButtonExtDoGetSizeFromClientSizewxSizeCRFunc a_DoGetSizeFromClientSizewxSizeCR, wxButtonExtDoGetSizeFromTextSizeintintFunc a_DoGetSizeFromTextSizeintint, wxButtonExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCPFunc a_DoGetTextExtentwxStringCRintPintPintPintPwxFontCP, wxButtonExtDoGetVirtualSizeFunc a_DoGetVirtualSize, wxButtonExtDoHitTestwxCoordwxCoordFunc a_DoHitTestwxCoordwxCoord, wxButtonExtDoIsExposedintintintintFunc a_DoIsExposedintintintint, wxButtonExtDoIsExposedintintFunc a_DoIsExposedintint, wxButtonExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrderFunc a_DoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrder, wxButtonExtDoMoveWindowintintintintFunc a_DoMoveWindowintintintint, wxButtonExtDoNavigateInintFunc a_DoNavigateInint, wxButtonExtDoPhaseintFunc a_DoPhaseint, wxButtonExtDoPopupMenuwxMenuPintintFunc a_DoPopupMenuwxMenuPintint, wxButtonExtDoReleaseMouseFunc a_DoReleaseMouse, wxButtonExtDoScreenToClientintPintPFunc a_DoScreenToClientintPintP, wxButtonExtDoSetAuthNeededboolFunc a_DoSetAuthNeededbool, wxButtonExtDoSetBitmapwxBitmapBundleCRwxAnyButtonBaseNStateFunc a_DoSetBitmapwxBitmapBundleCRwxAnyButtonBaseNState, wxButtonExtDoSetBitmapMarginsintintFunc a_DoSetBitmapMarginsintint, wxButtonExtDoSetBitmapMarginswxCoordwxCoordFunc a_DoSetBitmapMarginswxCoordwxCoord, wxButtonExtDoSetBitmapPositionwxDirectionFunc a_DoSetBitmapPositionwxDirection, wxButtonExtDoSetClientDatavoidPFunc a_DoSetClientDatavoidP, wxButtonExtDoSetClientObjectwxClientDataPFunc a_DoSetClientObjectwxClientDataP, wxButtonExtDoSetClientSizeintintFunc a_DoSetClientSizeintint, wxButtonExtDoSetLabelMarkupwxStringCRFunc a_DoSetLabelMarkupwxStringCR, wxButtonExtDoSetSizeintintintintintFunc a_DoSetSizeintintintintint, wxButtonExtDoSetSizeHintsintintintintintintFunc a_DoSetSizeHintsintintintintintint, wxButtonExtDoSetToolTipwxToolTipPFunc a_DoSetToolTipwxToolTipP, wxButtonExtDoSetToolTipTextwxStringCRFunc a_DoSetToolTipTextwxStringCR, wxButtonExtDoSetVirtualSizeintintFunc a_DoSetVirtualSizeintint, wxButtonExtDoSetWindowVariantwxWindowVariantFunc a_DoSetWindowVariantwxWindowVariant, wxButtonExtDoThawFunc a_DoThaw, wxButtonExtDoUpdateWindowUIwxUpdateUIEventRFunc a_DoUpdateWindowUIwxUpdateUIEventR, wxButtonExtDragAcceptFilesboolFunc a_DragAcceptFilesbool, wxButtonExtEnableboolFunc a_Enablebool, wxButtonExtEnableTouchEventsintFunc a_EnableTouchEventsint, wxButtonExtEnableVisibleFocusboolFunc a_EnableVisibleFocusbool, wxButtonExtEndRepositioningChildrenFunc a_EndRepositioningChildren, wxButtonExtFitFunc a_Fit, wxButtonExtFitInsideFunc a_FitInside, wxButtonExtGetBestVirtualSizeFunc a_GetBestVirtualSize, wxButtonExtGetCharHeightFunc a_GetCharHeight, wxButtonExtGetCharWidthFunc a_GetCharWidth, wxButtonExtGetClassInfoFunc a_GetClassInfo, wxButtonExtGetClientAreaOriginFunc a_GetClientAreaOrigin, wxButtonExtGetClientSizeConstraintintPintPFunc a_GetClientSizeConstraintintPintP, wxButtonExtGetContentScaleFactorFunc a_GetContentScaleFactor, wxButtonExtGetDPIFunc a_GetDPI, wxButtonExtGetDPIScaleFactorFunc a_GetDPIScaleFactor, wxButtonExtGetDefaultAttributesFunc a_GetDefaultAttributes, wxButtonExtGetDefaultBorderFunc a_GetDefaultBorder, wxButtonExtGetDefaultBorderForControlFunc a_GetDefaultBorderForControl, wxButtonExtGetDropTargetFunc a_GetDropTarget, wxButtonExtGetEffectiveMinSizeFunc a_GetEffectiveMinSize, wxButtonExtGetEventHashTableFunc a_GetEventHashTable, wxButtonExtGetEventTableFunc a_GetEventTable, wxButtonExtGetHandleFunc a_GetHandle, wxButtonExtGetHelpTextAtPointwxPointCRwxHelpEventNOriginFunc a_GetHelpTextAtPointwxPointCRwxHelpEventNOrigin, wxButtonExtGetLabelFunc a_GetLabel, wxButtonExtGetLabelTextFunc a_GetLabelText, wxButtonExtGetLayoutDirectionFunc a_GetLayoutDirection, wxButtonExtGetMainWindowOfCompositeControlFunc a_GetMainWindowOfCompositeControl, wxButtonExtGetMaxClientSizeFunc a_GetMaxClientSize, wxButtonExtGetMaxSizeFunc a_GetMaxSize, wxButtonExtGetMinClientSizeFunc a_GetMinClientSize, wxButtonExtGetMinSizeFunc a_GetMinSize, wxButtonExtGetNameFunc a_GetName, wxButtonExtGetNormalStateFunc a_GetNormalState, wxButtonExtGetPositionConstraintintPintPFunc a_GetPositionConstraintintPintP, wxButtonExtGetScrollPosintFunc a_GetScrollPosint, wxButtonExtGetScrollRangeintFunc a_GetScrollRangeint, wxButtonExtGetScrollThumbintFunc a_GetScrollThumbint, wxButtonExtGetSizeConstraintintPintPFunc a_GetSizeConstraintintPintP, wxButtonExtGetThemeEnabledFunc a_GetThemeEnabled, wxButtonExtGetTransparentFunc a_GetTransparent, wxButtonExtGetValidatorFunc a_GetValidator, wxButtonExtGetWindowBorderSizeFunc a_GetWindowBorderSize, wxButtonExtGetWindowStyleFlagFunc a_GetWindowStyleFlag, wxButtonExtHasCaptureFunc a_HasCapture, wxButtonExtHasFocusFunc a_HasFocus, wxButtonExtHasMultiplePagesFunc a_HasMultiplePages, wxButtonExtHasTransparentBackgroundFunc a_HasTransparentBackground, wxButtonExtHideWithEffectwxShowEffectunsignedintFunc a_HideWithEffectwxShowEffectunsignedint, wxButtonExtInformFirstDirectionintintintFunc a_InformFirstDirectionintintint, wxButtonExtInheritAttributesFunc a_InheritAttributes, wxButtonExtInitDialogFunc a_InitDialog, wxButtonExtIsClientAreaChildwxWindowCPFunc a_IsClientAreaChildwxWindowCP, wxButtonExtIsDoubleBufferedFunc a_IsDoubleBuffered, wxButtonExtIsRetainedFunc a_IsRetained, wxButtonExtIsScrollbarAlwaysShownintFunc a_IsScrollbarAlwaysShownint, wxButtonExtIsShownFunc a_IsShown, wxButtonExtIsShownOnScreenFunc a_IsShownOnScreen, wxButtonExtIsThisEnabledFunc a_IsThisEnabled, wxButtonExtIsTopLevelFunc a_IsTopLevel, wxButtonExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc a_IsTopNavigationDomainwxWindowBaseNNavigationKind, wxButtonExtIsTransparentBackgroundSupportedwxStringPFunc a_IsTransparentBackgroundSupportedwxStringP, wxButtonExtLayoutFunc a_Layout, wxButtonExtLayoutPhase1intPFunc a_LayoutPhase1intP, wxButtonExtLayoutPhase2intPFunc a_LayoutPhase2intP, wxButtonExtLowerFunc a_Lower, wxButtonExtMoveConstraintintintFunc a_MoveConstraintintint, wxButtonExtOnDynamicBindwxDynamicEventTableEntryRFunc a_OnDynamicBindwxDynamicEventTableEntryR, wxButtonExtOnInternalIdleFunc a_OnInternalIdle, wxButtonExtPrepareDCwxDCRFunc a_PrepareDCwxDCR, wxButtonExtProcessEventwxEventRFunc a_ProcessEventwxEventR, wxButtonExtQueueEventwxEventPFunc a_QueueEventwxEventP, wxButtonExtRaiseFunc a_Raise, wxButtonExtRefreshboolwxRectCPFunc a_RefreshboolwxRectCP, wxButtonExtRegisterHotKeyintintintFunc a_RegisterHotKeyintintint, wxButtonExtRemoveChildwxWindowBasePFunc a_RemoveChildwxWindowBaseP, wxButtonExtReparentwxWindowBasePFunc a_ReparentwxWindowBaseP, wxButtonExtScrollLinesintFunc a_ScrollLinesint, wxButtonExtScrollPagesintFunc a_ScrollPagesint, wxButtonExtScrollWindowintintwxRectCPFunc a_ScrollWindowintintwxRectCP, wxButtonExtSearchEventTablewxEventTableRwxEventRFunc a_SearchEventTablewxEventTableRwxEventR, wxButtonExtSendIdleEventswxIdleEventRFunc a_SendIdleEventswxIdleEventR, wxButtonExtSendSizeEventintFunc a_SendSizeEventint, wxButtonExtSetAcceleratorTablewxAcceleratorTableCRFunc a_SetAcceleratorTablewxAcceleratorTableCR, wxButtonExtSetBackgroundColourwxColourCRFunc a_SetBackgroundColourwxColourCR, wxButtonExtSetBackgroundStylewxBackgroundStyleFunc a_SetBackgroundStylewxBackgroundStyle, wxButtonExtSetCanFocusboolFunc a_SetCanFocusbool, wxButtonExtSetConstraintSizesboolFunc a_SetConstraintSizesbool, wxButtonExtSetCursorwxCursorCRFunc a_SetCursorwxCursorCR, wxButtonExtSetDefaultFunc a_SetDefault, wxButtonExtSetDoubleBufferedboolFunc a_SetDoubleBufferedbool, wxButtonExtSetDropTargetwxDropTargetPFunc a_SetDropTargetwxDropTargetP, wxButtonExtSetExtraStylelongFunc a_SetExtraStylelong, wxButtonExtSetFocusFunc a_SetFocus, wxButtonExtSetFocusFromKbdFunc a_SetFocusFromKbd, wxButtonExtSetFontwxFontCRFunc a_SetFontwxFontCR, wxButtonExtSetForegroundColourwxColourCRFunc a_SetForegroundColourwxColourCR, wxButtonExtSetIdwxWindowIDFunc a_SetIdwxWindowID, wxButtonExtSetLabelwxStringCRFunc a_SetLabelwxStringCR, wxButtonExtSetLabelTextwxStringCRFunc a_SetLabelTextwxStringCR, wxButtonExtSetLayoutDirectionwxLayoutDirectionFunc a_SetLayoutDirectionwxLayoutDirection, wxButtonExtSetMaxClientSizewxSizeCRFunc a_SetMaxClientSizewxSizeCR, wxButtonExtSetMaxSizewxSizeCRFunc a_SetMaxSizewxSizeCR, wxButtonExtSetMinClientSizewxSizeCRFunc a_SetMinClientSizewxSizeCR, wxButtonExtSetMinSizewxSizeCRFunc a_SetMinSizewxSizeCR, wxButtonExtSetNamewxStringCRFunc a_SetNamewxStringCR, wxButtonExtSetNextHandlerwxEvtHandlerPFunc a_SetNextHandlerwxEvtHandlerP, wxButtonExtSetPreviousHandlerwxEvtHandlerPFunc a_SetPreviousHandlerwxEvtHandlerP, wxButtonExtSetScrollPosintintboolFunc a_SetScrollPosintintbool, wxButtonExtSetScrollbarintintintintboolFunc a_SetScrollbarintintintintbool, wxButtonExtSetSizeConstraintintintintintFunc a_SetSizeConstraintintintintint, wxButtonExtSetSizeHintsintintintintintintFunc a_SetSizeHintsintintintintintint, wxButtonExtSetThemeEnabledboolFunc a_SetThemeEnabledbool, wxButtonExtSetTransparentwxByteFunc a_SetTransparentwxByte, wxButtonExtSetValidatorwxValidatorCRFunc a_SetValidatorwxValidatorCR, wxButtonExtSetWindowStyleFlaglongFunc a_SetWindowStyleFlaglong, wxButtonExtShouldInheritColoursFunc a_ShouldInheritColours, wxButtonExtShowboolFunc a_Showbool, wxButtonExtShowWithEffectwxShowEffectunsignedintFunc a_ShowWithEffectwxShowEffectunsignedint, wxButtonExtTransferDataFromWindowFunc a_TransferDataFromWindow, wxButtonExtTransferDataToWindowFunc a_TransferDataToWindow, wxButtonExtTriggerScrollEventwxEventTypeFunc a_TriggerScrollEventwxEventType, wxButtonExtTryAfterwxEventRFunc a_TryAfterwxEventR, wxButtonExtTryBeforewxEventRFunc a_TryBeforewxEventR, wxButtonExtUnregisterHotKeyintFunc a_UnregisterHotKeyint, wxButtonExtUpdateFunc a_Update, wxButtonExtUpdateWindowUIlongFunc a_UpdateWindowUIlong, wxButtonExtValidateFunc a_Validate, wxButtonExtWXAdjustFontToOwnPPIwxFontRFunc a_WXAdjustFontToOwnPPIwxFontR, wxButtonExtWXGetTextEntryFunc a_WXGetTextEntry, wxButtonExtWXReservedEvtHandler1voidPFunc a_WXReservedEvtHandler1voidP, wxButtonExtWXReservedEvtHandler2voidPFunc a_WXReservedEvtHandler2voidP, wxButtonExtWXReservedWindow1voidPFunc a_WXReservedWindow1voidP, wxButtonExtWXReservedWindow2voidPFunc a_WXReservedWindow2voidP, wxButtonExtWXReservedWindow3voidPFunc a_WXReservedWindow3voidP, wxButtonExtWXSetInitialFittingClientSizeintwxSizerPFunc a_WXSetInitialFittingClientSizeintwxSizerP, wxButtonExtWarpPointerintintFunc a_WarpPointerintint, wxButtonExtWindowToClientSizewxSizeCRFunc a_WindowToClientSizewxSizeCR): wxButton() {
     m_wxButtonExtAcceptsFocus = a_AcceptsFocus;
     m_wxButtonExtAcceptsFocusFromKeyboard = a_AcceptsFocusFromKeyboard;
     m_wxButtonExtAcceptsFocusRecursively = a_AcceptsFocusRecursively;
@@ -4668,12 +4754,14 @@ public:
     m_wxButtonExtDoGetPositionintPintP = a_DoGetPositionintPintP;
     m_wxButtonExtDoGetScreenPositionintPintP = a_DoGetScreenPositionintPintP;
     m_wxButtonExtDoGetSizeintPintP = a_DoGetSizeintPintP;
+    m_wxButtonExtDoGetSizeFromClientSizewxSizeCR = a_DoGetSizeFromClientSizewxSizeCR;
     m_wxButtonExtDoGetSizeFromTextSizeintint = a_DoGetSizeFromTextSizeintint;
     m_wxButtonExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCP = a_DoGetTextExtentwxStringCRintPintPintPintPwxFontCP;
     m_wxButtonExtDoGetVirtualSize = a_DoGetVirtualSize;
     m_wxButtonExtDoHitTestwxCoordwxCoord = a_DoHitTestwxCoordwxCoord;
     m_wxButtonExtDoIsExposedintintintint = a_DoIsExposedintintintint;
     m_wxButtonExtDoIsExposedintint = a_DoIsExposedintint;
+    m_wxButtonExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrder = a_DoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrder;
     m_wxButtonExtDoMoveWindowintintintint = a_DoMoveWindowintintintint;
     m_wxButtonExtDoNavigateInint = a_DoNavigateInint;
     m_wxButtonExtDoPhaseint = a_DoPhaseint;
@@ -4737,6 +4825,7 @@ public:
     m_wxButtonExtGetScrollThumbint = a_GetScrollThumbint;
     m_wxButtonExtGetSizeConstraintintPintP = a_GetSizeConstraintintPintP;
     m_wxButtonExtGetThemeEnabled = a_GetThemeEnabled;
+    m_wxButtonExtGetTransparent = a_GetTransparent;
     m_wxButtonExtGetValidator = a_GetValidator;
     m_wxButtonExtGetWindowBorderSize = a_GetWindowBorderSize;
     m_wxButtonExtGetWindowStyleFlag = a_GetWindowStyleFlag;
@@ -4817,6 +4906,7 @@ public:
     m_wxButtonExtShowWithEffectwxShowEffectunsignedint = a_ShowWithEffectwxShowEffectunsignedint;
     m_wxButtonExtTransferDataFromWindow = a_TransferDataFromWindow;
     m_wxButtonExtTransferDataToWindow = a_TransferDataToWindow;
+    m_wxButtonExtTriggerScrollEventwxEventType = a_TriggerScrollEventwxEventType;
     m_wxButtonExtTryAfterwxEventR = a_TryAfterwxEventR;
     m_wxButtonExtTryBeforewxEventR = a_TryBeforewxEventR;
     m_wxButtonExtUnregisterHotKeyint = a_UnregisterHotKeyint;

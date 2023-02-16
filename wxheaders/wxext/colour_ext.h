@@ -5,27 +5,27 @@
 #include <wx/vidmode.h>
 
 class wxColourBaseExt;
-typedef wxColourBase::ChannelType (*wxColourBaseExtAlphaFunc)(const wxColourBaseExt* self);
+typedef wxColourBase::ChannelType (*wxColourBaseExtAlphaFunc)(const wxColourBaseExt* self, wxColourBase::ChannelType res);
 typedef wxColourBase::ChannelType (*wxColourBaseExtBlueFunc)(const wxColourBaseExt* self);
-typedef wxGDIRefData* (*wxColourBaseExtCloneGDIRefDatawxGDIRefDataCPFunc)(const wxColourBaseExt* self, wxGDIRefData const* param0);
-typedef wxGDIRefData* (*wxColourBaseExtCreateGDIRefDataFunc)(const wxColourBaseExt* self);
-typedef bool (*wxColourBaseExtFromStringwxStringCRFunc)(const wxColourBaseExt* self, wxString const& s);
-typedef wxString (*wxColourBaseExtGetAsStringlongFunc)(const wxColourBaseExt* self, long flags);
+typedef wxGDIRefData* (*wxColourBaseExtCloneGDIRefDatawxGDIRefDataCPFunc)(const wxColourBaseExt* self, wxGDIRefData const* param0, wxGDIRefData* res);
+typedef wxGDIRefData* (*wxColourBaseExtCreateGDIRefDataFunc)(const wxColourBaseExt* self, wxGDIRefData* res);
+typedef bool (*wxColourBaseExtFromStringwxStringCRFunc)(const wxColourBaseExt* self, wxString const& s, bool res);
+typedef wxString (*wxColourBaseExtGetAsStringlongFunc)(const wxColourBaseExt* self, long flags, wxString res);
 typedef wxColourBase::ChannelType (*wxColourBaseExtGreenFunc)(const wxColourBaseExt* self);
 typedef void (*wxColourBaseExtInitRGBAwxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypeFunc)(const wxColourBaseExt* self, wxColourBase::ChannelType r, wxColourBase::ChannelType g, wxColourBase::ChannelType b, wxColourBase::ChannelType a);
-typedef bool (*wxColourBaseExtIsSolidFunc)(const wxColourBaseExt* self);
+typedef bool (*wxColourBaseExtIsSolidFunc)(const wxColourBaseExt* self, bool res);
 typedef wxColourBase::ChannelType (*wxColourBaseExtRedFunc)(const wxColourBaseExt* self);
 class wxColourExt;
-typedef wxColourBase::ChannelType (*wxColourExtAlphaFunc)(const wxColourExt* self);
+typedef wxColourBase::ChannelType (*wxColourExtAlphaFunc)(const wxColourExt* self, wxColourBase::ChannelType res);
 typedef wxColourBase::ChannelType (*wxColourExtBlueFunc)(const wxColourExt* self);
-typedef wxGDIRefData* (*wxColourExtCloneGDIRefDatawxGDIRefDataCPFunc)(const wxColourExt* self, wxGDIRefData const* param0);
-typedef wxGDIRefData* (*wxColourExtCreateGDIRefDataFunc)(const wxColourExt* self);
-typedef bool (*wxColourExtFromStringwxStringCRFunc)(const wxColourExt* self, wxString const& s);
-typedef wxString (*wxColourExtGetAsStringlongFunc)(const wxColourExt* self, long flags);
-typedef wxClassInfo* (*wxColourExtGetClassInfoFunc)(const wxColourExt* self);
+typedef wxGDIRefData* (*wxColourExtCloneGDIRefDatawxGDIRefDataCPFunc)(const wxColourExt* self, wxGDIRefData const* param0, wxGDIRefData* res);
+typedef wxGDIRefData* (*wxColourExtCreateGDIRefDataFunc)(const wxColourExt* self, wxGDIRefData* res);
+typedef bool (*wxColourExtFromStringwxStringCRFunc)(const wxColourExt* self, wxString const& s, bool res);
+typedef wxString (*wxColourExtGetAsStringlongFunc)(const wxColourExt* self, long flags, wxString res);
+typedef wxClassInfo* (*wxColourExtGetClassInfoFunc)(const wxColourExt* self, wxClassInfo* res);
 typedef wxColourBase::ChannelType (*wxColourExtGreenFunc)(const wxColourExt* self);
 typedef void (*wxColourExtInitRGBAwxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypewxColourBaseNChannelTypeFunc)(const wxColourExt* self, wxColourBase::ChannelType r, wxColourBase::ChannelType g, wxColourBase::ChannelType b, wxColourBase::ChannelType a);
-typedef bool (*wxColourExtIsSolidFunc)(const wxColourExt* self);
+typedef bool (*wxColourExtIsSolidFunc)(const wxColourExt* self, bool res);
 typedef wxColourBase::ChannelType (*wxColourExtRedFunc)(const wxColourExt* self);
 class wxColourRefDataExt;
 typedef double (*wxColourRefDataExtAlphaFunc)(const wxColourRefDataExt* self);
@@ -33,7 +33,7 @@ typedef double (*wxColourRefDataExtBlueFunc)(const wxColourRefDataExt* self);
 typedef wxColourRefData* (*wxColourRefDataExtCloneFunc)(const wxColourRefDataExt* self);
 typedef CGColorRef (*wxColourRefDataExtGetCGColorFunc)(const wxColourRefDataExt* self);
 typedef double (*wxColourRefDataExtGreenFunc)(const wxColourRefDataExt* self);
-typedef bool (*wxColourRefDataExtIsSolidFunc)(const wxColourRefDataExt* self);
+typedef bool (*wxColourRefDataExtIsSolidFunc)(const wxColourRefDataExt* self, bool res);
 typedef double (*wxColourRefDataExtRedFunc)(const wxColourRefDataExt* self);
 
 class wxColourBaseExt: public wxColourBase
@@ -44,9 +44,9 @@ public:
   wxColourBaseExtAlphaFunc m_wxColourBaseExtAlpha = NULL;
   virtual wxColourBase::ChannelType Alpha() const override
   {
-      wxColourBase::ChannelType res = wxColourBase::Alpha();
+    wxColourBase::ChannelType res = wxColourBase::Alpha();
     if (*m_wxColourBaseExtAlpha != NULL){
-      return m_wxColourBaseExtAlpha(this);
+      return m_wxColourBaseExtAlpha(this, res);
     }
     else {
       return res;
@@ -67,7 +67,7 @@ public:
   {
     wxGDIRefData* res = wxColourBase::CloneGDIRefData(param0);
     if (*m_wxColourBaseExtCloneGDIRefDatawxGDIRefDataCP != NULL){
-      return m_wxColourBaseExtCloneGDIRefDatawxGDIRefDataCP(this, param0);
+      return m_wxColourBaseExtCloneGDIRefDatawxGDIRefDataCP(this, param0, res);
     }
     else {
       return res;
@@ -78,7 +78,7 @@ public:
   {
     wxGDIRefData* res = wxColourBase::CreateGDIRefData();
     if (*m_wxColourBaseExtCreateGDIRefData != NULL){
-      return m_wxColourBaseExtCreateGDIRefData(this);
+      return m_wxColourBaseExtCreateGDIRefData(this, res);
     }
     else {
       return res;
@@ -89,7 +89,7 @@ public:
   {
     bool res = wxColourBase::FromString(s);
     if (*m_wxColourBaseExtFromStringwxStringCR != NULL){
-      return m_wxColourBaseExtFromStringwxStringCR(this, s);
+      return m_wxColourBaseExtFromStringwxStringCR(this, s, res);
     }
     else {
       return res;
@@ -100,7 +100,7 @@ public:
   {
     wxString res = wxColourBase::GetAsString(flags);
     if (*m_wxColourBaseExtGetAsStringlong != NULL){
-      return m_wxColourBaseExtGetAsStringlong(this, flags);
+      return m_wxColourBaseExtGetAsStringlong(this, flags, res);
     }
     else {
       return res;
@@ -128,7 +128,7 @@ public:
   {
     bool res = wxColourBase::IsSolid();
     if (*m_wxColourBaseExtIsSolid != NULL){
-      return m_wxColourBaseExtIsSolid(this);
+      return m_wxColourBaseExtIsSolid(this, res);
     }
     else {
       return res;
@@ -172,9 +172,9 @@ public:
   wxColourExtAlphaFunc m_wxColourExtAlpha = NULL;
   virtual wxColourBase::ChannelType Alpha() const override
   {
-      wxColourBase::ChannelType res = wxColour::Alpha();
+    wxColourBase::ChannelType res = wxColour::Alpha();
     if (*m_wxColourExtAlpha != NULL){
-      return m_wxColourExtAlpha(this);
+      return m_wxColourExtAlpha(this, res);
     }
     else {
       return res;
@@ -195,7 +195,7 @@ public:
   {
     wxGDIRefData* res = wxColour::CloneGDIRefData(param0);
     if (*m_wxColourExtCloneGDIRefDatawxGDIRefDataCP != NULL){
-      return m_wxColourExtCloneGDIRefDatawxGDIRefDataCP(this, param0);
+      return m_wxColourExtCloneGDIRefDatawxGDIRefDataCP(this, param0, res);
     }
     else {
       return res;
@@ -206,7 +206,7 @@ public:
   {
     wxGDIRefData* res = wxColour::CreateGDIRefData();
     if (*m_wxColourExtCreateGDIRefData != NULL){
-      return m_wxColourExtCreateGDIRefData(this);
+      return m_wxColourExtCreateGDIRefData(this, res);
     }
     else {
       return res;
@@ -217,7 +217,7 @@ public:
   {
     bool res = wxColour::FromString(s);
     if (*m_wxColourExtFromStringwxStringCR != NULL){
-      return m_wxColourExtFromStringwxStringCR(this, s);
+      return m_wxColourExtFromStringwxStringCR(this, s, res);
     }
     else {
       return res;
@@ -228,7 +228,7 @@ public:
   {
     wxString res = wxColour::GetAsString(flags);
     if (*m_wxColourExtGetAsStringlong != NULL){
-      return m_wxColourExtGetAsStringlong(this, flags);
+      return m_wxColourExtGetAsStringlong(this, flags, res);
     }
     else {
       return res;
@@ -239,7 +239,7 @@ public:
   {
     wxClassInfo* res = wxColour::GetClassInfo();
     if (*m_wxColourExtGetClassInfo != NULL){
-      return m_wxColourExtGetClassInfo(this);
+      return m_wxColourExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -267,7 +267,7 @@ public:
   {
     bool res = wxColour::IsSolid();
     if (*m_wxColourExtIsSolid != NULL){
-      return m_wxColourExtIsSolid(this);
+      return m_wxColourExtIsSolid(this, res);
     }
     else {
       return res;

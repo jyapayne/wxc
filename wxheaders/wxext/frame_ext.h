@@ -6,9 +6,9 @@
 
 class wxFrameBaseExt;
 typedef void (*wxFrameBaseExtAttachMenuBarwxMenuBarPFunc)(const wxFrameBaseExt* self, wxMenuBar* menubar);
-typedef wxStatusBar* (*wxFrameBaseExtCreateStatusBarintlongwxWindowIDwxStringCRFunc)(const wxFrameBaseExt* self, int number, long style, wxWindowID winid, wxString const& name);
-typedef wxToolBar* (*wxFrameBaseExtCreateToolBarlongwxWindowIDwxStringCRFunc)(const wxFrameBaseExt* self, long style, wxWindowID winid, wxString const& name);
-typedef bool (*wxFrameBaseExtDestroyFunc)(const wxFrameBaseExt* self);
+typedef wxStatusBar* (*wxFrameBaseExtCreateStatusBarintlongwxWindowIDwxStringCRFunc)(const wxFrameBaseExt* self, int number, long style, wxWindowID winid, wxString const& name, wxStatusBar* res);
+typedef wxToolBar* (*wxFrameBaseExtCreateToolBarlongwxWindowIDwxStringCRFunc)(const wxFrameBaseExt* self, long style, wxWindowID winid, wxString const& name, wxToolBar* res);
+typedef bool (*wxFrameBaseExtDestroyFunc)(const wxFrameBaseExt* self, bool res);
 typedef void (*wxFrameBaseExtDetachMenuBarFunc)(const wxFrameBaseExt* self);
 typedef void (*wxFrameBaseExtDoCentreintFunc)(const wxFrameBaseExt* self, int dir);
 typedef void (*wxFrameBaseExtDoClientToScreenintPintPFunc)(const wxFrameBaseExt* self, int* x, int* y);
@@ -17,46 +17,46 @@ typedef void (*wxFrameBaseExtDoGiveHelpwxStringCRboolFunc)(const wxFrameBaseExt*
 typedef void (*wxFrameBaseExtDoMenuUpdateswxMenuPFunc)(const wxFrameBaseExt* self, wxMenu* menu);
 typedef void (*wxFrameBaseExtDoScreenToClientintPintPFunc)(const wxFrameBaseExt* self, int* x, int* y);
 typedef void (*wxFrameBaseExtDoUpdateWindowUIwxUpdateUIEventRFunc)(const wxFrameBaseExt* self, wxUpdateUIEvent& event);
-typedef bool (*wxFrameBaseExtEnableCloseButtonboolFunc)(const wxFrameBaseExt* self, bool enable);
-typedef bool (*wxFrameBaseExtEnableFullScreenViewboollongFunc)(const wxFrameBaseExt* self, bool enable, long style);
-typedef bool (*wxFrameBaseExtEnableMaximizeButtonboolFunc)(const wxFrameBaseExt* self, bool enable);
-typedef bool (*wxFrameBaseExtEnableMinimizeButtonboolFunc)(const wxFrameBaseExt* self, bool enable);
-typedef wxMenuItem* (*wxFrameBaseExtFindItemInMenuBarintFunc)(const wxFrameBaseExt* self, int menuId);
-typedef wxClassInfo* (*wxFrameBaseExtGetClassInfoFunc)(const wxFrameBaseExt* self);
-typedef wxPoint (*wxFrameBaseExtGetClientAreaOriginFunc)(const wxFrameBaseExt* self);
-typedef wxContentProtection (*wxFrameBaseExtGetContentProtectionFunc)(const wxFrameBaseExt* self);
-typedef wxEventHashTable& (*wxFrameBaseExtGetEventHashTableFunc)(const wxFrameBaseExt* self);
-typedef wxEventTable const* (*wxFrameBaseExtGetEventTableFunc)(const wxFrameBaseExt* self);
-typedef wxString (*wxFrameBaseExtGetLabelFunc)(const wxFrameBaseExt* self);
-typedef wxMenuBar* (*wxFrameBaseExtGetMenuBarFunc)(const wxFrameBaseExt* self);
+typedef bool (*wxFrameBaseExtEnableCloseButtonboolFunc)(const wxFrameBaseExt* self, bool enable, bool res);
+typedef bool (*wxFrameBaseExtEnableFullScreenViewboollongFunc)(const wxFrameBaseExt* self, bool enable, long style, bool res);
+typedef bool (*wxFrameBaseExtEnableMaximizeButtonboolFunc)(const wxFrameBaseExt* self, bool enable, bool res);
+typedef bool (*wxFrameBaseExtEnableMinimizeButtonboolFunc)(const wxFrameBaseExt* self, bool enable, bool res);
+typedef wxMenuItem* (*wxFrameBaseExtFindItemInMenuBarintFunc)(const wxFrameBaseExt* self, int menuId, wxMenuItem* res);
+typedef wxClassInfo* (*wxFrameBaseExtGetClassInfoFunc)(const wxFrameBaseExt* self, wxClassInfo* res);
+typedef wxPoint (*wxFrameBaseExtGetClientAreaOriginFunc)(const wxFrameBaseExt* self, wxPoint res);
+typedef wxContentProtection (*wxFrameBaseExtGetContentProtectionFunc)(const wxFrameBaseExt* self, wxContentProtection res);
+typedef wxEventHashTable& (*wxFrameBaseExtGetEventHashTableFunc)(const wxFrameBaseExt* self, wxEventHashTable& res);
+typedef wxEventTable const* (*wxFrameBaseExtGetEventTableFunc)(const wxFrameBaseExt* self, wxEventTable const* res);
+typedef wxString (*wxFrameBaseExtGetLabelFunc)(const wxFrameBaseExt* self, wxString res);
+typedef wxMenuBar* (*wxFrameBaseExtGetMenuBarFunc)(const wxFrameBaseExt* self, wxMenuBar* res);
 typedef void (*wxFrameBaseExtGetRectForTopLevelChildrenintPintPintPintPFunc)(const wxFrameBaseExt* self, int* x, int* y, int* w, int* h);
-typedef wxStatusBar* (*wxFrameBaseExtGetStatusBarFunc)(const wxFrameBaseExt* self);
-typedef wxString (*wxFrameBaseExtGetTitleFunc)(const wxFrameBaseExt* self);
-typedef wxToolBar* (*wxFrameBaseExtGetToolBarFunc)(const wxFrameBaseExt* self);
+typedef wxStatusBar* (*wxFrameBaseExtGetStatusBarFunc)(const wxFrameBaseExt* self, wxStatusBar* res);
+typedef wxString (*wxFrameBaseExtGetTitleFunc)(const wxFrameBaseExt* self, wxString res);
+typedef wxToolBar* (*wxFrameBaseExtGetToolBarFunc)(const wxFrameBaseExt* self, wxToolBar* res);
 typedef void (*wxFrameBaseExtIconizeboolFunc)(const wxFrameBaseExt* self, bool iconize);
-typedef bool (*wxFrameBaseExtIsActiveFunc)(const wxFrameBaseExt* self);
-typedef bool (*wxFrameBaseExtIsAlwaysMaximizedFunc)(const wxFrameBaseExt* self);
-typedef bool (*wxFrameBaseExtIsClientAreaChildwxWindowCPFunc)(const wxFrameBaseExt* self, wxWindow const* child);
-typedef bool (*wxFrameBaseExtIsFullScreenFunc)(const wxFrameBaseExt* self);
-typedef bool (*wxFrameBaseExtIsIconizedFunc)(const wxFrameBaseExt* self);
-typedef bool (*wxFrameBaseExtIsMaximizedFunc)(const wxFrameBaseExt* self);
-typedef bool (*wxFrameBaseExtIsOneOfBarswxWindowCPFunc)(const wxFrameBaseExt* self, wxWindow const* param0);
-typedef bool (*wxFrameBaseExtIsTopLevelFunc)(const wxFrameBaseExt* self);
-typedef bool (*wxFrameBaseExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc)(const wxFrameBaseExt* self, wxWindowBase::NavigationKind kind);
-typedef bool (*wxFrameBaseExtIsVisibleFunc)(const wxFrameBaseExt* self);
-typedef bool (*wxFrameBaseExtLayoutFunc)(const wxFrameBaseExt* self);
+typedef bool (*wxFrameBaseExtIsActiveFunc)(const wxFrameBaseExt* self, bool res);
+typedef bool (*wxFrameBaseExtIsAlwaysMaximizedFunc)(const wxFrameBaseExt* self, bool res);
+typedef bool (*wxFrameBaseExtIsClientAreaChildwxWindowCPFunc)(const wxFrameBaseExt* self, wxWindow const* child, bool res);
+typedef bool (*wxFrameBaseExtIsFullScreenFunc)(const wxFrameBaseExt* self, bool res);
+typedef bool (*wxFrameBaseExtIsIconizedFunc)(const wxFrameBaseExt* self, bool res);
+typedef bool (*wxFrameBaseExtIsMaximizedFunc)(const wxFrameBaseExt* self, bool res);
+typedef bool (*wxFrameBaseExtIsOneOfBarswxWindowCPFunc)(const wxFrameBaseExt* self, wxWindow const* param0, bool res);
+typedef bool (*wxFrameBaseExtIsTopLevelFunc)(const wxFrameBaseExt* self, bool res);
+typedef bool (*wxFrameBaseExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc)(const wxFrameBaseExt* self, wxWindowBase::NavigationKind kind, bool res);
+typedef bool (*wxFrameBaseExtIsVisibleFunc)(const wxFrameBaseExt* self, bool res);
+typedef bool (*wxFrameBaseExtLayoutFunc)(const wxFrameBaseExt* self, bool res);
 typedef void (*wxFrameBaseExtMaximizeboolFunc)(const wxFrameBaseExt* self, bool maximize);
-typedef bool (*wxFrameBaseExtOSXIsModifiedFunc)(const wxFrameBaseExt* self);
+typedef bool (*wxFrameBaseExtOSXIsModifiedFunc)(const wxFrameBaseExt* self, bool res);
 typedef void (*wxFrameBaseExtOSXSetModifiedboolFunc)(const wxFrameBaseExt* self, bool modified);
-typedef wxStatusBar* (*wxFrameBaseExtOnCreateStatusBarintlongwxWindowIDwxStringCRFunc)(const wxFrameBaseExt* self, int number, long style, wxWindowID winid, wxString const& name);
-typedef wxToolBar* (*wxFrameBaseExtOnCreateToolBarlongwxWindowIDwxStringCRFunc)(const wxFrameBaseExt* self, long style, wxWindowID winid, wxString const& name);
+typedef wxStatusBar* (*wxFrameBaseExtOnCreateStatusBarintlongwxWindowIDwxStringCRFunc)(const wxFrameBaseExt* self, int number, long style, wxWindowID winid, wxString const& name, wxStatusBar* res);
+typedef wxToolBar* (*wxFrameBaseExtOnCreateToolBarlongwxWindowIDwxStringCRFunc)(const wxFrameBaseExt* self, long style, wxWindowID winid, wxString const& name, wxToolBar* res);
 typedef void (*wxFrameBaseExtOnInternalIdleFunc)(const wxFrameBaseExt* self);
 typedef void (*wxFrameBaseExtPositionMenuBarFunc)(const wxFrameBaseExt* self);
 typedef void (*wxFrameBaseExtPositionStatusBarFunc)(const wxFrameBaseExt* self);
 typedef void (*wxFrameBaseExtPositionToolBarFunc)(const wxFrameBaseExt* self);
 typedef void (*wxFrameBaseExtRequestUserAttentionintFunc)(const wxFrameBaseExt* self, int flags);
 typedef void (*wxFrameBaseExtRestoreFunc)(const wxFrameBaseExt* self);
-typedef bool (*wxFrameBaseExtSetContentProtectionwxContentProtectionFunc)(const wxFrameBaseExt* self, wxContentProtection contentProtection);
+typedef bool (*wxFrameBaseExtSetContentProtectionwxContentProtectionFunc)(const wxFrameBaseExt* self, wxContentProtection contentProtection, bool res);
 typedef void (*wxFrameBaseExtSetIconswxIconBundleCRFunc)(const wxFrameBaseExt* self, wxIconBundle const& icons);
 typedef void (*wxFrameBaseExtSetLabelwxStringCRFunc)(const wxFrameBaseExt* self, wxString const& label);
 typedef void (*wxFrameBaseExtSetMaxSizewxSizeCRFunc)(const wxFrameBaseExt* self, wxSize const& maxSize);
@@ -68,18 +68,18 @@ typedef void (*wxFrameBaseExtSetStatusTextwxStringCRintFunc)(const wxFrameBaseEx
 typedef void (*wxFrameBaseExtSetStatusWidthsintintCBFunc)(const wxFrameBaseExt* self, int n, int const widths_field[]);
 typedef void (*wxFrameBaseExtSetTitlewxStringCRFunc)(const wxFrameBaseExt* self, wxString const& title);
 typedef void (*wxFrameBaseExtSetToolBarwxToolBarPFunc)(const wxFrameBaseExt* self, wxToolBar* toolbar);
-typedef bool (*wxFrameBaseExtShouldPreventAppExitFunc)(const wxFrameBaseExt* self);
-typedef bool (*wxFrameBaseExtShowFullScreenboollongFunc)(const wxFrameBaseExt* self, bool show, long style);
+typedef bool (*wxFrameBaseExtShouldPreventAppExitFunc)(const wxFrameBaseExt* self, bool res);
+typedef bool (*wxFrameBaseExtShowFullScreenboollongFunc)(const wxFrameBaseExt* self, bool show, long style, bool res);
 typedef void (*wxFrameBaseExtShowWithoutActivatingFunc)(const wxFrameBaseExt* self);
 typedef void (*wxFrameBaseExtUpdateWindowUIlongFunc)(const wxFrameBaseExt* self, long flags);
-typedef void* (*wxFrameBaseExtWXReservedTLW1voidPFunc)(const wxFrameBaseExt* self, void* param0);
-typedef void* (*wxFrameBaseExtWXReservedTLW2voidPFunc)(const wxFrameBaseExt* self, void* param0);
-typedef void* (*wxFrameBaseExtWXReservedTLW3voidPFunc)(const wxFrameBaseExt* self, void* param0);
+typedef void* (*wxFrameBaseExtWXReservedTLW1voidPFunc)(const wxFrameBaseExt* self, void* param0, void* res);
+typedef void* (*wxFrameBaseExtWXReservedTLW2voidPFunc)(const wxFrameBaseExt* self, void* param0, void* res);
+typedef void* (*wxFrameBaseExtWXReservedTLW3voidPFunc)(const wxFrameBaseExt* self, void* param0, void* res);
 class wxFrameExt;
 typedef void (*wxFrameExtAttachMenuBarwxMenuBarPFunc)(const wxFrameExt* self, wxMenuBar* menubar);
-typedef wxStatusBar* (*wxFrameExtCreateStatusBarintlongwxWindowIDwxStringCRFunc)(const wxFrameExt* self, int number, long style, wxWindowID winid, wxString const& name);
-typedef wxToolBar* (*wxFrameExtCreateToolBarlongwxWindowIDwxStringCRFunc)(const wxFrameExt* self, long style, wxWindowID winid, wxString const& name);
-typedef bool (*wxFrameExtDestroyFunc)(const wxFrameExt* self);
+typedef wxStatusBar* (*wxFrameExtCreateStatusBarintlongwxWindowIDwxStringCRFunc)(const wxFrameExt* self, int number, long style, wxWindowID winid, wxString const& name, wxStatusBar* res);
+typedef wxToolBar* (*wxFrameExtCreateToolBarlongwxWindowIDwxStringCRFunc)(const wxFrameExt* self, long style, wxWindowID winid, wxString const& name, wxToolBar* res);
+typedef bool (*wxFrameExtDestroyFunc)(const wxFrameExt* self, bool res);
 typedef void (*wxFrameExtDetachMenuBarFunc)(const wxFrameExt* self);
 typedef void (*wxFrameExtDoCentreintFunc)(const wxFrameExt* self, int dir);
 typedef void (*wxFrameExtDoClientToScreenintPintPFunc)(const wxFrameExt* self, int* x, int* y);
@@ -90,47 +90,47 @@ typedef void (*wxFrameExtDoMenuUpdateswxMenuPFunc)(const wxFrameExt* self, wxMen
 typedef void (*wxFrameExtDoScreenToClientintPintPFunc)(const wxFrameExt* self, int* x, int* y);
 typedef void (*wxFrameExtDoSetClientSizeintintFunc)(const wxFrameExt* self, int width, int height);
 typedef void (*wxFrameExtDoUpdateWindowUIwxUpdateUIEventRFunc)(const wxFrameExt* self, wxUpdateUIEvent& event);
-typedef bool (*wxFrameExtEnableboolFunc)(const wxFrameExt* self, bool enable);
-typedef bool (*wxFrameExtEnableCloseButtonboolFunc)(const wxFrameExt* self, bool enable);
-typedef bool (*wxFrameExtEnableFullScreenViewboollongFunc)(const wxFrameExt* self, bool enable, long style);
-typedef bool (*wxFrameExtEnableMaximizeButtonboolFunc)(const wxFrameExt* self, bool enable);
-typedef bool (*wxFrameExtEnableMinimizeButtonboolFunc)(const wxFrameExt* self, bool enable);
-typedef wxMenuItem* (*wxFrameExtFindItemInMenuBarintFunc)(const wxFrameExt* self, int menuId);
-typedef wxClassInfo* (*wxFrameExtGetClassInfoFunc)(const wxFrameExt* self);
-typedef wxPoint (*wxFrameExtGetClientAreaOriginFunc)(const wxFrameExt* self);
-typedef wxContentProtection (*wxFrameExtGetContentProtectionFunc)(const wxFrameExt* self);
-typedef wxEventHashTable& (*wxFrameExtGetEventHashTableFunc)(const wxFrameExt* self);
-typedef wxEventTable const* (*wxFrameExtGetEventTableFunc)(const wxFrameExt* self);
-typedef wxString (*wxFrameExtGetLabelFunc)(const wxFrameExt* self);
-typedef wxMenuBar* (*wxFrameExtGetMenuBarFunc)(const wxFrameExt* self);
+typedef bool (*wxFrameExtEnableboolFunc)(const wxFrameExt* self, bool enable, bool res);
+typedef bool (*wxFrameExtEnableCloseButtonboolFunc)(const wxFrameExt* self, bool enable, bool res);
+typedef bool (*wxFrameExtEnableFullScreenViewboollongFunc)(const wxFrameExt* self, bool enable, long style, bool res);
+typedef bool (*wxFrameExtEnableMaximizeButtonboolFunc)(const wxFrameExt* self, bool enable, bool res);
+typedef bool (*wxFrameExtEnableMinimizeButtonboolFunc)(const wxFrameExt* self, bool enable, bool res);
+typedef wxMenuItem* (*wxFrameExtFindItemInMenuBarintFunc)(const wxFrameExt* self, int menuId, wxMenuItem* res);
+typedef wxClassInfo* (*wxFrameExtGetClassInfoFunc)(const wxFrameExt* self, wxClassInfo* res);
+typedef wxPoint (*wxFrameExtGetClientAreaOriginFunc)(const wxFrameExt* self, wxPoint res);
+typedef wxContentProtection (*wxFrameExtGetContentProtectionFunc)(const wxFrameExt* self, wxContentProtection res);
+typedef wxEventHashTable& (*wxFrameExtGetEventHashTableFunc)(const wxFrameExt* self, wxEventHashTable& res);
+typedef wxEventTable const* (*wxFrameExtGetEventTableFunc)(const wxFrameExt* self, wxEventTable const* res);
+typedef wxString (*wxFrameExtGetLabelFunc)(const wxFrameExt* self, wxString res);
+typedef wxMenuBar* (*wxFrameExtGetMenuBarFunc)(const wxFrameExt* self, wxMenuBar* res);
 typedef void (*wxFrameExtGetRectForTopLevelChildrenintPintPintPintPFunc)(const wxFrameExt* self, int* x, int* y, int* w, int* h);
-typedef wxStatusBar* (*wxFrameExtGetStatusBarFunc)(const wxFrameExt* self);
-typedef wxString (*wxFrameExtGetTitleFunc)(const wxFrameExt* self);
-typedef wxToolBar* (*wxFrameExtGetToolBarFunc)(const wxFrameExt* self);
+typedef wxStatusBar* (*wxFrameExtGetStatusBarFunc)(const wxFrameExt* self, wxStatusBar* res);
+typedef wxString (*wxFrameExtGetTitleFunc)(const wxFrameExt* self, wxString res);
+typedef wxToolBar* (*wxFrameExtGetToolBarFunc)(const wxFrameExt* self, wxToolBar* res);
 typedef void (*wxFrameExtIconizeboolFunc)(const wxFrameExt* self, bool iconize);
-typedef bool (*wxFrameExtIsActiveFunc)(const wxFrameExt* self);
-typedef bool (*wxFrameExtIsAlwaysMaximizedFunc)(const wxFrameExt* self);
-typedef bool (*wxFrameExtIsClientAreaChildwxWindowCPFunc)(const wxFrameExt* self, wxWindow const* child);
-typedef bool (*wxFrameExtIsFullScreenFunc)(const wxFrameExt* self);
-typedef bool (*wxFrameExtIsIconizedFunc)(const wxFrameExt* self);
-typedef bool (*wxFrameExtIsMaximizedFunc)(const wxFrameExt* self);
-typedef bool (*wxFrameExtIsOneOfBarswxWindowCPFunc)(const wxFrameExt* self, wxWindow const* win);
-typedef bool (*wxFrameExtIsTopLevelFunc)(const wxFrameExt* self);
-typedef bool (*wxFrameExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc)(const wxFrameExt* self, wxWindowBase::NavigationKind kind);
-typedef bool (*wxFrameExtIsVisibleFunc)(const wxFrameExt* self);
-typedef bool (*wxFrameExtLayoutFunc)(const wxFrameExt* self);
+typedef bool (*wxFrameExtIsActiveFunc)(const wxFrameExt* self, bool res);
+typedef bool (*wxFrameExtIsAlwaysMaximizedFunc)(const wxFrameExt* self, bool res);
+typedef bool (*wxFrameExtIsClientAreaChildwxWindowCPFunc)(const wxFrameExt* self, wxWindow const* child, bool res);
+typedef bool (*wxFrameExtIsFullScreenFunc)(const wxFrameExt* self, bool res);
+typedef bool (*wxFrameExtIsIconizedFunc)(const wxFrameExt* self, bool res);
+typedef bool (*wxFrameExtIsMaximizedFunc)(const wxFrameExt* self, bool res);
+typedef bool (*wxFrameExtIsOneOfBarswxWindowCPFunc)(const wxFrameExt* self, wxWindow const* win, bool res);
+typedef bool (*wxFrameExtIsTopLevelFunc)(const wxFrameExt* self, bool res);
+typedef bool (*wxFrameExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc)(const wxFrameExt* self, wxWindowBase::NavigationKind kind, bool res);
+typedef bool (*wxFrameExtIsVisibleFunc)(const wxFrameExt* self, bool res);
+typedef bool (*wxFrameExtLayoutFunc)(const wxFrameExt* self, bool res);
 typedef void (*wxFrameExtMaximizeboolFunc)(const wxFrameExt* self, bool maximize);
-typedef bool (*wxFrameExtOSXIsModifiedFunc)(const wxFrameExt* self);
+typedef bool (*wxFrameExtOSXIsModifiedFunc)(const wxFrameExt* self, bool res);
 typedef void (*wxFrameExtOSXSetModifiedboolFunc)(const wxFrameExt* self, bool modified);
-typedef wxStatusBar* (*wxFrameExtOnCreateStatusBarintlongwxWindowIDwxStringCRFunc)(const wxFrameExt* self, int number, long style, wxWindowID winid, wxString const& name);
-typedef wxToolBar* (*wxFrameExtOnCreateToolBarlongwxWindowIDwxStringCRFunc)(const wxFrameExt* self, long style, wxWindowID winid, wxString const& name);
+typedef wxStatusBar* (*wxFrameExtOnCreateStatusBarintlongwxWindowIDwxStringCRFunc)(const wxFrameExt* self, int number, long style, wxWindowID winid, wxString const& name, wxStatusBar* res);
+typedef wxToolBar* (*wxFrameExtOnCreateToolBarlongwxWindowIDwxStringCRFunc)(const wxFrameExt* self, long style, wxWindowID winid, wxString const& name, wxToolBar* res);
 typedef void (*wxFrameExtOnInternalIdleFunc)(const wxFrameExt* self);
 typedef void (*wxFrameExtPositionMenuBarFunc)(const wxFrameExt* self);
 typedef void (*wxFrameExtPositionStatusBarFunc)(const wxFrameExt* self);
 typedef void (*wxFrameExtPositionToolBarFunc)(const wxFrameExt* self);
 typedef void (*wxFrameExtRequestUserAttentionintFunc)(const wxFrameExt* self, int flags);
 typedef void (*wxFrameExtRestoreFunc)(const wxFrameExt* self);
-typedef bool (*wxFrameExtSetContentProtectionwxContentProtectionFunc)(const wxFrameExt* self, wxContentProtection contentProtection);
+typedef bool (*wxFrameExtSetContentProtectionwxContentProtectionFunc)(const wxFrameExt* self, wxContentProtection contentProtection, bool res);
 typedef void (*wxFrameExtSetIconswxIconBundleCRFunc)(const wxFrameExt* self, wxIconBundle const& icons);
 typedef void (*wxFrameExtSetLabelwxStringCRFunc)(const wxFrameExt* self, wxString const& label);
 typedef void (*wxFrameExtSetMaxSizewxSizeCRFunc)(const wxFrameExt* self, wxSize const& maxSize);
@@ -142,14 +142,14 @@ typedef void (*wxFrameExtSetStatusTextwxStringCRintFunc)(const wxFrameExt* self,
 typedef void (*wxFrameExtSetStatusWidthsintintCBFunc)(const wxFrameExt* self, int n, int const widths_field[]);
 typedef void (*wxFrameExtSetTitlewxStringCRFunc)(const wxFrameExt* self, wxString const& title);
 typedef void (*wxFrameExtSetToolBarwxToolBarPFunc)(const wxFrameExt* self, wxToolBar* toolbar);
-typedef bool (*wxFrameExtShouldPreventAppExitFunc)(const wxFrameExt* self);
-typedef bool (*wxFrameExtShowboolFunc)(const wxFrameExt* self, bool show);
-typedef bool (*wxFrameExtShowFullScreenboollongFunc)(const wxFrameExt* self, bool show, long style);
+typedef bool (*wxFrameExtShouldPreventAppExitFunc)(const wxFrameExt* self, bool res);
+typedef bool (*wxFrameExtShowboolFunc)(const wxFrameExt* self, bool show, bool res);
+typedef bool (*wxFrameExtShowFullScreenboollongFunc)(const wxFrameExt* self, bool show, long style, bool res);
 typedef void (*wxFrameExtShowWithoutActivatingFunc)(const wxFrameExt* self);
 typedef void (*wxFrameExtUpdateWindowUIlongFunc)(const wxFrameExt* self, long flags);
-typedef void* (*wxFrameExtWXReservedTLW1voidPFunc)(const wxFrameExt* self, void* param0);
-typedef void* (*wxFrameExtWXReservedTLW2voidPFunc)(const wxFrameExt* self, void* param0);
-typedef void* (*wxFrameExtWXReservedTLW3voidPFunc)(const wxFrameExt* self, void* param0);
+typedef void* (*wxFrameExtWXReservedTLW1voidPFunc)(const wxFrameExt* self, void* param0, void* res);
+typedef void* (*wxFrameExtWXReservedTLW2voidPFunc)(const wxFrameExt* self, void* param0, void* res);
+typedef void* (*wxFrameExtWXReservedTLW3voidPFunc)(const wxFrameExt* self, void* param0, void* res);
 
 class wxFrameBaseExt: public wxFrameBase
 {
@@ -169,7 +169,7 @@ public:
   {
     wxStatusBar* res = wxFrameBase::CreateStatusBar(number, style, winid, name);
     if (*m_wxFrameBaseExtCreateStatusBarintlongwxWindowIDwxStringCR != NULL){
-      return m_wxFrameBaseExtCreateStatusBarintlongwxWindowIDwxStringCR(this, number, style, winid, name);
+      return m_wxFrameBaseExtCreateStatusBarintlongwxWindowIDwxStringCR(this, number, style, winid, name, res);
     }
     else {
       return res;
@@ -180,7 +180,7 @@ public:
   {
     wxToolBar* res = wxFrameBase::CreateToolBar(style, winid, name);
     if (*m_wxFrameBaseExtCreateToolBarlongwxWindowIDwxStringCR != NULL){
-      return m_wxFrameBaseExtCreateToolBarlongwxWindowIDwxStringCR(this, style, winid, name);
+      return m_wxFrameBaseExtCreateToolBarlongwxWindowIDwxStringCR(this, style, winid, name, res);
     }
     else {
       return res;
@@ -191,7 +191,7 @@ public:
   {
     bool res = wxFrameBase::Destroy();
     if (*m_wxFrameBaseExtDestroy != NULL){
-      return m_wxFrameBaseExtDestroy(this);
+      return m_wxFrameBaseExtDestroy(this, res);
     }
     else {
       return res;
@@ -266,7 +266,7 @@ public:
   {
     bool res = wxFrameBase::EnableCloseButton(enable);
     if (*m_wxFrameBaseExtEnableCloseButtonbool != NULL){
-      return m_wxFrameBaseExtEnableCloseButtonbool(this, enable);
+      return m_wxFrameBaseExtEnableCloseButtonbool(this, enable, res);
     }
     else {
       return res;
@@ -277,7 +277,7 @@ public:
   {
     bool res = wxFrameBase::EnableFullScreenView(enable, style);
     if (*m_wxFrameBaseExtEnableFullScreenViewboollong != NULL){
-      return m_wxFrameBaseExtEnableFullScreenViewboollong(this, enable, style);
+      return m_wxFrameBaseExtEnableFullScreenViewboollong(this, enable, style, res);
     }
     else {
       return res;
@@ -288,7 +288,7 @@ public:
   {
     bool res = wxFrameBase::EnableMaximizeButton(enable);
     if (*m_wxFrameBaseExtEnableMaximizeButtonbool != NULL){
-      return m_wxFrameBaseExtEnableMaximizeButtonbool(this, enable);
+      return m_wxFrameBaseExtEnableMaximizeButtonbool(this, enable, res);
     }
     else {
       return res;
@@ -299,7 +299,7 @@ public:
   {
     bool res = wxFrameBase::EnableMinimizeButton(enable);
     if (*m_wxFrameBaseExtEnableMinimizeButtonbool != NULL){
-      return m_wxFrameBaseExtEnableMinimizeButtonbool(this, enable);
+      return m_wxFrameBaseExtEnableMinimizeButtonbool(this, enable, res);
     }
     else {
       return res;
@@ -310,7 +310,7 @@ public:
   {
     wxMenuItem* res = wxFrameBase::FindItemInMenuBar(menuId);
     if (*m_wxFrameBaseExtFindItemInMenuBarint != NULL){
-      return m_wxFrameBaseExtFindItemInMenuBarint(this, menuId);
+      return m_wxFrameBaseExtFindItemInMenuBarint(this, menuId, res);
     }
     else {
       return res;
@@ -321,7 +321,7 @@ public:
   {
     wxClassInfo* res = wxFrameBase::GetClassInfo();
     if (*m_wxFrameBaseExtGetClassInfo != NULL){
-      return m_wxFrameBaseExtGetClassInfo(this);
+      return m_wxFrameBaseExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -332,7 +332,7 @@ public:
   {
     wxPoint res = wxFrameBase::GetClientAreaOrigin();
     if (*m_wxFrameBaseExtGetClientAreaOrigin != NULL){
-      return m_wxFrameBaseExtGetClientAreaOrigin(this);
+      return m_wxFrameBaseExtGetClientAreaOrigin(this, res);
     }
     else {
       return res;
@@ -343,7 +343,7 @@ public:
   {
     wxContentProtection res = wxFrameBase::GetContentProtection();
     if (*m_wxFrameBaseExtGetContentProtection != NULL){
-      return m_wxFrameBaseExtGetContentProtection(this);
+      return m_wxFrameBaseExtGetContentProtection(this, res);
     }
     else {
       return res;
@@ -354,7 +354,7 @@ public:
   {
     wxEventHashTable& res = wxFrameBase::GetEventHashTable();
     if (*m_wxFrameBaseExtGetEventHashTable != NULL){
-      return m_wxFrameBaseExtGetEventHashTable(this);
+      return m_wxFrameBaseExtGetEventHashTable(this, res);
     }
     else {
       return res;
@@ -365,7 +365,7 @@ public:
   {
     wxEventTable const* res = wxFrameBase::GetEventTable();
     if (*m_wxFrameBaseExtGetEventTable != NULL){
-      return m_wxFrameBaseExtGetEventTable(this);
+      return m_wxFrameBaseExtGetEventTable(this, res);
     }
     else {
       return res;
@@ -376,7 +376,7 @@ public:
   {
     wxString res = wxFrameBase::GetLabel();
     if (*m_wxFrameBaseExtGetLabel != NULL){
-      return m_wxFrameBaseExtGetLabel(this);
+      return m_wxFrameBaseExtGetLabel(this, res);
     }
     else {
       return res;
@@ -387,7 +387,7 @@ public:
   {
     wxMenuBar* res = wxFrameBase::GetMenuBar();
     if (*m_wxFrameBaseExtGetMenuBar != NULL){
-      return m_wxFrameBaseExtGetMenuBar(this);
+      return m_wxFrameBaseExtGetMenuBar(this, res);
     }
     else {
       return res;
@@ -406,7 +406,7 @@ public:
   {
     wxStatusBar* res = wxFrameBase::GetStatusBar();
     if (*m_wxFrameBaseExtGetStatusBar != NULL){
-      return m_wxFrameBaseExtGetStatusBar(this);
+      return m_wxFrameBaseExtGetStatusBar(this, res);
     }
     else {
       return res;
@@ -417,7 +417,7 @@ public:
   {
     wxString res = wxFrameBase::GetTitle();
     if (*m_wxFrameBaseExtGetTitle != NULL){
-      return m_wxFrameBaseExtGetTitle(this);
+      return m_wxFrameBaseExtGetTitle(this, res);
     }
     else {
       return res;
@@ -428,7 +428,7 @@ public:
   {
     wxToolBar* res = wxFrameBase::GetToolBar();
     if (*m_wxFrameBaseExtGetToolBar != NULL){
-      return m_wxFrameBaseExtGetToolBar(this);
+      return m_wxFrameBaseExtGetToolBar(this, res);
     }
     else {
       return res;
@@ -447,7 +447,7 @@ public:
   {
     bool res = wxFrameBase::IsActive();
     if (*m_wxFrameBaseExtIsActive != NULL){
-      return m_wxFrameBaseExtIsActive(this);
+      return m_wxFrameBaseExtIsActive(this, res);
     }
     else {
       return res;
@@ -458,7 +458,7 @@ public:
   {
     bool res = wxFrameBase::IsAlwaysMaximized();
     if (*m_wxFrameBaseExtIsAlwaysMaximized != NULL){
-      return m_wxFrameBaseExtIsAlwaysMaximized(this);
+      return m_wxFrameBaseExtIsAlwaysMaximized(this, res);
     }
     else {
       return res;
@@ -469,7 +469,7 @@ public:
   {
     bool res = wxFrameBase::IsClientAreaChild(child);
     if (*m_wxFrameBaseExtIsClientAreaChildwxWindowCP != NULL){
-      return m_wxFrameBaseExtIsClientAreaChildwxWindowCP(this, child);
+      return m_wxFrameBaseExtIsClientAreaChildwxWindowCP(this, child, res);
     }
     else {
       return res;
@@ -480,7 +480,7 @@ public:
   {
     bool res = wxFrameBase::IsFullScreen();
     if (*m_wxFrameBaseExtIsFullScreen != NULL){
-      return m_wxFrameBaseExtIsFullScreen(this);
+      return m_wxFrameBaseExtIsFullScreen(this, res);
     }
     else {
       return res;
@@ -491,7 +491,7 @@ public:
   {
     bool res = wxFrameBase::IsIconized();
     if (*m_wxFrameBaseExtIsIconized != NULL){
-      return m_wxFrameBaseExtIsIconized(this);
+      return m_wxFrameBaseExtIsIconized(this, res);
     }
     else {
       return res;
@@ -502,7 +502,7 @@ public:
   {
     bool res = wxFrameBase::IsMaximized();
     if (*m_wxFrameBaseExtIsMaximized != NULL){
-      return m_wxFrameBaseExtIsMaximized(this);
+      return m_wxFrameBaseExtIsMaximized(this, res);
     }
     else {
       return res;
@@ -513,7 +513,7 @@ public:
   {
     bool res = wxFrameBase::IsOneOfBars(param0);
     if (*m_wxFrameBaseExtIsOneOfBarswxWindowCP != NULL){
-      return m_wxFrameBaseExtIsOneOfBarswxWindowCP(this, param0);
+      return m_wxFrameBaseExtIsOneOfBarswxWindowCP(this, param0, res);
     }
     else {
       return res;
@@ -524,7 +524,7 @@ public:
   {
     bool res = wxFrameBase::IsTopLevel();
     if (*m_wxFrameBaseExtIsTopLevel != NULL){
-      return m_wxFrameBaseExtIsTopLevel(this);
+      return m_wxFrameBaseExtIsTopLevel(this, res);
     }
     else {
       return res;
@@ -535,7 +535,7 @@ public:
   {
     bool res = wxFrameBase::IsTopNavigationDomain(kind);
     if (*m_wxFrameBaseExtIsTopNavigationDomainwxWindowBaseNNavigationKind != NULL){
-      return m_wxFrameBaseExtIsTopNavigationDomainwxWindowBaseNNavigationKind(this, kind);
+      return m_wxFrameBaseExtIsTopNavigationDomainwxWindowBaseNNavigationKind(this, kind, res);
     }
     else {
       return res;
@@ -546,7 +546,7 @@ public:
   {
     bool res = wxFrameBase::IsVisible();
     if (*m_wxFrameBaseExtIsVisible != NULL){
-      return m_wxFrameBaseExtIsVisible(this);
+      return m_wxFrameBaseExtIsVisible(this, res);
     }
     else {
       return res;
@@ -557,7 +557,7 @@ public:
   {
     bool res = wxFrameBase::Layout();
     if (*m_wxFrameBaseExtLayout != NULL){
-      return m_wxFrameBaseExtLayout(this);
+      return m_wxFrameBaseExtLayout(this, res);
     }
     else {
       return res;
@@ -576,7 +576,7 @@ public:
   {
     bool res = wxFrameBase::OSXIsModified();
     if (*m_wxFrameBaseExtOSXIsModified != NULL){
-      return m_wxFrameBaseExtOSXIsModified(this);
+      return m_wxFrameBaseExtOSXIsModified(this, res);
     }
     else {
       return res;
@@ -595,7 +595,7 @@ public:
   {
     wxStatusBar* res = wxFrameBase::OnCreateStatusBar(number, style, winid, name);
     if (*m_wxFrameBaseExtOnCreateStatusBarintlongwxWindowIDwxStringCR != NULL){
-      return m_wxFrameBaseExtOnCreateStatusBarintlongwxWindowIDwxStringCR(this, number, style, winid, name);
+      return m_wxFrameBaseExtOnCreateStatusBarintlongwxWindowIDwxStringCR(this, number, style, winid, name, res);
     }
     else {
       return res;
@@ -606,7 +606,7 @@ public:
   {
     wxToolBar* res = wxFrameBase::OnCreateToolBar(style, winid, name);
     if (*m_wxFrameBaseExtOnCreateToolBarlongwxWindowIDwxStringCR != NULL){
-      return m_wxFrameBaseExtOnCreateToolBarlongwxWindowIDwxStringCR(this, style, winid, name);
+      return m_wxFrameBaseExtOnCreateToolBarlongwxWindowIDwxStringCR(this, style, winid, name, res);
     }
     else {
       return res;
@@ -665,7 +665,7 @@ public:
   {
     bool res = wxFrameBase::SetContentProtection(contentProtection);
     if (*m_wxFrameBaseExtSetContentProtectionwxContentProtection != NULL){
-      return m_wxFrameBaseExtSetContentProtectionwxContentProtection(this, contentProtection);
+      return m_wxFrameBaseExtSetContentProtectionwxContentProtection(this, contentProtection, res);
     }
     else {
       return res;
@@ -764,7 +764,7 @@ public:
   {
     bool res = wxFrameBase::ShouldPreventAppExit();
     if (*m_wxFrameBaseExtShouldPreventAppExit != NULL){
-      return m_wxFrameBaseExtShouldPreventAppExit(this);
+      return m_wxFrameBaseExtShouldPreventAppExit(this, res);
     }
     else {
       return res;
@@ -775,7 +775,7 @@ public:
   {
     bool res = wxFrameBase::ShowFullScreen(show, style);
     if (*m_wxFrameBaseExtShowFullScreenboollong != NULL){
-      return m_wxFrameBaseExtShowFullScreenboollong(this, show, style);
+      return m_wxFrameBaseExtShowFullScreenboollong(this, show, style, res);
     }
     else {
       return res;
@@ -802,7 +802,7 @@ public:
   {
     void* res = wxFrameBase::WXReservedTLW1(param0);
     if (*m_wxFrameBaseExtWXReservedTLW1voidP != NULL){
-      return m_wxFrameBaseExtWXReservedTLW1voidP(this, param0);
+      return m_wxFrameBaseExtWXReservedTLW1voidP(this, param0, res);
     }
     else {
       return res;
@@ -813,7 +813,7 @@ public:
   {
     void* res = wxFrameBase::WXReservedTLW2(param0);
     if (*m_wxFrameBaseExtWXReservedTLW2voidP != NULL){
-      return m_wxFrameBaseExtWXReservedTLW2voidP(this, param0);
+      return m_wxFrameBaseExtWXReservedTLW2voidP(this, param0, res);
     }
     else {
       return res;
@@ -824,7 +824,7 @@ public:
   {
     void* res = wxFrameBase::WXReservedTLW3(param0);
     if (*m_wxFrameBaseExtWXReservedTLW3voidP != NULL){
-      return m_wxFrameBaseExtWXReservedTLW3voidP(this, param0);
+      return m_wxFrameBaseExtWXReservedTLW3voidP(this, param0, res);
     }
     else {
       return res;
@@ -922,7 +922,7 @@ public:
   {
     wxStatusBar* res = wxFrame::CreateStatusBar(number, style, winid, name);
     if (*m_wxFrameExtCreateStatusBarintlongwxWindowIDwxStringCR != NULL){
-      return m_wxFrameExtCreateStatusBarintlongwxWindowIDwxStringCR(this, number, style, winid, name);
+      return m_wxFrameExtCreateStatusBarintlongwxWindowIDwxStringCR(this, number, style, winid, name, res);
     }
     else {
       return res;
@@ -933,7 +933,7 @@ public:
   {
     wxToolBar* res = wxFrame::CreateToolBar(style, winid, name);
     if (*m_wxFrameExtCreateToolBarlongwxWindowIDwxStringCR != NULL){
-      return m_wxFrameExtCreateToolBarlongwxWindowIDwxStringCR(this, style, winid, name);
+      return m_wxFrameExtCreateToolBarlongwxWindowIDwxStringCR(this, style, winid, name, res);
     }
     else {
       return res;
@@ -944,7 +944,7 @@ public:
   {
     bool res = wxFrame::Destroy();
     if (*m_wxFrameExtDestroy != NULL){
-      return m_wxFrameExtDestroy(this);
+      return m_wxFrameExtDestroy(this, res);
     }
     else {
       return res;
@@ -1035,7 +1035,7 @@ public:
   {
     bool res = wxFrame::Enable(enable);
     if (*m_wxFrameExtEnablebool != NULL){
-      return m_wxFrameExtEnablebool(this, enable);
+      return m_wxFrameExtEnablebool(this, enable, res);
     }
     else {
       return res;
@@ -1046,7 +1046,7 @@ public:
   {
     bool res = wxFrame::EnableCloseButton(enable);
     if (*m_wxFrameExtEnableCloseButtonbool != NULL){
-      return m_wxFrameExtEnableCloseButtonbool(this, enable);
+      return m_wxFrameExtEnableCloseButtonbool(this, enable, res);
     }
     else {
       return res;
@@ -1057,7 +1057,7 @@ public:
   {
     bool res = wxFrame::EnableFullScreenView(enable, style);
     if (*m_wxFrameExtEnableFullScreenViewboollong != NULL){
-      return m_wxFrameExtEnableFullScreenViewboollong(this, enable, style);
+      return m_wxFrameExtEnableFullScreenViewboollong(this, enable, style, res);
     }
     else {
       return res;
@@ -1068,7 +1068,7 @@ public:
   {
     bool res = wxFrame::EnableMaximizeButton(enable);
     if (*m_wxFrameExtEnableMaximizeButtonbool != NULL){
-      return m_wxFrameExtEnableMaximizeButtonbool(this, enable);
+      return m_wxFrameExtEnableMaximizeButtonbool(this, enable, res);
     }
     else {
       return res;
@@ -1079,7 +1079,7 @@ public:
   {
     bool res = wxFrame::EnableMinimizeButton(enable);
     if (*m_wxFrameExtEnableMinimizeButtonbool != NULL){
-      return m_wxFrameExtEnableMinimizeButtonbool(this, enable);
+      return m_wxFrameExtEnableMinimizeButtonbool(this, enable, res);
     }
     else {
       return res;
@@ -1090,7 +1090,7 @@ public:
   {
     wxMenuItem* res = wxFrame::FindItemInMenuBar(menuId);
     if (*m_wxFrameExtFindItemInMenuBarint != NULL){
-      return m_wxFrameExtFindItemInMenuBarint(this, menuId);
+      return m_wxFrameExtFindItemInMenuBarint(this, menuId, res);
     }
     else {
       return res;
@@ -1101,7 +1101,7 @@ public:
   {
     wxClassInfo* res = wxFrame::GetClassInfo();
     if (*m_wxFrameExtGetClassInfo != NULL){
-      return m_wxFrameExtGetClassInfo(this);
+      return m_wxFrameExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -1112,7 +1112,7 @@ public:
   {
     wxPoint res = wxFrame::GetClientAreaOrigin();
     if (*m_wxFrameExtGetClientAreaOrigin != NULL){
-      return m_wxFrameExtGetClientAreaOrigin(this);
+      return m_wxFrameExtGetClientAreaOrigin(this, res);
     }
     else {
       return res;
@@ -1123,7 +1123,7 @@ public:
   {
     wxContentProtection res = wxFrame::GetContentProtection();
     if (*m_wxFrameExtGetContentProtection != NULL){
-      return m_wxFrameExtGetContentProtection(this);
+      return m_wxFrameExtGetContentProtection(this, res);
     }
     else {
       return res;
@@ -1134,7 +1134,7 @@ public:
   {
     wxEventHashTable& res = wxFrame::GetEventHashTable();
     if (*m_wxFrameExtGetEventHashTable != NULL){
-      return m_wxFrameExtGetEventHashTable(this);
+      return m_wxFrameExtGetEventHashTable(this, res);
     }
     else {
       return res;
@@ -1145,7 +1145,7 @@ public:
   {
     wxEventTable const* res = wxFrame::GetEventTable();
     if (*m_wxFrameExtGetEventTable != NULL){
-      return m_wxFrameExtGetEventTable(this);
+      return m_wxFrameExtGetEventTable(this, res);
     }
     else {
       return res;
@@ -1156,7 +1156,7 @@ public:
   {
     wxString res = wxFrame::GetLabel();
     if (*m_wxFrameExtGetLabel != NULL){
-      return m_wxFrameExtGetLabel(this);
+      return m_wxFrameExtGetLabel(this, res);
     }
     else {
       return res;
@@ -1167,7 +1167,7 @@ public:
   {
     wxMenuBar* res = wxFrame::GetMenuBar();
     if (*m_wxFrameExtGetMenuBar != NULL){
-      return m_wxFrameExtGetMenuBar(this);
+      return m_wxFrameExtGetMenuBar(this, res);
     }
     else {
       return res;
@@ -1186,7 +1186,7 @@ public:
   {
     wxStatusBar* res = wxFrame::GetStatusBar();
     if (*m_wxFrameExtGetStatusBar != NULL){
-      return m_wxFrameExtGetStatusBar(this);
+      return m_wxFrameExtGetStatusBar(this, res);
     }
     else {
       return res;
@@ -1197,7 +1197,7 @@ public:
   {
     wxString res = wxFrame::GetTitle();
     if (*m_wxFrameExtGetTitle != NULL){
-      return m_wxFrameExtGetTitle(this);
+      return m_wxFrameExtGetTitle(this, res);
     }
     else {
       return res;
@@ -1208,7 +1208,7 @@ public:
   {
     wxToolBar* res = wxFrame::GetToolBar();
     if (*m_wxFrameExtGetToolBar != NULL){
-      return m_wxFrameExtGetToolBar(this);
+      return m_wxFrameExtGetToolBar(this, res);
     }
     else {
       return res;
@@ -1227,7 +1227,7 @@ public:
   {
     bool res = wxFrame::IsActive();
     if (*m_wxFrameExtIsActive != NULL){
-      return m_wxFrameExtIsActive(this);
+      return m_wxFrameExtIsActive(this, res);
     }
     else {
       return res;
@@ -1238,7 +1238,7 @@ public:
   {
     bool res = wxFrame::IsAlwaysMaximized();
     if (*m_wxFrameExtIsAlwaysMaximized != NULL){
-      return m_wxFrameExtIsAlwaysMaximized(this);
+      return m_wxFrameExtIsAlwaysMaximized(this, res);
     }
     else {
       return res;
@@ -1249,7 +1249,7 @@ public:
   {
     bool res = wxFrame::IsClientAreaChild(child);
     if (*m_wxFrameExtIsClientAreaChildwxWindowCP != NULL){
-      return m_wxFrameExtIsClientAreaChildwxWindowCP(this, child);
+      return m_wxFrameExtIsClientAreaChildwxWindowCP(this, child, res);
     }
     else {
       return res;
@@ -1260,7 +1260,7 @@ public:
   {
     bool res = wxFrame::IsFullScreen();
     if (*m_wxFrameExtIsFullScreen != NULL){
-      return m_wxFrameExtIsFullScreen(this);
+      return m_wxFrameExtIsFullScreen(this, res);
     }
     else {
       return res;
@@ -1271,7 +1271,7 @@ public:
   {
     bool res = wxFrame::IsIconized();
     if (*m_wxFrameExtIsIconized != NULL){
-      return m_wxFrameExtIsIconized(this);
+      return m_wxFrameExtIsIconized(this, res);
     }
     else {
       return res;
@@ -1282,7 +1282,7 @@ public:
   {
     bool res = wxFrame::IsMaximized();
     if (*m_wxFrameExtIsMaximized != NULL){
-      return m_wxFrameExtIsMaximized(this);
+      return m_wxFrameExtIsMaximized(this, res);
     }
     else {
       return res;
@@ -1293,7 +1293,7 @@ public:
   {
     bool res = wxFrame::IsOneOfBars(win);
     if (*m_wxFrameExtIsOneOfBarswxWindowCP != NULL){
-      return m_wxFrameExtIsOneOfBarswxWindowCP(this, win);
+      return m_wxFrameExtIsOneOfBarswxWindowCP(this, win, res);
     }
     else {
       return res;
@@ -1304,7 +1304,7 @@ public:
   {
     bool res = wxFrame::IsTopLevel();
     if (*m_wxFrameExtIsTopLevel != NULL){
-      return m_wxFrameExtIsTopLevel(this);
+      return m_wxFrameExtIsTopLevel(this, res);
     }
     else {
       return res;
@@ -1315,7 +1315,7 @@ public:
   {
     bool res = wxFrame::IsTopNavigationDomain(kind);
     if (*m_wxFrameExtIsTopNavigationDomainwxWindowBaseNNavigationKind != NULL){
-      return m_wxFrameExtIsTopNavigationDomainwxWindowBaseNNavigationKind(this, kind);
+      return m_wxFrameExtIsTopNavigationDomainwxWindowBaseNNavigationKind(this, kind, res);
     }
     else {
       return res;
@@ -1326,7 +1326,7 @@ public:
   {
     bool res = wxFrame::IsVisible();
     if (*m_wxFrameExtIsVisible != NULL){
-      return m_wxFrameExtIsVisible(this);
+      return m_wxFrameExtIsVisible(this, res);
     }
     else {
       return res;
@@ -1337,7 +1337,7 @@ public:
   {
     bool res = wxFrame::Layout();
     if (*m_wxFrameExtLayout != NULL){
-      return m_wxFrameExtLayout(this);
+      return m_wxFrameExtLayout(this, res);
     }
     else {
       return res;
@@ -1356,7 +1356,7 @@ public:
   {
     bool res = wxFrame::OSXIsModified();
     if (*m_wxFrameExtOSXIsModified != NULL){
-      return m_wxFrameExtOSXIsModified(this);
+      return m_wxFrameExtOSXIsModified(this, res);
     }
     else {
       return res;
@@ -1375,7 +1375,7 @@ public:
   {
     wxStatusBar* res = wxFrame::OnCreateStatusBar(number, style, winid, name);
     if (*m_wxFrameExtOnCreateStatusBarintlongwxWindowIDwxStringCR != NULL){
-      return m_wxFrameExtOnCreateStatusBarintlongwxWindowIDwxStringCR(this, number, style, winid, name);
+      return m_wxFrameExtOnCreateStatusBarintlongwxWindowIDwxStringCR(this, number, style, winid, name, res);
     }
     else {
       return res;
@@ -1386,7 +1386,7 @@ public:
   {
     wxToolBar* res = wxFrame::OnCreateToolBar(style, winid, name);
     if (*m_wxFrameExtOnCreateToolBarlongwxWindowIDwxStringCR != NULL){
-      return m_wxFrameExtOnCreateToolBarlongwxWindowIDwxStringCR(this, style, winid, name);
+      return m_wxFrameExtOnCreateToolBarlongwxWindowIDwxStringCR(this, style, winid, name, res);
     }
     else {
       return res;
@@ -1445,7 +1445,7 @@ public:
   {
     bool res = wxFrame::SetContentProtection(contentProtection);
     if (*m_wxFrameExtSetContentProtectionwxContentProtection != NULL){
-      return m_wxFrameExtSetContentProtectionwxContentProtection(this, contentProtection);
+      return m_wxFrameExtSetContentProtectionwxContentProtection(this, contentProtection, res);
     }
     else {
       return res;
@@ -1544,7 +1544,7 @@ public:
   {
     bool res = wxFrame::ShouldPreventAppExit();
     if (*m_wxFrameExtShouldPreventAppExit != NULL){
-      return m_wxFrameExtShouldPreventAppExit(this);
+      return m_wxFrameExtShouldPreventAppExit(this, res);
     }
     else {
       return res;
@@ -1555,7 +1555,7 @@ public:
   {
     bool res = wxFrame::Show(show);
     if (*m_wxFrameExtShowbool != NULL){
-      return m_wxFrameExtShowbool(this, show);
+      return m_wxFrameExtShowbool(this, show, res);
     }
     else {
       return res;
@@ -1566,7 +1566,7 @@ public:
   {
     bool res = wxFrame::ShowFullScreen(show, style);
     if (*m_wxFrameExtShowFullScreenboollong != NULL){
-      return m_wxFrameExtShowFullScreenboollong(this, show, style);
+      return m_wxFrameExtShowFullScreenboollong(this, show, style, res);
     }
     else {
       return res;
@@ -1593,7 +1593,7 @@ public:
   {
     void* res = wxFrame::WXReservedTLW1(param0);
     if (*m_wxFrameExtWXReservedTLW1voidP != NULL){
-      return m_wxFrameExtWXReservedTLW1voidP(this, param0);
+      return m_wxFrameExtWXReservedTLW1voidP(this, param0, res);
     }
     else {
       return res;
@@ -1604,7 +1604,7 @@ public:
   {
     void* res = wxFrame::WXReservedTLW2(param0);
     if (*m_wxFrameExtWXReservedTLW2voidP != NULL){
-      return m_wxFrameExtWXReservedTLW2voidP(this, param0);
+      return m_wxFrameExtWXReservedTLW2voidP(this, param0, res);
     }
     else {
       return res;
@@ -1615,7 +1615,7 @@ public:
   {
     void* res = wxFrame::WXReservedTLW3(param0);
     if (*m_wxFrameExtWXReservedTLW3voidP != NULL){
-      return m_wxFrameExtWXReservedTLW3voidP(this, param0);
+      return m_wxFrameExtWXReservedTLW3voidP(this, param0, res);
     }
     else {
       return res;

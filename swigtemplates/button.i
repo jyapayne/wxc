@@ -5,6 +5,9 @@
 #include "wxext/button_ext.h"
 %}
 
+%import "object.i"
+%import "string.i"
+%import "control.i"
 %import "anybutton.i"
 %import "window.i"
 %import "validate.i"

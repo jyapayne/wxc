@@ -6,9 +6,9 @@
 
 class wxRefCounterExt;
 class wxObjectExt;
-typedef wxObjectRefData* (*wxObjectExtCloneRefDatawxObjectRefDataCPFunc)(const wxObjectExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxObjectExtCreateRefDataFunc)(const wxObjectExt* self);
-typedef wxClassInfo* (*wxObjectExtGetClassInfoFunc)(const wxObjectExt* self);
+typedef wxObjectRefData* (*wxObjectExtCloneRefDatawxObjectRefDataCPFunc)(const wxObjectExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxObjectExtCreateRefDataFunc)(const wxObjectExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxObjectExtGetClassInfoFunc)(const wxObjectExt* self, wxClassInfo* res);
 
 class wxRefCounterExt: public wxRefCounter
 {
@@ -28,7 +28,7 @@ public:
   {
     wxObjectRefData* res = wxObject::CloneRefData(data);
     if (*m_wxObjectExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxObjectExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxObjectExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -39,7 +39,7 @@ public:
   {
     wxObjectRefData* res = wxObject::CreateRefData();
     if (*m_wxObjectExtCreateRefData != NULL){
-      return m_wxObjectExtCreateRefData(this);
+      return m_wxObjectExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -50,7 +50,7 @@ public:
   {
     wxClassInfo* res = wxObject::GetClassInfo();
     if (*m_wxObjectExtGetClassInfo != NULL){
-      return m_wxObjectExtGetClassInfo(this);
+      return m_wxObjectExtGetClassInfo(this, res);
     }
     else {
       return res;

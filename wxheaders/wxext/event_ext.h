@@ -2,23 +2,24 @@
 #define _WX_EVENT_H_EXT_
 
 #include <wx/wx.h>
+#include <wx/vidmode.h>
 
 class wxEventFunctorExt;
-typedef wxEvtHandler* (*wxEventFunctorExtGetEvtHandlerFunc)(const wxEventFunctorExt* self);
-typedef wxEventFunction (*wxEventFunctorExtGetEvtMethodFunc)(const wxEventFunctorExt* self);
+typedef wxEvtHandler* (*wxEventFunctorExtGetEvtHandlerFunc)(const wxEventFunctorExt* self, wxEvtHandler* res);
+typedef wxEventFunction (*wxEventFunctorExtGetEvtMethodFunc)(const wxEventFunctorExt* self, wxEventFunction res);
 typedef bool (*wxEventFunctorExtIsMatchingwxEventFunctorCRFunc)(const wxEventFunctorExt* self, wxEventFunctor const& functor);
 typedef void (*wxEventFunctorExt_operator_callwxEvtHandlerPwxEventRFunc)(const wxEventFunctorExt* self, wxEvtHandler* param0, wxEvent& param1);
 class wxObjectEventFunctorExt;
-typedef wxEvtHandler* (*wxObjectEventFunctorExtGetEvtHandlerFunc)(const wxObjectEventFunctorExt* self);
-typedef wxEventFunction (*wxObjectEventFunctorExtGetEvtMethodFunc)(const wxObjectEventFunctorExt* self);
+typedef wxEvtHandler* (*wxObjectEventFunctorExtGetEvtHandlerFunc)(const wxObjectEventFunctorExt* self, wxEvtHandler* res);
+typedef wxEventFunction (*wxObjectEventFunctorExtGetEvtMethodFunc)(const wxObjectEventFunctorExt* self, wxEventFunction res);
 typedef bool (*wxObjectEventFunctorExtIsMatchingwxEventFunctorCRFunc)(const wxObjectEventFunctorExt* self, wxEventFunctor const& functor);
 typedef void (*wxObjectEventFunctorExt_operator_callwxEvtHandlerPwxEventRFunc)(const wxObjectEventFunctorExt* self, wxEvtHandler* param0, wxEvent& param1);
 class wxEventExt;
 typedef wxEvent* (*wxEventExtCloneFunc)(const wxEventExt* self);
-typedef wxObjectRefData* (*wxEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxEventExtCreateRefDataFunc)(const wxEventExt* self);
-typedef wxClassInfo* (*wxEventExtGetClassInfoFunc)(const wxEventExt* self);
-typedef wxEventCategory (*wxEventExtGetEventCategoryFunc)(const wxEventExt* self);
+typedef wxObjectRefData* (*wxEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxEventExtCreateRefDataFunc)(const wxEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxEventExtGetClassInfoFunc)(const wxEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxEventExtGetEventCategoryFunc)(const wxEventExt* self, wxEventCategory res);
 class wxPropagationDisablerExt;
 class wxPropagateOnceExt;
 class wxEventObjectOriginSetterExt;
@@ -27,293 +28,293 @@ class wxEventBasicPayloadMixinExt;
 class wxEventAnyPayloadMixinExt;
 class wxIdleEventExt;
 typedef wxEvent* (*wxIdleEventExtCloneFunc)(const wxIdleEventExt* self);
-typedef wxObjectRefData* (*wxIdleEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxIdleEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxIdleEventExtCreateRefDataFunc)(const wxIdleEventExt* self);
-typedef wxClassInfo* (*wxIdleEventExtGetClassInfoFunc)(const wxIdleEventExt* self);
-typedef wxEventCategory (*wxIdleEventExtGetEventCategoryFunc)(const wxIdleEventExt* self);
+typedef wxObjectRefData* (*wxIdleEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxIdleEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxIdleEventExtCreateRefDataFunc)(const wxIdleEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxIdleEventExtGetClassInfoFunc)(const wxIdleEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxIdleEventExtGetEventCategoryFunc)(const wxIdleEventExt* self, wxEventCategory res);
 class wxThreadEventExt;
 typedef wxEvent* (*wxThreadEventExtCloneFunc)(const wxThreadEventExt* self);
-typedef wxObjectRefData* (*wxThreadEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxThreadEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxThreadEventExtCreateRefDataFunc)(const wxThreadEventExt* self);
-typedef wxClassInfo* (*wxThreadEventExtGetClassInfoFunc)(const wxThreadEventExt* self);
-typedef wxEventCategory (*wxThreadEventExtGetEventCategoryFunc)(const wxThreadEventExt* self);
+typedef wxObjectRefData* (*wxThreadEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxThreadEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxThreadEventExtCreateRefDataFunc)(const wxThreadEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxThreadEventExtGetClassInfoFunc)(const wxThreadEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxThreadEventExtGetEventCategoryFunc)(const wxThreadEventExt* self, wxEventCategory res);
 class wxAsyncMethodCallEventExt;
 typedef wxEvent* (*wxAsyncMethodCallEventExtCloneFunc)(const wxAsyncMethodCallEventExt* self);
-typedef wxObjectRefData* (*wxAsyncMethodCallEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxAsyncMethodCallEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxAsyncMethodCallEventExtCreateRefDataFunc)(const wxAsyncMethodCallEventExt* self);
+typedef wxObjectRefData* (*wxAsyncMethodCallEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxAsyncMethodCallEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxAsyncMethodCallEventExtCreateRefDataFunc)(const wxAsyncMethodCallEventExt* self, wxObjectRefData* res);
 typedef void (*wxAsyncMethodCallEventExtExecuteFunc)(const wxAsyncMethodCallEventExt* self);
-typedef wxClassInfo* (*wxAsyncMethodCallEventExtGetClassInfoFunc)(const wxAsyncMethodCallEventExt* self);
-typedef wxEventCategory (*wxAsyncMethodCallEventExtGetEventCategoryFunc)(const wxAsyncMethodCallEventExt* self);
+typedef wxClassInfo* (*wxAsyncMethodCallEventExtGetClassInfoFunc)(const wxAsyncMethodCallEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxAsyncMethodCallEventExtGetEventCategoryFunc)(const wxAsyncMethodCallEventExt* self, wxEventCategory res);
 class wxCommandEventExt;
 typedef wxEvent* (*wxCommandEventExtCloneFunc)(const wxCommandEventExt* self);
-typedef wxObjectRefData* (*wxCommandEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxCommandEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxCommandEventExtCreateRefDataFunc)(const wxCommandEventExt* self);
-typedef wxClassInfo* (*wxCommandEventExtGetClassInfoFunc)(const wxCommandEventExt* self);
-typedef wxEventCategory (*wxCommandEventExtGetEventCategoryFunc)(const wxCommandEventExt* self);
+typedef wxObjectRefData* (*wxCommandEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxCommandEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxCommandEventExtCreateRefDataFunc)(const wxCommandEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxCommandEventExtGetClassInfoFunc)(const wxCommandEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxCommandEventExtGetEventCategoryFunc)(const wxCommandEventExt* self, wxEventCategory res);
 class wxNotifyEventExt;
-typedef wxEvent* (*wxNotifyEventExtCloneFunc)(const wxNotifyEventExt* self);
-typedef wxObjectRefData* (*wxNotifyEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxNotifyEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxNotifyEventExtCreateRefDataFunc)(const wxNotifyEventExt* self);
-typedef wxClassInfo* (*wxNotifyEventExtGetClassInfoFunc)(const wxNotifyEventExt* self);
-typedef wxEventCategory (*wxNotifyEventExtGetEventCategoryFunc)(const wxNotifyEventExt* self);
+typedef wxEvent* (*wxNotifyEventExtCloneFunc)(const wxNotifyEventExt* self, wxEvent* res);
+typedef wxObjectRefData* (*wxNotifyEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxNotifyEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxNotifyEventExtCreateRefDataFunc)(const wxNotifyEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxNotifyEventExtGetClassInfoFunc)(const wxNotifyEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxNotifyEventExtGetEventCategoryFunc)(const wxNotifyEventExt* self, wxEventCategory res);
 class wxScrollEventExt;
-typedef wxEvent* (*wxScrollEventExtCloneFunc)(const wxScrollEventExt* self);
-typedef wxObjectRefData* (*wxScrollEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxScrollEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxScrollEventExtCreateRefDataFunc)(const wxScrollEventExt* self);
-typedef wxClassInfo* (*wxScrollEventExtGetClassInfoFunc)(const wxScrollEventExt* self);
-typedef wxEventCategory (*wxScrollEventExtGetEventCategoryFunc)(const wxScrollEventExt* self);
+typedef wxEvent* (*wxScrollEventExtCloneFunc)(const wxScrollEventExt* self, wxEvent* res);
+typedef wxObjectRefData* (*wxScrollEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxScrollEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxScrollEventExtCreateRefDataFunc)(const wxScrollEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxScrollEventExtGetClassInfoFunc)(const wxScrollEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxScrollEventExtGetEventCategoryFunc)(const wxScrollEventExt* self, wxEventCategory res);
 class wxScrollWinEventExt;
 typedef wxEvent* (*wxScrollWinEventExtCloneFunc)(const wxScrollWinEventExt* self);
-typedef wxObjectRefData* (*wxScrollWinEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxScrollWinEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxScrollWinEventExtCreateRefDataFunc)(const wxScrollWinEventExt* self);
-typedef wxClassInfo* (*wxScrollWinEventExtGetClassInfoFunc)(const wxScrollWinEventExt* self);
-typedef wxEventCategory (*wxScrollWinEventExtGetEventCategoryFunc)(const wxScrollWinEventExt* self);
+typedef wxObjectRefData* (*wxScrollWinEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxScrollWinEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxScrollWinEventExtCreateRefDataFunc)(const wxScrollWinEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxScrollWinEventExtGetClassInfoFunc)(const wxScrollWinEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxScrollWinEventExtGetEventCategoryFunc)(const wxScrollWinEventExt* self, wxEventCategory res);
 class wxMouseEventExt;
 typedef wxEvent* (*wxMouseEventExtCloneFunc)(const wxMouseEventExt* self);
-typedef wxObjectRefData* (*wxMouseEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxMouseEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxMouseEventExtCreateRefDataFunc)(const wxMouseEventExt* self);
-typedef wxClassInfo* (*wxMouseEventExtGetClassInfoFunc)(const wxMouseEventExt* self);
-typedef wxEventCategory (*wxMouseEventExtGetEventCategoryFunc)(const wxMouseEventExt* self);
+typedef wxObjectRefData* (*wxMouseEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxMouseEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxMouseEventExtCreateRefDataFunc)(const wxMouseEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxMouseEventExtGetClassInfoFunc)(const wxMouseEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxMouseEventExtGetEventCategoryFunc)(const wxMouseEventExt* self, wxEventCategory res);
 class wxSetCursorEventExt;
 typedef wxEvent* (*wxSetCursorEventExtCloneFunc)(const wxSetCursorEventExt* self);
-typedef wxObjectRefData* (*wxSetCursorEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxSetCursorEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxSetCursorEventExtCreateRefDataFunc)(const wxSetCursorEventExt* self);
-typedef wxClassInfo* (*wxSetCursorEventExtGetClassInfoFunc)(const wxSetCursorEventExt* self);
-typedef wxEventCategory (*wxSetCursorEventExtGetEventCategoryFunc)(const wxSetCursorEventExt* self);
+typedef wxObjectRefData* (*wxSetCursorEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxSetCursorEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxSetCursorEventExtCreateRefDataFunc)(const wxSetCursorEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxSetCursorEventExtGetClassInfoFunc)(const wxSetCursorEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxSetCursorEventExtGetEventCategoryFunc)(const wxSetCursorEventExt* self, wxEventCategory res);
 class wxGestureEventExt;
 typedef wxEvent* (*wxGestureEventExtCloneFunc)(const wxGestureEventExt* self);
-typedef wxObjectRefData* (*wxGestureEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxGestureEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxGestureEventExtCreateRefDataFunc)(const wxGestureEventExt* self);
-typedef wxClassInfo* (*wxGestureEventExtGetClassInfoFunc)(const wxGestureEventExt* self);
-typedef wxEventCategory (*wxGestureEventExtGetEventCategoryFunc)(const wxGestureEventExt* self);
+typedef wxObjectRefData* (*wxGestureEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxGestureEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxGestureEventExtCreateRefDataFunc)(const wxGestureEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxGestureEventExtGetClassInfoFunc)(const wxGestureEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxGestureEventExtGetEventCategoryFunc)(const wxGestureEventExt* self, wxEventCategory res);
 class wxPanGestureEventExt;
-typedef wxEvent* (*wxPanGestureEventExtCloneFunc)(const wxPanGestureEventExt* self);
-typedef wxObjectRefData* (*wxPanGestureEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxPanGestureEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxPanGestureEventExtCreateRefDataFunc)(const wxPanGestureEventExt* self);
-typedef wxClassInfo* (*wxPanGestureEventExtGetClassInfoFunc)(const wxPanGestureEventExt* self);
-typedef wxEventCategory (*wxPanGestureEventExtGetEventCategoryFunc)(const wxPanGestureEventExt* self);
+typedef wxEvent* (*wxPanGestureEventExtCloneFunc)(const wxPanGestureEventExt* self, wxEvent* res);
+typedef wxObjectRefData* (*wxPanGestureEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxPanGestureEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxPanGestureEventExtCreateRefDataFunc)(const wxPanGestureEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxPanGestureEventExtGetClassInfoFunc)(const wxPanGestureEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxPanGestureEventExtGetEventCategoryFunc)(const wxPanGestureEventExt* self, wxEventCategory res);
 class wxZoomGestureEventExt;
-typedef wxEvent* (*wxZoomGestureEventExtCloneFunc)(const wxZoomGestureEventExt* self);
-typedef wxObjectRefData* (*wxZoomGestureEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxZoomGestureEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxZoomGestureEventExtCreateRefDataFunc)(const wxZoomGestureEventExt* self);
-typedef wxClassInfo* (*wxZoomGestureEventExtGetClassInfoFunc)(const wxZoomGestureEventExt* self);
-typedef wxEventCategory (*wxZoomGestureEventExtGetEventCategoryFunc)(const wxZoomGestureEventExt* self);
+typedef wxEvent* (*wxZoomGestureEventExtCloneFunc)(const wxZoomGestureEventExt* self, wxEvent* res);
+typedef wxObjectRefData* (*wxZoomGestureEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxZoomGestureEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxZoomGestureEventExtCreateRefDataFunc)(const wxZoomGestureEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxZoomGestureEventExtGetClassInfoFunc)(const wxZoomGestureEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxZoomGestureEventExtGetEventCategoryFunc)(const wxZoomGestureEventExt* self, wxEventCategory res);
 class wxRotateGestureEventExt;
-typedef wxEvent* (*wxRotateGestureEventExtCloneFunc)(const wxRotateGestureEventExt* self);
-typedef wxObjectRefData* (*wxRotateGestureEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxRotateGestureEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxRotateGestureEventExtCreateRefDataFunc)(const wxRotateGestureEventExt* self);
-typedef wxClassInfo* (*wxRotateGestureEventExtGetClassInfoFunc)(const wxRotateGestureEventExt* self);
-typedef wxEventCategory (*wxRotateGestureEventExtGetEventCategoryFunc)(const wxRotateGestureEventExt* self);
+typedef wxEvent* (*wxRotateGestureEventExtCloneFunc)(const wxRotateGestureEventExt* self, wxEvent* res);
+typedef wxObjectRefData* (*wxRotateGestureEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxRotateGestureEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxRotateGestureEventExtCreateRefDataFunc)(const wxRotateGestureEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxRotateGestureEventExtGetClassInfoFunc)(const wxRotateGestureEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxRotateGestureEventExtGetEventCategoryFunc)(const wxRotateGestureEventExt* self, wxEventCategory res);
 class wxTwoFingerTapEventExt;
-typedef wxEvent* (*wxTwoFingerTapEventExtCloneFunc)(const wxTwoFingerTapEventExt* self);
-typedef wxObjectRefData* (*wxTwoFingerTapEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxTwoFingerTapEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxTwoFingerTapEventExtCreateRefDataFunc)(const wxTwoFingerTapEventExt* self);
-typedef wxClassInfo* (*wxTwoFingerTapEventExtGetClassInfoFunc)(const wxTwoFingerTapEventExt* self);
-typedef wxEventCategory (*wxTwoFingerTapEventExtGetEventCategoryFunc)(const wxTwoFingerTapEventExt* self);
+typedef wxEvent* (*wxTwoFingerTapEventExtCloneFunc)(const wxTwoFingerTapEventExt* self, wxEvent* res);
+typedef wxObjectRefData* (*wxTwoFingerTapEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxTwoFingerTapEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxTwoFingerTapEventExtCreateRefDataFunc)(const wxTwoFingerTapEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxTwoFingerTapEventExtGetClassInfoFunc)(const wxTwoFingerTapEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxTwoFingerTapEventExtGetEventCategoryFunc)(const wxTwoFingerTapEventExt* self, wxEventCategory res);
 class wxLongPressEventExt;
-typedef wxEvent* (*wxLongPressEventExtCloneFunc)(const wxLongPressEventExt* self);
-typedef wxObjectRefData* (*wxLongPressEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxLongPressEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxLongPressEventExtCreateRefDataFunc)(const wxLongPressEventExt* self);
-typedef wxClassInfo* (*wxLongPressEventExtGetClassInfoFunc)(const wxLongPressEventExt* self);
-typedef wxEventCategory (*wxLongPressEventExtGetEventCategoryFunc)(const wxLongPressEventExt* self);
+typedef wxEvent* (*wxLongPressEventExtCloneFunc)(const wxLongPressEventExt* self, wxEvent* res);
+typedef wxObjectRefData* (*wxLongPressEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxLongPressEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxLongPressEventExtCreateRefDataFunc)(const wxLongPressEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxLongPressEventExtGetClassInfoFunc)(const wxLongPressEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxLongPressEventExtGetEventCategoryFunc)(const wxLongPressEventExt* self, wxEventCategory res);
 class wxPressAndTapEventExt;
-typedef wxEvent* (*wxPressAndTapEventExtCloneFunc)(const wxPressAndTapEventExt* self);
-typedef wxObjectRefData* (*wxPressAndTapEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxPressAndTapEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxPressAndTapEventExtCreateRefDataFunc)(const wxPressAndTapEventExt* self);
-typedef wxClassInfo* (*wxPressAndTapEventExtGetClassInfoFunc)(const wxPressAndTapEventExt* self);
-typedef wxEventCategory (*wxPressAndTapEventExtGetEventCategoryFunc)(const wxPressAndTapEventExt* self);
+typedef wxEvent* (*wxPressAndTapEventExtCloneFunc)(const wxPressAndTapEventExt* self, wxEvent* res);
+typedef wxObjectRefData* (*wxPressAndTapEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxPressAndTapEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxPressAndTapEventExtCreateRefDataFunc)(const wxPressAndTapEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxPressAndTapEventExtGetClassInfoFunc)(const wxPressAndTapEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxPressAndTapEventExtGetEventCategoryFunc)(const wxPressAndTapEventExt* self, wxEventCategory res);
 class wxKeyEventExt;
 typedef wxEvent* (*wxKeyEventExtCloneFunc)(const wxKeyEventExt* self);
-typedef wxObjectRefData* (*wxKeyEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxKeyEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxKeyEventExtCreateRefDataFunc)(const wxKeyEventExt* self);
-typedef wxClassInfo* (*wxKeyEventExtGetClassInfoFunc)(const wxKeyEventExt* self);
-typedef wxEventCategory (*wxKeyEventExtGetEventCategoryFunc)(const wxKeyEventExt* self);
+typedef wxObjectRefData* (*wxKeyEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxKeyEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxKeyEventExtCreateRefDataFunc)(const wxKeyEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxKeyEventExtGetClassInfoFunc)(const wxKeyEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxKeyEventExtGetEventCategoryFunc)(const wxKeyEventExt* self, wxEventCategory res);
 class wxSizeEventExt;
 typedef wxEvent* (*wxSizeEventExtCloneFunc)(const wxSizeEventExt* self);
-typedef wxObjectRefData* (*wxSizeEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxSizeEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxSizeEventExtCreateRefDataFunc)(const wxSizeEventExt* self);
-typedef wxClassInfo* (*wxSizeEventExtGetClassInfoFunc)(const wxSizeEventExt* self);
-typedef wxEventCategory (*wxSizeEventExtGetEventCategoryFunc)(const wxSizeEventExt* self);
+typedef wxObjectRefData* (*wxSizeEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxSizeEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxSizeEventExtCreateRefDataFunc)(const wxSizeEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxSizeEventExtGetClassInfoFunc)(const wxSizeEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxSizeEventExtGetEventCategoryFunc)(const wxSizeEventExt* self, wxEventCategory res);
 class wxMoveEventExt;
 typedef wxEvent* (*wxMoveEventExtCloneFunc)(const wxMoveEventExt* self);
-typedef wxObjectRefData* (*wxMoveEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxMoveEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxMoveEventExtCreateRefDataFunc)(const wxMoveEventExt* self);
-typedef wxClassInfo* (*wxMoveEventExtGetClassInfoFunc)(const wxMoveEventExt* self);
-typedef wxEventCategory (*wxMoveEventExtGetEventCategoryFunc)(const wxMoveEventExt* self);
+typedef wxObjectRefData* (*wxMoveEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxMoveEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxMoveEventExtCreateRefDataFunc)(const wxMoveEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxMoveEventExtGetClassInfoFunc)(const wxMoveEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxMoveEventExtGetEventCategoryFunc)(const wxMoveEventExt* self, wxEventCategory res);
 class wxPaintEventExt;
 typedef wxEvent* (*wxPaintEventExtCloneFunc)(const wxPaintEventExt* self);
-typedef wxObjectRefData* (*wxPaintEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxPaintEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxPaintEventExtCreateRefDataFunc)(const wxPaintEventExt* self);
-typedef wxClassInfo* (*wxPaintEventExtGetClassInfoFunc)(const wxPaintEventExt* self);
-typedef wxEventCategory (*wxPaintEventExtGetEventCategoryFunc)(const wxPaintEventExt* self);
+typedef wxObjectRefData* (*wxPaintEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxPaintEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxPaintEventExtCreateRefDataFunc)(const wxPaintEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxPaintEventExtGetClassInfoFunc)(const wxPaintEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxPaintEventExtGetEventCategoryFunc)(const wxPaintEventExt* self, wxEventCategory res);
 class wxNcPaintEventExt;
 typedef wxEvent* (*wxNcPaintEventExtCloneFunc)(const wxNcPaintEventExt* self);
-typedef wxObjectRefData* (*wxNcPaintEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxNcPaintEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxNcPaintEventExtCreateRefDataFunc)(const wxNcPaintEventExt* self);
-typedef wxClassInfo* (*wxNcPaintEventExtGetClassInfoFunc)(const wxNcPaintEventExt* self);
-typedef wxEventCategory (*wxNcPaintEventExtGetEventCategoryFunc)(const wxNcPaintEventExt* self);
+typedef wxObjectRefData* (*wxNcPaintEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxNcPaintEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxNcPaintEventExtCreateRefDataFunc)(const wxNcPaintEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxNcPaintEventExtGetClassInfoFunc)(const wxNcPaintEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxNcPaintEventExtGetEventCategoryFunc)(const wxNcPaintEventExt* self, wxEventCategory res);
 class wxEraseEventExt;
 typedef wxEvent* (*wxEraseEventExtCloneFunc)(const wxEraseEventExt* self);
-typedef wxObjectRefData* (*wxEraseEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxEraseEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxEraseEventExtCreateRefDataFunc)(const wxEraseEventExt* self);
-typedef wxClassInfo* (*wxEraseEventExtGetClassInfoFunc)(const wxEraseEventExt* self);
-typedef wxEventCategory (*wxEraseEventExtGetEventCategoryFunc)(const wxEraseEventExt* self);
+typedef wxObjectRefData* (*wxEraseEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxEraseEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxEraseEventExtCreateRefDataFunc)(const wxEraseEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxEraseEventExtGetClassInfoFunc)(const wxEraseEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxEraseEventExtGetEventCategoryFunc)(const wxEraseEventExt* self, wxEventCategory res);
 class wxFocusEventExt;
 typedef wxEvent* (*wxFocusEventExtCloneFunc)(const wxFocusEventExt* self);
-typedef wxObjectRefData* (*wxFocusEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxFocusEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxFocusEventExtCreateRefDataFunc)(const wxFocusEventExt* self);
-typedef wxClassInfo* (*wxFocusEventExtGetClassInfoFunc)(const wxFocusEventExt* self);
-typedef wxEventCategory (*wxFocusEventExtGetEventCategoryFunc)(const wxFocusEventExt* self);
+typedef wxObjectRefData* (*wxFocusEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxFocusEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxFocusEventExtCreateRefDataFunc)(const wxFocusEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxFocusEventExtGetClassInfoFunc)(const wxFocusEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxFocusEventExtGetEventCategoryFunc)(const wxFocusEventExt* self, wxEventCategory res);
 class wxChildFocusEventExt;
-typedef wxEvent* (*wxChildFocusEventExtCloneFunc)(const wxChildFocusEventExt* self);
-typedef wxObjectRefData* (*wxChildFocusEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxChildFocusEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxChildFocusEventExtCreateRefDataFunc)(const wxChildFocusEventExt* self);
-typedef wxClassInfo* (*wxChildFocusEventExtGetClassInfoFunc)(const wxChildFocusEventExt* self);
-typedef wxEventCategory (*wxChildFocusEventExtGetEventCategoryFunc)(const wxChildFocusEventExt* self);
+typedef wxEvent* (*wxChildFocusEventExtCloneFunc)(const wxChildFocusEventExt* self, wxEvent* res);
+typedef wxObjectRefData* (*wxChildFocusEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxChildFocusEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxChildFocusEventExtCreateRefDataFunc)(const wxChildFocusEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxChildFocusEventExtGetClassInfoFunc)(const wxChildFocusEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxChildFocusEventExtGetEventCategoryFunc)(const wxChildFocusEventExt* self, wxEventCategory res);
 class wxActivateEventExt;
 typedef wxEvent* (*wxActivateEventExtCloneFunc)(const wxActivateEventExt* self);
-typedef wxObjectRefData* (*wxActivateEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxActivateEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxActivateEventExtCreateRefDataFunc)(const wxActivateEventExt* self);
-typedef wxClassInfo* (*wxActivateEventExtGetClassInfoFunc)(const wxActivateEventExt* self);
-typedef wxEventCategory (*wxActivateEventExtGetEventCategoryFunc)(const wxActivateEventExt* self);
+typedef wxObjectRefData* (*wxActivateEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxActivateEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxActivateEventExtCreateRefDataFunc)(const wxActivateEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxActivateEventExtGetClassInfoFunc)(const wxActivateEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxActivateEventExtGetEventCategoryFunc)(const wxActivateEventExt* self, wxEventCategory res);
 class wxInitDialogEventExt;
 typedef wxEvent* (*wxInitDialogEventExtCloneFunc)(const wxInitDialogEventExt* self);
-typedef wxObjectRefData* (*wxInitDialogEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxInitDialogEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxInitDialogEventExtCreateRefDataFunc)(const wxInitDialogEventExt* self);
-typedef wxClassInfo* (*wxInitDialogEventExtGetClassInfoFunc)(const wxInitDialogEventExt* self);
-typedef wxEventCategory (*wxInitDialogEventExtGetEventCategoryFunc)(const wxInitDialogEventExt* self);
+typedef wxObjectRefData* (*wxInitDialogEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxInitDialogEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxInitDialogEventExtCreateRefDataFunc)(const wxInitDialogEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxInitDialogEventExtGetClassInfoFunc)(const wxInitDialogEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxInitDialogEventExtGetEventCategoryFunc)(const wxInitDialogEventExt* self, wxEventCategory res);
 class wxMenuEventExt;
 typedef wxEvent* (*wxMenuEventExtCloneFunc)(const wxMenuEventExt* self);
-typedef wxObjectRefData* (*wxMenuEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxMenuEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxMenuEventExtCreateRefDataFunc)(const wxMenuEventExt* self);
-typedef wxClassInfo* (*wxMenuEventExtGetClassInfoFunc)(const wxMenuEventExt* self);
-typedef wxEventCategory (*wxMenuEventExtGetEventCategoryFunc)(const wxMenuEventExt* self);
+typedef wxObjectRefData* (*wxMenuEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxMenuEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxMenuEventExtCreateRefDataFunc)(const wxMenuEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxMenuEventExtGetClassInfoFunc)(const wxMenuEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxMenuEventExtGetEventCategoryFunc)(const wxMenuEventExt* self, wxEventCategory res);
 class wxCloseEventExt;
 typedef wxEvent* (*wxCloseEventExtCloneFunc)(const wxCloseEventExt* self);
-typedef wxObjectRefData* (*wxCloseEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxCloseEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxCloseEventExtCreateRefDataFunc)(const wxCloseEventExt* self);
-typedef wxClassInfo* (*wxCloseEventExtGetClassInfoFunc)(const wxCloseEventExt* self);
-typedef wxEventCategory (*wxCloseEventExtGetEventCategoryFunc)(const wxCloseEventExt* self);
+typedef wxObjectRefData* (*wxCloseEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxCloseEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxCloseEventExtCreateRefDataFunc)(const wxCloseEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxCloseEventExtGetClassInfoFunc)(const wxCloseEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxCloseEventExtGetEventCategoryFunc)(const wxCloseEventExt* self, wxEventCategory res);
 class wxShowEventExt;
 typedef wxEvent* (*wxShowEventExtCloneFunc)(const wxShowEventExt* self);
-typedef wxObjectRefData* (*wxShowEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxShowEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxShowEventExtCreateRefDataFunc)(const wxShowEventExt* self);
-typedef wxClassInfo* (*wxShowEventExtGetClassInfoFunc)(const wxShowEventExt* self);
-typedef wxEventCategory (*wxShowEventExtGetEventCategoryFunc)(const wxShowEventExt* self);
+typedef wxObjectRefData* (*wxShowEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxShowEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxShowEventExtCreateRefDataFunc)(const wxShowEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxShowEventExtGetClassInfoFunc)(const wxShowEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxShowEventExtGetEventCategoryFunc)(const wxShowEventExt* self, wxEventCategory res);
 class wxIconizeEventExt;
 typedef wxEvent* (*wxIconizeEventExtCloneFunc)(const wxIconizeEventExt* self);
-typedef wxObjectRefData* (*wxIconizeEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxIconizeEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxIconizeEventExtCreateRefDataFunc)(const wxIconizeEventExt* self);
-typedef wxClassInfo* (*wxIconizeEventExtGetClassInfoFunc)(const wxIconizeEventExt* self);
-typedef wxEventCategory (*wxIconizeEventExtGetEventCategoryFunc)(const wxIconizeEventExt* self);
+typedef wxObjectRefData* (*wxIconizeEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxIconizeEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxIconizeEventExtCreateRefDataFunc)(const wxIconizeEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxIconizeEventExtGetClassInfoFunc)(const wxIconizeEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxIconizeEventExtGetEventCategoryFunc)(const wxIconizeEventExt* self, wxEventCategory res);
 class wxMaximizeEventExt;
 typedef wxEvent* (*wxMaximizeEventExtCloneFunc)(const wxMaximizeEventExt* self);
-typedef wxObjectRefData* (*wxMaximizeEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxMaximizeEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxMaximizeEventExtCreateRefDataFunc)(const wxMaximizeEventExt* self);
-typedef wxClassInfo* (*wxMaximizeEventExtGetClassInfoFunc)(const wxMaximizeEventExt* self);
-typedef wxEventCategory (*wxMaximizeEventExtGetEventCategoryFunc)(const wxMaximizeEventExt* self);
+typedef wxObjectRefData* (*wxMaximizeEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxMaximizeEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxMaximizeEventExtCreateRefDataFunc)(const wxMaximizeEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxMaximizeEventExtGetClassInfoFunc)(const wxMaximizeEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxMaximizeEventExtGetEventCategoryFunc)(const wxMaximizeEventExt* self, wxEventCategory res);
 class wxFullScreenEventExt;
 typedef wxEvent* (*wxFullScreenEventExtCloneFunc)(const wxFullScreenEventExt* self);
-typedef wxObjectRefData* (*wxFullScreenEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxFullScreenEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxFullScreenEventExtCreateRefDataFunc)(const wxFullScreenEventExt* self);
-typedef wxClassInfo* (*wxFullScreenEventExtGetClassInfoFunc)(const wxFullScreenEventExt* self);
-typedef wxEventCategory (*wxFullScreenEventExtGetEventCategoryFunc)(const wxFullScreenEventExt* self);
+typedef wxObjectRefData* (*wxFullScreenEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxFullScreenEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxFullScreenEventExtCreateRefDataFunc)(const wxFullScreenEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxFullScreenEventExtGetClassInfoFunc)(const wxFullScreenEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxFullScreenEventExtGetEventCategoryFunc)(const wxFullScreenEventExt* self, wxEventCategory res);
 class wxJoystickEventExt;
 typedef wxEvent* (*wxJoystickEventExtCloneFunc)(const wxJoystickEventExt* self);
-typedef wxObjectRefData* (*wxJoystickEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxJoystickEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxJoystickEventExtCreateRefDataFunc)(const wxJoystickEventExt* self);
-typedef wxClassInfo* (*wxJoystickEventExtGetClassInfoFunc)(const wxJoystickEventExt* self);
-typedef wxEventCategory (*wxJoystickEventExtGetEventCategoryFunc)(const wxJoystickEventExt* self);
+typedef wxObjectRefData* (*wxJoystickEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxJoystickEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxJoystickEventExtCreateRefDataFunc)(const wxJoystickEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxJoystickEventExtGetClassInfoFunc)(const wxJoystickEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxJoystickEventExtGetEventCategoryFunc)(const wxJoystickEventExt* self, wxEventCategory res);
 class wxDropFilesEventExt;
 typedef wxEvent* (*wxDropFilesEventExtCloneFunc)(const wxDropFilesEventExt* self);
-typedef wxObjectRefData* (*wxDropFilesEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxDropFilesEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxDropFilesEventExtCreateRefDataFunc)(const wxDropFilesEventExt* self);
-typedef wxClassInfo* (*wxDropFilesEventExtGetClassInfoFunc)(const wxDropFilesEventExt* self);
-typedef wxEventCategory (*wxDropFilesEventExtGetEventCategoryFunc)(const wxDropFilesEventExt* self);
+typedef wxObjectRefData* (*wxDropFilesEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxDropFilesEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxDropFilesEventExtCreateRefDataFunc)(const wxDropFilesEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxDropFilesEventExtGetClassInfoFunc)(const wxDropFilesEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxDropFilesEventExtGetEventCategoryFunc)(const wxDropFilesEventExt* self, wxEventCategory res);
 class wxUpdateUIEventExt;
-typedef wxEvent* (*wxUpdateUIEventExtCloneFunc)(const wxUpdateUIEventExt* self);
-typedef wxObjectRefData* (*wxUpdateUIEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxUpdateUIEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxUpdateUIEventExtCreateRefDataFunc)(const wxUpdateUIEventExt* self);
-typedef wxClassInfo* (*wxUpdateUIEventExtGetClassInfoFunc)(const wxUpdateUIEventExt* self);
-typedef wxEventCategory (*wxUpdateUIEventExtGetEventCategoryFunc)(const wxUpdateUIEventExt* self);
+typedef wxEvent* (*wxUpdateUIEventExtCloneFunc)(const wxUpdateUIEventExt* self, wxEvent* res);
+typedef wxObjectRefData* (*wxUpdateUIEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxUpdateUIEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxUpdateUIEventExtCreateRefDataFunc)(const wxUpdateUIEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxUpdateUIEventExtGetClassInfoFunc)(const wxUpdateUIEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxUpdateUIEventExtGetEventCategoryFunc)(const wxUpdateUIEventExt* self, wxEventCategory res);
 class wxSysColourChangedEventExt;
 typedef wxEvent* (*wxSysColourChangedEventExtCloneFunc)(const wxSysColourChangedEventExt* self);
-typedef wxObjectRefData* (*wxSysColourChangedEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxSysColourChangedEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxSysColourChangedEventExtCreateRefDataFunc)(const wxSysColourChangedEventExt* self);
-typedef wxClassInfo* (*wxSysColourChangedEventExtGetClassInfoFunc)(const wxSysColourChangedEventExt* self);
-typedef wxEventCategory (*wxSysColourChangedEventExtGetEventCategoryFunc)(const wxSysColourChangedEventExt* self);
+typedef wxObjectRefData* (*wxSysColourChangedEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxSysColourChangedEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxSysColourChangedEventExtCreateRefDataFunc)(const wxSysColourChangedEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxSysColourChangedEventExtGetClassInfoFunc)(const wxSysColourChangedEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxSysColourChangedEventExtGetEventCategoryFunc)(const wxSysColourChangedEventExt* self, wxEventCategory res);
 class wxMouseCaptureChangedEventExt;
 typedef wxEvent* (*wxMouseCaptureChangedEventExtCloneFunc)(const wxMouseCaptureChangedEventExt* self);
-typedef wxObjectRefData* (*wxMouseCaptureChangedEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxMouseCaptureChangedEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxMouseCaptureChangedEventExtCreateRefDataFunc)(const wxMouseCaptureChangedEventExt* self);
-typedef wxClassInfo* (*wxMouseCaptureChangedEventExtGetClassInfoFunc)(const wxMouseCaptureChangedEventExt* self);
-typedef wxEventCategory (*wxMouseCaptureChangedEventExtGetEventCategoryFunc)(const wxMouseCaptureChangedEventExt* self);
+typedef wxObjectRefData* (*wxMouseCaptureChangedEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxMouseCaptureChangedEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxMouseCaptureChangedEventExtCreateRefDataFunc)(const wxMouseCaptureChangedEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxMouseCaptureChangedEventExtGetClassInfoFunc)(const wxMouseCaptureChangedEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxMouseCaptureChangedEventExtGetEventCategoryFunc)(const wxMouseCaptureChangedEventExt* self, wxEventCategory res);
 class wxMouseCaptureLostEventExt;
 typedef wxEvent* (*wxMouseCaptureLostEventExtCloneFunc)(const wxMouseCaptureLostEventExt* self);
-typedef wxObjectRefData* (*wxMouseCaptureLostEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxMouseCaptureLostEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxMouseCaptureLostEventExtCreateRefDataFunc)(const wxMouseCaptureLostEventExt* self);
-typedef wxClassInfo* (*wxMouseCaptureLostEventExtGetClassInfoFunc)(const wxMouseCaptureLostEventExt* self);
-typedef wxEventCategory (*wxMouseCaptureLostEventExtGetEventCategoryFunc)(const wxMouseCaptureLostEventExt* self);
+typedef wxObjectRefData* (*wxMouseCaptureLostEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxMouseCaptureLostEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxMouseCaptureLostEventExtCreateRefDataFunc)(const wxMouseCaptureLostEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxMouseCaptureLostEventExtGetClassInfoFunc)(const wxMouseCaptureLostEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxMouseCaptureLostEventExtGetEventCategoryFunc)(const wxMouseCaptureLostEventExt* self, wxEventCategory res);
 class wxDisplayChangedEventExt;
 typedef wxEvent* (*wxDisplayChangedEventExtCloneFunc)(const wxDisplayChangedEventExt* self);
-typedef wxObjectRefData* (*wxDisplayChangedEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxDisplayChangedEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxDisplayChangedEventExtCreateRefDataFunc)(const wxDisplayChangedEventExt* self);
-typedef wxClassInfo* (*wxDisplayChangedEventExtGetClassInfoFunc)(const wxDisplayChangedEventExt* self);
-typedef wxEventCategory (*wxDisplayChangedEventExtGetEventCategoryFunc)(const wxDisplayChangedEventExt* self);
+typedef wxObjectRefData* (*wxDisplayChangedEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxDisplayChangedEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxDisplayChangedEventExtCreateRefDataFunc)(const wxDisplayChangedEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxDisplayChangedEventExtGetClassInfoFunc)(const wxDisplayChangedEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxDisplayChangedEventExtGetEventCategoryFunc)(const wxDisplayChangedEventExt* self, wxEventCategory res);
 class wxDPIChangedEventExt;
 typedef wxEvent* (*wxDPIChangedEventExtCloneFunc)(const wxDPIChangedEventExt* self);
-typedef wxObjectRefData* (*wxDPIChangedEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxDPIChangedEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxDPIChangedEventExtCreateRefDataFunc)(const wxDPIChangedEventExt* self);
-typedef wxClassInfo* (*wxDPIChangedEventExtGetClassInfoFunc)(const wxDPIChangedEventExt* self);
-typedef wxEventCategory (*wxDPIChangedEventExtGetEventCategoryFunc)(const wxDPIChangedEventExt* self);
+typedef wxObjectRefData* (*wxDPIChangedEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxDPIChangedEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxDPIChangedEventExtCreateRefDataFunc)(const wxDPIChangedEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxDPIChangedEventExtGetClassInfoFunc)(const wxDPIChangedEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxDPIChangedEventExtGetEventCategoryFunc)(const wxDPIChangedEventExt* self, wxEventCategory res);
 class wxPaletteChangedEventExt;
 typedef wxEvent* (*wxPaletteChangedEventExtCloneFunc)(const wxPaletteChangedEventExt* self);
-typedef wxObjectRefData* (*wxPaletteChangedEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxPaletteChangedEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxPaletteChangedEventExtCreateRefDataFunc)(const wxPaletteChangedEventExt* self);
-typedef wxClassInfo* (*wxPaletteChangedEventExtGetClassInfoFunc)(const wxPaletteChangedEventExt* self);
-typedef wxEventCategory (*wxPaletteChangedEventExtGetEventCategoryFunc)(const wxPaletteChangedEventExt* self);
+typedef wxObjectRefData* (*wxPaletteChangedEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxPaletteChangedEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxPaletteChangedEventExtCreateRefDataFunc)(const wxPaletteChangedEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxPaletteChangedEventExtGetClassInfoFunc)(const wxPaletteChangedEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxPaletteChangedEventExtGetEventCategoryFunc)(const wxPaletteChangedEventExt* self, wxEventCategory res);
 class wxQueryNewPaletteEventExt;
 typedef wxEvent* (*wxQueryNewPaletteEventExtCloneFunc)(const wxQueryNewPaletteEventExt* self);
-typedef wxObjectRefData* (*wxQueryNewPaletteEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxQueryNewPaletteEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxQueryNewPaletteEventExtCreateRefDataFunc)(const wxQueryNewPaletteEventExt* self);
-typedef wxClassInfo* (*wxQueryNewPaletteEventExtGetClassInfoFunc)(const wxQueryNewPaletteEventExt* self);
-typedef wxEventCategory (*wxQueryNewPaletteEventExtGetEventCategoryFunc)(const wxQueryNewPaletteEventExt* self);
+typedef wxObjectRefData* (*wxQueryNewPaletteEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxQueryNewPaletteEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxQueryNewPaletteEventExtCreateRefDataFunc)(const wxQueryNewPaletteEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxQueryNewPaletteEventExtGetClassInfoFunc)(const wxQueryNewPaletteEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxQueryNewPaletteEventExtGetEventCategoryFunc)(const wxQueryNewPaletteEventExt* self, wxEventCategory res);
 class wxNavigationKeyEventExt;
 typedef wxEvent* (*wxNavigationKeyEventExtCloneFunc)(const wxNavigationKeyEventExt* self);
-typedef wxObjectRefData* (*wxNavigationKeyEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxNavigationKeyEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxNavigationKeyEventExtCreateRefDataFunc)(const wxNavigationKeyEventExt* self);
-typedef wxClassInfo* (*wxNavigationKeyEventExtGetClassInfoFunc)(const wxNavigationKeyEventExt* self);
-typedef wxEventCategory (*wxNavigationKeyEventExtGetEventCategoryFunc)(const wxNavigationKeyEventExt* self);
+typedef wxObjectRefData* (*wxNavigationKeyEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxNavigationKeyEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxNavigationKeyEventExtCreateRefDataFunc)(const wxNavigationKeyEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxNavigationKeyEventExtGetClassInfoFunc)(const wxNavigationKeyEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxNavigationKeyEventExtGetEventCategoryFunc)(const wxNavigationKeyEventExt* self, wxEventCategory res);
 class wxWindowCreateEventExt;
-typedef wxEvent* (*wxWindowCreateEventExtCloneFunc)(const wxWindowCreateEventExt* self);
-typedef wxObjectRefData* (*wxWindowCreateEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxWindowCreateEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxWindowCreateEventExtCreateRefDataFunc)(const wxWindowCreateEventExt* self);
-typedef wxClassInfo* (*wxWindowCreateEventExtGetClassInfoFunc)(const wxWindowCreateEventExt* self);
-typedef wxEventCategory (*wxWindowCreateEventExtGetEventCategoryFunc)(const wxWindowCreateEventExt* self);
+typedef wxEvent* (*wxWindowCreateEventExtCloneFunc)(const wxWindowCreateEventExt* self, wxEvent* res);
+typedef wxObjectRefData* (*wxWindowCreateEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxWindowCreateEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxWindowCreateEventExtCreateRefDataFunc)(const wxWindowCreateEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxWindowCreateEventExtGetClassInfoFunc)(const wxWindowCreateEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxWindowCreateEventExtGetEventCategoryFunc)(const wxWindowCreateEventExt* self, wxEventCategory res);
 class wxWindowDestroyEventExt;
-typedef wxEvent* (*wxWindowDestroyEventExtCloneFunc)(const wxWindowDestroyEventExt* self);
-typedef wxObjectRefData* (*wxWindowDestroyEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxWindowDestroyEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxWindowDestroyEventExtCreateRefDataFunc)(const wxWindowDestroyEventExt* self);
-typedef wxClassInfo* (*wxWindowDestroyEventExtGetClassInfoFunc)(const wxWindowDestroyEventExt* self);
-typedef wxEventCategory (*wxWindowDestroyEventExtGetEventCategoryFunc)(const wxWindowDestroyEventExt* self);
+typedef wxEvent* (*wxWindowDestroyEventExtCloneFunc)(const wxWindowDestroyEventExt* self, wxEvent* res);
+typedef wxObjectRefData* (*wxWindowDestroyEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxWindowDestroyEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxWindowDestroyEventExtCreateRefDataFunc)(const wxWindowDestroyEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxWindowDestroyEventExtGetClassInfoFunc)(const wxWindowDestroyEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxWindowDestroyEventExtGetEventCategoryFunc)(const wxWindowDestroyEventExt* self, wxEventCategory res);
 class wxHelpEventExt;
-typedef wxEvent* (*wxHelpEventExtCloneFunc)(const wxHelpEventExt* self);
-typedef wxObjectRefData* (*wxHelpEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxHelpEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxHelpEventExtCreateRefDataFunc)(const wxHelpEventExt* self);
-typedef wxClassInfo* (*wxHelpEventExtGetClassInfoFunc)(const wxHelpEventExt* self);
-typedef wxEventCategory (*wxHelpEventExtGetEventCategoryFunc)(const wxHelpEventExt* self);
+typedef wxEvent* (*wxHelpEventExtCloneFunc)(const wxHelpEventExt* self, wxEvent* res);
+typedef wxObjectRefData* (*wxHelpEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxHelpEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxHelpEventExtCreateRefDataFunc)(const wxHelpEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxHelpEventExtGetClassInfoFunc)(const wxHelpEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxHelpEventExtGetEventCategoryFunc)(const wxHelpEventExt* self, wxEventCategory res);
 class wxClipboardTextEventExt;
-typedef wxEvent* (*wxClipboardTextEventExtCloneFunc)(const wxClipboardTextEventExt* self);
-typedef wxObjectRefData* (*wxClipboardTextEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxClipboardTextEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxClipboardTextEventExtCreateRefDataFunc)(const wxClipboardTextEventExt* self);
-typedef wxClassInfo* (*wxClipboardTextEventExtGetClassInfoFunc)(const wxClipboardTextEventExt* self);
-typedef wxEventCategory (*wxClipboardTextEventExtGetEventCategoryFunc)(const wxClipboardTextEventExt* self);
+typedef wxEvent* (*wxClipboardTextEventExtCloneFunc)(const wxClipboardTextEventExt* self, wxEvent* res);
+typedef wxObjectRefData* (*wxClipboardTextEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxClipboardTextEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxClipboardTextEventExtCreateRefDataFunc)(const wxClipboardTextEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxClipboardTextEventExtGetClassInfoFunc)(const wxClipboardTextEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxClipboardTextEventExtGetEventCategoryFunc)(const wxClipboardTextEventExt* self, wxEventCategory res);
 class wxContextMenuEventExt;
-typedef wxEvent* (*wxContextMenuEventExtCloneFunc)(const wxContextMenuEventExt* self);
-typedef wxObjectRefData* (*wxContextMenuEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxContextMenuEventExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxContextMenuEventExtCreateRefDataFunc)(const wxContextMenuEventExt* self);
-typedef wxClassInfo* (*wxContextMenuEventExtGetClassInfoFunc)(const wxContextMenuEventExt* self);
-typedef wxEventCategory (*wxContextMenuEventExtGetEventCategoryFunc)(const wxContextMenuEventExt* self);
+typedef wxEvent* (*wxContextMenuEventExtCloneFunc)(const wxContextMenuEventExt* self, wxEvent* res);
+typedef wxObjectRefData* (*wxContextMenuEventExtCloneRefDatawxObjectRefDataCPFunc)(const wxContextMenuEventExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxContextMenuEventExtCreateRefDataFunc)(const wxContextMenuEventExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxContextMenuEventExtGetClassInfoFunc)(const wxContextMenuEventExt* self, wxClassInfo* res);
+typedef wxEventCategory (*wxContextMenuEventExtGetEventCategoryFunc)(const wxContextMenuEventExt* self, wxEventCategory res);
 class wxEventTableEntryBaseExt;
 class wxEventTableEntryExt;
 class wxDynamicEventTableEntryExt;
@@ -322,44 +323,44 @@ class wxEventTableEntryPointerArrayExt;
 class wxEventHashTableExt;
 class wxEvtHandlerExt;
 typedef void (*wxEvtHandlerExtAddPendingEventwxEventCRFunc)(const wxEvtHandlerExt* self, wxEvent const& event);
-typedef wxObjectRefData* (*wxEvtHandlerExtCloneRefDatawxObjectRefDataCPFunc)(const wxEvtHandlerExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxEvtHandlerExtCreateRefDataFunc)(const wxEvtHandlerExt* self);
-typedef wxClassInfo* (*wxEvtHandlerExtGetClassInfoFunc)(const wxEvtHandlerExt* self);
-typedef wxEventHashTable& (*wxEvtHandlerExtGetEventHashTableFunc)(const wxEvtHandlerExt* self);
-typedef wxEventTable const* (*wxEvtHandlerExtGetEventTableFunc)(const wxEvtHandlerExt* self);
-typedef bool (*wxEvtHandlerExtOnDynamicBindwxDynamicEventTableEntryRFunc)(const wxEvtHandlerExt* self, wxDynamicEventTableEntry& param0);
-typedef bool (*wxEvtHandlerExtProcessEventwxEventRFunc)(const wxEvtHandlerExt* self, wxEvent& event);
+typedef wxObjectRefData* (*wxEvtHandlerExtCloneRefDatawxObjectRefDataCPFunc)(const wxEvtHandlerExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxEvtHandlerExtCreateRefDataFunc)(const wxEvtHandlerExt* self, wxObjectRefData* res);
+typedef wxClassInfo* (*wxEvtHandlerExtGetClassInfoFunc)(const wxEvtHandlerExt* self, wxClassInfo* res);
+typedef wxEventHashTable& (*wxEvtHandlerExtGetEventHashTableFunc)(const wxEvtHandlerExt* self, wxEventHashTable& res);
+typedef wxEventTable const* (*wxEvtHandlerExtGetEventTableFunc)(const wxEvtHandlerExt* self, wxEventTable const* res);
+typedef bool (*wxEvtHandlerExtOnDynamicBindwxDynamicEventTableEntryRFunc)(const wxEvtHandlerExt* self, wxDynamicEventTableEntry& param0, bool res);
+typedef bool (*wxEvtHandlerExtProcessEventwxEventRFunc)(const wxEvtHandlerExt* self, wxEvent& event, bool res);
 typedef void (*wxEvtHandlerExtQueueEventwxEventPFunc)(const wxEvtHandlerExt* self, wxEvent* event);
-typedef bool (*wxEvtHandlerExtSearchEventTablewxEventTableRwxEventRFunc)(const wxEvtHandlerExt* self, wxEventTable& table, wxEvent& event);
+typedef bool (*wxEvtHandlerExtSearchEventTablewxEventTableRwxEventRFunc)(const wxEvtHandlerExt* self, wxEventTable& table, wxEvent& event, bool res);
 typedef void (*wxEvtHandlerExtSetNextHandlerwxEvtHandlerPFunc)(const wxEvtHandlerExt* self, wxEvtHandler* handler);
 typedef void (*wxEvtHandlerExtSetPreviousHandlerwxEvtHandlerPFunc)(const wxEvtHandlerExt* self, wxEvtHandler* handler);
-typedef bool (*wxEvtHandlerExtTryAfterwxEventRFunc)(const wxEvtHandlerExt* self, wxEvent& event);
-typedef bool (*wxEvtHandlerExtTryBeforewxEventRFunc)(const wxEvtHandlerExt* self, wxEvent& event);
+typedef bool (*wxEvtHandlerExtTryAfterwxEventRFunc)(const wxEvtHandlerExt* self, wxEvent& event, bool res);
+typedef bool (*wxEvtHandlerExtTryBeforewxEventRFunc)(const wxEvtHandlerExt* self, wxEvent& event, bool res);
 class wxEvtHandlerArrayExt;
 class wxEventConnectionRefExt;
 typedef void (*wxEventConnectionRefExtOnObjectDestroyFunc)(const wxEventConnectionRefExt* self);
-typedef wxEventConnectionRef* (*wxEventConnectionRefExtToEventConnectionFunc)(const wxEventConnectionRefExt* self);
+typedef wxEventConnectionRef* (*wxEventConnectionRefExtToEventConnectionFunc)(const wxEventConnectionRefExt* self, wxEventConnectionRef* res);
 class wxEventBlockerExt;
 typedef void (*wxEventBlockerExtAddPendingEventwxEventCRFunc)(const wxEventBlockerExt* self, wxEvent const& event);
-typedef wxObjectRefData* (*wxEventBlockerExtCloneRefDatawxObjectRefDataCPFunc)(const wxEventBlockerExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxEventBlockerExtCreateRefDataFunc)(const wxEventBlockerExt* self);
-typedef void* (*wxEventBlockerExtDoGetClientDataFunc)(const wxEventBlockerExt* self);
-typedef wxClientData* (*wxEventBlockerExtDoGetClientObjectFunc)(const wxEventBlockerExt* self);
+typedef wxObjectRefData* (*wxEventBlockerExtCloneRefDatawxObjectRefDataCPFunc)(const wxEventBlockerExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxEventBlockerExtCreateRefDataFunc)(const wxEventBlockerExt* self, wxObjectRefData* res);
+typedef void* (*wxEventBlockerExtDoGetClientDataFunc)(const wxEventBlockerExt* self, void* res);
+typedef wxClientData* (*wxEventBlockerExtDoGetClientObjectFunc)(const wxEventBlockerExt* self, wxClientData* res);
 typedef void (*wxEventBlockerExtDoSetClientDatavoidPFunc)(const wxEventBlockerExt* self, void* data);
 typedef void (*wxEventBlockerExtDoSetClientObjectwxClientDataPFunc)(const wxEventBlockerExt* self, wxClientData* data);
-typedef wxClassInfo* (*wxEventBlockerExtGetClassInfoFunc)(const wxEventBlockerExt* self);
-typedef wxEventHashTable& (*wxEventBlockerExtGetEventHashTableFunc)(const wxEventBlockerExt* self);
-typedef wxEventTable const* (*wxEventBlockerExtGetEventTableFunc)(const wxEventBlockerExt* self);
-typedef bool (*wxEventBlockerExtOnDynamicBindwxDynamicEventTableEntryRFunc)(const wxEventBlockerExt* self, wxDynamicEventTableEntry& param0);
-typedef bool (*wxEventBlockerExtProcessEventwxEventRFunc)(const wxEventBlockerExt* self, wxEvent& event);
+typedef wxClassInfo* (*wxEventBlockerExtGetClassInfoFunc)(const wxEventBlockerExt* self, wxClassInfo* res);
+typedef wxEventHashTable& (*wxEventBlockerExtGetEventHashTableFunc)(const wxEventBlockerExt* self, wxEventHashTable& res);
+typedef wxEventTable const* (*wxEventBlockerExtGetEventTableFunc)(const wxEventBlockerExt* self, wxEventTable const* res);
+typedef bool (*wxEventBlockerExtOnDynamicBindwxDynamicEventTableEntryRFunc)(const wxEventBlockerExt* self, wxDynamicEventTableEntry& param0, bool res);
+typedef bool (*wxEventBlockerExtProcessEventwxEventRFunc)(const wxEventBlockerExt* self, wxEvent& event, bool res);
 typedef void (*wxEventBlockerExtQueueEventwxEventPFunc)(const wxEventBlockerExt* self, wxEvent* event);
-typedef bool (*wxEventBlockerExtSearchEventTablewxEventTableRwxEventRFunc)(const wxEventBlockerExt* self, wxEventTable& table, wxEvent& event);
+typedef bool (*wxEventBlockerExtSearchEventTablewxEventTableRwxEventRFunc)(const wxEventBlockerExt* self, wxEventTable& table, wxEvent& event, bool res);
 typedef void (*wxEventBlockerExtSetNextHandlerwxEvtHandlerPFunc)(const wxEventBlockerExt* self, wxEvtHandler* handler);
 typedef void (*wxEventBlockerExtSetPreviousHandlerwxEvtHandlerPFunc)(const wxEventBlockerExt* self, wxEvtHandler* handler);
-typedef bool (*wxEventBlockerExtTryAfterwxEventRFunc)(const wxEventBlockerExt* self, wxEvent& event);
-typedef bool (*wxEventBlockerExtTryBeforewxEventRFunc)(const wxEventBlockerExt* self, wxEvent& event);
-typedef void* (*wxEventBlockerExtWXReservedEvtHandler1voidPFunc)(const wxEventBlockerExt* self, void* param0);
-typedef void* (*wxEventBlockerExtWXReservedEvtHandler2voidPFunc)(const wxEventBlockerExt* self, void* param0);
+typedef bool (*wxEventBlockerExtTryAfterwxEventRFunc)(const wxEventBlockerExt* self, wxEvent& event, bool res);
+typedef bool (*wxEventBlockerExtTryBeforewxEventRFunc)(const wxEventBlockerExt* self, wxEvent& event, bool res);
+typedef void* (*wxEventBlockerExtWXReservedEvtHandler1voidPFunc)(const wxEventBlockerExt* self, void* param0, void* res);
+typedef void* (*wxEventBlockerExtWXReservedEvtHandler2voidPFunc)(const wxEventBlockerExt* self, void* param0, void* res);
 
 class wxEventFunctorExt: public wxEventFunctor
 {
@@ -370,7 +371,7 @@ public:
   {
     wxEvtHandler* res = wxEventFunctor::GetEvtHandler();
     if (*m_wxEventFunctorExtGetEvtHandler != NULL){
-      return m_wxEventFunctorExtGetEvtHandler(this);
+      return m_wxEventFunctorExtGetEvtHandler(this, res);
     }
     else {
       return res;
@@ -381,7 +382,7 @@ public:
   {
     wxEventFunction res = wxEventFunctor::GetEvtMethod();
     if (*m_wxEventFunctorExtGetEvtMethod != NULL){
-      return m_wxEventFunctorExtGetEvtMethod(this);
+      return m_wxEventFunctorExtGetEvtMethod(this, res);
     }
     else {
       return res;
@@ -421,7 +422,7 @@ public:
   {
     wxEvtHandler* res = wxObjectEventFunctor::GetEvtHandler();
     if (*m_wxObjectEventFunctorExtGetEvtHandler != NULL){
-      return m_wxObjectEventFunctorExtGetEvtHandler(this);
+      return m_wxObjectEventFunctorExtGetEvtHandler(this, res);
     }
     else {
       return res;
@@ -432,7 +433,7 @@ public:
   {
     wxEventFunction res = wxObjectEventFunctor::GetEvtMethod();
     if (*m_wxObjectEventFunctorExtGetEvtMethod != NULL){
-      return m_wxObjectEventFunctorExtGetEvtMethod(this);
+      return m_wxObjectEventFunctorExtGetEvtMethod(this, res);
     }
     else {
       return res;
@@ -441,18 +442,16 @@ public:
   wxObjectEventFunctorExtIsMatchingwxEventFunctorCRFunc m_wxObjectEventFunctorExtIsMatchingwxEventFunctorCR = NULL;
   virtual bool IsMatching(wxEventFunctor const& functor) const override
   {
-    bool res = wxObjectEventFunctor::IsMatching(functor);
     if (*m_wxObjectEventFunctorExtIsMatchingwxEventFunctorCR != NULL){
       return m_wxObjectEventFunctorExtIsMatchingwxEventFunctorCR(this, functor);
     }
     else {
-      return res;
+      return false;
     }
   }
   wxObjectEventFunctorExt_operator_callwxEvtHandlerPwxEventRFunc m_wxObjectEventFunctorExt_operator_callwxEvtHandlerPwxEventR = NULL;
   virtual void operator()(wxEvtHandler* param0, wxEvent& param1) override
   {
-    wxObjectEventFunctor::operator()(param0, param1);
     if (*m_wxObjectEventFunctorExt_operator_callwxEvtHandlerPwxEventR != NULL){
       return m_wxObjectEventFunctorExt_operator_callwxEvtHandlerPwxEventR(this, param0, param1);
     }
@@ -485,7 +484,7 @@ public:
   {
     wxObjectRefData* res = wxEvent::CloneRefData(data);
     if (*m_wxEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -496,7 +495,7 @@ public:
   {
     wxObjectRefData* res = wxEvent::CreateRefData();
     if (*m_wxEventExtCreateRefData != NULL){
-      return m_wxEventExtCreateRefData(this);
+      return m_wxEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -507,7 +506,7 @@ public:
   {
     wxClassInfo* res = wxEvent::GetClassInfo();
     if (*m_wxEventExtGetClassInfo != NULL){
-      return m_wxEventExtGetClassInfo(this);
+      return m_wxEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -518,7 +517,7 @@ public:
   {
     wxEventCategory res = wxEvent::GetEventCategory();
     if (*m_wxEventExtGetEventCategory != NULL){
-      return m_wxEventExtGetEventCategory(this);
+      return m_wxEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -578,12 +577,11 @@ public:
   wxIdleEventExtCloneFunc m_wxIdleEventExtClone = NULL;
   virtual wxEvent* Clone() const override
   {
-    wxEvent* res = wxIdleEvent::Clone();
     if (*m_wxIdleEventExtClone != NULL){
       return m_wxIdleEventExtClone(this);
     }
     else {
-      return res;
+      return NULL;
     }
   }
   wxIdleEventExtCloneRefDatawxObjectRefDataCPFunc m_wxIdleEventExtCloneRefDatawxObjectRefDataCP = NULL;
@@ -591,7 +589,7 @@ public:
   {
     wxObjectRefData* res = wxIdleEvent::CloneRefData(data);
     if (*m_wxIdleEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxIdleEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxIdleEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -602,7 +600,7 @@ public:
   {
     wxObjectRefData* res = wxIdleEvent::CreateRefData();
     if (*m_wxIdleEventExtCreateRefData != NULL){
-      return m_wxIdleEventExtCreateRefData(this);
+      return m_wxIdleEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -613,7 +611,7 @@ public:
   {
     wxClassInfo* res = wxIdleEvent::GetClassInfo();
     if (*m_wxIdleEventExtGetClassInfo != NULL){
-      return m_wxIdleEventExtGetClassInfo(this);
+      return m_wxIdleEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -624,7 +622,7 @@ public:
   {
     wxEventCategory res = wxIdleEvent::GetEventCategory();
     if (*m_wxIdleEventExtGetEventCategory != NULL){
-      return m_wxIdleEventExtGetEventCategory(this);
+      return m_wxIdleEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -647,12 +645,11 @@ public:
   wxThreadEventExtCloneFunc m_wxThreadEventExtClone = NULL;
   virtual wxEvent* Clone() const override
   {
-    wxEvent* res = wxThreadEvent::Clone();
     if (*m_wxThreadEventExtClone != NULL){
       return m_wxThreadEventExtClone(this);
     }
     else {
-      return res;
+      return NULL;
     }
   }
   wxThreadEventExtCloneRefDatawxObjectRefDataCPFunc m_wxThreadEventExtCloneRefDatawxObjectRefDataCP = NULL;
@@ -660,7 +657,7 @@ public:
   {
     wxObjectRefData* res = wxThreadEvent::CloneRefData(data);
     if (*m_wxThreadEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxThreadEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxThreadEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -671,7 +668,7 @@ public:
   {
     wxObjectRefData* res = wxThreadEvent::CreateRefData();
     if (*m_wxThreadEventExtCreateRefData != NULL){
-      return m_wxThreadEventExtCreateRefData(this);
+      return m_wxThreadEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -682,7 +679,7 @@ public:
   {
     wxClassInfo* res = wxThreadEvent::GetClassInfo();
     if (*m_wxThreadEventExtGetClassInfo != NULL){
-      return m_wxThreadEventExtGetClassInfo(this);
+      return m_wxThreadEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -693,7 +690,7 @@ public:
   {
     wxEventCategory res = wxThreadEvent::GetEventCategory();
     if (*m_wxThreadEventExtGetEventCategory != NULL){
-      return m_wxThreadEventExtGetEventCategory(this);
+      return m_wxThreadEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -728,7 +725,7 @@ public:
   {
     wxObjectRefData* res = wxAsyncMethodCallEvent::CloneRefData(data);
     if (*m_wxAsyncMethodCallEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxAsyncMethodCallEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxAsyncMethodCallEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -739,7 +736,7 @@ public:
   {
     wxObjectRefData* res = wxAsyncMethodCallEvent::CreateRefData();
     if (*m_wxAsyncMethodCallEventExtCreateRefData != NULL){
-      return m_wxAsyncMethodCallEventExtCreateRefData(this);
+      return m_wxAsyncMethodCallEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -757,7 +754,7 @@ public:
   {
     wxClassInfo* res = wxAsyncMethodCallEvent::GetClassInfo();
     if (*m_wxAsyncMethodCallEventExtGetClassInfo != NULL){
-      return m_wxAsyncMethodCallEventExtGetClassInfo(this);
+      return m_wxAsyncMethodCallEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -768,7 +765,7 @@ public:
   {
     wxEventCategory res = wxAsyncMethodCallEvent::GetEventCategory();
     if (*m_wxAsyncMethodCallEventExtGetEventCategory != NULL){
-      return m_wxAsyncMethodCallEventExtGetEventCategory(this);
+      return m_wxAsyncMethodCallEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -784,7 +781,6 @@ public:
   }
 };
 
-#if wxUSE_GUI
 class wxCommandEventExt: public wxCommandEvent
 {
 public:
@@ -793,12 +789,11 @@ public:
   wxCommandEventExtCloneFunc m_wxCommandEventExtClone = NULL;
   virtual wxEvent* Clone() const override
   {
-    wxEvent* res = wxCommandEvent::Clone();
     if (*m_wxCommandEventExtClone != NULL){
       return m_wxCommandEventExtClone(this);
     }
     else {
-      return res;
+      return NULL;
     }
   }
   wxCommandEventExtCloneRefDatawxObjectRefDataCPFunc m_wxCommandEventExtCloneRefDatawxObjectRefDataCP = NULL;
@@ -806,7 +801,7 @@ public:
   {
     wxObjectRefData* res = wxCommandEvent::CloneRefData(data);
     if (*m_wxCommandEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxCommandEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxCommandEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -817,7 +812,7 @@ public:
   {
     wxObjectRefData* res = wxCommandEvent::CreateRefData();
     if (*m_wxCommandEventExtCreateRefData != NULL){
-      return m_wxCommandEventExtCreateRefData(this);
+      return m_wxCommandEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -828,7 +823,7 @@ public:
   {
     wxClassInfo* res = wxCommandEvent::GetClassInfo();
     if (*m_wxCommandEventExtGetClassInfo != NULL){
-      return m_wxCommandEventExtGetClassInfo(this);
+      return m_wxCommandEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -839,7 +834,7 @@ public:
   {
     wxEventCategory res = wxCommandEvent::GetEventCategory();
     if (*m_wxCommandEventExtGetEventCategory != NULL){
-      return m_wxCommandEventExtGetEventCategory(this);
+      return m_wxCommandEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -864,7 +859,7 @@ public:
   {
     wxEvent* res = wxNotifyEvent::Clone();
     if (*m_wxNotifyEventExtClone != NULL){
-      return m_wxNotifyEventExtClone(this);
+      return m_wxNotifyEventExtClone(this, res);
     }
     else {
       return res;
@@ -875,7 +870,7 @@ public:
   {
     wxObjectRefData* res = wxNotifyEvent::CloneRefData(data);
     if (*m_wxNotifyEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxNotifyEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxNotifyEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -886,7 +881,7 @@ public:
   {
     wxObjectRefData* res = wxNotifyEvent::CreateRefData();
     if (*m_wxNotifyEventExtCreateRefData != NULL){
-      return m_wxNotifyEventExtCreateRefData(this);
+      return m_wxNotifyEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -897,7 +892,7 @@ public:
   {
     wxClassInfo* res = wxNotifyEvent::GetClassInfo();
     if (*m_wxNotifyEventExtGetClassInfo != NULL){
-      return m_wxNotifyEventExtGetClassInfo(this);
+      return m_wxNotifyEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -908,7 +903,7 @@ public:
   {
     wxEventCategory res = wxNotifyEvent::GetEventCategory();
     if (*m_wxNotifyEventExtGetEventCategory != NULL){
-      return m_wxNotifyEventExtGetEventCategory(this);
+      return m_wxNotifyEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -933,7 +928,7 @@ public:
   {
     wxEvent* res = wxScrollEvent::Clone();
     if (*m_wxScrollEventExtClone != NULL){
-      return m_wxScrollEventExtClone(this);
+      return m_wxScrollEventExtClone(this, res);
     }
     else {
       return res;
@@ -944,7 +939,7 @@ public:
   {
     wxObjectRefData* res = wxScrollEvent::CloneRefData(data);
     if (*m_wxScrollEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxScrollEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxScrollEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -955,7 +950,7 @@ public:
   {
     wxObjectRefData* res = wxScrollEvent::CreateRefData();
     if (*m_wxScrollEventExtCreateRefData != NULL){
-      return m_wxScrollEventExtCreateRefData(this);
+      return m_wxScrollEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -966,7 +961,7 @@ public:
   {
     wxClassInfo* res = wxScrollEvent::GetClassInfo();
     if (*m_wxScrollEventExtGetClassInfo != NULL){
-      return m_wxScrollEventExtGetClassInfo(this);
+      return m_wxScrollEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -977,7 +972,7 @@ public:
   {
     wxEventCategory res = wxScrollEvent::GetEventCategory();
     if (*m_wxScrollEventExtGetEventCategory != NULL){
-      return m_wxScrollEventExtGetEventCategory(this);
+      return m_wxScrollEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -1000,12 +995,11 @@ public:
   wxScrollWinEventExtCloneFunc m_wxScrollWinEventExtClone = NULL;
   virtual wxEvent* Clone() const override
   {
-    wxEvent* res = wxScrollWinEvent::Clone();
     if (*m_wxScrollWinEventExtClone != NULL){
       return m_wxScrollWinEventExtClone(this);
     }
     else {
-      return res;
+      return NULL;
     }
   }
   wxScrollWinEventExtCloneRefDatawxObjectRefDataCPFunc m_wxScrollWinEventExtCloneRefDatawxObjectRefDataCP = NULL;
@@ -1013,7 +1007,7 @@ public:
   {
     wxObjectRefData* res = wxScrollWinEvent::CloneRefData(data);
     if (*m_wxScrollWinEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxScrollWinEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxScrollWinEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -1024,7 +1018,7 @@ public:
   {
     wxObjectRefData* res = wxScrollWinEvent::CreateRefData();
     if (*m_wxScrollWinEventExtCreateRefData != NULL){
-      return m_wxScrollWinEventExtCreateRefData(this);
+      return m_wxScrollWinEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -1035,7 +1029,7 @@ public:
   {
     wxClassInfo* res = wxScrollWinEvent::GetClassInfo();
     if (*m_wxScrollWinEventExtGetClassInfo != NULL){
-      return m_wxScrollWinEventExtGetClassInfo(this);
+      return m_wxScrollWinEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -1046,7 +1040,7 @@ public:
   {
     wxEventCategory res = wxScrollWinEvent::GetEventCategory();
     if (*m_wxScrollWinEventExtGetEventCategory != NULL){
-      return m_wxScrollWinEventExtGetEventCategory(this);
+      return m_wxScrollWinEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -1069,12 +1063,11 @@ public:
   wxMouseEventExtCloneFunc m_wxMouseEventExtClone = NULL;
   virtual wxEvent* Clone() const override
   {
-    wxEvent* res = wxMouseEvent::Clone();
     if (*m_wxMouseEventExtClone != NULL){
       return m_wxMouseEventExtClone(this);
     }
     else {
-      return res;
+      return NULL;
     }
   }
   wxMouseEventExtCloneRefDatawxObjectRefDataCPFunc m_wxMouseEventExtCloneRefDatawxObjectRefDataCP = NULL;
@@ -1082,7 +1075,7 @@ public:
   {
     wxObjectRefData* res = wxMouseEvent::CloneRefData(data);
     if (*m_wxMouseEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxMouseEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxMouseEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -1093,7 +1086,7 @@ public:
   {
     wxObjectRefData* res = wxMouseEvent::CreateRefData();
     if (*m_wxMouseEventExtCreateRefData != NULL){
-      return m_wxMouseEventExtCreateRefData(this);
+      return m_wxMouseEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -1104,7 +1097,7 @@ public:
   {
     wxClassInfo* res = wxMouseEvent::GetClassInfo();
     if (*m_wxMouseEventExtGetClassInfo != NULL){
-      return m_wxMouseEventExtGetClassInfo(this);
+      return m_wxMouseEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -1115,7 +1108,7 @@ public:
   {
     wxEventCategory res = wxMouseEvent::GetEventCategory();
     if (*m_wxMouseEventExtGetEventCategory != NULL){
-      return m_wxMouseEventExtGetEventCategory(this);
+      return m_wxMouseEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -1138,12 +1131,11 @@ public:
   wxSetCursorEventExtCloneFunc m_wxSetCursorEventExtClone = NULL;
   virtual wxEvent* Clone() const override
   {
-    wxEvent* res = wxSetCursorEvent::Clone();
     if (*m_wxSetCursorEventExtClone != NULL){
       return m_wxSetCursorEventExtClone(this);
     }
     else {
-      return res;
+      return NULL;
     }
   }
   wxSetCursorEventExtCloneRefDatawxObjectRefDataCPFunc m_wxSetCursorEventExtCloneRefDatawxObjectRefDataCP = NULL;
@@ -1151,7 +1143,7 @@ public:
   {
     wxObjectRefData* res = wxSetCursorEvent::CloneRefData(data);
     if (*m_wxSetCursorEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxSetCursorEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxSetCursorEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -1162,7 +1154,7 @@ public:
   {
     wxObjectRefData* res = wxSetCursorEvent::CreateRefData();
     if (*m_wxSetCursorEventExtCreateRefData != NULL){
-      return m_wxSetCursorEventExtCreateRefData(this);
+      return m_wxSetCursorEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -1173,7 +1165,7 @@ public:
   {
     wxClassInfo* res = wxSetCursorEvent::GetClassInfo();
     if (*m_wxSetCursorEventExtGetClassInfo != NULL){
-      return m_wxSetCursorEventExtGetClassInfo(this);
+      return m_wxSetCursorEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -1184,7 +1176,7 @@ public:
   {
     wxEventCategory res = wxSetCursorEvent::GetEventCategory();
     if (*m_wxSetCursorEventExtGetEventCategory != NULL){
-      return m_wxSetCursorEventExtGetEventCategory(this);
+      return m_wxSetCursorEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -1207,12 +1199,11 @@ public:
   wxGestureEventExtCloneFunc m_wxGestureEventExtClone = NULL;
   virtual wxEvent* Clone() const override
   {
-    wxEvent* res = wxGestureEvent::Clone();
     if (*m_wxGestureEventExtClone != NULL){
       return m_wxGestureEventExtClone(this);
     }
     else {
-      return res;
+      return NULL;
     }
   }
   wxGestureEventExtCloneRefDatawxObjectRefDataCPFunc m_wxGestureEventExtCloneRefDatawxObjectRefDataCP = NULL;
@@ -1220,7 +1211,7 @@ public:
   {
     wxObjectRefData* res = wxGestureEvent::CloneRefData(data);
     if (*m_wxGestureEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxGestureEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxGestureEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -1231,7 +1222,7 @@ public:
   {
     wxObjectRefData* res = wxGestureEvent::CreateRefData();
     if (*m_wxGestureEventExtCreateRefData != NULL){
-      return m_wxGestureEventExtCreateRefData(this);
+      return m_wxGestureEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -1242,7 +1233,7 @@ public:
   {
     wxClassInfo* res = wxGestureEvent::GetClassInfo();
     if (*m_wxGestureEventExtGetClassInfo != NULL){
-      return m_wxGestureEventExtGetClassInfo(this);
+      return m_wxGestureEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -1253,7 +1244,7 @@ public:
   {
     wxEventCategory res = wxGestureEvent::GetEventCategory();
     if (*m_wxGestureEventExtGetEventCategory != NULL){
-      return m_wxGestureEventExtGetEventCategory(this);
+      return m_wxGestureEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -1278,7 +1269,7 @@ public:
   {
     wxEvent* res = wxPanGestureEvent::Clone();
     if (*m_wxPanGestureEventExtClone != NULL){
-      return m_wxPanGestureEventExtClone(this);
+      return m_wxPanGestureEventExtClone(this, res);
     }
     else {
       return res;
@@ -1289,7 +1280,7 @@ public:
   {
     wxObjectRefData* res = wxPanGestureEvent::CloneRefData(data);
     if (*m_wxPanGestureEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxPanGestureEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxPanGestureEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -1300,7 +1291,7 @@ public:
   {
     wxObjectRefData* res = wxPanGestureEvent::CreateRefData();
     if (*m_wxPanGestureEventExtCreateRefData != NULL){
-      return m_wxPanGestureEventExtCreateRefData(this);
+      return m_wxPanGestureEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -1311,7 +1302,7 @@ public:
   {
     wxClassInfo* res = wxPanGestureEvent::GetClassInfo();
     if (*m_wxPanGestureEventExtGetClassInfo != NULL){
-      return m_wxPanGestureEventExtGetClassInfo(this);
+      return m_wxPanGestureEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -1322,7 +1313,7 @@ public:
   {
     wxEventCategory res = wxPanGestureEvent::GetEventCategory();
     if (*m_wxPanGestureEventExtGetEventCategory != NULL){
-      return m_wxPanGestureEventExtGetEventCategory(this);
+      return m_wxPanGestureEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -1347,7 +1338,7 @@ public:
   {
     wxEvent* res = wxZoomGestureEvent::Clone();
     if (*m_wxZoomGestureEventExtClone != NULL){
-      return m_wxZoomGestureEventExtClone(this);
+      return m_wxZoomGestureEventExtClone(this, res);
     }
     else {
       return res;
@@ -1358,7 +1349,7 @@ public:
   {
     wxObjectRefData* res = wxZoomGestureEvent::CloneRefData(data);
     if (*m_wxZoomGestureEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxZoomGestureEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxZoomGestureEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -1369,7 +1360,7 @@ public:
   {
     wxObjectRefData* res = wxZoomGestureEvent::CreateRefData();
     if (*m_wxZoomGestureEventExtCreateRefData != NULL){
-      return m_wxZoomGestureEventExtCreateRefData(this);
+      return m_wxZoomGestureEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -1380,7 +1371,7 @@ public:
   {
     wxClassInfo* res = wxZoomGestureEvent::GetClassInfo();
     if (*m_wxZoomGestureEventExtGetClassInfo != NULL){
-      return m_wxZoomGestureEventExtGetClassInfo(this);
+      return m_wxZoomGestureEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -1391,7 +1382,7 @@ public:
   {
     wxEventCategory res = wxZoomGestureEvent::GetEventCategory();
     if (*m_wxZoomGestureEventExtGetEventCategory != NULL){
-      return m_wxZoomGestureEventExtGetEventCategory(this);
+      return m_wxZoomGestureEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -1416,7 +1407,7 @@ public:
   {
     wxEvent* res = wxRotateGestureEvent::Clone();
     if (*m_wxRotateGestureEventExtClone != NULL){
-      return m_wxRotateGestureEventExtClone(this);
+      return m_wxRotateGestureEventExtClone(this, res);
     }
     else {
       return res;
@@ -1427,7 +1418,7 @@ public:
   {
     wxObjectRefData* res = wxRotateGestureEvent::CloneRefData(data);
     if (*m_wxRotateGestureEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxRotateGestureEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxRotateGestureEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -1438,7 +1429,7 @@ public:
   {
     wxObjectRefData* res = wxRotateGestureEvent::CreateRefData();
     if (*m_wxRotateGestureEventExtCreateRefData != NULL){
-      return m_wxRotateGestureEventExtCreateRefData(this);
+      return m_wxRotateGestureEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -1449,7 +1440,7 @@ public:
   {
     wxClassInfo* res = wxRotateGestureEvent::GetClassInfo();
     if (*m_wxRotateGestureEventExtGetClassInfo != NULL){
-      return m_wxRotateGestureEventExtGetClassInfo(this);
+      return m_wxRotateGestureEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -1460,7 +1451,7 @@ public:
   {
     wxEventCategory res = wxRotateGestureEvent::GetEventCategory();
     if (*m_wxRotateGestureEventExtGetEventCategory != NULL){
-      return m_wxRotateGestureEventExtGetEventCategory(this);
+      return m_wxRotateGestureEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -1485,7 +1476,7 @@ public:
   {
     wxEvent* res = wxTwoFingerTapEvent::Clone();
     if (*m_wxTwoFingerTapEventExtClone != NULL){
-      return m_wxTwoFingerTapEventExtClone(this);
+      return m_wxTwoFingerTapEventExtClone(this, res);
     }
     else {
       return res;
@@ -1496,7 +1487,7 @@ public:
   {
     wxObjectRefData* res = wxTwoFingerTapEvent::CloneRefData(data);
     if (*m_wxTwoFingerTapEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxTwoFingerTapEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxTwoFingerTapEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -1507,7 +1498,7 @@ public:
   {
     wxObjectRefData* res = wxTwoFingerTapEvent::CreateRefData();
     if (*m_wxTwoFingerTapEventExtCreateRefData != NULL){
-      return m_wxTwoFingerTapEventExtCreateRefData(this);
+      return m_wxTwoFingerTapEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -1518,7 +1509,7 @@ public:
   {
     wxClassInfo* res = wxTwoFingerTapEvent::GetClassInfo();
     if (*m_wxTwoFingerTapEventExtGetClassInfo != NULL){
-      return m_wxTwoFingerTapEventExtGetClassInfo(this);
+      return m_wxTwoFingerTapEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -1529,7 +1520,7 @@ public:
   {
     wxEventCategory res = wxTwoFingerTapEvent::GetEventCategory();
     if (*m_wxTwoFingerTapEventExtGetEventCategory != NULL){
-      return m_wxTwoFingerTapEventExtGetEventCategory(this);
+      return m_wxTwoFingerTapEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -1554,7 +1545,7 @@ public:
   {
     wxEvent* res = wxLongPressEvent::Clone();
     if (*m_wxLongPressEventExtClone != NULL){
-      return m_wxLongPressEventExtClone(this);
+      return m_wxLongPressEventExtClone(this, res);
     }
     else {
       return res;
@@ -1565,7 +1556,7 @@ public:
   {
     wxObjectRefData* res = wxLongPressEvent::CloneRefData(data);
     if (*m_wxLongPressEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxLongPressEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxLongPressEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -1576,7 +1567,7 @@ public:
   {
     wxObjectRefData* res = wxLongPressEvent::CreateRefData();
     if (*m_wxLongPressEventExtCreateRefData != NULL){
-      return m_wxLongPressEventExtCreateRefData(this);
+      return m_wxLongPressEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -1587,7 +1578,7 @@ public:
   {
     wxClassInfo* res = wxLongPressEvent::GetClassInfo();
     if (*m_wxLongPressEventExtGetClassInfo != NULL){
-      return m_wxLongPressEventExtGetClassInfo(this);
+      return m_wxLongPressEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -1598,7 +1589,7 @@ public:
   {
     wxEventCategory res = wxLongPressEvent::GetEventCategory();
     if (*m_wxLongPressEventExtGetEventCategory != NULL){
-      return m_wxLongPressEventExtGetEventCategory(this);
+      return m_wxLongPressEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -1623,7 +1614,7 @@ public:
   {
     wxEvent* res = wxPressAndTapEvent::Clone();
     if (*m_wxPressAndTapEventExtClone != NULL){
-      return m_wxPressAndTapEventExtClone(this);
+      return m_wxPressAndTapEventExtClone(this, res);
     }
     else {
       return res;
@@ -1634,7 +1625,7 @@ public:
   {
     wxObjectRefData* res = wxPressAndTapEvent::CloneRefData(data);
     if (*m_wxPressAndTapEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxPressAndTapEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxPressAndTapEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -1645,7 +1636,7 @@ public:
   {
     wxObjectRefData* res = wxPressAndTapEvent::CreateRefData();
     if (*m_wxPressAndTapEventExtCreateRefData != NULL){
-      return m_wxPressAndTapEventExtCreateRefData(this);
+      return m_wxPressAndTapEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -1656,7 +1647,7 @@ public:
   {
     wxClassInfo* res = wxPressAndTapEvent::GetClassInfo();
     if (*m_wxPressAndTapEventExtGetClassInfo != NULL){
-      return m_wxPressAndTapEventExtGetClassInfo(this);
+      return m_wxPressAndTapEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -1667,7 +1658,7 @@ public:
   {
     wxEventCategory res = wxPressAndTapEvent::GetEventCategory();
     if (*m_wxPressAndTapEventExtGetEventCategory != NULL){
-      return m_wxPressAndTapEventExtGetEventCategory(this);
+      return m_wxPressAndTapEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -1691,12 +1682,11 @@ public:
   wxKeyEventExtCloneFunc m_wxKeyEventExtClone = NULL;
   virtual wxEvent* Clone() const override
   {
-    wxEvent* res = wxKeyEvent::Clone();
     if (*m_wxKeyEventExtClone != NULL){
       return m_wxKeyEventExtClone(this);
     }
     else {
-      return res;
+      return NULL;
     }
   }
   wxKeyEventExtCloneRefDatawxObjectRefDataCPFunc m_wxKeyEventExtCloneRefDatawxObjectRefDataCP = NULL;
@@ -1704,7 +1694,7 @@ public:
   {
     wxObjectRefData* res = wxKeyEvent::CloneRefData(data);
     if (*m_wxKeyEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxKeyEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxKeyEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -1715,7 +1705,7 @@ public:
   {
     wxObjectRefData* res = wxKeyEvent::CreateRefData();
     if (*m_wxKeyEventExtCreateRefData != NULL){
-      return m_wxKeyEventExtCreateRefData(this);
+      return m_wxKeyEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -1726,7 +1716,7 @@ public:
   {
     wxClassInfo* res = wxKeyEvent::GetClassInfo();
     if (*m_wxKeyEventExtGetClassInfo != NULL){
-      return m_wxKeyEventExtGetClassInfo(this);
+      return m_wxKeyEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -1737,7 +1727,7 @@ public:
   {
     wxEventCategory res = wxKeyEvent::GetEventCategory();
     if (*m_wxKeyEventExtGetEventCategory != NULL){
-      return m_wxKeyEventExtGetEventCategory(this);
+      return m_wxKeyEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -1762,12 +1752,11 @@ public:
   wxSizeEventExtCloneFunc m_wxSizeEventExtClone = NULL;
   virtual wxEvent* Clone() const override
   {
-    wxEvent* res = wxSizeEvent::Clone();
     if (*m_wxSizeEventExtClone != NULL){
       return m_wxSizeEventExtClone(this);
     }
     else {
-      return res;
+      return NULL;
     }
   }
   wxSizeEventExtCloneRefDatawxObjectRefDataCPFunc m_wxSizeEventExtCloneRefDatawxObjectRefDataCP = NULL;
@@ -1775,7 +1764,7 @@ public:
   {
     wxObjectRefData* res = wxSizeEvent::CloneRefData(data);
     if (*m_wxSizeEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxSizeEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxSizeEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -1786,7 +1775,7 @@ public:
   {
     wxObjectRefData* res = wxSizeEvent::CreateRefData();
     if (*m_wxSizeEventExtCreateRefData != NULL){
-      return m_wxSizeEventExtCreateRefData(this);
+      return m_wxSizeEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -1797,7 +1786,7 @@ public:
   {
     wxClassInfo* res = wxSizeEvent::GetClassInfo();
     if (*m_wxSizeEventExtGetClassInfo != NULL){
-      return m_wxSizeEventExtGetClassInfo(this);
+      return m_wxSizeEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -1808,7 +1797,7 @@ public:
   {
     wxEventCategory res = wxSizeEvent::GetEventCategory();
     if (*m_wxSizeEventExtGetEventCategory != NULL){
-      return m_wxSizeEventExtGetEventCategory(this);
+      return m_wxSizeEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -1833,12 +1822,11 @@ public:
   wxMoveEventExtCloneFunc m_wxMoveEventExtClone = NULL;
   virtual wxEvent* Clone() const override
   {
-    wxEvent* res = wxMoveEvent::Clone();
     if (*m_wxMoveEventExtClone != NULL){
       return m_wxMoveEventExtClone(this);
     }
     else {
-      return res;
+      return NULL;
     }
   }
   wxMoveEventExtCloneRefDatawxObjectRefDataCPFunc m_wxMoveEventExtCloneRefDatawxObjectRefDataCP = NULL;
@@ -1846,7 +1834,7 @@ public:
   {
     wxObjectRefData* res = wxMoveEvent::CloneRefData(data);
     if (*m_wxMoveEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxMoveEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxMoveEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -1857,7 +1845,7 @@ public:
   {
     wxObjectRefData* res = wxMoveEvent::CreateRefData();
     if (*m_wxMoveEventExtCreateRefData != NULL){
-      return m_wxMoveEventExtCreateRefData(this);
+      return m_wxMoveEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -1868,7 +1856,7 @@ public:
   {
     wxClassInfo* res = wxMoveEvent::GetClassInfo();
     if (*m_wxMoveEventExtGetClassInfo != NULL){
-      return m_wxMoveEventExtGetClassInfo(this);
+      return m_wxMoveEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -1879,7 +1867,7 @@ public:
   {
     wxEventCategory res = wxMoveEvent::GetEventCategory();
     if (*m_wxMoveEventExtGetEventCategory != NULL){
-      return m_wxMoveEventExtGetEventCategory(this);
+      return m_wxMoveEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -1901,12 +1889,11 @@ public:
   wxPaintEventExtCloneFunc m_wxPaintEventExtClone = NULL;
   virtual wxEvent* Clone() const override
   {
-    wxEvent* res = wxPaintEvent::Clone();
     if (*m_wxPaintEventExtClone != NULL){
       return m_wxPaintEventExtClone(this);
     }
     else {
-      return res;
+      return NULL;
     }
   }
   wxPaintEventExtCloneRefDatawxObjectRefDataCPFunc m_wxPaintEventExtCloneRefDatawxObjectRefDataCP = NULL;
@@ -1914,7 +1901,7 @@ public:
   {
     wxObjectRefData* res = wxPaintEvent::CloneRefData(data);
     if (*m_wxPaintEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxPaintEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxPaintEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -1925,7 +1912,7 @@ public:
   {
     wxObjectRefData* res = wxPaintEvent::CreateRefData();
     if (*m_wxPaintEventExtCreateRefData != NULL){
-      return m_wxPaintEventExtCreateRefData(this);
+      return m_wxPaintEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -1936,7 +1923,7 @@ public:
   {
     wxClassInfo* res = wxPaintEvent::GetClassInfo();
     if (*m_wxPaintEventExtGetClassInfo != NULL){
-      return m_wxPaintEventExtGetClassInfo(this);
+      return m_wxPaintEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -1947,7 +1934,7 @@ public:
   {
     wxEventCategory res = wxPaintEvent::GetEventCategory();
     if (*m_wxPaintEventExtGetEventCategory != NULL){
-      return m_wxPaintEventExtGetEventCategory(this);
+      return m_wxPaintEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -1969,12 +1956,11 @@ public:
   wxNcPaintEventExtCloneFunc m_wxNcPaintEventExtClone = NULL;
   virtual wxEvent* Clone() const override
   {
-    wxEvent* res = wxNcPaintEvent::Clone();
     if (*m_wxNcPaintEventExtClone != NULL){
       return m_wxNcPaintEventExtClone(this);
     }
     else {
-      return res;
+      return NULL;
     }
   }
   wxNcPaintEventExtCloneRefDatawxObjectRefDataCPFunc m_wxNcPaintEventExtCloneRefDatawxObjectRefDataCP = NULL;
@@ -1982,7 +1968,7 @@ public:
   {
     wxObjectRefData* res = wxNcPaintEvent::CloneRefData(data);
     if (*m_wxNcPaintEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxNcPaintEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxNcPaintEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -1993,7 +1979,7 @@ public:
   {
     wxObjectRefData* res = wxNcPaintEvent::CreateRefData();
     if (*m_wxNcPaintEventExtCreateRefData != NULL){
-      return m_wxNcPaintEventExtCreateRefData(this);
+      return m_wxNcPaintEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -2004,7 +1990,7 @@ public:
   {
     wxClassInfo* res = wxNcPaintEvent::GetClassInfo();
     if (*m_wxNcPaintEventExtGetClassInfo != NULL){
-      return m_wxNcPaintEventExtGetClassInfo(this);
+      return m_wxNcPaintEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -2015,7 +2001,7 @@ public:
   {
     wxEventCategory res = wxNcPaintEvent::GetEventCategory();
     if (*m_wxNcPaintEventExtGetEventCategory != NULL){
-      return m_wxNcPaintEventExtGetEventCategory(this);
+      return m_wxNcPaintEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -2038,12 +2024,11 @@ public:
   wxEraseEventExtCloneFunc m_wxEraseEventExtClone = NULL;
   virtual wxEvent* Clone() const override
   {
-    wxEvent* res = wxEraseEvent::Clone();
     if (*m_wxEraseEventExtClone != NULL){
       return m_wxEraseEventExtClone(this);
     }
     else {
-      return res;
+      return NULL;
     }
   }
   wxEraseEventExtCloneRefDatawxObjectRefDataCPFunc m_wxEraseEventExtCloneRefDatawxObjectRefDataCP = NULL;
@@ -2051,7 +2036,7 @@ public:
   {
     wxObjectRefData* res = wxEraseEvent::CloneRefData(data);
     if (*m_wxEraseEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxEraseEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxEraseEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -2062,7 +2047,7 @@ public:
   {
     wxObjectRefData* res = wxEraseEvent::CreateRefData();
     if (*m_wxEraseEventExtCreateRefData != NULL){
-      return m_wxEraseEventExtCreateRefData(this);
+      return m_wxEraseEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -2073,7 +2058,7 @@ public:
   {
     wxClassInfo* res = wxEraseEvent::GetClassInfo();
     if (*m_wxEraseEventExtGetClassInfo != NULL){
-      return m_wxEraseEventExtGetClassInfo(this);
+      return m_wxEraseEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -2084,7 +2069,7 @@ public:
   {
     wxEventCategory res = wxEraseEvent::GetEventCategory();
     if (*m_wxEraseEventExtGetEventCategory != NULL){
-      return m_wxEraseEventExtGetEventCategory(this);
+      return m_wxEraseEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -2107,12 +2092,11 @@ public:
   wxFocusEventExtCloneFunc m_wxFocusEventExtClone = NULL;
   virtual wxEvent* Clone() const override
   {
-    wxEvent* res = wxFocusEvent::Clone();
     if (*m_wxFocusEventExtClone != NULL){
       return m_wxFocusEventExtClone(this);
     }
     else {
-      return res;
+      return NULL;
     }
   }
   wxFocusEventExtCloneRefDatawxObjectRefDataCPFunc m_wxFocusEventExtCloneRefDatawxObjectRefDataCP = NULL;
@@ -2120,7 +2104,7 @@ public:
   {
     wxObjectRefData* res = wxFocusEvent::CloneRefData(data);
     if (*m_wxFocusEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxFocusEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxFocusEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -2131,7 +2115,7 @@ public:
   {
     wxObjectRefData* res = wxFocusEvent::CreateRefData();
     if (*m_wxFocusEventExtCreateRefData != NULL){
-      return m_wxFocusEventExtCreateRefData(this);
+      return m_wxFocusEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -2142,7 +2126,7 @@ public:
   {
     wxClassInfo* res = wxFocusEvent::GetClassInfo();
     if (*m_wxFocusEventExtGetClassInfo != NULL){
-      return m_wxFocusEventExtGetClassInfo(this);
+      return m_wxFocusEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -2153,7 +2137,7 @@ public:
   {
     wxEventCategory res = wxFocusEvent::GetEventCategory();
     if (*m_wxFocusEventExtGetEventCategory != NULL){
-      return m_wxFocusEventExtGetEventCategory(this);
+      return m_wxFocusEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -2178,7 +2162,7 @@ public:
   {
     wxEvent* res = wxChildFocusEvent::Clone();
     if (*m_wxChildFocusEventExtClone != NULL){
-      return m_wxChildFocusEventExtClone(this);
+      return m_wxChildFocusEventExtClone(this, res);
     }
     else {
       return res;
@@ -2189,7 +2173,7 @@ public:
   {
     wxObjectRefData* res = wxChildFocusEvent::CloneRefData(data);
     if (*m_wxChildFocusEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxChildFocusEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxChildFocusEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -2200,7 +2184,7 @@ public:
   {
     wxObjectRefData* res = wxChildFocusEvent::CreateRefData();
     if (*m_wxChildFocusEventExtCreateRefData != NULL){
-      return m_wxChildFocusEventExtCreateRefData(this);
+      return m_wxChildFocusEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -2211,7 +2195,7 @@ public:
   {
     wxClassInfo* res = wxChildFocusEvent::GetClassInfo();
     if (*m_wxChildFocusEventExtGetClassInfo != NULL){
-      return m_wxChildFocusEventExtGetClassInfo(this);
+      return m_wxChildFocusEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -2222,7 +2206,7 @@ public:
   {
     wxEventCategory res = wxChildFocusEvent::GetEventCategory();
     if (*m_wxChildFocusEventExtGetEventCategory != NULL){
-      return m_wxChildFocusEventExtGetEventCategory(this);
+      return m_wxChildFocusEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -2245,12 +2229,11 @@ public:
   wxActivateEventExtCloneFunc m_wxActivateEventExtClone = NULL;
   virtual wxEvent* Clone() const override
   {
-    wxEvent* res = wxActivateEvent::Clone();
     if (*m_wxActivateEventExtClone != NULL){
       return m_wxActivateEventExtClone(this);
     }
     else {
-      return res;
+      return NULL;
     }
   }
   wxActivateEventExtCloneRefDatawxObjectRefDataCPFunc m_wxActivateEventExtCloneRefDatawxObjectRefDataCP = NULL;
@@ -2258,7 +2241,7 @@ public:
   {
     wxObjectRefData* res = wxActivateEvent::CloneRefData(data);
     if (*m_wxActivateEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxActivateEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxActivateEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -2269,7 +2252,7 @@ public:
   {
     wxObjectRefData* res = wxActivateEvent::CreateRefData();
     if (*m_wxActivateEventExtCreateRefData != NULL){
-      return m_wxActivateEventExtCreateRefData(this);
+      return m_wxActivateEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -2280,7 +2263,7 @@ public:
   {
     wxClassInfo* res = wxActivateEvent::GetClassInfo();
     if (*m_wxActivateEventExtGetClassInfo != NULL){
-      return m_wxActivateEventExtGetClassInfo(this);
+      return m_wxActivateEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -2291,7 +2274,7 @@ public:
   {
     wxEventCategory res = wxActivateEvent::GetEventCategory();
     if (*m_wxActivateEventExtGetEventCategory != NULL){
-      return m_wxActivateEventExtGetEventCategory(this);
+      return m_wxActivateEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -2314,12 +2297,11 @@ public:
   wxInitDialogEventExtCloneFunc m_wxInitDialogEventExtClone = NULL;
   virtual wxEvent* Clone() const override
   {
-    wxEvent* res = wxInitDialogEvent::Clone();
     if (*m_wxInitDialogEventExtClone != NULL){
       return m_wxInitDialogEventExtClone(this);
     }
     else {
-      return res;
+      return NULL;
     }
   }
   wxInitDialogEventExtCloneRefDatawxObjectRefDataCPFunc m_wxInitDialogEventExtCloneRefDatawxObjectRefDataCP = NULL;
@@ -2327,7 +2309,7 @@ public:
   {
     wxObjectRefData* res = wxInitDialogEvent::CloneRefData(data);
     if (*m_wxInitDialogEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxInitDialogEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxInitDialogEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -2338,7 +2320,7 @@ public:
   {
     wxObjectRefData* res = wxInitDialogEvent::CreateRefData();
     if (*m_wxInitDialogEventExtCreateRefData != NULL){
-      return m_wxInitDialogEventExtCreateRefData(this);
+      return m_wxInitDialogEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -2349,7 +2331,7 @@ public:
   {
     wxClassInfo* res = wxInitDialogEvent::GetClassInfo();
     if (*m_wxInitDialogEventExtGetClassInfo != NULL){
-      return m_wxInitDialogEventExtGetClassInfo(this);
+      return m_wxInitDialogEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -2360,7 +2342,7 @@ public:
   {
     wxEventCategory res = wxInitDialogEvent::GetEventCategory();
     if (*m_wxInitDialogEventExtGetEventCategory != NULL){
-      return m_wxInitDialogEventExtGetEventCategory(this);
+      return m_wxInitDialogEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -2383,12 +2365,11 @@ public:
   wxMenuEventExtCloneFunc m_wxMenuEventExtClone = NULL;
   virtual wxEvent* Clone() const override
   {
-    wxEvent* res = wxMenuEvent::Clone();
     if (*m_wxMenuEventExtClone != NULL){
       return m_wxMenuEventExtClone(this);
     }
     else {
-      return res;
+      return NULL;
     }
   }
   wxMenuEventExtCloneRefDatawxObjectRefDataCPFunc m_wxMenuEventExtCloneRefDatawxObjectRefDataCP = NULL;
@@ -2396,7 +2377,7 @@ public:
   {
     wxObjectRefData* res = wxMenuEvent::CloneRefData(data);
     if (*m_wxMenuEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxMenuEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxMenuEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -2407,7 +2388,7 @@ public:
   {
     wxObjectRefData* res = wxMenuEvent::CreateRefData();
     if (*m_wxMenuEventExtCreateRefData != NULL){
-      return m_wxMenuEventExtCreateRefData(this);
+      return m_wxMenuEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -2418,7 +2399,7 @@ public:
   {
     wxClassInfo* res = wxMenuEvent::GetClassInfo();
     if (*m_wxMenuEventExtGetClassInfo != NULL){
-      return m_wxMenuEventExtGetClassInfo(this);
+      return m_wxMenuEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -2429,7 +2410,7 @@ public:
   {
     wxEventCategory res = wxMenuEvent::GetEventCategory();
     if (*m_wxMenuEventExtGetEventCategory != NULL){
-      return m_wxMenuEventExtGetEventCategory(this);
+      return m_wxMenuEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -2452,12 +2433,11 @@ public:
   wxCloseEventExtCloneFunc m_wxCloseEventExtClone = NULL;
   virtual wxEvent* Clone() const override
   {
-    wxEvent* res = wxCloseEvent::Clone();
     if (*m_wxCloseEventExtClone != NULL){
       return m_wxCloseEventExtClone(this);
     }
     else {
-      return res;
+      return NULL;
     }
   }
   wxCloseEventExtCloneRefDatawxObjectRefDataCPFunc m_wxCloseEventExtCloneRefDatawxObjectRefDataCP = NULL;
@@ -2465,7 +2445,7 @@ public:
   {
     wxObjectRefData* res = wxCloseEvent::CloneRefData(data);
     if (*m_wxCloseEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxCloseEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxCloseEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -2476,7 +2456,7 @@ public:
   {
     wxObjectRefData* res = wxCloseEvent::CreateRefData();
     if (*m_wxCloseEventExtCreateRefData != NULL){
-      return m_wxCloseEventExtCreateRefData(this);
+      return m_wxCloseEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -2487,7 +2467,7 @@ public:
   {
     wxClassInfo* res = wxCloseEvent::GetClassInfo();
     if (*m_wxCloseEventExtGetClassInfo != NULL){
-      return m_wxCloseEventExtGetClassInfo(this);
+      return m_wxCloseEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -2498,7 +2478,7 @@ public:
   {
     wxEventCategory res = wxCloseEvent::GetEventCategory();
     if (*m_wxCloseEventExtGetEventCategory != NULL){
-      return m_wxCloseEventExtGetEventCategory(this);
+      return m_wxCloseEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -2521,12 +2501,11 @@ public:
   wxShowEventExtCloneFunc m_wxShowEventExtClone = NULL;
   virtual wxEvent* Clone() const override
   {
-    wxEvent* res = wxShowEvent::Clone();
     if (*m_wxShowEventExtClone != NULL){
       return m_wxShowEventExtClone(this);
     }
     else {
-      return res;
+      return NULL;
     }
   }
   wxShowEventExtCloneRefDatawxObjectRefDataCPFunc m_wxShowEventExtCloneRefDatawxObjectRefDataCP = NULL;
@@ -2534,7 +2513,7 @@ public:
   {
     wxObjectRefData* res = wxShowEvent::CloneRefData(data);
     if (*m_wxShowEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxShowEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxShowEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -2545,7 +2524,7 @@ public:
   {
     wxObjectRefData* res = wxShowEvent::CreateRefData();
     if (*m_wxShowEventExtCreateRefData != NULL){
-      return m_wxShowEventExtCreateRefData(this);
+      return m_wxShowEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -2556,7 +2535,7 @@ public:
   {
     wxClassInfo* res = wxShowEvent::GetClassInfo();
     if (*m_wxShowEventExtGetClassInfo != NULL){
-      return m_wxShowEventExtGetClassInfo(this);
+      return m_wxShowEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -2567,7 +2546,7 @@ public:
   {
     wxEventCategory res = wxShowEvent::GetEventCategory();
     if (*m_wxShowEventExtGetEventCategory != NULL){
-      return m_wxShowEventExtGetEventCategory(this);
+      return m_wxShowEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -2590,12 +2569,11 @@ public:
   wxIconizeEventExtCloneFunc m_wxIconizeEventExtClone = NULL;
   virtual wxEvent* Clone() const override
   {
-    wxEvent* res = wxIconizeEvent::Clone();
     if (*m_wxIconizeEventExtClone != NULL){
       return m_wxIconizeEventExtClone(this);
     }
     else {
-      return res;
+      return NULL;
     }
   }
   wxIconizeEventExtCloneRefDatawxObjectRefDataCPFunc m_wxIconizeEventExtCloneRefDatawxObjectRefDataCP = NULL;
@@ -2603,7 +2581,7 @@ public:
   {
     wxObjectRefData* res = wxIconizeEvent::CloneRefData(data);
     if (*m_wxIconizeEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxIconizeEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxIconizeEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -2614,7 +2592,7 @@ public:
   {
     wxObjectRefData* res = wxIconizeEvent::CreateRefData();
     if (*m_wxIconizeEventExtCreateRefData != NULL){
-      return m_wxIconizeEventExtCreateRefData(this);
+      return m_wxIconizeEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -2625,7 +2603,7 @@ public:
   {
     wxClassInfo* res = wxIconizeEvent::GetClassInfo();
     if (*m_wxIconizeEventExtGetClassInfo != NULL){
-      return m_wxIconizeEventExtGetClassInfo(this);
+      return m_wxIconizeEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -2636,7 +2614,7 @@ public:
   {
     wxEventCategory res = wxIconizeEvent::GetEventCategory();
     if (*m_wxIconizeEventExtGetEventCategory != NULL){
-      return m_wxIconizeEventExtGetEventCategory(this);
+      return m_wxIconizeEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -2659,12 +2637,11 @@ public:
   wxMaximizeEventExtCloneFunc m_wxMaximizeEventExtClone = NULL;
   virtual wxEvent* Clone() const override
   {
-    wxEvent* res = wxMaximizeEvent::Clone();
     if (*m_wxMaximizeEventExtClone != NULL){
       return m_wxMaximizeEventExtClone(this);
     }
     else {
-      return res;
+      return NULL;
     }
   }
   wxMaximizeEventExtCloneRefDatawxObjectRefDataCPFunc m_wxMaximizeEventExtCloneRefDatawxObjectRefDataCP = NULL;
@@ -2672,7 +2649,7 @@ public:
   {
     wxObjectRefData* res = wxMaximizeEvent::CloneRefData(data);
     if (*m_wxMaximizeEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxMaximizeEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxMaximizeEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -2683,7 +2660,7 @@ public:
   {
     wxObjectRefData* res = wxMaximizeEvent::CreateRefData();
     if (*m_wxMaximizeEventExtCreateRefData != NULL){
-      return m_wxMaximizeEventExtCreateRefData(this);
+      return m_wxMaximizeEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -2694,7 +2671,7 @@ public:
   {
     wxClassInfo* res = wxMaximizeEvent::GetClassInfo();
     if (*m_wxMaximizeEventExtGetClassInfo != NULL){
-      return m_wxMaximizeEventExtGetClassInfo(this);
+      return m_wxMaximizeEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -2705,7 +2682,7 @@ public:
   {
     wxEventCategory res = wxMaximizeEvent::GetEventCategory();
     if (*m_wxMaximizeEventExtGetEventCategory != NULL){
-      return m_wxMaximizeEventExtGetEventCategory(this);
+      return m_wxMaximizeEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -2728,12 +2705,11 @@ public:
   wxFullScreenEventExtCloneFunc m_wxFullScreenEventExtClone = NULL;
   virtual wxEvent* Clone() const override
   {
-    wxEvent* res = wxFullScreenEvent::Clone();
     if (*m_wxFullScreenEventExtClone != NULL){
       return m_wxFullScreenEventExtClone(this);
     }
     else {
-      return res;
+      return NULL;
     }
   }
   wxFullScreenEventExtCloneRefDatawxObjectRefDataCPFunc m_wxFullScreenEventExtCloneRefDatawxObjectRefDataCP = NULL;
@@ -2741,7 +2717,7 @@ public:
   {
     wxObjectRefData* res = wxFullScreenEvent::CloneRefData(data);
     if (*m_wxFullScreenEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxFullScreenEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxFullScreenEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -2752,7 +2728,7 @@ public:
   {
     wxObjectRefData* res = wxFullScreenEvent::CreateRefData();
     if (*m_wxFullScreenEventExtCreateRefData != NULL){
-      return m_wxFullScreenEventExtCreateRefData(this);
+      return m_wxFullScreenEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -2763,7 +2739,7 @@ public:
   {
     wxClassInfo* res = wxFullScreenEvent::GetClassInfo();
     if (*m_wxFullScreenEventExtGetClassInfo != NULL){
-      return m_wxFullScreenEventExtGetClassInfo(this);
+      return m_wxFullScreenEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -2774,7 +2750,7 @@ public:
   {
     wxEventCategory res = wxFullScreenEvent::GetEventCategory();
     if (*m_wxFullScreenEventExtGetEventCategory != NULL){
-      return m_wxFullScreenEventExtGetEventCategory(this);
+      return m_wxFullScreenEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -2797,12 +2773,11 @@ public:
   wxJoystickEventExtCloneFunc m_wxJoystickEventExtClone = NULL;
   virtual wxEvent* Clone() const override
   {
-    wxEvent* res = wxJoystickEvent::Clone();
     if (*m_wxJoystickEventExtClone != NULL){
       return m_wxJoystickEventExtClone(this);
     }
     else {
-      return res;
+      return NULL;
     }
   }
   wxJoystickEventExtCloneRefDatawxObjectRefDataCPFunc m_wxJoystickEventExtCloneRefDatawxObjectRefDataCP = NULL;
@@ -2810,7 +2785,7 @@ public:
   {
     wxObjectRefData* res = wxJoystickEvent::CloneRefData(data);
     if (*m_wxJoystickEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxJoystickEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxJoystickEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -2821,7 +2796,7 @@ public:
   {
     wxObjectRefData* res = wxJoystickEvent::CreateRefData();
     if (*m_wxJoystickEventExtCreateRefData != NULL){
-      return m_wxJoystickEventExtCreateRefData(this);
+      return m_wxJoystickEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -2832,7 +2807,7 @@ public:
   {
     wxClassInfo* res = wxJoystickEvent::GetClassInfo();
     if (*m_wxJoystickEventExtGetClassInfo != NULL){
-      return m_wxJoystickEventExtGetClassInfo(this);
+      return m_wxJoystickEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -2843,7 +2818,7 @@ public:
   {
     wxEventCategory res = wxJoystickEvent::GetEventCategory();
     if (*m_wxJoystickEventExtGetEventCategory != NULL){
-      return m_wxJoystickEventExtGetEventCategory(this);
+      return m_wxJoystickEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -2867,12 +2842,11 @@ public:
   wxDropFilesEventExtCloneFunc m_wxDropFilesEventExtClone = NULL;
   virtual wxEvent* Clone() const override
   {
-    wxEvent* res = wxDropFilesEvent::Clone();
     if (*m_wxDropFilesEventExtClone != NULL){
       return m_wxDropFilesEventExtClone(this);
     }
     else {
-      return res;
+      return NULL;
     }
   }
   wxDropFilesEventExtCloneRefDatawxObjectRefDataCPFunc m_wxDropFilesEventExtCloneRefDatawxObjectRefDataCP = NULL;
@@ -2880,7 +2854,7 @@ public:
   {
     wxObjectRefData* res = wxDropFilesEvent::CloneRefData(data);
     if (*m_wxDropFilesEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxDropFilesEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxDropFilesEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -2891,7 +2865,7 @@ public:
   {
     wxObjectRefData* res = wxDropFilesEvent::CreateRefData();
     if (*m_wxDropFilesEventExtCreateRefData != NULL){
-      return m_wxDropFilesEventExtCreateRefData(this);
+      return m_wxDropFilesEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -2902,7 +2876,7 @@ public:
   {
     wxClassInfo* res = wxDropFilesEvent::GetClassInfo();
     if (*m_wxDropFilesEventExtGetClassInfo != NULL){
-      return m_wxDropFilesEventExtGetClassInfo(this);
+      return m_wxDropFilesEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -2913,7 +2887,7 @@ public:
   {
     wxEventCategory res = wxDropFilesEvent::GetEventCategory();
     if (*m_wxDropFilesEventExtGetEventCategory != NULL){
-      return m_wxDropFilesEventExtGetEventCategory(this);
+      return m_wxDropFilesEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -2938,7 +2912,7 @@ public:
   {
     wxEvent* res = wxUpdateUIEvent::Clone();
     if (*m_wxUpdateUIEventExtClone != NULL){
-      return m_wxUpdateUIEventExtClone(this);
+      return m_wxUpdateUIEventExtClone(this, res);
     }
     else {
       return res;
@@ -2949,7 +2923,7 @@ public:
   {
     wxObjectRefData* res = wxUpdateUIEvent::CloneRefData(data);
     if (*m_wxUpdateUIEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxUpdateUIEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxUpdateUIEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -2960,7 +2934,7 @@ public:
   {
     wxObjectRefData* res = wxUpdateUIEvent::CreateRefData();
     if (*m_wxUpdateUIEventExtCreateRefData != NULL){
-      return m_wxUpdateUIEventExtCreateRefData(this);
+      return m_wxUpdateUIEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -2971,7 +2945,7 @@ public:
   {
     wxClassInfo* res = wxUpdateUIEvent::GetClassInfo();
     if (*m_wxUpdateUIEventExtGetClassInfo != NULL){
-      return m_wxUpdateUIEventExtGetClassInfo(this);
+      return m_wxUpdateUIEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -2982,7 +2956,7 @@ public:
   {
     wxEventCategory res = wxUpdateUIEvent::GetEventCategory();
     if (*m_wxUpdateUIEventExtGetEventCategory != NULL){
-      return m_wxUpdateUIEventExtGetEventCategory(this);
+      return m_wxUpdateUIEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -3005,12 +2979,11 @@ public:
   wxSysColourChangedEventExtCloneFunc m_wxSysColourChangedEventExtClone = NULL;
   virtual wxEvent* Clone() const override
   {
-    wxEvent* res = wxSysColourChangedEvent::Clone();
     if (*m_wxSysColourChangedEventExtClone != NULL){
       return m_wxSysColourChangedEventExtClone(this);
     }
     else {
-      return res;
+      return NULL;
     }
   }
   wxSysColourChangedEventExtCloneRefDatawxObjectRefDataCPFunc m_wxSysColourChangedEventExtCloneRefDatawxObjectRefDataCP = NULL;
@@ -3018,7 +2991,7 @@ public:
   {
     wxObjectRefData* res = wxSysColourChangedEvent::CloneRefData(data);
     if (*m_wxSysColourChangedEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxSysColourChangedEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxSysColourChangedEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -3029,7 +3002,7 @@ public:
   {
     wxObjectRefData* res = wxSysColourChangedEvent::CreateRefData();
     if (*m_wxSysColourChangedEventExtCreateRefData != NULL){
-      return m_wxSysColourChangedEventExtCreateRefData(this);
+      return m_wxSysColourChangedEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -3040,7 +3013,7 @@ public:
   {
     wxClassInfo* res = wxSysColourChangedEvent::GetClassInfo();
     if (*m_wxSysColourChangedEventExtGetClassInfo != NULL){
-      return m_wxSysColourChangedEventExtGetClassInfo(this);
+      return m_wxSysColourChangedEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -3051,7 +3024,7 @@ public:
   {
     wxEventCategory res = wxSysColourChangedEvent::GetEventCategory();
     if (*m_wxSysColourChangedEventExtGetEventCategory != NULL){
-      return m_wxSysColourChangedEventExtGetEventCategory(this);
+      return m_wxSysColourChangedEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -3074,12 +3047,11 @@ public:
   wxMouseCaptureChangedEventExtCloneFunc m_wxMouseCaptureChangedEventExtClone = NULL;
   virtual wxEvent* Clone() const override
   {
-    wxEvent* res = wxMouseCaptureChangedEvent::Clone();
     if (*m_wxMouseCaptureChangedEventExtClone != NULL){
       return m_wxMouseCaptureChangedEventExtClone(this);
     }
     else {
-      return res;
+      return NULL;
     }
   }
   wxMouseCaptureChangedEventExtCloneRefDatawxObjectRefDataCPFunc m_wxMouseCaptureChangedEventExtCloneRefDatawxObjectRefDataCP = NULL;
@@ -3087,7 +3059,7 @@ public:
   {
     wxObjectRefData* res = wxMouseCaptureChangedEvent::CloneRefData(data);
     if (*m_wxMouseCaptureChangedEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxMouseCaptureChangedEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxMouseCaptureChangedEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -3098,7 +3070,7 @@ public:
   {
     wxObjectRefData* res = wxMouseCaptureChangedEvent::CreateRefData();
     if (*m_wxMouseCaptureChangedEventExtCreateRefData != NULL){
-      return m_wxMouseCaptureChangedEventExtCreateRefData(this);
+      return m_wxMouseCaptureChangedEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -3109,7 +3081,7 @@ public:
   {
     wxClassInfo* res = wxMouseCaptureChangedEvent::GetClassInfo();
     if (*m_wxMouseCaptureChangedEventExtGetClassInfo != NULL){
-      return m_wxMouseCaptureChangedEventExtGetClassInfo(this);
+      return m_wxMouseCaptureChangedEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -3120,7 +3092,7 @@ public:
   {
     wxEventCategory res = wxMouseCaptureChangedEvent::GetEventCategory();
     if (*m_wxMouseCaptureChangedEventExtGetEventCategory != NULL){
-      return m_wxMouseCaptureChangedEventExtGetEventCategory(this);
+      return m_wxMouseCaptureChangedEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -3143,12 +3115,11 @@ public:
   wxMouseCaptureLostEventExtCloneFunc m_wxMouseCaptureLostEventExtClone = NULL;
   virtual wxEvent* Clone() const override
   {
-    wxEvent* res = wxMouseCaptureLostEvent::Clone();
     if (*m_wxMouseCaptureLostEventExtClone != NULL){
       return m_wxMouseCaptureLostEventExtClone(this);
     }
     else {
-      return res;
+      return NULL;
     }
   }
   wxMouseCaptureLostEventExtCloneRefDatawxObjectRefDataCPFunc m_wxMouseCaptureLostEventExtCloneRefDatawxObjectRefDataCP = NULL;
@@ -3156,7 +3127,7 @@ public:
   {
     wxObjectRefData* res = wxMouseCaptureLostEvent::CloneRefData(data);
     if (*m_wxMouseCaptureLostEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxMouseCaptureLostEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxMouseCaptureLostEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -3167,7 +3138,7 @@ public:
   {
     wxObjectRefData* res = wxMouseCaptureLostEvent::CreateRefData();
     if (*m_wxMouseCaptureLostEventExtCreateRefData != NULL){
-      return m_wxMouseCaptureLostEventExtCreateRefData(this);
+      return m_wxMouseCaptureLostEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -3178,7 +3149,7 @@ public:
   {
     wxClassInfo* res = wxMouseCaptureLostEvent::GetClassInfo();
     if (*m_wxMouseCaptureLostEventExtGetClassInfo != NULL){
-      return m_wxMouseCaptureLostEventExtGetClassInfo(this);
+      return m_wxMouseCaptureLostEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -3189,7 +3160,7 @@ public:
   {
     wxEventCategory res = wxMouseCaptureLostEvent::GetEventCategory();
     if (*m_wxMouseCaptureLostEventExtGetEventCategory != NULL){
-      return m_wxMouseCaptureLostEventExtGetEventCategory(this);
+      return m_wxMouseCaptureLostEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -3212,12 +3183,11 @@ public:
   wxDisplayChangedEventExtCloneFunc m_wxDisplayChangedEventExtClone = NULL;
   virtual wxEvent* Clone() const override
   {
-    wxEvent* res = wxDisplayChangedEvent::Clone();
     if (*m_wxDisplayChangedEventExtClone != NULL){
       return m_wxDisplayChangedEventExtClone(this);
     }
     else {
-      return res;
+      return NULL;
     }
   }
   wxDisplayChangedEventExtCloneRefDatawxObjectRefDataCPFunc m_wxDisplayChangedEventExtCloneRefDatawxObjectRefDataCP = NULL;
@@ -3225,7 +3195,7 @@ public:
   {
     wxObjectRefData* res = wxDisplayChangedEvent::CloneRefData(data);
     if (*m_wxDisplayChangedEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxDisplayChangedEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxDisplayChangedEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -3236,7 +3206,7 @@ public:
   {
     wxObjectRefData* res = wxDisplayChangedEvent::CreateRefData();
     if (*m_wxDisplayChangedEventExtCreateRefData != NULL){
-      return m_wxDisplayChangedEventExtCreateRefData(this);
+      return m_wxDisplayChangedEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -3247,7 +3217,7 @@ public:
   {
     wxClassInfo* res = wxDisplayChangedEvent::GetClassInfo();
     if (*m_wxDisplayChangedEventExtGetClassInfo != NULL){
-      return m_wxDisplayChangedEventExtGetClassInfo(this);
+      return m_wxDisplayChangedEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -3258,7 +3228,7 @@ public:
   {
     wxEventCategory res = wxDisplayChangedEvent::GetEventCategory();
     if (*m_wxDisplayChangedEventExtGetEventCategory != NULL){
-      return m_wxDisplayChangedEventExtGetEventCategory(this);
+      return m_wxDisplayChangedEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -3281,12 +3251,11 @@ public:
   wxDPIChangedEventExtCloneFunc m_wxDPIChangedEventExtClone = NULL;
   virtual wxEvent* Clone() const override
   {
-    wxEvent* res = wxDPIChangedEvent::Clone();
     if (*m_wxDPIChangedEventExtClone != NULL){
       return m_wxDPIChangedEventExtClone(this);
     }
     else {
-      return res;
+      return NULL;
     }
   }
   wxDPIChangedEventExtCloneRefDatawxObjectRefDataCPFunc m_wxDPIChangedEventExtCloneRefDatawxObjectRefDataCP = NULL;
@@ -3294,7 +3263,7 @@ public:
   {
     wxObjectRefData* res = wxDPIChangedEvent::CloneRefData(data);
     if (*m_wxDPIChangedEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxDPIChangedEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxDPIChangedEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -3305,7 +3274,7 @@ public:
   {
     wxObjectRefData* res = wxDPIChangedEvent::CreateRefData();
     if (*m_wxDPIChangedEventExtCreateRefData != NULL){
-      return m_wxDPIChangedEventExtCreateRefData(this);
+      return m_wxDPIChangedEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -3316,7 +3285,7 @@ public:
   {
     wxClassInfo* res = wxDPIChangedEvent::GetClassInfo();
     if (*m_wxDPIChangedEventExtGetClassInfo != NULL){
-      return m_wxDPIChangedEventExtGetClassInfo(this);
+      return m_wxDPIChangedEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -3327,7 +3296,7 @@ public:
   {
     wxEventCategory res = wxDPIChangedEvent::GetEventCategory();
     if (*m_wxDPIChangedEventExtGetEventCategory != NULL){
-      return m_wxDPIChangedEventExtGetEventCategory(this);
+      return m_wxDPIChangedEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -3350,12 +3319,11 @@ public:
   wxPaletteChangedEventExtCloneFunc m_wxPaletteChangedEventExtClone = NULL;
   virtual wxEvent* Clone() const override
   {
-    wxEvent* res = wxPaletteChangedEvent::Clone();
     if (*m_wxPaletteChangedEventExtClone != NULL){
       return m_wxPaletteChangedEventExtClone(this);
     }
     else {
-      return res;
+      return NULL;
     }
   }
   wxPaletteChangedEventExtCloneRefDatawxObjectRefDataCPFunc m_wxPaletteChangedEventExtCloneRefDatawxObjectRefDataCP = NULL;
@@ -3363,7 +3331,7 @@ public:
   {
     wxObjectRefData* res = wxPaletteChangedEvent::CloneRefData(data);
     if (*m_wxPaletteChangedEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxPaletteChangedEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxPaletteChangedEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -3374,7 +3342,7 @@ public:
   {
     wxObjectRefData* res = wxPaletteChangedEvent::CreateRefData();
     if (*m_wxPaletteChangedEventExtCreateRefData != NULL){
-      return m_wxPaletteChangedEventExtCreateRefData(this);
+      return m_wxPaletteChangedEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -3385,7 +3353,7 @@ public:
   {
     wxClassInfo* res = wxPaletteChangedEvent::GetClassInfo();
     if (*m_wxPaletteChangedEventExtGetClassInfo != NULL){
-      return m_wxPaletteChangedEventExtGetClassInfo(this);
+      return m_wxPaletteChangedEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -3396,7 +3364,7 @@ public:
   {
     wxEventCategory res = wxPaletteChangedEvent::GetEventCategory();
     if (*m_wxPaletteChangedEventExtGetEventCategory != NULL){
-      return m_wxPaletteChangedEventExtGetEventCategory(this);
+      return m_wxPaletteChangedEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -3419,12 +3387,11 @@ public:
   wxQueryNewPaletteEventExtCloneFunc m_wxQueryNewPaletteEventExtClone = NULL;
   virtual wxEvent* Clone() const override
   {
-    wxEvent* res = wxQueryNewPaletteEvent::Clone();
     if (*m_wxQueryNewPaletteEventExtClone != NULL){
       return m_wxQueryNewPaletteEventExtClone(this);
     }
     else {
-      return res;
+      return NULL;
     }
   }
   wxQueryNewPaletteEventExtCloneRefDatawxObjectRefDataCPFunc m_wxQueryNewPaletteEventExtCloneRefDatawxObjectRefDataCP = NULL;
@@ -3432,7 +3399,7 @@ public:
   {
     wxObjectRefData* res = wxQueryNewPaletteEvent::CloneRefData(data);
     if (*m_wxQueryNewPaletteEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxQueryNewPaletteEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxQueryNewPaletteEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -3443,7 +3410,7 @@ public:
   {
     wxObjectRefData* res = wxQueryNewPaletteEvent::CreateRefData();
     if (*m_wxQueryNewPaletteEventExtCreateRefData != NULL){
-      return m_wxQueryNewPaletteEventExtCreateRefData(this);
+      return m_wxQueryNewPaletteEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -3454,7 +3421,7 @@ public:
   {
     wxClassInfo* res = wxQueryNewPaletteEvent::GetClassInfo();
     if (*m_wxQueryNewPaletteEventExtGetClassInfo != NULL){
-      return m_wxQueryNewPaletteEventExtGetClassInfo(this);
+      return m_wxQueryNewPaletteEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -3465,7 +3432,7 @@ public:
   {
     wxEventCategory res = wxQueryNewPaletteEvent::GetEventCategory();
     if (*m_wxQueryNewPaletteEventExtGetEventCategory != NULL){
-      return m_wxQueryNewPaletteEventExtGetEventCategory(this);
+      return m_wxQueryNewPaletteEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -3488,12 +3455,11 @@ public:
   wxNavigationKeyEventExtCloneFunc m_wxNavigationKeyEventExtClone = NULL;
   virtual wxEvent* Clone() const override
   {
-    wxEvent* res = wxNavigationKeyEvent::Clone();
     if (*m_wxNavigationKeyEventExtClone != NULL){
       return m_wxNavigationKeyEventExtClone(this);
     }
     else {
-      return res;
+      return NULL;
     }
   }
   wxNavigationKeyEventExtCloneRefDatawxObjectRefDataCPFunc m_wxNavigationKeyEventExtCloneRefDatawxObjectRefDataCP = NULL;
@@ -3501,7 +3467,7 @@ public:
   {
     wxObjectRefData* res = wxNavigationKeyEvent::CloneRefData(data);
     if (*m_wxNavigationKeyEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxNavigationKeyEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxNavigationKeyEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -3512,7 +3478,7 @@ public:
   {
     wxObjectRefData* res = wxNavigationKeyEvent::CreateRefData();
     if (*m_wxNavigationKeyEventExtCreateRefData != NULL){
-      return m_wxNavigationKeyEventExtCreateRefData(this);
+      return m_wxNavigationKeyEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -3523,7 +3489,7 @@ public:
   {
     wxClassInfo* res = wxNavigationKeyEvent::GetClassInfo();
     if (*m_wxNavigationKeyEventExtGetClassInfo != NULL){
-      return m_wxNavigationKeyEventExtGetClassInfo(this);
+      return m_wxNavigationKeyEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -3534,7 +3500,7 @@ public:
   {
     wxEventCategory res = wxNavigationKeyEvent::GetEventCategory();
     if (*m_wxNavigationKeyEventExtGetEventCategory != NULL){
-      return m_wxNavigationKeyEventExtGetEventCategory(this);
+      return m_wxNavigationKeyEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -3559,7 +3525,7 @@ public:
   {
     wxEvent* res = wxWindowCreateEvent::Clone();
     if (*m_wxWindowCreateEventExtClone != NULL){
-      return m_wxWindowCreateEventExtClone(this);
+      return m_wxWindowCreateEventExtClone(this, res);
     }
     else {
       return res;
@@ -3570,7 +3536,7 @@ public:
   {
     wxObjectRefData* res = wxWindowCreateEvent::CloneRefData(data);
     if (*m_wxWindowCreateEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxWindowCreateEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxWindowCreateEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -3581,7 +3547,7 @@ public:
   {
     wxObjectRefData* res = wxWindowCreateEvent::CreateRefData();
     if (*m_wxWindowCreateEventExtCreateRefData != NULL){
-      return m_wxWindowCreateEventExtCreateRefData(this);
+      return m_wxWindowCreateEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -3592,7 +3558,7 @@ public:
   {
     wxClassInfo* res = wxWindowCreateEvent::GetClassInfo();
     if (*m_wxWindowCreateEventExtGetClassInfo != NULL){
-      return m_wxWindowCreateEventExtGetClassInfo(this);
+      return m_wxWindowCreateEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -3603,7 +3569,7 @@ public:
   {
     wxEventCategory res = wxWindowCreateEvent::GetEventCategory();
     if (*m_wxWindowCreateEventExtGetEventCategory != NULL){
-      return m_wxWindowCreateEventExtGetEventCategory(this);
+      return m_wxWindowCreateEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -3628,7 +3594,7 @@ public:
   {
     wxEvent* res = wxWindowDestroyEvent::Clone();
     if (*m_wxWindowDestroyEventExtClone != NULL){
-      return m_wxWindowDestroyEventExtClone(this);
+      return m_wxWindowDestroyEventExtClone(this, res);
     }
     else {
       return res;
@@ -3639,7 +3605,7 @@ public:
   {
     wxObjectRefData* res = wxWindowDestroyEvent::CloneRefData(data);
     if (*m_wxWindowDestroyEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxWindowDestroyEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxWindowDestroyEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -3650,7 +3616,7 @@ public:
   {
     wxObjectRefData* res = wxWindowDestroyEvent::CreateRefData();
     if (*m_wxWindowDestroyEventExtCreateRefData != NULL){
-      return m_wxWindowDestroyEventExtCreateRefData(this);
+      return m_wxWindowDestroyEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -3661,7 +3627,7 @@ public:
   {
     wxClassInfo* res = wxWindowDestroyEvent::GetClassInfo();
     if (*m_wxWindowDestroyEventExtGetClassInfo != NULL){
-      return m_wxWindowDestroyEventExtGetClassInfo(this);
+      return m_wxWindowDestroyEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -3672,7 +3638,7 @@ public:
   {
     wxEventCategory res = wxWindowDestroyEvent::GetEventCategory();
     if (*m_wxWindowDestroyEventExtGetEventCategory != NULL){
-      return m_wxWindowDestroyEventExtGetEventCategory(this);
+      return m_wxWindowDestroyEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -3697,7 +3663,7 @@ public:
   {
     wxEvent* res = wxHelpEvent::Clone();
     if (*m_wxHelpEventExtClone != NULL){
-      return m_wxHelpEventExtClone(this);
+      return m_wxHelpEventExtClone(this, res);
     }
     else {
       return res;
@@ -3708,7 +3674,7 @@ public:
   {
     wxObjectRefData* res = wxHelpEvent::CloneRefData(data);
     if (*m_wxHelpEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxHelpEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxHelpEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -3719,7 +3685,7 @@ public:
   {
     wxObjectRefData* res = wxHelpEvent::CreateRefData();
     if (*m_wxHelpEventExtCreateRefData != NULL){
-      return m_wxHelpEventExtCreateRefData(this);
+      return m_wxHelpEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -3730,7 +3696,7 @@ public:
   {
     wxClassInfo* res = wxHelpEvent::GetClassInfo();
     if (*m_wxHelpEventExtGetClassInfo != NULL){
-      return m_wxHelpEventExtGetClassInfo(this);
+      return m_wxHelpEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -3741,7 +3707,7 @@ public:
   {
     wxEventCategory res = wxHelpEvent::GetEventCategory();
     if (*m_wxHelpEventExtGetEventCategory != NULL){
-      return m_wxHelpEventExtGetEventCategory(this);
+      return m_wxHelpEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -3766,7 +3732,7 @@ public:
   {
     wxEvent* res = wxClipboardTextEvent::Clone();
     if (*m_wxClipboardTextEventExtClone != NULL){
-      return m_wxClipboardTextEventExtClone(this);
+      return m_wxClipboardTextEventExtClone(this, res);
     }
     else {
       return res;
@@ -3777,7 +3743,7 @@ public:
   {
     wxObjectRefData* res = wxClipboardTextEvent::CloneRefData(data);
     if (*m_wxClipboardTextEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxClipboardTextEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxClipboardTextEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -3788,7 +3754,7 @@ public:
   {
     wxObjectRefData* res = wxClipboardTextEvent::CreateRefData();
     if (*m_wxClipboardTextEventExtCreateRefData != NULL){
-      return m_wxClipboardTextEventExtCreateRefData(this);
+      return m_wxClipboardTextEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -3799,7 +3765,7 @@ public:
   {
     wxClassInfo* res = wxClipboardTextEvent::GetClassInfo();
     if (*m_wxClipboardTextEventExtGetClassInfo != NULL){
-      return m_wxClipboardTextEventExtGetClassInfo(this);
+      return m_wxClipboardTextEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -3810,7 +3776,7 @@ public:
   {
     wxEventCategory res = wxClipboardTextEvent::GetEventCategory();
     if (*m_wxClipboardTextEventExtGetEventCategory != NULL){
-      return m_wxClipboardTextEventExtGetEventCategory(this);
+      return m_wxClipboardTextEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -3835,7 +3801,7 @@ public:
   {
     wxEvent* res = wxContextMenuEvent::Clone();
     if (*m_wxContextMenuEventExtClone != NULL){
-      return m_wxContextMenuEventExtClone(this);
+      return m_wxContextMenuEventExtClone(this, res);
     }
     else {
       return res;
@@ -3846,7 +3812,7 @@ public:
   {
     wxObjectRefData* res = wxContextMenuEvent::CloneRefData(data);
     if (*m_wxContextMenuEventExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxContextMenuEventExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxContextMenuEventExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -3857,7 +3823,7 @@ public:
   {
     wxObjectRefData* res = wxContextMenuEvent::CreateRefData();
     if (*m_wxContextMenuEventExtCreateRefData != NULL){
-      return m_wxContextMenuEventExtCreateRefData(this);
+      return m_wxContextMenuEventExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -3868,7 +3834,7 @@ public:
   {
     wxClassInfo* res = wxContextMenuEvent::GetClassInfo();
     if (*m_wxContextMenuEventExtGetClassInfo != NULL){
-      return m_wxContextMenuEventExtGetClassInfo(this);
+      return m_wxContextMenuEventExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -3879,7 +3845,7 @@ public:
   {
     wxEventCategory res = wxContextMenuEvent::GetEventCategory();
     if (*m_wxContextMenuEventExtGetEventCategory != NULL){
-      return m_wxContextMenuEventExtGetEventCategory(this);
+      return m_wxContextMenuEventExtGetEventCategory(this, res);
     }
     else {
       return res;
@@ -3893,7 +3859,6 @@ public:
     m_wxContextMenuEventExtGetEventCategory = a_GetEventCategory;
   }
 };
-#endif // wxUSE_GUI
 
 class wxEventTableEntryBaseExt: public wxEventTableEntryBase
 {
@@ -3914,24 +3879,6 @@ public:
   wxDynamicEventTableEntryExt(int evType, int winid, int idLast, wxEventFunctor* fn, wxObject* data): wxDynamicEventTableEntry(evType, winid, idLast, fn, data)  {  }
 };
 
-class wxEventTableExt: public wxEventTable
-{
-public:
-};
-
-class wxEventTableEntryPointerArrayExt: public wxEventTableEntryPointerArray
-{
-public:
-  wxEventTableEntryPointerArrayExt(): wxEventTableEntryPointerArray()  {  }
-  explicit wxEventTableEntryPointerArrayExt(size_t n): wxEventTableEntryPointerArray(n)  {  }
-};
-
-class wxEventHashTableExt: public wxEventHashTable
-{
-public:
-  wxEventHashTableExt(wxEventTable const& table): wxEventHashTable(table)  {  }
-};
-
 class wxEvtHandlerExt: public wxEvtHandler
 {
 public:
@@ -3950,7 +3897,7 @@ public:
   {
     wxObjectRefData* res = wxEvtHandler::CloneRefData(data);
     if (*m_wxEvtHandlerExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxEvtHandlerExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxEvtHandlerExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -3961,7 +3908,7 @@ public:
   {
     wxObjectRefData* res = wxEvtHandler::CreateRefData();
     if (*m_wxEvtHandlerExtCreateRefData != NULL){
-      return m_wxEvtHandlerExtCreateRefData(this);
+      return m_wxEvtHandlerExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -3972,7 +3919,7 @@ public:
   {
     wxClassInfo* res = wxEvtHandler::GetClassInfo();
     if (*m_wxEvtHandlerExtGetClassInfo != NULL){
-      return m_wxEvtHandlerExtGetClassInfo(this);
+      return m_wxEvtHandlerExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -3983,7 +3930,7 @@ public:
   {
     wxEventHashTable& res = wxEvtHandler::GetEventHashTable();
     if (*m_wxEvtHandlerExtGetEventHashTable != NULL){
-      return m_wxEvtHandlerExtGetEventHashTable(this);
+      return m_wxEvtHandlerExtGetEventHashTable(this, res);
     }
     else {
       return res;
@@ -3994,7 +3941,7 @@ public:
   {
     wxEventTable const* res = wxEvtHandler::GetEventTable();
     if (*m_wxEvtHandlerExtGetEventTable != NULL){
-      return m_wxEvtHandlerExtGetEventTable(this);
+      return m_wxEvtHandlerExtGetEventTable(this, res);
     }
     else {
       return res;
@@ -4005,7 +3952,7 @@ public:
   {
     bool res = wxEvtHandler::OnDynamicBind(param0);
     if (*m_wxEvtHandlerExtOnDynamicBindwxDynamicEventTableEntryR != NULL){
-      return m_wxEvtHandlerExtOnDynamicBindwxDynamicEventTableEntryR(this, param0);
+      return m_wxEvtHandlerExtOnDynamicBindwxDynamicEventTableEntryR(this, param0, res);
     }
     else {
       return res;
@@ -4016,7 +3963,7 @@ public:
   {
     bool res = wxEvtHandler::ProcessEvent(event);
     if (*m_wxEvtHandlerExtProcessEventwxEventR != NULL){
-      return m_wxEvtHandlerExtProcessEventwxEventR(this, event);
+      return m_wxEvtHandlerExtProcessEventwxEventR(this, event, res);
     }
     else {
       return res;
@@ -4035,7 +3982,7 @@ public:
   {
     bool res = wxEvtHandler::SearchEventTable(table, event);
     if (*m_wxEvtHandlerExtSearchEventTablewxEventTableRwxEventR != NULL){
-      return m_wxEvtHandlerExtSearchEventTablewxEventTableRwxEventR(this, table, event);
+      return m_wxEvtHandlerExtSearchEventTablewxEventTableRwxEventR(this, table, event, res);
     }
     else {
       return res;
@@ -4062,7 +4009,7 @@ public:
   {
     bool res = wxEvtHandler::TryAfter(event);
     if (*m_wxEvtHandlerExtTryAfterwxEventR != NULL){
-      return m_wxEvtHandlerExtTryAfterwxEventR(this, event);
+      return m_wxEvtHandlerExtTryAfterwxEventR(this, event, res);
     }
     else {
       return res;
@@ -4073,7 +4020,7 @@ public:
   {
     bool res = wxEvtHandler::TryBefore(event);
     if (*m_wxEvtHandlerExtTryBeforewxEventR != NULL){
-      return m_wxEvtHandlerExtTryBeforewxEventR(this, event);
+      return m_wxEvtHandlerExtTryBeforewxEventR(this, event, res);
     }
     else {
       return res;
@@ -4097,12 +4044,6 @@ public:
   }
 };
 
-class wxEvtHandlerArrayExt: public wxEvtHandlerArray
-{
-public:
-  wxEvtHandlerArrayExt(): wxEvtHandlerArray()  {  }
-  explicit wxEvtHandlerArrayExt(size_t n): wxEvtHandlerArray(n)  {  }
-};
 
 class wxEventConnectionRefExt: public wxEventConnectionRef
 {
@@ -4122,7 +4063,7 @@ public:
   {
     wxEventConnectionRef* res = wxEventConnectionRef::ToEventConnection();
     if (*m_wxEventConnectionRefExtToEventConnection != NULL){
-      return m_wxEventConnectionRefExtToEventConnection(this);
+      return m_wxEventConnectionRefExtToEventConnection(this, res);
     }
     else {
       return res;
@@ -4134,7 +4075,6 @@ public:
   }
 };
 
-#if wxUSE_GUI
 class wxEventBlockerExt: public wxEventBlocker
 {
 public:
@@ -4153,7 +4093,7 @@ public:
   {
     wxObjectRefData* res = wxEventBlocker::CloneRefData(data);
     if (*m_wxEventBlockerExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxEventBlockerExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxEventBlockerExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -4164,7 +4104,7 @@ public:
   {
     wxObjectRefData* res = wxEventBlocker::CreateRefData();
     if (*m_wxEventBlockerExtCreateRefData != NULL){
-      return m_wxEventBlockerExtCreateRefData(this);
+      return m_wxEventBlockerExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -4175,7 +4115,7 @@ public:
   {
     void* res = wxEventBlocker::DoGetClientData();
     if (*m_wxEventBlockerExtDoGetClientData != NULL){
-      return m_wxEventBlockerExtDoGetClientData(this);
+      return m_wxEventBlockerExtDoGetClientData(this, res);
     }
     else {
       return res;
@@ -4186,7 +4126,7 @@ public:
   {
     wxClientData* res = wxEventBlocker::DoGetClientObject();
     if (*m_wxEventBlockerExtDoGetClientObject != NULL){
-      return m_wxEventBlockerExtDoGetClientObject(this);
+      return m_wxEventBlockerExtDoGetClientObject(this, res);
     }
     else {
       return res;
@@ -4213,7 +4153,7 @@ public:
   {
     wxClassInfo* res = wxEventBlocker::GetClassInfo();
     if (*m_wxEventBlockerExtGetClassInfo != NULL){
-      return m_wxEventBlockerExtGetClassInfo(this);
+      return m_wxEventBlockerExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -4224,7 +4164,7 @@ public:
   {
     wxEventHashTable& res = wxEventBlocker::GetEventHashTable();
     if (*m_wxEventBlockerExtGetEventHashTable != NULL){
-      return m_wxEventBlockerExtGetEventHashTable(this);
+      return m_wxEventBlockerExtGetEventHashTable(this, res);
     }
     else {
       return res;
@@ -4235,7 +4175,7 @@ public:
   {
     wxEventTable const* res = wxEventBlocker::GetEventTable();
     if (*m_wxEventBlockerExtGetEventTable != NULL){
-      return m_wxEventBlockerExtGetEventTable(this);
+      return m_wxEventBlockerExtGetEventTable(this, res);
     }
     else {
       return res;
@@ -4246,7 +4186,7 @@ public:
   {
     bool res = wxEventBlocker::OnDynamicBind(param0);
     if (*m_wxEventBlockerExtOnDynamicBindwxDynamicEventTableEntryR != NULL){
-      return m_wxEventBlockerExtOnDynamicBindwxDynamicEventTableEntryR(this, param0);
+      return m_wxEventBlockerExtOnDynamicBindwxDynamicEventTableEntryR(this, param0, res);
     }
     else {
       return res;
@@ -4257,7 +4197,7 @@ public:
   {
     bool res = wxEventBlocker::ProcessEvent(event);
     if (*m_wxEventBlockerExtProcessEventwxEventR != NULL){
-      return m_wxEventBlockerExtProcessEventwxEventR(this, event);
+      return m_wxEventBlockerExtProcessEventwxEventR(this, event, res);
     }
     else {
       return res;
@@ -4276,7 +4216,7 @@ public:
   {
     bool res = wxEventBlocker::SearchEventTable(table, event);
     if (*m_wxEventBlockerExtSearchEventTablewxEventTableRwxEventR != NULL){
-      return m_wxEventBlockerExtSearchEventTablewxEventTableRwxEventR(this, table, event);
+      return m_wxEventBlockerExtSearchEventTablewxEventTableRwxEventR(this, table, event, res);
     }
     else {
       return res;
@@ -4303,7 +4243,7 @@ public:
   {
     bool res = wxEventBlocker::TryAfter(event);
     if (*m_wxEventBlockerExtTryAfterwxEventR != NULL){
-      return m_wxEventBlockerExtTryAfterwxEventR(this, event);
+      return m_wxEventBlockerExtTryAfterwxEventR(this, event, res);
     }
     else {
       return res;
@@ -4314,7 +4254,7 @@ public:
   {
     bool res = wxEventBlocker::TryBefore(event);
     if (*m_wxEventBlockerExtTryBeforewxEventR != NULL){
-      return m_wxEventBlockerExtTryBeforewxEventR(this, event);
+      return m_wxEventBlockerExtTryBeforewxEventR(this, event, res);
     }
     else {
       return res;
@@ -4325,7 +4265,7 @@ public:
   {
     void* res = wxEventBlocker::WXReservedEvtHandler1(param0);
     if (*m_wxEventBlockerExtWXReservedEvtHandler1voidP != NULL){
-      return m_wxEventBlockerExtWXReservedEvtHandler1voidP(this, param0);
+      return m_wxEventBlockerExtWXReservedEvtHandler1voidP(this, param0, res);
     }
     else {
       return res;
@@ -4336,13 +4276,13 @@ public:
   {
     void* res = wxEventBlocker::WXReservedEvtHandler2(param0);
     if (*m_wxEventBlockerExtWXReservedEvtHandler2voidP != NULL){
-      return m_wxEventBlockerExtWXReservedEvtHandler2voidP(this, param0);
+      return m_wxEventBlockerExtWXReservedEvtHandler2voidP(this, param0, res);
     }
     else {
       return res;
     }
   }
-  wxEventBlockerExt(wxWindow* win, wxEventBlockerExtAddPendingEventwxEventCRFunc a_AddPendingEventwxEventCR, wxEventBlockerExtCloneRefDatawxObjectRefDataCPFunc a_CloneRefDatawxObjectRefDataCP, wxEventBlockerExtCreateRefDataFunc a_CreateRefData, wxEventBlockerExtDoGetClientDataFunc a_DoGetClientData, wxEventBlockerExtDoGetClientObjectFunc a_DoGetClientObject, wxEventBlockerExtDoSetClientDatavoidPFunc a_DoSetClientDatavoidP, wxEventBlockerExtDoSetClientObjectwxClientDataPFunc a_DoSetClientObjectwxClientDataP, wxEventBlockerExtGetClassInfoFunc a_GetClassInfo, wxEventBlockerExtGetEventHashTableFunc a_GetEventHashTable, wxEventBlockerExtGetEventTableFunc a_GetEventTable, wxEventBlockerExtOnDynamicBindwxDynamicEventTableEntryRFunc a_OnDynamicBindwxDynamicEventTableEntryR, wxEventBlockerExtProcessEventwxEventRFunc a_ProcessEventwxEventR, wxEventBlockerExtQueueEventwxEventPFunc a_QueueEventwxEventP, wxEventBlockerExtSearchEventTablewxEventTableRwxEventRFunc a_SearchEventTablewxEventTableRwxEventR, wxEventBlockerExtSetNextHandlerwxEvtHandlerPFunc a_SetNextHandlerwxEvtHandlerP, wxEventBlockerExtSetPreviousHandlerwxEvtHandlerPFunc a_SetPreviousHandlerwxEvtHandlerP, wxEventBlockerExtTryAfterwxEventRFunc a_TryAfterwxEventR, wxEventBlockerExtTryBeforewxEventRFunc a_TryBeforewxEventR, wxEventBlockerExtWXReservedEvtHandler1voidPFunc a_WXReservedEvtHandler1voidP, wxEventBlockerExtWXReservedEvtHandler2voidPFunc a_WXReservedEvtHandler2voidP): wxEventBlocker(win) {
+  wxEventBlockerExt(wxWindow* win, wxEventType type, wxEventBlockerExtAddPendingEventwxEventCRFunc a_AddPendingEventwxEventCR, wxEventBlockerExtCloneRefDatawxObjectRefDataCPFunc a_CloneRefDatawxObjectRefDataCP, wxEventBlockerExtCreateRefDataFunc a_CreateRefData, wxEventBlockerExtDoGetClientDataFunc a_DoGetClientData, wxEventBlockerExtDoGetClientObjectFunc a_DoGetClientObject, wxEventBlockerExtDoSetClientDatavoidPFunc a_DoSetClientDatavoidP, wxEventBlockerExtDoSetClientObjectwxClientDataPFunc a_DoSetClientObjectwxClientDataP, wxEventBlockerExtGetClassInfoFunc a_GetClassInfo, wxEventBlockerExtGetEventHashTableFunc a_GetEventHashTable, wxEventBlockerExtGetEventTableFunc a_GetEventTable, wxEventBlockerExtOnDynamicBindwxDynamicEventTableEntryRFunc a_OnDynamicBindwxDynamicEventTableEntryR, wxEventBlockerExtProcessEventwxEventRFunc a_ProcessEventwxEventR, wxEventBlockerExtQueueEventwxEventPFunc a_QueueEventwxEventP, wxEventBlockerExtSearchEventTablewxEventTableRwxEventRFunc a_SearchEventTablewxEventTableRwxEventR, wxEventBlockerExtSetNextHandlerwxEvtHandlerPFunc a_SetNextHandlerwxEvtHandlerP, wxEventBlockerExtSetPreviousHandlerwxEvtHandlerPFunc a_SetPreviousHandlerwxEvtHandlerP, wxEventBlockerExtTryAfterwxEventRFunc a_TryAfterwxEventR, wxEventBlockerExtTryBeforewxEventRFunc a_TryBeforewxEventR, wxEventBlockerExtWXReservedEvtHandler1voidPFunc a_WXReservedEvtHandler1voidP, wxEventBlockerExtWXReservedEvtHandler2voidPFunc a_WXReservedEvtHandler2voidP): wxEventBlocker(win, type) {
     m_wxEventBlockerExtAddPendingEventwxEventCR = a_AddPendingEventwxEventCR;
     m_wxEventBlockerExtCloneRefDatawxObjectRefDataCP = a_CloneRefDatawxObjectRefDataCP;
     m_wxEventBlockerExtCreateRefData = a_CreateRefData;
@@ -4366,7 +4306,6 @@ public:
   }
 };
 
-#endif // wxUSE_GUI
 
 
 #endif
