@@ -6,30 +6,30 @@
 
 class wxValidatorExt;
 typedef void (*wxValidatorExtAddPendingEventwxEventCRFunc)(const wxValidatorExt* self, wxEvent const& event);
-typedef wxObject* (*wxValidatorExtCloneFunc)(const wxValidatorExt* self);
-typedef wxObjectRefData* (*wxValidatorExtCloneRefDatawxObjectRefDataCPFunc)(const wxValidatorExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxValidatorExtCreateRefDataFunc)(const wxValidatorExt* self);
-typedef void* (*wxValidatorExtDoGetClientDataFunc)(const wxValidatorExt* self);
-typedef wxClientData* (*wxValidatorExtDoGetClientObjectFunc)(const wxValidatorExt* self);
+typedef wxObject* (*wxValidatorExtCloneFunc)(const wxValidatorExt* self, wxObject* res);
+typedef wxObjectRefData* (*wxValidatorExtCloneRefDatawxObjectRefDataCPFunc)(const wxValidatorExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxValidatorExtCreateRefDataFunc)(const wxValidatorExt* self, wxObjectRefData* res);
+typedef void* (*wxValidatorExtDoGetClientDataFunc)(const wxValidatorExt* self, void* res);
+typedef wxClientData* (*wxValidatorExtDoGetClientObjectFunc)(const wxValidatorExt* self, wxClientData* res);
 typedef void (*wxValidatorExtDoSetClientDatavoidPFunc)(const wxValidatorExt* self, void* data);
 typedef void (*wxValidatorExtDoSetClientObjectwxClientDataPFunc)(const wxValidatorExt* self, wxClientData* data);
-typedef wxClassInfo* (*wxValidatorExtGetClassInfoFunc)(const wxValidatorExt* self);
-typedef wxEventHashTable& (*wxValidatorExtGetEventHashTableFunc)(const wxValidatorExt* self);
-typedef wxEventTable const* (*wxValidatorExtGetEventTableFunc)(const wxValidatorExt* self);
-typedef bool (*wxValidatorExtOnDynamicBindwxDynamicEventTableEntryRFunc)(const wxValidatorExt* self, wxDynamicEventTableEntry& param0);
-typedef bool (*wxValidatorExtProcessEventwxEventRFunc)(const wxValidatorExt* self, wxEvent& event);
+typedef wxClassInfo* (*wxValidatorExtGetClassInfoFunc)(const wxValidatorExt* self, wxClassInfo* res);
+typedef wxEventHashTable& (*wxValidatorExtGetEventHashTableFunc)(const wxValidatorExt* self, wxEventHashTable& res);
+typedef wxEventTable const* (*wxValidatorExtGetEventTableFunc)(const wxValidatorExt* self, wxEventTable const* res);
+typedef bool (*wxValidatorExtOnDynamicBindwxDynamicEventTableEntryRFunc)(const wxValidatorExt* self, wxDynamicEventTableEntry& param0, bool res);
+typedef bool (*wxValidatorExtProcessEventwxEventRFunc)(const wxValidatorExt* self, wxEvent& event, bool res);
 typedef void (*wxValidatorExtQueueEventwxEventPFunc)(const wxValidatorExt* self, wxEvent* event);
-typedef bool (*wxValidatorExtSearchEventTablewxEventTableRwxEventRFunc)(const wxValidatorExt* self, wxEventTable& table, wxEvent& event);
+typedef bool (*wxValidatorExtSearchEventTablewxEventTableRwxEventRFunc)(const wxValidatorExt* self, wxEventTable& table, wxEvent& event, bool res);
 typedef void (*wxValidatorExtSetNextHandlerwxEvtHandlerPFunc)(const wxValidatorExt* self, wxEvtHandler* handler);
 typedef void (*wxValidatorExtSetPreviousHandlerwxEvtHandlerPFunc)(const wxValidatorExt* self, wxEvtHandler* handler);
 typedef void (*wxValidatorExtSetWindowwxWindowPFunc)(const wxValidatorExt* self, wxWindow* win);
-typedef bool (*wxValidatorExtTransferFromWindowFunc)(const wxValidatorExt* self);
-typedef bool (*wxValidatorExtTransferToWindowFunc)(const wxValidatorExt* self);
-typedef bool (*wxValidatorExtTryAfterwxEventRFunc)(const wxValidatorExt* self, wxEvent& event);
-typedef bool (*wxValidatorExtTryBeforewxEventRFunc)(const wxValidatorExt* self, wxEvent& event);
-typedef bool (*wxValidatorExtValidatewxWindowPFunc)(const wxValidatorExt* self, wxWindow* param0);
-typedef void* (*wxValidatorExtWXReservedEvtHandler1voidPFunc)(const wxValidatorExt* self, void* param0);
-typedef void* (*wxValidatorExtWXReservedEvtHandler2voidPFunc)(const wxValidatorExt* self, void* param0);
+typedef bool (*wxValidatorExtTransferFromWindowFunc)(const wxValidatorExt* self, bool res);
+typedef bool (*wxValidatorExtTransferToWindowFunc)(const wxValidatorExt* self, bool res);
+typedef bool (*wxValidatorExtTryAfterwxEventRFunc)(const wxValidatorExt* self, wxEvent& event, bool res);
+typedef bool (*wxValidatorExtTryBeforewxEventRFunc)(const wxValidatorExt* self, wxEvent& event, bool res);
+typedef bool (*wxValidatorExtValidatewxWindowPFunc)(const wxValidatorExt* self, wxWindow* param0, bool res);
+typedef void* (*wxValidatorExtWXReservedEvtHandler1voidPFunc)(const wxValidatorExt* self, void* param0, void* res);
+typedef void* (*wxValidatorExtWXReservedEvtHandler2voidPFunc)(const wxValidatorExt* self, void* param0, void* res);
 
 class wxValidatorExt: public wxValidator
 {
@@ -50,7 +50,7 @@ public:
   {
     wxObject* res = wxValidator::Clone();
     if (*m_wxValidatorExtClone != NULL){
-      return m_wxValidatorExtClone(this);
+      return m_wxValidatorExtClone(this, res);
     }
     else {
       return res;
@@ -61,7 +61,7 @@ public:
   {
     wxObjectRefData* res = wxValidator::CloneRefData(data);
     if (*m_wxValidatorExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxValidatorExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxValidatorExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -72,7 +72,7 @@ public:
   {
     wxObjectRefData* res = wxValidator::CreateRefData();
     if (*m_wxValidatorExtCreateRefData != NULL){
-      return m_wxValidatorExtCreateRefData(this);
+      return m_wxValidatorExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -83,7 +83,7 @@ public:
   {
     void* res = wxValidator::DoGetClientData();
     if (*m_wxValidatorExtDoGetClientData != NULL){
-      return m_wxValidatorExtDoGetClientData(this);
+      return m_wxValidatorExtDoGetClientData(this, res);
     }
     else {
       return res;
@@ -94,7 +94,7 @@ public:
   {
     wxClientData* res = wxValidator::DoGetClientObject();
     if (*m_wxValidatorExtDoGetClientObject != NULL){
-      return m_wxValidatorExtDoGetClientObject(this);
+      return m_wxValidatorExtDoGetClientObject(this, res);
     }
     else {
       return res;
@@ -121,7 +121,7 @@ public:
   {
     wxClassInfo* res = wxValidator::GetClassInfo();
     if (*m_wxValidatorExtGetClassInfo != NULL){
-      return m_wxValidatorExtGetClassInfo(this);
+      return m_wxValidatorExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -132,7 +132,7 @@ public:
   {
     wxEventHashTable& res = wxValidator::GetEventHashTable();
     if (*m_wxValidatorExtGetEventHashTable != NULL){
-      return m_wxValidatorExtGetEventHashTable(this);
+      return m_wxValidatorExtGetEventHashTable(this, res);
     }
     else {
       return res;
@@ -143,7 +143,7 @@ public:
   {
     wxEventTable const* res = wxValidator::GetEventTable();
     if (*m_wxValidatorExtGetEventTable != NULL){
-      return m_wxValidatorExtGetEventTable(this);
+      return m_wxValidatorExtGetEventTable(this, res);
     }
     else {
       return res;
@@ -154,7 +154,7 @@ public:
   {
     bool res = wxValidator::OnDynamicBind(param0);
     if (*m_wxValidatorExtOnDynamicBindwxDynamicEventTableEntryR != NULL){
-      return m_wxValidatorExtOnDynamicBindwxDynamicEventTableEntryR(this, param0);
+      return m_wxValidatorExtOnDynamicBindwxDynamicEventTableEntryR(this, param0, res);
     }
     else {
       return res;
@@ -165,7 +165,7 @@ public:
   {
     bool res = wxValidator::ProcessEvent(event);
     if (*m_wxValidatorExtProcessEventwxEventR != NULL){
-      return m_wxValidatorExtProcessEventwxEventR(this, event);
+      return m_wxValidatorExtProcessEventwxEventR(this, event, res);
     }
     else {
       return res;
@@ -184,7 +184,7 @@ public:
   {
     bool res = wxValidator::SearchEventTable(table, event);
     if (*m_wxValidatorExtSearchEventTablewxEventTableRwxEventR != NULL){
-      return m_wxValidatorExtSearchEventTablewxEventTableRwxEventR(this, table, event);
+      return m_wxValidatorExtSearchEventTablewxEventTableRwxEventR(this, table, event, res);
     }
     else {
       return res;
@@ -219,7 +219,7 @@ public:
   {
     bool res = wxValidator::TransferFromWindow();
     if (*m_wxValidatorExtTransferFromWindow != NULL){
-      return m_wxValidatorExtTransferFromWindow(this);
+      return m_wxValidatorExtTransferFromWindow(this, res);
     }
     else {
       return res;
@@ -230,7 +230,7 @@ public:
   {
     bool res = wxValidator::TransferToWindow();
     if (*m_wxValidatorExtTransferToWindow != NULL){
-      return m_wxValidatorExtTransferToWindow(this);
+      return m_wxValidatorExtTransferToWindow(this, res);
     }
     else {
       return res;
@@ -241,7 +241,7 @@ public:
   {
     bool res = wxValidator::TryAfter(event);
     if (*m_wxValidatorExtTryAfterwxEventR != NULL){
-      return m_wxValidatorExtTryAfterwxEventR(this, event);
+      return m_wxValidatorExtTryAfterwxEventR(this, event, res);
     }
     else {
       return res;
@@ -252,7 +252,7 @@ public:
   {
     bool res = wxValidator::TryBefore(event);
     if (*m_wxValidatorExtTryBeforewxEventR != NULL){
-      return m_wxValidatorExtTryBeforewxEventR(this, event);
+      return m_wxValidatorExtTryBeforewxEventR(this, event, res);
     }
     else {
       return res;
@@ -263,7 +263,7 @@ public:
   {
     bool res = wxValidator::Validate(param0);
     if (*m_wxValidatorExtValidatewxWindowP != NULL){
-      return m_wxValidatorExtValidatewxWindowP(this, param0);
+      return m_wxValidatorExtValidatewxWindowP(this, param0, res);
     }
     else {
       return res;
@@ -274,7 +274,7 @@ public:
   {
     void* res = wxValidator::WXReservedEvtHandler1(param0);
     if (*m_wxValidatorExtWXReservedEvtHandler1voidP != NULL){
-      return m_wxValidatorExtWXReservedEvtHandler1voidP(this, param0);
+      return m_wxValidatorExtWXReservedEvtHandler1voidP(this, param0, res);
     }
     else {
       return res;
@@ -285,7 +285,7 @@ public:
   {
     void* res = wxValidator::WXReservedEvtHandler2(param0);
     if (*m_wxValidatorExtWXReservedEvtHandler2voidP != NULL){
-      return m_wxValidatorExtWXReservedEvtHandler2voidP(this, param0);
+      return m_wxValidatorExtWXReservedEvtHandler2voidP(this, param0, res);
     }
     else {
       return res;
