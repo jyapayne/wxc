@@ -5,51 +5,53 @@
 #include <wx/vidmode.h>
 
 class wxNavigationEnabledWindowExt;
-typedef bool (*wxNavigationEnabledWindowExtAcceptsFocusFunc)(const wxNavigationEnabledWindowExt* self);
-typedef bool (*wxNavigationEnabledWindowExtAcceptsFocusFromKeyboardFunc)(const wxNavigationEnabledWindowExt* self);
-typedef bool (*wxNavigationEnabledWindowExtAcceptsFocusRecursivelyFunc)(const wxNavigationEnabledWindowExt* self);
+typedef bool (*wxNavigationEnabledWindowExtAcceptsFocusFunc)(const wxNavigationEnabledWindowExt* self, bool res);
+typedef bool (*wxNavigationEnabledWindowExtAcceptsFocusFromKeyboardFunc)(const wxNavigationEnabledWindowExt* self, bool res);
+typedef bool (*wxNavigationEnabledWindowExtAcceptsFocusRecursivelyFunc)(const wxNavigationEnabledWindowExt* self, bool res);
 typedef void (*wxNavigationEnabledWindowExtAddChildwxWindowBasePFunc)(const wxNavigationEnabledWindowExt* self, wxWindowBase* child);
 typedef void (*wxNavigationEnabledWindowExtAddPendingEventwxEventCRFunc)(const wxNavigationEnabledWindowExt* self, wxEvent const& event);
-typedef wxCoord (*wxNavigationEnabledWindowExtAdjustForLayoutDirectionwxCoordwxCoordwxCoordFunc)(const wxNavigationEnabledWindowExt* self, wxCoord x, wxCoord width, wxCoord widthTotal);
+typedef wxCoord (*wxNavigationEnabledWindowExtAdjustForLayoutDirectionwxCoordwxCoordwxCoordFunc)(const wxNavigationEnabledWindowExt* self, wxCoord x, wxCoord width, wxCoord widthTotal, wxCoord res);
 typedef void (*wxNavigationEnabledWindowExtAdjustForParentClientOriginintRintRintFunc)(const wxNavigationEnabledWindowExt* self, int& x, int& y, int sizeFlags);
-typedef void (*wxNavigationEnabledWindowExtAlwaysShowScrollbarsboolboolFunc)(const wxNavigationEnabledWindowExt* self, bool param0, bool param1);
+typedef void (*wxNavigationEnabledWindowExtAlwaysShowScrollbarsboolboolFunc)(const wxNavigationEnabledWindowExt* self, bool horz, bool vert);
 typedef void (*wxNavigationEnabledWindowExtAssociateHandleWXWidgetFunc)(const wxNavigationEnabledWindowExt* self, WXWidget param0);
-typedef bool (*wxNavigationEnabledWindowExtBeginRepositioningChildrenFunc)(const wxNavigationEnabledWindowExt* self);
-typedef bool (*wxNavigationEnabledWindowExtCanApplyThemeBorderFunc)(const wxNavigationEnabledWindowExt* self);
-typedef bool (*wxNavigationEnabledWindowExtCanBeFocusedFunc)(const wxNavigationEnabledWindowExt* self);
-typedef bool (*wxNavigationEnabledWindowExtCanBeOutsideClientAreaFunc)(const wxNavigationEnabledWindowExt* self);
-typedef bool (*wxNavigationEnabledWindowExtCanScrollintFunc)(const wxNavigationEnabledWindowExt* self, int orient);
-typedef bool (*wxNavigationEnabledWindowExtCanSetTransparentFunc)(const wxNavigationEnabledWindowExt* self);
+typedef bool (*wxNavigationEnabledWindowExtBeginRepositioningChildrenFunc)(const wxNavigationEnabledWindowExt* self, bool res);
+typedef bool (*wxNavigationEnabledWindowExtCanApplyThemeBorderFunc)(const wxNavigationEnabledWindowExt* self, bool res);
+typedef bool (*wxNavigationEnabledWindowExtCanBeFocusedFunc)(const wxNavigationEnabledWindowExt* self, bool res);
+typedef bool (*wxNavigationEnabledWindowExtCanBeOutsideClientAreaFunc)(const wxNavigationEnabledWindowExt* self, bool res);
+typedef bool (*wxNavigationEnabledWindowExtCanScrollintFunc)(const wxNavigationEnabledWindowExt* self, int orient, bool res);
+typedef bool (*wxNavigationEnabledWindowExtCanSetTransparentFunc)(const wxNavigationEnabledWindowExt* self, bool res);
 typedef void (*wxNavigationEnabledWindowExtClearBackgroundFunc)(const wxNavigationEnabledWindowExt* self);
-typedef wxSize (*wxNavigationEnabledWindowExtClientToWindowSizewxSizeCRFunc)(const wxNavigationEnabledWindowExt* self, wxSize const& size);
-typedef wxObjectRefData* (*wxNavigationEnabledWindowExtCloneRefDatawxObjectRefDataCPFunc)(const wxNavigationEnabledWindowExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxNavigationEnabledWindowExtCreateRefDataFunc)(const wxNavigationEnabledWindowExt* self);
-typedef bool (*wxNavigationEnabledWindowExtDestroyFunc)(const wxNavigationEnabledWindowExt* self);
+typedef wxSize (*wxNavigationEnabledWindowExtClientToWindowSizewxSizeCRFunc)(const wxNavigationEnabledWindowExt* self, wxSize const& size, wxSize res);
+typedef wxObjectRefData* (*wxNavigationEnabledWindowExtCloneRefDatawxObjectRefDataCPFunc)(const wxNavigationEnabledWindowExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxNavigationEnabledWindowExtCreateRefDataFunc)(const wxNavigationEnabledWindowExt* self, wxObjectRefData* res);
+typedef bool (*wxNavigationEnabledWindowExtDestroyFunc)(const wxNavigationEnabledWindowExt* self, bool res);
 typedef void (*wxNavigationEnabledWindowExtDissociateHandleFunc)(const wxNavigationEnabledWindowExt* self);
 typedef void (*wxNavigationEnabledWindowExtDoCaptureMouseFunc)(const wxNavigationEnabledWindowExt* self);
 typedef void (*wxNavigationEnabledWindowExtDoCentreintFunc)(const wxNavigationEnabledWindowExt* self, int dir);
 typedef void (*wxNavigationEnabledWindowExtDoClientToScreenintPintPFunc)(const wxNavigationEnabledWindowExt* self, int* x, int* y);
-typedef void (*wxNavigationEnabledWindowExtDoEnableboolFunc)(const wxNavigationEnabledWindowExt* self, bool param0);
+typedef void (*wxNavigationEnabledWindowExtDoEnableboolFunc)(const wxNavigationEnabledWindowExt* self, bool enable);
 typedef void (*wxNavigationEnabledWindowExtDoFreezeFunc)(const wxNavigationEnabledWindowExt* self);
-typedef int (*wxNavigationEnabledWindowExtDoGetBestClientHeightintFunc)(const wxNavigationEnabledWindowExt* self, int param0);
-typedef wxSize (*wxNavigationEnabledWindowExtDoGetBestClientSizeFunc)(const wxNavigationEnabledWindowExt* self);
-typedef int (*wxNavigationEnabledWindowExtDoGetBestClientWidthintFunc)(const wxNavigationEnabledWindowExt* self, int param0);
-typedef wxSize (*wxNavigationEnabledWindowExtDoGetBestSizeFunc)(const wxNavigationEnabledWindowExt* self);
-typedef void* (*wxNavigationEnabledWindowExtDoGetClientDataFunc)(const wxNavigationEnabledWindowExt* self);
-typedef wxClientData* (*wxNavigationEnabledWindowExtDoGetClientObjectFunc)(const wxNavigationEnabledWindowExt* self);
+typedef int (*wxNavigationEnabledWindowExtDoGetBestClientHeightintFunc)(const wxNavigationEnabledWindowExt* self, int param0, int res);
+typedef wxSize (*wxNavigationEnabledWindowExtDoGetBestClientSizeFunc)(const wxNavigationEnabledWindowExt* self, wxSize res);
+typedef int (*wxNavigationEnabledWindowExtDoGetBestClientWidthintFunc)(const wxNavigationEnabledWindowExt* self, int param0, int res);
+typedef wxSize (*wxNavigationEnabledWindowExtDoGetBestSizeFunc)(const wxNavigationEnabledWindowExt* self, wxSize res);
+typedef void* (*wxNavigationEnabledWindowExtDoGetClientDataFunc)(const wxNavigationEnabledWindowExt* self, void* res);
+typedef wxClientData* (*wxNavigationEnabledWindowExtDoGetClientObjectFunc)(const wxNavigationEnabledWindowExt* self, wxClientData* res);
 typedef void (*wxNavigationEnabledWindowExtDoGetClientSizeintPintPFunc)(const wxNavigationEnabledWindowExt* self, int* width, int* height);
 typedef void (*wxNavigationEnabledWindowExtDoGetPositionintPintPFunc)(const wxNavigationEnabledWindowExt* self, int* x, int* y);
 typedef void (*wxNavigationEnabledWindowExtDoGetScreenPositionintPintPFunc)(const wxNavigationEnabledWindowExt* self, int* x, int* y);
 typedef void (*wxNavigationEnabledWindowExtDoGetSizeintPintPFunc)(const wxNavigationEnabledWindowExt* self, int* width, int* height);
-typedef void (*wxNavigationEnabledWindowExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCPFunc)(const wxNavigationEnabledWindowExt* self, wxString const& string, int* x, int* y, int* descent, int* externalLeading, wxFont const* font);
-typedef wxSize (*wxNavigationEnabledWindowExtDoGetVirtualSizeFunc)(const wxNavigationEnabledWindowExt* self);
-typedef wxHitTest (*wxNavigationEnabledWindowExtDoHitTestwxCoordwxCoordFunc)(const wxNavigationEnabledWindowExt* self, wxCoord x, wxCoord y);
-typedef bool (*wxNavigationEnabledWindowExtDoIsExposedintintintintFunc)(const wxNavigationEnabledWindowExt* self, int x, int y, int w, int h);
-typedef bool (*wxNavigationEnabledWindowExtDoIsExposedintintFunc)(const wxNavigationEnabledWindowExt* self, int x, int y);
+typedef wxSize (*wxNavigationEnabledWindowExtDoGetSizeFromClientSizewxSizeCRFunc)(const wxNavigationEnabledWindowExt* self, wxSize const& size, wxSize res);
+typedef void (*wxNavigationEnabledWindowExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCPFunc)(const wxNavigationEnabledWindowExt* self, wxString const& string, int* x, int* y, int* descent, int* externalLeading, wxFont const* theFont);
+typedef wxSize (*wxNavigationEnabledWindowExtDoGetVirtualSizeFunc)(const wxNavigationEnabledWindowExt* self, wxSize res);
+typedef wxHitTest (*wxNavigationEnabledWindowExtDoHitTestwxCoordwxCoordFunc)(const wxNavigationEnabledWindowExt* self, wxCoord x, wxCoord y, wxHitTest res);
+typedef bool (*wxNavigationEnabledWindowExtDoIsExposedintintintintFunc)(const wxNavigationEnabledWindowExt* self, int x, int y, int w, int h, bool res);
+typedef bool (*wxNavigationEnabledWindowExtDoIsExposedintintFunc)(const wxNavigationEnabledWindowExt* self, int x, int y, bool res);
+typedef void (*wxNavigationEnabledWindowExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrderFunc)(const wxNavigationEnabledWindowExt* self, wxWindow* win, wxWindowBase::WindowOrder move);
 typedef void (*wxNavigationEnabledWindowExtDoMoveWindowintintintintFunc)(const wxNavigationEnabledWindowExt* self, int x, int y, int width, int height);
-typedef bool (*wxNavigationEnabledWindowExtDoNavigateInintFunc)(const wxNavigationEnabledWindowExt* self, int flags);
-typedef bool (*wxNavigationEnabledWindowExtDoPhaseintFunc)(const wxNavigationEnabledWindowExt* self, int phase);
-typedef bool (*wxNavigationEnabledWindowExtDoPopupMenuwxMenuPintintFunc)(const wxNavigationEnabledWindowExt* self, wxMenu* menu, int x, int y);
+typedef bool (*wxNavigationEnabledWindowExtDoNavigateInintFunc)(const wxNavigationEnabledWindowExt* self, int flags, bool res);
+typedef bool (*wxNavigationEnabledWindowExtDoPhaseintFunc)(const wxNavigationEnabledWindowExt* self, int phase, bool res);
+typedef bool (*wxNavigationEnabledWindowExtDoPopupMenuwxMenuPintintFunc)(const wxNavigationEnabledWindowExt* self, wxMenu* menu, int x, int y, bool res);
 typedef void (*wxNavigationEnabledWindowExtDoReleaseMouseFunc)(const wxNavigationEnabledWindowExt* self);
 typedef void (*wxNavigationEnabledWindowExtDoScreenToClientintPintPFunc)(const wxNavigationEnabledWindowExt* self, int* x, int* y);
 typedef void (*wxNavigationEnabledWindowExtDoSetClientDatavoidPFunc)(const wxNavigationEnabledWindowExt* self, void* data);
@@ -64,99 +66,100 @@ typedef void (*wxNavigationEnabledWindowExtDoSetWindowVariantwxWindowVariantFunc
 typedef void (*wxNavigationEnabledWindowExtDoThawFunc)(const wxNavigationEnabledWindowExt* self);
 typedef void (*wxNavigationEnabledWindowExtDoUpdateWindowUIwxUpdateUIEventRFunc)(const wxNavigationEnabledWindowExt* self, wxUpdateUIEvent& event);
 typedef void (*wxNavigationEnabledWindowExtDragAcceptFilesboolFunc)(const wxNavigationEnabledWindowExt* self, bool accept);
-typedef bool (*wxNavigationEnabledWindowExtEnableboolFunc)(const wxNavigationEnabledWindowExt* self, bool enable);
-typedef bool (*wxNavigationEnabledWindowExtEnableTouchEventsintFunc)(const wxNavigationEnabledWindowExt* self, int param0);
-typedef void (*wxNavigationEnabledWindowExtEnableVisibleFocusboolFunc)(const wxNavigationEnabledWindowExt* self, bool param0);
+typedef bool (*wxNavigationEnabledWindowExtEnableboolFunc)(const wxNavigationEnabledWindowExt* self, bool enable, bool res);
+typedef bool (*wxNavigationEnabledWindowExtEnableTouchEventsintFunc)(const wxNavigationEnabledWindowExt* self, int eventsMask, bool res);
+typedef void (*wxNavigationEnabledWindowExtEnableVisibleFocusboolFunc)(const wxNavigationEnabledWindowExt* self, bool enabled);
 typedef void (*wxNavigationEnabledWindowExtEndRepositioningChildrenFunc)(const wxNavigationEnabledWindowExt* self);
 typedef void (*wxNavigationEnabledWindowExtFitFunc)(const wxNavigationEnabledWindowExt* self);
 typedef void (*wxNavigationEnabledWindowExtFitInsideFunc)(const wxNavigationEnabledWindowExt* self);
-typedef wxSize (*wxNavigationEnabledWindowExtGetBestVirtualSizeFunc)(const wxNavigationEnabledWindowExt* self);
-typedef int (*wxNavigationEnabledWindowExtGetCharHeightFunc)(const wxNavigationEnabledWindowExt* self);
-typedef int (*wxNavigationEnabledWindowExtGetCharWidthFunc)(const wxNavigationEnabledWindowExt* self);
-typedef wxClassInfo* (*wxNavigationEnabledWindowExtGetClassInfoFunc)(const wxNavigationEnabledWindowExt* self);
-typedef wxPoint (*wxNavigationEnabledWindowExtGetClientAreaOriginFunc)(const wxNavigationEnabledWindowExt* self);
+typedef wxSize (*wxNavigationEnabledWindowExtGetBestVirtualSizeFunc)(const wxNavigationEnabledWindowExt* self, wxSize res);
+typedef int (*wxNavigationEnabledWindowExtGetCharHeightFunc)(const wxNavigationEnabledWindowExt* self, int res);
+typedef int (*wxNavigationEnabledWindowExtGetCharWidthFunc)(const wxNavigationEnabledWindowExt* self, int res);
+typedef wxClassInfo* (*wxNavigationEnabledWindowExtGetClassInfoFunc)(const wxNavigationEnabledWindowExt* self, wxClassInfo* res);
+typedef wxPoint (*wxNavigationEnabledWindowExtGetClientAreaOriginFunc)(const wxNavigationEnabledWindowExt* self, wxPoint res);
 typedef void (*wxNavigationEnabledWindowExtGetClientSizeConstraintintPintPFunc)(const wxNavigationEnabledWindowExt* self, int* w, int* h);
-typedef double (*wxNavigationEnabledWindowExtGetContentScaleFactorFunc)(const wxNavigationEnabledWindowExt* self);
-typedef wxSize (*wxNavigationEnabledWindowExtGetDPIFunc)(const wxNavigationEnabledWindowExt* self);
-typedef double (*wxNavigationEnabledWindowExtGetDPIScaleFactorFunc)(const wxNavigationEnabledWindowExt* self);
-typedef wxVisualAttributes (*wxNavigationEnabledWindowExtGetDefaultAttributesFunc)(const wxNavigationEnabledWindowExt* self);
-typedef wxBorder (*wxNavigationEnabledWindowExtGetDefaultBorderFunc)(const wxNavigationEnabledWindowExt* self);
-typedef wxBorder (*wxNavigationEnabledWindowExtGetDefaultBorderForControlFunc)(const wxNavigationEnabledWindowExt* self);
-typedef wxDropTarget* (*wxNavigationEnabledWindowExtGetDropTargetFunc)(const wxNavigationEnabledWindowExt* self);
-typedef wxSize (*wxNavigationEnabledWindowExtGetEffectiveMinSizeFunc)(const wxNavigationEnabledWindowExt* self);
-typedef wxEventHashTable& (*wxNavigationEnabledWindowExtGetEventHashTableFunc)(const wxNavigationEnabledWindowExt* self);
-typedef wxEventTable const* (*wxNavigationEnabledWindowExtGetEventTableFunc)(const wxNavigationEnabledWindowExt* self);
-typedef WXWidget (*wxNavigationEnabledWindowExtGetHandleFunc)(const wxNavigationEnabledWindowExt* self);
-typedef wxString (*wxNavigationEnabledWindowExtGetHelpTextAtPointwxPointCRwxHelpEventNOriginFunc)(const wxNavigationEnabledWindowExt* self, wxPoint const& pt, wxHelpEvent::Origin origin);
-typedef wxString (*wxNavigationEnabledWindowExtGetLabelFunc)(const wxNavigationEnabledWindowExt* self);
-typedef wxLayoutDirection (*wxNavigationEnabledWindowExtGetLayoutDirectionFunc)(const wxNavigationEnabledWindowExt* self);
-typedef wxWindow* (*wxNavigationEnabledWindowExtGetMainWindowOfCompositeControlFunc)(const wxNavigationEnabledWindowExt* self);
-typedef wxSize (*wxNavigationEnabledWindowExtGetMaxClientSizeFunc)(const wxNavigationEnabledWindowExt* self);
-typedef wxSize (*wxNavigationEnabledWindowExtGetMaxSizeFunc)(const wxNavigationEnabledWindowExt* self);
-typedef wxSize (*wxNavigationEnabledWindowExtGetMinClientSizeFunc)(const wxNavigationEnabledWindowExt* self);
-typedef wxSize (*wxNavigationEnabledWindowExtGetMinSizeFunc)(const wxNavigationEnabledWindowExt* self);
-typedef wxString (*wxNavigationEnabledWindowExtGetNameFunc)(const wxNavigationEnabledWindowExt* self);
+typedef double (*wxNavigationEnabledWindowExtGetContentScaleFactorFunc)(const wxNavigationEnabledWindowExt* self, double res);
+typedef wxSize (*wxNavigationEnabledWindowExtGetDPIFunc)(const wxNavigationEnabledWindowExt* self, wxSize res);
+typedef double (*wxNavigationEnabledWindowExtGetDPIScaleFactorFunc)(const wxNavigationEnabledWindowExt* self, double res);
+typedef wxVisualAttributes (*wxNavigationEnabledWindowExtGetDefaultAttributesFunc)(const wxNavigationEnabledWindowExt* self, wxVisualAttributes res);
+typedef wxBorder (*wxNavigationEnabledWindowExtGetDefaultBorderFunc)(const wxNavigationEnabledWindowExt* self, wxBorder res);
+typedef wxBorder (*wxNavigationEnabledWindowExtGetDefaultBorderForControlFunc)(const wxNavigationEnabledWindowExt* self, wxBorder res);
+typedef wxDropTarget* (*wxNavigationEnabledWindowExtGetDropTargetFunc)(const wxNavigationEnabledWindowExt* self, wxDropTarget* res);
+typedef wxSize (*wxNavigationEnabledWindowExtGetEffectiveMinSizeFunc)(const wxNavigationEnabledWindowExt* self, wxSize res);
+typedef wxEventHashTable& (*wxNavigationEnabledWindowExtGetEventHashTableFunc)(const wxNavigationEnabledWindowExt* self, wxEventHashTable& res);
+typedef wxEventTable const* (*wxNavigationEnabledWindowExtGetEventTableFunc)(const wxNavigationEnabledWindowExt* self, wxEventTable const* res);
+typedef WXWidget (*wxNavigationEnabledWindowExtGetHandleFunc)(const wxNavigationEnabledWindowExt* self, WXWidget res);
+typedef wxString (*wxNavigationEnabledWindowExtGetHelpTextAtPointwxPointCRwxHelpEventNOriginFunc)(const wxNavigationEnabledWindowExt* self, wxPoint const& pt, wxHelpEvent::Origin origin, wxString res);
+typedef wxString (*wxNavigationEnabledWindowExtGetLabelFunc)(const wxNavigationEnabledWindowExt* self, wxString res);
+typedef wxLayoutDirection (*wxNavigationEnabledWindowExtGetLayoutDirectionFunc)(const wxNavigationEnabledWindowExt* self, wxLayoutDirection res);
+typedef wxWindow* (*wxNavigationEnabledWindowExtGetMainWindowOfCompositeControlFunc)(const wxNavigationEnabledWindowExt* self, wxWindow* res);
+typedef wxSize (*wxNavigationEnabledWindowExtGetMaxClientSizeFunc)(const wxNavigationEnabledWindowExt* self, wxSize res);
+typedef wxSize (*wxNavigationEnabledWindowExtGetMaxSizeFunc)(const wxNavigationEnabledWindowExt* self, wxSize res);
+typedef wxSize (*wxNavigationEnabledWindowExtGetMinClientSizeFunc)(const wxNavigationEnabledWindowExt* self, wxSize res);
+typedef wxSize (*wxNavigationEnabledWindowExtGetMinSizeFunc)(const wxNavigationEnabledWindowExt* self, wxSize res);
+typedef wxString (*wxNavigationEnabledWindowExtGetNameFunc)(const wxNavigationEnabledWindowExt* self, wxString res);
 typedef void (*wxNavigationEnabledWindowExtGetPositionConstraintintPintPFunc)(const wxNavigationEnabledWindowExt* self, int* x, int* y);
-typedef int (*wxNavigationEnabledWindowExtGetScrollPosintFunc)(const wxNavigationEnabledWindowExt* self, int orient);
-typedef int (*wxNavigationEnabledWindowExtGetScrollRangeintFunc)(const wxNavigationEnabledWindowExt* self, int orient);
-typedef int (*wxNavigationEnabledWindowExtGetScrollThumbintFunc)(const wxNavigationEnabledWindowExt* self, int orient);
+typedef int (*wxNavigationEnabledWindowExtGetScrollPosintFunc)(const wxNavigationEnabledWindowExt* self, int orient, int res);
+typedef int (*wxNavigationEnabledWindowExtGetScrollRangeintFunc)(const wxNavigationEnabledWindowExt* self, int orient, int res);
+typedef int (*wxNavigationEnabledWindowExtGetScrollThumbintFunc)(const wxNavigationEnabledWindowExt* self, int orient, int res);
 typedef void (*wxNavigationEnabledWindowExtGetSizeConstraintintPintPFunc)(const wxNavigationEnabledWindowExt* self, int* w, int* h);
-typedef bool (*wxNavigationEnabledWindowExtGetThemeEnabledFunc)(const wxNavigationEnabledWindowExt* self);
-typedef wxValidator* (*wxNavigationEnabledWindowExtGetValidatorFunc)(const wxNavigationEnabledWindowExt* self);
-typedef wxSize (*wxNavigationEnabledWindowExtGetWindowBorderSizeFunc)(const wxNavigationEnabledWindowExt* self);
-typedef long (*wxNavigationEnabledWindowExtGetWindowStyleFlagFunc)(const wxNavigationEnabledWindowExt* self);
-typedef bool (*wxNavigationEnabledWindowExtHasCaptureFunc)(const wxNavigationEnabledWindowExt* self);
-typedef bool (*wxNavigationEnabledWindowExtHasFocusFunc)(const wxNavigationEnabledWindowExt* self);
-typedef bool (*wxNavigationEnabledWindowExtHasMultiplePagesFunc)(const wxNavigationEnabledWindowExt* self);
-typedef bool (*wxNavigationEnabledWindowExtHasTransparentBackgroundFunc)(const wxNavigationEnabledWindowExt* self);
-typedef bool (*wxNavigationEnabledWindowExtHideWithEffectwxShowEffectunsignedintFunc)(const wxNavigationEnabledWindowExt* self, wxShowEffect param0, unsigned int param1);
-typedef bool (*wxNavigationEnabledWindowExtInformFirstDirectionintintintFunc)(const wxNavigationEnabledWindowExt* self, int direction, int size, int availableOtherDir);
+typedef bool (*wxNavigationEnabledWindowExtGetThemeEnabledFunc)(const wxNavigationEnabledWindowExt* self, bool res);
+typedef wxByte (*wxNavigationEnabledWindowExtGetTransparentFunc)(const wxNavigationEnabledWindowExt* self, wxByte res);
+typedef wxValidator* (*wxNavigationEnabledWindowExtGetValidatorFunc)(const wxNavigationEnabledWindowExt* self, wxValidator* res);
+typedef wxSize (*wxNavigationEnabledWindowExtGetWindowBorderSizeFunc)(const wxNavigationEnabledWindowExt* self, wxSize res);
+typedef long (*wxNavigationEnabledWindowExtGetWindowStyleFlagFunc)(const wxNavigationEnabledWindowExt* self, long res);
+typedef bool (*wxNavigationEnabledWindowExtHasCaptureFunc)(const wxNavigationEnabledWindowExt* self, bool res);
+typedef bool (*wxNavigationEnabledWindowExtHasFocusFunc)(const wxNavigationEnabledWindowExt* self, bool res);
+typedef bool (*wxNavigationEnabledWindowExtHasMultiplePagesFunc)(const wxNavigationEnabledWindowExt* self, bool res);
+typedef bool (*wxNavigationEnabledWindowExtHasTransparentBackgroundFunc)(const wxNavigationEnabledWindowExt* self, bool res);
+typedef bool (*wxNavigationEnabledWindowExtHideWithEffectwxShowEffectunsignedintFunc)(const wxNavigationEnabledWindowExt* self, wxShowEffect effect, unsigned int timeout, bool res);
+typedef bool (*wxNavigationEnabledWindowExtInformFirstDirectionintintintFunc)(const wxNavigationEnabledWindowExt* self, int direction, int size, int availableOtherDir, bool res);
 typedef void (*wxNavigationEnabledWindowExtInheritAttributesFunc)(const wxNavigationEnabledWindowExt* self);
 typedef void (*wxNavigationEnabledWindowExtInitDialogFunc)(const wxNavigationEnabledWindowExt* self);
-typedef bool (*wxNavigationEnabledWindowExtIsClientAreaChildwxWindowCPFunc)(const wxNavigationEnabledWindowExt* self, wxWindow const* param0);
-typedef bool (*wxNavigationEnabledWindowExtIsDoubleBufferedFunc)(const wxNavigationEnabledWindowExt* self);
-typedef bool (*wxNavigationEnabledWindowExtIsRetainedFunc)(const wxNavigationEnabledWindowExt* self);
-typedef bool (*wxNavigationEnabledWindowExtIsScrollbarAlwaysShownintFunc)(const wxNavigationEnabledWindowExt* self, int param0);
-typedef bool (*wxNavigationEnabledWindowExtIsShownFunc)(const wxNavigationEnabledWindowExt* self);
-typedef bool (*wxNavigationEnabledWindowExtIsShownOnScreenFunc)(const wxNavigationEnabledWindowExt* self);
-typedef bool (*wxNavigationEnabledWindowExtIsThisEnabledFunc)(const wxNavigationEnabledWindowExt* self);
-typedef bool (*wxNavigationEnabledWindowExtIsTopLevelFunc)(const wxNavigationEnabledWindowExt* self);
-typedef bool (*wxNavigationEnabledWindowExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc)(const wxNavigationEnabledWindowExt* self, wxWindowBase::NavigationKind param0);
-typedef bool (*wxNavigationEnabledWindowExtIsTransparentBackgroundSupportedwxStringPFunc)(const wxNavigationEnabledWindowExt* self, wxString* reason);
-typedef bool (*wxNavigationEnabledWindowExtLayoutFunc)(const wxNavigationEnabledWindowExt* self);
-typedef bool (*wxNavigationEnabledWindowExtLayoutPhase1intPFunc)(const wxNavigationEnabledWindowExt* self, int* noChanges);
-typedef bool (*wxNavigationEnabledWindowExtLayoutPhase2intPFunc)(const wxNavigationEnabledWindowExt* self, int* noChanges);
+typedef bool (*wxNavigationEnabledWindowExtIsClientAreaChildwxWindowCPFunc)(const wxNavigationEnabledWindowExt* self, wxWindow const* param0, bool res);
+typedef bool (*wxNavigationEnabledWindowExtIsDoubleBufferedFunc)(const wxNavigationEnabledWindowExt* self, bool res);
+typedef bool (*wxNavigationEnabledWindowExtIsRetainedFunc)(const wxNavigationEnabledWindowExt* self, bool res);
+typedef bool (*wxNavigationEnabledWindowExtIsScrollbarAlwaysShownintFunc)(const wxNavigationEnabledWindowExt* self, int orient, bool res);
+typedef bool (*wxNavigationEnabledWindowExtIsShownFunc)(const wxNavigationEnabledWindowExt* self, bool res);
+typedef bool (*wxNavigationEnabledWindowExtIsShownOnScreenFunc)(const wxNavigationEnabledWindowExt* self, bool res);
+typedef bool (*wxNavigationEnabledWindowExtIsThisEnabledFunc)(const wxNavigationEnabledWindowExt* self, bool res);
+typedef bool (*wxNavigationEnabledWindowExtIsTopLevelFunc)(const wxNavigationEnabledWindowExt* self, bool res);
+typedef bool (*wxNavigationEnabledWindowExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc)(const wxNavigationEnabledWindowExt* self, wxWindowBase::NavigationKind param0, bool res);
+typedef bool (*wxNavigationEnabledWindowExtIsTransparentBackgroundSupportedwxStringPFunc)(const wxNavigationEnabledWindowExt* self, wxString* reason, bool res);
+typedef bool (*wxNavigationEnabledWindowExtLayoutFunc)(const wxNavigationEnabledWindowExt* self, bool res);
+typedef bool (*wxNavigationEnabledWindowExtLayoutPhase1intPFunc)(const wxNavigationEnabledWindowExt* self, int* noChanges, bool res);
+typedef bool (*wxNavigationEnabledWindowExtLayoutPhase2intPFunc)(const wxNavigationEnabledWindowExt* self, int* noChanges, bool res);
 typedef void (*wxNavigationEnabledWindowExtLowerFunc)(const wxNavigationEnabledWindowExt* self);
 typedef void (*wxNavigationEnabledWindowExtMoveConstraintintintFunc)(const wxNavigationEnabledWindowExt* self, int x, int y);
-typedef bool (*wxNavigationEnabledWindowExtOnDynamicBindwxDynamicEventTableEntryRFunc)(const wxNavigationEnabledWindowExt* self, wxDynamicEventTableEntry& param0);
+typedef bool (*wxNavigationEnabledWindowExtOnDynamicBindwxDynamicEventTableEntryRFunc)(const wxNavigationEnabledWindowExt* self, wxDynamicEventTableEntry& param0, bool res);
 typedef void (*wxNavigationEnabledWindowExtOnInternalIdleFunc)(const wxNavigationEnabledWindowExt* self);
 typedef void (*wxNavigationEnabledWindowExtPrepareDCwxDCRFunc)(const wxNavigationEnabledWindowExt* self, wxDC& param0);
-typedef bool (*wxNavigationEnabledWindowExtProcessEventwxEventRFunc)(const wxNavigationEnabledWindowExt* self, wxEvent& event);
+typedef bool (*wxNavigationEnabledWindowExtProcessEventwxEventRFunc)(const wxNavigationEnabledWindowExt* self, wxEvent& event, bool res);
 typedef void (*wxNavigationEnabledWindowExtQueueEventwxEventPFunc)(const wxNavigationEnabledWindowExt* self, wxEvent* event);
 typedef void (*wxNavigationEnabledWindowExtRaiseFunc)(const wxNavigationEnabledWindowExt* self);
 typedef void (*wxNavigationEnabledWindowExtRefreshboolwxRectCPFunc)(const wxNavigationEnabledWindowExt* self, bool eraseBackground, wxRect const* rect);
-typedef bool (*wxNavigationEnabledWindowExtRegisterHotKeyintintintFunc)(const wxNavigationEnabledWindowExt* self, int hotkeyId, int modifiers, int keycode);
+typedef bool (*wxNavigationEnabledWindowExtRegisterHotKeyintintintFunc)(const wxNavigationEnabledWindowExt* self, int hotkeyId, int modifiers, int keycode, bool res);
 typedef void (*wxNavigationEnabledWindowExtRemoveChildwxWindowBasePFunc)(const wxNavigationEnabledWindowExt* self, wxWindowBase* child);
-typedef bool (*wxNavigationEnabledWindowExtReparentwxWindowBasePFunc)(const wxNavigationEnabledWindowExt* self, wxWindowBase* newParent);
-typedef bool (*wxNavigationEnabledWindowExtScrollLinesintFunc)(const wxNavigationEnabledWindowExt* self, int param0);
-typedef bool (*wxNavigationEnabledWindowExtScrollPagesintFunc)(const wxNavigationEnabledWindowExt* self, int param0);
+typedef bool (*wxNavigationEnabledWindowExtReparentwxWindowBasePFunc)(const wxNavigationEnabledWindowExt* self, wxWindowBase* newParent, bool res);
+typedef bool (*wxNavigationEnabledWindowExtScrollLinesintFunc)(const wxNavigationEnabledWindowExt* self, int param0, bool res);
+typedef bool (*wxNavigationEnabledWindowExtScrollPagesintFunc)(const wxNavigationEnabledWindowExt* self, int param0, bool res);
 typedef void (*wxNavigationEnabledWindowExtScrollWindowintintwxRectCPFunc)(const wxNavigationEnabledWindowExt* self, int dx, int dy, wxRect const* rect);
-typedef bool (*wxNavigationEnabledWindowExtSearchEventTablewxEventTableRwxEventRFunc)(const wxNavigationEnabledWindowExt* self, wxEventTable& table, wxEvent& event);
-typedef bool (*wxNavigationEnabledWindowExtSendIdleEventswxIdleEventRFunc)(const wxNavigationEnabledWindowExt* self, wxIdleEvent& event);
+typedef bool (*wxNavigationEnabledWindowExtSearchEventTablewxEventTableRwxEventRFunc)(const wxNavigationEnabledWindowExt* self, wxEventTable& table, wxEvent& event, bool res);
+typedef bool (*wxNavigationEnabledWindowExtSendIdleEventswxIdleEventRFunc)(const wxNavigationEnabledWindowExt* self, wxIdleEvent& event, bool res);
 typedef void (*wxNavigationEnabledWindowExtSendSizeEventintFunc)(const wxNavigationEnabledWindowExt* self, int flags);
 typedef void (*wxNavigationEnabledWindowExtSetAcceleratorTablewxAcceleratorTableCRFunc)(const wxNavigationEnabledWindowExt* self, wxAcceleratorTable const& accel);
-typedef bool (*wxNavigationEnabledWindowExtSetBackgroundColourwxColourCRFunc)(const wxNavigationEnabledWindowExt* self, wxColour const& colour);
-typedef bool (*wxNavigationEnabledWindowExtSetBackgroundStylewxBackgroundStyleFunc)(const wxNavigationEnabledWindowExt* self, wxBackgroundStyle style);
+typedef bool (*wxNavigationEnabledWindowExtSetBackgroundColourwxColourCRFunc)(const wxNavigationEnabledWindowExt* self, wxColour const& colour, bool res);
+typedef bool (*wxNavigationEnabledWindowExtSetBackgroundStylewxBackgroundStyleFunc)(const wxNavigationEnabledWindowExt* self, wxBackgroundStyle style, bool res);
 typedef void (*wxNavigationEnabledWindowExtSetCanFocusboolFunc)(const wxNavigationEnabledWindowExt* self, bool param0);
 typedef void (*wxNavigationEnabledWindowExtSetConstraintSizesboolFunc)(const wxNavigationEnabledWindowExt* self, bool recurse);
-typedef bool (*wxNavigationEnabledWindowExtSetCursorwxCursorCRFunc)(const wxNavigationEnabledWindowExt* self, wxCursor const& cursor);
+typedef bool (*wxNavigationEnabledWindowExtSetCursorwxCursorCRFunc)(const wxNavigationEnabledWindowExt* self, wxCursor const& cursor, bool res);
 typedef void (*wxNavigationEnabledWindowExtSetDoubleBufferedboolFunc)(const wxNavigationEnabledWindowExt* self, bool param0);
 typedef void (*wxNavigationEnabledWindowExtSetDropTargetwxDropTargetPFunc)(const wxNavigationEnabledWindowExt* self, wxDropTarget* dropTarget);
 typedef void (*wxNavigationEnabledWindowExtSetExtraStylelongFunc)(const wxNavigationEnabledWindowExt* self, long exStyle);
 typedef void (*wxNavigationEnabledWindowExtSetFocusFunc)(const wxNavigationEnabledWindowExt* self);
 typedef void (*wxNavigationEnabledWindowExtSetFocusFromKbdFunc)(const wxNavigationEnabledWindowExt* self);
-typedef bool (*wxNavigationEnabledWindowExtSetFontwxFontCRFunc)(const wxNavigationEnabledWindowExt* self, wxFont const& font);
-typedef bool (*wxNavigationEnabledWindowExtSetForegroundColourwxColourCRFunc)(const wxNavigationEnabledWindowExt* self, wxColour const& colour);
+typedef bool (*wxNavigationEnabledWindowExtSetFontwxFontCRFunc)(const wxNavigationEnabledWindowExt* self, wxFont const& font, bool res);
+typedef bool (*wxNavigationEnabledWindowExtSetForegroundColourwxColourCRFunc)(const wxNavigationEnabledWindowExt* self, wxColour const& colour, bool res);
 typedef void (*wxNavigationEnabledWindowExtSetIdwxWindowIDFunc)(const wxNavigationEnabledWindowExt* self, wxWindowID winid);
 typedef void (*wxNavigationEnabledWindowExtSetLabelwxStringCRFunc)(const wxNavigationEnabledWindowExt* self, wxString const& label);
 typedef void (*wxNavigationEnabledWindowExtSetLayoutDirectionwxLayoutDirectionFunc)(const wxNavigationEnabledWindowExt* self, wxLayoutDirection param0);
@@ -168,80 +171,83 @@ typedef void (*wxNavigationEnabledWindowExtSetNamewxStringCRFunc)(const wxNaviga
 typedef void (*wxNavigationEnabledWindowExtSetNextHandlerwxEvtHandlerPFunc)(const wxNavigationEnabledWindowExt* self, wxEvtHandler* handler);
 typedef void (*wxNavigationEnabledWindowExtSetPreviousHandlerwxEvtHandlerPFunc)(const wxNavigationEnabledWindowExt* self, wxEvtHandler* handler);
 typedef void (*wxNavigationEnabledWindowExtSetScrollPosintintboolFunc)(const wxNavigationEnabledWindowExt* self, int orient, int pos, bool refresh);
-typedef void (*wxNavigationEnabledWindowExtSetScrollbarintintintintboolFunc)(const wxNavigationEnabledWindowExt* self, int orient, int pos, int thumbvisible, int range, bool refresh);
+typedef void (*wxNavigationEnabledWindowExtSetScrollbarintintintintboolFunc)(const wxNavigationEnabledWindowExt* self, int orient, int pos, int thumbVisible, int range, bool refresh);
 typedef void (*wxNavigationEnabledWindowExtSetSizeConstraintintintintintFunc)(const wxNavigationEnabledWindowExt* self, int x, int y, int w, int h);
 typedef void (*wxNavigationEnabledWindowExtSetSizeHintsintintintintintintFunc)(const wxNavigationEnabledWindowExt* self, int minW, int minH, int maxW, int maxH, int incW, int incH);
 typedef void (*wxNavigationEnabledWindowExtSetThemeEnabledboolFunc)(const wxNavigationEnabledWindowExt* self, bool enableTheme);
-typedef bool (*wxNavigationEnabledWindowExtSetTransparentwxByteFunc)(const wxNavigationEnabledWindowExt* self, wxByte param0);
+typedef bool (*wxNavigationEnabledWindowExtSetTransparentwxByteFunc)(const wxNavigationEnabledWindowExt* self, wxByte alpha, bool res);
 typedef void (*wxNavigationEnabledWindowExtSetValidatorwxValidatorCRFunc)(const wxNavigationEnabledWindowExt* self, wxValidator const& validator);
 typedef void (*wxNavigationEnabledWindowExtSetWindowStyleFlaglongFunc)(const wxNavigationEnabledWindowExt* self, long style);
-typedef bool (*wxNavigationEnabledWindowExtShouldInheritColoursFunc)(const wxNavigationEnabledWindowExt* self);
-typedef bool (*wxNavigationEnabledWindowExtShowboolFunc)(const wxNavigationEnabledWindowExt* self, bool show);
-typedef bool (*wxNavigationEnabledWindowExtShowWithEffectwxShowEffectunsignedintFunc)(const wxNavigationEnabledWindowExt* self, wxShowEffect param0, unsigned int param1);
-typedef bool (*wxNavigationEnabledWindowExtTransferDataFromWindowFunc)(const wxNavigationEnabledWindowExt* self);
-typedef bool (*wxNavigationEnabledWindowExtTransferDataToWindowFunc)(const wxNavigationEnabledWindowExt* self);
-typedef bool (*wxNavigationEnabledWindowExtTryAfterwxEventRFunc)(const wxNavigationEnabledWindowExt* self, wxEvent& event);
-typedef bool (*wxNavigationEnabledWindowExtTryBeforewxEventRFunc)(const wxNavigationEnabledWindowExt* self, wxEvent& event);
-typedef bool (*wxNavigationEnabledWindowExtUnregisterHotKeyintFunc)(const wxNavigationEnabledWindowExt* self, int hotkeyId);
+typedef bool (*wxNavigationEnabledWindowExtShouldInheritColoursFunc)(const wxNavigationEnabledWindowExt* self, bool res);
+typedef bool (*wxNavigationEnabledWindowExtShowboolFunc)(const wxNavigationEnabledWindowExt* self, bool show, bool res);
+typedef bool (*wxNavigationEnabledWindowExtShowWithEffectwxShowEffectunsignedintFunc)(const wxNavigationEnabledWindowExt* self, wxShowEffect effect, unsigned int timeout, bool res);
+typedef bool (*wxNavigationEnabledWindowExtTransferDataFromWindowFunc)(const wxNavigationEnabledWindowExt* self, bool res);
+typedef bool (*wxNavigationEnabledWindowExtTransferDataToWindowFunc)(const wxNavigationEnabledWindowExt* self, bool res);
+typedef void (*wxNavigationEnabledWindowExtTriggerScrollEventwxEventTypeFunc)(const wxNavigationEnabledWindowExt* self, wxEventType scrollEvent);
+typedef bool (*wxNavigationEnabledWindowExtTryAfterwxEventRFunc)(const wxNavigationEnabledWindowExt* self, wxEvent& event, bool res);
+typedef bool (*wxNavigationEnabledWindowExtTryBeforewxEventRFunc)(const wxNavigationEnabledWindowExt* self, wxEvent& event, bool res);
+typedef bool (*wxNavigationEnabledWindowExtUnregisterHotKeyintFunc)(const wxNavigationEnabledWindowExt* self, int hotkeyId, bool res);
 typedef void (*wxNavigationEnabledWindowExtUpdateFunc)(const wxNavigationEnabledWindowExt* self);
 typedef void (*wxNavigationEnabledWindowExtUpdateWindowUIlongFunc)(const wxNavigationEnabledWindowExt* self, long flags);
-typedef bool (*wxNavigationEnabledWindowExtValidateFunc)(const wxNavigationEnabledWindowExt* self);
+typedef bool (*wxNavigationEnabledWindowExtValidateFunc)(const wxNavigationEnabledWindowExt* self, bool res);
 typedef void (*wxNavigationEnabledWindowExtWXAdjustFontToOwnPPIwxFontRFunc)(const wxNavigationEnabledWindowExt* self, wxFont& param0);
-typedef wxTextEntry const* (*wxNavigationEnabledWindowExtWXGetTextEntryFunc)(const wxNavigationEnabledWindowExt* self);
-typedef void* (*wxNavigationEnabledWindowExtWXReservedEvtHandler1voidPFunc)(const wxNavigationEnabledWindowExt* self, void* param0);
-typedef void* (*wxNavigationEnabledWindowExtWXReservedEvtHandler2voidPFunc)(const wxNavigationEnabledWindowExt* self, void* param0);
-typedef void* (*wxNavigationEnabledWindowExtWXReservedWindow1voidPFunc)(const wxNavigationEnabledWindowExt* self, void* param0);
-typedef void* (*wxNavigationEnabledWindowExtWXReservedWindow2voidPFunc)(const wxNavigationEnabledWindowExt* self, void* param0);
-typedef void* (*wxNavigationEnabledWindowExtWXReservedWindow3voidPFunc)(const wxNavigationEnabledWindowExt* self, void* param0);
+typedef wxTextEntry const* (*wxNavigationEnabledWindowExtWXGetTextEntryFunc)(const wxNavigationEnabledWindowExt* self, wxTextEntry const* res);
+typedef void* (*wxNavigationEnabledWindowExtWXReservedEvtHandler1voidPFunc)(const wxNavigationEnabledWindowExt* self, void* param0, void* res);
+typedef void* (*wxNavigationEnabledWindowExtWXReservedEvtHandler2voidPFunc)(const wxNavigationEnabledWindowExt* self, void* param0, void* res);
+typedef void* (*wxNavigationEnabledWindowExtWXReservedWindow1voidPFunc)(const wxNavigationEnabledWindowExt* self, void* param0, void* res);
+typedef void* (*wxNavigationEnabledWindowExtWXReservedWindow2voidPFunc)(const wxNavigationEnabledWindowExt* self, void* param0, void* res);
+typedef void* (*wxNavigationEnabledWindowExtWXReservedWindow3voidPFunc)(const wxNavigationEnabledWindowExt* self, void* param0, void* res);
 typedef void (*wxNavigationEnabledWindowExtWXSetInitialFittingClientSizeintwxSizerPFunc)(const wxNavigationEnabledWindowExt* self, int flags, wxSizer* sizer);
 typedef void (*wxNavigationEnabledWindowExtWarpPointerintintFunc)(const wxNavigationEnabledWindowExt* self, int x, int y);
-typedef wxSize (*wxNavigationEnabledWindowExtWindowToClientSizewxSizeCRFunc)(const wxNavigationEnabledWindowExt* self, wxSize const& size);
+typedef wxSize (*wxNavigationEnabledWindowExtWindowToClientSizewxSizeCRFunc)(const wxNavigationEnabledWindowExt* self, wxSize const& size, wxSize res);
 class wxPanelBaseExt;
-typedef bool (*wxPanelBaseExtAcceptsFocusFunc)(const wxPanelBaseExt* self);
-typedef bool (*wxPanelBaseExtAcceptsFocusFromKeyboardFunc)(const wxPanelBaseExt* self);
-typedef bool (*wxPanelBaseExtAcceptsFocusRecursivelyFunc)(const wxPanelBaseExt* self);
+typedef bool (*wxPanelBaseExtAcceptsFocusFunc)(const wxPanelBaseExt* self, bool res);
+typedef bool (*wxPanelBaseExtAcceptsFocusFromKeyboardFunc)(const wxPanelBaseExt* self, bool res);
+typedef bool (*wxPanelBaseExtAcceptsFocusRecursivelyFunc)(const wxPanelBaseExt* self, bool res);
 typedef void (*wxPanelBaseExtAddChildwxWindowBasePFunc)(const wxPanelBaseExt* self, wxWindowBase* child);
 typedef void (*wxPanelBaseExtAddPendingEventwxEventCRFunc)(const wxPanelBaseExt* self, wxEvent const& event);
-typedef wxCoord (*wxPanelBaseExtAdjustForLayoutDirectionwxCoordwxCoordwxCoordFunc)(const wxPanelBaseExt* self, wxCoord x, wxCoord width, wxCoord widthTotal);
+typedef wxCoord (*wxPanelBaseExtAdjustForLayoutDirectionwxCoordwxCoordwxCoordFunc)(const wxPanelBaseExt* self, wxCoord x, wxCoord width, wxCoord widthTotal, wxCoord res);
 typedef void (*wxPanelBaseExtAdjustForParentClientOriginintRintRintFunc)(const wxPanelBaseExt* self, int& x, int& y, int sizeFlags);
-typedef void (*wxPanelBaseExtAlwaysShowScrollbarsboolboolFunc)(const wxPanelBaseExt* self, bool param0, bool param1);
+typedef void (*wxPanelBaseExtAlwaysShowScrollbarsboolboolFunc)(const wxPanelBaseExt* self, bool horz, bool vert);
 typedef void (*wxPanelBaseExtAssociateHandleWXWidgetFunc)(const wxPanelBaseExt* self, WXWidget param0);
-typedef bool (*wxPanelBaseExtBeginRepositioningChildrenFunc)(const wxPanelBaseExt* self);
-typedef bool (*wxPanelBaseExtCanApplyThemeBorderFunc)(const wxPanelBaseExt* self);
-typedef bool (*wxPanelBaseExtCanBeFocusedFunc)(const wxPanelBaseExt* self);
-typedef bool (*wxPanelBaseExtCanBeOutsideClientAreaFunc)(const wxPanelBaseExt* self);
-typedef bool (*wxPanelBaseExtCanScrollintFunc)(const wxPanelBaseExt* self, int orient);
-typedef bool (*wxPanelBaseExtCanSetTransparentFunc)(const wxPanelBaseExt* self);
+typedef bool (*wxPanelBaseExtBeginRepositioningChildrenFunc)(const wxPanelBaseExt* self, bool res);
+typedef bool (*wxPanelBaseExtCanApplyThemeBorderFunc)(const wxPanelBaseExt* self, bool res);
+typedef bool (*wxPanelBaseExtCanBeFocusedFunc)(const wxPanelBaseExt* self, bool res);
+typedef bool (*wxPanelBaseExtCanBeOutsideClientAreaFunc)(const wxPanelBaseExt* self, bool res);
+typedef bool (*wxPanelBaseExtCanScrollintFunc)(const wxPanelBaseExt* self, int orient, bool res);
+typedef bool (*wxPanelBaseExtCanSetTransparentFunc)(const wxPanelBaseExt* self, bool res);
 typedef void (*wxPanelBaseExtClearBackgroundFunc)(const wxPanelBaseExt* self);
-typedef wxSize (*wxPanelBaseExtClientToWindowSizewxSizeCRFunc)(const wxPanelBaseExt* self, wxSize const& size);
-typedef wxObjectRefData* (*wxPanelBaseExtCloneRefDatawxObjectRefDataCPFunc)(const wxPanelBaseExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxPanelBaseExtCreateRefDataFunc)(const wxPanelBaseExt* self);
-typedef bool (*wxPanelBaseExtDestroyFunc)(const wxPanelBaseExt* self);
+typedef wxSize (*wxPanelBaseExtClientToWindowSizewxSizeCRFunc)(const wxPanelBaseExt* self, wxSize const& size, wxSize res);
+typedef wxObjectRefData* (*wxPanelBaseExtCloneRefDatawxObjectRefDataCPFunc)(const wxPanelBaseExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxPanelBaseExtCreateRefDataFunc)(const wxPanelBaseExt* self, wxObjectRefData* res);
+typedef bool (*wxPanelBaseExtDestroyFunc)(const wxPanelBaseExt* self, bool res);
 typedef void (*wxPanelBaseExtDissociateHandleFunc)(const wxPanelBaseExt* self);
 typedef void (*wxPanelBaseExtDoCaptureMouseFunc)(const wxPanelBaseExt* self);
 typedef void (*wxPanelBaseExtDoCentreintFunc)(const wxPanelBaseExt* self, int dir);
 typedef void (*wxPanelBaseExtDoClientToScreenintPintPFunc)(const wxPanelBaseExt* self, int* x, int* y);
-typedef void (*wxPanelBaseExtDoEnableboolFunc)(const wxPanelBaseExt* self, bool param0);
+typedef void (*wxPanelBaseExtDoEnableboolFunc)(const wxPanelBaseExt* self, bool enable);
 typedef void (*wxPanelBaseExtDoFreezeFunc)(const wxPanelBaseExt* self);
-typedef int (*wxPanelBaseExtDoGetBestClientHeightintFunc)(const wxPanelBaseExt* self, int param0);
-typedef wxSize (*wxPanelBaseExtDoGetBestClientSizeFunc)(const wxPanelBaseExt* self);
-typedef int (*wxPanelBaseExtDoGetBestClientWidthintFunc)(const wxPanelBaseExt* self, int param0);
-typedef wxSize (*wxPanelBaseExtDoGetBestSizeFunc)(const wxPanelBaseExt* self);
-typedef void* (*wxPanelBaseExtDoGetClientDataFunc)(const wxPanelBaseExt* self);
-typedef wxClientData* (*wxPanelBaseExtDoGetClientObjectFunc)(const wxPanelBaseExt* self);
+typedef int (*wxPanelBaseExtDoGetBestClientHeightintFunc)(const wxPanelBaseExt* self, int param0, int res);
+typedef wxSize (*wxPanelBaseExtDoGetBestClientSizeFunc)(const wxPanelBaseExt* self, wxSize res);
+typedef int (*wxPanelBaseExtDoGetBestClientWidthintFunc)(const wxPanelBaseExt* self, int param0, int res);
+typedef wxSize (*wxPanelBaseExtDoGetBestSizeFunc)(const wxPanelBaseExt* self, wxSize res);
+typedef void* (*wxPanelBaseExtDoGetClientDataFunc)(const wxPanelBaseExt* self, void* res);
+typedef wxClientData* (*wxPanelBaseExtDoGetClientObjectFunc)(const wxPanelBaseExt* self, wxClientData* res);
 typedef void (*wxPanelBaseExtDoGetClientSizeintPintPFunc)(const wxPanelBaseExt* self, int* width, int* height);
 typedef void (*wxPanelBaseExtDoGetPositionintPintPFunc)(const wxPanelBaseExt* self, int* x, int* y);
 typedef void (*wxPanelBaseExtDoGetScreenPositionintPintPFunc)(const wxPanelBaseExt* self, int* x, int* y);
 typedef void (*wxPanelBaseExtDoGetSizeintPintPFunc)(const wxPanelBaseExt* self, int* width, int* height);
-typedef void (*wxPanelBaseExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCPFunc)(const wxPanelBaseExt* self, wxString const& string, int* x, int* y, int* descent, int* externalLeading, wxFont const* font);
-typedef wxSize (*wxPanelBaseExtDoGetVirtualSizeFunc)(const wxPanelBaseExt* self);
-typedef wxHitTest (*wxPanelBaseExtDoHitTestwxCoordwxCoordFunc)(const wxPanelBaseExt* self, wxCoord x, wxCoord y);
-typedef bool (*wxPanelBaseExtDoIsExposedintintintintFunc)(const wxPanelBaseExt* self, int x, int y, int w, int h);
-typedef bool (*wxPanelBaseExtDoIsExposedintintFunc)(const wxPanelBaseExt* self, int x, int y);
+typedef wxSize (*wxPanelBaseExtDoGetSizeFromClientSizewxSizeCRFunc)(const wxPanelBaseExt* self, wxSize const& size, wxSize res);
+typedef void (*wxPanelBaseExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCPFunc)(const wxPanelBaseExt* self, wxString const& string, int* x, int* y, int* descent, int* externalLeading, wxFont const* theFont);
+typedef wxSize (*wxPanelBaseExtDoGetVirtualSizeFunc)(const wxPanelBaseExt* self, wxSize res);
+typedef wxHitTest (*wxPanelBaseExtDoHitTestwxCoordwxCoordFunc)(const wxPanelBaseExt* self, wxCoord x, wxCoord y, wxHitTest res);
+typedef bool (*wxPanelBaseExtDoIsExposedintintintintFunc)(const wxPanelBaseExt* self, int x, int y, int w, int h, bool res);
+typedef bool (*wxPanelBaseExtDoIsExposedintintFunc)(const wxPanelBaseExt* self, int x, int y, bool res);
+typedef void (*wxPanelBaseExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrderFunc)(const wxPanelBaseExt* self, wxWindow* win, wxWindowBase::WindowOrder move);
 typedef void (*wxPanelBaseExtDoMoveWindowintintintintFunc)(const wxPanelBaseExt* self, int x, int y, int width, int height);
-typedef bool (*wxPanelBaseExtDoNavigateInintFunc)(const wxPanelBaseExt* self, int flags);
-typedef bool (*wxPanelBaseExtDoPhaseintFunc)(const wxPanelBaseExt* self, int phase);
-typedef bool (*wxPanelBaseExtDoPopupMenuwxMenuPintintFunc)(const wxPanelBaseExt* self, wxMenu* menu, int x, int y);
+typedef bool (*wxPanelBaseExtDoNavigateInintFunc)(const wxPanelBaseExt* self, int flags, bool res);
+typedef bool (*wxPanelBaseExtDoPhaseintFunc)(const wxPanelBaseExt* self, int phase, bool res);
+typedef bool (*wxPanelBaseExtDoPopupMenuwxMenuPintintFunc)(const wxPanelBaseExt* self, wxMenu* menu, int x, int y, bool res);
 typedef void (*wxPanelBaseExtDoReleaseMouseFunc)(const wxPanelBaseExt* self);
 typedef void (*wxPanelBaseExtDoScreenToClientintPintPFunc)(const wxPanelBaseExt* self, int* x, int* y);
 typedef void (*wxPanelBaseExtDoSetClientDatavoidPFunc)(const wxPanelBaseExt* self, void* data);
@@ -256,99 +262,100 @@ typedef void (*wxPanelBaseExtDoSetWindowVariantwxWindowVariantFunc)(const wxPane
 typedef void (*wxPanelBaseExtDoThawFunc)(const wxPanelBaseExt* self);
 typedef void (*wxPanelBaseExtDoUpdateWindowUIwxUpdateUIEventRFunc)(const wxPanelBaseExt* self, wxUpdateUIEvent& event);
 typedef void (*wxPanelBaseExtDragAcceptFilesboolFunc)(const wxPanelBaseExt* self, bool accept);
-typedef bool (*wxPanelBaseExtEnableboolFunc)(const wxPanelBaseExt* self, bool enable);
-typedef bool (*wxPanelBaseExtEnableTouchEventsintFunc)(const wxPanelBaseExt* self, int param0);
-typedef void (*wxPanelBaseExtEnableVisibleFocusboolFunc)(const wxPanelBaseExt* self, bool param0);
+typedef bool (*wxPanelBaseExtEnableboolFunc)(const wxPanelBaseExt* self, bool enable, bool res);
+typedef bool (*wxPanelBaseExtEnableTouchEventsintFunc)(const wxPanelBaseExt* self, int eventsMask, bool res);
+typedef void (*wxPanelBaseExtEnableVisibleFocusboolFunc)(const wxPanelBaseExt* self, bool enabled);
 typedef void (*wxPanelBaseExtEndRepositioningChildrenFunc)(const wxPanelBaseExt* self);
 typedef void (*wxPanelBaseExtFitFunc)(const wxPanelBaseExt* self);
 typedef void (*wxPanelBaseExtFitInsideFunc)(const wxPanelBaseExt* self);
-typedef wxSize (*wxPanelBaseExtGetBestVirtualSizeFunc)(const wxPanelBaseExt* self);
-typedef int (*wxPanelBaseExtGetCharHeightFunc)(const wxPanelBaseExt* self);
-typedef int (*wxPanelBaseExtGetCharWidthFunc)(const wxPanelBaseExt* self);
-typedef wxClassInfo* (*wxPanelBaseExtGetClassInfoFunc)(const wxPanelBaseExt* self);
-typedef wxPoint (*wxPanelBaseExtGetClientAreaOriginFunc)(const wxPanelBaseExt* self);
+typedef wxSize (*wxPanelBaseExtGetBestVirtualSizeFunc)(const wxPanelBaseExt* self, wxSize res);
+typedef int (*wxPanelBaseExtGetCharHeightFunc)(const wxPanelBaseExt* self, int res);
+typedef int (*wxPanelBaseExtGetCharWidthFunc)(const wxPanelBaseExt* self, int res);
+typedef wxClassInfo* (*wxPanelBaseExtGetClassInfoFunc)(const wxPanelBaseExt* self, wxClassInfo* res);
+typedef wxPoint (*wxPanelBaseExtGetClientAreaOriginFunc)(const wxPanelBaseExt* self, wxPoint res);
 typedef void (*wxPanelBaseExtGetClientSizeConstraintintPintPFunc)(const wxPanelBaseExt* self, int* w, int* h);
-typedef double (*wxPanelBaseExtGetContentScaleFactorFunc)(const wxPanelBaseExt* self);
-typedef wxSize (*wxPanelBaseExtGetDPIFunc)(const wxPanelBaseExt* self);
-typedef double (*wxPanelBaseExtGetDPIScaleFactorFunc)(const wxPanelBaseExt* self);
-typedef wxVisualAttributes (*wxPanelBaseExtGetDefaultAttributesFunc)(const wxPanelBaseExt* self);
-typedef wxBorder (*wxPanelBaseExtGetDefaultBorderFunc)(const wxPanelBaseExt* self);
-typedef wxBorder (*wxPanelBaseExtGetDefaultBorderForControlFunc)(const wxPanelBaseExt* self);
-typedef wxDropTarget* (*wxPanelBaseExtGetDropTargetFunc)(const wxPanelBaseExt* self);
-typedef wxSize (*wxPanelBaseExtGetEffectiveMinSizeFunc)(const wxPanelBaseExt* self);
-typedef wxEventHashTable& (*wxPanelBaseExtGetEventHashTableFunc)(const wxPanelBaseExt* self);
-typedef wxEventTable const* (*wxPanelBaseExtGetEventTableFunc)(const wxPanelBaseExt* self);
-typedef WXWidget (*wxPanelBaseExtGetHandleFunc)(const wxPanelBaseExt* self);
-typedef wxString (*wxPanelBaseExtGetHelpTextAtPointwxPointCRwxHelpEventNOriginFunc)(const wxPanelBaseExt* self, wxPoint const& pt, wxHelpEvent::Origin origin);
-typedef wxString (*wxPanelBaseExtGetLabelFunc)(const wxPanelBaseExt* self);
-typedef wxLayoutDirection (*wxPanelBaseExtGetLayoutDirectionFunc)(const wxPanelBaseExt* self);
-typedef wxWindow* (*wxPanelBaseExtGetMainWindowOfCompositeControlFunc)(const wxPanelBaseExt* self);
-typedef wxSize (*wxPanelBaseExtGetMaxClientSizeFunc)(const wxPanelBaseExt* self);
-typedef wxSize (*wxPanelBaseExtGetMaxSizeFunc)(const wxPanelBaseExt* self);
-typedef wxSize (*wxPanelBaseExtGetMinClientSizeFunc)(const wxPanelBaseExt* self);
-typedef wxSize (*wxPanelBaseExtGetMinSizeFunc)(const wxPanelBaseExt* self);
-typedef wxString (*wxPanelBaseExtGetNameFunc)(const wxPanelBaseExt* self);
+typedef double (*wxPanelBaseExtGetContentScaleFactorFunc)(const wxPanelBaseExt* self, double res);
+typedef wxSize (*wxPanelBaseExtGetDPIFunc)(const wxPanelBaseExt* self, wxSize res);
+typedef double (*wxPanelBaseExtGetDPIScaleFactorFunc)(const wxPanelBaseExt* self, double res);
+typedef wxVisualAttributes (*wxPanelBaseExtGetDefaultAttributesFunc)(const wxPanelBaseExt* self, wxVisualAttributes res);
+typedef wxBorder (*wxPanelBaseExtGetDefaultBorderFunc)(const wxPanelBaseExt* self, wxBorder res);
+typedef wxBorder (*wxPanelBaseExtGetDefaultBorderForControlFunc)(const wxPanelBaseExt* self, wxBorder res);
+typedef wxDropTarget* (*wxPanelBaseExtGetDropTargetFunc)(const wxPanelBaseExt* self, wxDropTarget* res);
+typedef wxSize (*wxPanelBaseExtGetEffectiveMinSizeFunc)(const wxPanelBaseExt* self, wxSize res);
+typedef wxEventHashTable& (*wxPanelBaseExtGetEventHashTableFunc)(const wxPanelBaseExt* self, wxEventHashTable& res);
+typedef wxEventTable const* (*wxPanelBaseExtGetEventTableFunc)(const wxPanelBaseExt* self, wxEventTable const* res);
+typedef WXWidget (*wxPanelBaseExtGetHandleFunc)(const wxPanelBaseExt* self, WXWidget res);
+typedef wxString (*wxPanelBaseExtGetHelpTextAtPointwxPointCRwxHelpEventNOriginFunc)(const wxPanelBaseExt* self, wxPoint const& pt, wxHelpEvent::Origin origin, wxString res);
+typedef wxString (*wxPanelBaseExtGetLabelFunc)(const wxPanelBaseExt* self, wxString res);
+typedef wxLayoutDirection (*wxPanelBaseExtGetLayoutDirectionFunc)(const wxPanelBaseExt* self, wxLayoutDirection res);
+typedef wxWindow* (*wxPanelBaseExtGetMainWindowOfCompositeControlFunc)(const wxPanelBaseExt* self, wxWindow* res);
+typedef wxSize (*wxPanelBaseExtGetMaxClientSizeFunc)(const wxPanelBaseExt* self, wxSize res);
+typedef wxSize (*wxPanelBaseExtGetMaxSizeFunc)(const wxPanelBaseExt* self, wxSize res);
+typedef wxSize (*wxPanelBaseExtGetMinClientSizeFunc)(const wxPanelBaseExt* self, wxSize res);
+typedef wxSize (*wxPanelBaseExtGetMinSizeFunc)(const wxPanelBaseExt* self, wxSize res);
+typedef wxString (*wxPanelBaseExtGetNameFunc)(const wxPanelBaseExt* self, wxString res);
 typedef void (*wxPanelBaseExtGetPositionConstraintintPintPFunc)(const wxPanelBaseExt* self, int* x, int* y);
-typedef int (*wxPanelBaseExtGetScrollPosintFunc)(const wxPanelBaseExt* self, int orient);
-typedef int (*wxPanelBaseExtGetScrollRangeintFunc)(const wxPanelBaseExt* self, int orient);
-typedef int (*wxPanelBaseExtGetScrollThumbintFunc)(const wxPanelBaseExt* self, int orient);
+typedef int (*wxPanelBaseExtGetScrollPosintFunc)(const wxPanelBaseExt* self, int orient, int res);
+typedef int (*wxPanelBaseExtGetScrollRangeintFunc)(const wxPanelBaseExt* self, int orient, int res);
+typedef int (*wxPanelBaseExtGetScrollThumbintFunc)(const wxPanelBaseExt* self, int orient, int res);
 typedef void (*wxPanelBaseExtGetSizeConstraintintPintPFunc)(const wxPanelBaseExt* self, int* w, int* h);
-typedef bool (*wxPanelBaseExtGetThemeEnabledFunc)(const wxPanelBaseExt* self);
-typedef wxValidator* (*wxPanelBaseExtGetValidatorFunc)(const wxPanelBaseExt* self);
-typedef wxSize (*wxPanelBaseExtGetWindowBorderSizeFunc)(const wxPanelBaseExt* self);
-typedef long (*wxPanelBaseExtGetWindowStyleFlagFunc)(const wxPanelBaseExt* self);
-typedef bool (*wxPanelBaseExtHasCaptureFunc)(const wxPanelBaseExt* self);
-typedef bool (*wxPanelBaseExtHasFocusFunc)(const wxPanelBaseExt* self);
-typedef bool (*wxPanelBaseExtHasMultiplePagesFunc)(const wxPanelBaseExt* self);
-typedef bool (*wxPanelBaseExtHasTransparentBackgroundFunc)(const wxPanelBaseExt* self);
-typedef bool (*wxPanelBaseExtHideWithEffectwxShowEffectunsignedintFunc)(const wxPanelBaseExt* self, wxShowEffect param0, unsigned int param1);
-typedef bool (*wxPanelBaseExtInformFirstDirectionintintintFunc)(const wxPanelBaseExt* self, int direction, int size, int availableOtherDir);
+typedef bool (*wxPanelBaseExtGetThemeEnabledFunc)(const wxPanelBaseExt* self, bool res);
+typedef wxByte (*wxPanelBaseExtGetTransparentFunc)(const wxPanelBaseExt* self, wxByte res);
+typedef wxValidator* (*wxPanelBaseExtGetValidatorFunc)(const wxPanelBaseExt* self, wxValidator* res);
+typedef wxSize (*wxPanelBaseExtGetWindowBorderSizeFunc)(const wxPanelBaseExt* self, wxSize res);
+typedef long (*wxPanelBaseExtGetWindowStyleFlagFunc)(const wxPanelBaseExt* self, long res);
+typedef bool (*wxPanelBaseExtHasCaptureFunc)(const wxPanelBaseExt* self, bool res);
+typedef bool (*wxPanelBaseExtHasFocusFunc)(const wxPanelBaseExt* self, bool res);
+typedef bool (*wxPanelBaseExtHasMultiplePagesFunc)(const wxPanelBaseExt* self, bool res);
+typedef bool (*wxPanelBaseExtHasTransparentBackgroundFunc)(const wxPanelBaseExt* self, bool res);
+typedef bool (*wxPanelBaseExtHideWithEffectwxShowEffectunsignedintFunc)(const wxPanelBaseExt* self, wxShowEffect effect, unsigned int timeout, bool res);
+typedef bool (*wxPanelBaseExtInformFirstDirectionintintintFunc)(const wxPanelBaseExt* self, int direction, int size, int availableOtherDir, bool res);
 typedef void (*wxPanelBaseExtInheritAttributesFunc)(const wxPanelBaseExt* self);
 typedef void (*wxPanelBaseExtInitDialogFunc)(const wxPanelBaseExt* self);
-typedef bool (*wxPanelBaseExtIsClientAreaChildwxWindowCPFunc)(const wxPanelBaseExt* self, wxWindow const* param0);
-typedef bool (*wxPanelBaseExtIsDoubleBufferedFunc)(const wxPanelBaseExt* self);
-typedef bool (*wxPanelBaseExtIsRetainedFunc)(const wxPanelBaseExt* self);
-typedef bool (*wxPanelBaseExtIsScrollbarAlwaysShownintFunc)(const wxPanelBaseExt* self, int param0);
-typedef bool (*wxPanelBaseExtIsShownFunc)(const wxPanelBaseExt* self);
-typedef bool (*wxPanelBaseExtIsShownOnScreenFunc)(const wxPanelBaseExt* self);
-typedef bool (*wxPanelBaseExtIsThisEnabledFunc)(const wxPanelBaseExt* self);
-typedef bool (*wxPanelBaseExtIsTopLevelFunc)(const wxPanelBaseExt* self);
-typedef bool (*wxPanelBaseExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc)(const wxPanelBaseExt* self, wxWindowBase::NavigationKind param0);
-typedef bool (*wxPanelBaseExtIsTransparentBackgroundSupportedwxStringPFunc)(const wxPanelBaseExt* self, wxString* reason);
-typedef bool (*wxPanelBaseExtLayoutFunc)(const wxPanelBaseExt* self);
-typedef bool (*wxPanelBaseExtLayoutPhase1intPFunc)(const wxPanelBaseExt* self, int* noChanges);
-typedef bool (*wxPanelBaseExtLayoutPhase2intPFunc)(const wxPanelBaseExt* self, int* noChanges);
+typedef bool (*wxPanelBaseExtIsClientAreaChildwxWindowCPFunc)(const wxPanelBaseExt* self, wxWindow const* param0, bool res);
+typedef bool (*wxPanelBaseExtIsDoubleBufferedFunc)(const wxPanelBaseExt* self, bool res);
+typedef bool (*wxPanelBaseExtIsRetainedFunc)(const wxPanelBaseExt* self, bool res);
+typedef bool (*wxPanelBaseExtIsScrollbarAlwaysShownintFunc)(const wxPanelBaseExt* self, int orient, bool res);
+typedef bool (*wxPanelBaseExtIsShownFunc)(const wxPanelBaseExt* self, bool res);
+typedef bool (*wxPanelBaseExtIsShownOnScreenFunc)(const wxPanelBaseExt* self, bool res);
+typedef bool (*wxPanelBaseExtIsThisEnabledFunc)(const wxPanelBaseExt* self, bool res);
+typedef bool (*wxPanelBaseExtIsTopLevelFunc)(const wxPanelBaseExt* self, bool res);
+typedef bool (*wxPanelBaseExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc)(const wxPanelBaseExt* self, wxWindowBase::NavigationKind param0, bool res);
+typedef bool (*wxPanelBaseExtIsTransparentBackgroundSupportedwxStringPFunc)(const wxPanelBaseExt* self, wxString* reason, bool res);
+typedef bool (*wxPanelBaseExtLayoutFunc)(const wxPanelBaseExt* self, bool res);
+typedef bool (*wxPanelBaseExtLayoutPhase1intPFunc)(const wxPanelBaseExt* self, int* noChanges, bool res);
+typedef bool (*wxPanelBaseExtLayoutPhase2intPFunc)(const wxPanelBaseExt* self, int* noChanges, bool res);
 typedef void (*wxPanelBaseExtLowerFunc)(const wxPanelBaseExt* self);
 typedef void (*wxPanelBaseExtMoveConstraintintintFunc)(const wxPanelBaseExt* self, int x, int y);
-typedef bool (*wxPanelBaseExtOnDynamicBindwxDynamicEventTableEntryRFunc)(const wxPanelBaseExt* self, wxDynamicEventTableEntry& param0);
+typedef bool (*wxPanelBaseExtOnDynamicBindwxDynamicEventTableEntryRFunc)(const wxPanelBaseExt* self, wxDynamicEventTableEntry& param0, bool res);
 typedef void (*wxPanelBaseExtOnInternalIdleFunc)(const wxPanelBaseExt* self);
 typedef void (*wxPanelBaseExtPrepareDCwxDCRFunc)(const wxPanelBaseExt* self, wxDC& param0);
-typedef bool (*wxPanelBaseExtProcessEventwxEventRFunc)(const wxPanelBaseExt* self, wxEvent& event);
+typedef bool (*wxPanelBaseExtProcessEventwxEventRFunc)(const wxPanelBaseExt* self, wxEvent& event, bool res);
 typedef void (*wxPanelBaseExtQueueEventwxEventPFunc)(const wxPanelBaseExt* self, wxEvent* event);
 typedef void (*wxPanelBaseExtRaiseFunc)(const wxPanelBaseExt* self);
 typedef void (*wxPanelBaseExtRefreshboolwxRectCPFunc)(const wxPanelBaseExt* self, bool eraseBackground, wxRect const* rect);
-typedef bool (*wxPanelBaseExtRegisterHotKeyintintintFunc)(const wxPanelBaseExt* self, int hotkeyId, int modifiers, int keycode);
+typedef bool (*wxPanelBaseExtRegisterHotKeyintintintFunc)(const wxPanelBaseExt* self, int hotkeyId, int modifiers, int keycode, bool res);
 typedef void (*wxPanelBaseExtRemoveChildwxWindowBasePFunc)(const wxPanelBaseExt* self, wxWindowBase* child);
-typedef bool (*wxPanelBaseExtReparentwxWindowBasePFunc)(const wxPanelBaseExt* self, wxWindowBase* newParent);
-typedef bool (*wxPanelBaseExtScrollLinesintFunc)(const wxPanelBaseExt* self, int param0);
-typedef bool (*wxPanelBaseExtScrollPagesintFunc)(const wxPanelBaseExt* self, int param0);
+typedef bool (*wxPanelBaseExtReparentwxWindowBasePFunc)(const wxPanelBaseExt* self, wxWindowBase* newParent, bool res);
+typedef bool (*wxPanelBaseExtScrollLinesintFunc)(const wxPanelBaseExt* self, int param0, bool res);
+typedef bool (*wxPanelBaseExtScrollPagesintFunc)(const wxPanelBaseExt* self, int param0, bool res);
 typedef void (*wxPanelBaseExtScrollWindowintintwxRectCPFunc)(const wxPanelBaseExt* self, int dx, int dy, wxRect const* rect);
-typedef bool (*wxPanelBaseExtSearchEventTablewxEventTableRwxEventRFunc)(const wxPanelBaseExt* self, wxEventTable& table, wxEvent& event);
-typedef bool (*wxPanelBaseExtSendIdleEventswxIdleEventRFunc)(const wxPanelBaseExt* self, wxIdleEvent& event);
+typedef bool (*wxPanelBaseExtSearchEventTablewxEventTableRwxEventRFunc)(const wxPanelBaseExt* self, wxEventTable& table, wxEvent& event, bool res);
+typedef bool (*wxPanelBaseExtSendIdleEventswxIdleEventRFunc)(const wxPanelBaseExt* self, wxIdleEvent& event, bool res);
 typedef void (*wxPanelBaseExtSendSizeEventintFunc)(const wxPanelBaseExt* self, int flags);
 typedef void (*wxPanelBaseExtSetAcceleratorTablewxAcceleratorTableCRFunc)(const wxPanelBaseExt* self, wxAcceleratorTable const& accel);
-typedef bool (*wxPanelBaseExtSetBackgroundColourwxColourCRFunc)(const wxPanelBaseExt* self, wxColour const& colour);
-typedef bool (*wxPanelBaseExtSetBackgroundStylewxBackgroundStyleFunc)(const wxPanelBaseExt* self, wxBackgroundStyle style);
+typedef bool (*wxPanelBaseExtSetBackgroundColourwxColourCRFunc)(const wxPanelBaseExt* self, wxColour const& colour, bool res);
+typedef bool (*wxPanelBaseExtSetBackgroundStylewxBackgroundStyleFunc)(const wxPanelBaseExt* self, wxBackgroundStyle style, bool res);
 typedef void (*wxPanelBaseExtSetCanFocusboolFunc)(const wxPanelBaseExt* self, bool param0);
 typedef void (*wxPanelBaseExtSetConstraintSizesboolFunc)(const wxPanelBaseExt* self, bool recurse);
-typedef bool (*wxPanelBaseExtSetCursorwxCursorCRFunc)(const wxPanelBaseExt* self, wxCursor const& cursor);
+typedef bool (*wxPanelBaseExtSetCursorwxCursorCRFunc)(const wxPanelBaseExt* self, wxCursor const& cursor, bool res);
 typedef void (*wxPanelBaseExtSetDoubleBufferedboolFunc)(const wxPanelBaseExt* self, bool param0);
 typedef void (*wxPanelBaseExtSetDropTargetwxDropTargetPFunc)(const wxPanelBaseExt* self, wxDropTarget* dropTarget);
 typedef void (*wxPanelBaseExtSetExtraStylelongFunc)(const wxPanelBaseExt* self, long exStyle);
 typedef void (*wxPanelBaseExtSetFocusFunc)(const wxPanelBaseExt* self);
 typedef void (*wxPanelBaseExtSetFocusFromKbdFunc)(const wxPanelBaseExt* self);
-typedef bool (*wxPanelBaseExtSetFontwxFontCRFunc)(const wxPanelBaseExt* self, wxFont const& font);
-typedef bool (*wxPanelBaseExtSetForegroundColourwxColourCRFunc)(const wxPanelBaseExt* self, wxColour const& colour);
+typedef bool (*wxPanelBaseExtSetFontwxFontCRFunc)(const wxPanelBaseExt* self, wxFont const& font, bool res);
+typedef bool (*wxPanelBaseExtSetForegroundColourwxColourCRFunc)(const wxPanelBaseExt* self, wxColour const& colour, bool res);
 typedef void (*wxPanelBaseExtSetIdwxWindowIDFunc)(const wxPanelBaseExt* self, wxWindowID winid);
 typedef void (*wxPanelBaseExtSetLabelwxStringCRFunc)(const wxPanelBaseExt* self, wxString const& label);
 typedef void (*wxPanelBaseExtSetLayoutDirectionwxLayoutDirectionFunc)(const wxPanelBaseExt* self, wxLayoutDirection param0);
@@ -360,80 +367,83 @@ typedef void (*wxPanelBaseExtSetNamewxStringCRFunc)(const wxPanelBaseExt* self, 
 typedef void (*wxPanelBaseExtSetNextHandlerwxEvtHandlerPFunc)(const wxPanelBaseExt* self, wxEvtHandler* handler);
 typedef void (*wxPanelBaseExtSetPreviousHandlerwxEvtHandlerPFunc)(const wxPanelBaseExt* self, wxEvtHandler* handler);
 typedef void (*wxPanelBaseExtSetScrollPosintintboolFunc)(const wxPanelBaseExt* self, int orient, int pos, bool refresh);
-typedef void (*wxPanelBaseExtSetScrollbarintintintintboolFunc)(const wxPanelBaseExt* self, int orient, int pos, int thumbvisible, int range, bool refresh);
+typedef void (*wxPanelBaseExtSetScrollbarintintintintboolFunc)(const wxPanelBaseExt* self, int orient, int pos, int thumbVisible, int range, bool refresh);
 typedef void (*wxPanelBaseExtSetSizeConstraintintintintintFunc)(const wxPanelBaseExt* self, int x, int y, int w, int h);
 typedef void (*wxPanelBaseExtSetSizeHintsintintintintintintFunc)(const wxPanelBaseExt* self, int minW, int minH, int maxW, int maxH, int incW, int incH);
 typedef void (*wxPanelBaseExtSetThemeEnabledboolFunc)(const wxPanelBaseExt* self, bool enableTheme);
-typedef bool (*wxPanelBaseExtSetTransparentwxByteFunc)(const wxPanelBaseExt* self, wxByte param0);
+typedef bool (*wxPanelBaseExtSetTransparentwxByteFunc)(const wxPanelBaseExt* self, wxByte alpha, bool res);
 typedef void (*wxPanelBaseExtSetValidatorwxValidatorCRFunc)(const wxPanelBaseExt* self, wxValidator const& validator);
 typedef void (*wxPanelBaseExtSetWindowStyleFlaglongFunc)(const wxPanelBaseExt* self, long style);
-typedef bool (*wxPanelBaseExtShouldInheritColoursFunc)(const wxPanelBaseExt* self);
-typedef bool (*wxPanelBaseExtShowboolFunc)(const wxPanelBaseExt* self, bool show);
-typedef bool (*wxPanelBaseExtShowWithEffectwxShowEffectunsignedintFunc)(const wxPanelBaseExt* self, wxShowEffect param0, unsigned int param1);
-typedef bool (*wxPanelBaseExtTransferDataFromWindowFunc)(const wxPanelBaseExt* self);
-typedef bool (*wxPanelBaseExtTransferDataToWindowFunc)(const wxPanelBaseExt* self);
-typedef bool (*wxPanelBaseExtTryAfterwxEventRFunc)(const wxPanelBaseExt* self, wxEvent& event);
-typedef bool (*wxPanelBaseExtTryBeforewxEventRFunc)(const wxPanelBaseExt* self, wxEvent& event);
-typedef bool (*wxPanelBaseExtUnregisterHotKeyintFunc)(const wxPanelBaseExt* self, int hotkeyId);
+typedef bool (*wxPanelBaseExtShouldInheritColoursFunc)(const wxPanelBaseExt* self, bool res);
+typedef bool (*wxPanelBaseExtShowboolFunc)(const wxPanelBaseExt* self, bool show, bool res);
+typedef bool (*wxPanelBaseExtShowWithEffectwxShowEffectunsignedintFunc)(const wxPanelBaseExt* self, wxShowEffect effect, unsigned int timeout, bool res);
+typedef bool (*wxPanelBaseExtTransferDataFromWindowFunc)(const wxPanelBaseExt* self, bool res);
+typedef bool (*wxPanelBaseExtTransferDataToWindowFunc)(const wxPanelBaseExt* self, bool res);
+typedef void (*wxPanelBaseExtTriggerScrollEventwxEventTypeFunc)(const wxPanelBaseExt* self, wxEventType scrollEvent);
+typedef bool (*wxPanelBaseExtTryAfterwxEventRFunc)(const wxPanelBaseExt* self, wxEvent& event, bool res);
+typedef bool (*wxPanelBaseExtTryBeforewxEventRFunc)(const wxPanelBaseExt* self, wxEvent& event, bool res);
+typedef bool (*wxPanelBaseExtUnregisterHotKeyintFunc)(const wxPanelBaseExt* self, int hotkeyId, bool res);
 typedef void (*wxPanelBaseExtUpdateFunc)(const wxPanelBaseExt* self);
 typedef void (*wxPanelBaseExtUpdateWindowUIlongFunc)(const wxPanelBaseExt* self, long flags);
-typedef bool (*wxPanelBaseExtValidateFunc)(const wxPanelBaseExt* self);
+typedef bool (*wxPanelBaseExtValidateFunc)(const wxPanelBaseExt* self, bool res);
 typedef void (*wxPanelBaseExtWXAdjustFontToOwnPPIwxFontRFunc)(const wxPanelBaseExt* self, wxFont& param0);
-typedef wxTextEntry const* (*wxPanelBaseExtWXGetTextEntryFunc)(const wxPanelBaseExt* self);
-typedef void* (*wxPanelBaseExtWXReservedEvtHandler1voidPFunc)(const wxPanelBaseExt* self, void* param0);
-typedef void* (*wxPanelBaseExtWXReservedEvtHandler2voidPFunc)(const wxPanelBaseExt* self, void* param0);
-typedef void* (*wxPanelBaseExtWXReservedWindow1voidPFunc)(const wxPanelBaseExt* self, void* param0);
-typedef void* (*wxPanelBaseExtWXReservedWindow2voidPFunc)(const wxPanelBaseExt* self, void* param0);
-typedef void* (*wxPanelBaseExtWXReservedWindow3voidPFunc)(const wxPanelBaseExt* self, void* param0);
+typedef wxTextEntry const* (*wxPanelBaseExtWXGetTextEntryFunc)(const wxPanelBaseExt* self, wxTextEntry const* res);
+typedef void* (*wxPanelBaseExtWXReservedEvtHandler1voidPFunc)(const wxPanelBaseExt* self, void* param0, void* res);
+typedef void* (*wxPanelBaseExtWXReservedEvtHandler2voidPFunc)(const wxPanelBaseExt* self, void* param0, void* res);
+typedef void* (*wxPanelBaseExtWXReservedWindow1voidPFunc)(const wxPanelBaseExt* self, void* param0, void* res);
+typedef void* (*wxPanelBaseExtWXReservedWindow2voidPFunc)(const wxPanelBaseExt* self, void* param0, void* res);
+typedef void* (*wxPanelBaseExtWXReservedWindow3voidPFunc)(const wxPanelBaseExt* self, void* param0, void* res);
 typedef void (*wxPanelBaseExtWXSetInitialFittingClientSizeintwxSizerPFunc)(const wxPanelBaseExt* self, int flags, wxSizer* sizer);
 typedef void (*wxPanelBaseExtWarpPointerintintFunc)(const wxPanelBaseExt* self, int x, int y);
-typedef wxSize (*wxPanelBaseExtWindowToClientSizewxSizeCRFunc)(const wxPanelBaseExt* self, wxSize const& size);
+typedef wxSize (*wxPanelBaseExtWindowToClientSizewxSizeCRFunc)(const wxPanelBaseExt* self, wxSize const& size, wxSize res);
 class wxPanelExt;
-typedef bool (*wxPanelExtAcceptsFocusFunc)(const wxPanelExt* self);
-typedef bool (*wxPanelExtAcceptsFocusFromKeyboardFunc)(const wxPanelExt* self);
-typedef bool (*wxPanelExtAcceptsFocusRecursivelyFunc)(const wxPanelExt* self);
+typedef bool (*wxPanelExtAcceptsFocusFunc)(const wxPanelExt* self, bool res);
+typedef bool (*wxPanelExtAcceptsFocusFromKeyboardFunc)(const wxPanelExt* self, bool res);
+typedef bool (*wxPanelExtAcceptsFocusRecursivelyFunc)(const wxPanelExt* self, bool res);
 typedef void (*wxPanelExtAddChildwxWindowBasePFunc)(const wxPanelExt* self, wxWindowBase* child);
 typedef void (*wxPanelExtAddPendingEventwxEventCRFunc)(const wxPanelExt* self, wxEvent const& event);
-typedef wxCoord (*wxPanelExtAdjustForLayoutDirectionwxCoordwxCoordwxCoordFunc)(const wxPanelExt* self, wxCoord x, wxCoord width, wxCoord widthTotal);
+typedef wxCoord (*wxPanelExtAdjustForLayoutDirectionwxCoordwxCoordwxCoordFunc)(const wxPanelExt* self, wxCoord x, wxCoord width, wxCoord widthTotal, wxCoord res);
 typedef void (*wxPanelExtAdjustForParentClientOriginintRintRintFunc)(const wxPanelExt* self, int& x, int& y, int sizeFlags);
-typedef void (*wxPanelExtAlwaysShowScrollbarsboolboolFunc)(const wxPanelExt* self, bool param0, bool param1);
+typedef void (*wxPanelExtAlwaysShowScrollbarsboolboolFunc)(const wxPanelExt* self, bool horz, bool vert);
 typedef void (*wxPanelExtAssociateHandleWXWidgetFunc)(const wxPanelExt* self, WXWidget param0);
-typedef bool (*wxPanelExtBeginRepositioningChildrenFunc)(const wxPanelExt* self);
-typedef bool (*wxPanelExtCanApplyThemeBorderFunc)(const wxPanelExt* self);
-typedef bool (*wxPanelExtCanBeFocusedFunc)(const wxPanelExt* self);
-typedef bool (*wxPanelExtCanBeOutsideClientAreaFunc)(const wxPanelExt* self);
-typedef bool (*wxPanelExtCanScrollintFunc)(const wxPanelExt* self, int orient);
-typedef bool (*wxPanelExtCanSetTransparentFunc)(const wxPanelExt* self);
+typedef bool (*wxPanelExtBeginRepositioningChildrenFunc)(const wxPanelExt* self, bool res);
+typedef bool (*wxPanelExtCanApplyThemeBorderFunc)(const wxPanelExt* self, bool res);
+typedef bool (*wxPanelExtCanBeFocusedFunc)(const wxPanelExt* self, bool res);
+typedef bool (*wxPanelExtCanBeOutsideClientAreaFunc)(const wxPanelExt* self, bool res);
+typedef bool (*wxPanelExtCanScrollintFunc)(const wxPanelExt* self, int orient, bool res);
+typedef bool (*wxPanelExtCanSetTransparentFunc)(const wxPanelExt* self, bool res);
 typedef void (*wxPanelExtClearBackgroundFunc)(const wxPanelExt* self);
-typedef wxSize (*wxPanelExtClientToWindowSizewxSizeCRFunc)(const wxPanelExt* self, wxSize const& size);
-typedef wxObjectRefData* (*wxPanelExtCloneRefDatawxObjectRefDataCPFunc)(const wxPanelExt* self, wxObjectRefData const* data);
-typedef wxObjectRefData* (*wxPanelExtCreateRefDataFunc)(const wxPanelExt* self);
-typedef bool (*wxPanelExtDestroyFunc)(const wxPanelExt* self);
+typedef wxSize (*wxPanelExtClientToWindowSizewxSizeCRFunc)(const wxPanelExt* self, wxSize const& size, wxSize res);
+typedef wxObjectRefData* (*wxPanelExtCloneRefDatawxObjectRefDataCPFunc)(const wxPanelExt* self, wxObjectRefData const* data, wxObjectRefData* res);
+typedef wxObjectRefData* (*wxPanelExtCreateRefDataFunc)(const wxPanelExt* self, wxObjectRefData* res);
+typedef bool (*wxPanelExtDestroyFunc)(const wxPanelExt* self, bool res);
 typedef void (*wxPanelExtDissociateHandleFunc)(const wxPanelExt* self);
 typedef void (*wxPanelExtDoCaptureMouseFunc)(const wxPanelExt* self);
 typedef void (*wxPanelExtDoCentreintFunc)(const wxPanelExt* self, int dir);
 typedef void (*wxPanelExtDoClientToScreenintPintPFunc)(const wxPanelExt* self, int* x, int* y);
-typedef void (*wxPanelExtDoEnableboolFunc)(const wxPanelExt* self, bool param0);
+typedef void (*wxPanelExtDoEnableboolFunc)(const wxPanelExt* self, bool enable);
 typedef void (*wxPanelExtDoFreezeFunc)(const wxPanelExt* self);
-typedef int (*wxPanelExtDoGetBestClientHeightintFunc)(const wxPanelExt* self, int param0);
-typedef wxSize (*wxPanelExtDoGetBestClientSizeFunc)(const wxPanelExt* self);
-typedef int (*wxPanelExtDoGetBestClientWidthintFunc)(const wxPanelExt* self, int param0);
-typedef wxSize (*wxPanelExtDoGetBestSizeFunc)(const wxPanelExt* self);
-typedef void* (*wxPanelExtDoGetClientDataFunc)(const wxPanelExt* self);
-typedef wxClientData* (*wxPanelExtDoGetClientObjectFunc)(const wxPanelExt* self);
+typedef int (*wxPanelExtDoGetBestClientHeightintFunc)(const wxPanelExt* self, int param0, int res);
+typedef wxSize (*wxPanelExtDoGetBestClientSizeFunc)(const wxPanelExt* self, wxSize res);
+typedef int (*wxPanelExtDoGetBestClientWidthintFunc)(const wxPanelExt* self, int param0, int res);
+typedef wxSize (*wxPanelExtDoGetBestSizeFunc)(const wxPanelExt* self, wxSize res);
+typedef void* (*wxPanelExtDoGetClientDataFunc)(const wxPanelExt* self, void* res);
+typedef wxClientData* (*wxPanelExtDoGetClientObjectFunc)(const wxPanelExt* self, wxClientData* res);
 typedef void (*wxPanelExtDoGetClientSizeintPintPFunc)(const wxPanelExt* self, int* width, int* height);
 typedef void (*wxPanelExtDoGetPositionintPintPFunc)(const wxPanelExt* self, int* x, int* y);
 typedef void (*wxPanelExtDoGetScreenPositionintPintPFunc)(const wxPanelExt* self, int* x, int* y);
 typedef void (*wxPanelExtDoGetSizeintPintPFunc)(const wxPanelExt* self, int* width, int* height);
-typedef void (*wxPanelExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCPFunc)(const wxPanelExt* self, wxString const& string, int* x, int* y, int* descent, int* externalLeading, wxFont const* font);
-typedef wxSize (*wxPanelExtDoGetVirtualSizeFunc)(const wxPanelExt* self);
-typedef wxHitTest (*wxPanelExtDoHitTestwxCoordwxCoordFunc)(const wxPanelExt* self, wxCoord x, wxCoord y);
-typedef bool (*wxPanelExtDoIsExposedintintintintFunc)(const wxPanelExt* self, int x, int y, int w, int h);
-typedef bool (*wxPanelExtDoIsExposedintintFunc)(const wxPanelExt* self, int x, int y);
+typedef wxSize (*wxPanelExtDoGetSizeFromClientSizewxSizeCRFunc)(const wxPanelExt* self, wxSize const& size, wxSize res);
+typedef void (*wxPanelExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCPFunc)(const wxPanelExt* self, wxString const& string, int* x, int* y, int* descent, int* externalLeading, wxFont const* theFont);
+typedef wxSize (*wxPanelExtDoGetVirtualSizeFunc)(const wxPanelExt* self, wxSize res);
+typedef wxHitTest (*wxPanelExtDoHitTestwxCoordwxCoordFunc)(const wxPanelExt* self, wxCoord x, wxCoord y, wxHitTest res);
+typedef bool (*wxPanelExtDoIsExposedintintintintFunc)(const wxPanelExt* self, int x, int y, int w, int h, bool res);
+typedef bool (*wxPanelExtDoIsExposedintintFunc)(const wxPanelExt* self, int x, int y, bool res);
+typedef void (*wxPanelExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrderFunc)(const wxPanelExt* self, wxWindow* win, wxWindowBase::WindowOrder move);
 typedef void (*wxPanelExtDoMoveWindowintintintintFunc)(const wxPanelExt* self, int x, int y, int width, int height);
-typedef bool (*wxPanelExtDoNavigateInintFunc)(const wxPanelExt* self, int flags);
-typedef bool (*wxPanelExtDoPhaseintFunc)(const wxPanelExt* self, int phase);
-typedef bool (*wxPanelExtDoPopupMenuwxMenuPintintFunc)(const wxPanelExt* self, wxMenu* menu, int x, int y);
+typedef bool (*wxPanelExtDoNavigateInintFunc)(const wxPanelExt* self, int flags, bool res);
+typedef bool (*wxPanelExtDoPhaseintFunc)(const wxPanelExt* self, int phase, bool res);
+typedef bool (*wxPanelExtDoPopupMenuwxMenuPintintFunc)(const wxPanelExt* self, wxMenu* menu, int x, int y, bool res);
 typedef void (*wxPanelExtDoReleaseMouseFunc)(const wxPanelExt* self);
 typedef void (*wxPanelExtDoScreenToClientintPintPFunc)(const wxPanelExt* self, int* x, int* y);
 typedef void (*wxPanelExtDoSetClientDatavoidPFunc)(const wxPanelExt* self, void* data);
@@ -448,99 +458,100 @@ typedef void (*wxPanelExtDoSetWindowVariantwxWindowVariantFunc)(const wxPanelExt
 typedef void (*wxPanelExtDoThawFunc)(const wxPanelExt* self);
 typedef void (*wxPanelExtDoUpdateWindowUIwxUpdateUIEventRFunc)(const wxPanelExt* self, wxUpdateUIEvent& event);
 typedef void (*wxPanelExtDragAcceptFilesboolFunc)(const wxPanelExt* self, bool accept);
-typedef bool (*wxPanelExtEnableboolFunc)(const wxPanelExt* self, bool enable);
-typedef bool (*wxPanelExtEnableTouchEventsintFunc)(const wxPanelExt* self, int param0);
-typedef void (*wxPanelExtEnableVisibleFocusboolFunc)(const wxPanelExt* self, bool param0);
+typedef bool (*wxPanelExtEnableboolFunc)(const wxPanelExt* self, bool enable, bool res);
+typedef bool (*wxPanelExtEnableTouchEventsintFunc)(const wxPanelExt* self, int eventsMask, bool res);
+typedef void (*wxPanelExtEnableVisibleFocusboolFunc)(const wxPanelExt* self, bool enabled);
 typedef void (*wxPanelExtEndRepositioningChildrenFunc)(const wxPanelExt* self);
 typedef void (*wxPanelExtFitFunc)(const wxPanelExt* self);
 typedef void (*wxPanelExtFitInsideFunc)(const wxPanelExt* self);
-typedef wxSize (*wxPanelExtGetBestVirtualSizeFunc)(const wxPanelExt* self);
-typedef int (*wxPanelExtGetCharHeightFunc)(const wxPanelExt* self);
-typedef int (*wxPanelExtGetCharWidthFunc)(const wxPanelExt* self);
-typedef wxClassInfo* (*wxPanelExtGetClassInfoFunc)(const wxPanelExt* self);
-typedef wxPoint (*wxPanelExtGetClientAreaOriginFunc)(const wxPanelExt* self);
+typedef wxSize (*wxPanelExtGetBestVirtualSizeFunc)(const wxPanelExt* self, wxSize res);
+typedef int (*wxPanelExtGetCharHeightFunc)(const wxPanelExt* self, int res);
+typedef int (*wxPanelExtGetCharWidthFunc)(const wxPanelExt* self, int res);
+typedef wxClassInfo* (*wxPanelExtGetClassInfoFunc)(const wxPanelExt* self, wxClassInfo* res);
+typedef wxPoint (*wxPanelExtGetClientAreaOriginFunc)(const wxPanelExt* self, wxPoint res);
 typedef void (*wxPanelExtGetClientSizeConstraintintPintPFunc)(const wxPanelExt* self, int* w, int* h);
-typedef double (*wxPanelExtGetContentScaleFactorFunc)(const wxPanelExt* self);
-typedef wxSize (*wxPanelExtGetDPIFunc)(const wxPanelExt* self);
-typedef double (*wxPanelExtGetDPIScaleFactorFunc)(const wxPanelExt* self);
-typedef wxVisualAttributes (*wxPanelExtGetDefaultAttributesFunc)(const wxPanelExt* self);
-typedef wxBorder (*wxPanelExtGetDefaultBorderFunc)(const wxPanelExt* self);
-typedef wxBorder (*wxPanelExtGetDefaultBorderForControlFunc)(const wxPanelExt* self);
-typedef wxDropTarget* (*wxPanelExtGetDropTargetFunc)(const wxPanelExt* self);
-typedef wxSize (*wxPanelExtGetEffectiveMinSizeFunc)(const wxPanelExt* self);
-typedef wxEventHashTable& (*wxPanelExtGetEventHashTableFunc)(const wxPanelExt* self);
-typedef wxEventTable const* (*wxPanelExtGetEventTableFunc)(const wxPanelExt* self);
-typedef WXWidget (*wxPanelExtGetHandleFunc)(const wxPanelExt* self);
-typedef wxString (*wxPanelExtGetHelpTextAtPointwxPointCRwxHelpEventNOriginFunc)(const wxPanelExt* self, wxPoint const& pt, wxHelpEvent::Origin origin);
-typedef wxString (*wxPanelExtGetLabelFunc)(const wxPanelExt* self);
-typedef wxLayoutDirection (*wxPanelExtGetLayoutDirectionFunc)(const wxPanelExt* self);
-typedef wxWindow* (*wxPanelExtGetMainWindowOfCompositeControlFunc)(const wxPanelExt* self);
-typedef wxSize (*wxPanelExtGetMaxClientSizeFunc)(const wxPanelExt* self);
-typedef wxSize (*wxPanelExtGetMaxSizeFunc)(const wxPanelExt* self);
-typedef wxSize (*wxPanelExtGetMinClientSizeFunc)(const wxPanelExt* self);
-typedef wxSize (*wxPanelExtGetMinSizeFunc)(const wxPanelExt* self);
-typedef wxString (*wxPanelExtGetNameFunc)(const wxPanelExt* self);
+typedef double (*wxPanelExtGetContentScaleFactorFunc)(const wxPanelExt* self, double res);
+typedef wxSize (*wxPanelExtGetDPIFunc)(const wxPanelExt* self, wxSize res);
+typedef double (*wxPanelExtGetDPIScaleFactorFunc)(const wxPanelExt* self, double res);
+typedef wxVisualAttributes (*wxPanelExtGetDefaultAttributesFunc)(const wxPanelExt* self, wxVisualAttributes res);
+typedef wxBorder (*wxPanelExtGetDefaultBorderFunc)(const wxPanelExt* self, wxBorder res);
+typedef wxBorder (*wxPanelExtGetDefaultBorderForControlFunc)(const wxPanelExt* self, wxBorder res);
+typedef wxDropTarget* (*wxPanelExtGetDropTargetFunc)(const wxPanelExt* self, wxDropTarget* res);
+typedef wxSize (*wxPanelExtGetEffectiveMinSizeFunc)(const wxPanelExt* self, wxSize res);
+typedef wxEventHashTable& (*wxPanelExtGetEventHashTableFunc)(const wxPanelExt* self, wxEventHashTable& res);
+typedef wxEventTable const* (*wxPanelExtGetEventTableFunc)(const wxPanelExt* self, wxEventTable const* res);
+typedef WXWidget (*wxPanelExtGetHandleFunc)(const wxPanelExt* self, WXWidget res);
+typedef wxString (*wxPanelExtGetHelpTextAtPointwxPointCRwxHelpEventNOriginFunc)(const wxPanelExt* self, wxPoint const& pt, wxHelpEvent::Origin origin, wxString res);
+typedef wxString (*wxPanelExtGetLabelFunc)(const wxPanelExt* self, wxString res);
+typedef wxLayoutDirection (*wxPanelExtGetLayoutDirectionFunc)(const wxPanelExt* self, wxLayoutDirection res);
+typedef wxWindow* (*wxPanelExtGetMainWindowOfCompositeControlFunc)(const wxPanelExt* self, wxWindow* res);
+typedef wxSize (*wxPanelExtGetMaxClientSizeFunc)(const wxPanelExt* self, wxSize res);
+typedef wxSize (*wxPanelExtGetMaxSizeFunc)(const wxPanelExt* self, wxSize res);
+typedef wxSize (*wxPanelExtGetMinClientSizeFunc)(const wxPanelExt* self, wxSize res);
+typedef wxSize (*wxPanelExtGetMinSizeFunc)(const wxPanelExt* self, wxSize res);
+typedef wxString (*wxPanelExtGetNameFunc)(const wxPanelExt* self, wxString res);
 typedef void (*wxPanelExtGetPositionConstraintintPintPFunc)(const wxPanelExt* self, int* x, int* y);
-typedef int (*wxPanelExtGetScrollPosintFunc)(const wxPanelExt* self, int orient);
-typedef int (*wxPanelExtGetScrollRangeintFunc)(const wxPanelExt* self, int orient);
-typedef int (*wxPanelExtGetScrollThumbintFunc)(const wxPanelExt* self, int orient);
+typedef int (*wxPanelExtGetScrollPosintFunc)(const wxPanelExt* self, int orient, int res);
+typedef int (*wxPanelExtGetScrollRangeintFunc)(const wxPanelExt* self, int orient, int res);
+typedef int (*wxPanelExtGetScrollThumbintFunc)(const wxPanelExt* self, int orient, int res);
 typedef void (*wxPanelExtGetSizeConstraintintPintPFunc)(const wxPanelExt* self, int* w, int* h);
-typedef bool (*wxPanelExtGetThemeEnabledFunc)(const wxPanelExt* self);
-typedef wxValidator* (*wxPanelExtGetValidatorFunc)(const wxPanelExt* self);
-typedef wxSize (*wxPanelExtGetWindowBorderSizeFunc)(const wxPanelExt* self);
-typedef long (*wxPanelExtGetWindowStyleFlagFunc)(const wxPanelExt* self);
-typedef bool (*wxPanelExtHasCaptureFunc)(const wxPanelExt* self);
-typedef bool (*wxPanelExtHasFocusFunc)(const wxPanelExt* self);
-typedef bool (*wxPanelExtHasMultiplePagesFunc)(const wxPanelExt* self);
-typedef bool (*wxPanelExtHasTransparentBackgroundFunc)(const wxPanelExt* self);
-typedef bool (*wxPanelExtHideWithEffectwxShowEffectunsignedintFunc)(const wxPanelExt* self, wxShowEffect param0, unsigned int param1);
-typedef bool (*wxPanelExtInformFirstDirectionintintintFunc)(const wxPanelExt* self, int direction, int size, int availableOtherDir);
+typedef bool (*wxPanelExtGetThemeEnabledFunc)(const wxPanelExt* self, bool res);
+typedef wxByte (*wxPanelExtGetTransparentFunc)(const wxPanelExt* self, wxByte res);
+typedef wxValidator* (*wxPanelExtGetValidatorFunc)(const wxPanelExt* self, wxValidator* res);
+typedef wxSize (*wxPanelExtGetWindowBorderSizeFunc)(const wxPanelExt* self, wxSize res);
+typedef long (*wxPanelExtGetWindowStyleFlagFunc)(const wxPanelExt* self, long res);
+typedef bool (*wxPanelExtHasCaptureFunc)(const wxPanelExt* self, bool res);
+typedef bool (*wxPanelExtHasFocusFunc)(const wxPanelExt* self, bool res);
+typedef bool (*wxPanelExtHasMultiplePagesFunc)(const wxPanelExt* self, bool res);
+typedef bool (*wxPanelExtHasTransparentBackgroundFunc)(const wxPanelExt* self, bool res);
+typedef bool (*wxPanelExtHideWithEffectwxShowEffectunsignedintFunc)(const wxPanelExt* self, wxShowEffect effect, unsigned int timeout, bool res);
+typedef bool (*wxPanelExtInformFirstDirectionintintintFunc)(const wxPanelExt* self, int direction, int size, int availableOtherDir, bool res);
 typedef void (*wxPanelExtInheritAttributesFunc)(const wxPanelExt* self);
 typedef void (*wxPanelExtInitDialogFunc)(const wxPanelExt* self);
-typedef bool (*wxPanelExtIsClientAreaChildwxWindowCPFunc)(const wxPanelExt* self, wxWindow const* param0);
-typedef bool (*wxPanelExtIsDoubleBufferedFunc)(const wxPanelExt* self);
-typedef bool (*wxPanelExtIsRetainedFunc)(const wxPanelExt* self);
-typedef bool (*wxPanelExtIsScrollbarAlwaysShownintFunc)(const wxPanelExt* self, int param0);
-typedef bool (*wxPanelExtIsShownFunc)(const wxPanelExt* self);
-typedef bool (*wxPanelExtIsShownOnScreenFunc)(const wxPanelExt* self);
-typedef bool (*wxPanelExtIsThisEnabledFunc)(const wxPanelExt* self);
-typedef bool (*wxPanelExtIsTopLevelFunc)(const wxPanelExt* self);
-typedef bool (*wxPanelExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc)(const wxPanelExt* self, wxWindowBase::NavigationKind param0);
-typedef bool (*wxPanelExtIsTransparentBackgroundSupportedwxStringPFunc)(const wxPanelExt* self, wxString* reason);
-typedef bool (*wxPanelExtLayoutFunc)(const wxPanelExt* self);
-typedef bool (*wxPanelExtLayoutPhase1intPFunc)(const wxPanelExt* self, int* noChanges);
-typedef bool (*wxPanelExtLayoutPhase2intPFunc)(const wxPanelExt* self, int* noChanges);
+typedef bool (*wxPanelExtIsClientAreaChildwxWindowCPFunc)(const wxPanelExt* self, wxWindow const* param0, bool res);
+typedef bool (*wxPanelExtIsDoubleBufferedFunc)(const wxPanelExt* self, bool res);
+typedef bool (*wxPanelExtIsRetainedFunc)(const wxPanelExt* self, bool res);
+typedef bool (*wxPanelExtIsScrollbarAlwaysShownintFunc)(const wxPanelExt* self, int orient, bool res);
+typedef bool (*wxPanelExtIsShownFunc)(const wxPanelExt* self, bool res);
+typedef bool (*wxPanelExtIsShownOnScreenFunc)(const wxPanelExt* self, bool res);
+typedef bool (*wxPanelExtIsThisEnabledFunc)(const wxPanelExt* self, bool res);
+typedef bool (*wxPanelExtIsTopLevelFunc)(const wxPanelExt* self, bool res);
+typedef bool (*wxPanelExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc)(const wxPanelExt* self, wxWindowBase::NavigationKind param0, bool res);
+typedef bool (*wxPanelExtIsTransparentBackgroundSupportedwxStringPFunc)(const wxPanelExt* self, wxString* reason, bool res);
+typedef bool (*wxPanelExtLayoutFunc)(const wxPanelExt* self, bool res);
+typedef bool (*wxPanelExtLayoutPhase1intPFunc)(const wxPanelExt* self, int* noChanges, bool res);
+typedef bool (*wxPanelExtLayoutPhase2intPFunc)(const wxPanelExt* self, int* noChanges, bool res);
 typedef void (*wxPanelExtLowerFunc)(const wxPanelExt* self);
 typedef void (*wxPanelExtMoveConstraintintintFunc)(const wxPanelExt* self, int x, int y);
-typedef bool (*wxPanelExtOnDynamicBindwxDynamicEventTableEntryRFunc)(const wxPanelExt* self, wxDynamicEventTableEntry& param0);
+typedef bool (*wxPanelExtOnDynamicBindwxDynamicEventTableEntryRFunc)(const wxPanelExt* self, wxDynamicEventTableEntry& param0, bool res);
 typedef void (*wxPanelExtOnInternalIdleFunc)(const wxPanelExt* self);
 typedef void (*wxPanelExtPrepareDCwxDCRFunc)(const wxPanelExt* self, wxDC& param0);
-typedef bool (*wxPanelExtProcessEventwxEventRFunc)(const wxPanelExt* self, wxEvent& event);
+typedef bool (*wxPanelExtProcessEventwxEventRFunc)(const wxPanelExt* self, wxEvent& event, bool res);
 typedef void (*wxPanelExtQueueEventwxEventPFunc)(const wxPanelExt* self, wxEvent* event);
 typedef void (*wxPanelExtRaiseFunc)(const wxPanelExt* self);
 typedef void (*wxPanelExtRefreshboolwxRectCPFunc)(const wxPanelExt* self, bool eraseBackground, wxRect const* rect);
-typedef bool (*wxPanelExtRegisterHotKeyintintintFunc)(const wxPanelExt* self, int hotkeyId, int modifiers, int keycode);
+typedef bool (*wxPanelExtRegisterHotKeyintintintFunc)(const wxPanelExt* self, int hotkeyId, int modifiers, int keycode, bool res);
 typedef void (*wxPanelExtRemoveChildwxWindowBasePFunc)(const wxPanelExt* self, wxWindowBase* child);
-typedef bool (*wxPanelExtReparentwxWindowBasePFunc)(const wxPanelExt* self, wxWindowBase* newParent);
-typedef bool (*wxPanelExtScrollLinesintFunc)(const wxPanelExt* self, int param0);
-typedef bool (*wxPanelExtScrollPagesintFunc)(const wxPanelExt* self, int param0);
+typedef bool (*wxPanelExtReparentwxWindowBasePFunc)(const wxPanelExt* self, wxWindowBase* newParent, bool res);
+typedef bool (*wxPanelExtScrollLinesintFunc)(const wxPanelExt* self, int param0, bool res);
+typedef bool (*wxPanelExtScrollPagesintFunc)(const wxPanelExt* self, int param0, bool res);
 typedef void (*wxPanelExtScrollWindowintintwxRectCPFunc)(const wxPanelExt* self, int dx, int dy, wxRect const* rect);
-typedef bool (*wxPanelExtSearchEventTablewxEventTableRwxEventRFunc)(const wxPanelExt* self, wxEventTable& table, wxEvent& event);
-typedef bool (*wxPanelExtSendIdleEventswxIdleEventRFunc)(const wxPanelExt* self, wxIdleEvent& event);
+typedef bool (*wxPanelExtSearchEventTablewxEventTableRwxEventRFunc)(const wxPanelExt* self, wxEventTable& table, wxEvent& event, bool res);
+typedef bool (*wxPanelExtSendIdleEventswxIdleEventRFunc)(const wxPanelExt* self, wxIdleEvent& event, bool res);
 typedef void (*wxPanelExtSendSizeEventintFunc)(const wxPanelExt* self, int flags);
 typedef void (*wxPanelExtSetAcceleratorTablewxAcceleratorTableCRFunc)(const wxPanelExt* self, wxAcceleratorTable const& accel);
-typedef bool (*wxPanelExtSetBackgroundColourwxColourCRFunc)(const wxPanelExt* self, wxColour const& colour);
-typedef bool (*wxPanelExtSetBackgroundStylewxBackgroundStyleFunc)(const wxPanelExt* self, wxBackgroundStyle style);
+typedef bool (*wxPanelExtSetBackgroundColourwxColourCRFunc)(const wxPanelExt* self, wxColour const& colour, bool res);
+typedef bool (*wxPanelExtSetBackgroundStylewxBackgroundStyleFunc)(const wxPanelExt* self, wxBackgroundStyle style, bool res);
 typedef void (*wxPanelExtSetCanFocusboolFunc)(const wxPanelExt* self, bool param0);
 typedef void (*wxPanelExtSetConstraintSizesboolFunc)(const wxPanelExt* self, bool recurse);
-typedef bool (*wxPanelExtSetCursorwxCursorCRFunc)(const wxPanelExt* self, wxCursor const& cursor);
+typedef bool (*wxPanelExtSetCursorwxCursorCRFunc)(const wxPanelExt* self, wxCursor const& cursor, bool res);
 typedef void (*wxPanelExtSetDoubleBufferedboolFunc)(const wxPanelExt* self, bool param0);
 typedef void (*wxPanelExtSetDropTargetwxDropTargetPFunc)(const wxPanelExt* self, wxDropTarget* dropTarget);
 typedef void (*wxPanelExtSetExtraStylelongFunc)(const wxPanelExt* self, long exStyle);
 typedef void (*wxPanelExtSetFocusFunc)(const wxPanelExt* self);
 typedef void (*wxPanelExtSetFocusFromKbdFunc)(const wxPanelExt* self);
-typedef bool (*wxPanelExtSetFontwxFontCRFunc)(const wxPanelExt* self, wxFont const& font);
-typedef bool (*wxPanelExtSetForegroundColourwxColourCRFunc)(const wxPanelExt* self, wxColour const& colour);
+typedef bool (*wxPanelExtSetFontwxFontCRFunc)(const wxPanelExt* self, wxFont const& font, bool res);
+typedef bool (*wxPanelExtSetForegroundColourwxColourCRFunc)(const wxPanelExt* self, wxColour const& colour, bool res);
 typedef void (*wxPanelExtSetIdwxWindowIDFunc)(const wxPanelExt* self, wxWindowID winid);
 typedef void (*wxPanelExtSetLabelwxStringCRFunc)(const wxPanelExt* self, wxString const& label);
 typedef void (*wxPanelExtSetLayoutDirectionwxLayoutDirectionFunc)(const wxPanelExt* self, wxLayoutDirection param0);
@@ -552,34 +563,35 @@ typedef void (*wxPanelExtSetNamewxStringCRFunc)(const wxPanelExt* self, wxString
 typedef void (*wxPanelExtSetNextHandlerwxEvtHandlerPFunc)(const wxPanelExt* self, wxEvtHandler* handler);
 typedef void (*wxPanelExtSetPreviousHandlerwxEvtHandlerPFunc)(const wxPanelExt* self, wxEvtHandler* handler);
 typedef void (*wxPanelExtSetScrollPosintintboolFunc)(const wxPanelExt* self, int orient, int pos, bool refresh);
-typedef void (*wxPanelExtSetScrollbarintintintintboolFunc)(const wxPanelExt* self, int orient, int pos, int thumbvisible, int range, bool refresh);
+typedef void (*wxPanelExtSetScrollbarintintintintboolFunc)(const wxPanelExt* self, int orient, int pos, int thumbVisible, int range, bool refresh);
 typedef void (*wxPanelExtSetSizeConstraintintintintintFunc)(const wxPanelExt* self, int x, int y, int w, int h);
 typedef void (*wxPanelExtSetSizeHintsintintintintintintFunc)(const wxPanelExt* self, int minW, int minH, int maxW, int maxH, int incW, int incH);
 typedef void (*wxPanelExtSetThemeEnabledboolFunc)(const wxPanelExt* self, bool enableTheme);
-typedef bool (*wxPanelExtSetTransparentwxByteFunc)(const wxPanelExt* self, wxByte param0);
+typedef bool (*wxPanelExtSetTransparentwxByteFunc)(const wxPanelExt* self, wxByte alpha, bool res);
 typedef void (*wxPanelExtSetValidatorwxValidatorCRFunc)(const wxPanelExt* self, wxValidator const& validator);
 typedef void (*wxPanelExtSetWindowStyleFlaglongFunc)(const wxPanelExt* self, long style);
-typedef bool (*wxPanelExtShouldInheritColoursFunc)(const wxPanelExt* self);
-typedef bool (*wxPanelExtShowboolFunc)(const wxPanelExt* self, bool show);
-typedef bool (*wxPanelExtShowWithEffectwxShowEffectunsignedintFunc)(const wxPanelExt* self, wxShowEffect param0, unsigned int param1);
-typedef bool (*wxPanelExtTransferDataFromWindowFunc)(const wxPanelExt* self);
-typedef bool (*wxPanelExtTransferDataToWindowFunc)(const wxPanelExt* self);
-typedef bool (*wxPanelExtTryAfterwxEventRFunc)(const wxPanelExt* self, wxEvent& event);
-typedef bool (*wxPanelExtTryBeforewxEventRFunc)(const wxPanelExt* self, wxEvent& event);
-typedef bool (*wxPanelExtUnregisterHotKeyintFunc)(const wxPanelExt* self, int hotkeyId);
+typedef bool (*wxPanelExtShouldInheritColoursFunc)(const wxPanelExt* self, bool res);
+typedef bool (*wxPanelExtShowboolFunc)(const wxPanelExt* self, bool show, bool res);
+typedef bool (*wxPanelExtShowWithEffectwxShowEffectunsignedintFunc)(const wxPanelExt* self, wxShowEffect effect, unsigned int timeout, bool res);
+typedef bool (*wxPanelExtTransferDataFromWindowFunc)(const wxPanelExt* self, bool res);
+typedef bool (*wxPanelExtTransferDataToWindowFunc)(const wxPanelExt* self, bool res);
+typedef void (*wxPanelExtTriggerScrollEventwxEventTypeFunc)(const wxPanelExt* self, wxEventType scrollEvent);
+typedef bool (*wxPanelExtTryAfterwxEventRFunc)(const wxPanelExt* self, wxEvent& event, bool res);
+typedef bool (*wxPanelExtTryBeforewxEventRFunc)(const wxPanelExt* self, wxEvent& event, bool res);
+typedef bool (*wxPanelExtUnregisterHotKeyintFunc)(const wxPanelExt* self, int hotkeyId, bool res);
 typedef void (*wxPanelExtUpdateFunc)(const wxPanelExt* self);
 typedef void (*wxPanelExtUpdateWindowUIlongFunc)(const wxPanelExt* self, long flags);
-typedef bool (*wxPanelExtValidateFunc)(const wxPanelExt* self);
+typedef bool (*wxPanelExtValidateFunc)(const wxPanelExt* self, bool res);
 typedef void (*wxPanelExtWXAdjustFontToOwnPPIwxFontRFunc)(const wxPanelExt* self, wxFont& param0);
-typedef wxTextEntry const* (*wxPanelExtWXGetTextEntryFunc)(const wxPanelExt* self);
-typedef void* (*wxPanelExtWXReservedEvtHandler1voidPFunc)(const wxPanelExt* self, void* param0);
-typedef void* (*wxPanelExtWXReservedEvtHandler2voidPFunc)(const wxPanelExt* self, void* param0);
-typedef void* (*wxPanelExtWXReservedWindow1voidPFunc)(const wxPanelExt* self, void* param0);
-typedef void* (*wxPanelExtWXReservedWindow2voidPFunc)(const wxPanelExt* self, void* param0);
-typedef void* (*wxPanelExtWXReservedWindow3voidPFunc)(const wxPanelExt* self, void* param0);
+typedef wxTextEntry const* (*wxPanelExtWXGetTextEntryFunc)(const wxPanelExt* self, wxTextEntry const* res);
+typedef void* (*wxPanelExtWXReservedEvtHandler1voidPFunc)(const wxPanelExt* self, void* param0, void* res);
+typedef void* (*wxPanelExtWXReservedEvtHandler2voidPFunc)(const wxPanelExt* self, void* param0, void* res);
+typedef void* (*wxPanelExtWXReservedWindow1voidPFunc)(const wxPanelExt* self, void* param0, void* res);
+typedef void* (*wxPanelExtWXReservedWindow2voidPFunc)(const wxPanelExt* self, void* param0, void* res);
+typedef void* (*wxPanelExtWXReservedWindow3voidPFunc)(const wxPanelExt* self, void* param0, void* res);
 typedef void (*wxPanelExtWXSetInitialFittingClientSizeintwxSizerPFunc)(const wxPanelExt* self, int flags, wxSizer* sizer);
 typedef void (*wxPanelExtWarpPointerintintFunc)(const wxPanelExt* self, int x, int y);
-typedef wxSize (*wxPanelExtWindowToClientSizewxSizeCRFunc)(const wxPanelExt* self, wxSize const& size);
+typedef wxSize (*wxPanelExtWindowToClientSizewxSizeCRFunc)(const wxPanelExt* self, wxSize const& size, wxSize res);
 
 class wxNavigationEnabledWindowExt: public wxNavigationEnabledWindow
 {
@@ -590,7 +602,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::AcceptsFocus();
     if (*m_wxNavigationEnabledWindowExtAcceptsFocus != NULL){
-      return m_wxNavigationEnabledWindowExtAcceptsFocus(this);
+      return m_wxNavigationEnabledWindowExtAcceptsFocus(this, res);
     }
     else {
       return res;
@@ -601,7 +613,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::AcceptsFocusFromKeyboard();
     if (*m_wxNavigationEnabledWindowExtAcceptsFocusFromKeyboard != NULL){
-      return m_wxNavigationEnabledWindowExtAcceptsFocusFromKeyboard(this);
+      return m_wxNavigationEnabledWindowExtAcceptsFocusFromKeyboard(this, res);
     }
     else {
       return res;
@@ -612,7 +624,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::AcceptsFocusRecursively();
     if (*m_wxNavigationEnabledWindowExtAcceptsFocusRecursively != NULL){
-      return m_wxNavigationEnabledWindowExtAcceptsFocusRecursively(this);
+      return m_wxNavigationEnabledWindowExtAcceptsFocusRecursively(this, res);
     }
     else {
       return res;
@@ -639,7 +651,7 @@ public:
   {
     wxCoord res = wxNavigationEnabledWindow::AdjustForLayoutDirection(x, width, widthTotal);
     if (*m_wxNavigationEnabledWindowExtAdjustForLayoutDirectionwxCoordwxCoordwxCoord != NULL){
-      return m_wxNavigationEnabledWindowExtAdjustForLayoutDirectionwxCoordwxCoordwxCoord(this, x, width, widthTotal);
+      return m_wxNavigationEnabledWindowExtAdjustForLayoutDirectionwxCoordwxCoordwxCoord(this, x, width, widthTotal, res);
     }
     else {
       return res;
@@ -654,11 +666,11 @@ public:
     }
   }
   wxNavigationEnabledWindowExtAlwaysShowScrollbarsboolboolFunc m_wxNavigationEnabledWindowExtAlwaysShowScrollbarsboolbool = NULL;
-  virtual void AlwaysShowScrollbars(bool param0 = true, bool param1 = true) override
+  virtual void AlwaysShowScrollbars(bool horz = true, bool vert = true) override
   {
-    wxNavigationEnabledWindow::AlwaysShowScrollbars(param0, param1);
+    wxNavigationEnabledWindow::AlwaysShowScrollbars(horz, vert);
     if (*m_wxNavigationEnabledWindowExtAlwaysShowScrollbarsboolbool != NULL){
-      return m_wxNavigationEnabledWindowExtAlwaysShowScrollbarsboolbool(this, param0, param1);
+      return m_wxNavigationEnabledWindowExtAlwaysShowScrollbarsboolbool(this, horz, vert);
     }
   }
   wxNavigationEnabledWindowExtAssociateHandleWXWidgetFunc m_wxNavigationEnabledWindowExtAssociateHandleWXWidget = NULL;
@@ -674,7 +686,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::BeginRepositioningChildren();
     if (*m_wxNavigationEnabledWindowExtBeginRepositioningChildren != NULL){
-      return m_wxNavigationEnabledWindowExtBeginRepositioningChildren(this);
+      return m_wxNavigationEnabledWindowExtBeginRepositioningChildren(this, res);
     }
     else {
       return res;
@@ -685,7 +697,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::CanApplyThemeBorder();
     if (*m_wxNavigationEnabledWindowExtCanApplyThemeBorder != NULL){
-      return m_wxNavigationEnabledWindowExtCanApplyThemeBorder(this);
+      return m_wxNavigationEnabledWindowExtCanApplyThemeBorder(this, res);
     }
     else {
       return res;
@@ -696,7 +708,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::CanBeFocused();
     if (*m_wxNavigationEnabledWindowExtCanBeFocused != NULL){
-      return m_wxNavigationEnabledWindowExtCanBeFocused(this);
+      return m_wxNavigationEnabledWindowExtCanBeFocused(this, res);
     }
     else {
       return res;
@@ -707,7 +719,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::CanBeOutsideClientArea();
     if (*m_wxNavigationEnabledWindowExtCanBeOutsideClientArea != NULL){
-      return m_wxNavigationEnabledWindowExtCanBeOutsideClientArea(this);
+      return m_wxNavigationEnabledWindowExtCanBeOutsideClientArea(this, res);
     }
     else {
       return res;
@@ -718,7 +730,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::CanScroll(orient);
     if (*m_wxNavigationEnabledWindowExtCanScrollint != NULL){
-      return m_wxNavigationEnabledWindowExtCanScrollint(this, orient);
+      return m_wxNavigationEnabledWindowExtCanScrollint(this, orient, res);
     }
     else {
       return res;
@@ -729,7 +741,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::CanSetTransparent();
     if (*m_wxNavigationEnabledWindowExtCanSetTransparent != NULL){
-      return m_wxNavigationEnabledWindowExtCanSetTransparent(this);
+      return m_wxNavigationEnabledWindowExtCanSetTransparent(this, res);
     }
     else {
       return res;
@@ -748,7 +760,7 @@ public:
   {
     wxSize res = wxNavigationEnabledWindow::ClientToWindowSize(size);
     if (*m_wxNavigationEnabledWindowExtClientToWindowSizewxSizeCR != NULL){
-      return m_wxNavigationEnabledWindowExtClientToWindowSizewxSizeCR(this, size);
+      return m_wxNavigationEnabledWindowExtClientToWindowSizewxSizeCR(this, size, res);
     }
     else {
       return res;
@@ -759,7 +771,7 @@ public:
   {
     wxObjectRefData* res = wxNavigationEnabledWindow::CloneRefData(data);
     if (*m_wxNavigationEnabledWindowExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxNavigationEnabledWindowExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxNavigationEnabledWindowExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -770,7 +782,7 @@ public:
   {
     wxObjectRefData* res = wxNavigationEnabledWindow::CreateRefData();
     if (*m_wxNavigationEnabledWindowExtCreateRefData != NULL){
-      return m_wxNavigationEnabledWindowExtCreateRefData(this);
+      return m_wxNavigationEnabledWindowExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -781,7 +793,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::Destroy();
     if (*m_wxNavigationEnabledWindowExtDestroy != NULL){
-      return m_wxNavigationEnabledWindowExtDestroy(this);
+      return m_wxNavigationEnabledWindowExtDestroy(this, res);
     }
     else {
       return res;
@@ -820,11 +832,11 @@ public:
     }
   }
   wxNavigationEnabledWindowExtDoEnableboolFunc m_wxNavigationEnabledWindowExtDoEnablebool = NULL;
-  virtual void DoEnable(bool param0) override
+  virtual void DoEnable(bool enable) override
   {
-    wxNavigationEnabledWindow::DoEnable(param0);
+    wxNavigationEnabledWindow::DoEnable(enable);
     if (*m_wxNavigationEnabledWindowExtDoEnablebool != NULL){
-      return m_wxNavigationEnabledWindowExtDoEnablebool(this, param0);
+      return m_wxNavigationEnabledWindowExtDoEnablebool(this, enable);
     }
   }
   wxNavigationEnabledWindowExtDoFreezeFunc m_wxNavigationEnabledWindowExtDoFreeze = NULL;
@@ -840,7 +852,7 @@ public:
   {
     int res = wxNavigationEnabledWindow::DoGetBestClientHeight(param0);
     if (*m_wxNavigationEnabledWindowExtDoGetBestClientHeightint != NULL){
-      return m_wxNavigationEnabledWindowExtDoGetBestClientHeightint(this, param0);
+      return m_wxNavigationEnabledWindowExtDoGetBestClientHeightint(this, param0, res);
     }
     else {
       return res;
@@ -851,7 +863,7 @@ public:
   {
     wxSize res = wxNavigationEnabledWindow::DoGetBestClientSize();
     if (*m_wxNavigationEnabledWindowExtDoGetBestClientSize != NULL){
-      return m_wxNavigationEnabledWindowExtDoGetBestClientSize(this);
+      return m_wxNavigationEnabledWindowExtDoGetBestClientSize(this, res);
     }
     else {
       return res;
@@ -862,7 +874,7 @@ public:
   {
     int res = wxNavigationEnabledWindow::DoGetBestClientWidth(param0);
     if (*m_wxNavigationEnabledWindowExtDoGetBestClientWidthint != NULL){
-      return m_wxNavigationEnabledWindowExtDoGetBestClientWidthint(this, param0);
+      return m_wxNavigationEnabledWindowExtDoGetBestClientWidthint(this, param0, res);
     }
     else {
       return res;
@@ -873,7 +885,7 @@ public:
   {
     wxSize res = wxNavigationEnabledWindow::DoGetBestSize();
     if (*m_wxNavigationEnabledWindowExtDoGetBestSize != NULL){
-      return m_wxNavigationEnabledWindowExtDoGetBestSize(this);
+      return m_wxNavigationEnabledWindowExtDoGetBestSize(this, res);
     }
     else {
       return res;
@@ -884,7 +896,7 @@ public:
   {
     void* res = wxNavigationEnabledWindow::DoGetClientData();
     if (*m_wxNavigationEnabledWindowExtDoGetClientData != NULL){
-      return m_wxNavigationEnabledWindowExtDoGetClientData(this);
+      return m_wxNavigationEnabledWindowExtDoGetClientData(this, res);
     }
     else {
       return res;
@@ -895,7 +907,7 @@ public:
   {
     wxClientData* res = wxNavigationEnabledWindow::DoGetClientObject();
     if (*m_wxNavigationEnabledWindowExtDoGetClientObject != NULL){
-      return m_wxNavigationEnabledWindowExtDoGetClientObject(this);
+      return m_wxNavigationEnabledWindowExtDoGetClientObject(this, res);
     }
     else {
       return res;
@@ -933,12 +945,23 @@ public:
       return m_wxNavigationEnabledWindowExtDoGetSizeintPintP(this, width, height);
     }
   }
-  wxNavigationEnabledWindowExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCPFunc m_wxNavigationEnabledWindowExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCP = NULL;
-  virtual void DoGetTextExtent(wxString const& string, int* x, int* y, int* descent = __null, int* externalLeading = __null, wxFont const* font = __null) const override
+  wxNavigationEnabledWindowExtDoGetSizeFromClientSizewxSizeCRFunc m_wxNavigationEnabledWindowExtDoGetSizeFromClientSizewxSizeCR = NULL;
+  virtual wxSize DoGetSizeFromClientSize(wxSize const& size) const override
   {
-    wxNavigationEnabledWindow::DoGetTextExtent(string, x, y, descent, externalLeading, font);
+    wxSize res = wxNavigationEnabledWindow::DoGetSizeFromClientSize(size);
+    if (*m_wxNavigationEnabledWindowExtDoGetSizeFromClientSizewxSizeCR != NULL){
+      return m_wxNavigationEnabledWindowExtDoGetSizeFromClientSizewxSizeCR(this, size, res);
+    }
+    else {
+      return res;
+    }
+  }
+  wxNavigationEnabledWindowExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCPFunc m_wxNavigationEnabledWindowExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCP = NULL;
+  virtual void DoGetTextExtent(wxString const& string, int* x, int* y, int* descent = __null, int* externalLeading = __null, wxFont const* theFont = __null) const override
+  {
+    wxNavigationEnabledWindow::DoGetTextExtent(string, x, y, descent, externalLeading, theFont);
     if (*m_wxNavigationEnabledWindowExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCP != NULL){
-      return m_wxNavigationEnabledWindowExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCP(this, string, x, y, descent, externalLeading, font);
+      return m_wxNavigationEnabledWindowExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCP(this, string, x, y, descent, externalLeading, theFont);
     }
   }
   wxNavigationEnabledWindowExtDoGetVirtualSizeFunc m_wxNavigationEnabledWindowExtDoGetVirtualSize = NULL;
@@ -946,7 +969,7 @@ public:
   {
     wxSize res = wxNavigationEnabledWindow::DoGetVirtualSize();
     if (*m_wxNavigationEnabledWindowExtDoGetVirtualSize != NULL){
-      return m_wxNavigationEnabledWindowExtDoGetVirtualSize(this);
+      return m_wxNavigationEnabledWindowExtDoGetVirtualSize(this, res);
     }
     else {
       return res;
@@ -957,7 +980,7 @@ public:
   {
     wxHitTest res = wxNavigationEnabledWindow::DoHitTest(x, y);
     if (*m_wxNavigationEnabledWindowExtDoHitTestwxCoordwxCoord != NULL){
-      return m_wxNavigationEnabledWindowExtDoHitTestwxCoordwxCoord(this, x, y);
+      return m_wxNavigationEnabledWindowExtDoHitTestwxCoordwxCoord(this, x, y, res);
     }
     else {
       return res;
@@ -968,7 +991,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::DoIsExposed(x, y, w, h);
     if (*m_wxNavigationEnabledWindowExtDoIsExposedintintintint != NULL){
-      return m_wxNavigationEnabledWindowExtDoIsExposedintintintint(this, x, y, w, h);
+      return m_wxNavigationEnabledWindowExtDoIsExposedintintintint(this, x, y, w, h, res);
     }
     else {
       return res;
@@ -979,10 +1002,18 @@ public:
   {
     bool res = wxNavigationEnabledWindow::DoIsExposed(x, y);
     if (*m_wxNavigationEnabledWindowExtDoIsExposedintint != NULL){
-      return m_wxNavigationEnabledWindowExtDoIsExposedintint(this, x, y);
+      return m_wxNavigationEnabledWindowExtDoIsExposedintint(this, x, y, res);
     }
     else {
       return res;
+    }
+  }
+  wxNavigationEnabledWindowExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrderFunc m_wxNavigationEnabledWindowExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrder = NULL;
+  virtual void DoMoveInTabOrder(wxWindow* win, wxWindowBase::WindowOrder move) override
+  {
+    wxNavigationEnabledWindow::DoMoveInTabOrder(win, move);
+    if (*m_wxNavigationEnabledWindowExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrder != NULL){
+      return m_wxNavigationEnabledWindowExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrder(this, win, move);
     }
   }
   wxNavigationEnabledWindowExtDoMoveWindowintintintintFunc m_wxNavigationEnabledWindowExtDoMoveWindowintintintint = NULL;
@@ -998,7 +1029,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::DoNavigateIn(flags);
     if (*m_wxNavigationEnabledWindowExtDoNavigateInint != NULL){
-      return m_wxNavigationEnabledWindowExtDoNavigateInint(this, flags);
+      return m_wxNavigationEnabledWindowExtDoNavigateInint(this, flags, res);
     }
     else {
       return res;
@@ -1009,7 +1040,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::DoPhase(phase);
     if (*m_wxNavigationEnabledWindowExtDoPhaseint != NULL){
-      return m_wxNavigationEnabledWindowExtDoPhaseint(this, phase);
+      return m_wxNavigationEnabledWindowExtDoPhaseint(this, phase, res);
     }
     else {
       return res;
@@ -1020,7 +1051,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::DoPopupMenu(menu, x, y);
     if (*m_wxNavigationEnabledWindowExtDoPopupMenuwxMenuPintint != NULL){
-      return m_wxNavigationEnabledWindowExtDoPopupMenuwxMenuPintint(this, menu, x, y);
+      return m_wxNavigationEnabledWindowExtDoPopupMenuwxMenuPintint(this, menu, x, y, res);
     }
     else {
       return res;
@@ -1143,29 +1174,29 @@ public:
   {
     bool res = wxNavigationEnabledWindow::Enable(enable);
     if (*m_wxNavigationEnabledWindowExtEnablebool != NULL){
-      return m_wxNavigationEnabledWindowExtEnablebool(this, enable);
+      return m_wxNavigationEnabledWindowExtEnablebool(this, enable, res);
     }
     else {
       return res;
     }
   }
   wxNavigationEnabledWindowExtEnableTouchEventsintFunc m_wxNavigationEnabledWindowExtEnableTouchEventsint = NULL;
-  virtual bool EnableTouchEvents(int param0) override
+  virtual bool EnableTouchEvents(int eventsMask) override
   {
-    bool res = wxNavigationEnabledWindow::EnableTouchEvents(param0);
+    bool res = wxNavigationEnabledWindow::EnableTouchEvents(eventsMask);
     if (*m_wxNavigationEnabledWindowExtEnableTouchEventsint != NULL){
-      return m_wxNavigationEnabledWindowExtEnableTouchEventsint(this, param0);
+      return m_wxNavigationEnabledWindowExtEnableTouchEventsint(this, eventsMask, res);
     }
     else {
       return res;
     }
   }
   wxNavigationEnabledWindowExtEnableVisibleFocusboolFunc m_wxNavigationEnabledWindowExtEnableVisibleFocusbool = NULL;
-  virtual void EnableVisibleFocus(bool param0) override
+  virtual void EnableVisibleFocus(bool enabled) override
   {
-    wxNavigationEnabledWindow::EnableVisibleFocus(param0);
+    wxNavigationEnabledWindow::EnableVisibleFocus(enabled);
     if (*m_wxNavigationEnabledWindowExtEnableVisibleFocusbool != NULL){
-      return m_wxNavigationEnabledWindowExtEnableVisibleFocusbool(this, param0);
+      return m_wxNavigationEnabledWindowExtEnableVisibleFocusbool(this, enabled);
     }
   }
   wxNavigationEnabledWindowExtEndRepositioningChildrenFunc m_wxNavigationEnabledWindowExtEndRepositioningChildren = NULL;
@@ -1197,7 +1228,7 @@ public:
   {
     wxSize res = wxNavigationEnabledWindow::GetBestVirtualSize();
     if (*m_wxNavigationEnabledWindowExtGetBestVirtualSize != NULL){
-      return m_wxNavigationEnabledWindowExtGetBestVirtualSize(this);
+      return m_wxNavigationEnabledWindowExtGetBestVirtualSize(this, res);
     }
     else {
       return res;
@@ -1208,7 +1239,7 @@ public:
   {
     int res = wxNavigationEnabledWindow::GetCharHeight();
     if (*m_wxNavigationEnabledWindowExtGetCharHeight != NULL){
-      return m_wxNavigationEnabledWindowExtGetCharHeight(this);
+      return m_wxNavigationEnabledWindowExtGetCharHeight(this, res);
     }
     else {
       return res;
@@ -1219,7 +1250,7 @@ public:
   {
     int res = wxNavigationEnabledWindow::GetCharWidth();
     if (*m_wxNavigationEnabledWindowExtGetCharWidth != NULL){
-      return m_wxNavigationEnabledWindowExtGetCharWidth(this);
+      return m_wxNavigationEnabledWindowExtGetCharWidth(this, res);
     }
     else {
       return res;
@@ -1230,7 +1261,7 @@ public:
   {
     wxClassInfo* res = wxNavigationEnabledWindow::GetClassInfo();
     if (*m_wxNavigationEnabledWindowExtGetClassInfo != NULL){
-      return m_wxNavigationEnabledWindowExtGetClassInfo(this);
+      return m_wxNavigationEnabledWindowExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -1241,7 +1272,7 @@ public:
   {
     wxPoint res = wxNavigationEnabledWindow::GetClientAreaOrigin();
     if (*m_wxNavigationEnabledWindowExtGetClientAreaOrigin != NULL){
-      return m_wxNavigationEnabledWindowExtGetClientAreaOrigin(this);
+      return m_wxNavigationEnabledWindowExtGetClientAreaOrigin(this, res);
     }
     else {
       return res;
@@ -1260,7 +1291,7 @@ public:
   {
     double res = wxNavigationEnabledWindow::GetContentScaleFactor();
     if (*m_wxNavigationEnabledWindowExtGetContentScaleFactor != NULL){
-      return m_wxNavigationEnabledWindowExtGetContentScaleFactor(this);
+      return m_wxNavigationEnabledWindowExtGetContentScaleFactor(this, res);
     }
     else {
       return res;
@@ -1271,7 +1302,7 @@ public:
   {
     wxSize res = wxNavigationEnabledWindow::GetDPI();
     if (*m_wxNavigationEnabledWindowExtGetDPI != NULL){
-      return m_wxNavigationEnabledWindowExtGetDPI(this);
+      return m_wxNavigationEnabledWindowExtGetDPI(this, res);
     }
     else {
       return res;
@@ -1282,7 +1313,7 @@ public:
   {
     double res = wxNavigationEnabledWindow::GetDPIScaleFactor();
     if (*m_wxNavigationEnabledWindowExtGetDPIScaleFactor != NULL){
-      return m_wxNavigationEnabledWindowExtGetDPIScaleFactor(this);
+      return m_wxNavigationEnabledWindowExtGetDPIScaleFactor(this, res);
     }
     else {
       return res;
@@ -1293,7 +1324,7 @@ public:
   {
     wxVisualAttributes res = wxNavigationEnabledWindow::GetDefaultAttributes();
     if (*m_wxNavigationEnabledWindowExtGetDefaultAttributes != NULL){
-      return m_wxNavigationEnabledWindowExtGetDefaultAttributes(this);
+      return m_wxNavigationEnabledWindowExtGetDefaultAttributes(this, res);
     }
     else {
       return res;
@@ -1304,7 +1335,7 @@ public:
   {
     wxBorder res = wxNavigationEnabledWindow::GetDefaultBorder();
     if (*m_wxNavigationEnabledWindowExtGetDefaultBorder != NULL){
-      return m_wxNavigationEnabledWindowExtGetDefaultBorder(this);
+      return m_wxNavigationEnabledWindowExtGetDefaultBorder(this, res);
     }
     else {
       return res;
@@ -1315,7 +1346,7 @@ public:
   {
     wxBorder res = wxNavigationEnabledWindow::GetDefaultBorderForControl();
     if (*m_wxNavigationEnabledWindowExtGetDefaultBorderForControl != NULL){
-      return m_wxNavigationEnabledWindowExtGetDefaultBorderForControl(this);
+      return m_wxNavigationEnabledWindowExtGetDefaultBorderForControl(this, res);
     }
     else {
       return res;
@@ -1326,7 +1357,7 @@ public:
   {
     wxDropTarget* res = wxNavigationEnabledWindow::GetDropTarget();
     if (*m_wxNavigationEnabledWindowExtGetDropTarget != NULL){
-      return m_wxNavigationEnabledWindowExtGetDropTarget(this);
+      return m_wxNavigationEnabledWindowExtGetDropTarget(this, res);
     }
     else {
       return res;
@@ -1337,7 +1368,7 @@ public:
   {
     wxSize res = wxNavigationEnabledWindow::GetEffectiveMinSize();
     if (*m_wxNavigationEnabledWindowExtGetEffectiveMinSize != NULL){
-      return m_wxNavigationEnabledWindowExtGetEffectiveMinSize(this);
+      return m_wxNavigationEnabledWindowExtGetEffectiveMinSize(this, res);
     }
     else {
       return res;
@@ -1348,7 +1379,7 @@ public:
   {
     wxEventHashTable& res = wxNavigationEnabledWindow::GetEventHashTable();
     if (*m_wxNavigationEnabledWindowExtGetEventHashTable != NULL){
-      return m_wxNavigationEnabledWindowExtGetEventHashTable(this);
+      return m_wxNavigationEnabledWindowExtGetEventHashTable(this, res);
     }
     else {
       return res;
@@ -1359,7 +1390,7 @@ public:
   {
     wxEventTable const* res = wxNavigationEnabledWindow::GetEventTable();
     if (*m_wxNavigationEnabledWindowExtGetEventTable != NULL){
-      return m_wxNavigationEnabledWindowExtGetEventTable(this);
+      return m_wxNavigationEnabledWindowExtGetEventTable(this, res);
     }
     else {
       return res;
@@ -1370,7 +1401,7 @@ public:
   {
     WXWidget res = wxNavigationEnabledWindow::GetHandle();
     if (*m_wxNavigationEnabledWindowExtGetHandle != NULL){
-      return m_wxNavigationEnabledWindowExtGetHandle(this);
+      return m_wxNavigationEnabledWindowExtGetHandle(this, res);
     }
     else {
       return res;
@@ -1381,7 +1412,7 @@ public:
   {
     wxString res = wxNavigationEnabledWindow::GetHelpTextAtPoint(pt, origin);
     if (*m_wxNavigationEnabledWindowExtGetHelpTextAtPointwxPointCRwxHelpEventNOrigin != NULL){
-      return m_wxNavigationEnabledWindowExtGetHelpTextAtPointwxPointCRwxHelpEventNOrigin(this, pt, origin);
+      return m_wxNavigationEnabledWindowExtGetHelpTextAtPointwxPointCRwxHelpEventNOrigin(this, pt, origin, res);
     }
     else {
       return res;
@@ -1392,7 +1423,7 @@ public:
   {
     wxString res = wxNavigationEnabledWindow::GetLabel();
     if (*m_wxNavigationEnabledWindowExtGetLabel != NULL){
-      return m_wxNavigationEnabledWindowExtGetLabel(this);
+      return m_wxNavigationEnabledWindowExtGetLabel(this, res);
     }
     else {
       return res;
@@ -1403,7 +1434,7 @@ public:
   {
     wxLayoutDirection res = wxNavigationEnabledWindow::GetLayoutDirection();
     if (*m_wxNavigationEnabledWindowExtGetLayoutDirection != NULL){
-      return m_wxNavigationEnabledWindowExtGetLayoutDirection(this);
+      return m_wxNavigationEnabledWindowExtGetLayoutDirection(this, res);
     }
     else {
       return res;
@@ -1414,7 +1445,7 @@ public:
   {
     wxWindow* res = wxNavigationEnabledWindow::GetMainWindowOfCompositeControl();
     if (*m_wxNavigationEnabledWindowExtGetMainWindowOfCompositeControl != NULL){
-      return m_wxNavigationEnabledWindowExtGetMainWindowOfCompositeControl(this);
+      return m_wxNavigationEnabledWindowExtGetMainWindowOfCompositeControl(this, res);
     }
     else {
       return res;
@@ -1425,7 +1456,7 @@ public:
   {
     wxSize res = wxNavigationEnabledWindow::GetMaxClientSize();
     if (*m_wxNavigationEnabledWindowExtGetMaxClientSize != NULL){
-      return m_wxNavigationEnabledWindowExtGetMaxClientSize(this);
+      return m_wxNavigationEnabledWindowExtGetMaxClientSize(this, res);
     }
     else {
       return res;
@@ -1436,7 +1467,7 @@ public:
   {
     wxSize res = wxNavigationEnabledWindow::GetMaxSize();
     if (*m_wxNavigationEnabledWindowExtGetMaxSize != NULL){
-      return m_wxNavigationEnabledWindowExtGetMaxSize(this);
+      return m_wxNavigationEnabledWindowExtGetMaxSize(this, res);
     }
     else {
       return res;
@@ -1447,7 +1478,7 @@ public:
   {
     wxSize res = wxNavigationEnabledWindow::GetMinClientSize();
     if (*m_wxNavigationEnabledWindowExtGetMinClientSize != NULL){
-      return m_wxNavigationEnabledWindowExtGetMinClientSize(this);
+      return m_wxNavigationEnabledWindowExtGetMinClientSize(this, res);
     }
     else {
       return res;
@@ -1458,7 +1489,7 @@ public:
   {
     wxSize res = wxNavigationEnabledWindow::GetMinSize();
     if (*m_wxNavigationEnabledWindowExtGetMinSize != NULL){
-      return m_wxNavigationEnabledWindowExtGetMinSize(this);
+      return m_wxNavigationEnabledWindowExtGetMinSize(this, res);
     }
     else {
       return res;
@@ -1469,7 +1500,7 @@ public:
   {
     wxString res = wxNavigationEnabledWindow::GetName();
     if (*m_wxNavigationEnabledWindowExtGetName != NULL){
-      return m_wxNavigationEnabledWindowExtGetName(this);
+      return m_wxNavigationEnabledWindowExtGetName(this, res);
     }
     else {
       return res;
@@ -1488,7 +1519,7 @@ public:
   {
     int res = wxNavigationEnabledWindow::GetScrollPos(orient);
     if (*m_wxNavigationEnabledWindowExtGetScrollPosint != NULL){
-      return m_wxNavigationEnabledWindowExtGetScrollPosint(this, orient);
+      return m_wxNavigationEnabledWindowExtGetScrollPosint(this, orient, res);
     }
     else {
       return res;
@@ -1499,7 +1530,7 @@ public:
   {
     int res = wxNavigationEnabledWindow::GetScrollRange(orient);
     if (*m_wxNavigationEnabledWindowExtGetScrollRangeint != NULL){
-      return m_wxNavigationEnabledWindowExtGetScrollRangeint(this, orient);
+      return m_wxNavigationEnabledWindowExtGetScrollRangeint(this, orient, res);
     }
     else {
       return res;
@@ -1510,7 +1541,7 @@ public:
   {
     int res = wxNavigationEnabledWindow::GetScrollThumb(orient);
     if (*m_wxNavigationEnabledWindowExtGetScrollThumbint != NULL){
-      return m_wxNavigationEnabledWindowExtGetScrollThumbint(this, orient);
+      return m_wxNavigationEnabledWindowExtGetScrollThumbint(this, orient, res);
     }
     else {
       return res;
@@ -1529,7 +1560,18 @@ public:
   {
     bool res = wxNavigationEnabledWindow::GetThemeEnabled();
     if (*m_wxNavigationEnabledWindowExtGetThemeEnabled != NULL){
-      return m_wxNavigationEnabledWindowExtGetThemeEnabled(this);
+      return m_wxNavigationEnabledWindowExtGetThemeEnabled(this, res);
+    }
+    else {
+      return res;
+    }
+  }
+  wxNavigationEnabledWindowExtGetTransparentFunc m_wxNavigationEnabledWindowExtGetTransparent = NULL;
+  virtual wxByte GetTransparent() const override
+  {
+    wxByte res = wxNavigationEnabledWindow::GetTransparent();
+    if (*m_wxNavigationEnabledWindowExtGetTransparent != NULL){
+      return m_wxNavigationEnabledWindowExtGetTransparent(this, res);
     }
     else {
       return res;
@@ -1540,7 +1582,7 @@ public:
   {
     wxValidator* res = wxNavigationEnabledWindow::GetValidator();
     if (*m_wxNavigationEnabledWindowExtGetValidator != NULL){
-      return m_wxNavigationEnabledWindowExtGetValidator(this);
+      return m_wxNavigationEnabledWindowExtGetValidator(this, res);
     }
     else {
       return res;
@@ -1551,7 +1593,7 @@ public:
   {
     wxSize res = wxNavigationEnabledWindow::GetWindowBorderSize();
     if (*m_wxNavigationEnabledWindowExtGetWindowBorderSize != NULL){
-      return m_wxNavigationEnabledWindowExtGetWindowBorderSize(this);
+      return m_wxNavigationEnabledWindowExtGetWindowBorderSize(this, res);
     }
     else {
       return res;
@@ -1562,7 +1604,7 @@ public:
   {
     long res = wxNavigationEnabledWindow::GetWindowStyleFlag();
     if (*m_wxNavigationEnabledWindowExtGetWindowStyleFlag != NULL){
-      return m_wxNavigationEnabledWindowExtGetWindowStyleFlag(this);
+      return m_wxNavigationEnabledWindowExtGetWindowStyleFlag(this, res);
     }
     else {
       return res;
@@ -1573,7 +1615,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::HasCapture();
     if (*m_wxNavigationEnabledWindowExtHasCapture != NULL){
-      return m_wxNavigationEnabledWindowExtHasCapture(this);
+      return m_wxNavigationEnabledWindowExtHasCapture(this, res);
     }
     else {
       return res;
@@ -1584,7 +1626,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::HasFocus();
     if (*m_wxNavigationEnabledWindowExtHasFocus != NULL){
-      return m_wxNavigationEnabledWindowExtHasFocus(this);
+      return m_wxNavigationEnabledWindowExtHasFocus(this, res);
     }
     else {
       return res;
@@ -1595,7 +1637,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::HasMultiplePages();
     if (*m_wxNavigationEnabledWindowExtHasMultiplePages != NULL){
-      return m_wxNavigationEnabledWindowExtHasMultiplePages(this);
+      return m_wxNavigationEnabledWindowExtHasMultiplePages(this, res);
     }
     else {
       return res;
@@ -1606,18 +1648,18 @@ public:
   {
     bool res = wxNavigationEnabledWindow::HasTransparentBackground();
     if (*m_wxNavigationEnabledWindowExtHasTransparentBackground != NULL){
-      return m_wxNavigationEnabledWindowExtHasTransparentBackground(this);
+      return m_wxNavigationEnabledWindowExtHasTransparentBackground(this, res);
     }
     else {
       return res;
     }
   }
   wxNavigationEnabledWindowExtHideWithEffectwxShowEffectunsignedintFunc m_wxNavigationEnabledWindowExtHideWithEffectwxShowEffectunsignedint = NULL;
-  virtual bool HideWithEffect(wxShowEffect param0, unsigned int param1 = 0) override
+  virtual bool HideWithEffect(wxShowEffect effect, unsigned int timeout = 0) override
   {
-    bool res = wxNavigationEnabledWindow::HideWithEffect(param0, param1);
+    bool res = wxNavigationEnabledWindow::HideWithEffect(effect, timeout);
     if (*m_wxNavigationEnabledWindowExtHideWithEffectwxShowEffectunsignedint != NULL){
-      return m_wxNavigationEnabledWindowExtHideWithEffectwxShowEffectunsignedint(this, param0, param1);
+      return m_wxNavigationEnabledWindowExtHideWithEffectwxShowEffectunsignedint(this, effect, timeout, res);
     }
     else {
       return res;
@@ -1628,7 +1670,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::InformFirstDirection(direction, size, availableOtherDir);
     if (*m_wxNavigationEnabledWindowExtInformFirstDirectionintintint != NULL){
-      return m_wxNavigationEnabledWindowExtInformFirstDirectionintintint(this, direction, size, availableOtherDir);
+      return m_wxNavigationEnabledWindowExtInformFirstDirectionintintint(this, direction, size, availableOtherDir, res);
     }
     else {
       return res;
@@ -1655,7 +1697,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::IsClientAreaChild(param0);
     if (*m_wxNavigationEnabledWindowExtIsClientAreaChildwxWindowCP != NULL){
-      return m_wxNavigationEnabledWindowExtIsClientAreaChildwxWindowCP(this, param0);
+      return m_wxNavigationEnabledWindowExtIsClientAreaChildwxWindowCP(this, param0, res);
     }
     else {
       return res;
@@ -1666,7 +1708,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::IsDoubleBuffered();
     if (*m_wxNavigationEnabledWindowExtIsDoubleBuffered != NULL){
-      return m_wxNavigationEnabledWindowExtIsDoubleBuffered(this);
+      return m_wxNavigationEnabledWindowExtIsDoubleBuffered(this, res);
     }
     else {
       return res;
@@ -1677,18 +1719,18 @@ public:
   {
     bool res = wxNavigationEnabledWindow::IsRetained();
     if (*m_wxNavigationEnabledWindowExtIsRetained != NULL){
-      return m_wxNavigationEnabledWindowExtIsRetained(this);
+      return m_wxNavigationEnabledWindowExtIsRetained(this, res);
     }
     else {
       return res;
     }
   }
   wxNavigationEnabledWindowExtIsScrollbarAlwaysShownintFunc m_wxNavigationEnabledWindowExtIsScrollbarAlwaysShownint = NULL;
-  virtual bool IsScrollbarAlwaysShown(int param0) const override
+  virtual bool IsScrollbarAlwaysShown(int orient) const override
   {
-    bool res = wxNavigationEnabledWindow::IsScrollbarAlwaysShown(param0);
+    bool res = wxNavigationEnabledWindow::IsScrollbarAlwaysShown(orient);
     if (*m_wxNavigationEnabledWindowExtIsScrollbarAlwaysShownint != NULL){
-      return m_wxNavigationEnabledWindowExtIsScrollbarAlwaysShownint(this, param0);
+      return m_wxNavigationEnabledWindowExtIsScrollbarAlwaysShownint(this, orient, res);
     }
     else {
       return res;
@@ -1699,7 +1741,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::IsShown();
     if (*m_wxNavigationEnabledWindowExtIsShown != NULL){
-      return m_wxNavigationEnabledWindowExtIsShown(this);
+      return m_wxNavigationEnabledWindowExtIsShown(this, res);
     }
     else {
       return res;
@@ -1710,7 +1752,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::IsShownOnScreen();
     if (*m_wxNavigationEnabledWindowExtIsShownOnScreen != NULL){
-      return m_wxNavigationEnabledWindowExtIsShownOnScreen(this);
+      return m_wxNavigationEnabledWindowExtIsShownOnScreen(this, res);
     }
     else {
       return res;
@@ -1721,7 +1763,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::IsThisEnabled();
     if (*m_wxNavigationEnabledWindowExtIsThisEnabled != NULL){
-      return m_wxNavigationEnabledWindowExtIsThisEnabled(this);
+      return m_wxNavigationEnabledWindowExtIsThisEnabled(this, res);
     }
     else {
       return res;
@@ -1732,7 +1774,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::IsTopLevel();
     if (*m_wxNavigationEnabledWindowExtIsTopLevel != NULL){
-      return m_wxNavigationEnabledWindowExtIsTopLevel(this);
+      return m_wxNavigationEnabledWindowExtIsTopLevel(this, res);
     }
     else {
       return res;
@@ -1743,7 +1785,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::IsTopNavigationDomain(param0);
     if (*m_wxNavigationEnabledWindowExtIsTopNavigationDomainwxWindowBaseNNavigationKind != NULL){
-      return m_wxNavigationEnabledWindowExtIsTopNavigationDomainwxWindowBaseNNavigationKind(this, param0);
+      return m_wxNavigationEnabledWindowExtIsTopNavigationDomainwxWindowBaseNNavigationKind(this, param0, res);
     }
     else {
       return res;
@@ -1754,7 +1796,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::IsTransparentBackgroundSupported(reason);
     if (*m_wxNavigationEnabledWindowExtIsTransparentBackgroundSupportedwxStringP != NULL){
-      return m_wxNavigationEnabledWindowExtIsTransparentBackgroundSupportedwxStringP(this, reason);
+      return m_wxNavigationEnabledWindowExtIsTransparentBackgroundSupportedwxStringP(this, reason, res);
     }
     else {
       return res;
@@ -1765,7 +1807,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::Layout();
     if (*m_wxNavigationEnabledWindowExtLayout != NULL){
-      return m_wxNavigationEnabledWindowExtLayout(this);
+      return m_wxNavigationEnabledWindowExtLayout(this, res);
     }
     else {
       return res;
@@ -1776,7 +1818,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::LayoutPhase1(noChanges);
     if (*m_wxNavigationEnabledWindowExtLayoutPhase1intP != NULL){
-      return m_wxNavigationEnabledWindowExtLayoutPhase1intP(this, noChanges);
+      return m_wxNavigationEnabledWindowExtLayoutPhase1intP(this, noChanges, res);
     }
     else {
       return res;
@@ -1787,7 +1829,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::LayoutPhase2(noChanges);
     if (*m_wxNavigationEnabledWindowExtLayoutPhase2intP != NULL){
-      return m_wxNavigationEnabledWindowExtLayoutPhase2intP(this, noChanges);
+      return m_wxNavigationEnabledWindowExtLayoutPhase2intP(this, noChanges, res);
     }
     else {
       return res;
@@ -1814,7 +1856,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::OnDynamicBind(param0);
     if (*m_wxNavigationEnabledWindowExtOnDynamicBindwxDynamicEventTableEntryR != NULL){
-      return m_wxNavigationEnabledWindowExtOnDynamicBindwxDynamicEventTableEntryR(this, param0);
+      return m_wxNavigationEnabledWindowExtOnDynamicBindwxDynamicEventTableEntryR(this, param0, res);
     }
     else {
       return res;
@@ -1841,7 +1883,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::ProcessEvent(event);
     if (*m_wxNavigationEnabledWindowExtProcessEventwxEventR != NULL){
-      return m_wxNavigationEnabledWindowExtProcessEventwxEventR(this, event);
+      return m_wxNavigationEnabledWindowExtProcessEventwxEventR(this, event, res);
     }
     else {
       return res;
@@ -1864,7 +1906,7 @@ public:
     }
   }
   wxNavigationEnabledWindowExtRefreshboolwxRectCPFunc m_wxNavigationEnabledWindowExtRefreshboolwxRectCP = NULL;
-  virtual void Refresh(bool eraseBackground = true, wxRect const* rect = (const wxRect*)__null) override
+  virtual void Refresh(bool eraseBackground = true, wxRect const* rect = __null) override
   {
     wxNavigationEnabledWindow::Refresh(eraseBackground, rect);
     if (*m_wxNavigationEnabledWindowExtRefreshboolwxRectCP != NULL){
@@ -1876,7 +1918,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::RegisterHotKey(hotkeyId, modifiers, keycode);
     if (*m_wxNavigationEnabledWindowExtRegisterHotKeyintintint != NULL){
-      return m_wxNavigationEnabledWindowExtRegisterHotKeyintintint(this, hotkeyId, modifiers, keycode);
+      return m_wxNavigationEnabledWindowExtRegisterHotKeyintintint(this, hotkeyId, modifiers, keycode, res);
     }
     else {
       return res;
@@ -1895,7 +1937,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::Reparent(newParent);
     if (*m_wxNavigationEnabledWindowExtReparentwxWindowBaseP != NULL){
-      return m_wxNavigationEnabledWindowExtReparentwxWindowBaseP(this, newParent);
+      return m_wxNavigationEnabledWindowExtReparentwxWindowBaseP(this, newParent, res);
     }
     else {
       return res;
@@ -1906,7 +1948,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::ScrollLines(param0);
     if (*m_wxNavigationEnabledWindowExtScrollLinesint != NULL){
-      return m_wxNavigationEnabledWindowExtScrollLinesint(this, param0);
+      return m_wxNavigationEnabledWindowExtScrollLinesint(this, param0, res);
     }
     else {
       return res;
@@ -1917,7 +1959,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::ScrollPages(param0);
     if (*m_wxNavigationEnabledWindowExtScrollPagesint != NULL){
-      return m_wxNavigationEnabledWindowExtScrollPagesint(this, param0);
+      return m_wxNavigationEnabledWindowExtScrollPagesint(this, param0, res);
     }
     else {
       return res;
@@ -1936,7 +1978,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::SearchEventTable(table, event);
     if (*m_wxNavigationEnabledWindowExtSearchEventTablewxEventTableRwxEventR != NULL){
-      return m_wxNavigationEnabledWindowExtSearchEventTablewxEventTableRwxEventR(this, table, event);
+      return m_wxNavigationEnabledWindowExtSearchEventTablewxEventTableRwxEventR(this, table, event, res);
     }
     else {
       return res;
@@ -1947,7 +1989,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::SendIdleEvents(event);
     if (*m_wxNavigationEnabledWindowExtSendIdleEventswxIdleEventR != NULL){
-      return m_wxNavigationEnabledWindowExtSendIdleEventswxIdleEventR(this, event);
+      return m_wxNavigationEnabledWindowExtSendIdleEventswxIdleEventR(this, event, res);
     }
     else {
       return res;
@@ -1974,7 +2016,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::SetBackgroundColour(colour);
     if (*m_wxNavigationEnabledWindowExtSetBackgroundColourwxColourCR != NULL){
-      return m_wxNavigationEnabledWindowExtSetBackgroundColourwxColourCR(this, colour);
+      return m_wxNavigationEnabledWindowExtSetBackgroundColourwxColourCR(this, colour, res);
     }
     else {
       return res;
@@ -1985,7 +2027,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::SetBackgroundStyle(style);
     if (*m_wxNavigationEnabledWindowExtSetBackgroundStylewxBackgroundStyle != NULL){
-      return m_wxNavigationEnabledWindowExtSetBackgroundStylewxBackgroundStyle(this, style);
+      return m_wxNavigationEnabledWindowExtSetBackgroundStylewxBackgroundStyle(this, style, res);
     }
     else {
       return res;
@@ -2012,7 +2054,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::SetCursor(cursor);
     if (*m_wxNavigationEnabledWindowExtSetCursorwxCursorCR != NULL){
-      return m_wxNavigationEnabledWindowExtSetCursorwxCursorCR(this, cursor);
+      return m_wxNavigationEnabledWindowExtSetCursorwxCursorCR(this, cursor, res);
     }
     else {
       return res;
@@ -2063,7 +2105,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::SetFont(font);
     if (*m_wxNavigationEnabledWindowExtSetFontwxFontCR != NULL){
-      return m_wxNavigationEnabledWindowExtSetFontwxFontCR(this, font);
+      return m_wxNavigationEnabledWindowExtSetFontwxFontCR(this, font, res);
     }
     else {
       return res;
@@ -2074,7 +2116,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::SetForegroundColour(colour);
     if (*m_wxNavigationEnabledWindowExtSetForegroundColourwxColourCR != NULL){
-      return m_wxNavigationEnabledWindowExtSetForegroundColourwxColourCR(this, colour);
+      return m_wxNavigationEnabledWindowExtSetForegroundColourwxColourCR(this, colour, res);
     }
     else {
       return res;
@@ -2169,11 +2211,11 @@ public:
     }
   }
   wxNavigationEnabledWindowExtSetScrollbarintintintintboolFunc m_wxNavigationEnabledWindowExtSetScrollbarintintintintbool = NULL;
-  virtual void SetScrollbar(int orient, int pos, int thumbvisible, int range, bool refresh = true) override
+  virtual void SetScrollbar(int orient, int pos, int thumbVisible, int range, bool refresh = true) override
   {
-    wxNavigationEnabledWindow::SetScrollbar(orient, pos, thumbvisible, range, refresh);
+    wxNavigationEnabledWindow::SetScrollbar(orient, pos, thumbVisible, range, refresh);
     if (*m_wxNavigationEnabledWindowExtSetScrollbarintintintintbool != NULL){
-      return m_wxNavigationEnabledWindowExtSetScrollbarintintintintbool(this, orient, pos, thumbvisible, range, refresh);
+      return m_wxNavigationEnabledWindowExtSetScrollbarintintintintbool(this, orient, pos, thumbVisible, range, refresh);
     }
   }
   wxNavigationEnabledWindowExtSetSizeConstraintintintintintFunc m_wxNavigationEnabledWindowExtSetSizeConstraintintintintint = NULL;
@@ -2201,11 +2243,11 @@ public:
     }
   }
   wxNavigationEnabledWindowExtSetTransparentwxByteFunc m_wxNavigationEnabledWindowExtSetTransparentwxByte = NULL;
-  virtual bool SetTransparent(wxByte param0) override
+  virtual bool SetTransparent(wxByte alpha) override
   {
-    bool res = wxNavigationEnabledWindow::SetTransparent(param0);
+    bool res = wxNavigationEnabledWindow::SetTransparent(alpha);
     if (*m_wxNavigationEnabledWindowExtSetTransparentwxByte != NULL){
-      return m_wxNavigationEnabledWindowExtSetTransparentwxByte(this, param0);
+      return m_wxNavigationEnabledWindowExtSetTransparentwxByte(this, alpha, res);
     }
     else {
       return res;
@@ -2232,7 +2274,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::ShouldInheritColours();
     if (*m_wxNavigationEnabledWindowExtShouldInheritColours != NULL){
-      return m_wxNavigationEnabledWindowExtShouldInheritColours(this);
+      return m_wxNavigationEnabledWindowExtShouldInheritColours(this, res);
     }
     else {
       return res;
@@ -2243,18 +2285,18 @@ public:
   {
     bool res = wxNavigationEnabledWindow::Show(show);
     if (*m_wxNavigationEnabledWindowExtShowbool != NULL){
-      return m_wxNavigationEnabledWindowExtShowbool(this, show);
+      return m_wxNavigationEnabledWindowExtShowbool(this, show, res);
     }
     else {
       return res;
     }
   }
   wxNavigationEnabledWindowExtShowWithEffectwxShowEffectunsignedintFunc m_wxNavigationEnabledWindowExtShowWithEffectwxShowEffectunsignedint = NULL;
-  virtual bool ShowWithEffect(wxShowEffect param0, unsigned int param1 = 0) override
+  virtual bool ShowWithEffect(wxShowEffect effect, unsigned int timeout = 0) override
   {
-    bool res = wxNavigationEnabledWindow::ShowWithEffect(param0, param1);
+    bool res = wxNavigationEnabledWindow::ShowWithEffect(effect, timeout);
     if (*m_wxNavigationEnabledWindowExtShowWithEffectwxShowEffectunsignedint != NULL){
-      return m_wxNavigationEnabledWindowExtShowWithEffectwxShowEffectunsignedint(this, param0, param1);
+      return m_wxNavigationEnabledWindowExtShowWithEffectwxShowEffectunsignedint(this, effect, timeout, res);
     }
     else {
       return res;
@@ -2265,7 +2307,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::TransferDataFromWindow();
     if (*m_wxNavigationEnabledWindowExtTransferDataFromWindow != NULL){
-      return m_wxNavigationEnabledWindowExtTransferDataFromWindow(this);
+      return m_wxNavigationEnabledWindowExtTransferDataFromWindow(this, res);
     }
     else {
       return res;
@@ -2276,10 +2318,18 @@ public:
   {
     bool res = wxNavigationEnabledWindow::TransferDataToWindow();
     if (*m_wxNavigationEnabledWindowExtTransferDataToWindow != NULL){
-      return m_wxNavigationEnabledWindowExtTransferDataToWindow(this);
+      return m_wxNavigationEnabledWindowExtTransferDataToWindow(this, res);
     }
     else {
       return res;
+    }
+  }
+  wxNavigationEnabledWindowExtTriggerScrollEventwxEventTypeFunc m_wxNavigationEnabledWindowExtTriggerScrollEventwxEventType = NULL;
+  virtual void TriggerScrollEvent(wxEventType scrollEvent) override
+  {
+    wxNavigationEnabledWindow::TriggerScrollEvent(scrollEvent);
+    if (*m_wxNavigationEnabledWindowExtTriggerScrollEventwxEventType != NULL){
+      return m_wxNavigationEnabledWindowExtTriggerScrollEventwxEventType(this, scrollEvent);
     }
   }
   wxNavigationEnabledWindowExtTryAfterwxEventRFunc m_wxNavigationEnabledWindowExtTryAfterwxEventR = NULL;
@@ -2287,7 +2337,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::TryAfter(event);
     if (*m_wxNavigationEnabledWindowExtTryAfterwxEventR != NULL){
-      return m_wxNavigationEnabledWindowExtTryAfterwxEventR(this, event);
+      return m_wxNavigationEnabledWindowExtTryAfterwxEventR(this, event, res);
     }
     else {
       return res;
@@ -2298,7 +2348,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::TryBefore(event);
     if (*m_wxNavigationEnabledWindowExtTryBeforewxEventR != NULL){
-      return m_wxNavigationEnabledWindowExtTryBeforewxEventR(this, event);
+      return m_wxNavigationEnabledWindowExtTryBeforewxEventR(this, event, res);
     }
     else {
       return res;
@@ -2309,7 +2359,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::UnregisterHotKey(hotkeyId);
     if (*m_wxNavigationEnabledWindowExtUnregisterHotKeyint != NULL){
-      return m_wxNavigationEnabledWindowExtUnregisterHotKeyint(this, hotkeyId);
+      return m_wxNavigationEnabledWindowExtUnregisterHotKeyint(this, hotkeyId, res);
     }
     else {
       return res;
@@ -2336,7 +2386,7 @@ public:
   {
     bool res = wxNavigationEnabledWindow::Validate();
     if (*m_wxNavigationEnabledWindowExtValidate != NULL){
-      return m_wxNavigationEnabledWindowExtValidate(this);
+      return m_wxNavigationEnabledWindowExtValidate(this, res);
     }
     else {
       return res;
@@ -2355,7 +2405,7 @@ public:
   {
     wxTextEntry const* res = wxNavigationEnabledWindow::WXGetTextEntry();
     if (*m_wxNavigationEnabledWindowExtWXGetTextEntry != NULL){
-      return m_wxNavigationEnabledWindowExtWXGetTextEntry(this);
+      return m_wxNavigationEnabledWindowExtWXGetTextEntry(this, res);
     }
     else {
       return res;
@@ -2366,7 +2416,7 @@ public:
   {
     void* res = wxNavigationEnabledWindow::WXReservedEvtHandler1(param0);
     if (*m_wxNavigationEnabledWindowExtWXReservedEvtHandler1voidP != NULL){
-      return m_wxNavigationEnabledWindowExtWXReservedEvtHandler1voidP(this, param0);
+      return m_wxNavigationEnabledWindowExtWXReservedEvtHandler1voidP(this, param0, res);
     }
     else {
       return res;
@@ -2377,7 +2427,7 @@ public:
   {
     void* res = wxNavigationEnabledWindow::WXReservedEvtHandler2(param0);
     if (*m_wxNavigationEnabledWindowExtWXReservedEvtHandler2voidP != NULL){
-      return m_wxNavigationEnabledWindowExtWXReservedEvtHandler2voidP(this, param0);
+      return m_wxNavigationEnabledWindowExtWXReservedEvtHandler2voidP(this, param0, res);
     }
     else {
       return res;
@@ -2388,7 +2438,7 @@ public:
   {
     void* res = wxNavigationEnabledWindow::WXReservedWindow1(param0);
     if (*m_wxNavigationEnabledWindowExtWXReservedWindow1voidP != NULL){
-      return m_wxNavigationEnabledWindowExtWXReservedWindow1voidP(this, param0);
+      return m_wxNavigationEnabledWindowExtWXReservedWindow1voidP(this, param0, res);
     }
     else {
       return res;
@@ -2399,7 +2449,7 @@ public:
   {
     void* res = wxNavigationEnabledWindow::WXReservedWindow2(param0);
     if (*m_wxNavigationEnabledWindowExtWXReservedWindow2voidP != NULL){
-      return m_wxNavigationEnabledWindowExtWXReservedWindow2voidP(this, param0);
+      return m_wxNavigationEnabledWindowExtWXReservedWindow2voidP(this, param0, res);
     }
     else {
       return res;
@@ -2410,7 +2460,7 @@ public:
   {
     void* res = wxNavigationEnabledWindow::WXReservedWindow3(param0);
     if (*m_wxNavigationEnabledWindowExtWXReservedWindow3voidP != NULL){
-      return m_wxNavigationEnabledWindowExtWXReservedWindow3voidP(this, param0);
+      return m_wxNavigationEnabledWindowExtWXReservedWindow3voidP(this, param0, res);
     }
     else {
       return res;
@@ -2437,13 +2487,13 @@ public:
   {
     wxSize res = wxNavigationEnabledWindow::WindowToClientSize(size);
     if (*m_wxNavigationEnabledWindowExtWindowToClientSizewxSizeCR != NULL){
-      return m_wxNavigationEnabledWindowExtWindowToClientSizewxSizeCR(this, size);
+      return m_wxNavigationEnabledWindowExtWindowToClientSizewxSizeCR(this, size, res);
     }
     else {
       return res;
     }
   }
-  wxNavigationEnabledWindowExt(wxNavigationEnabledWindowExtAcceptsFocusFunc a_AcceptsFocus, wxNavigationEnabledWindowExtAcceptsFocusFromKeyboardFunc a_AcceptsFocusFromKeyboard, wxNavigationEnabledWindowExtAcceptsFocusRecursivelyFunc a_AcceptsFocusRecursively, wxNavigationEnabledWindowExtAddChildwxWindowBasePFunc a_AddChildwxWindowBaseP, wxNavigationEnabledWindowExtAddPendingEventwxEventCRFunc a_AddPendingEventwxEventCR, wxNavigationEnabledWindowExtAdjustForLayoutDirectionwxCoordwxCoordwxCoordFunc a_AdjustForLayoutDirectionwxCoordwxCoordwxCoord, wxNavigationEnabledWindowExtAdjustForParentClientOriginintRintRintFunc a_AdjustForParentClientOriginintRintRint, wxNavigationEnabledWindowExtAlwaysShowScrollbarsboolboolFunc a_AlwaysShowScrollbarsboolbool, wxNavigationEnabledWindowExtAssociateHandleWXWidgetFunc a_AssociateHandleWXWidget, wxNavigationEnabledWindowExtBeginRepositioningChildrenFunc a_BeginRepositioningChildren, wxNavigationEnabledWindowExtCanApplyThemeBorderFunc a_CanApplyThemeBorder, wxNavigationEnabledWindowExtCanBeFocusedFunc a_CanBeFocused, wxNavigationEnabledWindowExtCanBeOutsideClientAreaFunc a_CanBeOutsideClientArea, wxNavigationEnabledWindowExtCanScrollintFunc a_CanScrollint, wxNavigationEnabledWindowExtCanSetTransparentFunc a_CanSetTransparent, wxNavigationEnabledWindowExtClearBackgroundFunc a_ClearBackground, wxNavigationEnabledWindowExtClientToWindowSizewxSizeCRFunc a_ClientToWindowSizewxSizeCR, wxNavigationEnabledWindowExtCloneRefDatawxObjectRefDataCPFunc a_CloneRefDatawxObjectRefDataCP, wxNavigationEnabledWindowExtCreateRefDataFunc a_CreateRefData, wxNavigationEnabledWindowExtDestroyFunc a_Destroy, wxNavigationEnabledWindowExtDissociateHandleFunc a_DissociateHandle, wxNavigationEnabledWindowExtDoCaptureMouseFunc a_DoCaptureMouse, wxNavigationEnabledWindowExtDoCentreintFunc a_DoCentreint, wxNavigationEnabledWindowExtDoClientToScreenintPintPFunc a_DoClientToScreenintPintP, wxNavigationEnabledWindowExtDoEnableboolFunc a_DoEnablebool, wxNavigationEnabledWindowExtDoFreezeFunc a_DoFreeze, wxNavigationEnabledWindowExtDoGetBestClientHeightintFunc a_DoGetBestClientHeightint, wxNavigationEnabledWindowExtDoGetBestClientSizeFunc a_DoGetBestClientSize, wxNavigationEnabledWindowExtDoGetBestClientWidthintFunc a_DoGetBestClientWidthint, wxNavigationEnabledWindowExtDoGetBestSizeFunc a_DoGetBestSize, wxNavigationEnabledWindowExtDoGetClientDataFunc a_DoGetClientData, wxNavigationEnabledWindowExtDoGetClientObjectFunc a_DoGetClientObject, wxNavigationEnabledWindowExtDoGetClientSizeintPintPFunc a_DoGetClientSizeintPintP, wxNavigationEnabledWindowExtDoGetPositionintPintPFunc a_DoGetPositionintPintP, wxNavigationEnabledWindowExtDoGetScreenPositionintPintPFunc a_DoGetScreenPositionintPintP, wxNavigationEnabledWindowExtDoGetSizeintPintPFunc a_DoGetSizeintPintP, wxNavigationEnabledWindowExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCPFunc a_DoGetTextExtentwxStringCRintPintPintPintPwxFontCP, wxNavigationEnabledWindowExtDoGetVirtualSizeFunc a_DoGetVirtualSize, wxNavigationEnabledWindowExtDoHitTestwxCoordwxCoordFunc a_DoHitTestwxCoordwxCoord, wxNavigationEnabledWindowExtDoIsExposedintintintintFunc a_DoIsExposedintintintint, wxNavigationEnabledWindowExtDoIsExposedintintFunc a_DoIsExposedintint, wxNavigationEnabledWindowExtDoMoveWindowintintintintFunc a_DoMoveWindowintintintint, wxNavigationEnabledWindowExtDoNavigateInintFunc a_DoNavigateInint, wxNavigationEnabledWindowExtDoPhaseintFunc a_DoPhaseint, wxNavigationEnabledWindowExtDoPopupMenuwxMenuPintintFunc a_DoPopupMenuwxMenuPintint, wxNavigationEnabledWindowExtDoReleaseMouseFunc a_DoReleaseMouse, wxNavigationEnabledWindowExtDoScreenToClientintPintPFunc a_DoScreenToClientintPintP, wxNavigationEnabledWindowExtDoSetClientDatavoidPFunc a_DoSetClientDatavoidP, wxNavigationEnabledWindowExtDoSetClientObjectwxClientDataPFunc a_DoSetClientObjectwxClientDataP, wxNavigationEnabledWindowExtDoSetClientSizeintintFunc a_DoSetClientSizeintint, wxNavigationEnabledWindowExtDoSetSizeintintintintintFunc a_DoSetSizeintintintintint, wxNavigationEnabledWindowExtDoSetSizeHintsintintintintintintFunc a_DoSetSizeHintsintintintintintint, wxNavigationEnabledWindowExtDoSetToolTipwxToolTipPFunc a_DoSetToolTipwxToolTipP, wxNavigationEnabledWindowExtDoSetToolTipTextwxStringCRFunc a_DoSetToolTipTextwxStringCR, wxNavigationEnabledWindowExtDoSetVirtualSizeintintFunc a_DoSetVirtualSizeintint, wxNavigationEnabledWindowExtDoSetWindowVariantwxWindowVariantFunc a_DoSetWindowVariantwxWindowVariant, wxNavigationEnabledWindowExtDoThawFunc a_DoThaw, wxNavigationEnabledWindowExtDoUpdateWindowUIwxUpdateUIEventRFunc a_DoUpdateWindowUIwxUpdateUIEventR, wxNavigationEnabledWindowExtDragAcceptFilesboolFunc a_DragAcceptFilesbool, wxNavigationEnabledWindowExtEnableboolFunc a_Enablebool, wxNavigationEnabledWindowExtEnableTouchEventsintFunc a_EnableTouchEventsint, wxNavigationEnabledWindowExtEnableVisibleFocusboolFunc a_EnableVisibleFocusbool, wxNavigationEnabledWindowExtEndRepositioningChildrenFunc a_EndRepositioningChildren, wxNavigationEnabledWindowExtFitFunc a_Fit, wxNavigationEnabledWindowExtFitInsideFunc a_FitInside, wxNavigationEnabledWindowExtGetBestVirtualSizeFunc a_GetBestVirtualSize, wxNavigationEnabledWindowExtGetCharHeightFunc a_GetCharHeight, wxNavigationEnabledWindowExtGetCharWidthFunc a_GetCharWidth, wxNavigationEnabledWindowExtGetClassInfoFunc a_GetClassInfo, wxNavigationEnabledWindowExtGetClientAreaOriginFunc a_GetClientAreaOrigin, wxNavigationEnabledWindowExtGetClientSizeConstraintintPintPFunc a_GetClientSizeConstraintintPintP, wxNavigationEnabledWindowExtGetContentScaleFactorFunc a_GetContentScaleFactor, wxNavigationEnabledWindowExtGetDPIFunc a_GetDPI, wxNavigationEnabledWindowExtGetDPIScaleFactorFunc a_GetDPIScaleFactor, wxNavigationEnabledWindowExtGetDefaultAttributesFunc a_GetDefaultAttributes, wxNavigationEnabledWindowExtGetDefaultBorderFunc a_GetDefaultBorder, wxNavigationEnabledWindowExtGetDefaultBorderForControlFunc a_GetDefaultBorderForControl, wxNavigationEnabledWindowExtGetDropTargetFunc a_GetDropTarget, wxNavigationEnabledWindowExtGetEffectiveMinSizeFunc a_GetEffectiveMinSize, wxNavigationEnabledWindowExtGetEventHashTableFunc a_GetEventHashTable, wxNavigationEnabledWindowExtGetEventTableFunc a_GetEventTable, wxNavigationEnabledWindowExtGetHandleFunc a_GetHandle, wxNavigationEnabledWindowExtGetHelpTextAtPointwxPointCRwxHelpEventNOriginFunc a_GetHelpTextAtPointwxPointCRwxHelpEventNOrigin, wxNavigationEnabledWindowExtGetLabelFunc a_GetLabel, wxNavigationEnabledWindowExtGetLayoutDirectionFunc a_GetLayoutDirection, wxNavigationEnabledWindowExtGetMainWindowOfCompositeControlFunc a_GetMainWindowOfCompositeControl, wxNavigationEnabledWindowExtGetMaxClientSizeFunc a_GetMaxClientSize, wxNavigationEnabledWindowExtGetMaxSizeFunc a_GetMaxSize, wxNavigationEnabledWindowExtGetMinClientSizeFunc a_GetMinClientSize, wxNavigationEnabledWindowExtGetMinSizeFunc a_GetMinSize, wxNavigationEnabledWindowExtGetNameFunc a_GetName, wxNavigationEnabledWindowExtGetPositionConstraintintPintPFunc a_GetPositionConstraintintPintP, wxNavigationEnabledWindowExtGetScrollPosintFunc a_GetScrollPosint, wxNavigationEnabledWindowExtGetScrollRangeintFunc a_GetScrollRangeint, wxNavigationEnabledWindowExtGetScrollThumbintFunc a_GetScrollThumbint, wxNavigationEnabledWindowExtGetSizeConstraintintPintPFunc a_GetSizeConstraintintPintP, wxNavigationEnabledWindowExtGetThemeEnabledFunc a_GetThemeEnabled, wxNavigationEnabledWindowExtGetValidatorFunc a_GetValidator, wxNavigationEnabledWindowExtGetWindowBorderSizeFunc a_GetWindowBorderSize, wxNavigationEnabledWindowExtGetWindowStyleFlagFunc a_GetWindowStyleFlag, wxNavigationEnabledWindowExtHasCaptureFunc a_HasCapture, wxNavigationEnabledWindowExtHasFocusFunc a_HasFocus, wxNavigationEnabledWindowExtHasMultiplePagesFunc a_HasMultiplePages, wxNavigationEnabledWindowExtHasTransparentBackgroundFunc a_HasTransparentBackground, wxNavigationEnabledWindowExtHideWithEffectwxShowEffectunsignedintFunc a_HideWithEffectwxShowEffectunsignedint, wxNavigationEnabledWindowExtInformFirstDirectionintintintFunc a_InformFirstDirectionintintint, wxNavigationEnabledWindowExtInheritAttributesFunc a_InheritAttributes, wxNavigationEnabledWindowExtInitDialogFunc a_InitDialog, wxNavigationEnabledWindowExtIsClientAreaChildwxWindowCPFunc a_IsClientAreaChildwxWindowCP, wxNavigationEnabledWindowExtIsDoubleBufferedFunc a_IsDoubleBuffered, wxNavigationEnabledWindowExtIsRetainedFunc a_IsRetained, wxNavigationEnabledWindowExtIsScrollbarAlwaysShownintFunc a_IsScrollbarAlwaysShownint, wxNavigationEnabledWindowExtIsShownFunc a_IsShown, wxNavigationEnabledWindowExtIsShownOnScreenFunc a_IsShownOnScreen, wxNavigationEnabledWindowExtIsThisEnabledFunc a_IsThisEnabled, wxNavigationEnabledWindowExtIsTopLevelFunc a_IsTopLevel, wxNavigationEnabledWindowExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc a_IsTopNavigationDomainwxWindowBaseNNavigationKind, wxNavigationEnabledWindowExtIsTransparentBackgroundSupportedwxStringPFunc a_IsTransparentBackgroundSupportedwxStringP, wxNavigationEnabledWindowExtLayoutFunc a_Layout, wxNavigationEnabledWindowExtLayoutPhase1intPFunc a_LayoutPhase1intP, wxNavigationEnabledWindowExtLayoutPhase2intPFunc a_LayoutPhase2intP, wxNavigationEnabledWindowExtLowerFunc a_Lower, wxNavigationEnabledWindowExtMoveConstraintintintFunc a_MoveConstraintintint, wxNavigationEnabledWindowExtOnDynamicBindwxDynamicEventTableEntryRFunc a_OnDynamicBindwxDynamicEventTableEntryR, wxNavigationEnabledWindowExtOnInternalIdleFunc a_OnInternalIdle, wxNavigationEnabledWindowExtPrepareDCwxDCRFunc a_PrepareDCwxDCR, wxNavigationEnabledWindowExtProcessEventwxEventRFunc a_ProcessEventwxEventR, wxNavigationEnabledWindowExtQueueEventwxEventPFunc a_QueueEventwxEventP, wxNavigationEnabledWindowExtRaiseFunc a_Raise, wxNavigationEnabledWindowExtRefreshboolwxRectCPFunc a_RefreshboolwxRectCP, wxNavigationEnabledWindowExtRegisterHotKeyintintintFunc a_RegisterHotKeyintintint, wxNavigationEnabledWindowExtRemoveChildwxWindowBasePFunc a_RemoveChildwxWindowBaseP, wxNavigationEnabledWindowExtReparentwxWindowBasePFunc a_ReparentwxWindowBaseP, wxNavigationEnabledWindowExtScrollLinesintFunc a_ScrollLinesint, wxNavigationEnabledWindowExtScrollPagesintFunc a_ScrollPagesint, wxNavigationEnabledWindowExtScrollWindowintintwxRectCPFunc a_ScrollWindowintintwxRectCP, wxNavigationEnabledWindowExtSearchEventTablewxEventTableRwxEventRFunc a_SearchEventTablewxEventTableRwxEventR, wxNavigationEnabledWindowExtSendIdleEventswxIdleEventRFunc a_SendIdleEventswxIdleEventR, wxNavigationEnabledWindowExtSendSizeEventintFunc a_SendSizeEventint, wxNavigationEnabledWindowExtSetAcceleratorTablewxAcceleratorTableCRFunc a_SetAcceleratorTablewxAcceleratorTableCR, wxNavigationEnabledWindowExtSetBackgroundColourwxColourCRFunc a_SetBackgroundColourwxColourCR, wxNavigationEnabledWindowExtSetBackgroundStylewxBackgroundStyleFunc a_SetBackgroundStylewxBackgroundStyle, wxNavigationEnabledWindowExtSetCanFocusboolFunc a_SetCanFocusbool, wxNavigationEnabledWindowExtSetConstraintSizesboolFunc a_SetConstraintSizesbool, wxNavigationEnabledWindowExtSetCursorwxCursorCRFunc a_SetCursorwxCursorCR, wxNavigationEnabledWindowExtSetDoubleBufferedboolFunc a_SetDoubleBufferedbool, wxNavigationEnabledWindowExtSetDropTargetwxDropTargetPFunc a_SetDropTargetwxDropTargetP, wxNavigationEnabledWindowExtSetExtraStylelongFunc a_SetExtraStylelong, wxNavigationEnabledWindowExtSetFocusFunc a_SetFocus, wxNavigationEnabledWindowExtSetFocusFromKbdFunc a_SetFocusFromKbd, wxNavigationEnabledWindowExtSetFontwxFontCRFunc a_SetFontwxFontCR, wxNavigationEnabledWindowExtSetForegroundColourwxColourCRFunc a_SetForegroundColourwxColourCR, wxNavigationEnabledWindowExtSetIdwxWindowIDFunc a_SetIdwxWindowID, wxNavigationEnabledWindowExtSetLabelwxStringCRFunc a_SetLabelwxStringCR, wxNavigationEnabledWindowExtSetLayoutDirectionwxLayoutDirectionFunc a_SetLayoutDirectionwxLayoutDirection, wxNavigationEnabledWindowExtSetMaxClientSizewxSizeCRFunc a_SetMaxClientSizewxSizeCR, wxNavigationEnabledWindowExtSetMaxSizewxSizeCRFunc a_SetMaxSizewxSizeCR, wxNavigationEnabledWindowExtSetMinClientSizewxSizeCRFunc a_SetMinClientSizewxSizeCR, wxNavigationEnabledWindowExtSetMinSizewxSizeCRFunc a_SetMinSizewxSizeCR, wxNavigationEnabledWindowExtSetNamewxStringCRFunc a_SetNamewxStringCR, wxNavigationEnabledWindowExtSetNextHandlerwxEvtHandlerPFunc a_SetNextHandlerwxEvtHandlerP, wxNavigationEnabledWindowExtSetPreviousHandlerwxEvtHandlerPFunc a_SetPreviousHandlerwxEvtHandlerP, wxNavigationEnabledWindowExtSetScrollPosintintboolFunc a_SetScrollPosintintbool, wxNavigationEnabledWindowExtSetScrollbarintintintintboolFunc a_SetScrollbarintintintintbool, wxNavigationEnabledWindowExtSetSizeConstraintintintintintFunc a_SetSizeConstraintintintintint, wxNavigationEnabledWindowExtSetSizeHintsintintintintintintFunc a_SetSizeHintsintintintintintint, wxNavigationEnabledWindowExtSetThemeEnabledboolFunc a_SetThemeEnabledbool, wxNavigationEnabledWindowExtSetTransparentwxByteFunc a_SetTransparentwxByte, wxNavigationEnabledWindowExtSetValidatorwxValidatorCRFunc a_SetValidatorwxValidatorCR, wxNavigationEnabledWindowExtSetWindowStyleFlaglongFunc a_SetWindowStyleFlaglong, wxNavigationEnabledWindowExtShouldInheritColoursFunc a_ShouldInheritColours, wxNavigationEnabledWindowExtShowboolFunc a_Showbool, wxNavigationEnabledWindowExtShowWithEffectwxShowEffectunsignedintFunc a_ShowWithEffectwxShowEffectunsignedint, wxNavigationEnabledWindowExtTransferDataFromWindowFunc a_TransferDataFromWindow, wxNavigationEnabledWindowExtTransferDataToWindowFunc a_TransferDataToWindow, wxNavigationEnabledWindowExtTryAfterwxEventRFunc a_TryAfterwxEventR, wxNavigationEnabledWindowExtTryBeforewxEventRFunc a_TryBeforewxEventR, wxNavigationEnabledWindowExtUnregisterHotKeyintFunc a_UnregisterHotKeyint, wxNavigationEnabledWindowExtUpdateFunc a_Update, wxNavigationEnabledWindowExtUpdateWindowUIlongFunc a_UpdateWindowUIlong, wxNavigationEnabledWindowExtValidateFunc a_Validate, wxNavigationEnabledWindowExtWXAdjustFontToOwnPPIwxFontRFunc a_WXAdjustFontToOwnPPIwxFontR, wxNavigationEnabledWindowExtWXGetTextEntryFunc a_WXGetTextEntry, wxNavigationEnabledWindowExtWXReservedEvtHandler1voidPFunc a_WXReservedEvtHandler1voidP, wxNavigationEnabledWindowExtWXReservedEvtHandler2voidPFunc a_WXReservedEvtHandler2voidP, wxNavigationEnabledWindowExtWXReservedWindow1voidPFunc a_WXReservedWindow1voidP, wxNavigationEnabledWindowExtWXReservedWindow2voidPFunc a_WXReservedWindow2voidP, wxNavigationEnabledWindowExtWXReservedWindow3voidPFunc a_WXReservedWindow3voidP, wxNavigationEnabledWindowExtWXSetInitialFittingClientSizeintwxSizerPFunc a_WXSetInitialFittingClientSizeintwxSizerP, wxNavigationEnabledWindowExtWarpPointerintintFunc a_WarpPointerintint, wxNavigationEnabledWindowExtWindowToClientSizewxSizeCRFunc a_WindowToClientSizewxSizeCR): wxNavigationEnabledWindow() {
+  wxNavigationEnabledWindowExt(wxNavigationEnabledWindowExtAcceptsFocusFunc a_AcceptsFocus, wxNavigationEnabledWindowExtAcceptsFocusFromKeyboardFunc a_AcceptsFocusFromKeyboard, wxNavigationEnabledWindowExtAcceptsFocusRecursivelyFunc a_AcceptsFocusRecursively, wxNavigationEnabledWindowExtAddChildwxWindowBasePFunc a_AddChildwxWindowBaseP, wxNavigationEnabledWindowExtAddPendingEventwxEventCRFunc a_AddPendingEventwxEventCR, wxNavigationEnabledWindowExtAdjustForLayoutDirectionwxCoordwxCoordwxCoordFunc a_AdjustForLayoutDirectionwxCoordwxCoordwxCoord, wxNavigationEnabledWindowExtAdjustForParentClientOriginintRintRintFunc a_AdjustForParentClientOriginintRintRint, wxNavigationEnabledWindowExtAlwaysShowScrollbarsboolboolFunc a_AlwaysShowScrollbarsboolbool, wxNavigationEnabledWindowExtAssociateHandleWXWidgetFunc a_AssociateHandleWXWidget, wxNavigationEnabledWindowExtBeginRepositioningChildrenFunc a_BeginRepositioningChildren, wxNavigationEnabledWindowExtCanApplyThemeBorderFunc a_CanApplyThemeBorder, wxNavigationEnabledWindowExtCanBeFocusedFunc a_CanBeFocused, wxNavigationEnabledWindowExtCanBeOutsideClientAreaFunc a_CanBeOutsideClientArea, wxNavigationEnabledWindowExtCanScrollintFunc a_CanScrollint, wxNavigationEnabledWindowExtCanSetTransparentFunc a_CanSetTransparent, wxNavigationEnabledWindowExtClearBackgroundFunc a_ClearBackground, wxNavigationEnabledWindowExtClientToWindowSizewxSizeCRFunc a_ClientToWindowSizewxSizeCR, wxNavigationEnabledWindowExtCloneRefDatawxObjectRefDataCPFunc a_CloneRefDatawxObjectRefDataCP, wxNavigationEnabledWindowExtCreateRefDataFunc a_CreateRefData, wxNavigationEnabledWindowExtDestroyFunc a_Destroy, wxNavigationEnabledWindowExtDissociateHandleFunc a_DissociateHandle, wxNavigationEnabledWindowExtDoCaptureMouseFunc a_DoCaptureMouse, wxNavigationEnabledWindowExtDoCentreintFunc a_DoCentreint, wxNavigationEnabledWindowExtDoClientToScreenintPintPFunc a_DoClientToScreenintPintP, wxNavigationEnabledWindowExtDoEnableboolFunc a_DoEnablebool, wxNavigationEnabledWindowExtDoFreezeFunc a_DoFreeze, wxNavigationEnabledWindowExtDoGetBestClientHeightintFunc a_DoGetBestClientHeightint, wxNavigationEnabledWindowExtDoGetBestClientSizeFunc a_DoGetBestClientSize, wxNavigationEnabledWindowExtDoGetBestClientWidthintFunc a_DoGetBestClientWidthint, wxNavigationEnabledWindowExtDoGetBestSizeFunc a_DoGetBestSize, wxNavigationEnabledWindowExtDoGetClientDataFunc a_DoGetClientData, wxNavigationEnabledWindowExtDoGetClientObjectFunc a_DoGetClientObject, wxNavigationEnabledWindowExtDoGetClientSizeintPintPFunc a_DoGetClientSizeintPintP, wxNavigationEnabledWindowExtDoGetPositionintPintPFunc a_DoGetPositionintPintP, wxNavigationEnabledWindowExtDoGetScreenPositionintPintPFunc a_DoGetScreenPositionintPintP, wxNavigationEnabledWindowExtDoGetSizeintPintPFunc a_DoGetSizeintPintP, wxNavigationEnabledWindowExtDoGetSizeFromClientSizewxSizeCRFunc a_DoGetSizeFromClientSizewxSizeCR, wxNavigationEnabledWindowExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCPFunc a_DoGetTextExtentwxStringCRintPintPintPintPwxFontCP, wxNavigationEnabledWindowExtDoGetVirtualSizeFunc a_DoGetVirtualSize, wxNavigationEnabledWindowExtDoHitTestwxCoordwxCoordFunc a_DoHitTestwxCoordwxCoord, wxNavigationEnabledWindowExtDoIsExposedintintintintFunc a_DoIsExposedintintintint, wxNavigationEnabledWindowExtDoIsExposedintintFunc a_DoIsExposedintint, wxNavigationEnabledWindowExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrderFunc a_DoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrder, wxNavigationEnabledWindowExtDoMoveWindowintintintintFunc a_DoMoveWindowintintintint, wxNavigationEnabledWindowExtDoNavigateInintFunc a_DoNavigateInint, wxNavigationEnabledWindowExtDoPhaseintFunc a_DoPhaseint, wxNavigationEnabledWindowExtDoPopupMenuwxMenuPintintFunc a_DoPopupMenuwxMenuPintint, wxNavigationEnabledWindowExtDoReleaseMouseFunc a_DoReleaseMouse, wxNavigationEnabledWindowExtDoScreenToClientintPintPFunc a_DoScreenToClientintPintP, wxNavigationEnabledWindowExtDoSetClientDatavoidPFunc a_DoSetClientDatavoidP, wxNavigationEnabledWindowExtDoSetClientObjectwxClientDataPFunc a_DoSetClientObjectwxClientDataP, wxNavigationEnabledWindowExtDoSetClientSizeintintFunc a_DoSetClientSizeintint, wxNavigationEnabledWindowExtDoSetSizeintintintintintFunc a_DoSetSizeintintintintint, wxNavigationEnabledWindowExtDoSetSizeHintsintintintintintintFunc a_DoSetSizeHintsintintintintintint, wxNavigationEnabledWindowExtDoSetToolTipwxToolTipPFunc a_DoSetToolTipwxToolTipP, wxNavigationEnabledWindowExtDoSetToolTipTextwxStringCRFunc a_DoSetToolTipTextwxStringCR, wxNavigationEnabledWindowExtDoSetVirtualSizeintintFunc a_DoSetVirtualSizeintint, wxNavigationEnabledWindowExtDoSetWindowVariantwxWindowVariantFunc a_DoSetWindowVariantwxWindowVariant, wxNavigationEnabledWindowExtDoThawFunc a_DoThaw, wxNavigationEnabledWindowExtDoUpdateWindowUIwxUpdateUIEventRFunc a_DoUpdateWindowUIwxUpdateUIEventR, wxNavigationEnabledWindowExtDragAcceptFilesboolFunc a_DragAcceptFilesbool, wxNavigationEnabledWindowExtEnableboolFunc a_Enablebool, wxNavigationEnabledWindowExtEnableTouchEventsintFunc a_EnableTouchEventsint, wxNavigationEnabledWindowExtEnableVisibleFocusboolFunc a_EnableVisibleFocusbool, wxNavigationEnabledWindowExtEndRepositioningChildrenFunc a_EndRepositioningChildren, wxNavigationEnabledWindowExtFitFunc a_Fit, wxNavigationEnabledWindowExtFitInsideFunc a_FitInside, wxNavigationEnabledWindowExtGetBestVirtualSizeFunc a_GetBestVirtualSize, wxNavigationEnabledWindowExtGetCharHeightFunc a_GetCharHeight, wxNavigationEnabledWindowExtGetCharWidthFunc a_GetCharWidth, wxNavigationEnabledWindowExtGetClassInfoFunc a_GetClassInfo, wxNavigationEnabledWindowExtGetClientAreaOriginFunc a_GetClientAreaOrigin, wxNavigationEnabledWindowExtGetClientSizeConstraintintPintPFunc a_GetClientSizeConstraintintPintP, wxNavigationEnabledWindowExtGetContentScaleFactorFunc a_GetContentScaleFactor, wxNavigationEnabledWindowExtGetDPIFunc a_GetDPI, wxNavigationEnabledWindowExtGetDPIScaleFactorFunc a_GetDPIScaleFactor, wxNavigationEnabledWindowExtGetDefaultAttributesFunc a_GetDefaultAttributes, wxNavigationEnabledWindowExtGetDefaultBorderFunc a_GetDefaultBorder, wxNavigationEnabledWindowExtGetDefaultBorderForControlFunc a_GetDefaultBorderForControl, wxNavigationEnabledWindowExtGetDropTargetFunc a_GetDropTarget, wxNavigationEnabledWindowExtGetEffectiveMinSizeFunc a_GetEffectiveMinSize, wxNavigationEnabledWindowExtGetEventHashTableFunc a_GetEventHashTable, wxNavigationEnabledWindowExtGetEventTableFunc a_GetEventTable, wxNavigationEnabledWindowExtGetHandleFunc a_GetHandle, wxNavigationEnabledWindowExtGetHelpTextAtPointwxPointCRwxHelpEventNOriginFunc a_GetHelpTextAtPointwxPointCRwxHelpEventNOrigin, wxNavigationEnabledWindowExtGetLabelFunc a_GetLabel, wxNavigationEnabledWindowExtGetLayoutDirectionFunc a_GetLayoutDirection, wxNavigationEnabledWindowExtGetMainWindowOfCompositeControlFunc a_GetMainWindowOfCompositeControl, wxNavigationEnabledWindowExtGetMaxClientSizeFunc a_GetMaxClientSize, wxNavigationEnabledWindowExtGetMaxSizeFunc a_GetMaxSize, wxNavigationEnabledWindowExtGetMinClientSizeFunc a_GetMinClientSize, wxNavigationEnabledWindowExtGetMinSizeFunc a_GetMinSize, wxNavigationEnabledWindowExtGetNameFunc a_GetName, wxNavigationEnabledWindowExtGetPositionConstraintintPintPFunc a_GetPositionConstraintintPintP, wxNavigationEnabledWindowExtGetScrollPosintFunc a_GetScrollPosint, wxNavigationEnabledWindowExtGetScrollRangeintFunc a_GetScrollRangeint, wxNavigationEnabledWindowExtGetScrollThumbintFunc a_GetScrollThumbint, wxNavigationEnabledWindowExtGetSizeConstraintintPintPFunc a_GetSizeConstraintintPintP, wxNavigationEnabledWindowExtGetThemeEnabledFunc a_GetThemeEnabled, wxNavigationEnabledWindowExtGetTransparentFunc a_GetTransparent, wxNavigationEnabledWindowExtGetValidatorFunc a_GetValidator, wxNavigationEnabledWindowExtGetWindowBorderSizeFunc a_GetWindowBorderSize, wxNavigationEnabledWindowExtGetWindowStyleFlagFunc a_GetWindowStyleFlag, wxNavigationEnabledWindowExtHasCaptureFunc a_HasCapture, wxNavigationEnabledWindowExtHasFocusFunc a_HasFocus, wxNavigationEnabledWindowExtHasMultiplePagesFunc a_HasMultiplePages, wxNavigationEnabledWindowExtHasTransparentBackgroundFunc a_HasTransparentBackground, wxNavigationEnabledWindowExtHideWithEffectwxShowEffectunsignedintFunc a_HideWithEffectwxShowEffectunsignedint, wxNavigationEnabledWindowExtInformFirstDirectionintintintFunc a_InformFirstDirectionintintint, wxNavigationEnabledWindowExtInheritAttributesFunc a_InheritAttributes, wxNavigationEnabledWindowExtInitDialogFunc a_InitDialog, wxNavigationEnabledWindowExtIsClientAreaChildwxWindowCPFunc a_IsClientAreaChildwxWindowCP, wxNavigationEnabledWindowExtIsDoubleBufferedFunc a_IsDoubleBuffered, wxNavigationEnabledWindowExtIsRetainedFunc a_IsRetained, wxNavigationEnabledWindowExtIsScrollbarAlwaysShownintFunc a_IsScrollbarAlwaysShownint, wxNavigationEnabledWindowExtIsShownFunc a_IsShown, wxNavigationEnabledWindowExtIsShownOnScreenFunc a_IsShownOnScreen, wxNavigationEnabledWindowExtIsThisEnabledFunc a_IsThisEnabled, wxNavigationEnabledWindowExtIsTopLevelFunc a_IsTopLevel, wxNavigationEnabledWindowExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc a_IsTopNavigationDomainwxWindowBaseNNavigationKind, wxNavigationEnabledWindowExtIsTransparentBackgroundSupportedwxStringPFunc a_IsTransparentBackgroundSupportedwxStringP, wxNavigationEnabledWindowExtLayoutFunc a_Layout, wxNavigationEnabledWindowExtLayoutPhase1intPFunc a_LayoutPhase1intP, wxNavigationEnabledWindowExtLayoutPhase2intPFunc a_LayoutPhase2intP, wxNavigationEnabledWindowExtLowerFunc a_Lower, wxNavigationEnabledWindowExtMoveConstraintintintFunc a_MoveConstraintintint, wxNavigationEnabledWindowExtOnDynamicBindwxDynamicEventTableEntryRFunc a_OnDynamicBindwxDynamicEventTableEntryR, wxNavigationEnabledWindowExtOnInternalIdleFunc a_OnInternalIdle, wxNavigationEnabledWindowExtPrepareDCwxDCRFunc a_PrepareDCwxDCR, wxNavigationEnabledWindowExtProcessEventwxEventRFunc a_ProcessEventwxEventR, wxNavigationEnabledWindowExtQueueEventwxEventPFunc a_QueueEventwxEventP, wxNavigationEnabledWindowExtRaiseFunc a_Raise, wxNavigationEnabledWindowExtRefreshboolwxRectCPFunc a_RefreshboolwxRectCP, wxNavigationEnabledWindowExtRegisterHotKeyintintintFunc a_RegisterHotKeyintintint, wxNavigationEnabledWindowExtRemoveChildwxWindowBasePFunc a_RemoveChildwxWindowBaseP, wxNavigationEnabledWindowExtReparentwxWindowBasePFunc a_ReparentwxWindowBaseP, wxNavigationEnabledWindowExtScrollLinesintFunc a_ScrollLinesint, wxNavigationEnabledWindowExtScrollPagesintFunc a_ScrollPagesint, wxNavigationEnabledWindowExtScrollWindowintintwxRectCPFunc a_ScrollWindowintintwxRectCP, wxNavigationEnabledWindowExtSearchEventTablewxEventTableRwxEventRFunc a_SearchEventTablewxEventTableRwxEventR, wxNavigationEnabledWindowExtSendIdleEventswxIdleEventRFunc a_SendIdleEventswxIdleEventR, wxNavigationEnabledWindowExtSendSizeEventintFunc a_SendSizeEventint, wxNavigationEnabledWindowExtSetAcceleratorTablewxAcceleratorTableCRFunc a_SetAcceleratorTablewxAcceleratorTableCR, wxNavigationEnabledWindowExtSetBackgroundColourwxColourCRFunc a_SetBackgroundColourwxColourCR, wxNavigationEnabledWindowExtSetBackgroundStylewxBackgroundStyleFunc a_SetBackgroundStylewxBackgroundStyle, wxNavigationEnabledWindowExtSetCanFocusboolFunc a_SetCanFocusbool, wxNavigationEnabledWindowExtSetConstraintSizesboolFunc a_SetConstraintSizesbool, wxNavigationEnabledWindowExtSetCursorwxCursorCRFunc a_SetCursorwxCursorCR, wxNavigationEnabledWindowExtSetDoubleBufferedboolFunc a_SetDoubleBufferedbool, wxNavigationEnabledWindowExtSetDropTargetwxDropTargetPFunc a_SetDropTargetwxDropTargetP, wxNavigationEnabledWindowExtSetExtraStylelongFunc a_SetExtraStylelong, wxNavigationEnabledWindowExtSetFocusFunc a_SetFocus, wxNavigationEnabledWindowExtSetFocusFromKbdFunc a_SetFocusFromKbd, wxNavigationEnabledWindowExtSetFontwxFontCRFunc a_SetFontwxFontCR, wxNavigationEnabledWindowExtSetForegroundColourwxColourCRFunc a_SetForegroundColourwxColourCR, wxNavigationEnabledWindowExtSetIdwxWindowIDFunc a_SetIdwxWindowID, wxNavigationEnabledWindowExtSetLabelwxStringCRFunc a_SetLabelwxStringCR, wxNavigationEnabledWindowExtSetLayoutDirectionwxLayoutDirectionFunc a_SetLayoutDirectionwxLayoutDirection, wxNavigationEnabledWindowExtSetMaxClientSizewxSizeCRFunc a_SetMaxClientSizewxSizeCR, wxNavigationEnabledWindowExtSetMaxSizewxSizeCRFunc a_SetMaxSizewxSizeCR, wxNavigationEnabledWindowExtSetMinClientSizewxSizeCRFunc a_SetMinClientSizewxSizeCR, wxNavigationEnabledWindowExtSetMinSizewxSizeCRFunc a_SetMinSizewxSizeCR, wxNavigationEnabledWindowExtSetNamewxStringCRFunc a_SetNamewxStringCR, wxNavigationEnabledWindowExtSetNextHandlerwxEvtHandlerPFunc a_SetNextHandlerwxEvtHandlerP, wxNavigationEnabledWindowExtSetPreviousHandlerwxEvtHandlerPFunc a_SetPreviousHandlerwxEvtHandlerP, wxNavigationEnabledWindowExtSetScrollPosintintboolFunc a_SetScrollPosintintbool, wxNavigationEnabledWindowExtSetScrollbarintintintintboolFunc a_SetScrollbarintintintintbool, wxNavigationEnabledWindowExtSetSizeConstraintintintintintFunc a_SetSizeConstraintintintintint, wxNavigationEnabledWindowExtSetSizeHintsintintintintintintFunc a_SetSizeHintsintintintintintint, wxNavigationEnabledWindowExtSetThemeEnabledboolFunc a_SetThemeEnabledbool, wxNavigationEnabledWindowExtSetTransparentwxByteFunc a_SetTransparentwxByte, wxNavigationEnabledWindowExtSetValidatorwxValidatorCRFunc a_SetValidatorwxValidatorCR, wxNavigationEnabledWindowExtSetWindowStyleFlaglongFunc a_SetWindowStyleFlaglong, wxNavigationEnabledWindowExtShouldInheritColoursFunc a_ShouldInheritColours, wxNavigationEnabledWindowExtShowboolFunc a_Showbool, wxNavigationEnabledWindowExtShowWithEffectwxShowEffectunsignedintFunc a_ShowWithEffectwxShowEffectunsignedint, wxNavigationEnabledWindowExtTransferDataFromWindowFunc a_TransferDataFromWindow, wxNavigationEnabledWindowExtTransferDataToWindowFunc a_TransferDataToWindow, wxNavigationEnabledWindowExtTriggerScrollEventwxEventTypeFunc a_TriggerScrollEventwxEventType, wxNavigationEnabledWindowExtTryAfterwxEventRFunc a_TryAfterwxEventR, wxNavigationEnabledWindowExtTryBeforewxEventRFunc a_TryBeforewxEventR, wxNavigationEnabledWindowExtUnregisterHotKeyintFunc a_UnregisterHotKeyint, wxNavigationEnabledWindowExtUpdateFunc a_Update, wxNavigationEnabledWindowExtUpdateWindowUIlongFunc a_UpdateWindowUIlong, wxNavigationEnabledWindowExtValidateFunc a_Validate, wxNavigationEnabledWindowExtWXAdjustFontToOwnPPIwxFontRFunc a_WXAdjustFontToOwnPPIwxFontR, wxNavigationEnabledWindowExtWXGetTextEntryFunc a_WXGetTextEntry, wxNavigationEnabledWindowExtWXReservedEvtHandler1voidPFunc a_WXReservedEvtHandler1voidP, wxNavigationEnabledWindowExtWXReservedEvtHandler2voidPFunc a_WXReservedEvtHandler2voidP, wxNavigationEnabledWindowExtWXReservedWindow1voidPFunc a_WXReservedWindow1voidP, wxNavigationEnabledWindowExtWXReservedWindow2voidPFunc a_WXReservedWindow2voidP, wxNavigationEnabledWindowExtWXReservedWindow3voidPFunc a_WXReservedWindow3voidP, wxNavigationEnabledWindowExtWXSetInitialFittingClientSizeintwxSizerPFunc a_WXSetInitialFittingClientSizeintwxSizerP, wxNavigationEnabledWindowExtWarpPointerintintFunc a_WarpPointerintint, wxNavigationEnabledWindowExtWindowToClientSizewxSizeCRFunc a_WindowToClientSizewxSizeCR): wxNavigationEnabledWindow() {
     m_wxNavigationEnabledWindowExtAcceptsFocus = a_AcceptsFocus;
     m_wxNavigationEnabledWindowExtAcceptsFocusFromKeyboard = a_AcceptsFocusFromKeyboard;
     m_wxNavigationEnabledWindowExtAcceptsFocusRecursively = a_AcceptsFocusRecursively;
@@ -2480,11 +2530,13 @@ public:
     m_wxNavigationEnabledWindowExtDoGetPositionintPintP = a_DoGetPositionintPintP;
     m_wxNavigationEnabledWindowExtDoGetScreenPositionintPintP = a_DoGetScreenPositionintPintP;
     m_wxNavigationEnabledWindowExtDoGetSizeintPintP = a_DoGetSizeintPintP;
+    m_wxNavigationEnabledWindowExtDoGetSizeFromClientSizewxSizeCR = a_DoGetSizeFromClientSizewxSizeCR;
     m_wxNavigationEnabledWindowExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCP = a_DoGetTextExtentwxStringCRintPintPintPintPwxFontCP;
     m_wxNavigationEnabledWindowExtDoGetVirtualSize = a_DoGetVirtualSize;
     m_wxNavigationEnabledWindowExtDoHitTestwxCoordwxCoord = a_DoHitTestwxCoordwxCoord;
     m_wxNavigationEnabledWindowExtDoIsExposedintintintint = a_DoIsExposedintintintint;
     m_wxNavigationEnabledWindowExtDoIsExposedintint = a_DoIsExposedintint;
+    m_wxNavigationEnabledWindowExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrder = a_DoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrder;
     m_wxNavigationEnabledWindowExtDoMoveWindowintintintint = a_DoMoveWindowintintintint;
     m_wxNavigationEnabledWindowExtDoNavigateInint = a_DoNavigateInint;
     m_wxNavigationEnabledWindowExtDoPhaseint = a_DoPhaseint;
@@ -2541,6 +2593,7 @@ public:
     m_wxNavigationEnabledWindowExtGetScrollThumbint = a_GetScrollThumbint;
     m_wxNavigationEnabledWindowExtGetSizeConstraintintPintP = a_GetSizeConstraintintPintP;
     m_wxNavigationEnabledWindowExtGetThemeEnabled = a_GetThemeEnabled;
+    m_wxNavigationEnabledWindowExtGetTransparent = a_GetTransparent;
     m_wxNavigationEnabledWindowExtGetValidator = a_GetValidator;
     m_wxNavigationEnabledWindowExtGetWindowBorderSize = a_GetWindowBorderSize;
     m_wxNavigationEnabledWindowExtGetWindowStyleFlag = a_GetWindowStyleFlag;
@@ -2619,6 +2672,7 @@ public:
     m_wxNavigationEnabledWindowExtShowWithEffectwxShowEffectunsignedint = a_ShowWithEffectwxShowEffectunsignedint;
     m_wxNavigationEnabledWindowExtTransferDataFromWindow = a_TransferDataFromWindow;
     m_wxNavigationEnabledWindowExtTransferDataToWindow = a_TransferDataToWindow;
+    m_wxNavigationEnabledWindowExtTriggerScrollEventwxEventType = a_TriggerScrollEventwxEventType;
     m_wxNavigationEnabledWindowExtTryAfterwxEventR = a_TryAfterwxEventR;
     m_wxNavigationEnabledWindowExtTryBeforewxEventR = a_TryBeforewxEventR;
     m_wxNavigationEnabledWindowExtUnregisterHotKeyint = a_UnregisterHotKeyint;
@@ -2647,7 +2701,7 @@ public:
   {
     bool res = wxPanelBase::AcceptsFocus();
     if (*m_wxPanelBaseExtAcceptsFocus != NULL){
-      return m_wxPanelBaseExtAcceptsFocus(this);
+      return m_wxPanelBaseExtAcceptsFocus(this, res);
     }
     else {
       return res;
@@ -2658,7 +2712,7 @@ public:
   {
     bool res = wxPanelBase::AcceptsFocusFromKeyboard();
     if (*m_wxPanelBaseExtAcceptsFocusFromKeyboard != NULL){
-      return m_wxPanelBaseExtAcceptsFocusFromKeyboard(this);
+      return m_wxPanelBaseExtAcceptsFocusFromKeyboard(this, res);
     }
     else {
       return res;
@@ -2669,7 +2723,7 @@ public:
   {
     bool res = wxPanelBase::AcceptsFocusRecursively();
     if (*m_wxPanelBaseExtAcceptsFocusRecursively != NULL){
-      return m_wxPanelBaseExtAcceptsFocusRecursively(this);
+      return m_wxPanelBaseExtAcceptsFocusRecursively(this, res);
     }
     else {
       return res;
@@ -2696,7 +2750,7 @@ public:
   {
     wxCoord res = wxPanelBase::AdjustForLayoutDirection(x, width, widthTotal);
     if (*m_wxPanelBaseExtAdjustForLayoutDirectionwxCoordwxCoordwxCoord != NULL){
-      return m_wxPanelBaseExtAdjustForLayoutDirectionwxCoordwxCoordwxCoord(this, x, width, widthTotal);
+      return m_wxPanelBaseExtAdjustForLayoutDirectionwxCoordwxCoordwxCoord(this, x, width, widthTotal, res);
     }
     else {
       return res;
@@ -2711,11 +2765,11 @@ public:
     }
   }
   wxPanelBaseExtAlwaysShowScrollbarsboolboolFunc m_wxPanelBaseExtAlwaysShowScrollbarsboolbool = NULL;
-  virtual void AlwaysShowScrollbars(bool param0 = true, bool param1 = true) override
+  virtual void AlwaysShowScrollbars(bool horz = true, bool vert = true) override
   {
-    wxPanelBase::AlwaysShowScrollbars(param0, param1);
+    wxPanelBase::AlwaysShowScrollbars(horz, vert);
     if (*m_wxPanelBaseExtAlwaysShowScrollbarsboolbool != NULL){
-      return m_wxPanelBaseExtAlwaysShowScrollbarsboolbool(this, param0, param1);
+      return m_wxPanelBaseExtAlwaysShowScrollbarsboolbool(this, horz, vert);
     }
   }
   wxPanelBaseExtAssociateHandleWXWidgetFunc m_wxPanelBaseExtAssociateHandleWXWidget = NULL;
@@ -2731,7 +2785,7 @@ public:
   {
     bool res = wxPanelBase::BeginRepositioningChildren();
     if (*m_wxPanelBaseExtBeginRepositioningChildren != NULL){
-      return m_wxPanelBaseExtBeginRepositioningChildren(this);
+      return m_wxPanelBaseExtBeginRepositioningChildren(this, res);
     }
     else {
       return res;
@@ -2742,7 +2796,7 @@ public:
   {
     bool res = wxPanelBase::CanApplyThemeBorder();
     if (*m_wxPanelBaseExtCanApplyThemeBorder != NULL){
-      return m_wxPanelBaseExtCanApplyThemeBorder(this);
+      return m_wxPanelBaseExtCanApplyThemeBorder(this, res);
     }
     else {
       return res;
@@ -2753,7 +2807,7 @@ public:
   {
     bool res = wxPanelBase::CanBeFocused();
     if (*m_wxPanelBaseExtCanBeFocused != NULL){
-      return m_wxPanelBaseExtCanBeFocused(this);
+      return m_wxPanelBaseExtCanBeFocused(this, res);
     }
     else {
       return res;
@@ -2764,7 +2818,7 @@ public:
   {
     bool res = wxPanelBase::CanBeOutsideClientArea();
     if (*m_wxPanelBaseExtCanBeOutsideClientArea != NULL){
-      return m_wxPanelBaseExtCanBeOutsideClientArea(this);
+      return m_wxPanelBaseExtCanBeOutsideClientArea(this, res);
     }
     else {
       return res;
@@ -2775,7 +2829,7 @@ public:
   {
     bool res = wxPanelBase::CanScroll(orient);
     if (*m_wxPanelBaseExtCanScrollint != NULL){
-      return m_wxPanelBaseExtCanScrollint(this, orient);
+      return m_wxPanelBaseExtCanScrollint(this, orient, res);
     }
     else {
       return res;
@@ -2786,7 +2840,7 @@ public:
   {
     bool res = wxPanelBase::CanSetTransparent();
     if (*m_wxPanelBaseExtCanSetTransparent != NULL){
-      return m_wxPanelBaseExtCanSetTransparent(this);
+      return m_wxPanelBaseExtCanSetTransparent(this, res);
     }
     else {
       return res;
@@ -2805,7 +2859,7 @@ public:
   {
     wxSize res = wxPanelBase::ClientToWindowSize(size);
     if (*m_wxPanelBaseExtClientToWindowSizewxSizeCR != NULL){
-      return m_wxPanelBaseExtClientToWindowSizewxSizeCR(this, size);
+      return m_wxPanelBaseExtClientToWindowSizewxSizeCR(this, size, res);
     }
     else {
       return res;
@@ -2816,7 +2870,7 @@ public:
   {
     wxObjectRefData* res = wxPanelBase::CloneRefData(data);
     if (*m_wxPanelBaseExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxPanelBaseExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxPanelBaseExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -2827,7 +2881,7 @@ public:
   {
     wxObjectRefData* res = wxPanelBase::CreateRefData();
     if (*m_wxPanelBaseExtCreateRefData != NULL){
-      return m_wxPanelBaseExtCreateRefData(this);
+      return m_wxPanelBaseExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -2838,7 +2892,7 @@ public:
   {
     bool res = wxPanelBase::Destroy();
     if (*m_wxPanelBaseExtDestroy != NULL){
-      return m_wxPanelBaseExtDestroy(this);
+      return m_wxPanelBaseExtDestroy(this, res);
     }
     else {
       return res;
@@ -2877,11 +2931,11 @@ public:
     }
   }
   wxPanelBaseExtDoEnableboolFunc m_wxPanelBaseExtDoEnablebool = NULL;
-  virtual void DoEnable(bool param0) override
+  virtual void DoEnable(bool enable) override
   {
-    wxPanelBase::DoEnable(param0);
+    wxPanelBase::DoEnable(enable);
     if (*m_wxPanelBaseExtDoEnablebool != NULL){
-      return m_wxPanelBaseExtDoEnablebool(this, param0);
+      return m_wxPanelBaseExtDoEnablebool(this, enable);
     }
   }
   wxPanelBaseExtDoFreezeFunc m_wxPanelBaseExtDoFreeze = NULL;
@@ -2897,7 +2951,7 @@ public:
   {
     int res = wxPanelBase::DoGetBestClientHeight(param0);
     if (*m_wxPanelBaseExtDoGetBestClientHeightint != NULL){
-      return m_wxPanelBaseExtDoGetBestClientHeightint(this, param0);
+      return m_wxPanelBaseExtDoGetBestClientHeightint(this, param0, res);
     }
     else {
       return res;
@@ -2908,7 +2962,7 @@ public:
   {
     wxSize res = wxPanelBase::DoGetBestClientSize();
     if (*m_wxPanelBaseExtDoGetBestClientSize != NULL){
-      return m_wxPanelBaseExtDoGetBestClientSize(this);
+      return m_wxPanelBaseExtDoGetBestClientSize(this, res);
     }
     else {
       return res;
@@ -2919,7 +2973,7 @@ public:
   {
     int res = wxPanelBase::DoGetBestClientWidth(param0);
     if (*m_wxPanelBaseExtDoGetBestClientWidthint != NULL){
-      return m_wxPanelBaseExtDoGetBestClientWidthint(this, param0);
+      return m_wxPanelBaseExtDoGetBestClientWidthint(this, param0, res);
     }
     else {
       return res;
@@ -2930,7 +2984,7 @@ public:
   {
     wxSize res = wxPanelBase::DoGetBestSize();
     if (*m_wxPanelBaseExtDoGetBestSize != NULL){
-      return m_wxPanelBaseExtDoGetBestSize(this);
+      return m_wxPanelBaseExtDoGetBestSize(this, res);
     }
     else {
       return res;
@@ -2941,7 +2995,7 @@ public:
   {
     void* res = wxPanelBase::DoGetClientData();
     if (*m_wxPanelBaseExtDoGetClientData != NULL){
-      return m_wxPanelBaseExtDoGetClientData(this);
+      return m_wxPanelBaseExtDoGetClientData(this, res);
     }
     else {
       return res;
@@ -2952,7 +3006,7 @@ public:
   {
     wxClientData* res = wxPanelBase::DoGetClientObject();
     if (*m_wxPanelBaseExtDoGetClientObject != NULL){
-      return m_wxPanelBaseExtDoGetClientObject(this);
+      return m_wxPanelBaseExtDoGetClientObject(this, res);
     }
     else {
       return res;
@@ -2990,12 +3044,23 @@ public:
       return m_wxPanelBaseExtDoGetSizeintPintP(this, width, height);
     }
   }
-  wxPanelBaseExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCPFunc m_wxPanelBaseExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCP = NULL;
-  virtual void DoGetTextExtent(wxString const& string, int* x, int* y, int* descent = __null, int* externalLeading = __null, wxFont const* font = __null) const override
+  wxPanelBaseExtDoGetSizeFromClientSizewxSizeCRFunc m_wxPanelBaseExtDoGetSizeFromClientSizewxSizeCR = NULL;
+  virtual wxSize DoGetSizeFromClientSize(wxSize const& size) const override
   {
-    wxPanelBase::DoGetTextExtent(string, x, y, descent, externalLeading, font);
+    wxSize res = wxPanelBase::DoGetSizeFromClientSize(size);
+    if (*m_wxPanelBaseExtDoGetSizeFromClientSizewxSizeCR != NULL){
+      return m_wxPanelBaseExtDoGetSizeFromClientSizewxSizeCR(this, size, res);
+    }
+    else {
+      return res;
+    }
+  }
+  wxPanelBaseExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCPFunc m_wxPanelBaseExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCP = NULL;
+  virtual void DoGetTextExtent(wxString const& string, int* x, int* y, int* descent = __null, int* externalLeading = __null, wxFont const* theFont = __null) const override
+  {
+    wxPanelBase::DoGetTextExtent(string, x, y, descent, externalLeading, theFont);
     if (*m_wxPanelBaseExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCP != NULL){
-      return m_wxPanelBaseExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCP(this, string, x, y, descent, externalLeading, font);
+      return m_wxPanelBaseExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCP(this, string, x, y, descent, externalLeading, theFont);
     }
   }
   wxPanelBaseExtDoGetVirtualSizeFunc m_wxPanelBaseExtDoGetVirtualSize = NULL;
@@ -3003,7 +3068,7 @@ public:
   {
     wxSize res = wxPanelBase::DoGetVirtualSize();
     if (*m_wxPanelBaseExtDoGetVirtualSize != NULL){
-      return m_wxPanelBaseExtDoGetVirtualSize(this);
+      return m_wxPanelBaseExtDoGetVirtualSize(this, res);
     }
     else {
       return res;
@@ -3014,7 +3079,7 @@ public:
   {
     wxHitTest res = wxPanelBase::DoHitTest(x, y);
     if (*m_wxPanelBaseExtDoHitTestwxCoordwxCoord != NULL){
-      return m_wxPanelBaseExtDoHitTestwxCoordwxCoord(this, x, y);
+      return m_wxPanelBaseExtDoHitTestwxCoordwxCoord(this, x, y, res);
     }
     else {
       return res;
@@ -3025,7 +3090,7 @@ public:
   {
     bool res = wxPanelBase::DoIsExposed(x, y, w, h);
     if (*m_wxPanelBaseExtDoIsExposedintintintint != NULL){
-      return m_wxPanelBaseExtDoIsExposedintintintint(this, x, y, w, h);
+      return m_wxPanelBaseExtDoIsExposedintintintint(this, x, y, w, h, res);
     }
     else {
       return res;
@@ -3036,10 +3101,18 @@ public:
   {
     bool res = wxPanelBase::DoIsExposed(x, y);
     if (*m_wxPanelBaseExtDoIsExposedintint != NULL){
-      return m_wxPanelBaseExtDoIsExposedintint(this, x, y);
+      return m_wxPanelBaseExtDoIsExposedintint(this, x, y, res);
     }
     else {
       return res;
+    }
+  }
+  wxPanelBaseExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrderFunc m_wxPanelBaseExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrder = NULL;
+  virtual void DoMoveInTabOrder(wxWindow* win, wxWindowBase::WindowOrder move) override
+  {
+    wxPanelBase::DoMoveInTabOrder(win, move);
+    if (*m_wxPanelBaseExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrder != NULL){
+      return m_wxPanelBaseExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrder(this, win, move);
     }
   }
   wxPanelBaseExtDoMoveWindowintintintintFunc m_wxPanelBaseExtDoMoveWindowintintintint = NULL;
@@ -3055,7 +3128,7 @@ public:
   {
     bool res = wxPanelBase::DoNavigateIn(flags);
     if (*m_wxPanelBaseExtDoNavigateInint != NULL){
-      return m_wxPanelBaseExtDoNavigateInint(this, flags);
+      return m_wxPanelBaseExtDoNavigateInint(this, flags, res);
     }
     else {
       return res;
@@ -3066,7 +3139,7 @@ public:
   {
     bool res = wxPanelBase::DoPhase(phase);
     if (*m_wxPanelBaseExtDoPhaseint != NULL){
-      return m_wxPanelBaseExtDoPhaseint(this, phase);
+      return m_wxPanelBaseExtDoPhaseint(this, phase, res);
     }
     else {
       return res;
@@ -3077,7 +3150,7 @@ public:
   {
     bool res = wxPanelBase::DoPopupMenu(menu, x, y);
     if (*m_wxPanelBaseExtDoPopupMenuwxMenuPintint != NULL){
-      return m_wxPanelBaseExtDoPopupMenuwxMenuPintint(this, menu, x, y);
+      return m_wxPanelBaseExtDoPopupMenuwxMenuPintint(this, menu, x, y, res);
     }
     else {
       return res;
@@ -3200,29 +3273,29 @@ public:
   {
     bool res = wxPanelBase::Enable(enable);
     if (*m_wxPanelBaseExtEnablebool != NULL){
-      return m_wxPanelBaseExtEnablebool(this, enable);
+      return m_wxPanelBaseExtEnablebool(this, enable, res);
     }
     else {
       return res;
     }
   }
   wxPanelBaseExtEnableTouchEventsintFunc m_wxPanelBaseExtEnableTouchEventsint = NULL;
-  virtual bool EnableTouchEvents(int param0) override
+  virtual bool EnableTouchEvents(int eventsMask) override
   {
-    bool res = wxPanelBase::EnableTouchEvents(param0);
+    bool res = wxPanelBase::EnableTouchEvents(eventsMask);
     if (*m_wxPanelBaseExtEnableTouchEventsint != NULL){
-      return m_wxPanelBaseExtEnableTouchEventsint(this, param0);
+      return m_wxPanelBaseExtEnableTouchEventsint(this, eventsMask, res);
     }
     else {
       return res;
     }
   }
   wxPanelBaseExtEnableVisibleFocusboolFunc m_wxPanelBaseExtEnableVisibleFocusbool = NULL;
-  virtual void EnableVisibleFocus(bool param0) override
+  virtual void EnableVisibleFocus(bool enabled) override
   {
-    wxPanelBase::EnableVisibleFocus(param0);
+    wxPanelBase::EnableVisibleFocus(enabled);
     if (*m_wxPanelBaseExtEnableVisibleFocusbool != NULL){
-      return m_wxPanelBaseExtEnableVisibleFocusbool(this, param0);
+      return m_wxPanelBaseExtEnableVisibleFocusbool(this, enabled);
     }
   }
   wxPanelBaseExtEndRepositioningChildrenFunc m_wxPanelBaseExtEndRepositioningChildren = NULL;
@@ -3254,7 +3327,7 @@ public:
   {
     wxSize res = wxPanelBase::GetBestVirtualSize();
     if (*m_wxPanelBaseExtGetBestVirtualSize != NULL){
-      return m_wxPanelBaseExtGetBestVirtualSize(this);
+      return m_wxPanelBaseExtGetBestVirtualSize(this, res);
     }
     else {
       return res;
@@ -3265,7 +3338,7 @@ public:
   {
     int res = wxPanelBase::GetCharHeight();
     if (*m_wxPanelBaseExtGetCharHeight != NULL){
-      return m_wxPanelBaseExtGetCharHeight(this);
+      return m_wxPanelBaseExtGetCharHeight(this, res);
     }
     else {
       return res;
@@ -3276,7 +3349,7 @@ public:
   {
     int res = wxPanelBase::GetCharWidth();
     if (*m_wxPanelBaseExtGetCharWidth != NULL){
-      return m_wxPanelBaseExtGetCharWidth(this);
+      return m_wxPanelBaseExtGetCharWidth(this, res);
     }
     else {
       return res;
@@ -3287,7 +3360,7 @@ public:
   {
     wxClassInfo* res = wxPanelBase::GetClassInfo();
     if (*m_wxPanelBaseExtGetClassInfo != NULL){
-      return m_wxPanelBaseExtGetClassInfo(this);
+      return m_wxPanelBaseExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -3298,7 +3371,7 @@ public:
   {
     wxPoint res = wxPanelBase::GetClientAreaOrigin();
     if (*m_wxPanelBaseExtGetClientAreaOrigin != NULL){
-      return m_wxPanelBaseExtGetClientAreaOrigin(this);
+      return m_wxPanelBaseExtGetClientAreaOrigin(this, res);
     }
     else {
       return res;
@@ -3317,7 +3390,7 @@ public:
   {
     double res = wxPanelBase::GetContentScaleFactor();
     if (*m_wxPanelBaseExtGetContentScaleFactor != NULL){
-      return m_wxPanelBaseExtGetContentScaleFactor(this);
+      return m_wxPanelBaseExtGetContentScaleFactor(this, res);
     }
     else {
       return res;
@@ -3328,7 +3401,7 @@ public:
   {
     wxSize res = wxPanelBase::GetDPI();
     if (*m_wxPanelBaseExtGetDPI != NULL){
-      return m_wxPanelBaseExtGetDPI(this);
+      return m_wxPanelBaseExtGetDPI(this, res);
     }
     else {
       return res;
@@ -3339,7 +3412,7 @@ public:
   {
     double res = wxPanelBase::GetDPIScaleFactor();
     if (*m_wxPanelBaseExtGetDPIScaleFactor != NULL){
-      return m_wxPanelBaseExtGetDPIScaleFactor(this);
+      return m_wxPanelBaseExtGetDPIScaleFactor(this, res);
     }
     else {
       return res;
@@ -3350,7 +3423,7 @@ public:
   {
     wxVisualAttributes res = wxPanelBase::GetDefaultAttributes();
     if (*m_wxPanelBaseExtGetDefaultAttributes != NULL){
-      return m_wxPanelBaseExtGetDefaultAttributes(this);
+      return m_wxPanelBaseExtGetDefaultAttributes(this, res);
     }
     else {
       return res;
@@ -3361,7 +3434,7 @@ public:
   {
     wxBorder res = wxPanelBase::GetDefaultBorder();
     if (*m_wxPanelBaseExtGetDefaultBorder != NULL){
-      return m_wxPanelBaseExtGetDefaultBorder(this);
+      return m_wxPanelBaseExtGetDefaultBorder(this, res);
     }
     else {
       return res;
@@ -3372,7 +3445,7 @@ public:
   {
     wxBorder res = wxPanelBase::GetDefaultBorderForControl();
     if (*m_wxPanelBaseExtGetDefaultBorderForControl != NULL){
-      return m_wxPanelBaseExtGetDefaultBorderForControl(this);
+      return m_wxPanelBaseExtGetDefaultBorderForControl(this, res);
     }
     else {
       return res;
@@ -3383,7 +3456,7 @@ public:
   {
     wxDropTarget* res = wxPanelBase::GetDropTarget();
     if (*m_wxPanelBaseExtGetDropTarget != NULL){
-      return m_wxPanelBaseExtGetDropTarget(this);
+      return m_wxPanelBaseExtGetDropTarget(this, res);
     }
     else {
       return res;
@@ -3394,7 +3467,7 @@ public:
   {
     wxSize res = wxPanelBase::GetEffectiveMinSize();
     if (*m_wxPanelBaseExtGetEffectiveMinSize != NULL){
-      return m_wxPanelBaseExtGetEffectiveMinSize(this);
+      return m_wxPanelBaseExtGetEffectiveMinSize(this, res);
     }
     else {
       return res;
@@ -3405,7 +3478,7 @@ public:
   {
     wxEventHashTable& res = wxPanelBase::GetEventHashTable();
     if (*m_wxPanelBaseExtGetEventHashTable != NULL){
-      return m_wxPanelBaseExtGetEventHashTable(this);
+      return m_wxPanelBaseExtGetEventHashTable(this, res);
     }
     else {
       return res;
@@ -3416,7 +3489,7 @@ public:
   {
     wxEventTable const* res = wxPanelBase::GetEventTable();
     if (*m_wxPanelBaseExtGetEventTable != NULL){
-      return m_wxPanelBaseExtGetEventTable(this);
+      return m_wxPanelBaseExtGetEventTable(this, res);
     }
     else {
       return res;
@@ -3427,7 +3500,7 @@ public:
   {
     WXWidget res = wxPanelBase::GetHandle();
     if (*m_wxPanelBaseExtGetHandle != NULL){
-      return m_wxPanelBaseExtGetHandle(this);
+      return m_wxPanelBaseExtGetHandle(this, res);
     }
     else {
       return res;
@@ -3438,7 +3511,7 @@ public:
   {
     wxString res = wxPanelBase::GetHelpTextAtPoint(pt, origin);
     if (*m_wxPanelBaseExtGetHelpTextAtPointwxPointCRwxHelpEventNOrigin != NULL){
-      return m_wxPanelBaseExtGetHelpTextAtPointwxPointCRwxHelpEventNOrigin(this, pt, origin);
+      return m_wxPanelBaseExtGetHelpTextAtPointwxPointCRwxHelpEventNOrigin(this, pt, origin, res);
     }
     else {
       return res;
@@ -3449,7 +3522,7 @@ public:
   {
     wxString res = wxPanelBase::GetLabel();
     if (*m_wxPanelBaseExtGetLabel != NULL){
-      return m_wxPanelBaseExtGetLabel(this);
+      return m_wxPanelBaseExtGetLabel(this, res);
     }
     else {
       return res;
@@ -3460,7 +3533,7 @@ public:
   {
     wxLayoutDirection res = wxPanelBase::GetLayoutDirection();
     if (*m_wxPanelBaseExtGetLayoutDirection != NULL){
-      return m_wxPanelBaseExtGetLayoutDirection(this);
+      return m_wxPanelBaseExtGetLayoutDirection(this, res);
     }
     else {
       return res;
@@ -3471,7 +3544,7 @@ public:
   {
     wxWindow* res = wxPanelBase::GetMainWindowOfCompositeControl();
     if (*m_wxPanelBaseExtGetMainWindowOfCompositeControl != NULL){
-      return m_wxPanelBaseExtGetMainWindowOfCompositeControl(this);
+      return m_wxPanelBaseExtGetMainWindowOfCompositeControl(this, res);
     }
     else {
       return res;
@@ -3482,7 +3555,7 @@ public:
   {
     wxSize res = wxPanelBase::GetMaxClientSize();
     if (*m_wxPanelBaseExtGetMaxClientSize != NULL){
-      return m_wxPanelBaseExtGetMaxClientSize(this);
+      return m_wxPanelBaseExtGetMaxClientSize(this, res);
     }
     else {
       return res;
@@ -3493,7 +3566,7 @@ public:
   {
     wxSize res = wxPanelBase::GetMaxSize();
     if (*m_wxPanelBaseExtGetMaxSize != NULL){
-      return m_wxPanelBaseExtGetMaxSize(this);
+      return m_wxPanelBaseExtGetMaxSize(this, res);
     }
     else {
       return res;
@@ -3504,7 +3577,7 @@ public:
   {
     wxSize res = wxPanelBase::GetMinClientSize();
     if (*m_wxPanelBaseExtGetMinClientSize != NULL){
-      return m_wxPanelBaseExtGetMinClientSize(this);
+      return m_wxPanelBaseExtGetMinClientSize(this, res);
     }
     else {
       return res;
@@ -3515,7 +3588,7 @@ public:
   {
     wxSize res = wxPanelBase::GetMinSize();
     if (*m_wxPanelBaseExtGetMinSize != NULL){
-      return m_wxPanelBaseExtGetMinSize(this);
+      return m_wxPanelBaseExtGetMinSize(this, res);
     }
     else {
       return res;
@@ -3526,7 +3599,7 @@ public:
   {
     wxString res = wxPanelBase::GetName();
     if (*m_wxPanelBaseExtGetName != NULL){
-      return m_wxPanelBaseExtGetName(this);
+      return m_wxPanelBaseExtGetName(this, res);
     }
     else {
       return res;
@@ -3545,7 +3618,7 @@ public:
   {
     int res = wxPanelBase::GetScrollPos(orient);
     if (*m_wxPanelBaseExtGetScrollPosint != NULL){
-      return m_wxPanelBaseExtGetScrollPosint(this, orient);
+      return m_wxPanelBaseExtGetScrollPosint(this, orient, res);
     }
     else {
       return res;
@@ -3556,7 +3629,7 @@ public:
   {
     int res = wxPanelBase::GetScrollRange(orient);
     if (*m_wxPanelBaseExtGetScrollRangeint != NULL){
-      return m_wxPanelBaseExtGetScrollRangeint(this, orient);
+      return m_wxPanelBaseExtGetScrollRangeint(this, orient, res);
     }
     else {
       return res;
@@ -3567,7 +3640,7 @@ public:
   {
     int res = wxPanelBase::GetScrollThumb(orient);
     if (*m_wxPanelBaseExtGetScrollThumbint != NULL){
-      return m_wxPanelBaseExtGetScrollThumbint(this, orient);
+      return m_wxPanelBaseExtGetScrollThumbint(this, orient, res);
     }
     else {
       return res;
@@ -3586,7 +3659,18 @@ public:
   {
     bool res = wxPanelBase::GetThemeEnabled();
     if (*m_wxPanelBaseExtGetThemeEnabled != NULL){
-      return m_wxPanelBaseExtGetThemeEnabled(this);
+      return m_wxPanelBaseExtGetThemeEnabled(this, res);
+    }
+    else {
+      return res;
+    }
+  }
+  wxPanelBaseExtGetTransparentFunc m_wxPanelBaseExtGetTransparent = NULL;
+  virtual wxByte GetTransparent() const override
+  {
+    wxByte res = wxPanelBase::GetTransparent();
+    if (*m_wxPanelBaseExtGetTransparent != NULL){
+      return m_wxPanelBaseExtGetTransparent(this, res);
     }
     else {
       return res;
@@ -3597,7 +3681,7 @@ public:
   {
     wxValidator* res = wxPanelBase::GetValidator();
     if (*m_wxPanelBaseExtGetValidator != NULL){
-      return m_wxPanelBaseExtGetValidator(this);
+      return m_wxPanelBaseExtGetValidator(this, res);
     }
     else {
       return res;
@@ -3608,7 +3692,7 @@ public:
   {
     wxSize res = wxPanelBase::GetWindowBorderSize();
     if (*m_wxPanelBaseExtGetWindowBorderSize != NULL){
-      return m_wxPanelBaseExtGetWindowBorderSize(this);
+      return m_wxPanelBaseExtGetWindowBorderSize(this, res);
     }
     else {
       return res;
@@ -3619,7 +3703,7 @@ public:
   {
     long res = wxPanelBase::GetWindowStyleFlag();
     if (*m_wxPanelBaseExtGetWindowStyleFlag != NULL){
-      return m_wxPanelBaseExtGetWindowStyleFlag(this);
+      return m_wxPanelBaseExtGetWindowStyleFlag(this, res);
     }
     else {
       return res;
@@ -3630,7 +3714,7 @@ public:
   {
     bool res = wxPanelBase::HasCapture();
     if (*m_wxPanelBaseExtHasCapture != NULL){
-      return m_wxPanelBaseExtHasCapture(this);
+      return m_wxPanelBaseExtHasCapture(this, res);
     }
     else {
       return res;
@@ -3641,7 +3725,7 @@ public:
   {
     bool res = wxPanelBase::HasFocus();
     if (*m_wxPanelBaseExtHasFocus != NULL){
-      return m_wxPanelBaseExtHasFocus(this);
+      return m_wxPanelBaseExtHasFocus(this, res);
     }
     else {
       return res;
@@ -3652,7 +3736,7 @@ public:
   {
     bool res = wxPanelBase::HasMultiplePages();
     if (*m_wxPanelBaseExtHasMultiplePages != NULL){
-      return m_wxPanelBaseExtHasMultiplePages(this);
+      return m_wxPanelBaseExtHasMultiplePages(this, res);
     }
     else {
       return res;
@@ -3663,18 +3747,18 @@ public:
   {
     bool res = wxPanelBase::HasTransparentBackground();
     if (*m_wxPanelBaseExtHasTransparentBackground != NULL){
-      return m_wxPanelBaseExtHasTransparentBackground(this);
+      return m_wxPanelBaseExtHasTransparentBackground(this, res);
     }
     else {
       return res;
     }
   }
   wxPanelBaseExtHideWithEffectwxShowEffectunsignedintFunc m_wxPanelBaseExtHideWithEffectwxShowEffectunsignedint = NULL;
-  virtual bool HideWithEffect(wxShowEffect param0, unsigned int param1 = 0) override
+  virtual bool HideWithEffect(wxShowEffect effect, unsigned int timeout = 0) override
   {
-    bool res = wxPanelBase::HideWithEffect(param0, param1);
+    bool res = wxPanelBase::HideWithEffect(effect, timeout);
     if (*m_wxPanelBaseExtHideWithEffectwxShowEffectunsignedint != NULL){
-      return m_wxPanelBaseExtHideWithEffectwxShowEffectunsignedint(this, param0, param1);
+      return m_wxPanelBaseExtHideWithEffectwxShowEffectunsignedint(this, effect, timeout, res);
     }
     else {
       return res;
@@ -3685,7 +3769,7 @@ public:
   {
     bool res = wxPanelBase::InformFirstDirection(direction, size, availableOtherDir);
     if (*m_wxPanelBaseExtInformFirstDirectionintintint != NULL){
-      return m_wxPanelBaseExtInformFirstDirectionintintint(this, direction, size, availableOtherDir);
+      return m_wxPanelBaseExtInformFirstDirectionintintint(this, direction, size, availableOtherDir, res);
     }
     else {
       return res;
@@ -3712,7 +3796,7 @@ public:
   {
     bool res = wxPanelBase::IsClientAreaChild(param0);
     if (*m_wxPanelBaseExtIsClientAreaChildwxWindowCP != NULL){
-      return m_wxPanelBaseExtIsClientAreaChildwxWindowCP(this, param0);
+      return m_wxPanelBaseExtIsClientAreaChildwxWindowCP(this, param0, res);
     }
     else {
       return res;
@@ -3723,7 +3807,7 @@ public:
   {
     bool res = wxPanelBase::IsDoubleBuffered();
     if (*m_wxPanelBaseExtIsDoubleBuffered != NULL){
-      return m_wxPanelBaseExtIsDoubleBuffered(this);
+      return m_wxPanelBaseExtIsDoubleBuffered(this, res);
     }
     else {
       return res;
@@ -3734,18 +3818,18 @@ public:
   {
     bool res = wxPanelBase::IsRetained();
     if (*m_wxPanelBaseExtIsRetained != NULL){
-      return m_wxPanelBaseExtIsRetained(this);
+      return m_wxPanelBaseExtIsRetained(this, res);
     }
     else {
       return res;
     }
   }
   wxPanelBaseExtIsScrollbarAlwaysShownintFunc m_wxPanelBaseExtIsScrollbarAlwaysShownint = NULL;
-  virtual bool IsScrollbarAlwaysShown(int param0) const override
+  virtual bool IsScrollbarAlwaysShown(int orient) const override
   {
-    bool res = wxPanelBase::IsScrollbarAlwaysShown(param0);
+    bool res = wxPanelBase::IsScrollbarAlwaysShown(orient);
     if (*m_wxPanelBaseExtIsScrollbarAlwaysShownint != NULL){
-      return m_wxPanelBaseExtIsScrollbarAlwaysShownint(this, param0);
+      return m_wxPanelBaseExtIsScrollbarAlwaysShownint(this, orient, res);
     }
     else {
       return res;
@@ -3756,7 +3840,7 @@ public:
   {
     bool res = wxPanelBase::IsShown();
     if (*m_wxPanelBaseExtIsShown != NULL){
-      return m_wxPanelBaseExtIsShown(this);
+      return m_wxPanelBaseExtIsShown(this, res);
     }
     else {
       return res;
@@ -3767,7 +3851,7 @@ public:
   {
     bool res = wxPanelBase::IsShownOnScreen();
     if (*m_wxPanelBaseExtIsShownOnScreen != NULL){
-      return m_wxPanelBaseExtIsShownOnScreen(this);
+      return m_wxPanelBaseExtIsShownOnScreen(this, res);
     }
     else {
       return res;
@@ -3778,7 +3862,7 @@ public:
   {
     bool res = wxPanelBase::IsThisEnabled();
     if (*m_wxPanelBaseExtIsThisEnabled != NULL){
-      return m_wxPanelBaseExtIsThisEnabled(this);
+      return m_wxPanelBaseExtIsThisEnabled(this, res);
     }
     else {
       return res;
@@ -3789,7 +3873,7 @@ public:
   {
     bool res = wxPanelBase::IsTopLevel();
     if (*m_wxPanelBaseExtIsTopLevel != NULL){
-      return m_wxPanelBaseExtIsTopLevel(this);
+      return m_wxPanelBaseExtIsTopLevel(this, res);
     }
     else {
       return res;
@@ -3800,7 +3884,7 @@ public:
   {
     bool res = wxPanelBase::IsTopNavigationDomain(param0);
     if (*m_wxPanelBaseExtIsTopNavigationDomainwxWindowBaseNNavigationKind != NULL){
-      return m_wxPanelBaseExtIsTopNavigationDomainwxWindowBaseNNavigationKind(this, param0);
+      return m_wxPanelBaseExtIsTopNavigationDomainwxWindowBaseNNavigationKind(this, param0, res);
     }
     else {
       return res;
@@ -3811,7 +3895,7 @@ public:
   {
     bool res = wxPanelBase::IsTransparentBackgroundSupported(reason);
     if (*m_wxPanelBaseExtIsTransparentBackgroundSupportedwxStringP != NULL){
-      return m_wxPanelBaseExtIsTransparentBackgroundSupportedwxStringP(this, reason);
+      return m_wxPanelBaseExtIsTransparentBackgroundSupportedwxStringP(this, reason, res);
     }
     else {
       return res;
@@ -3822,7 +3906,7 @@ public:
   {
     bool res = wxPanelBase::Layout();
     if (*m_wxPanelBaseExtLayout != NULL){
-      return m_wxPanelBaseExtLayout(this);
+      return m_wxPanelBaseExtLayout(this, res);
     }
     else {
       return res;
@@ -3833,7 +3917,7 @@ public:
   {
     bool res = wxPanelBase::LayoutPhase1(noChanges);
     if (*m_wxPanelBaseExtLayoutPhase1intP != NULL){
-      return m_wxPanelBaseExtLayoutPhase1intP(this, noChanges);
+      return m_wxPanelBaseExtLayoutPhase1intP(this, noChanges, res);
     }
     else {
       return res;
@@ -3844,7 +3928,7 @@ public:
   {
     bool res = wxPanelBase::LayoutPhase2(noChanges);
     if (*m_wxPanelBaseExtLayoutPhase2intP != NULL){
-      return m_wxPanelBaseExtLayoutPhase2intP(this, noChanges);
+      return m_wxPanelBaseExtLayoutPhase2intP(this, noChanges, res);
     }
     else {
       return res;
@@ -3871,7 +3955,7 @@ public:
   {
     bool res = wxPanelBase::OnDynamicBind(param0);
     if (*m_wxPanelBaseExtOnDynamicBindwxDynamicEventTableEntryR != NULL){
-      return m_wxPanelBaseExtOnDynamicBindwxDynamicEventTableEntryR(this, param0);
+      return m_wxPanelBaseExtOnDynamicBindwxDynamicEventTableEntryR(this, param0, res);
     }
     else {
       return res;
@@ -3898,7 +3982,7 @@ public:
   {
     bool res = wxPanelBase::ProcessEvent(event);
     if (*m_wxPanelBaseExtProcessEventwxEventR != NULL){
-      return m_wxPanelBaseExtProcessEventwxEventR(this, event);
+      return m_wxPanelBaseExtProcessEventwxEventR(this, event, res);
     }
     else {
       return res;
@@ -3921,7 +4005,7 @@ public:
     }
   }
   wxPanelBaseExtRefreshboolwxRectCPFunc m_wxPanelBaseExtRefreshboolwxRectCP = NULL;
-  virtual void Refresh(bool eraseBackground = true, wxRect const* rect = (const wxRect*)__null) override
+  virtual void Refresh(bool eraseBackground = true, wxRect const* rect = __null) override
   {
     wxPanelBase::Refresh(eraseBackground, rect);
     if (*m_wxPanelBaseExtRefreshboolwxRectCP != NULL){
@@ -3933,7 +4017,7 @@ public:
   {
     bool res = wxPanelBase::RegisterHotKey(hotkeyId, modifiers, keycode);
     if (*m_wxPanelBaseExtRegisterHotKeyintintint != NULL){
-      return m_wxPanelBaseExtRegisterHotKeyintintint(this, hotkeyId, modifiers, keycode);
+      return m_wxPanelBaseExtRegisterHotKeyintintint(this, hotkeyId, modifiers, keycode, res);
     }
     else {
       return res;
@@ -3952,7 +4036,7 @@ public:
   {
     bool res = wxPanelBase::Reparent(newParent);
     if (*m_wxPanelBaseExtReparentwxWindowBaseP != NULL){
-      return m_wxPanelBaseExtReparentwxWindowBaseP(this, newParent);
+      return m_wxPanelBaseExtReparentwxWindowBaseP(this, newParent, res);
     }
     else {
       return res;
@@ -3963,7 +4047,7 @@ public:
   {
     bool res = wxPanelBase::ScrollLines(param0);
     if (*m_wxPanelBaseExtScrollLinesint != NULL){
-      return m_wxPanelBaseExtScrollLinesint(this, param0);
+      return m_wxPanelBaseExtScrollLinesint(this, param0, res);
     }
     else {
       return res;
@@ -3974,7 +4058,7 @@ public:
   {
     bool res = wxPanelBase::ScrollPages(param0);
     if (*m_wxPanelBaseExtScrollPagesint != NULL){
-      return m_wxPanelBaseExtScrollPagesint(this, param0);
+      return m_wxPanelBaseExtScrollPagesint(this, param0, res);
     }
     else {
       return res;
@@ -3993,7 +4077,7 @@ public:
   {
     bool res = wxPanelBase::SearchEventTable(table, event);
     if (*m_wxPanelBaseExtSearchEventTablewxEventTableRwxEventR != NULL){
-      return m_wxPanelBaseExtSearchEventTablewxEventTableRwxEventR(this, table, event);
+      return m_wxPanelBaseExtSearchEventTablewxEventTableRwxEventR(this, table, event, res);
     }
     else {
       return res;
@@ -4004,7 +4088,7 @@ public:
   {
     bool res = wxPanelBase::SendIdleEvents(event);
     if (*m_wxPanelBaseExtSendIdleEventswxIdleEventR != NULL){
-      return m_wxPanelBaseExtSendIdleEventswxIdleEventR(this, event);
+      return m_wxPanelBaseExtSendIdleEventswxIdleEventR(this, event, res);
     }
     else {
       return res;
@@ -4031,7 +4115,7 @@ public:
   {
     bool res = wxPanelBase::SetBackgroundColour(colour);
     if (*m_wxPanelBaseExtSetBackgroundColourwxColourCR != NULL){
-      return m_wxPanelBaseExtSetBackgroundColourwxColourCR(this, colour);
+      return m_wxPanelBaseExtSetBackgroundColourwxColourCR(this, colour, res);
     }
     else {
       return res;
@@ -4042,7 +4126,7 @@ public:
   {
     bool res = wxPanelBase::SetBackgroundStyle(style);
     if (*m_wxPanelBaseExtSetBackgroundStylewxBackgroundStyle != NULL){
-      return m_wxPanelBaseExtSetBackgroundStylewxBackgroundStyle(this, style);
+      return m_wxPanelBaseExtSetBackgroundStylewxBackgroundStyle(this, style, res);
     }
     else {
       return res;
@@ -4069,7 +4153,7 @@ public:
   {
     bool res = wxPanelBase::SetCursor(cursor);
     if (*m_wxPanelBaseExtSetCursorwxCursorCR != NULL){
-      return m_wxPanelBaseExtSetCursorwxCursorCR(this, cursor);
+      return m_wxPanelBaseExtSetCursorwxCursorCR(this, cursor, res);
     }
     else {
       return res;
@@ -4120,7 +4204,7 @@ public:
   {
     bool res = wxPanelBase::SetFont(font);
     if (*m_wxPanelBaseExtSetFontwxFontCR != NULL){
-      return m_wxPanelBaseExtSetFontwxFontCR(this, font);
+      return m_wxPanelBaseExtSetFontwxFontCR(this, font, res);
     }
     else {
       return res;
@@ -4131,7 +4215,7 @@ public:
   {
     bool res = wxPanelBase::SetForegroundColour(colour);
     if (*m_wxPanelBaseExtSetForegroundColourwxColourCR != NULL){
-      return m_wxPanelBaseExtSetForegroundColourwxColourCR(this, colour);
+      return m_wxPanelBaseExtSetForegroundColourwxColourCR(this, colour, res);
     }
     else {
       return res;
@@ -4226,11 +4310,11 @@ public:
     }
   }
   wxPanelBaseExtSetScrollbarintintintintboolFunc m_wxPanelBaseExtSetScrollbarintintintintbool = NULL;
-  virtual void SetScrollbar(int orient, int pos, int thumbvisible, int range, bool refresh = true) override
+  virtual void SetScrollbar(int orient, int pos, int thumbVisible, int range, bool refresh = true) override
   {
-    wxPanelBase::SetScrollbar(orient, pos, thumbvisible, range, refresh);
+    wxPanelBase::SetScrollbar(orient, pos, thumbVisible, range, refresh);
     if (*m_wxPanelBaseExtSetScrollbarintintintintbool != NULL){
-      return m_wxPanelBaseExtSetScrollbarintintintintbool(this, orient, pos, thumbvisible, range, refresh);
+      return m_wxPanelBaseExtSetScrollbarintintintintbool(this, orient, pos, thumbVisible, range, refresh);
     }
   }
   wxPanelBaseExtSetSizeConstraintintintintintFunc m_wxPanelBaseExtSetSizeConstraintintintintint = NULL;
@@ -4258,11 +4342,11 @@ public:
     }
   }
   wxPanelBaseExtSetTransparentwxByteFunc m_wxPanelBaseExtSetTransparentwxByte = NULL;
-  virtual bool SetTransparent(wxByte param0) override
+  virtual bool SetTransparent(wxByte alpha) override
   {
-    bool res = wxPanelBase::SetTransparent(param0);
+    bool res = wxPanelBase::SetTransparent(alpha);
     if (*m_wxPanelBaseExtSetTransparentwxByte != NULL){
-      return m_wxPanelBaseExtSetTransparentwxByte(this, param0);
+      return m_wxPanelBaseExtSetTransparentwxByte(this, alpha, res);
     }
     else {
       return res;
@@ -4289,7 +4373,7 @@ public:
   {
     bool res = wxPanelBase::ShouldInheritColours();
     if (*m_wxPanelBaseExtShouldInheritColours != NULL){
-      return m_wxPanelBaseExtShouldInheritColours(this);
+      return m_wxPanelBaseExtShouldInheritColours(this, res);
     }
     else {
       return res;
@@ -4300,18 +4384,18 @@ public:
   {
     bool res = wxPanelBase::Show(show);
     if (*m_wxPanelBaseExtShowbool != NULL){
-      return m_wxPanelBaseExtShowbool(this, show);
+      return m_wxPanelBaseExtShowbool(this, show, res);
     }
     else {
       return res;
     }
   }
   wxPanelBaseExtShowWithEffectwxShowEffectunsignedintFunc m_wxPanelBaseExtShowWithEffectwxShowEffectunsignedint = NULL;
-  virtual bool ShowWithEffect(wxShowEffect param0, unsigned int param1 = 0) override
+  virtual bool ShowWithEffect(wxShowEffect effect, unsigned int timeout = 0) override
   {
-    bool res = wxPanelBase::ShowWithEffect(param0, param1);
+    bool res = wxPanelBase::ShowWithEffect(effect, timeout);
     if (*m_wxPanelBaseExtShowWithEffectwxShowEffectunsignedint != NULL){
-      return m_wxPanelBaseExtShowWithEffectwxShowEffectunsignedint(this, param0, param1);
+      return m_wxPanelBaseExtShowWithEffectwxShowEffectunsignedint(this, effect, timeout, res);
     }
     else {
       return res;
@@ -4322,7 +4406,7 @@ public:
   {
     bool res = wxPanelBase::TransferDataFromWindow();
     if (*m_wxPanelBaseExtTransferDataFromWindow != NULL){
-      return m_wxPanelBaseExtTransferDataFromWindow(this);
+      return m_wxPanelBaseExtTransferDataFromWindow(this, res);
     }
     else {
       return res;
@@ -4333,10 +4417,18 @@ public:
   {
     bool res = wxPanelBase::TransferDataToWindow();
     if (*m_wxPanelBaseExtTransferDataToWindow != NULL){
-      return m_wxPanelBaseExtTransferDataToWindow(this);
+      return m_wxPanelBaseExtTransferDataToWindow(this, res);
     }
     else {
       return res;
+    }
+  }
+  wxPanelBaseExtTriggerScrollEventwxEventTypeFunc m_wxPanelBaseExtTriggerScrollEventwxEventType = NULL;
+  virtual void TriggerScrollEvent(wxEventType scrollEvent) override
+  {
+    wxPanelBase::TriggerScrollEvent(scrollEvent);
+    if (*m_wxPanelBaseExtTriggerScrollEventwxEventType != NULL){
+      return m_wxPanelBaseExtTriggerScrollEventwxEventType(this, scrollEvent);
     }
   }
   wxPanelBaseExtTryAfterwxEventRFunc m_wxPanelBaseExtTryAfterwxEventR = NULL;
@@ -4344,7 +4436,7 @@ public:
   {
     bool res = wxPanelBase::TryAfter(event);
     if (*m_wxPanelBaseExtTryAfterwxEventR != NULL){
-      return m_wxPanelBaseExtTryAfterwxEventR(this, event);
+      return m_wxPanelBaseExtTryAfterwxEventR(this, event, res);
     }
     else {
       return res;
@@ -4355,7 +4447,7 @@ public:
   {
     bool res = wxPanelBase::TryBefore(event);
     if (*m_wxPanelBaseExtTryBeforewxEventR != NULL){
-      return m_wxPanelBaseExtTryBeforewxEventR(this, event);
+      return m_wxPanelBaseExtTryBeforewxEventR(this, event, res);
     }
     else {
       return res;
@@ -4366,7 +4458,7 @@ public:
   {
     bool res = wxPanelBase::UnregisterHotKey(hotkeyId);
     if (*m_wxPanelBaseExtUnregisterHotKeyint != NULL){
-      return m_wxPanelBaseExtUnregisterHotKeyint(this, hotkeyId);
+      return m_wxPanelBaseExtUnregisterHotKeyint(this, hotkeyId, res);
     }
     else {
       return res;
@@ -4393,7 +4485,7 @@ public:
   {
     bool res = wxPanelBase::Validate();
     if (*m_wxPanelBaseExtValidate != NULL){
-      return m_wxPanelBaseExtValidate(this);
+      return m_wxPanelBaseExtValidate(this, res);
     }
     else {
       return res;
@@ -4412,7 +4504,7 @@ public:
   {
     wxTextEntry const* res = wxPanelBase::WXGetTextEntry();
     if (*m_wxPanelBaseExtWXGetTextEntry != NULL){
-      return m_wxPanelBaseExtWXGetTextEntry(this);
+      return m_wxPanelBaseExtWXGetTextEntry(this, res);
     }
     else {
       return res;
@@ -4423,7 +4515,7 @@ public:
   {
     void* res = wxPanelBase::WXReservedEvtHandler1(param0);
     if (*m_wxPanelBaseExtWXReservedEvtHandler1voidP != NULL){
-      return m_wxPanelBaseExtWXReservedEvtHandler1voidP(this, param0);
+      return m_wxPanelBaseExtWXReservedEvtHandler1voidP(this, param0, res);
     }
     else {
       return res;
@@ -4434,7 +4526,7 @@ public:
   {
     void* res = wxPanelBase::WXReservedEvtHandler2(param0);
     if (*m_wxPanelBaseExtWXReservedEvtHandler2voidP != NULL){
-      return m_wxPanelBaseExtWXReservedEvtHandler2voidP(this, param0);
+      return m_wxPanelBaseExtWXReservedEvtHandler2voidP(this, param0, res);
     }
     else {
       return res;
@@ -4445,7 +4537,7 @@ public:
   {
     void* res = wxPanelBase::WXReservedWindow1(param0);
     if (*m_wxPanelBaseExtWXReservedWindow1voidP != NULL){
-      return m_wxPanelBaseExtWXReservedWindow1voidP(this, param0);
+      return m_wxPanelBaseExtWXReservedWindow1voidP(this, param0, res);
     }
     else {
       return res;
@@ -4456,7 +4548,7 @@ public:
   {
     void* res = wxPanelBase::WXReservedWindow2(param0);
     if (*m_wxPanelBaseExtWXReservedWindow2voidP != NULL){
-      return m_wxPanelBaseExtWXReservedWindow2voidP(this, param0);
+      return m_wxPanelBaseExtWXReservedWindow2voidP(this, param0, res);
     }
     else {
       return res;
@@ -4467,7 +4559,7 @@ public:
   {
     void* res = wxPanelBase::WXReservedWindow3(param0);
     if (*m_wxPanelBaseExtWXReservedWindow3voidP != NULL){
-      return m_wxPanelBaseExtWXReservedWindow3voidP(this, param0);
+      return m_wxPanelBaseExtWXReservedWindow3voidP(this, param0, res);
     }
     else {
       return res;
@@ -4494,13 +4586,13 @@ public:
   {
     wxSize res = wxPanelBase::WindowToClientSize(size);
     if (*m_wxPanelBaseExtWindowToClientSizewxSizeCR != NULL){
-      return m_wxPanelBaseExtWindowToClientSizewxSizeCR(this, size);
+      return m_wxPanelBaseExtWindowToClientSizewxSizeCR(this, size, res);
     }
     else {
       return res;
     }
   }
-  wxPanelBaseExt(wxPanelBaseExtAcceptsFocusFunc a_AcceptsFocus, wxPanelBaseExtAcceptsFocusFromKeyboardFunc a_AcceptsFocusFromKeyboard, wxPanelBaseExtAcceptsFocusRecursivelyFunc a_AcceptsFocusRecursively, wxPanelBaseExtAddChildwxWindowBasePFunc a_AddChildwxWindowBaseP, wxPanelBaseExtAddPendingEventwxEventCRFunc a_AddPendingEventwxEventCR, wxPanelBaseExtAdjustForLayoutDirectionwxCoordwxCoordwxCoordFunc a_AdjustForLayoutDirectionwxCoordwxCoordwxCoord, wxPanelBaseExtAdjustForParentClientOriginintRintRintFunc a_AdjustForParentClientOriginintRintRint, wxPanelBaseExtAlwaysShowScrollbarsboolboolFunc a_AlwaysShowScrollbarsboolbool, wxPanelBaseExtAssociateHandleWXWidgetFunc a_AssociateHandleWXWidget, wxPanelBaseExtBeginRepositioningChildrenFunc a_BeginRepositioningChildren, wxPanelBaseExtCanApplyThemeBorderFunc a_CanApplyThemeBorder, wxPanelBaseExtCanBeFocusedFunc a_CanBeFocused, wxPanelBaseExtCanBeOutsideClientAreaFunc a_CanBeOutsideClientArea, wxPanelBaseExtCanScrollintFunc a_CanScrollint, wxPanelBaseExtCanSetTransparentFunc a_CanSetTransparent, wxPanelBaseExtClearBackgroundFunc a_ClearBackground, wxPanelBaseExtClientToWindowSizewxSizeCRFunc a_ClientToWindowSizewxSizeCR, wxPanelBaseExtCloneRefDatawxObjectRefDataCPFunc a_CloneRefDatawxObjectRefDataCP, wxPanelBaseExtCreateRefDataFunc a_CreateRefData, wxPanelBaseExtDestroyFunc a_Destroy, wxPanelBaseExtDissociateHandleFunc a_DissociateHandle, wxPanelBaseExtDoCaptureMouseFunc a_DoCaptureMouse, wxPanelBaseExtDoCentreintFunc a_DoCentreint, wxPanelBaseExtDoClientToScreenintPintPFunc a_DoClientToScreenintPintP, wxPanelBaseExtDoEnableboolFunc a_DoEnablebool, wxPanelBaseExtDoFreezeFunc a_DoFreeze, wxPanelBaseExtDoGetBestClientHeightintFunc a_DoGetBestClientHeightint, wxPanelBaseExtDoGetBestClientSizeFunc a_DoGetBestClientSize, wxPanelBaseExtDoGetBestClientWidthintFunc a_DoGetBestClientWidthint, wxPanelBaseExtDoGetBestSizeFunc a_DoGetBestSize, wxPanelBaseExtDoGetClientDataFunc a_DoGetClientData, wxPanelBaseExtDoGetClientObjectFunc a_DoGetClientObject, wxPanelBaseExtDoGetClientSizeintPintPFunc a_DoGetClientSizeintPintP, wxPanelBaseExtDoGetPositionintPintPFunc a_DoGetPositionintPintP, wxPanelBaseExtDoGetScreenPositionintPintPFunc a_DoGetScreenPositionintPintP, wxPanelBaseExtDoGetSizeintPintPFunc a_DoGetSizeintPintP, wxPanelBaseExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCPFunc a_DoGetTextExtentwxStringCRintPintPintPintPwxFontCP, wxPanelBaseExtDoGetVirtualSizeFunc a_DoGetVirtualSize, wxPanelBaseExtDoHitTestwxCoordwxCoordFunc a_DoHitTestwxCoordwxCoord, wxPanelBaseExtDoIsExposedintintintintFunc a_DoIsExposedintintintint, wxPanelBaseExtDoIsExposedintintFunc a_DoIsExposedintint, wxPanelBaseExtDoMoveWindowintintintintFunc a_DoMoveWindowintintintint, wxPanelBaseExtDoNavigateInintFunc a_DoNavigateInint, wxPanelBaseExtDoPhaseintFunc a_DoPhaseint, wxPanelBaseExtDoPopupMenuwxMenuPintintFunc a_DoPopupMenuwxMenuPintint, wxPanelBaseExtDoReleaseMouseFunc a_DoReleaseMouse, wxPanelBaseExtDoScreenToClientintPintPFunc a_DoScreenToClientintPintP, wxPanelBaseExtDoSetClientDatavoidPFunc a_DoSetClientDatavoidP, wxPanelBaseExtDoSetClientObjectwxClientDataPFunc a_DoSetClientObjectwxClientDataP, wxPanelBaseExtDoSetClientSizeintintFunc a_DoSetClientSizeintint, wxPanelBaseExtDoSetSizeintintintintintFunc a_DoSetSizeintintintintint, wxPanelBaseExtDoSetSizeHintsintintintintintintFunc a_DoSetSizeHintsintintintintintint, wxPanelBaseExtDoSetToolTipwxToolTipPFunc a_DoSetToolTipwxToolTipP, wxPanelBaseExtDoSetToolTipTextwxStringCRFunc a_DoSetToolTipTextwxStringCR, wxPanelBaseExtDoSetVirtualSizeintintFunc a_DoSetVirtualSizeintint, wxPanelBaseExtDoSetWindowVariantwxWindowVariantFunc a_DoSetWindowVariantwxWindowVariant, wxPanelBaseExtDoThawFunc a_DoThaw, wxPanelBaseExtDoUpdateWindowUIwxUpdateUIEventRFunc a_DoUpdateWindowUIwxUpdateUIEventR, wxPanelBaseExtDragAcceptFilesboolFunc a_DragAcceptFilesbool, wxPanelBaseExtEnableboolFunc a_Enablebool, wxPanelBaseExtEnableTouchEventsintFunc a_EnableTouchEventsint, wxPanelBaseExtEnableVisibleFocusboolFunc a_EnableVisibleFocusbool, wxPanelBaseExtEndRepositioningChildrenFunc a_EndRepositioningChildren, wxPanelBaseExtFitFunc a_Fit, wxPanelBaseExtFitInsideFunc a_FitInside, wxPanelBaseExtGetBestVirtualSizeFunc a_GetBestVirtualSize, wxPanelBaseExtGetCharHeightFunc a_GetCharHeight, wxPanelBaseExtGetCharWidthFunc a_GetCharWidth, wxPanelBaseExtGetClassInfoFunc a_GetClassInfo, wxPanelBaseExtGetClientAreaOriginFunc a_GetClientAreaOrigin, wxPanelBaseExtGetClientSizeConstraintintPintPFunc a_GetClientSizeConstraintintPintP, wxPanelBaseExtGetContentScaleFactorFunc a_GetContentScaleFactor, wxPanelBaseExtGetDPIFunc a_GetDPI, wxPanelBaseExtGetDPIScaleFactorFunc a_GetDPIScaleFactor, wxPanelBaseExtGetDefaultAttributesFunc a_GetDefaultAttributes, wxPanelBaseExtGetDefaultBorderFunc a_GetDefaultBorder, wxPanelBaseExtGetDefaultBorderForControlFunc a_GetDefaultBorderForControl, wxPanelBaseExtGetDropTargetFunc a_GetDropTarget, wxPanelBaseExtGetEffectiveMinSizeFunc a_GetEffectiveMinSize, wxPanelBaseExtGetEventHashTableFunc a_GetEventHashTable, wxPanelBaseExtGetEventTableFunc a_GetEventTable, wxPanelBaseExtGetHandleFunc a_GetHandle, wxPanelBaseExtGetHelpTextAtPointwxPointCRwxHelpEventNOriginFunc a_GetHelpTextAtPointwxPointCRwxHelpEventNOrigin, wxPanelBaseExtGetLabelFunc a_GetLabel, wxPanelBaseExtGetLayoutDirectionFunc a_GetLayoutDirection, wxPanelBaseExtGetMainWindowOfCompositeControlFunc a_GetMainWindowOfCompositeControl, wxPanelBaseExtGetMaxClientSizeFunc a_GetMaxClientSize, wxPanelBaseExtGetMaxSizeFunc a_GetMaxSize, wxPanelBaseExtGetMinClientSizeFunc a_GetMinClientSize, wxPanelBaseExtGetMinSizeFunc a_GetMinSize, wxPanelBaseExtGetNameFunc a_GetName, wxPanelBaseExtGetPositionConstraintintPintPFunc a_GetPositionConstraintintPintP, wxPanelBaseExtGetScrollPosintFunc a_GetScrollPosint, wxPanelBaseExtGetScrollRangeintFunc a_GetScrollRangeint, wxPanelBaseExtGetScrollThumbintFunc a_GetScrollThumbint, wxPanelBaseExtGetSizeConstraintintPintPFunc a_GetSizeConstraintintPintP, wxPanelBaseExtGetThemeEnabledFunc a_GetThemeEnabled, wxPanelBaseExtGetValidatorFunc a_GetValidator, wxPanelBaseExtGetWindowBorderSizeFunc a_GetWindowBorderSize, wxPanelBaseExtGetWindowStyleFlagFunc a_GetWindowStyleFlag, wxPanelBaseExtHasCaptureFunc a_HasCapture, wxPanelBaseExtHasFocusFunc a_HasFocus, wxPanelBaseExtHasMultiplePagesFunc a_HasMultiplePages, wxPanelBaseExtHasTransparentBackgroundFunc a_HasTransparentBackground, wxPanelBaseExtHideWithEffectwxShowEffectunsignedintFunc a_HideWithEffectwxShowEffectunsignedint, wxPanelBaseExtInformFirstDirectionintintintFunc a_InformFirstDirectionintintint, wxPanelBaseExtInheritAttributesFunc a_InheritAttributes, wxPanelBaseExtInitDialogFunc a_InitDialog, wxPanelBaseExtIsClientAreaChildwxWindowCPFunc a_IsClientAreaChildwxWindowCP, wxPanelBaseExtIsDoubleBufferedFunc a_IsDoubleBuffered, wxPanelBaseExtIsRetainedFunc a_IsRetained, wxPanelBaseExtIsScrollbarAlwaysShownintFunc a_IsScrollbarAlwaysShownint, wxPanelBaseExtIsShownFunc a_IsShown, wxPanelBaseExtIsShownOnScreenFunc a_IsShownOnScreen, wxPanelBaseExtIsThisEnabledFunc a_IsThisEnabled, wxPanelBaseExtIsTopLevelFunc a_IsTopLevel, wxPanelBaseExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc a_IsTopNavigationDomainwxWindowBaseNNavigationKind, wxPanelBaseExtIsTransparentBackgroundSupportedwxStringPFunc a_IsTransparentBackgroundSupportedwxStringP, wxPanelBaseExtLayoutFunc a_Layout, wxPanelBaseExtLayoutPhase1intPFunc a_LayoutPhase1intP, wxPanelBaseExtLayoutPhase2intPFunc a_LayoutPhase2intP, wxPanelBaseExtLowerFunc a_Lower, wxPanelBaseExtMoveConstraintintintFunc a_MoveConstraintintint, wxPanelBaseExtOnDynamicBindwxDynamicEventTableEntryRFunc a_OnDynamicBindwxDynamicEventTableEntryR, wxPanelBaseExtOnInternalIdleFunc a_OnInternalIdle, wxPanelBaseExtPrepareDCwxDCRFunc a_PrepareDCwxDCR, wxPanelBaseExtProcessEventwxEventRFunc a_ProcessEventwxEventR, wxPanelBaseExtQueueEventwxEventPFunc a_QueueEventwxEventP, wxPanelBaseExtRaiseFunc a_Raise, wxPanelBaseExtRefreshboolwxRectCPFunc a_RefreshboolwxRectCP, wxPanelBaseExtRegisterHotKeyintintintFunc a_RegisterHotKeyintintint, wxPanelBaseExtRemoveChildwxWindowBasePFunc a_RemoveChildwxWindowBaseP, wxPanelBaseExtReparentwxWindowBasePFunc a_ReparentwxWindowBaseP, wxPanelBaseExtScrollLinesintFunc a_ScrollLinesint, wxPanelBaseExtScrollPagesintFunc a_ScrollPagesint, wxPanelBaseExtScrollWindowintintwxRectCPFunc a_ScrollWindowintintwxRectCP, wxPanelBaseExtSearchEventTablewxEventTableRwxEventRFunc a_SearchEventTablewxEventTableRwxEventR, wxPanelBaseExtSendIdleEventswxIdleEventRFunc a_SendIdleEventswxIdleEventR, wxPanelBaseExtSendSizeEventintFunc a_SendSizeEventint, wxPanelBaseExtSetAcceleratorTablewxAcceleratorTableCRFunc a_SetAcceleratorTablewxAcceleratorTableCR, wxPanelBaseExtSetBackgroundColourwxColourCRFunc a_SetBackgroundColourwxColourCR, wxPanelBaseExtSetBackgroundStylewxBackgroundStyleFunc a_SetBackgroundStylewxBackgroundStyle, wxPanelBaseExtSetCanFocusboolFunc a_SetCanFocusbool, wxPanelBaseExtSetConstraintSizesboolFunc a_SetConstraintSizesbool, wxPanelBaseExtSetCursorwxCursorCRFunc a_SetCursorwxCursorCR, wxPanelBaseExtSetDoubleBufferedboolFunc a_SetDoubleBufferedbool, wxPanelBaseExtSetDropTargetwxDropTargetPFunc a_SetDropTargetwxDropTargetP, wxPanelBaseExtSetExtraStylelongFunc a_SetExtraStylelong, wxPanelBaseExtSetFocusFunc a_SetFocus, wxPanelBaseExtSetFocusFromKbdFunc a_SetFocusFromKbd, wxPanelBaseExtSetFontwxFontCRFunc a_SetFontwxFontCR, wxPanelBaseExtSetForegroundColourwxColourCRFunc a_SetForegroundColourwxColourCR, wxPanelBaseExtSetIdwxWindowIDFunc a_SetIdwxWindowID, wxPanelBaseExtSetLabelwxStringCRFunc a_SetLabelwxStringCR, wxPanelBaseExtSetLayoutDirectionwxLayoutDirectionFunc a_SetLayoutDirectionwxLayoutDirection, wxPanelBaseExtSetMaxClientSizewxSizeCRFunc a_SetMaxClientSizewxSizeCR, wxPanelBaseExtSetMaxSizewxSizeCRFunc a_SetMaxSizewxSizeCR, wxPanelBaseExtSetMinClientSizewxSizeCRFunc a_SetMinClientSizewxSizeCR, wxPanelBaseExtSetMinSizewxSizeCRFunc a_SetMinSizewxSizeCR, wxPanelBaseExtSetNamewxStringCRFunc a_SetNamewxStringCR, wxPanelBaseExtSetNextHandlerwxEvtHandlerPFunc a_SetNextHandlerwxEvtHandlerP, wxPanelBaseExtSetPreviousHandlerwxEvtHandlerPFunc a_SetPreviousHandlerwxEvtHandlerP, wxPanelBaseExtSetScrollPosintintboolFunc a_SetScrollPosintintbool, wxPanelBaseExtSetScrollbarintintintintboolFunc a_SetScrollbarintintintintbool, wxPanelBaseExtSetSizeConstraintintintintintFunc a_SetSizeConstraintintintintint, wxPanelBaseExtSetSizeHintsintintintintintintFunc a_SetSizeHintsintintintintintint, wxPanelBaseExtSetThemeEnabledboolFunc a_SetThemeEnabledbool, wxPanelBaseExtSetTransparentwxByteFunc a_SetTransparentwxByte, wxPanelBaseExtSetValidatorwxValidatorCRFunc a_SetValidatorwxValidatorCR, wxPanelBaseExtSetWindowStyleFlaglongFunc a_SetWindowStyleFlaglong, wxPanelBaseExtShouldInheritColoursFunc a_ShouldInheritColours, wxPanelBaseExtShowboolFunc a_Showbool, wxPanelBaseExtShowWithEffectwxShowEffectunsignedintFunc a_ShowWithEffectwxShowEffectunsignedint, wxPanelBaseExtTransferDataFromWindowFunc a_TransferDataFromWindow, wxPanelBaseExtTransferDataToWindowFunc a_TransferDataToWindow, wxPanelBaseExtTryAfterwxEventRFunc a_TryAfterwxEventR, wxPanelBaseExtTryBeforewxEventRFunc a_TryBeforewxEventR, wxPanelBaseExtUnregisterHotKeyintFunc a_UnregisterHotKeyint, wxPanelBaseExtUpdateFunc a_Update, wxPanelBaseExtUpdateWindowUIlongFunc a_UpdateWindowUIlong, wxPanelBaseExtValidateFunc a_Validate, wxPanelBaseExtWXAdjustFontToOwnPPIwxFontRFunc a_WXAdjustFontToOwnPPIwxFontR, wxPanelBaseExtWXGetTextEntryFunc a_WXGetTextEntry, wxPanelBaseExtWXReservedEvtHandler1voidPFunc a_WXReservedEvtHandler1voidP, wxPanelBaseExtWXReservedEvtHandler2voidPFunc a_WXReservedEvtHandler2voidP, wxPanelBaseExtWXReservedWindow1voidPFunc a_WXReservedWindow1voidP, wxPanelBaseExtWXReservedWindow2voidPFunc a_WXReservedWindow2voidP, wxPanelBaseExtWXReservedWindow3voidPFunc a_WXReservedWindow3voidP, wxPanelBaseExtWXSetInitialFittingClientSizeintwxSizerPFunc a_WXSetInitialFittingClientSizeintwxSizerP, wxPanelBaseExtWarpPointerintintFunc a_WarpPointerintint, wxPanelBaseExtWindowToClientSizewxSizeCRFunc a_WindowToClientSizewxSizeCR): wxPanelBase() {
+  wxPanelBaseExt(wxPanelBaseExtAcceptsFocusFunc a_AcceptsFocus, wxPanelBaseExtAcceptsFocusFromKeyboardFunc a_AcceptsFocusFromKeyboard, wxPanelBaseExtAcceptsFocusRecursivelyFunc a_AcceptsFocusRecursively, wxPanelBaseExtAddChildwxWindowBasePFunc a_AddChildwxWindowBaseP, wxPanelBaseExtAddPendingEventwxEventCRFunc a_AddPendingEventwxEventCR, wxPanelBaseExtAdjustForLayoutDirectionwxCoordwxCoordwxCoordFunc a_AdjustForLayoutDirectionwxCoordwxCoordwxCoord, wxPanelBaseExtAdjustForParentClientOriginintRintRintFunc a_AdjustForParentClientOriginintRintRint, wxPanelBaseExtAlwaysShowScrollbarsboolboolFunc a_AlwaysShowScrollbarsboolbool, wxPanelBaseExtAssociateHandleWXWidgetFunc a_AssociateHandleWXWidget, wxPanelBaseExtBeginRepositioningChildrenFunc a_BeginRepositioningChildren, wxPanelBaseExtCanApplyThemeBorderFunc a_CanApplyThemeBorder, wxPanelBaseExtCanBeFocusedFunc a_CanBeFocused, wxPanelBaseExtCanBeOutsideClientAreaFunc a_CanBeOutsideClientArea, wxPanelBaseExtCanScrollintFunc a_CanScrollint, wxPanelBaseExtCanSetTransparentFunc a_CanSetTransparent, wxPanelBaseExtClearBackgroundFunc a_ClearBackground, wxPanelBaseExtClientToWindowSizewxSizeCRFunc a_ClientToWindowSizewxSizeCR, wxPanelBaseExtCloneRefDatawxObjectRefDataCPFunc a_CloneRefDatawxObjectRefDataCP, wxPanelBaseExtCreateRefDataFunc a_CreateRefData, wxPanelBaseExtDestroyFunc a_Destroy, wxPanelBaseExtDissociateHandleFunc a_DissociateHandle, wxPanelBaseExtDoCaptureMouseFunc a_DoCaptureMouse, wxPanelBaseExtDoCentreintFunc a_DoCentreint, wxPanelBaseExtDoClientToScreenintPintPFunc a_DoClientToScreenintPintP, wxPanelBaseExtDoEnableboolFunc a_DoEnablebool, wxPanelBaseExtDoFreezeFunc a_DoFreeze, wxPanelBaseExtDoGetBestClientHeightintFunc a_DoGetBestClientHeightint, wxPanelBaseExtDoGetBestClientSizeFunc a_DoGetBestClientSize, wxPanelBaseExtDoGetBestClientWidthintFunc a_DoGetBestClientWidthint, wxPanelBaseExtDoGetBestSizeFunc a_DoGetBestSize, wxPanelBaseExtDoGetClientDataFunc a_DoGetClientData, wxPanelBaseExtDoGetClientObjectFunc a_DoGetClientObject, wxPanelBaseExtDoGetClientSizeintPintPFunc a_DoGetClientSizeintPintP, wxPanelBaseExtDoGetPositionintPintPFunc a_DoGetPositionintPintP, wxPanelBaseExtDoGetScreenPositionintPintPFunc a_DoGetScreenPositionintPintP, wxPanelBaseExtDoGetSizeintPintPFunc a_DoGetSizeintPintP, wxPanelBaseExtDoGetSizeFromClientSizewxSizeCRFunc a_DoGetSizeFromClientSizewxSizeCR, wxPanelBaseExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCPFunc a_DoGetTextExtentwxStringCRintPintPintPintPwxFontCP, wxPanelBaseExtDoGetVirtualSizeFunc a_DoGetVirtualSize, wxPanelBaseExtDoHitTestwxCoordwxCoordFunc a_DoHitTestwxCoordwxCoord, wxPanelBaseExtDoIsExposedintintintintFunc a_DoIsExposedintintintint, wxPanelBaseExtDoIsExposedintintFunc a_DoIsExposedintint, wxPanelBaseExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrderFunc a_DoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrder, wxPanelBaseExtDoMoveWindowintintintintFunc a_DoMoveWindowintintintint, wxPanelBaseExtDoNavigateInintFunc a_DoNavigateInint, wxPanelBaseExtDoPhaseintFunc a_DoPhaseint, wxPanelBaseExtDoPopupMenuwxMenuPintintFunc a_DoPopupMenuwxMenuPintint, wxPanelBaseExtDoReleaseMouseFunc a_DoReleaseMouse, wxPanelBaseExtDoScreenToClientintPintPFunc a_DoScreenToClientintPintP, wxPanelBaseExtDoSetClientDatavoidPFunc a_DoSetClientDatavoidP, wxPanelBaseExtDoSetClientObjectwxClientDataPFunc a_DoSetClientObjectwxClientDataP, wxPanelBaseExtDoSetClientSizeintintFunc a_DoSetClientSizeintint, wxPanelBaseExtDoSetSizeintintintintintFunc a_DoSetSizeintintintintint, wxPanelBaseExtDoSetSizeHintsintintintintintintFunc a_DoSetSizeHintsintintintintintint, wxPanelBaseExtDoSetToolTipwxToolTipPFunc a_DoSetToolTipwxToolTipP, wxPanelBaseExtDoSetToolTipTextwxStringCRFunc a_DoSetToolTipTextwxStringCR, wxPanelBaseExtDoSetVirtualSizeintintFunc a_DoSetVirtualSizeintint, wxPanelBaseExtDoSetWindowVariantwxWindowVariantFunc a_DoSetWindowVariantwxWindowVariant, wxPanelBaseExtDoThawFunc a_DoThaw, wxPanelBaseExtDoUpdateWindowUIwxUpdateUIEventRFunc a_DoUpdateWindowUIwxUpdateUIEventR, wxPanelBaseExtDragAcceptFilesboolFunc a_DragAcceptFilesbool, wxPanelBaseExtEnableboolFunc a_Enablebool, wxPanelBaseExtEnableTouchEventsintFunc a_EnableTouchEventsint, wxPanelBaseExtEnableVisibleFocusboolFunc a_EnableVisibleFocusbool, wxPanelBaseExtEndRepositioningChildrenFunc a_EndRepositioningChildren, wxPanelBaseExtFitFunc a_Fit, wxPanelBaseExtFitInsideFunc a_FitInside, wxPanelBaseExtGetBestVirtualSizeFunc a_GetBestVirtualSize, wxPanelBaseExtGetCharHeightFunc a_GetCharHeight, wxPanelBaseExtGetCharWidthFunc a_GetCharWidth, wxPanelBaseExtGetClassInfoFunc a_GetClassInfo, wxPanelBaseExtGetClientAreaOriginFunc a_GetClientAreaOrigin, wxPanelBaseExtGetClientSizeConstraintintPintPFunc a_GetClientSizeConstraintintPintP, wxPanelBaseExtGetContentScaleFactorFunc a_GetContentScaleFactor, wxPanelBaseExtGetDPIFunc a_GetDPI, wxPanelBaseExtGetDPIScaleFactorFunc a_GetDPIScaleFactor, wxPanelBaseExtGetDefaultAttributesFunc a_GetDefaultAttributes, wxPanelBaseExtGetDefaultBorderFunc a_GetDefaultBorder, wxPanelBaseExtGetDefaultBorderForControlFunc a_GetDefaultBorderForControl, wxPanelBaseExtGetDropTargetFunc a_GetDropTarget, wxPanelBaseExtGetEffectiveMinSizeFunc a_GetEffectiveMinSize, wxPanelBaseExtGetEventHashTableFunc a_GetEventHashTable, wxPanelBaseExtGetEventTableFunc a_GetEventTable, wxPanelBaseExtGetHandleFunc a_GetHandle, wxPanelBaseExtGetHelpTextAtPointwxPointCRwxHelpEventNOriginFunc a_GetHelpTextAtPointwxPointCRwxHelpEventNOrigin, wxPanelBaseExtGetLabelFunc a_GetLabel, wxPanelBaseExtGetLayoutDirectionFunc a_GetLayoutDirection, wxPanelBaseExtGetMainWindowOfCompositeControlFunc a_GetMainWindowOfCompositeControl, wxPanelBaseExtGetMaxClientSizeFunc a_GetMaxClientSize, wxPanelBaseExtGetMaxSizeFunc a_GetMaxSize, wxPanelBaseExtGetMinClientSizeFunc a_GetMinClientSize, wxPanelBaseExtGetMinSizeFunc a_GetMinSize, wxPanelBaseExtGetNameFunc a_GetName, wxPanelBaseExtGetPositionConstraintintPintPFunc a_GetPositionConstraintintPintP, wxPanelBaseExtGetScrollPosintFunc a_GetScrollPosint, wxPanelBaseExtGetScrollRangeintFunc a_GetScrollRangeint, wxPanelBaseExtGetScrollThumbintFunc a_GetScrollThumbint, wxPanelBaseExtGetSizeConstraintintPintPFunc a_GetSizeConstraintintPintP, wxPanelBaseExtGetThemeEnabledFunc a_GetThemeEnabled, wxPanelBaseExtGetTransparentFunc a_GetTransparent, wxPanelBaseExtGetValidatorFunc a_GetValidator, wxPanelBaseExtGetWindowBorderSizeFunc a_GetWindowBorderSize, wxPanelBaseExtGetWindowStyleFlagFunc a_GetWindowStyleFlag, wxPanelBaseExtHasCaptureFunc a_HasCapture, wxPanelBaseExtHasFocusFunc a_HasFocus, wxPanelBaseExtHasMultiplePagesFunc a_HasMultiplePages, wxPanelBaseExtHasTransparentBackgroundFunc a_HasTransparentBackground, wxPanelBaseExtHideWithEffectwxShowEffectunsignedintFunc a_HideWithEffectwxShowEffectunsignedint, wxPanelBaseExtInformFirstDirectionintintintFunc a_InformFirstDirectionintintint, wxPanelBaseExtInheritAttributesFunc a_InheritAttributes, wxPanelBaseExtInitDialogFunc a_InitDialog, wxPanelBaseExtIsClientAreaChildwxWindowCPFunc a_IsClientAreaChildwxWindowCP, wxPanelBaseExtIsDoubleBufferedFunc a_IsDoubleBuffered, wxPanelBaseExtIsRetainedFunc a_IsRetained, wxPanelBaseExtIsScrollbarAlwaysShownintFunc a_IsScrollbarAlwaysShownint, wxPanelBaseExtIsShownFunc a_IsShown, wxPanelBaseExtIsShownOnScreenFunc a_IsShownOnScreen, wxPanelBaseExtIsThisEnabledFunc a_IsThisEnabled, wxPanelBaseExtIsTopLevelFunc a_IsTopLevel, wxPanelBaseExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc a_IsTopNavigationDomainwxWindowBaseNNavigationKind, wxPanelBaseExtIsTransparentBackgroundSupportedwxStringPFunc a_IsTransparentBackgroundSupportedwxStringP, wxPanelBaseExtLayoutFunc a_Layout, wxPanelBaseExtLayoutPhase1intPFunc a_LayoutPhase1intP, wxPanelBaseExtLayoutPhase2intPFunc a_LayoutPhase2intP, wxPanelBaseExtLowerFunc a_Lower, wxPanelBaseExtMoveConstraintintintFunc a_MoveConstraintintint, wxPanelBaseExtOnDynamicBindwxDynamicEventTableEntryRFunc a_OnDynamicBindwxDynamicEventTableEntryR, wxPanelBaseExtOnInternalIdleFunc a_OnInternalIdle, wxPanelBaseExtPrepareDCwxDCRFunc a_PrepareDCwxDCR, wxPanelBaseExtProcessEventwxEventRFunc a_ProcessEventwxEventR, wxPanelBaseExtQueueEventwxEventPFunc a_QueueEventwxEventP, wxPanelBaseExtRaiseFunc a_Raise, wxPanelBaseExtRefreshboolwxRectCPFunc a_RefreshboolwxRectCP, wxPanelBaseExtRegisterHotKeyintintintFunc a_RegisterHotKeyintintint, wxPanelBaseExtRemoveChildwxWindowBasePFunc a_RemoveChildwxWindowBaseP, wxPanelBaseExtReparentwxWindowBasePFunc a_ReparentwxWindowBaseP, wxPanelBaseExtScrollLinesintFunc a_ScrollLinesint, wxPanelBaseExtScrollPagesintFunc a_ScrollPagesint, wxPanelBaseExtScrollWindowintintwxRectCPFunc a_ScrollWindowintintwxRectCP, wxPanelBaseExtSearchEventTablewxEventTableRwxEventRFunc a_SearchEventTablewxEventTableRwxEventR, wxPanelBaseExtSendIdleEventswxIdleEventRFunc a_SendIdleEventswxIdleEventR, wxPanelBaseExtSendSizeEventintFunc a_SendSizeEventint, wxPanelBaseExtSetAcceleratorTablewxAcceleratorTableCRFunc a_SetAcceleratorTablewxAcceleratorTableCR, wxPanelBaseExtSetBackgroundColourwxColourCRFunc a_SetBackgroundColourwxColourCR, wxPanelBaseExtSetBackgroundStylewxBackgroundStyleFunc a_SetBackgroundStylewxBackgroundStyle, wxPanelBaseExtSetCanFocusboolFunc a_SetCanFocusbool, wxPanelBaseExtSetConstraintSizesboolFunc a_SetConstraintSizesbool, wxPanelBaseExtSetCursorwxCursorCRFunc a_SetCursorwxCursorCR, wxPanelBaseExtSetDoubleBufferedboolFunc a_SetDoubleBufferedbool, wxPanelBaseExtSetDropTargetwxDropTargetPFunc a_SetDropTargetwxDropTargetP, wxPanelBaseExtSetExtraStylelongFunc a_SetExtraStylelong, wxPanelBaseExtSetFocusFunc a_SetFocus, wxPanelBaseExtSetFocusFromKbdFunc a_SetFocusFromKbd, wxPanelBaseExtSetFontwxFontCRFunc a_SetFontwxFontCR, wxPanelBaseExtSetForegroundColourwxColourCRFunc a_SetForegroundColourwxColourCR, wxPanelBaseExtSetIdwxWindowIDFunc a_SetIdwxWindowID, wxPanelBaseExtSetLabelwxStringCRFunc a_SetLabelwxStringCR, wxPanelBaseExtSetLayoutDirectionwxLayoutDirectionFunc a_SetLayoutDirectionwxLayoutDirection, wxPanelBaseExtSetMaxClientSizewxSizeCRFunc a_SetMaxClientSizewxSizeCR, wxPanelBaseExtSetMaxSizewxSizeCRFunc a_SetMaxSizewxSizeCR, wxPanelBaseExtSetMinClientSizewxSizeCRFunc a_SetMinClientSizewxSizeCR, wxPanelBaseExtSetMinSizewxSizeCRFunc a_SetMinSizewxSizeCR, wxPanelBaseExtSetNamewxStringCRFunc a_SetNamewxStringCR, wxPanelBaseExtSetNextHandlerwxEvtHandlerPFunc a_SetNextHandlerwxEvtHandlerP, wxPanelBaseExtSetPreviousHandlerwxEvtHandlerPFunc a_SetPreviousHandlerwxEvtHandlerP, wxPanelBaseExtSetScrollPosintintboolFunc a_SetScrollPosintintbool, wxPanelBaseExtSetScrollbarintintintintboolFunc a_SetScrollbarintintintintbool, wxPanelBaseExtSetSizeConstraintintintintintFunc a_SetSizeConstraintintintintint, wxPanelBaseExtSetSizeHintsintintintintintintFunc a_SetSizeHintsintintintintintint, wxPanelBaseExtSetThemeEnabledboolFunc a_SetThemeEnabledbool, wxPanelBaseExtSetTransparentwxByteFunc a_SetTransparentwxByte, wxPanelBaseExtSetValidatorwxValidatorCRFunc a_SetValidatorwxValidatorCR, wxPanelBaseExtSetWindowStyleFlaglongFunc a_SetWindowStyleFlaglong, wxPanelBaseExtShouldInheritColoursFunc a_ShouldInheritColours, wxPanelBaseExtShowboolFunc a_Showbool, wxPanelBaseExtShowWithEffectwxShowEffectunsignedintFunc a_ShowWithEffectwxShowEffectunsignedint, wxPanelBaseExtTransferDataFromWindowFunc a_TransferDataFromWindow, wxPanelBaseExtTransferDataToWindowFunc a_TransferDataToWindow, wxPanelBaseExtTriggerScrollEventwxEventTypeFunc a_TriggerScrollEventwxEventType, wxPanelBaseExtTryAfterwxEventRFunc a_TryAfterwxEventR, wxPanelBaseExtTryBeforewxEventRFunc a_TryBeforewxEventR, wxPanelBaseExtUnregisterHotKeyintFunc a_UnregisterHotKeyint, wxPanelBaseExtUpdateFunc a_Update, wxPanelBaseExtUpdateWindowUIlongFunc a_UpdateWindowUIlong, wxPanelBaseExtValidateFunc a_Validate, wxPanelBaseExtWXAdjustFontToOwnPPIwxFontRFunc a_WXAdjustFontToOwnPPIwxFontR, wxPanelBaseExtWXGetTextEntryFunc a_WXGetTextEntry, wxPanelBaseExtWXReservedEvtHandler1voidPFunc a_WXReservedEvtHandler1voidP, wxPanelBaseExtWXReservedEvtHandler2voidPFunc a_WXReservedEvtHandler2voidP, wxPanelBaseExtWXReservedWindow1voidPFunc a_WXReservedWindow1voidP, wxPanelBaseExtWXReservedWindow2voidPFunc a_WXReservedWindow2voidP, wxPanelBaseExtWXReservedWindow3voidPFunc a_WXReservedWindow3voidP, wxPanelBaseExtWXSetInitialFittingClientSizeintwxSizerPFunc a_WXSetInitialFittingClientSizeintwxSizerP, wxPanelBaseExtWarpPointerintintFunc a_WarpPointerintint, wxPanelBaseExtWindowToClientSizewxSizeCRFunc a_WindowToClientSizewxSizeCR): wxPanelBase() {
     m_wxPanelBaseExtAcceptsFocus = a_AcceptsFocus;
     m_wxPanelBaseExtAcceptsFocusFromKeyboard = a_AcceptsFocusFromKeyboard;
     m_wxPanelBaseExtAcceptsFocusRecursively = a_AcceptsFocusRecursively;
@@ -4537,11 +4629,13 @@ public:
     m_wxPanelBaseExtDoGetPositionintPintP = a_DoGetPositionintPintP;
     m_wxPanelBaseExtDoGetScreenPositionintPintP = a_DoGetScreenPositionintPintP;
     m_wxPanelBaseExtDoGetSizeintPintP = a_DoGetSizeintPintP;
+    m_wxPanelBaseExtDoGetSizeFromClientSizewxSizeCR = a_DoGetSizeFromClientSizewxSizeCR;
     m_wxPanelBaseExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCP = a_DoGetTextExtentwxStringCRintPintPintPintPwxFontCP;
     m_wxPanelBaseExtDoGetVirtualSize = a_DoGetVirtualSize;
     m_wxPanelBaseExtDoHitTestwxCoordwxCoord = a_DoHitTestwxCoordwxCoord;
     m_wxPanelBaseExtDoIsExposedintintintint = a_DoIsExposedintintintint;
     m_wxPanelBaseExtDoIsExposedintint = a_DoIsExposedintint;
+    m_wxPanelBaseExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrder = a_DoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrder;
     m_wxPanelBaseExtDoMoveWindowintintintint = a_DoMoveWindowintintintint;
     m_wxPanelBaseExtDoNavigateInint = a_DoNavigateInint;
     m_wxPanelBaseExtDoPhaseint = a_DoPhaseint;
@@ -4598,6 +4692,7 @@ public:
     m_wxPanelBaseExtGetScrollThumbint = a_GetScrollThumbint;
     m_wxPanelBaseExtGetSizeConstraintintPintP = a_GetSizeConstraintintPintP;
     m_wxPanelBaseExtGetThemeEnabled = a_GetThemeEnabled;
+    m_wxPanelBaseExtGetTransparent = a_GetTransparent;
     m_wxPanelBaseExtGetValidator = a_GetValidator;
     m_wxPanelBaseExtGetWindowBorderSize = a_GetWindowBorderSize;
     m_wxPanelBaseExtGetWindowStyleFlag = a_GetWindowStyleFlag;
@@ -4676,6 +4771,7 @@ public:
     m_wxPanelBaseExtShowWithEffectwxShowEffectunsignedint = a_ShowWithEffectwxShowEffectunsignedint;
     m_wxPanelBaseExtTransferDataFromWindow = a_TransferDataFromWindow;
     m_wxPanelBaseExtTransferDataToWindow = a_TransferDataToWindow;
+    m_wxPanelBaseExtTriggerScrollEventwxEventType = a_TriggerScrollEventwxEventType;
     m_wxPanelBaseExtTryAfterwxEventR = a_TryAfterwxEventR;
     m_wxPanelBaseExtTryBeforewxEventR = a_TryBeforewxEventR;
     m_wxPanelBaseExtUnregisterHotKeyint = a_UnregisterHotKeyint;
@@ -4705,7 +4801,7 @@ public:
   {
     bool res = wxPanel::AcceptsFocus();
     if (*m_wxPanelExtAcceptsFocus != NULL){
-      return m_wxPanelExtAcceptsFocus(this);
+      return m_wxPanelExtAcceptsFocus(this, res);
     }
     else {
       return res;
@@ -4716,7 +4812,7 @@ public:
   {
     bool res = wxPanel::AcceptsFocusFromKeyboard();
     if (*m_wxPanelExtAcceptsFocusFromKeyboard != NULL){
-      return m_wxPanelExtAcceptsFocusFromKeyboard(this);
+      return m_wxPanelExtAcceptsFocusFromKeyboard(this, res);
     }
     else {
       return res;
@@ -4727,7 +4823,7 @@ public:
   {
     bool res = wxPanel::AcceptsFocusRecursively();
     if (*m_wxPanelExtAcceptsFocusRecursively != NULL){
-      return m_wxPanelExtAcceptsFocusRecursively(this);
+      return m_wxPanelExtAcceptsFocusRecursively(this, res);
     }
     else {
       return res;
@@ -4754,7 +4850,7 @@ public:
   {
     wxCoord res = wxPanel::AdjustForLayoutDirection(x, width, widthTotal);
     if (*m_wxPanelExtAdjustForLayoutDirectionwxCoordwxCoordwxCoord != NULL){
-      return m_wxPanelExtAdjustForLayoutDirectionwxCoordwxCoordwxCoord(this, x, width, widthTotal);
+      return m_wxPanelExtAdjustForLayoutDirectionwxCoordwxCoordwxCoord(this, x, width, widthTotal, res);
     }
     else {
       return res;
@@ -4769,11 +4865,11 @@ public:
     }
   }
   wxPanelExtAlwaysShowScrollbarsboolboolFunc m_wxPanelExtAlwaysShowScrollbarsboolbool = NULL;
-  virtual void AlwaysShowScrollbars(bool param0 = true, bool param1 = true) override
+  virtual void AlwaysShowScrollbars(bool horz = true, bool vert = true) override
   {
-    wxPanel::AlwaysShowScrollbars(param0, param1);
+    wxPanel::AlwaysShowScrollbars(horz, vert);
     if (*m_wxPanelExtAlwaysShowScrollbarsboolbool != NULL){
-      return m_wxPanelExtAlwaysShowScrollbarsboolbool(this, param0, param1);
+      return m_wxPanelExtAlwaysShowScrollbarsboolbool(this, horz, vert);
     }
   }
   wxPanelExtAssociateHandleWXWidgetFunc m_wxPanelExtAssociateHandleWXWidget = NULL;
@@ -4789,7 +4885,7 @@ public:
   {
     bool res = wxPanel::BeginRepositioningChildren();
     if (*m_wxPanelExtBeginRepositioningChildren != NULL){
-      return m_wxPanelExtBeginRepositioningChildren(this);
+      return m_wxPanelExtBeginRepositioningChildren(this, res);
     }
     else {
       return res;
@@ -4800,7 +4896,7 @@ public:
   {
     bool res = wxPanel::CanApplyThemeBorder();
     if (*m_wxPanelExtCanApplyThemeBorder != NULL){
-      return m_wxPanelExtCanApplyThemeBorder(this);
+      return m_wxPanelExtCanApplyThemeBorder(this, res);
     }
     else {
       return res;
@@ -4811,7 +4907,7 @@ public:
   {
     bool res = wxPanel::CanBeFocused();
     if (*m_wxPanelExtCanBeFocused != NULL){
-      return m_wxPanelExtCanBeFocused(this);
+      return m_wxPanelExtCanBeFocused(this, res);
     }
     else {
       return res;
@@ -4822,7 +4918,7 @@ public:
   {
     bool res = wxPanel::CanBeOutsideClientArea();
     if (*m_wxPanelExtCanBeOutsideClientArea != NULL){
-      return m_wxPanelExtCanBeOutsideClientArea(this);
+      return m_wxPanelExtCanBeOutsideClientArea(this, res);
     }
     else {
       return res;
@@ -4833,7 +4929,7 @@ public:
   {
     bool res = wxPanel::CanScroll(orient);
     if (*m_wxPanelExtCanScrollint != NULL){
-      return m_wxPanelExtCanScrollint(this, orient);
+      return m_wxPanelExtCanScrollint(this, orient, res);
     }
     else {
       return res;
@@ -4844,7 +4940,7 @@ public:
   {
     bool res = wxPanel::CanSetTransparent();
     if (*m_wxPanelExtCanSetTransparent != NULL){
-      return m_wxPanelExtCanSetTransparent(this);
+      return m_wxPanelExtCanSetTransparent(this, res);
     }
     else {
       return res;
@@ -4863,7 +4959,7 @@ public:
   {
     wxSize res = wxPanel::ClientToWindowSize(size);
     if (*m_wxPanelExtClientToWindowSizewxSizeCR != NULL){
-      return m_wxPanelExtClientToWindowSizewxSizeCR(this, size);
+      return m_wxPanelExtClientToWindowSizewxSizeCR(this, size, res);
     }
     else {
       return res;
@@ -4874,7 +4970,7 @@ public:
   {
     wxObjectRefData* res = wxPanel::CloneRefData(data);
     if (*m_wxPanelExtCloneRefDatawxObjectRefDataCP != NULL){
-      return m_wxPanelExtCloneRefDatawxObjectRefDataCP(this, data);
+      return m_wxPanelExtCloneRefDatawxObjectRefDataCP(this, data, res);
     }
     else {
       return res;
@@ -4885,7 +4981,7 @@ public:
   {
     wxObjectRefData* res = wxPanel::CreateRefData();
     if (*m_wxPanelExtCreateRefData != NULL){
-      return m_wxPanelExtCreateRefData(this);
+      return m_wxPanelExtCreateRefData(this, res);
     }
     else {
       return res;
@@ -4896,7 +4992,7 @@ public:
   {
     bool res = wxPanel::Destroy();
     if (*m_wxPanelExtDestroy != NULL){
-      return m_wxPanelExtDestroy(this);
+      return m_wxPanelExtDestroy(this, res);
     }
     else {
       return res;
@@ -4935,11 +5031,11 @@ public:
     }
   }
   wxPanelExtDoEnableboolFunc m_wxPanelExtDoEnablebool = NULL;
-  virtual void DoEnable(bool param0) override
+  virtual void DoEnable(bool enable) override
   {
-    wxPanel::DoEnable(param0);
+    wxPanel::DoEnable(enable);
     if (*m_wxPanelExtDoEnablebool != NULL){
-      return m_wxPanelExtDoEnablebool(this, param0);
+      return m_wxPanelExtDoEnablebool(this, enable);
     }
   }
   wxPanelExtDoFreezeFunc m_wxPanelExtDoFreeze = NULL;
@@ -4955,7 +5051,7 @@ public:
   {
     int res = wxPanel::DoGetBestClientHeight(param0);
     if (*m_wxPanelExtDoGetBestClientHeightint != NULL){
-      return m_wxPanelExtDoGetBestClientHeightint(this, param0);
+      return m_wxPanelExtDoGetBestClientHeightint(this, param0, res);
     }
     else {
       return res;
@@ -4966,7 +5062,7 @@ public:
   {
     wxSize res = wxPanel::DoGetBestClientSize();
     if (*m_wxPanelExtDoGetBestClientSize != NULL){
-      return m_wxPanelExtDoGetBestClientSize(this);
+      return m_wxPanelExtDoGetBestClientSize(this, res);
     }
     else {
       return res;
@@ -4977,7 +5073,7 @@ public:
   {
     int res = wxPanel::DoGetBestClientWidth(param0);
     if (*m_wxPanelExtDoGetBestClientWidthint != NULL){
-      return m_wxPanelExtDoGetBestClientWidthint(this, param0);
+      return m_wxPanelExtDoGetBestClientWidthint(this, param0, res);
     }
     else {
       return res;
@@ -4988,7 +5084,7 @@ public:
   {
     wxSize res = wxPanel::DoGetBestSize();
     if (*m_wxPanelExtDoGetBestSize != NULL){
-      return m_wxPanelExtDoGetBestSize(this);
+      return m_wxPanelExtDoGetBestSize(this, res);
     }
     else {
       return res;
@@ -4999,7 +5095,7 @@ public:
   {
     void* res = wxPanel::DoGetClientData();
     if (*m_wxPanelExtDoGetClientData != NULL){
-      return m_wxPanelExtDoGetClientData(this);
+      return m_wxPanelExtDoGetClientData(this, res);
     }
     else {
       return res;
@@ -5010,7 +5106,7 @@ public:
   {
     wxClientData* res = wxPanel::DoGetClientObject();
     if (*m_wxPanelExtDoGetClientObject != NULL){
-      return m_wxPanelExtDoGetClientObject(this);
+      return m_wxPanelExtDoGetClientObject(this, res);
     }
     else {
       return res;
@@ -5048,12 +5144,23 @@ public:
       return m_wxPanelExtDoGetSizeintPintP(this, width, height);
     }
   }
-  wxPanelExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCPFunc m_wxPanelExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCP = NULL;
-  virtual void DoGetTextExtent(wxString const& string, int* x, int* y, int* descent = __null, int* externalLeading = __null, wxFont const* font = __null) const override
+  wxPanelExtDoGetSizeFromClientSizewxSizeCRFunc m_wxPanelExtDoGetSizeFromClientSizewxSizeCR = NULL;
+  virtual wxSize DoGetSizeFromClientSize(wxSize const& size) const override
   {
-    wxPanel::DoGetTextExtent(string, x, y, descent, externalLeading, font);
+    wxSize res = wxPanel::DoGetSizeFromClientSize(size);
+    if (*m_wxPanelExtDoGetSizeFromClientSizewxSizeCR != NULL){
+      return m_wxPanelExtDoGetSizeFromClientSizewxSizeCR(this, size, res);
+    }
+    else {
+      return res;
+    }
+  }
+  wxPanelExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCPFunc m_wxPanelExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCP = NULL;
+  virtual void DoGetTextExtent(wxString const& string, int* x, int* y, int* descent = __null, int* externalLeading = __null, wxFont const* theFont = __null) const override
+  {
+    wxPanel::DoGetTextExtent(string, x, y, descent, externalLeading, theFont);
     if (*m_wxPanelExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCP != NULL){
-      return m_wxPanelExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCP(this, string, x, y, descent, externalLeading, font);
+      return m_wxPanelExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCP(this, string, x, y, descent, externalLeading, theFont);
     }
   }
   wxPanelExtDoGetVirtualSizeFunc m_wxPanelExtDoGetVirtualSize = NULL;
@@ -5061,7 +5168,7 @@ public:
   {
     wxSize res = wxPanel::DoGetVirtualSize();
     if (*m_wxPanelExtDoGetVirtualSize != NULL){
-      return m_wxPanelExtDoGetVirtualSize(this);
+      return m_wxPanelExtDoGetVirtualSize(this, res);
     }
     else {
       return res;
@@ -5072,7 +5179,7 @@ public:
   {
     wxHitTest res = wxPanel::DoHitTest(x, y);
     if (*m_wxPanelExtDoHitTestwxCoordwxCoord != NULL){
-      return m_wxPanelExtDoHitTestwxCoordwxCoord(this, x, y);
+      return m_wxPanelExtDoHitTestwxCoordwxCoord(this, x, y, res);
     }
     else {
       return res;
@@ -5083,7 +5190,7 @@ public:
   {
     bool res = wxPanel::DoIsExposed(x, y, w, h);
     if (*m_wxPanelExtDoIsExposedintintintint != NULL){
-      return m_wxPanelExtDoIsExposedintintintint(this, x, y, w, h);
+      return m_wxPanelExtDoIsExposedintintintint(this, x, y, w, h, res);
     }
     else {
       return res;
@@ -5094,10 +5201,18 @@ public:
   {
     bool res = wxPanel::DoIsExposed(x, y);
     if (*m_wxPanelExtDoIsExposedintint != NULL){
-      return m_wxPanelExtDoIsExposedintint(this, x, y);
+      return m_wxPanelExtDoIsExposedintint(this, x, y, res);
     }
     else {
       return res;
+    }
+  }
+  wxPanelExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrderFunc m_wxPanelExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrder = NULL;
+  virtual void DoMoveInTabOrder(wxWindow* win, wxWindowBase::WindowOrder move) override
+  {
+    wxPanel::DoMoveInTabOrder(win, move);
+    if (*m_wxPanelExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrder != NULL){
+      return m_wxPanelExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrder(this, win, move);
     }
   }
   wxPanelExtDoMoveWindowintintintintFunc m_wxPanelExtDoMoveWindowintintintint = NULL;
@@ -5113,7 +5228,7 @@ public:
   {
     bool res = wxPanel::DoNavigateIn(flags);
     if (*m_wxPanelExtDoNavigateInint != NULL){
-      return m_wxPanelExtDoNavigateInint(this, flags);
+      return m_wxPanelExtDoNavigateInint(this, flags, res);
     }
     else {
       return res;
@@ -5124,7 +5239,7 @@ public:
   {
     bool res = wxPanel::DoPhase(phase);
     if (*m_wxPanelExtDoPhaseint != NULL){
-      return m_wxPanelExtDoPhaseint(this, phase);
+      return m_wxPanelExtDoPhaseint(this, phase, res);
     }
     else {
       return res;
@@ -5135,7 +5250,7 @@ public:
   {
     bool res = wxPanel::DoPopupMenu(menu, x, y);
     if (*m_wxPanelExtDoPopupMenuwxMenuPintint != NULL){
-      return m_wxPanelExtDoPopupMenuwxMenuPintint(this, menu, x, y);
+      return m_wxPanelExtDoPopupMenuwxMenuPintint(this, menu, x, y, res);
     }
     else {
       return res;
@@ -5258,29 +5373,29 @@ public:
   {
     bool res = wxPanel::Enable(enable);
     if (*m_wxPanelExtEnablebool != NULL){
-      return m_wxPanelExtEnablebool(this, enable);
+      return m_wxPanelExtEnablebool(this, enable, res);
     }
     else {
       return res;
     }
   }
   wxPanelExtEnableTouchEventsintFunc m_wxPanelExtEnableTouchEventsint = NULL;
-  virtual bool EnableTouchEvents(int param0) override
+  virtual bool EnableTouchEvents(int eventsMask) override
   {
-    bool res = wxPanel::EnableTouchEvents(param0);
+    bool res = wxPanel::EnableTouchEvents(eventsMask);
     if (*m_wxPanelExtEnableTouchEventsint != NULL){
-      return m_wxPanelExtEnableTouchEventsint(this, param0);
+      return m_wxPanelExtEnableTouchEventsint(this, eventsMask, res);
     }
     else {
       return res;
     }
   }
   wxPanelExtEnableVisibleFocusboolFunc m_wxPanelExtEnableVisibleFocusbool = NULL;
-  virtual void EnableVisibleFocus(bool param0) override
+  virtual void EnableVisibleFocus(bool enabled) override
   {
-    wxPanel::EnableVisibleFocus(param0);
+    wxPanel::EnableVisibleFocus(enabled);
     if (*m_wxPanelExtEnableVisibleFocusbool != NULL){
-      return m_wxPanelExtEnableVisibleFocusbool(this, param0);
+      return m_wxPanelExtEnableVisibleFocusbool(this, enabled);
     }
   }
   wxPanelExtEndRepositioningChildrenFunc m_wxPanelExtEndRepositioningChildren = NULL;
@@ -5312,7 +5427,7 @@ public:
   {
     wxSize res = wxPanel::GetBestVirtualSize();
     if (*m_wxPanelExtGetBestVirtualSize != NULL){
-      return m_wxPanelExtGetBestVirtualSize(this);
+      return m_wxPanelExtGetBestVirtualSize(this, res);
     }
     else {
       return res;
@@ -5323,7 +5438,7 @@ public:
   {
     int res = wxPanel::GetCharHeight();
     if (*m_wxPanelExtGetCharHeight != NULL){
-      return m_wxPanelExtGetCharHeight(this);
+      return m_wxPanelExtGetCharHeight(this, res);
     }
     else {
       return res;
@@ -5334,7 +5449,7 @@ public:
   {
     int res = wxPanel::GetCharWidth();
     if (*m_wxPanelExtGetCharWidth != NULL){
-      return m_wxPanelExtGetCharWidth(this);
+      return m_wxPanelExtGetCharWidth(this, res);
     }
     else {
       return res;
@@ -5345,7 +5460,7 @@ public:
   {
     wxClassInfo* res = wxPanel::GetClassInfo();
     if (*m_wxPanelExtGetClassInfo != NULL){
-      return m_wxPanelExtGetClassInfo(this);
+      return m_wxPanelExtGetClassInfo(this, res);
     }
     else {
       return res;
@@ -5356,7 +5471,7 @@ public:
   {
     wxPoint res = wxPanel::GetClientAreaOrigin();
     if (*m_wxPanelExtGetClientAreaOrigin != NULL){
-      return m_wxPanelExtGetClientAreaOrigin(this);
+      return m_wxPanelExtGetClientAreaOrigin(this, res);
     }
     else {
       return res;
@@ -5375,7 +5490,7 @@ public:
   {
     double res = wxPanel::GetContentScaleFactor();
     if (*m_wxPanelExtGetContentScaleFactor != NULL){
-      return m_wxPanelExtGetContentScaleFactor(this);
+      return m_wxPanelExtGetContentScaleFactor(this, res);
     }
     else {
       return res;
@@ -5386,7 +5501,7 @@ public:
   {
     wxSize res = wxPanel::GetDPI();
     if (*m_wxPanelExtGetDPI != NULL){
-      return m_wxPanelExtGetDPI(this);
+      return m_wxPanelExtGetDPI(this, res);
     }
     else {
       return res;
@@ -5397,7 +5512,7 @@ public:
   {
     double res = wxPanel::GetDPIScaleFactor();
     if (*m_wxPanelExtGetDPIScaleFactor != NULL){
-      return m_wxPanelExtGetDPIScaleFactor(this);
+      return m_wxPanelExtGetDPIScaleFactor(this, res);
     }
     else {
       return res;
@@ -5408,7 +5523,7 @@ public:
   {
     wxVisualAttributes res = wxPanel::GetDefaultAttributes();
     if (*m_wxPanelExtGetDefaultAttributes != NULL){
-      return m_wxPanelExtGetDefaultAttributes(this);
+      return m_wxPanelExtGetDefaultAttributes(this, res);
     }
     else {
       return res;
@@ -5419,7 +5534,7 @@ public:
   {
     wxBorder res = wxPanel::GetDefaultBorder();
     if (*m_wxPanelExtGetDefaultBorder != NULL){
-      return m_wxPanelExtGetDefaultBorder(this);
+      return m_wxPanelExtGetDefaultBorder(this, res);
     }
     else {
       return res;
@@ -5430,7 +5545,7 @@ public:
   {
     wxBorder res = wxPanel::GetDefaultBorderForControl();
     if (*m_wxPanelExtGetDefaultBorderForControl != NULL){
-      return m_wxPanelExtGetDefaultBorderForControl(this);
+      return m_wxPanelExtGetDefaultBorderForControl(this, res);
     }
     else {
       return res;
@@ -5441,7 +5556,7 @@ public:
   {
     wxDropTarget* res = wxPanel::GetDropTarget();
     if (*m_wxPanelExtGetDropTarget != NULL){
-      return m_wxPanelExtGetDropTarget(this);
+      return m_wxPanelExtGetDropTarget(this, res);
     }
     else {
       return res;
@@ -5452,7 +5567,7 @@ public:
   {
     wxSize res = wxPanel::GetEffectiveMinSize();
     if (*m_wxPanelExtGetEffectiveMinSize != NULL){
-      return m_wxPanelExtGetEffectiveMinSize(this);
+      return m_wxPanelExtGetEffectiveMinSize(this, res);
     }
     else {
       return res;
@@ -5463,7 +5578,7 @@ public:
   {
     wxEventHashTable& res = wxPanel::GetEventHashTable();
     if (*m_wxPanelExtGetEventHashTable != NULL){
-      return m_wxPanelExtGetEventHashTable(this);
+      return m_wxPanelExtGetEventHashTable(this, res);
     }
     else {
       return res;
@@ -5474,7 +5589,7 @@ public:
   {
     wxEventTable const* res = wxPanel::GetEventTable();
     if (*m_wxPanelExtGetEventTable != NULL){
-      return m_wxPanelExtGetEventTable(this);
+      return m_wxPanelExtGetEventTable(this, res);
     }
     else {
       return res;
@@ -5485,7 +5600,7 @@ public:
   {
     WXWidget res = wxPanel::GetHandle();
     if (*m_wxPanelExtGetHandle != NULL){
-      return m_wxPanelExtGetHandle(this);
+      return m_wxPanelExtGetHandle(this, res);
     }
     else {
       return res;
@@ -5496,7 +5611,7 @@ public:
   {
     wxString res = wxPanel::GetHelpTextAtPoint(pt, origin);
     if (*m_wxPanelExtGetHelpTextAtPointwxPointCRwxHelpEventNOrigin != NULL){
-      return m_wxPanelExtGetHelpTextAtPointwxPointCRwxHelpEventNOrigin(this, pt, origin);
+      return m_wxPanelExtGetHelpTextAtPointwxPointCRwxHelpEventNOrigin(this, pt, origin, res);
     }
     else {
       return res;
@@ -5507,7 +5622,7 @@ public:
   {
     wxString res = wxPanel::GetLabel();
     if (*m_wxPanelExtGetLabel != NULL){
-      return m_wxPanelExtGetLabel(this);
+      return m_wxPanelExtGetLabel(this, res);
     }
     else {
       return res;
@@ -5518,7 +5633,7 @@ public:
   {
     wxLayoutDirection res = wxPanel::GetLayoutDirection();
     if (*m_wxPanelExtGetLayoutDirection != NULL){
-      return m_wxPanelExtGetLayoutDirection(this);
+      return m_wxPanelExtGetLayoutDirection(this, res);
     }
     else {
       return res;
@@ -5529,7 +5644,7 @@ public:
   {
     wxWindow* res = wxPanel::GetMainWindowOfCompositeControl();
     if (*m_wxPanelExtGetMainWindowOfCompositeControl != NULL){
-      return m_wxPanelExtGetMainWindowOfCompositeControl(this);
+      return m_wxPanelExtGetMainWindowOfCompositeControl(this, res);
     }
     else {
       return res;
@@ -5540,7 +5655,7 @@ public:
   {
     wxSize res = wxPanel::GetMaxClientSize();
     if (*m_wxPanelExtGetMaxClientSize != NULL){
-      return m_wxPanelExtGetMaxClientSize(this);
+      return m_wxPanelExtGetMaxClientSize(this, res);
     }
     else {
       return res;
@@ -5551,7 +5666,7 @@ public:
   {
     wxSize res = wxPanel::GetMaxSize();
     if (*m_wxPanelExtGetMaxSize != NULL){
-      return m_wxPanelExtGetMaxSize(this);
+      return m_wxPanelExtGetMaxSize(this, res);
     }
     else {
       return res;
@@ -5562,7 +5677,7 @@ public:
   {
     wxSize res = wxPanel::GetMinClientSize();
     if (*m_wxPanelExtGetMinClientSize != NULL){
-      return m_wxPanelExtGetMinClientSize(this);
+      return m_wxPanelExtGetMinClientSize(this, res);
     }
     else {
       return res;
@@ -5573,7 +5688,7 @@ public:
   {
     wxSize res = wxPanel::GetMinSize();
     if (*m_wxPanelExtGetMinSize != NULL){
-      return m_wxPanelExtGetMinSize(this);
+      return m_wxPanelExtGetMinSize(this, res);
     }
     else {
       return res;
@@ -5584,7 +5699,7 @@ public:
   {
     wxString res = wxPanel::GetName();
     if (*m_wxPanelExtGetName != NULL){
-      return m_wxPanelExtGetName(this);
+      return m_wxPanelExtGetName(this, res);
     }
     else {
       return res;
@@ -5603,7 +5718,7 @@ public:
   {
     int res = wxPanel::GetScrollPos(orient);
     if (*m_wxPanelExtGetScrollPosint != NULL){
-      return m_wxPanelExtGetScrollPosint(this, orient);
+      return m_wxPanelExtGetScrollPosint(this, orient, res);
     }
     else {
       return res;
@@ -5614,7 +5729,7 @@ public:
   {
     int res = wxPanel::GetScrollRange(orient);
     if (*m_wxPanelExtGetScrollRangeint != NULL){
-      return m_wxPanelExtGetScrollRangeint(this, orient);
+      return m_wxPanelExtGetScrollRangeint(this, orient, res);
     }
     else {
       return res;
@@ -5625,7 +5740,7 @@ public:
   {
     int res = wxPanel::GetScrollThumb(orient);
     if (*m_wxPanelExtGetScrollThumbint != NULL){
-      return m_wxPanelExtGetScrollThumbint(this, orient);
+      return m_wxPanelExtGetScrollThumbint(this, orient, res);
     }
     else {
       return res;
@@ -5644,7 +5759,18 @@ public:
   {
     bool res = wxPanel::GetThemeEnabled();
     if (*m_wxPanelExtGetThemeEnabled != NULL){
-      return m_wxPanelExtGetThemeEnabled(this);
+      return m_wxPanelExtGetThemeEnabled(this, res);
+    }
+    else {
+      return res;
+    }
+  }
+  wxPanelExtGetTransparentFunc m_wxPanelExtGetTransparent = NULL;
+  virtual wxByte GetTransparent() const override
+  {
+    wxByte res = wxPanel::GetTransparent();
+    if (*m_wxPanelExtGetTransparent != NULL){
+      return m_wxPanelExtGetTransparent(this, res);
     }
     else {
       return res;
@@ -5655,7 +5781,7 @@ public:
   {
     wxValidator* res = wxPanel::GetValidator();
     if (*m_wxPanelExtGetValidator != NULL){
-      return m_wxPanelExtGetValidator(this);
+      return m_wxPanelExtGetValidator(this, res);
     }
     else {
       return res;
@@ -5666,7 +5792,7 @@ public:
   {
     wxSize res = wxPanel::GetWindowBorderSize();
     if (*m_wxPanelExtGetWindowBorderSize != NULL){
-      return m_wxPanelExtGetWindowBorderSize(this);
+      return m_wxPanelExtGetWindowBorderSize(this, res);
     }
     else {
       return res;
@@ -5677,7 +5803,7 @@ public:
   {
     long res = wxPanel::GetWindowStyleFlag();
     if (*m_wxPanelExtGetWindowStyleFlag != NULL){
-      return m_wxPanelExtGetWindowStyleFlag(this);
+      return m_wxPanelExtGetWindowStyleFlag(this, res);
     }
     else {
       return res;
@@ -5688,7 +5814,7 @@ public:
   {
     bool res = wxPanel::HasCapture();
     if (*m_wxPanelExtHasCapture != NULL){
-      return m_wxPanelExtHasCapture(this);
+      return m_wxPanelExtHasCapture(this, res);
     }
     else {
       return res;
@@ -5699,7 +5825,7 @@ public:
   {
     bool res = wxPanel::HasFocus();
     if (*m_wxPanelExtHasFocus != NULL){
-      return m_wxPanelExtHasFocus(this);
+      return m_wxPanelExtHasFocus(this, res);
     }
     else {
       return res;
@@ -5710,7 +5836,7 @@ public:
   {
     bool res = wxPanel::HasMultiplePages();
     if (*m_wxPanelExtHasMultiplePages != NULL){
-      return m_wxPanelExtHasMultiplePages(this);
+      return m_wxPanelExtHasMultiplePages(this, res);
     }
     else {
       return res;
@@ -5721,18 +5847,18 @@ public:
   {
     bool res = wxPanel::HasTransparentBackground();
     if (*m_wxPanelExtHasTransparentBackground != NULL){
-      return m_wxPanelExtHasTransparentBackground(this);
+      return m_wxPanelExtHasTransparentBackground(this, res);
     }
     else {
       return res;
     }
   }
   wxPanelExtHideWithEffectwxShowEffectunsignedintFunc m_wxPanelExtHideWithEffectwxShowEffectunsignedint = NULL;
-  virtual bool HideWithEffect(wxShowEffect param0, unsigned int param1 = 0) override
+  virtual bool HideWithEffect(wxShowEffect effect, unsigned int timeout = 0) override
   {
-    bool res = wxPanel::HideWithEffect(param0, param1);
+    bool res = wxPanel::HideWithEffect(effect, timeout);
     if (*m_wxPanelExtHideWithEffectwxShowEffectunsignedint != NULL){
-      return m_wxPanelExtHideWithEffectwxShowEffectunsignedint(this, param0, param1);
+      return m_wxPanelExtHideWithEffectwxShowEffectunsignedint(this, effect, timeout, res);
     }
     else {
       return res;
@@ -5743,7 +5869,7 @@ public:
   {
     bool res = wxPanel::InformFirstDirection(direction, size, availableOtherDir);
     if (*m_wxPanelExtInformFirstDirectionintintint != NULL){
-      return m_wxPanelExtInformFirstDirectionintintint(this, direction, size, availableOtherDir);
+      return m_wxPanelExtInformFirstDirectionintintint(this, direction, size, availableOtherDir, res);
     }
     else {
       return res;
@@ -5770,7 +5896,7 @@ public:
   {
     bool res = wxPanel::IsClientAreaChild(param0);
     if (*m_wxPanelExtIsClientAreaChildwxWindowCP != NULL){
-      return m_wxPanelExtIsClientAreaChildwxWindowCP(this, param0);
+      return m_wxPanelExtIsClientAreaChildwxWindowCP(this, param0, res);
     }
     else {
       return res;
@@ -5781,7 +5907,7 @@ public:
   {
     bool res = wxPanel::IsDoubleBuffered();
     if (*m_wxPanelExtIsDoubleBuffered != NULL){
-      return m_wxPanelExtIsDoubleBuffered(this);
+      return m_wxPanelExtIsDoubleBuffered(this, res);
     }
     else {
       return res;
@@ -5792,18 +5918,18 @@ public:
   {
     bool res = wxPanel::IsRetained();
     if (*m_wxPanelExtIsRetained != NULL){
-      return m_wxPanelExtIsRetained(this);
+      return m_wxPanelExtIsRetained(this, res);
     }
     else {
       return res;
     }
   }
   wxPanelExtIsScrollbarAlwaysShownintFunc m_wxPanelExtIsScrollbarAlwaysShownint = NULL;
-  virtual bool IsScrollbarAlwaysShown(int param0) const override
+  virtual bool IsScrollbarAlwaysShown(int orient) const override
   {
-    bool res = wxPanel::IsScrollbarAlwaysShown(param0);
+    bool res = wxPanel::IsScrollbarAlwaysShown(orient);
     if (*m_wxPanelExtIsScrollbarAlwaysShownint != NULL){
-      return m_wxPanelExtIsScrollbarAlwaysShownint(this, param0);
+      return m_wxPanelExtIsScrollbarAlwaysShownint(this, orient, res);
     }
     else {
       return res;
@@ -5814,7 +5940,7 @@ public:
   {
     bool res = wxPanel::IsShown();
     if (*m_wxPanelExtIsShown != NULL){
-      return m_wxPanelExtIsShown(this);
+      return m_wxPanelExtIsShown(this, res);
     }
     else {
       return res;
@@ -5825,7 +5951,7 @@ public:
   {
     bool res = wxPanel::IsShownOnScreen();
     if (*m_wxPanelExtIsShownOnScreen != NULL){
-      return m_wxPanelExtIsShownOnScreen(this);
+      return m_wxPanelExtIsShownOnScreen(this, res);
     }
     else {
       return res;
@@ -5836,7 +5962,7 @@ public:
   {
     bool res = wxPanel::IsThisEnabled();
     if (*m_wxPanelExtIsThisEnabled != NULL){
-      return m_wxPanelExtIsThisEnabled(this);
+      return m_wxPanelExtIsThisEnabled(this, res);
     }
     else {
       return res;
@@ -5847,7 +5973,7 @@ public:
   {
     bool res = wxPanel::IsTopLevel();
     if (*m_wxPanelExtIsTopLevel != NULL){
-      return m_wxPanelExtIsTopLevel(this);
+      return m_wxPanelExtIsTopLevel(this, res);
     }
     else {
       return res;
@@ -5858,7 +5984,7 @@ public:
   {
     bool res = wxPanel::IsTopNavigationDomain(param0);
     if (*m_wxPanelExtIsTopNavigationDomainwxWindowBaseNNavigationKind != NULL){
-      return m_wxPanelExtIsTopNavigationDomainwxWindowBaseNNavigationKind(this, param0);
+      return m_wxPanelExtIsTopNavigationDomainwxWindowBaseNNavigationKind(this, param0, res);
     }
     else {
       return res;
@@ -5869,7 +5995,7 @@ public:
   {
     bool res = wxPanel::IsTransparentBackgroundSupported(reason);
     if (*m_wxPanelExtIsTransparentBackgroundSupportedwxStringP != NULL){
-      return m_wxPanelExtIsTransparentBackgroundSupportedwxStringP(this, reason);
+      return m_wxPanelExtIsTransparentBackgroundSupportedwxStringP(this, reason, res);
     }
     else {
       return res;
@@ -5880,7 +6006,7 @@ public:
   {
     bool res = wxPanel::Layout();
     if (*m_wxPanelExtLayout != NULL){
-      return m_wxPanelExtLayout(this);
+      return m_wxPanelExtLayout(this, res);
     }
     else {
       return res;
@@ -5891,7 +6017,7 @@ public:
   {
     bool res = wxPanel::LayoutPhase1(noChanges);
     if (*m_wxPanelExtLayoutPhase1intP != NULL){
-      return m_wxPanelExtLayoutPhase1intP(this, noChanges);
+      return m_wxPanelExtLayoutPhase1intP(this, noChanges, res);
     }
     else {
       return res;
@@ -5902,7 +6028,7 @@ public:
   {
     bool res = wxPanel::LayoutPhase2(noChanges);
     if (*m_wxPanelExtLayoutPhase2intP != NULL){
-      return m_wxPanelExtLayoutPhase2intP(this, noChanges);
+      return m_wxPanelExtLayoutPhase2intP(this, noChanges, res);
     }
     else {
       return res;
@@ -5929,7 +6055,7 @@ public:
   {
     bool res = wxPanel::OnDynamicBind(param0);
     if (*m_wxPanelExtOnDynamicBindwxDynamicEventTableEntryR != NULL){
-      return m_wxPanelExtOnDynamicBindwxDynamicEventTableEntryR(this, param0);
+      return m_wxPanelExtOnDynamicBindwxDynamicEventTableEntryR(this, param0, res);
     }
     else {
       return res;
@@ -5956,7 +6082,7 @@ public:
   {
     bool res = wxPanel::ProcessEvent(event);
     if (*m_wxPanelExtProcessEventwxEventR != NULL){
-      return m_wxPanelExtProcessEventwxEventR(this, event);
+      return m_wxPanelExtProcessEventwxEventR(this, event, res);
     }
     else {
       return res;
@@ -5979,7 +6105,7 @@ public:
     }
   }
   wxPanelExtRefreshboolwxRectCPFunc m_wxPanelExtRefreshboolwxRectCP = NULL;
-  virtual void Refresh(bool eraseBackground = true, wxRect const* rect = (const wxRect*)__null) override
+  virtual void Refresh(bool eraseBackground = true, wxRect const* rect = __null) override
   {
     wxPanel::Refresh(eraseBackground, rect);
     if (*m_wxPanelExtRefreshboolwxRectCP != NULL){
@@ -5991,7 +6117,7 @@ public:
   {
     bool res = wxPanel::RegisterHotKey(hotkeyId, modifiers, keycode);
     if (*m_wxPanelExtRegisterHotKeyintintint != NULL){
-      return m_wxPanelExtRegisterHotKeyintintint(this, hotkeyId, modifiers, keycode);
+      return m_wxPanelExtRegisterHotKeyintintint(this, hotkeyId, modifiers, keycode, res);
     }
     else {
       return res;
@@ -6010,7 +6136,7 @@ public:
   {
     bool res = wxPanel::Reparent(newParent);
     if (*m_wxPanelExtReparentwxWindowBaseP != NULL){
-      return m_wxPanelExtReparentwxWindowBaseP(this, newParent);
+      return m_wxPanelExtReparentwxWindowBaseP(this, newParent, res);
     }
     else {
       return res;
@@ -6021,7 +6147,7 @@ public:
   {
     bool res = wxPanel::ScrollLines(param0);
     if (*m_wxPanelExtScrollLinesint != NULL){
-      return m_wxPanelExtScrollLinesint(this, param0);
+      return m_wxPanelExtScrollLinesint(this, param0, res);
     }
     else {
       return res;
@@ -6032,7 +6158,7 @@ public:
   {
     bool res = wxPanel::ScrollPages(param0);
     if (*m_wxPanelExtScrollPagesint != NULL){
-      return m_wxPanelExtScrollPagesint(this, param0);
+      return m_wxPanelExtScrollPagesint(this, param0, res);
     }
     else {
       return res;
@@ -6051,7 +6177,7 @@ public:
   {
     bool res = wxPanel::SearchEventTable(table, event);
     if (*m_wxPanelExtSearchEventTablewxEventTableRwxEventR != NULL){
-      return m_wxPanelExtSearchEventTablewxEventTableRwxEventR(this, table, event);
+      return m_wxPanelExtSearchEventTablewxEventTableRwxEventR(this, table, event, res);
     }
     else {
       return res;
@@ -6062,7 +6188,7 @@ public:
   {
     bool res = wxPanel::SendIdleEvents(event);
     if (*m_wxPanelExtSendIdleEventswxIdleEventR != NULL){
-      return m_wxPanelExtSendIdleEventswxIdleEventR(this, event);
+      return m_wxPanelExtSendIdleEventswxIdleEventR(this, event, res);
     }
     else {
       return res;
@@ -6089,7 +6215,7 @@ public:
   {
     bool res = wxPanel::SetBackgroundColour(colour);
     if (*m_wxPanelExtSetBackgroundColourwxColourCR != NULL){
-      return m_wxPanelExtSetBackgroundColourwxColourCR(this, colour);
+      return m_wxPanelExtSetBackgroundColourwxColourCR(this, colour, res);
     }
     else {
       return res;
@@ -6100,7 +6226,7 @@ public:
   {
     bool res = wxPanel::SetBackgroundStyle(style);
     if (*m_wxPanelExtSetBackgroundStylewxBackgroundStyle != NULL){
-      return m_wxPanelExtSetBackgroundStylewxBackgroundStyle(this, style);
+      return m_wxPanelExtSetBackgroundStylewxBackgroundStyle(this, style, res);
     }
     else {
       return res;
@@ -6127,7 +6253,7 @@ public:
   {
     bool res = wxPanel::SetCursor(cursor);
     if (*m_wxPanelExtSetCursorwxCursorCR != NULL){
-      return m_wxPanelExtSetCursorwxCursorCR(this, cursor);
+      return m_wxPanelExtSetCursorwxCursorCR(this, cursor, res);
     }
     else {
       return res;
@@ -6178,7 +6304,7 @@ public:
   {
     bool res = wxPanel::SetFont(font);
     if (*m_wxPanelExtSetFontwxFontCR != NULL){
-      return m_wxPanelExtSetFontwxFontCR(this, font);
+      return m_wxPanelExtSetFontwxFontCR(this, font, res);
     }
     else {
       return res;
@@ -6189,7 +6315,7 @@ public:
   {
     bool res = wxPanel::SetForegroundColour(colour);
     if (*m_wxPanelExtSetForegroundColourwxColourCR != NULL){
-      return m_wxPanelExtSetForegroundColourwxColourCR(this, colour);
+      return m_wxPanelExtSetForegroundColourwxColourCR(this, colour, res);
     }
     else {
       return res;
@@ -6284,11 +6410,11 @@ public:
     }
   }
   wxPanelExtSetScrollbarintintintintboolFunc m_wxPanelExtSetScrollbarintintintintbool = NULL;
-  virtual void SetScrollbar(int orient, int pos, int thumbvisible, int range, bool refresh = true) override
+  virtual void SetScrollbar(int orient, int pos, int thumbVisible, int range, bool refresh = true) override
   {
-    wxPanel::SetScrollbar(orient, pos, thumbvisible, range, refresh);
+    wxPanel::SetScrollbar(orient, pos, thumbVisible, range, refresh);
     if (*m_wxPanelExtSetScrollbarintintintintbool != NULL){
-      return m_wxPanelExtSetScrollbarintintintintbool(this, orient, pos, thumbvisible, range, refresh);
+      return m_wxPanelExtSetScrollbarintintintintbool(this, orient, pos, thumbVisible, range, refresh);
     }
   }
   wxPanelExtSetSizeConstraintintintintintFunc m_wxPanelExtSetSizeConstraintintintintint = NULL;
@@ -6316,11 +6442,11 @@ public:
     }
   }
   wxPanelExtSetTransparentwxByteFunc m_wxPanelExtSetTransparentwxByte = NULL;
-  virtual bool SetTransparent(wxByte param0) override
+  virtual bool SetTransparent(wxByte alpha) override
   {
-    bool res = wxPanel::SetTransparent(param0);
+    bool res = wxPanel::SetTransparent(alpha);
     if (*m_wxPanelExtSetTransparentwxByte != NULL){
-      return m_wxPanelExtSetTransparentwxByte(this, param0);
+      return m_wxPanelExtSetTransparentwxByte(this, alpha, res);
     }
     else {
       return res;
@@ -6347,7 +6473,7 @@ public:
   {
     bool res = wxPanel::ShouldInheritColours();
     if (*m_wxPanelExtShouldInheritColours != NULL){
-      return m_wxPanelExtShouldInheritColours(this);
+      return m_wxPanelExtShouldInheritColours(this, res);
     }
     else {
       return res;
@@ -6358,18 +6484,18 @@ public:
   {
     bool res = wxPanel::Show(show);
     if (*m_wxPanelExtShowbool != NULL){
-      return m_wxPanelExtShowbool(this, show);
+      return m_wxPanelExtShowbool(this, show, res);
     }
     else {
       return res;
     }
   }
   wxPanelExtShowWithEffectwxShowEffectunsignedintFunc m_wxPanelExtShowWithEffectwxShowEffectunsignedint = NULL;
-  virtual bool ShowWithEffect(wxShowEffect param0, unsigned int param1 = 0) override
+  virtual bool ShowWithEffect(wxShowEffect effect, unsigned int timeout = 0) override
   {
-    bool res = wxPanel::ShowWithEffect(param0, param1);
+    bool res = wxPanel::ShowWithEffect(effect, timeout);
     if (*m_wxPanelExtShowWithEffectwxShowEffectunsignedint != NULL){
-      return m_wxPanelExtShowWithEffectwxShowEffectunsignedint(this, param0, param1);
+      return m_wxPanelExtShowWithEffectwxShowEffectunsignedint(this, effect, timeout, res);
     }
     else {
       return res;
@@ -6380,7 +6506,7 @@ public:
   {
     bool res = wxPanel::TransferDataFromWindow();
     if (*m_wxPanelExtTransferDataFromWindow != NULL){
-      return m_wxPanelExtTransferDataFromWindow(this);
+      return m_wxPanelExtTransferDataFromWindow(this, res);
     }
     else {
       return res;
@@ -6391,10 +6517,18 @@ public:
   {
     bool res = wxPanel::TransferDataToWindow();
     if (*m_wxPanelExtTransferDataToWindow != NULL){
-      return m_wxPanelExtTransferDataToWindow(this);
+      return m_wxPanelExtTransferDataToWindow(this, res);
     }
     else {
       return res;
+    }
+  }
+  wxPanelExtTriggerScrollEventwxEventTypeFunc m_wxPanelExtTriggerScrollEventwxEventType = NULL;
+  virtual void TriggerScrollEvent(wxEventType scrollEvent) override
+  {
+    wxPanel::TriggerScrollEvent(scrollEvent);
+    if (*m_wxPanelExtTriggerScrollEventwxEventType != NULL){
+      return m_wxPanelExtTriggerScrollEventwxEventType(this, scrollEvent);
     }
   }
   wxPanelExtTryAfterwxEventRFunc m_wxPanelExtTryAfterwxEventR = NULL;
@@ -6402,7 +6536,7 @@ public:
   {
     bool res = wxPanel::TryAfter(event);
     if (*m_wxPanelExtTryAfterwxEventR != NULL){
-      return m_wxPanelExtTryAfterwxEventR(this, event);
+      return m_wxPanelExtTryAfterwxEventR(this, event, res);
     }
     else {
       return res;
@@ -6413,7 +6547,7 @@ public:
   {
     bool res = wxPanel::TryBefore(event);
     if (*m_wxPanelExtTryBeforewxEventR != NULL){
-      return m_wxPanelExtTryBeforewxEventR(this, event);
+      return m_wxPanelExtTryBeforewxEventR(this, event, res);
     }
     else {
       return res;
@@ -6424,7 +6558,7 @@ public:
   {
     bool res = wxPanel::UnregisterHotKey(hotkeyId);
     if (*m_wxPanelExtUnregisterHotKeyint != NULL){
-      return m_wxPanelExtUnregisterHotKeyint(this, hotkeyId);
+      return m_wxPanelExtUnregisterHotKeyint(this, hotkeyId, res);
     }
     else {
       return res;
@@ -6451,7 +6585,7 @@ public:
   {
     bool res = wxPanel::Validate();
     if (*m_wxPanelExtValidate != NULL){
-      return m_wxPanelExtValidate(this);
+      return m_wxPanelExtValidate(this, res);
     }
     else {
       return res;
@@ -6470,7 +6604,7 @@ public:
   {
     wxTextEntry const* res = wxPanel::WXGetTextEntry();
     if (*m_wxPanelExtWXGetTextEntry != NULL){
-      return m_wxPanelExtWXGetTextEntry(this);
+      return m_wxPanelExtWXGetTextEntry(this, res);
     }
     else {
       return res;
@@ -6481,7 +6615,7 @@ public:
   {
     void* res = wxPanel::WXReservedEvtHandler1(param0);
     if (*m_wxPanelExtWXReservedEvtHandler1voidP != NULL){
-      return m_wxPanelExtWXReservedEvtHandler1voidP(this, param0);
+      return m_wxPanelExtWXReservedEvtHandler1voidP(this, param0, res);
     }
     else {
       return res;
@@ -6492,7 +6626,7 @@ public:
   {
     void* res = wxPanel::WXReservedEvtHandler2(param0);
     if (*m_wxPanelExtWXReservedEvtHandler2voidP != NULL){
-      return m_wxPanelExtWXReservedEvtHandler2voidP(this, param0);
+      return m_wxPanelExtWXReservedEvtHandler2voidP(this, param0, res);
     }
     else {
       return res;
@@ -6503,7 +6637,7 @@ public:
   {
     void* res = wxPanel::WXReservedWindow1(param0);
     if (*m_wxPanelExtWXReservedWindow1voidP != NULL){
-      return m_wxPanelExtWXReservedWindow1voidP(this, param0);
+      return m_wxPanelExtWXReservedWindow1voidP(this, param0, res);
     }
     else {
       return res;
@@ -6514,7 +6648,7 @@ public:
   {
     void* res = wxPanel::WXReservedWindow2(param0);
     if (*m_wxPanelExtWXReservedWindow2voidP != NULL){
-      return m_wxPanelExtWXReservedWindow2voidP(this, param0);
+      return m_wxPanelExtWXReservedWindow2voidP(this, param0, res);
     }
     else {
       return res;
@@ -6525,7 +6659,7 @@ public:
   {
     void* res = wxPanel::WXReservedWindow3(param0);
     if (*m_wxPanelExtWXReservedWindow3voidP != NULL){
-      return m_wxPanelExtWXReservedWindow3voidP(this, param0);
+      return m_wxPanelExtWXReservedWindow3voidP(this, param0, res);
     }
     else {
       return res;
@@ -6552,13 +6686,13 @@ public:
   {
     wxSize res = wxPanel::WindowToClientSize(size);
     if (*m_wxPanelExtWindowToClientSizewxSizeCR != NULL){
-      return m_wxPanelExtWindowToClientSizewxSizeCR(this, size);
+      return m_wxPanelExtWindowToClientSizewxSizeCR(this, size, res);
     }
     else {
       return res;
     }
   }
-  wxPanelExt(wxPanelExtAcceptsFocusFunc a_AcceptsFocus, wxPanelExtAcceptsFocusFromKeyboardFunc a_AcceptsFocusFromKeyboard, wxPanelExtAcceptsFocusRecursivelyFunc a_AcceptsFocusRecursively, wxPanelExtAddChildwxWindowBasePFunc a_AddChildwxWindowBaseP, wxPanelExtAddPendingEventwxEventCRFunc a_AddPendingEventwxEventCR, wxPanelExtAdjustForLayoutDirectionwxCoordwxCoordwxCoordFunc a_AdjustForLayoutDirectionwxCoordwxCoordwxCoord, wxPanelExtAdjustForParentClientOriginintRintRintFunc a_AdjustForParentClientOriginintRintRint, wxPanelExtAlwaysShowScrollbarsboolboolFunc a_AlwaysShowScrollbarsboolbool, wxPanelExtAssociateHandleWXWidgetFunc a_AssociateHandleWXWidget, wxPanelExtBeginRepositioningChildrenFunc a_BeginRepositioningChildren, wxPanelExtCanApplyThemeBorderFunc a_CanApplyThemeBorder, wxPanelExtCanBeFocusedFunc a_CanBeFocused, wxPanelExtCanBeOutsideClientAreaFunc a_CanBeOutsideClientArea, wxPanelExtCanScrollintFunc a_CanScrollint, wxPanelExtCanSetTransparentFunc a_CanSetTransparent, wxPanelExtClearBackgroundFunc a_ClearBackground, wxPanelExtClientToWindowSizewxSizeCRFunc a_ClientToWindowSizewxSizeCR, wxPanelExtCloneRefDatawxObjectRefDataCPFunc a_CloneRefDatawxObjectRefDataCP, wxPanelExtCreateRefDataFunc a_CreateRefData, wxPanelExtDestroyFunc a_Destroy, wxPanelExtDissociateHandleFunc a_DissociateHandle, wxPanelExtDoCaptureMouseFunc a_DoCaptureMouse, wxPanelExtDoCentreintFunc a_DoCentreint, wxPanelExtDoClientToScreenintPintPFunc a_DoClientToScreenintPintP, wxPanelExtDoEnableboolFunc a_DoEnablebool, wxPanelExtDoFreezeFunc a_DoFreeze, wxPanelExtDoGetBestClientHeightintFunc a_DoGetBestClientHeightint, wxPanelExtDoGetBestClientSizeFunc a_DoGetBestClientSize, wxPanelExtDoGetBestClientWidthintFunc a_DoGetBestClientWidthint, wxPanelExtDoGetBestSizeFunc a_DoGetBestSize, wxPanelExtDoGetClientDataFunc a_DoGetClientData, wxPanelExtDoGetClientObjectFunc a_DoGetClientObject, wxPanelExtDoGetClientSizeintPintPFunc a_DoGetClientSizeintPintP, wxPanelExtDoGetPositionintPintPFunc a_DoGetPositionintPintP, wxPanelExtDoGetScreenPositionintPintPFunc a_DoGetScreenPositionintPintP, wxPanelExtDoGetSizeintPintPFunc a_DoGetSizeintPintP, wxPanelExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCPFunc a_DoGetTextExtentwxStringCRintPintPintPintPwxFontCP, wxPanelExtDoGetVirtualSizeFunc a_DoGetVirtualSize, wxPanelExtDoHitTestwxCoordwxCoordFunc a_DoHitTestwxCoordwxCoord, wxPanelExtDoIsExposedintintintintFunc a_DoIsExposedintintintint, wxPanelExtDoIsExposedintintFunc a_DoIsExposedintint, wxPanelExtDoMoveWindowintintintintFunc a_DoMoveWindowintintintint, wxPanelExtDoNavigateInintFunc a_DoNavigateInint, wxPanelExtDoPhaseintFunc a_DoPhaseint, wxPanelExtDoPopupMenuwxMenuPintintFunc a_DoPopupMenuwxMenuPintint, wxPanelExtDoReleaseMouseFunc a_DoReleaseMouse, wxPanelExtDoScreenToClientintPintPFunc a_DoScreenToClientintPintP, wxPanelExtDoSetClientDatavoidPFunc a_DoSetClientDatavoidP, wxPanelExtDoSetClientObjectwxClientDataPFunc a_DoSetClientObjectwxClientDataP, wxPanelExtDoSetClientSizeintintFunc a_DoSetClientSizeintint, wxPanelExtDoSetSizeintintintintintFunc a_DoSetSizeintintintintint, wxPanelExtDoSetSizeHintsintintintintintintFunc a_DoSetSizeHintsintintintintintint, wxPanelExtDoSetToolTipwxToolTipPFunc a_DoSetToolTipwxToolTipP, wxPanelExtDoSetToolTipTextwxStringCRFunc a_DoSetToolTipTextwxStringCR, wxPanelExtDoSetVirtualSizeintintFunc a_DoSetVirtualSizeintint, wxPanelExtDoSetWindowVariantwxWindowVariantFunc a_DoSetWindowVariantwxWindowVariant, wxPanelExtDoThawFunc a_DoThaw, wxPanelExtDoUpdateWindowUIwxUpdateUIEventRFunc a_DoUpdateWindowUIwxUpdateUIEventR, wxPanelExtDragAcceptFilesboolFunc a_DragAcceptFilesbool, wxPanelExtEnableboolFunc a_Enablebool, wxPanelExtEnableTouchEventsintFunc a_EnableTouchEventsint, wxPanelExtEnableVisibleFocusboolFunc a_EnableVisibleFocusbool, wxPanelExtEndRepositioningChildrenFunc a_EndRepositioningChildren, wxPanelExtFitFunc a_Fit, wxPanelExtFitInsideFunc a_FitInside, wxPanelExtGetBestVirtualSizeFunc a_GetBestVirtualSize, wxPanelExtGetCharHeightFunc a_GetCharHeight, wxPanelExtGetCharWidthFunc a_GetCharWidth, wxPanelExtGetClassInfoFunc a_GetClassInfo, wxPanelExtGetClientAreaOriginFunc a_GetClientAreaOrigin, wxPanelExtGetClientSizeConstraintintPintPFunc a_GetClientSizeConstraintintPintP, wxPanelExtGetContentScaleFactorFunc a_GetContentScaleFactor, wxPanelExtGetDPIFunc a_GetDPI, wxPanelExtGetDPIScaleFactorFunc a_GetDPIScaleFactor, wxPanelExtGetDefaultAttributesFunc a_GetDefaultAttributes, wxPanelExtGetDefaultBorderFunc a_GetDefaultBorder, wxPanelExtGetDefaultBorderForControlFunc a_GetDefaultBorderForControl, wxPanelExtGetDropTargetFunc a_GetDropTarget, wxPanelExtGetEffectiveMinSizeFunc a_GetEffectiveMinSize, wxPanelExtGetEventHashTableFunc a_GetEventHashTable, wxPanelExtGetEventTableFunc a_GetEventTable, wxPanelExtGetHandleFunc a_GetHandle, wxPanelExtGetHelpTextAtPointwxPointCRwxHelpEventNOriginFunc a_GetHelpTextAtPointwxPointCRwxHelpEventNOrigin, wxPanelExtGetLabelFunc a_GetLabel, wxPanelExtGetLayoutDirectionFunc a_GetLayoutDirection, wxPanelExtGetMainWindowOfCompositeControlFunc a_GetMainWindowOfCompositeControl, wxPanelExtGetMaxClientSizeFunc a_GetMaxClientSize, wxPanelExtGetMaxSizeFunc a_GetMaxSize, wxPanelExtGetMinClientSizeFunc a_GetMinClientSize, wxPanelExtGetMinSizeFunc a_GetMinSize, wxPanelExtGetNameFunc a_GetName, wxPanelExtGetPositionConstraintintPintPFunc a_GetPositionConstraintintPintP, wxPanelExtGetScrollPosintFunc a_GetScrollPosint, wxPanelExtGetScrollRangeintFunc a_GetScrollRangeint, wxPanelExtGetScrollThumbintFunc a_GetScrollThumbint, wxPanelExtGetSizeConstraintintPintPFunc a_GetSizeConstraintintPintP, wxPanelExtGetThemeEnabledFunc a_GetThemeEnabled, wxPanelExtGetValidatorFunc a_GetValidator, wxPanelExtGetWindowBorderSizeFunc a_GetWindowBorderSize, wxPanelExtGetWindowStyleFlagFunc a_GetWindowStyleFlag, wxPanelExtHasCaptureFunc a_HasCapture, wxPanelExtHasFocusFunc a_HasFocus, wxPanelExtHasMultiplePagesFunc a_HasMultiplePages, wxPanelExtHasTransparentBackgroundFunc a_HasTransparentBackground, wxPanelExtHideWithEffectwxShowEffectunsignedintFunc a_HideWithEffectwxShowEffectunsignedint, wxPanelExtInformFirstDirectionintintintFunc a_InformFirstDirectionintintint, wxPanelExtInheritAttributesFunc a_InheritAttributes, wxPanelExtInitDialogFunc a_InitDialog, wxPanelExtIsClientAreaChildwxWindowCPFunc a_IsClientAreaChildwxWindowCP, wxPanelExtIsDoubleBufferedFunc a_IsDoubleBuffered, wxPanelExtIsRetainedFunc a_IsRetained, wxPanelExtIsScrollbarAlwaysShownintFunc a_IsScrollbarAlwaysShownint, wxPanelExtIsShownFunc a_IsShown, wxPanelExtIsShownOnScreenFunc a_IsShownOnScreen, wxPanelExtIsThisEnabledFunc a_IsThisEnabled, wxPanelExtIsTopLevelFunc a_IsTopLevel, wxPanelExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc a_IsTopNavigationDomainwxWindowBaseNNavigationKind, wxPanelExtIsTransparentBackgroundSupportedwxStringPFunc a_IsTransparentBackgroundSupportedwxStringP, wxPanelExtLayoutFunc a_Layout, wxPanelExtLayoutPhase1intPFunc a_LayoutPhase1intP, wxPanelExtLayoutPhase2intPFunc a_LayoutPhase2intP, wxPanelExtLowerFunc a_Lower, wxPanelExtMoveConstraintintintFunc a_MoveConstraintintint, wxPanelExtOnDynamicBindwxDynamicEventTableEntryRFunc a_OnDynamicBindwxDynamicEventTableEntryR, wxPanelExtOnInternalIdleFunc a_OnInternalIdle, wxPanelExtPrepareDCwxDCRFunc a_PrepareDCwxDCR, wxPanelExtProcessEventwxEventRFunc a_ProcessEventwxEventR, wxPanelExtQueueEventwxEventPFunc a_QueueEventwxEventP, wxPanelExtRaiseFunc a_Raise, wxPanelExtRefreshboolwxRectCPFunc a_RefreshboolwxRectCP, wxPanelExtRegisterHotKeyintintintFunc a_RegisterHotKeyintintint, wxPanelExtRemoveChildwxWindowBasePFunc a_RemoveChildwxWindowBaseP, wxPanelExtReparentwxWindowBasePFunc a_ReparentwxWindowBaseP, wxPanelExtScrollLinesintFunc a_ScrollLinesint, wxPanelExtScrollPagesintFunc a_ScrollPagesint, wxPanelExtScrollWindowintintwxRectCPFunc a_ScrollWindowintintwxRectCP, wxPanelExtSearchEventTablewxEventTableRwxEventRFunc a_SearchEventTablewxEventTableRwxEventR, wxPanelExtSendIdleEventswxIdleEventRFunc a_SendIdleEventswxIdleEventR, wxPanelExtSendSizeEventintFunc a_SendSizeEventint, wxPanelExtSetAcceleratorTablewxAcceleratorTableCRFunc a_SetAcceleratorTablewxAcceleratorTableCR, wxPanelExtSetBackgroundColourwxColourCRFunc a_SetBackgroundColourwxColourCR, wxPanelExtSetBackgroundStylewxBackgroundStyleFunc a_SetBackgroundStylewxBackgroundStyle, wxPanelExtSetCanFocusboolFunc a_SetCanFocusbool, wxPanelExtSetConstraintSizesboolFunc a_SetConstraintSizesbool, wxPanelExtSetCursorwxCursorCRFunc a_SetCursorwxCursorCR, wxPanelExtSetDoubleBufferedboolFunc a_SetDoubleBufferedbool, wxPanelExtSetDropTargetwxDropTargetPFunc a_SetDropTargetwxDropTargetP, wxPanelExtSetExtraStylelongFunc a_SetExtraStylelong, wxPanelExtSetFocusFunc a_SetFocus, wxPanelExtSetFocusFromKbdFunc a_SetFocusFromKbd, wxPanelExtSetFontwxFontCRFunc a_SetFontwxFontCR, wxPanelExtSetForegroundColourwxColourCRFunc a_SetForegroundColourwxColourCR, wxPanelExtSetIdwxWindowIDFunc a_SetIdwxWindowID, wxPanelExtSetLabelwxStringCRFunc a_SetLabelwxStringCR, wxPanelExtSetLayoutDirectionwxLayoutDirectionFunc a_SetLayoutDirectionwxLayoutDirection, wxPanelExtSetMaxClientSizewxSizeCRFunc a_SetMaxClientSizewxSizeCR, wxPanelExtSetMaxSizewxSizeCRFunc a_SetMaxSizewxSizeCR, wxPanelExtSetMinClientSizewxSizeCRFunc a_SetMinClientSizewxSizeCR, wxPanelExtSetMinSizewxSizeCRFunc a_SetMinSizewxSizeCR, wxPanelExtSetNamewxStringCRFunc a_SetNamewxStringCR, wxPanelExtSetNextHandlerwxEvtHandlerPFunc a_SetNextHandlerwxEvtHandlerP, wxPanelExtSetPreviousHandlerwxEvtHandlerPFunc a_SetPreviousHandlerwxEvtHandlerP, wxPanelExtSetScrollPosintintboolFunc a_SetScrollPosintintbool, wxPanelExtSetScrollbarintintintintboolFunc a_SetScrollbarintintintintbool, wxPanelExtSetSizeConstraintintintintintFunc a_SetSizeConstraintintintintint, wxPanelExtSetSizeHintsintintintintintintFunc a_SetSizeHintsintintintintintint, wxPanelExtSetThemeEnabledboolFunc a_SetThemeEnabledbool, wxPanelExtSetTransparentwxByteFunc a_SetTransparentwxByte, wxPanelExtSetValidatorwxValidatorCRFunc a_SetValidatorwxValidatorCR, wxPanelExtSetWindowStyleFlaglongFunc a_SetWindowStyleFlaglong, wxPanelExtShouldInheritColoursFunc a_ShouldInheritColours, wxPanelExtShowboolFunc a_Showbool, wxPanelExtShowWithEffectwxShowEffectunsignedintFunc a_ShowWithEffectwxShowEffectunsignedint, wxPanelExtTransferDataFromWindowFunc a_TransferDataFromWindow, wxPanelExtTransferDataToWindowFunc a_TransferDataToWindow, wxPanelExtTryAfterwxEventRFunc a_TryAfterwxEventR, wxPanelExtTryBeforewxEventRFunc a_TryBeforewxEventR, wxPanelExtUnregisterHotKeyintFunc a_UnregisterHotKeyint, wxPanelExtUpdateFunc a_Update, wxPanelExtUpdateWindowUIlongFunc a_UpdateWindowUIlong, wxPanelExtValidateFunc a_Validate, wxPanelExtWXAdjustFontToOwnPPIwxFontRFunc a_WXAdjustFontToOwnPPIwxFontR, wxPanelExtWXGetTextEntryFunc a_WXGetTextEntry, wxPanelExtWXReservedEvtHandler1voidPFunc a_WXReservedEvtHandler1voidP, wxPanelExtWXReservedEvtHandler2voidPFunc a_WXReservedEvtHandler2voidP, wxPanelExtWXReservedWindow1voidPFunc a_WXReservedWindow1voidP, wxPanelExtWXReservedWindow2voidPFunc a_WXReservedWindow2voidP, wxPanelExtWXReservedWindow3voidPFunc a_WXReservedWindow3voidP, wxPanelExtWXSetInitialFittingClientSizeintwxSizerPFunc a_WXSetInitialFittingClientSizeintwxSizerP, wxPanelExtWarpPointerintintFunc a_WarpPointerintint, wxPanelExtWindowToClientSizewxSizeCRFunc a_WindowToClientSizewxSizeCR): wxPanel() {
+  wxPanelExt(wxPanelExtAcceptsFocusFunc a_AcceptsFocus, wxPanelExtAcceptsFocusFromKeyboardFunc a_AcceptsFocusFromKeyboard, wxPanelExtAcceptsFocusRecursivelyFunc a_AcceptsFocusRecursively, wxPanelExtAddChildwxWindowBasePFunc a_AddChildwxWindowBaseP, wxPanelExtAddPendingEventwxEventCRFunc a_AddPendingEventwxEventCR, wxPanelExtAdjustForLayoutDirectionwxCoordwxCoordwxCoordFunc a_AdjustForLayoutDirectionwxCoordwxCoordwxCoord, wxPanelExtAdjustForParentClientOriginintRintRintFunc a_AdjustForParentClientOriginintRintRint, wxPanelExtAlwaysShowScrollbarsboolboolFunc a_AlwaysShowScrollbarsboolbool, wxPanelExtAssociateHandleWXWidgetFunc a_AssociateHandleWXWidget, wxPanelExtBeginRepositioningChildrenFunc a_BeginRepositioningChildren, wxPanelExtCanApplyThemeBorderFunc a_CanApplyThemeBorder, wxPanelExtCanBeFocusedFunc a_CanBeFocused, wxPanelExtCanBeOutsideClientAreaFunc a_CanBeOutsideClientArea, wxPanelExtCanScrollintFunc a_CanScrollint, wxPanelExtCanSetTransparentFunc a_CanSetTransparent, wxPanelExtClearBackgroundFunc a_ClearBackground, wxPanelExtClientToWindowSizewxSizeCRFunc a_ClientToWindowSizewxSizeCR, wxPanelExtCloneRefDatawxObjectRefDataCPFunc a_CloneRefDatawxObjectRefDataCP, wxPanelExtCreateRefDataFunc a_CreateRefData, wxPanelExtDestroyFunc a_Destroy, wxPanelExtDissociateHandleFunc a_DissociateHandle, wxPanelExtDoCaptureMouseFunc a_DoCaptureMouse, wxPanelExtDoCentreintFunc a_DoCentreint, wxPanelExtDoClientToScreenintPintPFunc a_DoClientToScreenintPintP, wxPanelExtDoEnableboolFunc a_DoEnablebool, wxPanelExtDoFreezeFunc a_DoFreeze, wxPanelExtDoGetBestClientHeightintFunc a_DoGetBestClientHeightint, wxPanelExtDoGetBestClientSizeFunc a_DoGetBestClientSize, wxPanelExtDoGetBestClientWidthintFunc a_DoGetBestClientWidthint, wxPanelExtDoGetBestSizeFunc a_DoGetBestSize, wxPanelExtDoGetClientDataFunc a_DoGetClientData, wxPanelExtDoGetClientObjectFunc a_DoGetClientObject, wxPanelExtDoGetClientSizeintPintPFunc a_DoGetClientSizeintPintP, wxPanelExtDoGetPositionintPintPFunc a_DoGetPositionintPintP, wxPanelExtDoGetScreenPositionintPintPFunc a_DoGetScreenPositionintPintP, wxPanelExtDoGetSizeintPintPFunc a_DoGetSizeintPintP, wxPanelExtDoGetSizeFromClientSizewxSizeCRFunc a_DoGetSizeFromClientSizewxSizeCR, wxPanelExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCPFunc a_DoGetTextExtentwxStringCRintPintPintPintPwxFontCP, wxPanelExtDoGetVirtualSizeFunc a_DoGetVirtualSize, wxPanelExtDoHitTestwxCoordwxCoordFunc a_DoHitTestwxCoordwxCoord, wxPanelExtDoIsExposedintintintintFunc a_DoIsExposedintintintint, wxPanelExtDoIsExposedintintFunc a_DoIsExposedintint, wxPanelExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrderFunc a_DoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrder, wxPanelExtDoMoveWindowintintintintFunc a_DoMoveWindowintintintint, wxPanelExtDoNavigateInintFunc a_DoNavigateInint, wxPanelExtDoPhaseintFunc a_DoPhaseint, wxPanelExtDoPopupMenuwxMenuPintintFunc a_DoPopupMenuwxMenuPintint, wxPanelExtDoReleaseMouseFunc a_DoReleaseMouse, wxPanelExtDoScreenToClientintPintPFunc a_DoScreenToClientintPintP, wxPanelExtDoSetClientDatavoidPFunc a_DoSetClientDatavoidP, wxPanelExtDoSetClientObjectwxClientDataPFunc a_DoSetClientObjectwxClientDataP, wxPanelExtDoSetClientSizeintintFunc a_DoSetClientSizeintint, wxPanelExtDoSetSizeintintintintintFunc a_DoSetSizeintintintintint, wxPanelExtDoSetSizeHintsintintintintintintFunc a_DoSetSizeHintsintintintintintint, wxPanelExtDoSetToolTipwxToolTipPFunc a_DoSetToolTipwxToolTipP, wxPanelExtDoSetToolTipTextwxStringCRFunc a_DoSetToolTipTextwxStringCR, wxPanelExtDoSetVirtualSizeintintFunc a_DoSetVirtualSizeintint, wxPanelExtDoSetWindowVariantwxWindowVariantFunc a_DoSetWindowVariantwxWindowVariant, wxPanelExtDoThawFunc a_DoThaw, wxPanelExtDoUpdateWindowUIwxUpdateUIEventRFunc a_DoUpdateWindowUIwxUpdateUIEventR, wxPanelExtDragAcceptFilesboolFunc a_DragAcceptFilesbool, wxPanelExtEnableboolFunc a_Enablebool, wxPanelExtEnableTouchEventsintFunc a_EnableTouchEventsint, wxPanelExtEnableVisibleFocusboolFunc a_EnableVisibleFocusbool, wxPanelExtEndRepositioningChildrenFunc a_EndRepositioningChildren, wxPanelExtFitFunc a_Fit, wxPanelExtFitInsideFunc a_FitInside, wxPanelExtGetBestVirtualSizeFunc a_GetBestVirtualSize, wxPanelExtGetCharHeightFunc a_GetCharHeight, wxPanelExtGetCharWidthFunc a_GetCharWidth, wxPanelExtGetClassInfoFunc a_GetClassInfo, wxPanelExtGetClientAreaOriginFunc a_GetClientAreaOrigin, wxPanelExtGetClientSizeConstraintintPintPFunc a_GetClientSizeConstraintintPintP, wxPanelExtGetContentScaleFactorFunc a_GetContentScaleFactor, wxPanelExtGetDPIFunc a_GetDPI, wxPanelExtGetDPIScaleFactorFunc a_GetDPIScaleFactor, wxPanelExtGetDefaultAttributesFunc a_GetDefaultAttributes, wxPanelExtGetDefaultBorderFunc a_GetDefaultBorder, wxPanelExtGetDefaultBorderForControlFunc a_GetDefaultBorderForControl, wxPanelExtGetDropTargetFunc a_GetDropTarget, wxPanelExtGetEffectiveMinSizeFunc a_GetEffectiveMinSize, wxPanelExtGetEventHashTableFunc a_GetEventHashTable, wxPanelExtGetEventTableFunc a_GetEventTable, wxPanelExtGetHandleFunc a_GetHandle, wxPanelExtGetHelpTextAtPointwxPointCRwxHelpEventNOriginFunc a_GetHelpTextAtPointwxPointCRwxHelpEventNOrigin, wxPanelExtGetLabelFunc a_GetLabel, wxPanelExtGetLayoutDirectionFunc a_GetLayoutDirection, wxPanelExtGetMainWindowOfCompositeControlFunc a_GetMainWindowOfCompositeControl, wxPanelExtGetMaxClientSizeFunc a_GetMaxClientSize, wxPanelExtGetMaxSizeFunc a_GetMaxSize, wxPanelExtGetMinClientSizeFunc a_GetMinClientSize, wxPanelExtGetMinSizeFunc a_GetMinSize, wxPanelExtGetNameFunc a_GetName, wxPanelExtGetPositionConstraintintPintPFunc a_GetPositionConstraintintPintP, wxPanelExtGetScrollPosintFunc a_GetScrollPosint, wxPanelExtGetScrollRangeintFunc a_GetScrollRangeint, wxPanelExtGetScrollThumbintFunc a_GetScrollThumbint, wxPanelExtGetSizeConstraintintPintPFunc a_GetSizeConstraintintPintP, wxPanelExtGetThemeEnabledFunc a_GetThemeEnabled, wxPanelExtGetTransparentFunc a_GetTransparent, wxPanelExtGetValidatorFunc a_GetValidator, wxPanelExtGetWindowBorderSizeFunc a_GetWindowBorderSize, wxPanelExtGetWindowStyleFlagFunc a_GetWindowStyleFlag, wxPanelExtHasCaptureFunc a_HasCapture, wxPanelExtHasFocusFunc a_HasFocus, wxPanelExtHasMultiplePagesFunc a_HasMultiplePages, wxPanelExtHasTransparentBackgroundFunc a_HasTransparentBackground, wxPanelExtHideWithEffectwxShowEffectunsignedintFunc a_HideWithEffectwxShowEffectunsignedint, wxPanelExtInformFirstDirectionintintintFunc a_InformFirstDirectionintintint, wxPanelExtInheritAttributesFunc a_InheritAttributes, wxPanelExtInitDialogFunc a_InitDialog, wxPanelExtIsClientAreaChildwxWindowCPFunc a_IsClientAreaChildwxWindowCP, wxPanelExtIsDoubleBufferedFunc a_IsDoubleBuffered, wxPanelExtIsRetainedFunc a_IsRetained, wxPanelExtIsScrollbarAlwaysShownintFunc a_IsScrollbarAlwaysShownint, wxPanelExtIsShownFunc a_IsShown, wxPanelExtIsShownOnScreenFunc a_IsShownOnScreen, wxPanelExtIsThisEnabledFunc a_IsThisEnabled, wxPanelExtIsTopLevelFunc a_IsTopLevel, wxPanelExtIsTopNavigationDomainwxWindowBaseNNavigationKindFunc a_IsTopNavigationDomainwxWindowBaseNNavigationKind, wxPanelExtIsTransparentBackgroundSupportedwxStringPFunc a_IsTransparentBackgroundSupportedwxStringP, wxPanelExtLayoutFunc a_Layout, wxPanelExtLayoutPhase1intPFunc a_LayoutPhase1intP, wxPanelExtLayoutPhase2intPFunc a_LayoutPhase2intP, wxPanelExtLowerFunc a_Lower, wxPanelExtMoveConstraintintintFunc a_MoveConstraintintint, wxPanelExtOnDynamicBindwxDynamicEventTableEntryRFunc a_OnDynamicBindwxDynamicEventTableEntryR, wxPanelExtOnInternalIdleFunc a_OnInternalIdle, wxPanelExtPrepareDCwxDCRFunc a_PrepareDCwxDCR, wxPanelExtProcessEventwxEventRFunc a_ProcessEventwxEventR, wxPanelExtQueueEventwxEventPFunc a_QueueEventwxEventP, wxPanelExtRaiseFunc a_Raise, wxPanelExtRefreshboolwxRectCPFunc a_RefreshboolwxRectCP, wxPanelExtRegisterHotKeyintintintFunc a_RegisterHotKeyintintint, wxPanelExtRemoveChildwxWindowBasePFunc a_RemoveChildwxWindowBaseP, wxPanelExtReparentwxWindowBasePFunc a_ReparentwxWindowBaseP, wxPanelExtScrollLinesintFunc a_ScrollLinesint, wxPanelExtScrollPagesintFunc a_ScrollPagesint, wxPanelExtScrollWindowintintwxRectCPFunc a_ScrollWindowintintwxRectCP, wxPanelExtSearchEventTablewxEventTableRwxEventRFunc a_SearchEventTablewxEventTableRwxEventR, wxPanelExtSendIdleEventswxIdleEventRFunc a_SendIdleEventswxIdleEventR, wxPanelExtSendSizeEventintFunc a_SendSizeEventint, wxPanelExtSetAcceleratorTablewxAcceleratorTableCRFunc a_SetAcceleratorTablewxAcceleratorTableCR, wxPanelExtSetBackgroundColourwxColourCRFunc a_SetBackgroundColourwxColourCR, wxPanelExtSetBackgroundStylewxBackgroundStyleFunc a_SetBackgroundStylewxBackgroundStyle, wxPanelExtSetCanFocusboolFunc a_SetCanFocusbool, wxPanelExtSetConstraintSizesboolFunc a_SetConstraintSizesbool, wxPanelExtSetCursorwxCursorCRFunc a_SetCursorwxCursorCR, wxPanelExtSetDoubleBufferedboolFunc a_SetDoubleBufferedbool, wxPanelExtSetDropTargetwxDropTargetPFunc a_SetDropTargetwxDropTargetP, wxPanelExtSetExtraStylelongFunc a_SetExtraStylelong, wxPanelExtSetFocusFunc a_SetFocus, wxPanelExtSetFocusFromKbdFunc a_SetFocusFromKbd, wxPanelExtSetFontwxFontCRFunc a_SetFontwxFontCR, wxPanelExtSetForegroundColourwxColourCRFunc a_SetForegroundColourwxColourCR, wxPanelExtSetIdwxWindowIDFunc a_SetIdwxWindowID, wxPanelExtSetLabelwxStringCRFunc a_SetLabelwxStringCR, wxPanelExtSetLayoutDirectionwxLayoutDirectionFunc a_SetLayoutDirectionwxLayoutDirection, wxPanelExtSetMaxClientSizewxSizeCRFunc a_SetMaxClientSizewxSizeCR, wxPanelExtSetMaxSizewxSizeCRFunc a_SetMaxSizewxSizeCR, wxPanelExtSetMinClientSizewxSizeCRFunc a_SetMinClientSizewxSizeCR, wxPanelExtSetMinSizewxSizeCRFunc a_SetMinSizewxSizeCR, wxPanelExtSetNamewxStringCRFunc a_SetNamewxStringCR, wxPanelExtSetNextHandlerwxEvtHandlerPFunc a_SetNextHandlerwxEvtHandlerP, wxPanelExtSetPreviousHandlerwxEvtHandlerPFunc a_SetPreviousHandlerwxEvtHandlerP, wxPanelExtSetScrollPosintintboolFunc a_SetScrollPosintintbool, wxPanelExtSetScrollbarintintintintboolFunc a_SetScrollbarintintintintbool, wxPanelExtSetSizeConstraintintintintintFunc a_SetSizeConstraintintintintint, wxPanelExtSetSizeHintsintintintintintintFunc a_SetSizeHintsintintintintintint, wxPanelExtSetThemeEnabledboolFunc a_SetThemeEnabledbool, wxPanelExtSetTransparentwxByteFunc a_SetTransparentwxByte, wxPanelExtSetValidatorwxValidatorCRFunc a_SetValidatorwxValidatorCR, wxPanelExtSetWindowStyleFlaglongFunc a_SetWindowStyleFlaglong, wxPanelExtShouldInheritColoursFunc a_ShouldInheritColours, wxPanelExtShowboolFunc a_Showbool, wxPanelExtShowWithEffectwxShowEffectunsignedintFunc a_ShowWithEffectwxShowEffectunsignedint, wxPanelExtTransferDataFromWindowFunc a_TransferDataFromWindow, wxPanelExtTransferDataToWindowFunc a_TransferDataToWindow, wxPanelExtTriggerScrollEventwxEventTypeFunc a_TriggerScrollEventwxEventType, wxPanelExtTryAfterwxEventRFunc a_TryAfterwxEventR, wxPanelExtTryBeforewxEventRFunc a_TryBeforewxEventR, wxPanelExtUnregisterHotKeyintFunc a_UnregisterHotKeyint, wxPanelExtUpdateFunc a_Update, wxPanelExtUpdateWindowUIlongFunc a_UpdateWindowUIlong, wxPanelExtValidateFunc a_Validate, wxPanelExtWXAdjustFontToOwnPPIwxFontRFunc a_WXAdjustFontToOwnPPIwxFontR, wxPanelExtWXGetTextEntryFunc a_WXGetTextEntry, wxPanelExtWXReservedEvtHandler1voidPFunc a_WXReservedEvtHandler1voidP, wxPanelExtWXReservedEvtHandler2voidPFunc a_WXReservedEvtHandler2voidP, wxPanelExtWXReservedWindow1voidPFunc a_WXReservedWindow1voidP, wxPanelExtWXReservedWindow2voidPFunc a_WXReservedWindow2voidP, wxPanelExtWXReservedWindow3voidPFunc a_WXReservedWindow3voidP, wxPanelExtWXSetInitialFittingClientSizeintwxSizerPFunc a_WXSetInitialFittingClientSizeintwxSizerP, wxPanelExtWarpPointerintintFunc a_WarpPointerintint, wxPanelExtWindowToClientSizewxSizeCRFunc a_WindowToClientSizewxSizeCR): wxPanel() {
     m_wxPanelExtAcceptsFocus = a_AcceptsFocus;
     m_wxPanelExtAcceptsFocusFromKeyboard = a_AcceptsFocusFromKeyboard;
     m_wxPanelExtAcceptsFocusRecursively = a_AcceptsFocusRecursively;
@@ -6595,11 +6729,13 @@ public:
     m_wxPanelExtDoGetPositionintPintP = a_DoGetPositionintPintP;
     m_wxPanelExtDoGetScreenPositionintPintP = a_DoGetScreenPositionintPintP;
     m_wxPanelExtDoGetSizeintPintP = a_DoGetSizeintPintP;
+    m_wxPanelExtDoGetSizeFromClientSizewxSizeCR = a_DoGetSizeFromClientSizewxSizeCR;
     m_wxPanelExtDoGetTextExtentwxStringCRintPintPintPintPwxFontCP = a_DoGetTextExtentwxStringCRintPintPintPintPwxFontCP;
     m_wxPanelExtDoGetVirtualSize = a_DoGetVirtualSize;
     m_wxPanelExtDoHitTestwxCoordwxCoord = a_DoHitTestwxCoordwxCoord;
     m_wxPanelExtDoIsExposedintintintint = a_DoIsExposedintintintint;
     m_wxPanelExtDoIsExposedintint = a_DoIsExposedintint;
+    m_wxPanelExtDoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrder = a_DoMoveInTabOrderwxWindowPwxWindowBaseNWindowOrder;
     m_wxPanelExtDoMoveWindowintintintint = a_DoMoveWindowintintintint;
     m_wxPanelExtDoNavigateInint = a_DoNavigateInint;
     m_wxPanelExtDoPhaseint = a_DoPhaseint;
@@ -6656,6 +6792,7 @@ public:
     m_wxPanelExtGetScrollThumbint = a_GetScrollThumbint;
     m_wxPanelExtGetSizeConstraintintPintP = a_GetSizeConstraintintPintP;
     m_wxPanelExtGetThemeEnabled = a_GetThemeEnabled;
+    m_wxPanelExtGetTransparent = a_GetTransparent;
     m_wxPanelExtGetValidator = a_GetValidator;
     m_wxPanelExtGetWindowBorderSize = a_GetWindowBorderSize;
     m_wxPanelExtGetWindowStyleFlag = a_GetWindowStyleFlag;
@@ -6734,6 +6871,7 @@ public:
     m_wxPanelExtShowWithEffectwxShowEffectunsignedint = a_ShowWithEffectwxShowEffectunsignedint;
     m_wxPanelExtTransferDataFromWindow = a_TransferDataFromWindow;
     m_wxPanelExtTransferDataToWindow = a_TransferDataToWindow;
+    m_wxPanelExtTriggerScrollEventwxEventType = a_TriggerScrollEventwxEventType;
     m_wxPanelExtTryAfterwxEventR = a_TryAfterwxEventR;
     m_wxPanelExtTryBeforewxEventR = a_TryBeforewxEventR;
     m_wxPanelExtUnregisterHotKeyint = a_UnregisterHotKeyint;
