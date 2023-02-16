@@ -4,18 +4,10 @@
 #include <wx/wx.h>
 #include <wx/vidmode.h>
 
-class wxRefCounterExt;
 class wxObjectExt;
 typedef wxObjectRefData* (*wxObjectExtCloneRefDatawxObjectRefDataCPFunc)(const wxObjectExt* self, wxObjectRefData const* data, wxObjectRefData* res);
 typedef wxObjectRefData* (*wxObjectExtCreateRefDataFunc)(const wxObjectExt* self, wxObjectRefData* res);
 typedef wxClassInfo* (*wxObjectExtGetClassInfoFunc)(const wxObjectExt* self, wxClassInfo* res);
-
-class wxRefCounterExt: public wxRefCounter
-{
-public:
-  wxRefCounterExt(): wxRefCounter()  {  }
-  virtual ~wxRefCounterExt()  {  }
-};
 
 class wxObjectExt: public wxObject
 {
