@@ -8,6 +8,7 @@
 %import "object.i"
 %import "string.i"
 %import "validate.i"
+%import "icon.i"
 %import "colour.i"
 %import "window.i"
 

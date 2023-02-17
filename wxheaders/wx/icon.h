@@ -49,7 +49,59 @@
 #elif defined(__WXMAC__)
 #if wxOSX_USE_COCOA_OR_CARBON
   #define wxICON_DEFAULT_TYPE   wxBITMAP_TYPE_ICON_RESOURCE
-  #include "wx/generic/icon.h"
+  #ifndef __CPPAST__
+      #include "wx/generic/icon.h"
+  #else
+#ifndef _WX_GENERIC_ICON_H_
+#define _WX_GENERIC_ICON_H_
+
+#include "wx/bitmap.h"
+
+//-----------------------------------------------------------------------------
+// wxIcon
+//-----------------------------------------------------------------------------
+
+class WXDLLIMPEXP_CORE wxIcon: public wxBitmap
+{
+public:
+    wxIcon();
+
+    wxIcon(const char* const* bits);
+
+    // For compatibility with wxMSW where desired size is sometimes required to
+    // distinguish between multiple icons in a resource.
+    wxIcon( const wxString& filename,
+            wxBitmapType type = wxICON_DEFAULT_TYPE,
+            int WXUNUSED(desiredWidth)=-1, int WXUNUSED(desiredHeight)=-1 ) :
+        wxBitmap(filename, type)
+    {
+    }
+
+    wxIcon(const wxIconLocation& loc)
+        : wxBitmap(loc.GetFileName(), wxBITMAP_TYPE_ANY)
+    {
+    }
+
+    bool LoadFile(const wxString& name, wxBitmapType flags,
+                  int WXUNUSED(desiredWidth), int WXUNUSED(desiredHeight))
+        { return wxBitmap::LoadFile(name, flags); }
+
+    // unhide the base class version
+    virtual bool LoadFile(const wxString& name,
+                          wxBitmapType flags = wxICON_DEFAULT_TYPE) wxOVERRIDE
+        { return wxBitmap::LoadFile(name, flags); }
+
+    // create from bitmap (which should have a mask unless it's monochrome):
+    // there shouldn't be any implicit bitmap -> icon conversion (i.e. no
+    // ctors, assignment operators...), but it's ok to have such function
+    void CopyFromBitmap(const wxBitmap& bmp);
+
+private:
+    wxDECLARE_DYNAMIC_CLASS(wxIcon);
+};
+
+#endif // _WX_GENERIC_ICON_H_
+  #endif
 #else
   // iOS and others
   #define wxICON_DEFAULT_TYPE   wxBITMAP_TYPE_PNG_RESOURCE
