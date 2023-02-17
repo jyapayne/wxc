@@ -19,5 +19,5 @@ mkdir -p $SHAREDLIBS_DIR
 
 
 swig -c++ -c -cpperraswarn -nocxx -o "${WRAPPER_DIR}/${MOD_NAME}_wrap.cxx" $WX_CONFIG $(wx-config --cxxflags all) $MOD_PATH
-clang++ -c "${WRAPPER_DIR}/${MOD_NAME}_wrap.cxx" -o "${OBJECTS_DIR}/${MOD_NAME}_wrap.o" -I$TEMPLATE_DIR -I. $WX_CONFIG $(wx-config --cxxflags all)
-clang++ -shared -o "${SHAREDLIBS_DIR}/lib${MOD_NAME}.so" "${OBJECTS_DIR}/${MOD_NAME}_wrap.o" $(wx-config --libs all)
+clang++ -O2 -c "${WRAPPER_DIR}/${MOD_NAME}_wrap.cxx" -o "${OBJECTS_DIR}/${MOD_NAME}_wrap.o" -I$TEMPLATE_DIR -I. $WX_CONFIG $(wx-config --cxxflags all)
+clang++ -O2 -shared -o "${SHAREDLIBS_DIR}/lib${MOD_NAME}.so" "${OBJECTS_DIR}/${MOD_NAME}_wrap.o" $(wx-config --libs all)

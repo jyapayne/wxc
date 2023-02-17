@@ -2,6 +2,7 @@
 %include <common.i>
 
 %import "object.i"
+%import "buffer.i"
 
 %import "wx/setup.h"
 #undef HAVE_VISIBILITY
@@ -19,4 +20,3 @@
 %import "wx/strconv.h"
 %import "wx/strvararg.h"
 %include "wx/string.h"
-

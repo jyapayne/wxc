@@ -311,7 +311,7 @@ public:
 
     wxCharTypeBuffer& operator=(const wxScopedCharTypeBuffer<T>& src)
     {
-        MakeOwnedCopyOf(src);
+        this->MakeOwnedCopyOf(src);
         return *this;
     }
 
@@ -365,7 +365,7 @@ public:
     wxCharBuffer(const wxScopedCharTypeBufferBase& buf)
         : wxCharTypeBufferBase(buf) {}
 
-    wxCharBuffer(const CharType *str = NULL) : wxCharTypeBufferBase(str) {}
+    wxCharBuffer(const wxCharBuffer::CharType *str = NULL) : wxCharTypeBufferBase(str) {}
     wxCharBuffer(size_t len) : wxCharTypeBufferBase(len) {}
 
     wxCharBuffer(const wxCStrData& cstr);
@@ -382,7 +382,7 @@ public:
     wxWCharBuffer(const wxScopedCharTypeBufferBase& buf)
         : wxCharTypeBufferBase(buf) {}
 
-    wxWCharBuffer(const CharType *str = NULL) : wxCharTypeBufferBase(str) {}
+    wxWCharBuffer(const wxWCharBuffer::CharType *str = NULL) : wxCharTypeBufferBase(str) {}
     wxWCharBuffer(size_t len) : wxCharTypeBufferBase(len) {}
 
     wxWCharBuffer(const wxCStrData& cstr);
